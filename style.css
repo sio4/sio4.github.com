@@ -1,0 +1,32 @@
+body {
+	font-family: "Trebuchet MS", MalgunGothic;
+	margin: 0;
+}
+
+#header, #content, #footer {
+	padding: 4px;
+}
+
+#header {
+	background: #eee
+	border-bottom: 1px solid #aaa;
+	top: 0;
+}
+
+#header h1 {
+	margin: 0;
+}
+
+#content {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+#footer {
+	border-top: 1px solid #aaa;
+	background: #eee;
+}
+
+
+
+/* vim: set ts=2 sw=2 : */
