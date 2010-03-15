@@ -1,27 +1,14 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-	<head>
-		<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-		<title>sio4's home</title>
-		<link href="style.css" rel="stylesheet" type="text/css" />
-	</head>
-	<body>
-		<div id="header">
-			<h1>Welcome to my home</h1>
-		</div>
-		<div id="content">
-			<p>
-			Now under construction.
-			</p>
-		</div>
-		<div id="footer">
-			<p>
-			oo
-			| <a href="http://pages.github.com">pages help</a>
-			</p>
-		</div>
-	</body>
-</html>
+---
+layout: default
+title: sio4's blog
+---
+ 
+<div id="home">
+<h1>Blog Posts</h1>
+<ul class="posts">
+{% for post in site.posts %}
+<li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
+{% endfor %}
+</ul>
 
-<!-- vim: set ts=2 sw=2 : -->
+</div>
