@@ -13,7 +13,8 @@
 
 body {
   background-color: white;
-  font: 12pt "맑은고딕", MalgunGothic;
+  font-size: 10pt;
+  font-family: Malgun Gothic;
   text-align: center;
 }
 
@@ -23,11 +24,23 @@ h1 { margin-bottom: 1em; }
 
 p { margin: 1em 0; }
 
-a { color: #00a; }
+a { color: #f57900; }
 a:hover { color: black; }
-a:visited { color: #a0a; }
+a:visited { color: #f57900; }
 
 table { font-size: inherit; font: 100%; }
+
+blockquote {
+  background: #EEF;
+  border: 1px dotted #ccc;
+  margin: 20px;
+  padding: 10px;
+}
+
+blockquote p {
+  padding: 0;
+  margin: 0;
+}
 
 /*****************************************************************************/
 /*
@@ -54,19 +67,19 @@ ul.posts span {
 
 .site {
   text-align: justify;
-  width: 50em;
+  width: 55em;
   margin: 1em auto 2em auto;
   line-height: 1.5em;
 }
 
 .title {
-  color: #a00;
+  color: #f57900;
   font-weight: bold;
   border-bottom: 1px dotted #a00;
   margin-bottom: 2em;
 }
 
-.site .title a { color: #a00; text-decoration: none; }
+.site .title a { color: #f57900; text-decoration: none; }
 .site .title a:hover { color: black; }
 .site .title a.extra { color: #aaa; text-decoration: none; margin-left: 1em; }
 .site .title a.extra:hover { color: black; }
@@ -84,6 +97,8 @@ ul.posts span {
 .site .footer .contact {
   float: left;
   margin-right: 3em;
+  padding: 2px;
+  width: 20em;
 }
 
 .site .footer .contact a {
@@ -91,13 +106,18 @@ ul.posts span {
 }
 
 .site .content {
-  width: 35em;
+  width: 38em;
 }
 
 .site .sidebar {
   text-align: left;
   float: right;
-  width: 13em;
+  width: 15em;
+}
+
+.site .footer .rss {
+  float: right;
+  text-align: right;
 }
 
 /*****************************************************************************/
