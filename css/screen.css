@@ -120,6 +120,16 @@ ul.posts span {
   text-align: right;
 }
 
+.post-tail {
+  margin: 2em 0 1em 0;
+  padding: 0.2em;
+  border-top: 1px solid #eee;
+}
+
+.post-tail h2 {
+  margin-bottom: 1em;
+}
+
 /*****************************************************************************/
 /*
 /* Posts
@@ -166,10 +176,3 @@ ul.posts span {
   background-color: #333;
 }
 
-#related {
-  margin-top: 2em;
-}
-
-#related h2 {
-  margin-bottom: 1em;
-}
