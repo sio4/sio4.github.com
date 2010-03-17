@@ -1,0 +1,14 @@
+---
+title: Archive
+layout: default
+---
+
+<h1>{{ page.title }}</h1>
+
+<ul class="posts">
+{% for post in site.posts %}
+<li><a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+<span class="meta">Posted on {{ post.date | date_to_string }}</span></li>
+{% endfor %}
+</ul>
+<br/>

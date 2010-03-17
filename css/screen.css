@@ -115,6 +115,15 @@ ul.posts span {
   width: 15em;
 }
 
+.site .sidebar h1,
+.site .sidebar h2,
+.site .sidebar h3,
+.site .sidebar h4,
+.site .sidebar h5,
+.site .sidebar h6 {
+  color: #999;
+}
+
 .site .footer .rss {
   float: right;
   text-align: right;
