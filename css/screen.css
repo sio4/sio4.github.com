@@ -232,14 +232,17 @@ ul.posts span {
   border-bottom: 1px solid #999;
 }
 
+.side-widget .widget-box {
+  border-left: 5px solid #999;
+  margin: 0 0 1em 2px;
+  padding: 0 0 0 8px;
+}
 
 /* delicious */
 #delicious-panel a, #delicious-panel a:visited,
-#delicious-widget a, #delicious-widget a:visited { color: #2374d0; }
-#delicious-widget {
+#delicious-box a, #delicious-box a:visited { color: #2374d0; }
+#delicious-box {
   border-left: 5px solid #2374d0;
-  margin-left 2px;
-  padding: 0 0 0 8px;
 }
 .delicious-posts,
 .delicious-tags,
