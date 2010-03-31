@@ -146,6 +146,9 @@ ul.posts span {
   text-align: right;
 }
 
+.item_share { text-align: right; }
+.item_share img { vertical-align: middle; }
+
 .post-tail {
   margin: 2em 0 1em 0;
   padding: 0.2em;
@@ -209,12 +212,13 @@ ul.posts span {
 
 .wall-panel {
   margin: 0 0 1em;
+  overflow: auto;
 }
 
 .half-panel {
   float: left;
-  width: 25em;
-  margin: 0 1em;
+  width: 26em;
+  margin: 0 0 0 1em;
   padding: 0;
 }
 
@@ -241,6 +245,7 @@ ul.posts span {
 .delicious-tags,
 .delicious-networkbadge {
 }
+
 
 
 

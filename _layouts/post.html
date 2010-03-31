@@ -9,6 +9,20 @@ layout: sidebar
 		by <a href="http://twitter.com/scinix">Yonghwan SO</a></p>
 	</div>
 
+	<div class="item_share">
+	Share this on
+	<!-- delicious -->
+	<a href="http://delicious.com/save" onclick="window.open('http://delicious.com/save?v=5&noui&jump=close&url='
+		+encodeURIComponent(location.href)+'&title='+encodeURIComponent(document.title),
+		'delicious','toolbar=no,width=550,height=550'); return false;"><img border="0"
+		src="http://static.delicious.com/img/delicious.small.gif" height="16" width="16" alt="Delicious" /></a>
+	<!-- facebook -->
+	<a name="fb_share" type="button_count"
+		href="http://www.facebook.com/sharer.php">Share</a><script
+		src="http://static.ak.fbcdn.net/connect.php/js/FB.Share"
+		type="text/javascript"></script>
+	</div>
+
 	<div class="item_content">
 {{ content }}
 	</div>
