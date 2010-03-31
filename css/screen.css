@@ -24,7 +24,7 @@ h1 { margin-bottom: 1em; }
 
 p { margin: 1em 0; }
 
-a { color: #f57900; }
+a { color: #f57900; text-decoration: none; }
 a:hover { color: black; }
 a:visited { color: #f57900; }
 
@@ -32,7 +32,7 @@ table { font-size: inherit; font: 100%; }
 
 blockquote {
   background: #EEF;
-  border: 1px dotted #ccc;
+  border: 1px dotted #bbb;
   margin: 20px;
   padding: 10px;
 }
@@ -67,31 +67,41 @@ ul.posts span {
 
 .site {
   text-align: justify;
+  line-height: 1.5em;
+  background: #ddd;
+}
+
+.body {
   width: 55em;
   margin: 1em auto 2em auto;
-  line-height: 1.5em;
 }
 
-.title {
+.header {
   color: #f57900;
+  background: #111;
   font-weight: bold;
-  border-bottom: 1px dotted #a00;
+  border-bottom: 3px solid #a00;
   margin-bottom: 2em;
+  padding: 25px 20px 2px;
 }
 
-.site .title a { color: #f57900; text-decoration: none; }
-.site .title a:hover { color: black; }
-.site .title a.extra { color: #aaa; text-decoration: none; margin-left: 1em; }
-.site .title a.extra:hover { color: black; }
+.site .header a { color: #f57900; text-decoration: none; }
+.site .header a:hover { color: black; }
+.site .header a.extra { color: #aaa; text-decoration: none; margin-left: 1em; }
+.site .header a.extra:hover { color: black; }
 
 .site .meta { color: #aaa; }
 
+.site .body { overflow: auto; }
 
 .site .footer {
   font-size: 0.8em;
   color: #666;
+  background: #222;
   border-top: 1px solid #eee;
   margin-top: 2em;
+  overflow: auto;
+  padding: 0 20px;
 }
 
 .site .footer .contact {
@@ -106,6 +116,7 @@ ul.posts span {
 }
 
 .site .content {
+  float: left;
   width: 38em;
 }
 
@@ -184,4 +195,31 @@ ul.posts span {
 #post pre.terminal code {
   background-color: #333;
 }
+
+/*****************************************************************************/
+/* misc
+/*****************************************************************************/
+
+.side-widget {
+  padding: 6px 2px;
+  line-height: 1.2em;
+}
+
+.side-widget h1 {
+  border-bottom: 1px solid #999;
+}
+
+/* delicious */
+#delicious-widget {
+  border-left: 5px solid #2374d0;
+  margin-left 2px;
+  padding: 0 0 0 8px;
+}
+#delicious-widget a, #delicious-widget a:visited { color: #2374d0; }
+.delicious-posts,
+.delicious-tags,
+.delicious-networkbadge {
+}
+
+
 
