@@ -1,36 +1,21 @@
 ---
-layout: default
+layout: site
 title: Wall
 ---
 
-
+<div class="wall-widget" id="blog-posts">
+<h1>Blog Posts</h1>
 {% for post in site.posts limit:5 %}
 <div class="item">
 	<div class="item_details">
-		<h1><a href="{{ post.url }}" title="Permalink">{{ post.title }}</a></h1>
-		<p class="meta">Posted on {{ post.date | date_to_string }}
-		by <a href="http://twitter.com/scinix">Yonghwan SO</a></p>
-	</div>
-
-	<div class="item_content">
-{{ post.content }}
-	</div>
-
-	<div class="item_meta">
-		<span class="item_comments">
-		Comments: <a href="{{ post.url }}#disqus_thread">(view/add your own)</a>
-		</span>
-		<!-- span class="item_tags">
-		Tags:
-		{% for topic in post.topics %}
-		<a href="/tags/{{ topic }}.html"
-			title="View posts tagged with &quot;{{ topic }}&quot;">{{ topic }}</a>
-		{% if forloop.last != true %}, {% endif %}
-		{% endfor %}
-		</span -->
+		<span><a href="{{ post.url }}" title="Permalink">{{ post.title }}</a></span>
+		Posted on {{ post.date | date_to_string }}
+		<!-- by <a href="http://twitter.com/scinix">Yonghwan SO</a> -->
 	</div>
 </div>
 {% endfor %}
+</div>
+
 
 
 <!-- begining of disqus block -->

@@ -1,0 +1,39 @@
+---
+layout: site
+---
+
+<div class="content"> <!-- content ======================================= -->
+	{{ content }}
+</div>
+
+<div class="sidebar"> <!-- sidebar ======================================= -->
+	<div class="side-widget" id="recent-posts">
+	<h1>Recent Posts</h1>
+	<ul class="posts">
+		{% for post in site.posts limit:5 %}
+		<li><a href="{{ post.url }}">{{ post.title }}</a>
+		<span>{{ post.date | date_to_string }}</span></li>
+		{% endfor %}
+	</ul>
+	</div>
+
+	<div class="side-widget" id="social-networks">
+	<h1>My Networks</h1>
+
+	<div class="side-widget" id="delicious-widget">
+	<!--script type="text/javascript"
+	src="http://feeds.delicious.com/v2/js/sio4?title=Bookmarks&icon=rss&count=5&bullet=%C2%BB&sort=date&extended"
+	></script-->
+	<!--script type="text/javascript"
+	src="http://feeds.delicious.com/v2/js/tags/sio4?title=Tags&count=150&sort=freq&flow=cloud&color=73adff-3274d0&size=6-20"
+	></script-->
+	<script type="text/javascript"
+	src="http://feeds.delicious.com/v2/js/networkbadge/sio4?showadd&icon=m&name&itemcount&nwcount&fancount"
+	></script>
+	</div>
+
+	</div>
+
+</div>
+
+<!-- vim: set ts=2 sw=2 : -->

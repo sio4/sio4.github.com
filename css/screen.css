@@ -200,6 +200,11 @@ ul.posts span {
 /* misc
 /*****************************************************************************/
 
+
+.wall-widget {
+  margin: 0 0 1em;
+}
+
 .side-widget {
   padding: 6px 2px;
   line-height: 1.2em;
@@ -208,6 +213,7 @@ ul.posts span {
 .side-widget h1 {
   border-bottom: 1px solid #999;
 }
+
 
 /* delicious */
 #delicious-widget {
