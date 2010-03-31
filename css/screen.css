@@ -18,9 +18,15 @@ body {
   text-align: center;
 }
 
-h1, h2, h3, h4, h5, h6 { font-size: 1.5em; }
+h1, h2, h3, h4, h5, h6 {
+  color: #222;
+  border-bottom: 1px solid #222;
+}
 
-h1 { margin-bottom: 1em; }
+h1 { font-size: 1.5em; margin-bottom: 1em; }
+h2 { font-size: 1.3em; }
+h3 { font-size: 1.1em; }
+h4, h5, h6 { font-size: 1.0em; }
 
 p { margin: 1em 0; }
 
@@ -201,9 +207,17 @@ ul.posts span {
 /*****************************************************************************/
 
 
-.wall-widget {
+.wall-panel {
   margin: 0 0 1em;
 }
+
+.half-panel {
+  float: left;
+  width: 25em;
+  margin: 0 1em;
+  padding: 0;
+}
+
 
 .side-widget {
   padding: 6px 2px;
@@ -216,12 +230,13 @@ ul.posts span {
 
 
 /* delicious */
+#delicious-panel a, #delicious-panel a:visited,
+#delicious-widget a, #delicious-widget a:visited { color: #2374d0; }
 #delicious-widget {
   border-left: 5px solid #2374d0;
   margin-left 2px;
   padding: 0 0 0 8px;
 }
-#delicious-widget a, #delicious-widget a:visited { color: #2374d0; }
 .delicious-posts,
 .delicious-tags,
 .delicious-networkbadge {
