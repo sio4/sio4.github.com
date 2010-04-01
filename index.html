@@ -8,7 +8,7 @@ title: Wall
 {% for post in site.posts limit:5 %}
 <div class="item">
 	<div class="item_details">
-		<span><a href="{{ post.url }}" title="Permalink">{{ post.title }}</a></span>
+		<span>» <a href="{{ post.url }}" title="Permalink">{{ post.title }}</a></span>
 		Posted on {{ post.date | date_to_string }}
 		<!-- by <a href="http://twitter.com/scinix">Yonghwan SO</a> -->
 	</div>
@@ -16,107 +16,15 @@ title: Wall
 {% endfor %}
 </div>
 
-<div class="wall-panel" id="twitter-panel">
-<h1>Twitter</h1>
-	<div class="half-panel">
-<script src="http://widgets.twimg.com/j/2/widget.js"></script>
-<script>
-new TWTR.Widget({
-  version: 2,
-  type: 'profile',
-  rpp: 5,
-  interval: 6000,
-  width: 'auto',
-  height: 300,
-  theme: {
-    shell: {
-      background: '#616161',
-      color: '#ffffff'
-    },
-    tweets: {
-      background: '#858585',
-      color: '#ffffff',
-      links: '#4aed05'
-    }
-  },
-  features: {
-    scrollbar: false,
-    loop: true,
-    live: false,
-    hashtags: true,
-    timestamp: true,
-    avatars: false,
-    behavior: 'default'
-  }
-}).render().setUser('scinix').start();
-</script>
-	</div>
-	<div class="half-panel">
-<script src="http://widgets.twimg.com/j/2/widget.js"></script>
-<script>
-new TWTR.Widget({
-  version: 2,
-  type: 'faves',
-  rpp: 5,
-  interval: 6000,
-  title: 'The best of Twitter according to',
-  subject: 'Yonghwan SO',
-  width: 'auto',
-  height: 300,
-  theme: {
-    shell: {
-      background: '#43c43f',
-      color: '#ffffff'
-    },
-    tweets: {
-      background: '#ffffff',
-      color: '#444444',
-      links: '#43c43f'
-    }
-  },
-  features: {
-    scrollbar: false,
-    loop: true,
-    live: false,
-    hashtags: true,
-    timestamp: true,
-    avatars: true,
-    behavior: 'default'
-  }
-}).render().setUser('scinix').start();
-</script>
-	</div>
-</div>
-
-<div class="wall-panel" id="facebook-panel">
-<h1>Facebook</h1>
-	<div class="half-panel">
-	<!-- Facebook Badge START --><a href="http://www.facebook.com/yonghwan.so"
-	title="Yonghwan So" target="_TOP"><img
-	src="http://badge.facebook.com/badge/100000135445938.568.213593158.png"
-	style="border: 0px;" /></a><!-- Facebook Badge END -->
-	</div>
-	<div class="half-panel">
-	<!-- Facebook Badge START --><a href="http://www.facebook.com/pages/Yonghwan-SO/378538967070"
-	title="Yonghwan SO" target="_TOP"><img
-	src="http://badge.facebook.com/badge/378538967070.4505.1679306595.png"
-	style="border: 0px;" /></a><!-- Facebook Badge END -->
-	</div>
-
-</div>
-
-<div class="wall-panel" id="delicious-panel">
-<h1>My Delicous</h1>
-	<div class="half-panel">
-	<script type="text/javascript"
-	src="http://feeds.delicious.com/v2/js/sio4?title=Recent%20Bookmarks&icon=rss&count=5&bullet=%C2%BB&sort=date&extended"
-	></script>
-	</div>
-	<div class="half-panel">
-	<script type="text/javascript"
-	src="http://feeds.delicious.com/v2/js/tags/sio4?title=Tags&count=100&sort=freq&flow=cloud&color=73adff-3274d0&size=6-20"
-	></script>
-	</div>
+<div class="wall-panel" id="static-pages">
+<h1>Static Pages</h1>
+	<ul>
+	<li>» <a href="/socialmedia.html">Social Media</a>
+	: My connections and activities on Social Media including
+	<a href="http://twitter.com/scinix">twitter</a>,
+	<a href="http://facebook.com/yonghwan.so">facebook</a>,
+	and <a href="http://delicious.com/sio4">delicious</a>.
+	</ul>
 </div>
 
 
