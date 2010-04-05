@@ -92,9 +92,9 @@ ul.posts span {
 }
 
 .site .header a { color: #f57900; text-decoration: none; }
-.site .header a:hover { color: black; }
+.site .header a:hover { color: white; }
 .site .header a.extra { color: #aaa; text-decoration: none; margin-left: 1em; }
-.site .header a.extra:hover { color: black; }
+.site .header a.extra:hover { color: #f57900; }
 
 .site .meta { color: #aaa; }
 
@@ -241,14 +241,15 @@ ul.posts span {
 /* delicious */
 #delicious-panel a, #delicious-panel a:visited,
 #delicious-box a, #delicious-box a:visited { color: #2374d0; }
-#delicious-box {
-  border-left: 5px solid #2374d0;
-}
+#delicious-box { border-left: 5px solid #2374d0; }
 .delicious-posts,
 .delicious-tags,
 .delicious-networkbadge {
 }
 
+#twitter-box { border-left: 5px solid #32cbff; }
+#linkedin-box { border-left: 5px solid #3393bb; float: left; }
+#flickr-box { border-left: 5px solid #3993ff; }
 
 
 
