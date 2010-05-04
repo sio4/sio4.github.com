@@ -149,6 +149,8 @@ ul.posts span {
 .item_share { text-align: right; }
 .item_share img { vertical-align: middle; }
 
+.item_tags { text-align: right; padding-bottom: 1em; }
+
 .post-tail {
   margin: 2em 0 1em 0;
   padding: 0.2em;

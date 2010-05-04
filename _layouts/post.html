@@ -35,18 +35,19 @@ layout: sidebar
 
 	<p>
 	<div class="item_meta">
-		<span class="item_comments">
-		Comments: <a href="{{ url }}#disqus_thread">(view/add your own)</a>
-		</span>
-		<!-- span class="item_tags">
+		<div class="item_tags">
 		Tags:
-		{% for topic in topics %}
-		<a href="/tags/{{ topic }}.html"
-			title="View posts tagged with &quot;{{ topic }}&quot;">{{ topic }}</a>
+		{% for tag in page.categories %}
+		<a href="/tags/{{ tag }}.html"
+			title="View posts tagged with &quot;{{ tag }}&quot;">{{ tag }}</a>
 		{% if forloop.last != true %}, {% endif %}
 		{% endfor %}
-		</span -->
+		</div>
+		<div class="item_comments">
+		Comments: <a href="{{ url }}#disqus_thread">(view/add your own)</a>
+		</div>
 	</div>
+
 	<div class="item_hierarchy">Hierarchy:
 		{% if previous %}
 		<a href="{{ previous.url }}" title="Previous post">previous</a>
