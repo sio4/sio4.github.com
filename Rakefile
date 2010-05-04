@@ -11,32 +11,59 @@ task :tags do
   site.read_posts('')
 
   `rm -rf tags; mkdir tags`
+  `mkdir -p _includes`
+
+  cloud = ''
+  cloud << <<-CLOUD
+  <div class="cloud">
+  CLOUD
 
   site.categories.sort.each do |category, posts|
+
+    s = posts.count
+    font_size = 0.6 + (s * 0.2)
+    cloud << <<-CLOUD
+    <a href="/tags/#{category}.html" title="Postings tagged #{category}"
+        style="font-size: #{font_size}em; line-height:#{font_size}em"
+       >#{category}</a>
+    CLOUD
+
     html = ''
     html << <<-HTML
 ---
 layout: page
 title: Postings tagged as "#{category}"
 ---
-h1. Postings tagged as "#{category}"
+<h1>Postings tagged as "#{category}"</h1>
 
+<ul class="posts">
 HTML
 
     posts.each do |post|
       post_data = post.to_liquid
       html << <<-HTML
- * "#{post_data['title']}":#{post.url}
+ <li>» <span class="meta-data">#{post.date}</span>
+   <a href="#{post.url}">#{post_data['title']}</a>
+ </li>
       HTML
     end
 
     html << <<-HTML
-    </ul>
+</ul>
     HTML
     
-    File.open("tags/#{category}.textile", 'w+') do |file|
+    File.open("tags/#{category}.html", 'w+') do |file|
       file.puts html
     end
   end
+
+  cloud << <<-CLOUD
+  </div>
+  CLOUD
+
+  File.open('_includes/tags.html', 'w+') do |file|
+    file.puts cloud
+  end
+    
   puts 'Done.'
 end
