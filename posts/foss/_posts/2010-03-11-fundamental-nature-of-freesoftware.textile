@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 자유소프트웨어, 근원적 본질
+keywords: 자유소프트웨어, 오픈소스, 사회적 책임, 공공의 안전, 본질
 topics: [free-software, rules-of-action]
 ---
 

@@ -2,12 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<title>{{ page.title }} - {{ site.title }}</title>
+	<meta http-equiv="content-language" content="ko" />
 	<meta name="author" content="Yonghwan SO" />
+	<meta name="description" content="sio4's personal blog about free software and its philosophy." />
+	<meta name="keywords" content="{{ page.keywords }}" />
+	<title>{{ page.title }} - {{ site.title }}</title>
 	<link rel="shortcut icon" href="/favicon.png" />
 	<link href="{{ site.feedurl }}" title="{{ site.title }}"
-	rel="alternate" type="application/atom+xml" />
-
+			rel="alternate" type="application/atom+xml" />
 	<link rel="stylesheet" href="/css/syntax.css" type="text/css" />
 	<link rel="stylesheet" href="/css/screen.css" type="text/css"
 	media="screen, projection" />
@@ -28,20 +30,31 @@
 
 <div class="footer"> <!-- footer ========================================= -->
 <div class="contact">
-<p>
-I'm Yonghwan SO, a software engineer from Seoul, Korea.
-</p>
+	<p>
+I'm Yonghwan SO, a opensource oriented software engineer from Seoul, Korea.
+	</p>
 </div>
+
 <div class="contact roll">
-<p>
-<a href="http://twitter.com/scinix/">twitter.com/scinix</a><br />
-<a href="http://www.facebook.com/yonghwan.so">facebook.com/yonghwan.so</a><br />
-<a href="http://sio4.wikidot.com">sio4.wikidot.com</a><br />
-<a href="http://github.com/sio4/">github.com/sio4</a><br />
-<a href="http://kr.linkedin.com/in/scinix">linkedin profile</a><br />
-<a href="http://sio4.tistory.com">(sio4.tistory.com)</a><br />
-</p>
+	<div class="label">Find and follow me on :</div>
+	<ul>
+		<li><a href="http://twitter.com/scinix/">twitter.com/scinix</a>
+		<li><a href="http://www.facebook.com/yonghwan.so">facebook.com</a>
+		<li><a href="http://sio4.wikidot.com">sio4.wikidot.com</a>
+		<li><a href="http://github.com/sio4/">github.com/sio4</a>
+		<li><a href="http://kr.linkedin.com/in/scinix">linkedin profile</a>
+		<li><a href="http://sio4.tistory.com">sio4.tistory.com</a>
+	</ul>
 </div>
+
+<div class="contact">
+	<div class="label">Links :</div>
+	<ul>
+		<li><a href="http://www.gnu.org/philosophy/philosophy.html">Philosophy of the GNU Project</a>
+		<li><a href="http://www.gnu.org/philosophy/philosophy.ko.html">GNU 프로젝트의 철학</a>
+	</ul>
+</div>
+
 <div class="rss">
 	<p>
 	powered by <a href="http://wiki.github.com/mojombo/jekyll/">jekyll</a>
@@ -49,7 +62,9 @@ I'm Yonghwan SO, a software engineer from Seoul, Korea.
 	<a href="{{ site.feedurl }}">RSS Feed</a>
 	</p>
 </div>
-</div>
+
+</div> <!-- footer -->
+
 </div>
 
 <!-- "fork me on github" ribbon -->

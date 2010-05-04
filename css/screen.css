@@ -117,9 +117,9 @@ ul.posts span {
   width: 20em;
 }
 
-.site .footer .contact a {
-  color: #8085C1;
-}
+.site .footer .contact a { color: #8085C1; }
+.site .footer .label { margin-top: 1em; }
+.site .footer ul { margin-bottom: 1em; list-style: none; }
 
 .site .content {
   float: left;
