@@ -54,10 +54,10 @@ blockquote p {
 /*
 /*****************************************************************************/
 
-ul.posts { list-style-type: none; margin-bottom: 2em; }
+ul.posts { list-style-type: none; margin-bottom: 0; }
 
 ul.posts li { line-height: 1.75em; }
-.sidebar ul.posts li { line-height: 1.1em; }
+.sidebar ul.posts li { line-height: 1.5em; }
 
 ul.posts span {
   color: #aaa;
@@ -78,7 +78,7 @@ ul.posts span {
 }
 
 .body {
-  width: 55em;
+  width: 57em;
   margin: 1em auto 2em auto;
 }
 
@@ -129,7 +129,7 @@ ul.posts span {
 .site .sidebar {
   text-align: left;
   float: right;
-  width: 15em;
+  width: 17em;
 }
 
 .site .sidebar h1,
@@ -226,7 +226,8 @@ ul.posts span {
 
 
 .side-widget {
-  padding: 6px 2px;
+  padding: 0px 2px;
+  margin-bottom: 2em;
   line-height: 1.2em;
 }
 
