@@ -8,7 +8,6 @@
 
 * {
   margin: 0;
-  padding: 0;
 }
 
 body {
@@ -54,9 +53,9 @@ blockquote p {
 /*
 /*****************************************************************************/
 
-ul.posts { list-style-type: none; margin-bottom: 0; }
-
+ul.posts { list-style-type: none; margin-bottom: 0; padding: 0; }
 ul.posts li { line-height: 1.75em; }
+
 .sidebar ul.posts li { line-height: 1.5em; }
 
 ul.posts span {
@@ -119,7 +118,7 @@ ul.posts span {
 
 .site .footer .contact a { color: #8085C1; }
 .site .footer .label { margin-top: 1em; }
-.site .footer ul { margin-bottom: 1em; list-style: none; }
+.site .footer ul { margin-bottom: 1em; list-style: none; padding: 0; }
 
 .site .content {
   float: left;
