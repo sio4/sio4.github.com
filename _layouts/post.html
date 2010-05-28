@@ -16,35 +16,14 @@ layout: sidebar
 	</div>
 
 	<div class="item_share">
-	Share this on
-	<!-- delicious -->
-	<a href="http://delicious.com/save" onclick="window.open('http://delicious.com/save?v=5&noui&jump=close&url='
-		+encodeURIComponent(location.href)+'&title='+encodeURIComponent(document.title),
-		'delicious','toolbar=no,width=550,height=550'); return false;"><img border="0"
-		src="http://static.delicious.com/img/delicious.small.gif" height="16" width="16" alt="Delicious" /></a>
-	<!-- facebook -->
-	<a name="fb_share" type="button_count"
-		href="http://www.facebook.com/sharer.php">Share</a><script
-		src="http://static.ak.fbcdn.net/connect.php/js/FB.Share"
-		type="text/javascript"></script>
+		{% include share-item.html %}
 	</div>
-
 
 	<div class="item_content">
 {{ content }}
 	</div>
 
-
 	<div class="item_meta">
-		<div class="item_tags">
-		Tags:
-		{% for tag in page.categories %}
-		<a href="/tags/{{ tag }}.html"
-			title="View posts tagged with &quot;{{ tag }}&quot;">{{ tag }}</a>
-		{% if forloop.last != true %}, {% endif %}
-		{% endfor %}
-		</div>
-
 		<div class="item_hierarchy">
 			{% if previous %}
 			<a href="{{ previous.url }}" title="Previous post">previous</a>
@@ -56,9 +35,27 @@ layout: sidebar
 			{% endif %}
 		</div>
 
+		<div class="item_tags">
+		Tags:
+		{% for tag in page.categories %}
+		<a href="/tags/{{ tag }}.html"
+			title="View posts tagged with &quot;{{ tag }}&quot;">{{ tag }}</a>
+		{% if forloop.last != true %}, {% endif %}
+		{% endfor %}
+		</div>
+
 		<div class="item_comments">
 		Comments: <a href="{{ url }}#disqus_thread">(view/add your own)</a>
 		</div>
+
+	</div>
+
+	<div style="border-top:1px dotted #999; margin:2em 0; padding:0 0 2em">
+	<div style="float:left"> <!-- workaround for left align -->
+	<div class="item_share">
+			{% include share-item.html %}
+	</div>
+	</div>
 	</div>
 
 </div>
