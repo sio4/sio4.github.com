@@ -161,14 +161,12 @@ ul.posts span {
 .item_tags, .item_comments { text-align: right; }
 
 .post-tail {
-  margin: 2em 0 1em 0;
-  padding: 0.2em;
-  border-top: 1px solid #eee;
+  margin: 1em 0 1em 0;
+  padding: 0.5em;
+  border: 3px solid #ccc;
 }
-
-.post-tail h2 {
-  margin-bottom: 1em;
-}
+.post-tail h2 { margin-bottom: 1em; }
+.post-tail ul.posts li { line-height: 1.3em; }
 
 /*****************************************************************************/
 /*
