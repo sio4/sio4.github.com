@@ -6,11 +6,24 @@ title: Wall
 <div class="wall-panel" id="blog-posts">
 <h1>Blog Posts</h1>
 {% for post in site.posts limit:5 %}
-<div class="item">
-	<div class="item_details">
-		<span>» <a href="{{ post.url }}" title="Permalink">{{ post.title }}</a></span>
+<div class="item_preview">
+	<h3>» <a href="{{ post.url }}" title="Permalink">{{ post.title }}</a></h3>
+	<div class="preview_meta">
 		Posted on {{ post.date | date_to_string }}
-		<!-- by <a href="http://twitter.com/scinix">Yonghwan SO</a> -->
+		<br />
+		Tagged under:
+		<br />
+		{% for tag in post.categories %}
+			<a href="/tags/{{ tag }}.html"
+				title="View posts tagged with &quot;{{ tag }}&quot;">{{ tag }}</a>
+			{% if forloop.last != true %}<br />{% endif %}
+		{% endfor %}
+	</div>
+	<div class="preview_content">
+		<div>
+			{{ post.content | truncatewords: 50 }}
+		<a href="{{ post.url }}" title="Permalink">more...</a>
+	</div>
 	</div>
 </div>
 {% endfor %}
