@@ -36,13 +36,14 @@ p { margin: 1em 0; }
 
 div.item_preview { color: #555; }
 div.item_preview h3 { margin-bottom: 0.2em; border-color: #999; }
-div.item_preview div.preview_meta { text-align:right; float:right; width:17em}
-div.preview_content { margin: 0 0 0 1em; font-style: italic; width: 38em; }
+div.item_preview div { font-style: italic; }
+div.item_preview div.preview_meta { text-align:right; float:right; width:17em; }
+div.preview_content { margin: 0 0 0 1em; width: 38em; }
 div.preview_content p:first-child { margin-top: 0; }
 
 a { color: #f57900; text-decoration: none; }
-a:hover { color: black; }
 a:visited { color: #f57900; }
+a:hover { color: black; }
 
 table { font-size: inherit; font: 100%; }
 
