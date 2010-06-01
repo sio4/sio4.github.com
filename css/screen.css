@@ -159,6 +159,7 @@ ul.posts span {
   text-align: right;
 }
 
+.item_share .share-title{ font-style: italic; color: #999; padding-right: 0.5em; }
 .item_share { text-align: right; }
 .item_share img { vertical-align: middle; }
 
