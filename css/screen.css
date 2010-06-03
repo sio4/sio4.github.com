@@ -253,6 +253,7 @@ ul.posts span {
   padding: 0 0 0 8px;
 }
 
+.side-widget#post-related { background: #ccc; margin-top: 1.6em; padding: 4px; }
 
 #tagcloud div.cloud { text-align: center; }
 
