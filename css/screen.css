@@ -45,7 +45,7 @@ a { color: #f57900; text-decoration: none; }
 a:visited { color: #f57900; }
 a:hover { color: black; }
 
-table { font-size: inherit; font: 100%; }
+table { font-size: inherit; }
 
 blockquote {
   background: #f4f5f7 url('/images/blockquote.png') no-repeat scroll 3px 3px;
