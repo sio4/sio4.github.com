@@ -241,6 +241,7 @@ ul.posts span {
   padding: 0px 2px;
   margin-bottom: 2em;
   line-height: 1.2em;
+  overflow: hidden;
 }
 
 .side-widget h1 {
