@@ -352,11 +352,11 @@ $page-logo-size: 120px;
 		.page-content {
 			float: left;
 			max-width: 40rem;
-			margin-right: 1rem;
+			margin-right: 2rem;
 		}
 		.page-sidebar {
 			float: left;
-			max-width: 20rem;
+			max-width: 19rem;
 			color: $color-grey;
 		}
 	}
@@ -465,11 +465,11 @@ ul.posts {
 
 	div.preview_meta {
 		font-style: italic;
-		text-align:right; float:right; width:17em;
+		text-align:right; float:right; width:19em;
 	}
 	div.preview_content {
 		font-style: italic;
-		margin: 0 0 0 1em; width: 38em;
+		margin: 0 0 0 1em; width: 40em;
 	}
 }
 

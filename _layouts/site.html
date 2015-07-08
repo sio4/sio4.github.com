@@ -1,98 +1,120 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!--link rel="shortcut icon" href="favicon.ico" type="image/x-icon"-->
+	<!--link rel="icon" href="favicon.ico" type="image/x-icon"-->
+
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<meta http-equiv="content-language" content="ko" />
 	<meta name="author" content="Yonghwan SO" />
-	<meta name="description" content="sio4's personal blog about free software and its philosophy." />
 	<meta name="keywords" content="{{ page.keywords }}" />
+	<meta name="description" content="{{ page.description }}" />
+	<meta name="og:description" content="{{ page.description }}" />
+	<meta name="og:image" content="{{ page.image }}" />
 	<title>{{ page.title }} - {{ site.title }}</title>
 	<link rel="shortcut icon" href="/favicon.png" />
 	<link href="{{ site.feedurl }}" title="{{ site.title }}"
 			rel="alternate" type="application/atom+xml" />
+
+	<link rel="stylesheet" href="/vendor/semantic-ui/semantic.min.css" />
+	<script src="/vendor/semantic-ui/semantic.min.js"></script>
+
 	<link rel="stylesheet" href="/css/syntax.css" type="text/css" />
-	<link rel="stylesheet" href="/css/screen.css" type="text/css"
-	media="screen, projection" />
+	<link rel="stylesheet" href="/assets/hc-default.css" type="text/css" />
 </head>
 <body>
 
-<div class="site">
-<div class="header"> <!-- header ========================================= -->
-	<a href="/">{{ site.title }}</a>
-	<a class="extra" href="/">home</a>
-	<a class="extra" href="/archives.html">archive</a>
-	<a class="extra" href="/socialmedia.html">social media</a>
-</div>
+<div class="fullscreen">
 
-<div class="body"> <!-- body ============================================= -->
-	{{ content }}
-</div>
+	<div class="hc-sticky-header">
+		<div class="ui inverted menu">
+			<a class="item" href="/"><i class="home icon"></i>{{ site.title }}</a>
+			<a class="item" href="/archives.html">Archives</a>
+			<a class="item" href="/socialmedia.html">SM</a>
+			<div class="right menu">
+				<a class="item">Help</a>
+			</div>
+		</div>
+	</div>
 
-<div class="footer"> <!-- footer ========================================= -->
-<div class="contact" id="personal-info">
-	<p>
-I'm Yonghwan SO, a opensource oriented software engineer from Seoul, Korea.
-	</p>
-	<img border="2" src="http://www.gravatar.com/avatar/bb4bb7364ee67616d9f5ff3561412772.png?size=64">
-</div>
+	<div class="hc-fixed-window hc-page">
+		<div class="module-main narrow-page">
+			{{ content }}
+		</div>
 
-<div class="contact roll">
-	<div class="label">Catch me on :-)</div>
-	<ul>
-		<li><a href="http://twitter.com/scinix/">twitter.com/scinix</a>
-		<li><a href="http://www.facebook.com/yonghwan.so">facebook.com/yonghwan.so</a>
-		<li><a href="http://sio4.wikidot.com">sio4.wikidot.com</a>
-		<li><a href="http://github.com/sio4/">github.com/sio4</a>
-		<li><a href="http://kr.linkedin.com/in/scinix">linkedin profile</a>
-		<li><a href="http://sio4.tistory.com">sio4.tistory.com</a>
-	</ul>
-</div>
+		<div class="page-tail">
+			<div class="contact" id="personal-info">
+				<p>
+				I'm Yonghwan SO,
+				a opensource oriented software engineer from Seoul, Korea.
+				</p>
+				<img border="2" src="http://www.gravatar.com/avatar/bb4bb7364ee67616d9f5ff3561412772.png?size=64">
+			</div>
 
-<div class="contact">
-	<div class="label">Links :</div>
-	<ul>
-		<li><a href="http://www.gnu.org/philosophy/philosophy.html">Philosophy of the GNU Project</a>
-		<li><a href="http://www.gnu.org/philosophy/philosophy.ko.html">GNU 프로젝트의 철학</a>
-	</ul>
-</div>
+			<div class="contact roll">
+				<div class="label">Catch me on :-)</div>
+				<ul>
+					<li><a href="http://twitter.com/scinix/">@scinix</a>
+					<li><a href="http://www.facebook.com/yonghwan.so">Facebook</a>
+					<li><a href="http://sio4.wikidot.com">sio4.wikidot.com</a>
+					<li><a href="http://github.com/sio4/">github.com/sio4</a>
+					<li><a href="http://kr.linkedin.com/in/scinix">linkedin profile</a>
+					<li><a href="http://sio4.tistory.com">sio4.tistory.com</a>
+				</ul>
+			</div>
 
-<div class="rss">
-	<p>
-	powered by <a href="http://wiki.github.com/mojombo/jekyll/">jekyll</a>
-	and <a href="http://github.com/">github</a><br />
-	<a href="{{ site.feedurl }}"><img src="/images/handycons/rss_16.png"
-		style="border:0; vertical-align: bottom"> RSS Feed</a>
-	</p>
-</div>
+			<div class="contact">
+				<div class="label">Links :</div>
+				<ul>
+					<li><a href="http://www.gnu.org/philosophy/philosophy.html">Philosophy of the GNU Project</a>
+					<li><a href="http://www.gnu.org/philosophy/philosophy.ko.html">GNU 프로젝트의 철학</a>
+				</ul>
+			</div>
 
-</div> <!-- footer -->
+			<div class="rss">
+				<p>
+				powered by <a href="http://jekyllrb.com/">jekyll</a>
+				and <a href="http://github.com/">github</a><br />
+				<a href="{{ site.feedurl }}"><img src="/images/handycons/rss_16.png"
+					style="border:0; vertical-align: bottom"> RSS Feed</a>
+				</p>
+			</div>
+		</div>
+	</div>
 
+	<!--div class="hc-sticky-footer">
+	</div-->
 </div>
 
 <!-- include facebook initial code -->
 {% include facebook-init.html %}
 
 <!-- "fork me on github" ribbon -->
+<!--
 <a href="http://github.com/sio4"><img
 	style="position: absolute; top: 0; right: 0; border: 0;"
 	src="http://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"
 	alt="Fork me on GitHub" /></a>
+-->
 
 <!-- Google Analytics -->
-<script type="text/javascript">
-	var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-	document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-</script>
-<script type="text/javascript">
-	try {
-	var pageTracker = _gat._getTracker("UA-10364127-2");
-	pageTracker._trackPageview();
-	} catch(err) {}
-</script>
+	<script type="text/javascript">
+		var gaJsHost = (("https:" == document.location.protocol) ?
+				"https://ssl." : "http://www.");
+		document.write(unescape("%3Cscript src='" + gaJsHost +
+				"google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+	</script>
+	<script type="text/javascript">
+		try {
+			var pageTracker = _gat._getTracker("UA-10364127-2");
+			pageTracker._trackPageview();
+		} catch(err) {}
+	</script>
 <!-- Google Analytics end -->
+
 
 </body>
 </html>
-
-
-<!-- vim: set ts=2 sw=2 : -->
+<!-- vim: set ts=2 sw=2 noexpandtab: -->
