@@ -26,6 +26,7 @@ $color-grey: #aaaaaa;
 $color-light: #cccccc;
 $color-pale: #eeeeee;
 $color-white: #ffffff;
+$color-dark: #444444;
 $color-strong: #222222;
 $color-accent: #990000;
 $color-link: #006599;
@@ -98,8 +99,9 @@ a, a:visited {
 }
 
 ul {
+	padding: 0 0 0 2em;
 	li {
-		list-style: none;
+		//list-style: none;
 	}
 }
 
@@ -161,8 +163,8 @@ table.styled {
 	box-sizing: border-box;
 }
 
-//********************************************************************************
-//** addon decorations -----------------------------------------------------------
+//****************************************************************************
+//** addon decorations -------------------------------------------------------
 
 .tal { text-align: left !important; }
 .tac { text-align: center !important; }
@@ -173,7 +175,7 @@ table.styled {
 .invisible { display: none; }
 .clickable { cursor: pointer; }
 
-//** styles ----------------------------------------------------------------------
+//** styles ------------------------------------------------------------------
 .warn { color: $color-warn; }
 .error { color: $color-error; }
 .disabled { color: $color-disabled; }
@@ -188,7 +190,7 @@ table.styled {
 
 
 
-/** ------------------------------------------------------------------------------
+/** --------------------------------------------------------------------------
  * display structure
  */
 $header-height: 40px;
@@ -287,7 +289,7 @@ $page-logo-size: 120px;
 }
 
 .hc-fixed-window {
-	background: $background-body $image-orion;
+	background: $image-orion;
 	background-position: right bottom;
 	background-repeat: no-repeat;
 	background-size: $page-logo-size auto;
@@ -335,12 +337,12 @@ $page-logo-size: 120px;
 
 
 
-//********************************************************************************
-//** for web site ----------------------------------------------------------------
-//********************************************************************************
+//****************************************************************************
+//** for web site ------------------------------------------------------------
+//****************************************************************************
 
 
-//** screen page structure -------------------------------------------------------
+//** screen page structure ---------------------------------------------------
 .hc-page {
 	padding-bottom: 0 !important;
 
@@ -358,13 +360,21 @@ $page-logo-size: 120px;
 			float: left;
 			max-width: 19rem;
 			color: $color-grey;
+			.side-widget {
+				&#swidget-person {
+					padding: 10px;
+					border-radius: 6px;
+					background: $background-body - #151515;
+					color: $color-dark;
+				}
+			}
 		}
 	}
 	.page-tail {
 		overflow: auto !important;
 		clear: both;
 		margin-top: 10em;
-		padding: 5px 20px 0;
+		padding: 5px 20px 20px;
 
 		background: rgba(0,0,0, 0.9);
 		font-size: $font-s;
@@ -391,15 +401,16 @@ $page-logo-size: 120px;
 	}
 }
 
-//** post structure --------------------------------------------------------------
+//** post structure ----------------------------------------------------------
 .page-content {
-	.item {
-		.item_details {
+	.post {
+		.post-title {
 		}
-		.item_share {
-			text-align: right;
+		.post-details {
 		}
-		.item_content {
+		.post-share {
+		}
+		.post-content {
 			text-align: justify;
 			margin: 1rem 0 2rem;
 
@@ -415,10 +426,10 @@ $page-logo-size: 120px;
 				p { padding: 0; margin: 0; }
 			}
 		}
-		.item_meta {
-			.item_hierarchy {
+		.post-meta {
+			.post-hierarchy {
 			}
-			.item_tags {
+			.post-tags {
 				text-align: right;
 				.tag-item {
 					font-size: $font-s;
@@ -427,9 +438,12 @@ $page-logo-size: 120px;
 					padding: 1px 3px 1px 9px;
 				}
 			}
-			.item_comments {
+			.post-comments {
 				text-align: right;
 			}
+		}
+		.item-bottom {
+			border-top:1px solid #999; margin:2em 0; padding:1rem 0 2rem;
 		}
 	}
 	.post-tail {
@@ -473,12 +487,60 @@ ul.posts {
 	}
 }
 
-//********************************************************************************
-//** for web application ---------------------------------------------------------
-//********************************************************************************
+
+// misc
+.addthis_toolbox {
+	display: inline-block;
+	vertical-align: middle;
+}
 
 
-// ### widget --------------------------------------------------------------------
+//** for print page
+@media print {
+	html, body, .full-screen {
+		height: auto !important;
+		background: white;
+	}
+
+	.hc-sticky-header {
+		display: none !important;
+	}
+	.hc-fixed-window {
+		background: none !important;
+	}
+
+	.hc-page {
+		.narrow-page {
+			.page-content {
+				max-width: 100%;
+				margin: 0;
+				.post {
+					.item-share {
+						display: none !important;
+					}
+				}
+				.post-tail {
+					display: none !important;
+				}
+			}
+			.page-sidebar {
+				display: none !important;
+			}
+		}
+		.page-tail {
+			display: none !important;
+		}
+	}
+}
+
+
+
+//****************************************************************************
+//** for web application -----------------------------------------------------
+//****************************************************************************
+
+
+// ### widget ----------------------------------------------------------------
 
 .widget {
 	padding: 4px;

@@ -9,9 +9,9 @@
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<meta http-equiv="content-language" content="ko" />
 	<meta name="author" content="Yonghwan SO" />
-	<meta name="keywords" content="{{ page.keywords }}" />
-	<meta name="description" content="{{ page.description }}" />
-	<meta name="og:description" content="{{ page.description }}" />
+	<meta name="keywords" content="소용환의 블로그: {{ page.keywords }}" />
+	<meta name="description" content="소용환의 블로그: {{ page.description }}" />
+	<meta name="og:description" content="소용환의 블로그: {{ page.description }}" />
 	<meta name="og:image" content="{{ page.image }}" />
 	<title>{{ page.title }} - {{ site.title }}</title>
 	<link rel="shortcut icon" href="/favicon.png" />
@@ -46,22 +46,16 @@
 
 		<div class="page-tail">
 			<div class="contact" id="personal-info">
-				<p>
-				I'm Yonghwan SO,
-				a opensource oriented software engineer from Seoul, Korea.
-				</p>
-				<img border="2" src="http://www.gravatar.com/avatar/bb4bb7364ee67616d9f5ff3561412772.png?size=64">
+				{% include personal.html %}
 			</div>
 
 			<div class="contact roll">
 				<div class="label">Catch me on :-)</div>
 				<ul>
-					<li><a href="http://twitter.com/scinix/">@scinix</a>
 					<li><a href="http://www.facebook.com/yonghwan.so">Facebook</a>
-					<li><a href="http://sio4.wikidot.com">sio4.wikidot.com</a>
+					<li><a href="http://wiki.sauru.so">wiki.sauru.so</a>
 					<li><a href="http://github.com/sio4/">github.com/sio4</a>
 					<li><a href="http://kr.linkedin.com/in/scinix">linkedin profile</a>
-					<li><a href="http://sio4.tistory.com">sio4.tistory.com</a>
 				</ul>
 			</div>
 

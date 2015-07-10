@@ -7,7 +7,11 @@ layout: site
 
 <div class="page-sidebar">
 
-	<div class="side-widget" id="post-related">
+  <div class="side-widget" id="swidget-person">
+    {% include personal.html %}
+  </div>
+
+	<div class="side-widget" id="facebook-widget">
 		<div id="facebook-box">
 			<fb:like width="190"></fb:like>
 		</div>
@@ -43,31 +47,15 @@ layout: site
 	<h1>My Networks</h1>
 
 	<div class="widget-box" id="delicious-box">
-	<!--script type="text/javascript"
-	src="http://feeds.delicious.com/v2/js/sio4?title=Bookmarks&icon=rss&count=5&bullet=%C2%BB&sort=date&extended"
-	></script-->
-	<!--script type="text/javascript"
-	src="http://feeds.delicious.com/v2/js/tags/sio4?title=Tags&count=150&sort=freq&flow=cloud&color=73adff-3274d0&size=6-20"
-	></script-->
 	<script type="text/javascript"
 	src="http://feeds.delicious.com/v2/js/networkbadge/sio4?showadd&icon=m&name&itemcount&nwcount&fancount"
 	></script>
-	</div>
-
-	<div class="widget-box" id="twitter-box">
-	<a href="http://www.twitter.com/scinix" target="_new"><img border="0"
-	src="http://twitter-badges.s3.amazonaws.com/follow_bird-a.png" alt="Follow scinix on Twitter"/></a>
 	</div>
 
 	<div class="widget-box" id="linkedin-box">
 	<a href="http://kr.linkedin.com/in/scinix" target="_new"><img border="0"
 	src="http://www.linkedin.com/img/webpromo/btn_myprofile_160x33.png"
 	alt="View Yonghwan SO's profile on LinkedIn"></a>
-	<!--
-	src="http://www.linkedin.com/img/webpromo/btn_viewmy_160x25.png"
-	src="http://www.linkedin.com/img/webpromo/btn_viewmy_120x33.png"
-	src="http://www.linkedin.com/img/webpromo/btn_liprofile_blue_80x15.png"
-	-->
 	</div>
 
 	<div class="widget-box" id="flickr-box">

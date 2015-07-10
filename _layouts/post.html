@@ -2,29 +2,22 @@
 layout: sidebar
 ---
 
-<div class="item">
-	<div class="item_details">
-		<h1 class="underline">{{ page.title }}</h1>
-		<p class="meta">Posted on {{ page.date | date_to_string }}
-		by Yonghwan SO
-		<!-- a href="http://twitter.com/scinix">Yonghwan SO</a -->
-		<script type="text/javascript"
-			src="http://www.linkedin.com/js/public-profile/widget-os.js"></script>
-		<a class="linkedin-profileinsider-popup"
-			href="http://www.linkedin.com/in/scinix"></a>.
-		</p>
+<div class="post item">
+	<h1 class="post-title underline">{{ page.title }}</h1>
+	<div class="post-details">
+		Posted on {{ page.date | date_to_string }} by Yonghwan SO
 	</div>
 
-	<div class="item_share">
+	<div class="post-share tar">
 		{% include share-item.html %}
 	</div>
 
-	<div class="item_content">
+	<div class="post-content">
 {{ content }}
 	</div>
 
-	<div class="item_meta">
-		<div class="item_hierarchy">
+	<div class="post-meta">
+		<div class="post-hierarchy">
 			{% if previous %}
 			<a href="{{ previous.url }}" title="Previous post">previous</a>
 			{% endif %}
@@ -35,7 +28,7 @@ layout: sidebar
 			{% endif %}
 		</div>
 
-		<div class="item_tags">
+		<div class="post-tags">
 		Tags:
 		{% for tag in page.categories %}
 		<a class="tag-item" href="/tags/{{ tag }}.html"
@@ -44,18 +37,14 @@ layout: sidebar
 		{% endfor %}
 		</div>
 
-		<div class="item_comments">
+		<div class="post-comments">
 		Comments: <a href="{{ url }}#disqus_thread">(view/add your own)</a>
 		</div>
 
 	</div>
 
-	<div style="border-top:1px solid #999; margin:2em 0; padding:0 0 2em">
-	<div style="float:left"> <!-- workaround for left align -->
-	<div class="item_share">
-			{% include share-item.html %}
-	</div>
-	</div>
+	<div class="post-share item-bottom">
+		{% include share-item.html %}
 	</div>
 
 </div>
@@ -65,7 +54,7 @@ layout: sidebar
 	<ul class="posts">
 	{% for post in site.related_posts limit:3 %}
 		<li><span>{{ post.date | date_to_string }}</span> &raquo; <a
-      href="{{ post.url }}">{{ post.title }}</a></li>
+			href="{{ post.url }}">{{ post.title }}</a></li>
 	{% endfor %}
 	</ul>
 </div>
@@ -102,4 +91,4 @@ document.write('<script charset="utf-8" type="text/javascript" src="http://disqu
 </div>
 <!-- end of disqus block -->
 
-<!-- vim: set ts=2 sw=2: -->
+<!-- vim: set ts=2 sw=2 noexpandtab: -->
