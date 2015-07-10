@@ -14,7 +14,7 @@
   font-family: 'Titillium Web';
   font-style: normal;
   font-weight: 400;
-  src: local('Titillium Web'), local('TitilliumWeb-Regular'), url(titilliumweb-v4-7XUFZ5tgS-regular.woff2) format('woff2'), url(titilliumweb-v4-regular.woff) format('woff');
+  src: local('Titillium Web'), local('TitilliumWeb-Regular'), url(titilliumweb-v4-regular.woff2) format('woff2'), url(titilliumweb-v4-regular.woff) format('woff');
 }
 @font-face {
   font-family: 'Titillium Web';
