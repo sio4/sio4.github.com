@@ -10,9 +10,10 @@ title: Wall
 	<h3 class="underline">» <a href="{{ post.url }}"
 			title="Permalink">{{ post.title }}</a></h3>
 	<div class="preview_meta">
-		Posted on {{ post.date | date_to_string }} <br />
+    {{ post.date | date: "%F %A" }}, on
+    <a href="/categories/{{ post.category }}.html">{{ post.category | capitalize }}</a><br />
 		Tagged under: <br />
-		{% for tag in post.categories %}<a href="/tags/{{ tag }}.html"
+		{% for tag in post.tags %}<a href="/tags/{{ tag }}.html"
 				title="View posts tagged with &quot;{{ tag }}&quot;">{{ tag }}</a>
 			{% if forloop.last != true %}<br />{% endif %}
 		{% endfor %}
@@ -28,20 +29,16 @@ title: Wall
 </div>
 
 <div class="wall-panel" id="static-pages">
-<h1>Static Pages</h1>
+	<h1>Static Pages</h1>
 	<ul class="posts">
-	<li>» <a href="/socialmedia.html">Social Media</a>
-	: My connections and activities on Social Media including
-	<a href="http://twitter.com/scinix">twitter</a>,
-	<a href="http://facebook.com/yonghwan.so">facebook</a>,
-	and <a href="http://delicious.com/sio4">delicious</a>.
+<!--
+		<li>» <a href="/socialmedia.html">Social Media</a>
+			: My connections and activities on Social Media including
+			<a href="http://twitter.com/scinix">twitter</a>,
+			<a href="http://facebook.com/yonghwan.so">facebook</a>,
+			and <a href="http://delicious.com/sio4">delicious</a>.</li>
+-->
 	</ul>
 </div>
 
-<div class="wall-panel" id="static-pages">
-<h1>Featured Social</h1>
-{% include delicious.html %}
-</div>
-
-
-<!-- vim: set ts=2 sw=2: -->
+<!-- vim: set ts=2 sw=2 expandtab : -->

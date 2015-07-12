@@ -5,7 +5,7 @@ layout: sidebar
 <div class="post item">
 	<h1 class="post-title underline">{{ page.title }}</h1>
 	<div class="post-details">
-		Posted on {{ page.date | date_to_string }} by Yonghwan SO
+		Posted on <i>{{ page.date | date: "%F %A" }}</i> - by Yonghwan SO
 	</div>
 
 	<div class="post-share tar">
@@ -14,6 +14,11 @@ layout: sidebar
 
 	<div class="post-content">
 {{ content }}
+		<div>
+			-- <br>
+			"And in the end, the love you take is equal to the love you make."
+			-- by the Beatles
+		</div>
 	</div>
 
 	<div class="post-meta">
@@ -30,15 +35,13 @@ layout: sidebar
 
 		<div class="post-tags">
 		Tags:
-		{% for tag in page.categories %}
+		{% for tag in page.tags %}
 		<a class="tag-item" href="/tags/{{ tag }}.html"
 			title="View posts tagged with &quot;{{ tag }}&quot;">{{ tag }}</a>
-		{% if forloop.last != true %}, {% endif %}
 		{% endfor %}
 		</div>
 
 		<div class="post-comments">
-		Comments: <a href="{{ url }}#disqus_thread">(view/add your own)</a>
 		</div>
 
 	</div>

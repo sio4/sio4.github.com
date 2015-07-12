@@ -3,8 +3,7 @@
 <head>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<!--link rel="shortcut icon" href="favicon.ico" type="image/x-icon"-->
-	<!--link rel="icon" href="favicon.ico" type="image/x-icon"-->
+	<link rel="shortcut icon" href="/favicon.png">
 
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<meta http-equiv="content-language" content="ko" />
@@ -14,7 +13,6 @@
 	<meta name="og:description" content="소용환의 블로그: {{ page.description }}" />
 	<meta name="og:image" content="{{ page.image }}" />
 	<title>{{ page.title }} - {{ site.title }}</title>
-	<link rel="shortcut icon" href="/favicon.png" />
 	<link href="{{ site.feedurl }}" title="{{ site.title }}"
 			rel="alternate" type="application/atom+xml" />
 
@@ -35,6 +33,7 @@
 			<a class="item" href="/socialmedia.html">SM</a>
 			<div class="right menu">
 				<a class="item">Help</a>
+				<a class="item" href="{{ site.feedurl }}"><i class="icon rss"></i></a>
 			</div>
 		</div>
 	</div>
@@ -71,8 +70,8 @@
 				<p>
 				powered by <a href="http://jekyllrb.com/">jekyll</a>
 				and <a href="http://github.com/">github</a><br />
-				<a href="{{ site.feedurl }}"><img src="/images/handycons/rss_16.png"
-					style="border:0; vertical-align: bottom"> RSS Feed</a>
+				<br/>
+				<a href="{{ site.feedurl }}"><i class="icon rss"></i> RSS Feed</a>
 				</p>
 			</div>
 		</div>
@@ -84,14 +83,6 @@
 
 <!-- include facebook initial code -->
 {% include facebook-init.html %}
-
-<!-- "fork me on github" ribbon -->
-<!--
-<a href="http://github.com/sio4"><img
-	style="position: absolute; top: 0; right: 0; border: 0;"
-	src="http://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"
-	alt="Fork me on GitHub" /></a>
--->
 
 <!-- Google Analytics -->
 	<script type="text/javascript">
@@ -107,7 +98,6 @@
 		} catch(err) {}
 	</script>
 <!-- Google Analytics end -->
-
 
 </body>
 </html>

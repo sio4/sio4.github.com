@@ -14,6 +14,7 @@ $image-help: url(images/beatles-help.png);
 $font-family: "Titillium Web", Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
 $font-family: "Titillium Web", "맑은 고딕", "Malgun Gothic";
 $font-m: 10pt;
+$font-xxs: 0.8em;
 $font-xs: 0.9em;
 $font-s: 0.95em;
 $font-l: 1.2em;
@@ -99,7 +100,7 @@ a, a:visited {
 }
 
 ul {
-	padding: 0 0 0 2em;
+	padding: 0 0 0 2.5rem;
 	li {
 		//list-style: none;
 	}
@@ -354,13 +355,16 @@ $page-logo-size: 120px;
 		.page-content {
 			float: left;
 			max-width: 40rem;
+			min-width: 35rem;
 			margin-right: 2rem;
 		}
 		.page-sidebar {
-			float: left;
+			float: right;
 			max-width: 19rem;
 			color: $color-grey;
+
 			.side-widget {
+				margin-bottom: 1.5rem;
 				&#swidget-person {
 					padding: 10px;
 					border-radius: 6px;
@@ -407,12 +411,15 @@ $page-logo-size: 120px;
 		.post-title {
 		}
 		.post-details {
+			margin-bottom: 1rem;
 		}
 		.post-share {
 		}
 		.post-content {
 			text-align: justify;
 			margin: 1rem 0 2rem;
+			padding: 0.5rem;
+			background: $background-body + #020202;
 
 			p {
 				line-height: 1.8;
@@ -432,10 +439,10 @@ $page-logo-size: 120px;
 			.post-tags {
 				text-align: right;
 				.tag-item {
-					font-size: $font-s;
+					font-size: $font-xs;
 					border-radius: 5px;
 					background: $background-body - #111;
-					padding: 1px 3px 1px 9px;
+					padding: 0px 4px 0 4px;
 				}
 			}
 			.post-comments {
@@ -454,7 +461,6 @@ $page-logo-size: 120px;
 			margin-bottom: 1rem;
 		}
 		ul.posts {
-			margin: 0;
 			li {
 				line-height: 1.4;
 			}
@@ -464,7 +470,7 @@ $page-logo-size: 120px;
 
 // recent on sidebar and related on post tail
 ul.posts {
-	list-style-type: none; margin-bottom: 0; padding: 0;
+	list-style-type: none; margin: 0; padding: 0;
 	li {
 		line-height: 1.5rem;
 		span {
@@ -494,6 +500,30 @@ ul.posts {
 	vertical-align: middle;
 }
 
+// # site specific
+div#blog-archives {
+	ul.posts {
+		list-style-type: square; padding-left: 3rem;
+	}
+}
+
+
+//** for small device
+@media (max-width: 33em) {
+	.hc-page {
+		.narrow-page {
+			.page-content {
+				float: none;
+				min-width: inherit;
+				margin-right: 0;
+			}
+			.page-sidebar {
+				float: none;
+				max-width: 100%;
+			}
+		}
+	}
+}
 
 //** for print page
 @media print {
@@ -515,7 +545,10 @@ ul.posts {
 				max-width: 100%;
 				margin: 0;
 				.post {
-					.item-share {
+					.post-content {
+						background: none !important;
+					}
+					.post-share {
 						display: none !important;
 					}
 				}
