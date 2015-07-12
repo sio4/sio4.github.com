@@ -1,13 +1,9 @@
 ---
-layout: post
 title: 후기 - 소셜 플랫폼과 소셜 게임 컨퍼런스
 date: 2010-06-01 13:30:55 +09:00
 keywords: 소셜 플랫폼, 소셜 게임, social platform, social game
-categories:
-- social-platform
-- social-game
-- social-network
-- review
+category: review
+tags: social-platform social-network conference
 ---
 
 지난 24일(2010년 5월 24일), 상암동 LG텔리콤 사옥에서 "소셜 플랫폼 & 소셜 게임

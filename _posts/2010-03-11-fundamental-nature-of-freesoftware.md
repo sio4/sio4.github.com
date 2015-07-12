@@ -1,12 +1,9 @@
 ---
-layout: post
 title: 자유소프트웨어, 근원적 본질
 keywords: 자유소프트웨어, 오픈소스, 사회적 책임, 공공의 안전, 본질
 description: 자유소프트웨어의 본질은 무료, 자유도, 또는 기술이 아닌 나와 공공의 안전에 있다
-categories:
-- free-software
-- opensource
-- rules-of-action
+category: roa
+tags: free-software opensource rules-of-action
 ---
 
 > 자유소프트웨어의 본질은 무료, 자유도, 또는 기술이 아닌 나와 공공의 안전에 있다.

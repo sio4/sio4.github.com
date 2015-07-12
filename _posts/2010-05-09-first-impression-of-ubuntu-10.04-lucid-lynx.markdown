@@ -1,12 +1,8 @@
 ---
-layout: post
 title: Ubuntu 10.04 Lucid Lynx의 첫인상
 keywords: 우분투, 사용기, Ubuntu, Lucid Lynx
-categories:
-- ubuntu
-- lucid-lynx
-- review
-- linux
+category: blog
+tags: ubuntu lucid-lynx review linux
 ---
 
 내 눈에 콩깍지가 씌워져 있는 것인지는 모르겠지만, 확실히
