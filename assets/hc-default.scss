@@ -419,7 +419,8 @@ $page-logo-size: 120px;
 			text-align: justify;
 			margin: 1rem 0 2rem;
 			padding: 0.5rem;
-			background: $background-body + #020202;
+			border-radius: 10px;
+			background: $background-body + #040404;
 
 			p {
 				line-height: 1.8;
