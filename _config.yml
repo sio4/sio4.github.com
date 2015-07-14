@@ -3,7 +3,7 @@ timezone: Asia/Seoul
 url: "http://sio4.github.com"
 feedurl: "http://feeds.feedburner.com/sio4-blog"
 permalink: /blog/:year/:month/:day/:title
-markdown: rdiscount
+markdown: kramdown
 
 defaults:
   -
