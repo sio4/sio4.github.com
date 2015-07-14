@@ -1,8 +1,8 @@
 ---
 title: 도움 구하기
 keywords: 도움 구하기
-category: blog
-tags: rules-of-action little-help-from-my-friends beatles
+category: roa
+tags: rules-of-action help beatles
 published: 2010-05-13
 ---
 

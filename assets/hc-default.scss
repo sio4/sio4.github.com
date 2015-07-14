@@ -33,6 +33,7 @@ $color-accent: #990000;
 $color-link: #006599;
 $color-link-hover: #ff7777;
 
+$background-black: #222222;
 $background-body: #f9f9f9;
 $background-tail: #000000;
 $background-header: #000000;
@@ -73,6 +74,7 @@ body {
 	font-size: $font-m;
 	height: 100%;
 	color: $color-text;
+	background: $background-body;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -473,6 +475,14 @@ $page-logo-size: 120px;
 		}
 	}
 }
+.page-sidebar {
+	ul.posts {
+		li {
+			white-space: nowrap;
+			overflow: hidden;
+		}
+	}
+}
 
 // recent on sidebar and related on post tail
 ul.posts {
@@ -480,7 +490,7 @@ ul.posts {
 	li {
 		line-height: 1.5rem;
 		span.meta {
-			margin-left: 1rem;
+			margin: 0 0.5rem;
 			color: $color-light;
 		}
 	}
@@ -488,6 +498,7 @@ ul.posts {
 
 .item_preview {
 	margin: 1rem 0 2rem;
+	clear: both;
 
 	div.preview_meta {
 		font-style: italic;
@@ -513,6 +524,21 @@ div#blog-archives {
 	}
 }
 
+//** code/log block	----------------------------------------------------------
+//* terminal
+pre {
+	code {
+		&.language-terminal {
+			background: $background-black;
+			color: $color-light;
+			display: block;
+			margin: 1rem;
+			padding: 0.2rem 0.5rem;
+			box-shadow: 3px 3px 5px #666;
+		}
+	}
+}
+
 
 //** for small device
 @media (max-width: 33em) {
@@ -533,6 +559,10 @@ div#blog-archives {
 
 //** for print page
 @media print {
+	.noprint {
+		display: none !important;
+	}
+
 	html, body, .full-screen {
 		height: auto !important;
 		background: white;
