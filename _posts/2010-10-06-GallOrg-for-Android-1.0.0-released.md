@@ -1,7 +1,7 @@
 ---
 title: GallOrg, Gallery Organizer for Android 1.0.0 released!
 category: android
-tags: 안드로이드 갤러리 앨범관리자 android gallery album-organizer
+tags: android gallorg app photo
 published: 2010-10-06T13:12:26+09:00
 modified: 2010-10-20T16:14:26+09:00
 ---
