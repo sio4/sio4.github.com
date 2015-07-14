@@ -3,6 +3,7 @@ title: Jekyll로 github에 블로깅하기
 keywords: jekyll, blogging, github
 category: blog
 tags: jekyll blogging github
+published: 2010-05-27
 ---
 
 성격 탓으로, 대부분의 블로그 서비스에서 제공하는 WYSIWYG 방식의 편집기에

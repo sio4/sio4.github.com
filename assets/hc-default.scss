@@ -412,6 +412,8 @@ $page-logo-size: 120px;
 		}
 		.post-details {
 			margin-bottom: 1rem;
+			color: $color-text + #222;
+			font-size: $font-s;
 		}
 		.post-share {
 		}
@@ -423,7 +425,10 @@ $page-logo-size: 120px;
 			background: $background-body + #040404;
 
 			p {
+				margin: 1rem 0;
 				line-height: 1.8;
+				&:first-child { margin-top: 0 }
+				&:last-child { margin-bottom: 0 }
 			}
 			blockquote {
 				background: url('images/blockquote.png') no-repeat scroll 3px 3px;
@@ -474,9 +479,9 @@ ul.posts {
 	list-style-type: none; margin: 0; padding: 0;
 	li {
 		line-height: 1.5rem;
-		span {
+		span.meta {
+			margin-left: 1rem;
 			color: $color-light;
-			font-family: Monaco, "Courier New", monospace;
 		}
 	}
 }

@@ -3,6 +3,7 @@ title: 도움 구하기
 keywords: 도움 구하기
 category: blog
 tags: rules-of-action little-help-from-my-friends beatles
+published: 2010-05-13
 ---
 
 여기는 지하철 선릉역, 분당선에서 2호선으로 갈아타기 위하여 올라오는 계단.

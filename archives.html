@@ -13,7 +13,7 @@ layout: page
   <ul class="posts">
   {% endif %}
   <li><a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-  <span class="meta">({{ post.date |date: "%F %T" }})</span></li>
+  <span class="meta">({{ post.published |date: "%F %T" }})</span></li>
   {% if forloop.last %}</ul>{% endif %}{% assign p_ym = ym %}
 {% endfor %}
 </div>

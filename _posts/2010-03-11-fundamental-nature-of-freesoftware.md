@@ -4,6 +4,7 @@ keywords: 자유소프트웨어, 오픈소스, 사회적 책임, 공공의 안�
 description: 자유소프트웨어의 본질은 무료, 자유도, 또는 기술이 아닌 나와 공공의 안전에 있다
 category: roa
 tags: free-software opensource rules-of-action
+published: 2010-03-11
 ---
 
 > 자유소프트웨어의 본질은 무료, 자유도, 또는 기술이 아닌 나와 공공의 안전에 있다.
