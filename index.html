@@ -5,7 +5,7 @@ title: Wall
 
 <div class="wall-panel" id="blog-posts">
 <h1>Blog Posts</h1>
-{% for post in site.posts limit:5 %}
+{% for post in site.posts limit:10 %}
 <div class="item_preview">
 	<h3 class="underline">» <a href="{{ post.url }}"
 			title="Permalink">{{ post.title }}</a></h3>
@@ -20,7 +20,7 @@ title: Wall
 	</div>
 	<div class="preview_content">
 		<div>
-			{{ post.content | truncatewords: 50 }}
+			{{ post.excerpt }}
 		<a href="{{ post.url }}" title="Permalink">more...</a>
 		</div>
 	</div>

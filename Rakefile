@@ -11,34 +11,32 @@ task :tags do
   site = Jekyll::Site.new(options)
   site.read_posts('')
 
+  ## clear existing files
   `rm -rf tags; mkdir tags`
   `mkdir -p _includes`
 
+  ## prefix for tags cloud
   cloud = ''
   cloud << <<-CLOUD
   <div class="cloud tac">
   CLOUD
 
-  ## step for font size
+  ## calculate step for font size
   m_count = 7
+  l_count = 2
   site.tags.sort.each do |tag, posts|
     c_count = posts.count
     if c_count > m_count
       m_count = c_count
     end
   end
-  step = ((2 - 0.6) / m_count).round(1)
+  step = ((1.6 - 0.6) / m_count).round(2)
+  puts "STEP: #{step} / #{m_count} = #{m_count * step} + 0.6"
 
   site.tags.sort.each do |tag, posts|
+    puts "processing %5d %s..." % [posts.count, tag]
 
-    s = posts.count
-    font_size = 0.6 + (s * step)
-    cloud << <<-CLOUD
-    <a href="/tags/#{tag}.html" title="Postings tagged #{tag}"
-        style="font-size: #{font_size}em; line-height:#{font_size}em"
-       >#{tag}</a>
-    CLOUD
-
+    ## header for <tag>.html
     html = ''
     html << <<-HTML
 ---
@@ -50,6 +48,7 @@ title: Postings tagged as "#{tag}"
 <ul class="posts">
 HTML
 
+    ## body for <tag>.html
     posts.each do |post|
       post_data = post.to_liquid
       html << <<-HTML
@@ -59,6 +58,7 @@ HTML
       HTML
     end
 
+    ## footer for <tag>.html
     html << <<-HTML
 </ul>
     HTML
@@ -66,8 +66,22 @@ HTML
     File.open("tags/#{tag}.html", 'w+') do |file|
       file.puts html
     end
+
+    ## entry item for tags.html, cloud.
+    if posts.count < l_count
+      next
+    end
+
+    s = posts.count
+    font_size = 0.6 + (s * step)
+    cloud << <<-CLOUD
+    <a href="/tags/#{tag}.html" title="Postings tagged #{tag}"
+        style="font-size: #{font_size}em; line-height:#{font_size}rem"
+       >#{tag}</a>
+    CLOUD
   end
 
+  ## postfix for tags cloud
   cloud << <<-CLOUD
   </div>
   CLOUD
@@ -98,20 +112,25 @@ task :categories do
   <ul class="posts categories">
   CLOUD
 
+  puts "processing #{site.categories}..."
   site.categories.sort.each do |category, posts|
+    cat_name = posts.first.to_liquid['category']
+    cat_file = category.split.join('-')
+    puts "processing #{category} (#{cat_name}/#{cat_file})..."
+
     cloud << <<-CLOUD
-    <li><a href="/categories/#{category}.html"
-      title="Postings on #{category.capitalize}">#{category.capitalize}</a>
-      - #{posts.count}</li>
+    <li><a href="/categories/#{cat_name}.html"
+      title="Postings on #{cat_name}">#{cat_name}</a>
+      <span class="post-count">» #{posts.count}</span></li>
     CLOUD
 
     html = ''
     html << <<-HTML
 ---
 layout: page
-title: Postings on "#{category.capitalize}"
+title: Postings on "#{cat_name}"
 ---
-<h1 class="underline">Postings on "#{category.capitalize}"</h1>
+<h1 class="underline">Postings on "#{cat_name}"</h1>
 
 <ul class="posts">
 HTML
@@ -119,7 +138,7 @@ HTML
     posts.each do |post|
       post_data = post.to_liquid
       html << <<-HTML
- <li>» <span class="meta">#{post_data['published'].strftime('%F %T')}</span>
+ <li>» <span class="meta">#{post.date.strftime('%F %T')}</span>
    <a href="#{post.url}">#{post_data['title']}</a>
  </li>
       HTML

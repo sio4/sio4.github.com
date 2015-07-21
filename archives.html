@@ -6,14 +6,15 @@ layout: page
 <h1 class="underline">{{ page.title }}</h1>
 <div id="blog-archives">
 {% assign posts_by_date = site.posts |sort: 'date last' %}
-{% for post in posts_by_date %}{% assign ym = post.date |date: "%Y/%m" %}
+{% for post in posts_by_date %}{% assign ym = post.date |date: "%Y" %}
   {% if forloop.first %}<h3>{{ ym }}</h3>
   <ul class="posts">{% elsif ym != p_ym %}</ul>
   <h3>{{ ym }}</h3>
   <ul class="posts">
   {% endif %}
   <li><a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-  <span class="meta">({{ post.published |date: "%F %T" }})</span></li>
+    <span class="meta"><a href="/categories/{{ post.category }}.html"
+      >{{ post.category }}</a>, {{ post.published |date: "%F" }}</span></li>
   {% if forloop.last %}</ul>{% endif %}{% assign p_ym = ym %}
 {% endfor %}
 </div>

@@ -7,10 +7,12 @@
 
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<meta http-equiv="content-language" content="ko" />
-	<meta name="author" content="Yonghwan SO" />
-	<meta name="keywords" content="소용환의 블로그: {{ page.tags |join:', ' }}" />
-	<meta name="description" content="소용환의 블로그: {{ page.description }}" />
-	<meta name="og:description" content="소용환의 블로그: {{ page.description }}" />
+	<meta name="author" content="소용환/Yonghwan SO" />
+	<meta name="keywords" content="소용환의 블로그, {{ page.tags |join:', ' }}" />
+	<meta name="description"
+		content="{{ page.excerpt |strip_html |strip_newlines }}" />
+	<meta name="og:description"
+		content="{{ page.excerpt |strip_html |strip_newlines }}" />
 	<meta name="og:image" content="{{ page.image }}" />
 	<title>{{ page.title }} - {{ site.title }}</title>
 	<link href="{{ site.feedurl }}" title="{{ site.title }}"
