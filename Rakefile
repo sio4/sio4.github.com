@@ -9,7 +9,7 @@ task :tags do
   
   options = Jekyll.configuration({})
   site = Jekyll::Site.new(options)
-  site.read_posts('')
+  site.read
 
   ## clear existing files
   `rm -rf tags; mkdir tags`
@@ -52,7 +52,7 @@ HTML
     posts.each do |post|
       post_data = post.to_liquid
       html << <<-HTML
- <li>» <span class="meta">#{post_data['published'].strftime('%F %T')}</span>
+ <li>» <span class="meta">#{post.date.strftime('%F %T')}</span>
    <a href="#{post.url}">#{post_data['title']}</a>
  </li>
       HTML

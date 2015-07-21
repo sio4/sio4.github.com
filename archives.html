@@ -12,9 +12,9 @@ layout: page
   <h3>{{ ym }}</h3>
   <ul class="posts">
   {% endif %}
-  <li><a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-    <span class="meta"><a href="/categories/{{ post.category }}.html"
-      >{{ post.category }}</a>, {{ post.published |date: "%F" }}</span></li>
+    <li><a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+      <span class="meta"><a href="/categories/{{ post.categories |last }}.html"
+        >{{ post.display }}</a>, {{ post.date |date: "%F" }}</span></li>
   {% if forloop.last %}</ul>{% endif %}{% assign p_ym = ym %}
 {% endfor %}
 </div>

@@ -427,6 +427,11 @@ $page-logo-size: 120px;
 			margin-bottom: 1rem;
 			color: $color-text + #222;
 			font-size: $font-s;
+			.post-category {
+				background: $background-body - #090909;
+				padding: 0 5px;
+				border-radius: 20px;
+			}
 		}
 		.post-share {
 		}
@@ -465,12 +470,6 @@ $page-logo-size: 120px;
 			}
 			.post-tags {
 				text-align: right;
-				.tag-item {
-					font-size: $font-xs;
-					border-radius: 5px;
-					background: $background-body - #111;
-					padding: 0px 4px 0 4px;
-				}
 			}
 			.post-comments {
 				text-align: right;
@@ -533,6 +532,13 @@ ul.posts {
 	}
 }
 
+.tag-item {
+	font-size: $font-xxs;
+	border-radius: 5px;
+	background: $background-body - #090909;
+	padding: 0px 4px 0 4px;
+	color: $color-link + #444 !important;
+}
 
 // misc
 .addthis_toolbox {

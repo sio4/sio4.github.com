@@ -2,7 +2,6 @@ title: "Yonghwan's blog"
 timezone: Asia/Seoul
 url: "http://sio4.github.com"
 feedurl: "http://feeds.feedburner.com/sio4-blog"
-#permalink: /blog/:year/:month/:day/:title
 permalink: /:categories::title
 markdown: kramdown
 
@@ -13,4 +12,8 @@ defaults:
       type: "posts"
     values:
       layout: "post"
-      #permalink: /:categories::title
+  -
+    scope:
+      path: "blog/review"
+    values:
+      display: "리뷰"
