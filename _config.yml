@@ -16,7 +16,7 @@ defaults:
     scope:
       path: "blog/opensource"
     values:
-      display: "잡동사니"
+      display: "오픈소스"
   -
     scope:
       path: "blog/rules-of-action"
@@ -41,7 +41,7 @@ defaults:
     scope:
       path: "blog/programming"
     values:
-      display: "프로그래밍"
+      display: "소프트웨어 개발"
   -
     scope:
       path: "blog/android"
