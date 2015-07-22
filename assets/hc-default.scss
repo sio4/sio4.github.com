@@ -595,34 +595,34 @@ div#blog-archives {
 
 //** code/log block	----------------------------------------------------------
 //* terminal
-pre {
-	code {
+div.highlight {
+	margin: 1rem;
+	box-shadow: 3px 3px 5px #666;
+
+	&.short {
+		pre {
+			max-height: 26em;
+			overflow: auto;
+		}
+	}
+
+	pre {
+		margin: 0;
+		padding: 0.3rem 0.6rem;
 		font-family: $font-code;
 		font-size: $font-xs;
-		display: block;
-		margin: 1rem;
-		padding: 0.2rem 0.5rem;
-		box-shadow: 3px 3px 5px #666;
-		overflow: auto;
-		&.language-terminal {
-			background: $background-black;
-			color: $color-light;
-		}
-	}
-	&.short {
+
 		code {
-			max-height: 26em;
+			span.lineno {
+			}
+			span.gp {
+				color: $color-grey;
+			}
 		}
 	}
-}
-div.highlight {
 	&.dark {
 		code {
 			background: $background-black;
-		}
-	}
-	pre {
-		code {
 		}
 	}
 }

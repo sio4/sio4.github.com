@@ -237,7 +237,7 @@ start 명령을 내린 후 접속을 해보면 설치 화면이 떠 있는 것�
 이유는 모르겠지만 어차피 다시 부팅 설정을 바꿨어야 했으므로, 다음의
 방식으로 설정을 바꿔주고 다시 시작해보자.
 
-{% highlight shell-session %}
+{% highlight console %}
 $ virsh -c qemu:///system destroy u810si
 $ vi u810si.xml (boot 부분 편집)
 $ virsh -c qemu:///system define u810si.xml

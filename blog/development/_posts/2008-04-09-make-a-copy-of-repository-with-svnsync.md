@@ -25,7 +25,7 @@ modified: 2010-07-02T19:20:10+09:00
 
 과정은 다음과 같다.
 
-~~~ terminal
+{% highlight console %}
 $ mkdir /svn-mirror
 $ svnadmin create /svn-mirror/my-project
 $ cd /svn-mirror/my-project/hooks
@@ -47,7 +47,8 @@ prepare project repository.
 
 ------------------------------------------------------------------------
 $
-~~~
+{% endhighlight %}{:.dark}
+
 
 1. 먼저 미러를 보관하기 위한 디렉토리를 만들고 그 안에 빈 저장소를 만든다.
    (저장소를 복사하는 것이 아니라 변경점을 동기화하는 것이 이 사본 만들기

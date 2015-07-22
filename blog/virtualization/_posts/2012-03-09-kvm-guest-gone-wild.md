@@ -12,7 +12,7 @@ modified: 2012-03-09T13:57:05+09:00
 
 증상은 이렇다. 먼저 미친 기관차에 `strace`를 걸었을 때,
 
-~~~ terminal
+{% highlight console %}
 rt_sigaction(SIGALRM, NULL, {0x7f8c00851300, ~[KILL STOP RTMIN RT_1], SA_RESTORER, 0x7f8bffee9060}, 8) = 0
 write(8, "\1\0\0\0\0\0\0\0", 8) = 8
 read(17, 0x7fffe6b5b1b0, 128) = -1 EAGAIN (Resource temporarily unavailable)
@@ -23,13 +23,13 @@ select(20, [7 10 16 17 18 19], [], [], {1, 0}) = 1 (in [7], left {0, 999997})
 read(7, "\1\0\0\0\0\0\0\0", 512) = 8
 select(20, [7 10 16 17 18 19], [], [], {1, 0}) = 1 (in [17], left {0, 999955})
 read(17, "\16\0\0\0\0\0\0\0\376\377\377\377\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"..., 128) = 128
-~~~
+{% endhighlight %}{:.dark}
 
 이런 내용을 무지하게 뿌리고 있었다. 단순히 이 내용을 보고
 "Resource temporarily unavailable" 오류를 만드는 fd 17에 집중하게 됐는데,
 찾아보니,
 
-~~~ terminal
+{% highlight console %}
 sio4@sun:~$ sudo ls -l /proc/10815/fd
 total 0
 ...
@@ -47,8 +47,7 @@ lrwx------ 1 libvirt-qemu kvm 64 2012-03-09 13:33 6 -> anon_inode:kvm-vm
 lrwx------ 1 libvirt-qemu kvm 64 2012-03-09 13:33 7 -> anon_inode:[eventfd]
 lrwx------ 1 libvirt-qemu kvm 64 2012-03-09 13:33 8 -> anon_inode:[eventfd]
 ...
-sio4@sun:~$
-~~~
+{% endhighlight %}{:.dark}
 
 signalfd 라는데... 이 정체는 뭘까?
 
