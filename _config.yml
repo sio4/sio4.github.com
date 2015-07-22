@@ -39,7 +39,7 @@ defaults:
       display: "시스템 엔지니어링"
   -
     scope:
-      path: "blog/programming"
+      path: "blog/development"
     values:
       display: "소프트웨어 개발"
   -
@@ -52,6 +52,11 @@ defaults:
       path: "blog/productivity"
     values:
       display: "생산성"
+  -
+    scope:
+      path: "blog/wind-of-change"
+    values:
+      display: "변화의 물결"
   -
     scope:
       path: "blog/tips-and-tricks"

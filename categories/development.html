@@ -1,0 +1,23 @@
+---
+layout: page
+title: Postings on Category
+---
+{% assign category = page.name |remove: '.html' %}
+{% assign p = site.categories.[category] |first %}
+{% assign category_name = p.display %}
+<div class="wall-panel" id="blog-posts">
+  <h1 class="underline">Postings on "{{ category_name }}"</h1>
+  <ul class="posts">
+  {% for post in site.categories.[category] %}
+    <li>» <span class="meta">{{ post.date |date: '%F %T' }}</span>
+      <a href="{{ post.url }}">{{ post.title }}</a>
+      <div class="post-tags tar">
+      {% for tag in post.tags %}<a class="tag-item" href="/tags/{{ tag }}.html"
+        title="View posts tagged with &quot;{{ tag }}&quot;">{{ tag }}</a>
+      {% endfor %}
+      </div>
+    </li>
+  {% endfor %}
+  </ul>
+</div>
+<!-- vim: set ts=2 sw=2 expandtab : -->
