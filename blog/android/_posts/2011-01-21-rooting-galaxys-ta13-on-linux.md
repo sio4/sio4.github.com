@@ -1,8 +1,7 @@
 ---
 title: 갤럭시S TA13, 리눅스 컴에서 루팅하기
-category: 안드로이드
 tags: 안드로이드 갤럭시S 루팅
-published: 2011-01-21T14:23:31+09:00
+date: 2011-01-21T14:23:31+09:00
 modified: 2011-01-21T14:26:55+09:00
 ---
 깔끔한 앱 형식의 안드로이드 루팅 도구인 z4root가 TA13에서 동작하지 않는다.
@@ -21,23 +20,23 @@ sio4@dot:~/soc$ adb shell
 $ cat /sdcard/rageagainstthecage > /skttmp/rageagainstthecage
 $ chmod 755 /skttmp/rageagainstthecage
 $ /skttmp/rageagainstthecage
-[\*] CVE-2010-EASY Android local root exploit (C) 2010 by 743C
+[*] CVE-2010-EASY Android local root exploit (C) 2010 by 743C
 
-[\*] checking NPROC limit ...
+[*] checking NPROC limit ...
 [+] RLIMIT\_NPROC={2756, 2756}
-[\*] Searching for adb ...
+[*] Searching for adb ...
 [+] Found adb as PID 2341
-[\*] Spawning children. Dont type anything and wait for reset!
-[\*]
-[\*] If you like what we are doing you can send us PayPal money to
-[\*] 7-4-3-C@web.de so we can compensate time, effort and HW costs.
-[\*] If you are a company and feel like you profit from our work,
-[\*] we also accept donations > 1000 USD!
-[\*]
-[\*] adb connection will be reset. restart adb server on desktop and re-login.
+[*] Spawning children. Dont type anything and wait for reset!
+[*]
+[*] If you like what we are doing you can send us PayPal money to
+[*] 7-4-3-C@web.de so we can compensate time, effort and HW costs.
+[*] If you are a company and feel like you profit from our work,
+[*] we also accept donations > 1000 USD!
+[*]
+[*] adb connection will be reset. restart adb server on desktop and re-login.
 $ sio4@dot:~/soc$ adb kill-server; adb shell
-\* daemon not running. starting it now on port 5037 \*
-\* daemon started successfully \*
+* daemon not running. starting it now on port 5037 *
+* daemon started successfully *
 #
 # cd skttmp
 # cat /sdcard/busybox > busybox

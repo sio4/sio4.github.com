@@ -14,6 +14,57 @@ defaults:
       layout: "post"
   -
     scope:
+      path: "blog/opensource"
+    values:
+      display: "잡동사니"
+  -
+    scope:
+      path: "blog/rules-of-action"
+    values:
+      display: "행동수칙"
+  -
+    scope:
+      path: "blog/cloudcomputing"
+    values:
+      display: "클라우드컴퓨팅"
+  -
+    scope:
+      path: "blog/virtualization"
+    values:
+      display: "가상화"
+  -
+    scope:
+      path: "blog/sysadmin"
+    values:
+      display: "시스템 엔지니어링"
+  -
+    scope:
+      path: "blog/programming"
+    values:
+      display: "프로그래밍"
+  -
+    scope:
+      path: "blog/android"
+    values:
+      display: "안드로이드"
+  -
+    scope:
+      path: "blog/productivity"
+    values:
+      display: "생산성"
+  -
+    scope:
+      path: "blog/tips-and-tricks"
+    values:
+      display: " Tips&Tricks"
+  -
+    scope:
       path: "blog/review"
     values:
       display: "리뷰"
+  -
+    scope:
+      path: "blog/misc"
+    values:
+      display: "잡동사니"
+

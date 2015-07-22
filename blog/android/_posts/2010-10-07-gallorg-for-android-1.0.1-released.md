@@ -1,8 +1,7 @@
 ---
 title: GallOrg 1.0.1 released! (Android Gallery Organizer)
-category: 안드로이드
 tags: 안드로이드 Gallorg 앱 사진
-published: 2010-10-07T17:36:26+09:00
+date: 2010-10-07T17:36:26+09:00
 modified: 2011-03-04T13:29:19+09:00
 ---
 GallOrg 1.0.1을 릴리즈한다. 어제 1.0.0을 릴리즈했는데, "갑놀이"에 빠진 동료의

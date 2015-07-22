@@ -1,8 +1,7 @@
 ---
 title: 갤럭시S TA13 업데이트, 그리고 소프트웨어의 완성도
-category: 안드로이드
 tags: 행동수칙 사용자지향 안드로이드 갤럭시S
-published: 2011-01-21T11:02:24+09:00
+date: 2011-01-21T11:02:24+09:00
 modified: 2011-01-21T11:04:40+09:00
 ---
 소프트웨어의 완성도를 높이는 일, 그리고 발표 이후에 그 완성도를 유지해
@@ -21,7 +20,7 @@ SQLite의 속도가 빨라진 것이었으면 좋겠다. Database나 ContentProv
 지금 난 이런 바탕화면 그림을 쓰고있다.
 
 {:.tac}
-![](/attachments/2011-01-21-m110s-ta13-bg-1-main.png)
+![](/attachments/2011-01-21-m110s-ta13-main.png)
 
 그런데, 이게... 화면이 잠기게 되면 같은 배경 그림을 보여주고 그 위에
 블렌딩된 모습으로 잠금패턴 입력이 가능한 화면을 보여준다. 여기서 좀 아쉬운
@@ -29,7 +28,7 @@ SQLite의 속도가 빨라진 것이었으면 좋겠다. Database나 ContentProv
 일단 화면을 보면,
 
 {:.tac}
-![](/attachments/2011-01-21-m110s-ta13-bg-2-lock.png)
+![](/attachments/2011-01-21-m110s-ta13-lock.png)
 
 이렇게, 현재시간, 날짜, 서비스공급자 이름, 충전중이면 충전률, 패턴입력창,
 긴급통화기능 등을 보여주고 있는데... 이 중 어느 곳에도 "나"와 관련된 정보가
@@ -54,13 +53,13 @@ SQLite의 속도가 빨라진 것이었으면 좋겠다. Database나 ContentProv
 바보같은 짓이긴 하지만, 어쨌든 이런 모습... 상상하고 있다.
 
 {:.tac}
-![](/attachments/2011-01-21-m110s-ta13-bg-4-wish.png)
+![](/attachments/2011-01-21-m110s-ta13-wish.png)
 
 그래서 잠깐 그려봤다. (이럴 땐 PicSay가 좋다 :-)&nbsp; 그리고 ㅜ.ㅜ 내
 잠금화면 배경은 어디로 간겨? 어케 어케 해봤더니... 짠~! 이렇게...
 
 {:.tac}
-![](/attachments/2011-01-21-m110s-ta13-bg-3-slider.png)
+![](/attachments/2011-01-21-m110s-ta13-slider.png)
 
 이렇게!!! 성공!!! 뭐라? 성공? ... 이게... 이렇게 "해제하려면 화면을
 움직이기만 하면 되는 상태" 그러니까 "잠김 상태"가 아니라 "자물통 없는
@@ -84,7 +83,7 @@ SQLite의 속도가 빨라진 것이었으면 좋겠다. Database나 ContentProv
 뭐냐고... 답이...
 
 {:.tac}
-![](/attachments/2011-01-21-m110s-ta13-setting-dp-bg.png)
+![](/attachments/2011-01-21-m110s-ta13-setting.png)
 
 흠흠,
 
