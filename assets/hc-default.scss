@@ -36,6 +36,7 @@ $color-link-hover: #ff7777;
 
 $background-black: #222222;
 $background-body: #f9f9f9;
+$background-point: #ffe0e0;
 $background-tail: #000000;
 $background-header: #000000;
 $background-footer: #f0f0f0;
@@ -454,6 +455,12 @@ $page-logo-size: 120px;
 				border-left: 4px solid $background-body - #222;
 				margin: 1rem 0;
 				padding: 8px 12px 8px 36px;
+
+				&.point {
+					background-color: $background-point;
+					border-left: 4px solid #dd5757;
+				}
+
 				p { padding: 0; margin: 0; }
 				ul {
 					padding: 0 0 0 2.5rem;
