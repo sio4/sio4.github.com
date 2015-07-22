@@ -455,6 +455,12 @@ $page-logo-size: 120px;
 				margin: 1rem 0;
 				padding: 8px 12px 8px 36px;
 				p { padding: 0; margin: 0; }
+				ul {
+					padding: 0 0 0 2.5rem;
+					li {
+						list-style: square;
+					}
+				}
 			}
 			.footnotes {
 				border-top: 1px solid $background-body - #050505;
@@ -606,6 +612,17 @@ pre {
 	&.short {
 		code {
 			max-height: 26em;
+		}
+	}
+}
+div.highlight {
+	&.dark {
+		code {
+			background: $background-black;
+		}
+	}
+	pre {
+		code {
 		}
 	}
 }
