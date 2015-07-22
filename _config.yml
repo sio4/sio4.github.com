@@ -59,6 +59,11 @@ defaults:
       display: "변화의 물결"
   -
     scope:
+      path: "blog/life-of-me"
+    values:
+      display: "나의 삶"
+  -
+    scope:
       path: "blog/tips-and-tricks"
     values:
       display: " Tips&Tricks"
