@@ -1,6 +1,6 @@
 ---
 title: "VDI: rdesktop과 ClearType"
-tags: 가상화 VDI rdesktop 원격터미널
+tags: 가상화 VDI 원격터미널
 date: 2011-12-19T14:42:24+09:00
 modified: 2011-12-19T14:43:20+09:00
 ---

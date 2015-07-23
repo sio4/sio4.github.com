@@ -1,6 +1,6 @@
 ---
 title: kvm, kvmclock, 그리고 "폭주 게스트"
-tags: dnsmasq 장애 kvm strace
+tags: 장애분석 kvm strace
 date: 2012-03-09T13:57:05+09:00
 modified: 2012-03-09T13:57:05+09:00
 ---

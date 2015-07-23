@@ -1,6 +1,6 @@
 ---
 title: sio4, SiO4 Tetrahedron, 나의 브랜드.
-tags: 본질 브랜드 지질학
+tags: 브랜드 지질학
 date: 2008-03-25T00:55:07+09:00
 modified: 2010-07-02T15:07:01+09:00
 ---
