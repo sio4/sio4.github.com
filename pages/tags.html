@@ -1,0 +1,44 @@
+---
+layout: page
+---
+{% assign m_count = 7 %}
+{% assign l_count = 2 %}
+{% for t in site.tags %}
+  {% assign c_count = t |last |size %}
+  {% if c_count > m_count %}
+    {% assign m_count = c_count %}
+  {% endif %}
+{% endfor %}
+{% assign step = 1.6 |minus:0.6 |divided_by: m_count %}
+<h1 class="underline">Index of Tags</h1>
+<div class="barchart">
+{% assign tags = site.tags |sort %}
+{% for category in tags %}
+  {% assign cat_name = category |first %}
+  {% assign cat_size = category |last |size %}
+  {% if false and l_count > cat_size %}
+    {% continue %}
+  {% endif %}
+  {% assign font_size = cat_size |times: step |plus: 0.8 %}
+  {% assign bs = cat_size |times: 100 |divided_by: m_count %}
+  <div class="item">
+    <div class="frame"><div class="bar" style="width: {{bs}}%"></div></div>
+    <div class="label">
+      <a href="/tags/{{cat_name}}.html" title="{{cat_size}}">{{cat_name}}</a>
+      <span class="details"> » {{cat_size}}</span>
+    </div>
+  </div>
+  <!--
+  <div class="item" style="font-size: {{font_size}}em;">
+      <a href="/tags/{{cat_name}}.html" title="{{cat_size}}">{{cat_name}}</a>
+  </div>
+  -->
+  <!--
+    <li><a href="/tags/{{ cat_name }}.html"
+          title="Postings on {{ cat_name }}">{{ cat_name }}</a>
+	  <span class="post-count">» {{ cat_size }} ----- {{ font_size }}</span>
+    </li>
+    -->
+
+{% endfor %}
+</div>

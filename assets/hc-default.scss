@@ -366,7 +366,7 @@ $page-logo-size: 120px;
 		max-width: 62rem;
 		margin: 1em auto;
 
-		.page-content {
+		.page-body {
 			float: left;
 			max-width: 40rem;
 			min-width: 35rem;
@@ -420,7 +420,7 @@ $page-logo-size: 120px;
 }
 
 //** post structure ----------------------------------------------------------
-.page-content {
+.page-body {
 	.post {
 		.post-title {
 		}
@@ -566,6 +566,34 @@ div#blog-archives {
 	}
 }
 
+//** horizontal barchart widget	----------------------------------------------
+div.barchart {
+	.item {
+		margin: 2px 0;
+		.frame {
+			display: inline-block;
+			background: #ddd;
+			border-radius: 3px;
+			padding: 2px;
+			width: 300px;
+			vertical-align: middle;
+			.bar {
+				float: right;
+				background: $color-link;
+				border-radius: 2px;
+				width: 100px;
+				height: 6px;
+			}
+		}
+		.label {
+			display: inline-block;
+			.details {
+				color: $color-grey;
+			}
+		}
+	}
+}
+
 //** site index --------------------------------------------------------------
 .module-main {
 	.menu-categories {
@@ -639,7 +667,7 @@ div.highlight {
 @media (max-width: 33em) {
 	.hc-page {
 		.narrow-page {
-			.page-content {
+			.page-body {
 				float: none;
 				min-width: inherit;
 				margin-right: 0;
@@ -672,7 +700,7 @@ div.highlight {
 
 	.hc-page {
 		.narrow-page {
-			.page-content {
+			.page-body {
 				max-width: 100%;
 				margin: 0;
 				.post {
