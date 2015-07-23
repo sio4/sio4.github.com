@@ -1,6 +1,6 @@
 ---
 title: "Gibson gets official with the self-tuning Robot Guitar"
-tags: 기타 Gibson 삶
+tags: 기타 Gibson 삶 동영상
 date: 2007-11-13T14:57:26+09:00
 modified: 2010-07-05T09:39:20+09:00
 ---
