@@ -106,7 +106,11 @@ a, a:visited {
 ul {
 	padding: 0 0 0 2.5rem;
 	li {
-		//list-style: none;
+	}
+	&.no-dot {
+		li {
+			list-style: none;
+		}
 	}
 }
 

@@ -1,5 +1,5 @@
 ---
-title: Ubuntu 10.04 Lucid Lynx의 첫인상
+title: "리뷰: Ubuntu 10.04 Lucid Lynx의 첫인상"
 tags: Ubuntu
 date: 2010-05-09T13:29:00+09:00
 modified: 2010-07-07T13:34:43+09:00

@@ -71,7 +71,7 @@ defaults:
     scope:
       path: "blog/review"
     values:
-      display: "리뷰"
+      display: "후기"
   -
     scope:
       path: "blog/misc"
