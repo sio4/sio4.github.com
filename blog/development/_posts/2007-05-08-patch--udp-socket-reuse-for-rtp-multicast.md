@@ -1,5 +1,5 @@
 ---
-title: 'Patch: UDP socket reuse for RTP Multicast'
+title: '패치: UDP socket reuse for RTP Multicast'
 tags: RTP 멀티미디어 오픈소스 패치
 date: 2007-05-08T16:39:21+09:00
 modified: 2008-03-09T02:11:01+09:00
