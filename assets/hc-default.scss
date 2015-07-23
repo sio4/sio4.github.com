@@ -106,12 +106,21 @@ a, a:visited {
 ul {
 	padding: 0 0 0 2.5rem;
 	li {
-	}
-	&.no-dot {
-		li {
-			list-style: none;
+		list-style: square;
+		ul {
+			li {
+				list-style: disc;
+				ul {
+					li {
+						list-style: disc;
+					}
+				}
+			}
 		}
 	}
+	&.no-dot { li { list-style: none !important; } }
+	&.disc { li { list-style: disc !important; } }
+	&.circle { li { list-style: circle !important; } }
 }
 
 table {
@@ -503,11 +512,6 @@ $page-logo-size: 120px;
 		h2 {
 			margin-bottom: 1rem;
 		}
-		ul.posts {
-			li {
-				line-height: 1.4;
-			}
-		}
 	}
 }
 .page-sidebar {
@@ -521,9 +525,10 @@ $page-logo-size: 120px;
 
 // recent on sidebar and related on post tail
 ul.posts {
-	list-style-type: none; margin: 0; padding: 0;
+	margin: 0; padding: 0;
 	li {
 		line-height: 1.5rem;
+		list-style-type: none;
 		span.meta {
 			margin: 0 0.5rem;
 			color: $color-light;
