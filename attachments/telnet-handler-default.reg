@@ -1,0 +1,5 @@
+REGEDIT4
+
+[HKEY_CLASSES_ROOT\telnet\shell\open\command]
+@="rundll32.exe url.dll,TelnetProtocolHandler %l"
+
