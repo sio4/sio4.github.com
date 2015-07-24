@@ -25,23 +25,24 @@ layout: sidebar
 	</div>
 
 	<div class="post-meta">
-		<div class="post-hierarchy">
-			{% if previous %}
-			<a href="{{ previous.url }}" title="Previous post">previous</a>
-			{% endif %}
-
-			{% if next %}
-			{% if previous %}, {% endif %}
-			<a href="{{ next.url }}" title="Next post">next</a>
-			{% endif %}
-		</div>
-
 		<div class="post-tags">
 		Tags:
 		{% for tag in page.tags %}
 		<a class="tag-item" href="/tags/{{ tag }}.html"
 			title="View posts tagged with &quot;{{ tag }}&quot;">{{ tag }}</a>
 		{% endfor %}
+		</div>
+
+		<div class="post-hierarchy">
+			{% if page.previous %}
+			<a href="{{ page.previous.url }}"
+				title="Previous post"><i class="icon arrow left"></i> Prev</a>
+			{% endif %}
+			{% if page.previous %}|{% endif %}
+			{% if page.next %}
+			<a href="{{ page.next.url }}"
+				title="Next post">Next <i class="icon arrow right"></i></a>
+			{% endif %}
 		</div>
 
 		<div class="post-comments">
@@ -58,9 +59,15 @@ layout: sidebar
 <div class="post-tail">
 	<h2>Related Posts</h2>
 	<ul class="posts">
-	{% for post in site.related_posts limit:3 %}
-		<li><span>{{ post.date | date_to_string }}</span> &raquo; <a
-			href="{{ post.url }}">{{ post.title }}</a></li>
+	{% for t in page.tags %}
+		{% for p in site.tags.[t] %}
+			{% if page.path != p.path %}
+				<li><span class="meta">{{ p.date |date: '%F' }}</span> &raquo; <a
+					href="{{ p.url }}">{{ p.title }}</a>
+					<span class="meta">Tagged with {{t}}</span>
+				</li>
+			{% endif %}
+		{% endfor %}
 	{% endfor %}
 	</ul>
 </div>

@@ -492,10 +492,14 @@ $page-logo-size: 120px;
 			}
 		}
 		.post-meta {
-			.post-hierarchy {
+			div {
+				clear: both;
 			}
 			.post-tags {
 				text-align: right;
+			}
+			.post-hierarchy {
+				text-align: center;
 			}
 			.post-comments {
 				text-align: right;
