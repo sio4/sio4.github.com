@@ -1,7 +1,7 @@
-title: "Yonghwan's blog"
+title: "소용환의 생각저장소"
 timezone: Asia/Seoul
-url: "http://sio4.github.com"
-feedurl: "http://feeds.feedburner.com/sio4-blog"
+url: "http://www.sauru.so"
+feedurl: "http://feeds.feedburner.com/sauru-so"
 permalink: /:categories::title
 markdown: kramdown
 
