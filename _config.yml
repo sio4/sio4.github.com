@@ -14,6 +14,11 @@ defaults:
       layout: "post"
   -
     scope:
+            path: "blog/it-talk"
+    values:
+      display: "IT Talk"
+  -
+    scope:
       path: "blog/opensource"
     values:
       display: "오픈소스"
