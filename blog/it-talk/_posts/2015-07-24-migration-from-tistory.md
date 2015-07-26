@@ -1,6 +1,7 @@
 ---
 title: 블로그, Tistory로부터 Github Pages로 이주
 tags: 블로깅 Github Ember.js Semantic-UI
+image: /attachments/2015-07-24-migration-from-tistory.jpg
 date: 2015-07-24 12:23:21+09:00
 ---
 얼마 전에
@@ -12,6 +13,7 @@ date: 2015-07-24 12:23:21+09:00
 다시 사용하는 것이 어떨까... 하는 생각을 하게 됐다. 그래서, 2007년부터
 2012년까지 Tistory에 올렸던 글들을 여기로 옮겼다.  
 이 글은, 옮기기로 결정한 이유와 옮긴 과정, 그리고 그로 인한 변화를 담고 있다.
+![](/attachments/2015-07-24-migration-from-tistory.jpg){:.fit.dropshadow}
 
 ## 왜 Github Pages로 옮겼는가?
 

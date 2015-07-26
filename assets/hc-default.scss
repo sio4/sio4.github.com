@@ -190,6 +190,7 @@ img {
 //****************************************************************************
 //** addon decorations -------------------------------------------------------
 
+.nw { white-space: nowrap !important; }
 .tal { text-align: left !important; }
 .tac { text-align: center !important; }
 .tar { text-align: right !important; }
@@ -208,7 +209,7 @@ img {
 .disabled { color: $color-disabled; }
 .grey { color: $color-grey; }
 .underline { border-bottom: 1px solid $color-text; }
-.dropshadow { box-shadow: 3px 3px 5px #666; }
+.dropshadow { margin: 1rem; box-shadow: 3px 3px 5px #666; }
 
 // box model -----------------------------------------------------------------
 .indented { margin-left: 2rem; }
@@ -276,11 +277,11 @@ $page-logo-size: 120px;
 			background: rgba(0,0,0, 0.6);
 		}
 		.item {
-			padding: 0.5rem 1rem;
+			padding: 0.6rem 0.6rem;
 		}
 		.right.menu {
 			.item {
-				padding: 0.5rem 1rem;
+				padding: 0.6rem 0.6rem;
 			}
 		}
 	}
@@ -550,11 +551,13 @@ ul.posts {
 
 	div.preview_meta {
 		font-style: italic;
-		text-align:right; float:right; width:19em;
+		text-align: right; float: right;
+		padding: 0 0 1rem 1rem;
+		max-width: 14rem;
 	}
 	div.preview_content {
-		font-style: italic;
-		margin: 0 0 0 1em; width: 40em;
+		margin: 0 0 0 1rem;
+		text-align: justify;
 	}
 }
 
@@ -577,6 +580,10 @@ div#blog-archives {
 	ul.posts {
 		list-style-type: square; padding-left: 3rem;
 	}
+}
+.footnote {
+	background: $background-body + $color-link - #090909;
+	padding: 0px 2px 0px 0px;
 }
 
 //** horizontal barchart widget	----------------------------------------------
