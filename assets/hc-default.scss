@@ -125,6 +125,10 @@ ul {
 
 table {
 	border-spacing: 0;
+	&.fit {
+		width: 95%;
+		display: table;
+	}
 	&.filled {
 		width: 100%;
 	}
@@ -457,6 +461,9 @@ $page-logo-size: 120px;
 			border-radius: 10px;
 			background: $background-body + #040404;
 
+			h2 {
+				border-bottom: 1px solid $background-body - #202020;
+			}
 			p {
 				margin: 1rem 0;
 				line-height: 1.8;
@@ -709,6 +716,9 @@ div.highlight {
 	html, body, .full-screen {
 		height: auto !important;
 		background: white;
+	}
+	ol, ul {
+		padding: 0 0 0 1.4em;
 	}
 
 	.hc-sticky-header {

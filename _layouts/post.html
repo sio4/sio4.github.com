@@ -7,8 +7,8 @@ layout: sidebar
 	<div class="post-details">
 		<a href="/categories/{{page.categories |last |downcase}}.html"
 			class="post-category">{{page.display}}</a>
-		Posted at <span class="date">{{ page.date | date: "%F %T" }}</span>,
-		{% if page.modified %}Edited at <span class="date">{{ page.modified | date: "%F %T" }}</span>,{% endif %}
+		<span class="date">{{ page.date | date: "%F %T" }}</span>
+		{% if page.modified %}(Edited: <span class="date">{{ page.modified | date: "%F %T" }}</span>){% endif %}
 	</div>
 
 	<div class="post-share tar">
@@ -62,9 +62,9 @@ layout: sidebar
 	{% for t in page.tags %}
 		{% for p in site.tags.[t] %}
 			{% if page.path != p.path %}
-				<li><span class="meta">{{ p.date |date: '%F' }}</span> &raquo; <a
+				<li><span class="meta">{{ p.date |date: '%F' }}</span><a
 					href="{{ p.url }}">{{ p.title }}</a>
-					<span class="meta">Tagged with {{t}}</span>
+					<span class="meta">&raquo; {{t}}</span>
 				</li>
 			{% endif %}
 		{% endfor %}
