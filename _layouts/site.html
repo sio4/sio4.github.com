@@ -28,7 +28,6 @@
 <body>
 
 <div class="fullscreen">
-
 	<div class="hc-sticky-header">
 		<div class="ui inverted menu">
 			<a class="item" href="/"><i class="home icon"></i>{{ site.title }}</a>
@@ -41,42 +40,10 @@
 	</div>
 
 	<div class="hc-fixed-window hc-page">
-		<div class="module-main narrow-page">
+		<div class="hc-module-main hc-page-narrow">
 			{{ content }}
 		</div>
-
-		<div class="page-tail">
-			<div class="contact" id="personal-info">
-				{% include personal.html %}
-			</div>
-
-			<div class="contact roll">
-				<div class="label">Catch me on :-)</div>
-				<ul class="no-dot">
-					<li><a href="http://www.facebook.com/yonghwan.so">Facebook</a>
-					<li><a href="http://wiki.sauru.so">wiki.sauru.so</a>
-					<li><a href="http://github.com/sio4/">github.com/sio4</a>
-					<li><a href="http://kr.linkedin.com/in/scinix">linkedin profile</a>
-				</ul>
-			</div>
-
-			<div class="contact">
-				<div class="label">Links :</div>
-				<ul class="no-dot">
-					<li><a href="http://www.gnu.org/philosophy/philosophy.html">Philosophy of the GNU Project</a>
-					<li><a href="http://www.gnu.org/philosophy/philosophy.ko.html">GNU 프로젝트의 철학</a>
-				</ul>
-			</div>
-
-			<div class="rss">
-				<p>
-				powered by <a href="http://jekyllrb.com/">jekyll</a>
-				and <a href="http://github.com/">github</a><br />
-				<br/>
-				<a href="{{ site.feedurl }}"><i class="icon rss"></i> RSS Feed</a>
-				</p>
-			</div>
-		</div>
+		{% include page-tail.html %}
 	</div>
 
 	<!--div class="hc-sticky-footer">
@@ -87,16 +54,14 @@
 {% include facebook-init.html %}
 
 <!-- Google Analytics 2015-07-22 -->
-	<script>
+<script>
 		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
 		ga('create', 'UA-10364127-2', 'auto');
 		ga('send', 'pageview');
-
-	</script>
+</script>
 <!-- Google Analytics end -->
 
 </body>

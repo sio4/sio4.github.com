@@ -2,7 +2,7 @@ title: "소용환의 생각저장소"
 timezone: Asia/Seoul
 url: "http://www.sauru.so"
 feedurl: "http://feeds.feedburner.com/sauru-so"
-permalink: /blog/:year/:month/:title
+permalink: /blog/:year/:month/:day/:title
 markdown: kramdown
 
 defaults:

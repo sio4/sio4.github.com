@@ -5,90 +5,50 @@ layout: site
 	{{ content }}
 </div>
 
-
-
 <div class="page-sidebar">
-	<div class="side-widget" id="swidget-person">
+	<div class="side-widget" id="personal">
 		{% include personal.html %}
 	</div>
 
-	<div class="side-widget" id="facebook-widget">
+	<div class="side-widget" id="facebook-like">
 		<div id="facebook-box">
 			<fb:like width="250px"></fb:like>
 		</div>
 	</div>
 
+	<div class="side-widget" id="my-project">
+		<h1>My Projects</h1>
+		{% include projects.html %}
+		<div>&raquo; <a href="/pages/projects.html">자세히...</a></div>
+	</div>
+
 	<div class="side-widget" id="recent-posts">
-	<h1>Recent Posts</h1>
-	<ul class="posts">
-		{% for post in site.posts limit:5 %}
-		<li><a href="{{ post.url }}">{{ post.title }}</a>
-		<!--span>{{ post.date | date_to_string }}</span --></li>
-		{% endfor %}
-	</ul>
+		<h1>Recent Posts</h1>
+		<ul class="posts">
+			{% for post in site.posts limit:5 %}
+			<li><a href="{{ post.url }}">{{ post.title }}</a>
+			{% endfor %}
+		</ul>
 	</div>
 
 	<div class="side-widget" id="categories">
-	<h1>Categories</h1>
+		<h1>Categories</h1>
 		{% include categories.html %}
 	</div>
 
 	<div class="side-widget" id="tagcloud">
-	<h1>Popular Tags</h1>
+		<h1>Popular Tags</h1>
 		{% include tags.html %}
 	</div>
 
-	<div class="side-widget" id="suggestions">
-	<h1>Reader's Suggestions</h1>
-	<div id="writeSkribitHere"></div><script
-		src="http://assets.skribit.com/javascripts/SkribitWidget.js?renderTo=writeSkribitHere&amp;blog=d839a68558f358de2659c5460c51608a&amp;cnt=5"
-		></script><noscript>Sorry, but the <a href="http://skribit.com" title="Skribit - Cure Writer's Block">Skribit</a>
-		widget only works on browsers with JavaScript support.
-		<a href="http://skribit.com/blogs/yonghwans-blog"
-			title="Skribit Suggestions for Yonghwan's blog">View suggestions for this blog here.</a>
-	</noscript>
-	</div>
-
 	<div class="side-widget" id="social-networks">
-	<h1>My Networks</h1>
+		<h1>My Networks</h1>
 
-	<div class="widget-box" id="delicious-box">
-	<script type="text/javascript"
-	src="http://feeds.delicious.com/v2/js/networkbadge/sio4?showadd&icon=m&name&itemcount&nwcount&fancount"
-	></script>
-	</div>
+		<div class="widget-box" id="delicious-box">
+		</div>
 
-	<div class="widget-box tac" id="flickr-box">
-<!-- Start of Flickr Badge -->
-<style type="text/css">
-.zg_div {margin:0px 5px 5px 0px; width:117px;}
-.zg_div_inner {border: solid 1px #000000; background-color:#ffffff; color:#666666; text-align:center; font-family:arial, helvetica; font-size:11px;}
-.zg_div a, .zg_div a:hover, .zg_div a:visited {color:#3993ff; background:inherit !important; text-decoration:none !important;}
-</style>
-<script type="text/javascript">
-zg_insert_badge = function() {
-var zg_bg_color = 'ffffff';
-var zgi_url = 'http://www.flickr.com/apps/badge/badge_iframe.gne?zg_bg_color='+zg_bg_color+'&zg_person_id=41965344%40N04';
-document.write('<iframe style="background-color:#'+zg_bg_color+'; border-color:#'+zg_bg_color+'; border:none;" width="113" height="151" frameborder="0" scrolling="no" src="'+zgi_url+'" title="Flickr Badge"><\/iframe>');
-if (document.getElementById) document.write('<div id="zg_whatlink"><a href="http://www.flickr.com/badge.gne"	style="color:#3993ff;" onclick="zg_toggleWhat(); return false;">이게 뭔가요?<\/a><\/div>');
-}
-zg_toggleWhat = function() {
-document.getElementById('zg_whatdiv').style.display = (document.getElementById('zg_whatdiv').style.display != 'none') ? 'none' : 'block';
-document.getElementById('zg_whatlink').style.display = (document.getElementById('zg_whatdiv').style.display != 'none') ? 'none' : 'block';
-return false;
-}
-</script>
-<div class="zg_div" style="display: inline-block"><div class="zg_div_inner"><a href="http://www.flickr.com">www.<strong style="color:#3993ff">flick<span style="color:#ff1c92">r</span></strong>.com</a><br>
-<script type="text/javascript">zg_insert_badge();</script>
-<div id="zg_whatdiv">이것은 <a href="http://www.flickr.com/photos/41965344@N04">sio4</a>님의 공개 사진 및 동영상을 표시하는 Flickr 뱃지입니다. <a href="http://www.flickr.com/badge.gne">여기</a>에서 나만의 배지를 만들어 보세요.</div>
-<script type="text/javascript">if (document.getElementById) document.getElementById('zg_whatdiv').style.display = 'none';</script>
-</div>
-</div>
-<!-- End of Flickr Badge -->
-	</div>
-
+		<div class="widget-box tac" id="flickr-box">
+		{% include flickr-badge.html %}
+		</div>
 	</div> <!-- my network -->
-
 </div>
-
-<!-- vim: set ts=2 sw=2 noexpandtab : -->

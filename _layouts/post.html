@@ -33,7 +33,7 @@ layout: sidebar
 		{% endfor %}
 		</div>
 
-		<div class="post-hierarchy">
+		<div class="post-hierarchy noprint">
 			{% if page.previous %}
 			<a href="{{ page.previous.url }}"
 				title="Previous post"><i class="icon arrow left"></i> Prev</a>
@@ -44,16 +44,11 @@ layout: sidebar
 				title="Next post">Next <i class="icon arrow right"></i></a>
 			{% endif %}
 		</div>
-
-		<div class="post-comments">
-		</div>
-
 	</div>
 
 	<div class="post-share item-bottom">
 		{% include share-item.html %}
 	</div>
-
 </div>
 
 <div class="post-tail">
