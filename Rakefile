@@ -75,9 +75,9 @@ HTML
     s = posts.count
     font_size = 0.6 + (s * step)
     cloud << <<-CLOUD
-    <a href="/tags/#{tag}.html" title="Postings tagged #{tag}"
+    <span class="nw"><a href="/tags/#{tag}.html" title="Postings tagged #{tag}"
         style="font-size: #{font_size}em; line-height:#{font_size}rem"
-       >#{tag}</a>
+       >#{tag}</a></span>
     CLOUD
   end
 

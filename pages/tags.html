@@ -17,10 +17,12 @@ layout: page
 {% for category in tags %}
   {% assign cat_name = category |first %}
   {% assign cat_size = category |last |size %}
+  {% comment %}
   {% if false and l_count > cat_size %}
     {% continue %}
   {% endif %}
   {% assign font_size = cat_size |times: step |plus: 0.8 %}
+  {% endcomment %}
   {% assign bs = cat_size |times: 100 |divided_by: m_count %}
   <div class="item">
     <div class="frame"><div class="bar" style="width: {{bs}}%"></div></div>
@@ -29,17 +31,5 @@ layout: page
       <span class="details"> » {{cat_size}}</span>
     </div>
   </div>
-  <!--
-  <div class="item" style="font-size: {{font_size}}em;">
-      <a href="/tags/{{cat_name}}.html" title="{{cat_size}}">{{cat_name}}</a>
-  </div>
-  -->
-  <!--
-    <li><a href="/tags/{{ cat_name }}.html"
-          title="Postings on {{ cat_name }}">{{ cat_name }}</a>
-	  <span class="post-count">» {{ cat_size }} ----- {{ font_size }}</span>
-    </li>
-    -->
-
 {% endfor %}
 </div>
