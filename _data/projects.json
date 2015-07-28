@@ -6,6 +6,15 @@
 		"title": "혼천의",
 		"description": "시스템 모니터링 프레임웍 Prototype"
 	}, {
+		"title": "실록",
+		"description": "통합 로그 관리 프레임웍 Prototype"
+	}, {
+		"title": "관문",
+		"description": "혼천의를 위한 API Gateway"
+	}, {
+		"title": "SiSO",
+		"description": "혼천의를 위한 Single Sign On"
+	}, {
 		"title": "옹성",
 		"description": "시스템 접근제어/활동감사 시스템"
 	}, {

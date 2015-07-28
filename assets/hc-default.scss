@@ -541,6 +541,10 @@ div#blog-archives {
 	ul.posts { padding-left: 3rem; }
 }
 // ## code/log block	--------------------------------------------------------
+pre {
+	font-family: $font-code;
+	font-size: $font-xs;
+}
 div.highlight {
 	margin: 1rem; box-shadow: 3px 3px 5px #666;
 	&.short { pre { max-height: 26em; overflow: auto; } }
@@ -548,8 +552,6 @@ div.highlight {
 	pre {
 		margin: 0;
 		padding: 0.3rem 0.6rem;
-		font-family: $font-code;
-		font-size: $font-xs;
 		code {
 			span.lineno { }
 			span.gp { color: $color-grey; }
