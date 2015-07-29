@@ -2,8 +2,6 @@
 title: Archive
 layout: page
 ---
-
-<h1 class="underline">{{ page.title }}</h1>
 <div id="blog-archives">
 {% assign posts_by_date = site.posts |sort: 'date last' %}
 {% for post in posts_by_date %}{% assign ym = post.date |date: "%Y" %}

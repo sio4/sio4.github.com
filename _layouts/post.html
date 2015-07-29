@@ -26,22 +26,20 @@ layout: sidebar
 
 	<div class="post-meta">
 		<div class="post-tags">
-		Tags:
-		{% for tag in page.tags %}
-		<a class="tag-item" href="/tags/{{ tag }}.html"
-			title="View posts tagged with &quot;{{ tag }}&quot;">{{ tag }}</a>
-		{% endfor %}
+			{% for tag in page.tags %}
+			<span><a class="tag-item" href="/tags/{{ tag }}.html">{{ tag }}</a></span>
+			{% endfor %}
 		</div>
 
 		<div class="post-hierarchy noprint">
-			{% if page.previous %}
-			<a href="{{ page.previous.url }}"
+			{% if page.previous %}<a href="{{ page.previous.url }}"
 				title="Previous post"><i class="icon arrow left"></i> Prev</a>
+			{% else %}<i class="icon minus circle"></i> EOA
 			{% endif %}
-			{% if page.previous %}|{% endif %}
-			{% if page.next %}
-			<a href="{{ page.next.url }}"
+			&nbsp; &nbsp; | &nbsp; &nbsp;
+			{% if page.next %}<a href="{{ page.next.url }}"
 				title="Next post">Next <i class="icon arrow right"></i></a>
+			{% else %}EOA <i class="icon circle"></i>
 			{% endif %}
 		</div>
 	</div>
@@ -92,7 +90,7 @@ if(links[i].href.indexOf('#disqus_thread') >= 0) {
 query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
 }
 }
-document.write('<script charset="utf-8" type="text/javascript" src="http://disqus.com/forums/sio4-github/get_num_replies.js' + query + '"></' + 'script>');
+document.write('<script charset="utf-8" type="text/javascript" src="http://disqus.com/forums/sauru/get_num_replies.js' + query + '"></' + 'script>');
 })();
 //]]>
 </script>

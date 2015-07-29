@@ -1,0 +1,48 @@
+{% comment %}
+http://stackoverflow.com/questions/23512188/embedding-a-delicious-json-feed-in-a-website
+https://delicious.com/rss
+{% endcomment %}
+<div id="deliciousPlaceholder"></div>
+
+<script type="text/javascript">
+if (typeof window.Delicious == 'undefined') window.Delicious = {};
+var username = "sio4";
+var ignoreFiletypes = true;
+var minCount = 5;
+var link_prefix = "http://delicious.com/" + username + "/";
+
+function printDeliciousTags(tags) {
+  var out = "";
+  var visibleTags;
+
+  visibleTags = [];
+  maxCount = 0;
+  for (t in tags) {
+    if (tags.hasOwnProperty(t)) {
+      if (tags[t] > maxCount) {
+        maxCount = tags[t];
+      }
+      if (tags[t] >= minCount && (!ignoreFiletypes || t.indexOf(":") == -1)) {
+        visibleTags[visibleTags.length] = t;
+      }
+    }
+  }
+  visibleTags.sort(function (a, b) {
+    return tags[a] < tags[b];
+  });
+  var font_step = (2.0 - 0.6) / (maxCount - minCount);
+
+  out += '<div class="taj">';
+  for (var i = 0; i < visibleTags.length; i++) {
+    var tag = visibleTags[i];
+    var f_size = 0.6 + font_step * tags[tag];
+    var style = 'font-size: ' + f_size + 'rem; line-height: ' + f_size + 'rem';
+    out += '<span class="nw" style="' + style + '">';
+    out += '<a href="' + link_prefix + tag + '">' + tag + '</a>';
+    out += '</span> ';
+  }
+  out += '</div>';
+  document.getElementById("deliciousPlaceholder").innerHTML = out;
+}
+document.writeln('<scr'+'ipt type="text/javascript" src="http://feeds.delicious.com/v2/json/tags/'+username+'?count=0&callback=printDeliciousTags"></scr'+'ipt>');
+</script>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+{% assign description = page.excerpt |strip_html |newline_to_br |strip_newlines |replace: '<br />', ' ' %}
 <head>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,12 +10,10 @@
 	<meta http-equiv="content-language" content="ko" />
 	<meta name="author" content="소용환/Yonghwan SO" />
 	<meta name="keywords" content="소용환의 블로그, {{ page.tags |join:', ' }}" />
-	<meta name="description"
-		content="{{ page.excerpt |strip_html |strip_newlines }}" />
-	<meta name="og:description"
-		content="{{ page.excerpt |strip_html |strip_newlines }}" />
+	<meta name="description" content="{{ description }}" />
+	<meta name="og:description" content="{{ description }}" />
 	<meta name="og:image" content="{{ page.image }}" />
-	<title>{{ page.title }} - {{ site.title }}</title>
+	<title>{{ page.title }} -- {{ site.title }}</title>
 	<link href="{{ site.feedurl }}" title="{{ site.title }}"
 			rel="alternate" type="application/atom+xml" />
 

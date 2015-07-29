@@ -11,7 +11,6 @@ layout: page
   {% endif %}
 {% endfor %}
 {% assign step = 1.6 |minus:0.6 |divided_by: m_count %}
-<h1 class="underline">{{ page.title }}</h1>
 <div class="barchart">
 {% assign tags = site.tags |sort %}
 {% for category in tags %}

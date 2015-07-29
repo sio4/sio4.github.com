@@ -142,6 +142,8 @@ table {
 img {
 	&.inline { margin: 0 1rem; }
 }
+strong { color: black; }
+
 
 // important!!! (for fullsize window)
 * {
@@ -424,7 +426,7 @@ ul.posts {
 
 // ## post structure	--------------------------------------------------------
 .page-body {
-	.post {
+	//.post {
 		.post-title {
 		}
 		.post-details {
@@ -441,13 +443,15 @@ ul.posts {
 			div { display: inline-block; }
 		}
 		.post-content {
-			text-align: justify;
-			margin: 1rem 0 2rem;
-
 			// boxxing!
 			padding: 0.5rem;
 			border-radius: 10px;
 			background: $background-body + #040404;
+		}
+		.page-content,
+		.post-content {
+			text-align: justify;
+			margin: 0.5rem 0 2rem;
 
 			h2, h3, h4, h5 { margin-top: 1.5rem; }
 			h2 { border-bottom: 1px solid $background-body - #202020; }
@@ -497,7 +501,7 @@ ul.posts {
 		.item-bottom {
 			border-top:1px solid #999; margin:2em 0; padding:1rem 0 2rem;
 		}
-	}
+	//}
 	.post-tail {
 		margin: 1em 0;
 		padding: 0.5em;
@@ -541,6 +545,7 @@ div#blog-archives {
 	ul.posts { padding-left: 3rem; }
 }
 // ## code/log block	--------------------------------------------------------
+p code,
 pre {
 	font-family: $font-code;
 	font-size: $font-xs;

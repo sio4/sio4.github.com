@@ -16,12 +16,6 @@ layout: site
 		</div>
 	</div>
 
-	<div class="side-widget" id="my-project">
-		<h1>My Projects</h1>
-		{% include projects.html %}
-		<div>&raquo; <a href="/pages/projects.html">자세히...</a></div>
-	</div>
-
 	<div class="side-widget" id="recent-posts">
 		<h1>Recent Posts</h1>
 		<ul class="posts">
@@ -31,24 +25,33 @@ layout: site
 		</ul>
 	</div>
 
+	<div class="side-widget" id="my-project">
+		<h1>Projects</h1>
+		{% include projects.html %}
+		<div>&raquo; <a href="/pages/projects.html">자세히...</a></div>
+	</div>
+
 	<div class="side-widget" id="categories">
 		<h1>Categories</h1>
 		{% include categories.html %}
 	</div>
 
+	<div class="side-widget" id="social-networks">
+		<h1>Pages</h1>
+		<ul>
+			<li><a href="/pages/projects.html">My Projects</a></li>
+			<li><a href="/pages/social.html">Social Activities</a></li>
+		</ul>
+	</div>
+
 	<div class="side-widget" id="tagcloud">
-		<h1>Popular Tags</h1>
+		<h1>Blog Tags</h1>
 		{% include tags.html %}
 	</div>
 
 	<div class="side-widget" id="social-networks">
-		<h1>My Networks</h1>
-
-		<div class="widget-box" id="delicious-box">
-		</div>
-
 		<div class="widget-box tac" id="flickr-box">
-		{% include flickr-badge.html %}
+			{% include flickr-badge.html %}
 		</div>
 	</div> <!-- my network -->
 </div>

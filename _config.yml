@@ -8,6 +8,11 @@ markdown: kramdown
 defaults:
   -
     scope:
+      path: "projects"
+    values:
+      layout: "page"
+  -
+    scope:
       path: ""
       type: "posts"
     values:
