@@ -1,13 +1,12 @@
 ---
 layout: page
-title: Wall
 ---
 
 <div class="wall-panel" id="blog-posts">
-<h1>Blog Posts</h1>
+<h1 class="underline">Blog Posts</h1>
 {% for post in site.posts limit:10 %}
 <div class="preview-item">
-	<h3 class="underline"><a href="{{post.url}}">{{post.title}}</a></h3>
+	<h3 class="grayline"><a href="{{post.url}}">{{post.title}}</a></h3>
 	<div class="preview-meta">
     <span class="nw"><a href="/categories/{{ post.categories |last |downcase }}.html">{{ post.display }}</a></span>
     <span class="nw">{{ post.date | date: "%F" }}</span>
