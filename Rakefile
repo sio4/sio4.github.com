@@ -43,8 +43,6 @@ task :tags do
 layout: page
 title: Postings tagged as "#{tag}"
 ---
-<h1 class="underline">Postings tagged as "#{tag}"</h1>
-
 <ul class="posts">
 HTML
 
@@ -130,8 +128,6 @@ task :categories do
 layout: page
 title: Postings on "#{cat_name}"
 ---
-<h1 class="underline">Postings on "#{cat_name}"</h1>
-
 <ul class="posts">
 HTML
 
