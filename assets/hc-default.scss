@@ -140,7 +140,11 @@ table {
 	}
 }
 img {
-	&.inline { margin: 0 1rem; }
+	&.inline {
+		margin: 0 1rem;
+		&.pull-right { margin-right: 0; }
+		&.pull-left { margin-left: 0; }
+	}
 }
 strong { color: black; }
 
