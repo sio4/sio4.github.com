@@ -1,5 +1,5 @@
 ---
-title: 업무용 랩탑에서 Disk Write 시험을?!
+title: 처참한 디스크 쓰기 성능 시험
 tags: Disk Recovery 성능 시험 TestDisk Ubuntu
 image: /attachments/2015-07-30-testdisk.png
 date: 2015-07-30 22:49:34+09:00
