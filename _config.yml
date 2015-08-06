@@ -5,6 +5,14 @@ feedurl: "http://feeds.feedburner.com/sauru-so"
 permalink: /blog/:year/:month/:day/:title
 markdown: kramdown
 
+exclude:
+        - assets/vendor/fa/Gemfile
+        - assets/vendor/fa/*.md
+        - assets/vendor/fa/*.json
+        - assets/vendor/fa/less
+        - assets/vendor/fa/scss
+        - assets/vendor/fa/src
+
 defaults:
   -
     scope:
