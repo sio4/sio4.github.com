@@ -1,12 +1,11 @@
 ---
 layout: page
-title: Postings on Category
+title: "Tips&Tricks"
 ---
 {% assign category = page.name |remove: '.html' %}
 {% assign p = site.categories.[category] |first %}
 {% assign category_name = p.display %}
 <div class="wall-panel" id="blog-posts">
-  <h1 class="underline">Postings on "{{ category_name }}"</h1>
   <ul class="posts">
   {% for post in site.categories.[category] %}
     <li>» <span class="meta">{{ post.date |date: '%F %T' }}</span>

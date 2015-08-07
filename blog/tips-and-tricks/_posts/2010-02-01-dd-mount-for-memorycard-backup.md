@@ -3,6 +3,7 @@ title: 메모리카드 백업, dd, mount,...
 tags: Disk Recovery
 date: 2010-02-01T15:46:39+09:00
 modified: 2010-07-02T09:43:05+09:00
+redirect_from: /blog/2010/02/01/dd-mount-for-memorycard-backup/
 ---
 디지털 카메라용 메모리카드에서 지워진 파일을 복구해야 할 일이 생겼다.
 그런데 어쩌나? 이게 쉽게 끝나지 않네? 그래서 요 얼마 동안 별 짓을 다

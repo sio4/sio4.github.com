@@ -2,9 +2,12 @@ title: "소용환의 생각저장소"
 timezone: Asia/Seoul
 url: "http://www.sauru.so"
 feedurl: "http://feeds.feedburner.com/sauru-so"
-permalink: /blog/:year/:month/:day/:title
+permalink: /blog/:title/
 markdown: kramdown
 app_id: 132708240077440
+
+gems:
+        - jekyll-redirect-from
 
 exclude:
         - assets/vendor/fa/Gemfile

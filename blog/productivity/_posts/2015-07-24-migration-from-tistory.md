@@ -3,6 +3,7 @@ title: 블로그, Tistory로부터 Github Pages로 이주
 tags: 블로깅 Github Ember.js Semantic-UI Markdown
 image: /attachments/2015-07-24-migration-from-tistory.jpg
 date: 2015-07-24 12:23:21+09:00
+redirect_from: /blog/2015/07/24/migration-from-tistory/
 ---
 얼마 전에
 [Ember.js](http://emberjs.com/)와

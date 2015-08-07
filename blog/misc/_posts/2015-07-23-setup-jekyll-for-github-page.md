@@ -2,6 +2,7 @@
 title: Setup Jekyll for Github Pages
 tags: Jekyll Github Howto
 date: 2015-07-23 15:07:00+09:00
+redirect_from: /blog/2015/07/23/setup-jekyll-for-github-page/
 ---
 너무 쉽다. Jekyll Local 환경 만들기
 
