@@ -1,16 +1,45 @@
-	<span class="share-title">이 글이 마음에 드세요? </span>
-	<!-- addthis -->
-	<div class="addthis_toolbox addthis_default_style addthis_custom_images">
-		<a class="addthis_button_facebook"><i class="icon facebook square"></i></a>
-		<a class="addthis_button_twitter"><i class="icon twitter"></i></a>
-		<a class="addthis_button_delicious"><i class="icon delicious"></i></a>
-		<a class="addthis_button_digg"><i class="icon digg"></i></a>
-		<a class="addthis_button_google"><i class="icon google"></i></a>
-		<a class="addthis_button_linkedin"><i class="icon linkedin square"></i></a>
-		<a class="addthis_button_favorites"><i class="icon heart"></i></a>
-		<a class="addthis_button_email"><i class="icon mail"></i></a>
-	</div>
-	<script type="text/javascript"
-		src="http://s7.addthis.com/js/250/addthis_widget.js#username=sio4"></script>
-	<!-- end-of-addthis -->
-<!-- vim: set ts=2 sw=2 noexpandtab : -->
+{% assign uurl = site.url |append: page.url %}
+<!-- addthis -->
+<div class="addthis_toolbox addthis_default_style addthis_custom_images">
+	<a class="addthis_button_facebook"><i class="fa fa-facebook-official"></i>
+		<sup class="share_count"><span id="share-facebook"></span></sup>
+	</a>
+	<a class="addthis_button_twitter"><i class="fa fa-twitter"></i>
+		<sup class="share_count"><span id="share-twitter"></span></sup>
+	</a>
+	<a class="addthis_button_google"><i class="fa fa-google-plus"></i>
+		<sup class="share_xcount"><span id="share-google"></span></sup>
+	</a>
+	<a class="addthis_button_pocket"><i class="fa fa-get-pocket"></i>
+		<sup class="share_xcount"><span id="share-delicious"></span></sup>
+	</a>
+	<a class="addthis_button_delicious"><i class="fa fa-delicious"></i>
+		<sup class="share_xcount"><span id="share-delicious"></span></sup>
+	</a>
+	<a class="addthis_button_linkedin"><i class="fa fa-linkedin-square"></i>
+		<sup class="share_count"><span id="share-linkedin"></span></sup>
+	</a>
+</div>
+
+<script>
+if (typeof window.MyShare == 'undefined') {
+	window.MyShare = {};
+	function setCount(target, data) {
+		if (data > 0) {
+			$(target).html('+' + data);
+		} else {
+			$(target).html(data);
+		}
+	}
+	window.cbfb = function(d) { setCount('#share-facebook', d.shares); };
+	window.cbtt = function(d) { setCount('#share-twitter', d.count); };
+	window.cbli = function(d) { setCount('#share-linkedin', d.count); };
+}
+</script>
+<script src="http://graph.facebook.com/?id={{ uurl }}/&callback=cbfb"></script>
+<script src="http://urls.api.twitter.com/1/urls/count.json?url={{ uurl }}&callback=cbtt"></script>
+<script src="https://www.linkedin.com/countserv/count/share?url={{ url }}&format=jsonp&callback=cbli"></script>
+
+<script type="text/javascript"
+	src="http://s7.addthis.com/js/250/addthis_widget.js#username=sio4"></script>
+<!-- end-of-addthis -->

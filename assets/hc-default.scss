@@ -549,6 +549,25 @@ ul.posts {
 div#blog-archives {
 	ul.posts { padding-left: 3rem; }
 }
+// ## addthis toolbox
+.post-share {
+	div, iframe { vertical-align: middle !important; }
+	.addthis_toolbox {
+		font-size: $font-l;
+		a {
+			margin: 0 2px;
+			sup.share_count {
+				background: #fff;
+				border: 1px solid #ccc;
+				border-radius: 6px 6px 6px 0;
+				font-size: 0.6em;
+				padding: 0 3px;
+				vertical-align: super;
+			}
+		}
+	}
+}
+
 // ## code/log block	--------------------------------------------------------
 p code,
 pre {

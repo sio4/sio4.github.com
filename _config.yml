@@ -4,6 +4,7 @@ url: "http://www.sauru.so"
 feedurl: "http://feeds.feedburner.com/sauru-so"
 permalink: /blog/:year/:month/:day/:title
 markdown: kramdown
+app_id: 132708240077440
 
 exclude:
         - assets/vendor/fa/Gemfile
