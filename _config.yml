@@ -4,7 +4,9 @@ url: "http://www.sauru.so"
 feedurl: "http://feeds.feedburner.com/sauru-so"
 permalink: /blog/:title/
 markdown: kramdown
+
 app_id: 132708240077440
+default_image: "/assets/images/sauru-20150806.png"
 
 gems:
         - jekyll-redirect-from

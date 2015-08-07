@@ -2,6 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 {% assign description = page.excerpt |strip_html |newline_to_br |strip_newlines |replace: '<br />', ' ' %}
 {% if page.modified %}{% assign updated_time = page.modified %}{% else %}{% assign updated_time = page.date %}{% endif %}
+{% if page.image %} {% assign sc = page.image |split:'/' |first %} {% if sc == '' %} {% assign og_image = site.url |append: page.image %} {% else %} {% assign og_image = page.image %} {% endif %} {% else %} {% assign og_image = site.url |append: site.default_image %} {% endif %}
 <head>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,16 +15,15 @@
 	<meta name="description" content="{{ description }}" />
 	<link rel="canonical" href="{{ site.url }}{{ page.url }}" />
 
-	<meta name="fb:app_id" content="{{ site.app_id }}" />
-	<meta name="og:url" content="{{ site.url }}{{ page.url }}" />
-	<meta name="og:title" content="{{ page.title }} -- {{ site.title }}" />
-	<meta name="og:type" content="article" />
-	<meta name="og:locale" content="ko_KR" />
-	<meta name="og:description" content="{{ description }}" />
-	<meta name="og:updated_time" content="{{ updated_time |date: '%s' }}" />
-	{% if page.image %}<meta name="og:image" content="{{ page.image }}" />
-	{% else %}<meta name="og:image" content="/assets/images/sauru-main.png" />
-	{% endif %}
+	<meta property="fb:app_id" content="{{ site.app_id }}" />
+	<meta property="og:url" content="{{ site.url }}{{ page.url }}" />
+	<meta property="og:title" content="{{ page.title }} -- {{ site.title }}" />
+	<meta property="og:type" content="article" />
+	<meta property="og:locale" content="ko_KR" />
+	<meta property="og:description" content="{{ description }}" />
+	<meta property="og:image" content="{{ og_image }}" />
+	{% if updated_time %}<meta property="og:updated_time"
+		content="{{ updated_time |date: '%s' }}" />{% endif %}
 
 	<title>{{ page.title }} -- {{ site.title }}</title>
 	<link href="{{ site.feedurl }}" title="{{ site.title }}"
