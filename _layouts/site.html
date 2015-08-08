@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 {% assign description = page.excerpt |strip_html |newline_to_br |strip_newlines |replace: '<br />', ' ' %}
-{% if page.modified %}{% assign updated_time = page.modified %}{% else %}{% assign updated_time = page.date %}{% endif %}
+{% if page.modified %}{% assign ut = page.modified %}{% else %}{% assign ut = page.date %}{% endif %}{% assign ut = ut |date: '%s' %}
 {% if page.image %} {% assign sc = page.image |split:'/' |first %} {% if sc == '' %} {% assign og_image = site.url |append: page.image %} {% else %} {% assign og_image = page.image %} {% endif %} {% else %} {% assign og_image = site.url |append: site.default_image %} {% endif %}
 <head>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="shortcut icon" href="/favicon.png">
+	<link rel="shortcut icon" href="/favicon.ico">
+	<link rel="icon" type="image/png" href="/favicon-192.png" sizes="192x192">
+	<link rel="icon" type="image/png" href="/favicon.png">
 
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<meta http-equiv="content-language" content="ko" />
@@ -17,13 +19,14 @@
 
 	<meta property="fb:app_id" content="{{ site.app_id }}" />
 	<meta property="og:url" content="{{ site.url }}{{ page.url }}" />
-	<meta property="og:title" content="{{ page.title }} -- {{ site.title }}" />
+	<meta property="og:title" content="{{ page.title }}" />
+	<meta property="og:site_name" content="{{ site.title }}" />
 	<meta property="og:type" content="article" />
 	<meta property="og:locale" content="ko_KR" />
 	<meta property="og:description" content="{{ description }}" />
 	<meta property="og:image" content="{{ og_image }}" />
-	{% if updated_time %}<meta property="og:updated_time"
-		content="{{ updated_time |date: '%s' }}" />{% endif %}
+	{% if ut %}<meta property="og:updated_time" content="{{ ut }}" />{% endif %}
+	<meta property="article:author" content="{{ site.author_page }}" />
 
 	<title>{{ page.title }} -- {{ site.title }}</title>
 	<link href="{{ site.feedurl }}" title="{{ site.title }}"

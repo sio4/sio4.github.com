@@ -5,8 +5,10 @@ feedurl: "http://feeds.feedburner.com/sauru-so"
 permalink: /blog/:title/
 markdown: kramdown
 
+### Facebook OG related:
 app_id: 132708240077440
 default_image: "/assets/images/sauru-20150806.png"
+author_page: "https://www.facebook.com/yonghwan.so"
 
 gems:
         - jekyll-redirect-from
