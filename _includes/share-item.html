@@ -28,7 +28,7 @@ if (typeof window.MyShare == 'undefined') {
 		if (data > 0) {
 			$(target).html('+' + data);
 		} else {
-			$(target).html(data);
+			$(target).html('0');
 		}
 	}
 	window.cbfb = function(d) { setCount('#share-facebook', d.shares); };

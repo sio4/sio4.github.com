@@ -88,6 +88,20 @@ a, a:visited {
 	color: inherit;
 	&:hover { color: $color-link-hover; }
 	&.hl { color: $color-link; }
+	&.ext:after {
+		content: "\F08E";
+		font-family: FontAwesome;
+		font-size: 0.7em;
+		vertical-align: super;
+		padding-left: 3px;
+	}
+	&.reference:after {
+		content: "\F24A";
+		font-family: FontAwesome;
+		font-size: 0.7em;
+		vertical-align: super;
+		padding-left: 3px;
+	}
 }
 ul {
 	padding: 0 0 0 2.5rem;
@@ -146,7 +160,10 @@ img {
 		&.pull-left { margin-left: 0; }
 	}
 }
-strong { color: black; }
+strong {
+	color: black;
+	font-weight: normal;
+}
 
 
 // important!!! (for fullsize window)
@@ -514,6 +531,14 @@ ul.posts {
 		h2 {
 			margin-bottom: 1rem;
 		}
+	}
+}
+
+// ## post content
+.post-content {
+	.post-signature {
+		padding-top: 2em;
+		font-style: italic;
 	}
 }
 
