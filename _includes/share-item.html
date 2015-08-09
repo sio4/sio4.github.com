@@ -36,9 +36,9 @@ if (typeof window.MyShare == 'undefined') {
 	window.cbli = function(d) { setCount('#share-linkedin', d.count); };
 }
 </script>
-<script src="http://graph.facebook.com/?id={{ uurl }}/&callback=cbfb"></script>
+<script src="http://graph.facebook.com/?id={{ uurl }}&callback=cbfb"></script>
 <script src="http://urls.api.twitter.com/1/urls/count.json?url={{ uurl }}&callback=cbtt"></script>
-<script src="https://www.linkedin.com/countserv/count/share?url={{ url }}&format=jsonp&callback=cbli"></script>
+<script src="https://www.linkedin.com/countserv/count/share?url={{ uurl }}&format=jsonp&callback=cbli"></script>
 
 <script type="text/javascript"
 	src="http://s7.addthis.com/js/250/addthis_widget.js#username=sio4"></script>
