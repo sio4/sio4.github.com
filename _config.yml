@@ -12,6 +12,7 @@ author_page: "https://www.facebook.com/yonghwan.so"
 
 gems:
         - jekyll-redirect-from
+        - jekyll-sitemap
 
 exclude:
         - assets/vendor/fa/Gemfile
@@ -20,6 +21,7 @@ exclude:
         - assets/vendor/fa/less
         - assets/vendor/fa/scss
         - assets/vendor/fa/src
+        - assets/vendor/semantic-ui-1.11.4
 
 defaults:
   -
