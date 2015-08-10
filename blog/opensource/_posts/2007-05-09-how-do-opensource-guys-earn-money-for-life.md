@@ -1,4 +1,5 @@
 ---
+redirect_from: /blog/2007/05/09/how-do-opensource-guys-earn-money-for-life/
 title: 자유소프트웨어를 만드는 사람들은 뭘 먹고 살아요?
 tags: 개발자 오픈소스
 date: 2007-05-09T10:23:11+09:00

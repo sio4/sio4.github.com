@@ -1,4 +1,5 @@
 ---
+redirect_from: /blog/2007/11/07/fixed-mobile-convergence/
 title: '"밖에서는 휴대 전화, 안에서는 인터넷 전화로" 란다.'
 tags: Convergence VoIP 모바일 텔레콤 홈네트워크
 date: 2007-11-07T19:34:14+09:00

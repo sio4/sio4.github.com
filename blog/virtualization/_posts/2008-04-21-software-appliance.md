@@ -1,4 +1,5 @@
 ---
+redirect_from: /blog/2008/04/21/software-appliance/
 title: 소프트웨어 어플라이언스,
 tags: Software-Appliance 가상화 리눅스
 date: 2008-04-21T16:03:53+09:00

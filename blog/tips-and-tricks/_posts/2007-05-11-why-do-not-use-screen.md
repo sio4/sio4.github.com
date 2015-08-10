@@ -1,4 +1,5 @@
 ---
+redirect_from: /blog/2007/05/11/why-do-not-use-screen/
 title: 왜 screen을 사용하지 않는가?
 tags: 리눅스 운영기술 오픈소스 유틸리티
 date: 2007-05-11T10:45:29+09:00

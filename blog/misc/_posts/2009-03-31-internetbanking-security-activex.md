@@ -1,4 +1,5 @@
 ---
+redirect_from: /blog/2009/03/31/internetbanking-security-activex/
 title: 인터넷뱅킹? 보안? ActiveX?
 tags: ActiveX 보안
 date: 2009-03-31T11:09:52+09:00

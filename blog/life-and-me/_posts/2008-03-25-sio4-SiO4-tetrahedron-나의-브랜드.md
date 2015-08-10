@@ -1,4 +1,5 @@
 ---
+redirect_from: /blog/2008/03/25/sio4-SiO4-tetrahedron-나의-브랜드/
 title: sio4, SiO4 Tetrahedron, 나의 브랜드.
 tags: 브랜드 지질학
 date: 2008-03-25T00:55:07+09:00

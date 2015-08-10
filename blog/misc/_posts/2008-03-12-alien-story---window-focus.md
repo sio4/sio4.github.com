@@ -1,4 +1,5 @@
 ---
+redirect_from: /blog/2008/03/12/alien-story---window-focus/
 title: 이방인 이야기 - 창 포커스
 tags: UI 리눅스 윈도우즈 회사
 date: 2008-03-12T00:46:59+09:00

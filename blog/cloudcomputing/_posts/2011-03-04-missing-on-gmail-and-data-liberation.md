@@ -1,4 +1,5 @@
 ---
+redirect_from: /blog/2011/03/04/missing-on-gmail-and-data-liberation/
 title: GMail의 분실사고! 그리고 자료 해방!
 tags: 자료해방 Google 신뢰성 클라우드컴퓨팅
 date: 2011-03-04T14:07:26+09:00

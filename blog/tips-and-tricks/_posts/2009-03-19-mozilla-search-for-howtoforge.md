@@ -1,4 +1,5 @@
 ---
+redirect_from: /blog/2009/03/19/mozilla-search-for-howtoforge/
 title: HowtoForge에 대한 모질라 검색사이트
 tags: Firefox
 date: 2009-03-19T13:10:59+09:00

@@ -1,4 +1,5 @@
 ---
+redirect_from: /blog/2007/04/27/adobe-to-open-source-flex/
 title: '"Adobe to Open Source Flex"'
 tags: Adobe 오픈소스 자바
 date: 2007-04-27T00:37:29+09:00

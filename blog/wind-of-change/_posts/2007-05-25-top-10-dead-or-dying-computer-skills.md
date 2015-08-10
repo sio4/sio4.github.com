@@ -1,4 +1,5 @@
 ---
+redirect_from: /blog/2007/05/25/top-10-dead-or-dying-computer-skills/
 title: "The top 10 dead (or dying) computer skills"
 tags: 개발 변화의물결
 date: 2007-05-25T09:47:47+09:00

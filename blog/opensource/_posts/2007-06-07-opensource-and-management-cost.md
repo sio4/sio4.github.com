@@ -1,4 +1,5 @@
 ---
+redirect_from: /blog/2007/06/07/opensource-and-management-cost/
 title: 공개소프트웨어, 그리고 관리비용
 tags: 관리비용 Google 오픈소스
 date: 2007-06-07T10:53:13+09:00

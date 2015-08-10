@@ -1,4 +1,5 @@
 ---
+redirect_from: /blog/2008/04/29/ssh--fast-conn-pseudo-tty-and-socks-proxy/
 title: "SSH: 빠른 접속, Pseudo-tty, 웹필터 회피"
 tags: 네트워크 토막상식
 date: 2008-04-29T02:36:57+09:00

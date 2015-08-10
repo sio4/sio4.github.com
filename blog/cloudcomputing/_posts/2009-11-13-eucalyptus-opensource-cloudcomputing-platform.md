@@ -1,4 +1,5 @@
 ---
+redirect_from: /blog/2009/11/13/eucalyptus-opensource-cloudcomputing-platform/
 title: Eucalyptus, Open Source CloudComputing Platform
 tags: Eucalyptus 오픈소스 클라우드컴퓨팅
 date: 2009-11-13T08:42:26+09:00

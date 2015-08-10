@@ -1,4 +1,5 @@
 ---
+redirect_from: /blog/2009/09/13/long-running-tasks/
 title: Background Jobs, Long Running Tasks
 tags: Delayed-Job
 date: 2009-09-13T13:48:00+09:00

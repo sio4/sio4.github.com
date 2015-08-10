@@ -1,9 +1,9 @@
 ---
+redirect_from: /blog/2007/04/16/adaptive-hd-mpeg2ts-streaming-system/
 title: Adaptive HD MPEG-2 TS Streaming System
 tags: MPEG 멀티미디어 적응형 스트리밍
 date: 2007-04-16T14:47:00+09:00
 modified: 2010-06-30T17:18:26+09:00
-redirect_from: /blog/2007/04/16/adaptive-hd-mpeg2ts-streaming-system/
 ---
 디디로써의 첫 리딩인가? 사실, 회사 아래에 블로그 시스템을 두는 것을
 고려하게 된 사연인 즉, 이렇게 읽은 글들을 어떻게 관리해야 하나... 하는

@@ -1,4 +1,5 @@
 ---
+redirect_from: /blog/2009/10/30/ubuntu-910-easy-cloud-computing-support/
 title: Ubuntu 새버전(9.10), 간편한 Cloud Computing 지원
 tags: Ubuntu 클라우드컴퓨팅
 date: 2009-10-30T04:00:00+09:00

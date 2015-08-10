@@ -1,4 +1,5 @@
 ---
+redirect_from: /blog/2011/03/04/changing-architecture-of-nasa-nebula-cloud/
 title: NASA Nebula Cloud의 아키텍쳐 변경
 tags: 클라우드컴퓨팅 Eucalyptus NASA OpenStack 행동수칙
 date: 2011-03-04T13:14:52+09:00

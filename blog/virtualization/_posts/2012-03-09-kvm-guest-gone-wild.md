@@ -1,4 +1,5 @@
 ---
+redirect_from: /blog/2012/03/09/kvm-guest-gone-wild/
 title: kvm, kvmclock, 그리고 "폭주 게스트"
 tags: 장애분석 kvm strace
 date: 2012-03-09T13:57:05+09:00

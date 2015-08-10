@@ -1,4 +1,5 @@
 ---
+redirect_from: /blog/2007/04/26/karaoke-appliance-for-ucc-recoding/
 title: 개인 뮤직비디오 녹화용 노래 "박스"
 tags: Software-Appliance
 date: 2007-04-26T01:32:57+09:00

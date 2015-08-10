@@ -1,4 +1,5 @@
 ---
+redirect_from: /blog/2007/11/13/gooles--mobile-platform/
 title: Androidology, 구글의 또는 구글에 의한 모바일 플랫폼.
 tags: Google 모바일 오픈소스 안드로이드 동영상
 date: 2007-11-13T10:25:37+09:00

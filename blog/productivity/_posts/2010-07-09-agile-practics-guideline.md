@@ -1,4 +1,5 @@
 ---
+redirect_from: /blog/2010/07/09/agile-practics-guideline/
 title: 애자일 프랙티스 가이드라인 요약
 tags: 애자일 생산성
 date: 2010-07-09T16:36:43+09:00

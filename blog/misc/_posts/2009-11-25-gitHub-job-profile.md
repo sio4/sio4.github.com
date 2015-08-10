@@ -1,4 +1,5 @@
 ---
+redirect_from: /blog/2009/11/25/gitHub-job-profile/
 title: "GitHub Job Profile: 뭐랄까..."
 tags: 개발자 Github 소셜네트워크
 date: 2009-11-25T08:32:52+09:00

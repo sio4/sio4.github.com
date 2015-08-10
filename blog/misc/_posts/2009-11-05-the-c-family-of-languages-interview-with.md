@@ -1,4 +1,5 @@
 ---
+redirect_from: /blog/2009/11/05/the-c-family-of-languages-interview-with/
 title: "The C Family of Languages: Interview with..."
 tags: C-Language
 date: 2009-11-05T02:07:59+09:00

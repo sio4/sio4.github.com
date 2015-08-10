@@ -1,4 +1,5 @@
 ---
+redirect_from: /blog/2007/05/21/the-power-of-code-review/
 title: '"The Power of Code Review"'
 tags: 형상관리 개발 협업 코드리뷰
 date: 2007-05-21T14:15:45+09:00

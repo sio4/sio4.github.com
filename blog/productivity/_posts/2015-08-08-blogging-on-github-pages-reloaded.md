@@ -1,4 +1,5 @@
 ---
+redirect_from: /blog/2015/08/08/blogging-on-github-pages-reloaded/
 title: Jekyll로 Github Pages에 블로깅하기, Re!oaded
 tags: Jekyll Github Github-Pages 블로깅 Disqus 소셜네트워크
 image: /attachments/20150808-ghp-reloaded-1.png

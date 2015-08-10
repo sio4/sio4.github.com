@@ -1,4 +1,5 @@
 ---
+redirect_from: /blog/2007/05/07/comcast-picks-zimbra-for-online-e-mail/
 title: '"Comcast picks Zimbra for online e-mail"'
 tags: Zimbra 가상화 사용자지향 Software-Appliance 오픈소스
 date: 2007-05-07T14:18:06+09:00

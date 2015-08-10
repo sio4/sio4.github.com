@@ -1,9 +1,9 @@
 ---
+redirect_from: /blog/2015/07/30/write-test-on-my-laptop/
 title: 처참한 디스크 쓰기 성능 시험
 tags: Disk Recovery 성능 시험 TestDisk Ubuntu
 image: /attachments/2015-07-30-testdisk.png
 date: 2015-07-30 22:49:34+09:00
-redirect_from: /blog/2015/07/30/write-test-on-my-laptop/
 ---
 뭐, 낯 뜨거운 일이지만 IT를 생업으로 하고 있고, 십년이 넘도록 친구나
 가족보다 컴퓨터와 보내는 시간이 훨씬 많았던 난데, 말이 안되는 실수를

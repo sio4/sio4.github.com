@@ -1,4 +1,5 @@
 ---
+redirect_from: /blog/2008/04/21/action-disclosure-of-personal-informations/
 title: 옥션 회원정보 유출
 tags: 개인정보 유출
 date: 2008-04-21T15:23:49+09:00

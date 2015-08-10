@@ -1,4 +1,5 @@
 ---
+redirect_from: /blog/2008/01/18/sun-microsystems-to-acquire-mysql/
 title: '"Sun Microsystems to Acquire MySQL"'
 tags: 소식 MySQL Sun-Microsystems 오픈소스
 date: 2008-01-18T00:42:36+09:00

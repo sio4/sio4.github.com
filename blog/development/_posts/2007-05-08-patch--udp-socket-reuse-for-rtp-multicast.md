@@ -1,4 +1,5 @@
 ---
+redirect_from: /blog/2007/05/08/patch--udp-socket-reuse-for-rtp-multicast/
 title: '패치: UDP socket reuse for RTP Multicast'
 tags: RTP 멀티미디어 오픈소스 패치
 date: 2007-05-08T16:39:21+09:00

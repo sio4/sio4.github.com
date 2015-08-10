@@ -1,4 +1,5 @@
 ---
+redirect_from: /blog/2009/11/23/change-concept-of-sla-of-cloud-era/
 title: 클라우드 컴퓨팅의 SLA, 개념의 전환
 tags: SLA 클라우드컴퓨팅
 date: 2009-11-23T14:05:06+09:00

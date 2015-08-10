@@ -1,4 +1,5 @@
 ---
+redirect_from: /blog/2008/02/25/celf-korea-tech-jamboree/
 title: "행사: CELF Korea Tech Jamboree"
 tags: 공동체 가전 오픈소스 임베디드
 date: 2008-02-25T00:45:38+09:00

@@ -1,4 +1,5 @@
 ---
+redirect_from: /blog/2010/05/09/first-impression-of-ubuntu-10.04-lucid-lynx/
 title: "리뷰: Ubuntu 10.04 Lucid Lynx의 첫인상"
 tags: Ubuntu
 date: 2010-05-09T13:29:00+09:00

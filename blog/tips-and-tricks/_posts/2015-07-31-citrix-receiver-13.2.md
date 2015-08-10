@@ -1,9 +1,9 @@
 ---
+redirect_from: /blog/2015/07/31/citrix-receiver-13.2/
 title: Citrix Receiver 13.2 for Chrome/Firefox
 tags: Chrome Citrix VDI Firefox
 image: /attachments/2015-07-31-icaclient-ff-w.png
 date: 2015-07-31 00:20:27+09:00
-redirect_from: /blog/2015/07/31/citrix-receiver-13.2/
 ---
 ![](/attachments/2015-07-31-citrix-receiver.png){:.inline.pull-left}
 "디스크 구멍내기" 사건 이후로 OS를 다시 설치하고 설정하는 중에,

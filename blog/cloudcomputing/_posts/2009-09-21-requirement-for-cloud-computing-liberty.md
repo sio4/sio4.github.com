@@ -1,4 +1,5 @@
 ---
+redirect_from: /blog/2009/09/21/requirement-for-cloud-computing-liberty/
 title: 클라우드 컴퓨팅의 조건, 자유!
 tags: 클라우드컴퓨팅 상호운용성 자료해방 Google
 date: 2009-09-21T02:30:00+09:00

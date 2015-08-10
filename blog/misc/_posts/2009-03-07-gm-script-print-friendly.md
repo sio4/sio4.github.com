@@ -1,4 +1,5 @@
 ---
+redirect_from: /blog/2009/03/07/gm-script-print-friendly/
 title: "GM Script: Print Friendly WebPage."
 tags: Firefox GreaseMonkey
 date: 2009-03-07T22:11:23+09:00

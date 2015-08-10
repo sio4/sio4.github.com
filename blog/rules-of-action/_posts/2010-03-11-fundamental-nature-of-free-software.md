@@ -1,4 +1,5 @@
 ---
+redirect_from: /blog/2010/03/11/fundamental-nature-of-free-software/
 title: 자유소프트웨어, 근원적 본질
 tags: 자유소프트웨어 오픈소스 사회적책임 행동수칙
 date: 2010-03-11T23:00:34+09:00

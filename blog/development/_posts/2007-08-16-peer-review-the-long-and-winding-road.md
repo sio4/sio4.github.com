@@ -1,4 +1,5 @@
 ---
+redirect_from: /blog/2007/08/16/peer-review-the-long-and-winding-road/
 title: Peer Review. 언제쯤?
 tags: 개발 생산성
 date: 2007-08-16T17:32:48+09:00

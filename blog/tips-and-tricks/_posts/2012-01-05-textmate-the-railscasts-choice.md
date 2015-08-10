@@ -1,4 +1,5 @@
 ---
+redirect_from: /blog/2012/01/05/textmate-the-railscasts-choice/
 title: TextMate, RailsCast의 선택? :-)
 tags: 오픈소스 유틸리티
 date: 2012-01-05T19:20:19+09:00

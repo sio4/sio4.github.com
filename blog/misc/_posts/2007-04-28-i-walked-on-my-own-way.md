@@ -1,4 +1,5 @@
 ---
+redirect_from: /blog/2007/04/28/i-walked-on-my-own-way/
 title: '읽어볼 것: "나는 내 식대로 살아왔다"'
 tags: 읽어보기
 date: 2007-04-28T19:52:26+09:00

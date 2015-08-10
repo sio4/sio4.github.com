@@ -1,4 +1,5 @@
 ---
+redirect_from: /blog/2007/05/09/oracle-rush-into-the-embedded-database-market/
 title: 오픈소스, 임베디드, 그리고 메이져리그
 tags: Berkeley-DB 변화의물결 Oracle 오픈소스 임베디드 소식
 date: 2007-05-09T10:36:34+09:00

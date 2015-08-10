@@ -1,4 +1,5 @@
 ---
+redirect_from: /blog/2007/05/28/7-elements-of-the-social-software/
 title: 소셜 소프트웨어의 7 요소
 tags: 소셜네트워크
 date: 2007-05-28T11:49:52+09:00

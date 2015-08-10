@@ -1,4 +1,5 @@
 ---
+redirect_from: /blog/2009/10/07/glustersp-gluster-storage-platform/
 title: GlusterSP, Gluster Storage Platform
 tags: Software-Appliance 스토리지 클라우드컴퓨팅
 date: 2009-10-07T01:00:00+09:00

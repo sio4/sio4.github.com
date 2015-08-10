@@ -1,4 +1,5 @@
 ---
+redirect_from: /blog/2007/05/23/is-there-any-boundary-between-pc-and-internet/
 title: "인터넷 생활: 인터넷, 로컬 카피, 글로벌 카피"
 tags: 플랫폼 인터넷
 date: 2007-05-23T14:33:48+09:00

@@ -1,4 +1,5 @@
 ---
+redirect_from: /blog/2007/04/24/flanklin-planner/
 title: "프랭클린 플래너를 쓰는 사람의 시간은 다르다"
 tags: 생산성 플래너
 date: 2007-04-24T14:06:57+09:00

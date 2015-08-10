@@ -1,4 +1,5 @@
 ---
+redirect_from: /blog/2009/11/13/fantastic-paas-for-ruby-on-rails/
 title: 환상적! Ruby on Rails를 위한 PaaS 서비스!
 tags: 개발 Git Heroku Ruby-on-Rails
 date: 2009-11-13T08:43:00+09:00

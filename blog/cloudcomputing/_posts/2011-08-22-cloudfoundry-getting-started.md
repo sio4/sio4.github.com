@@ -1,4 +1,5 @@
 ---
+redirect_from: /blog/2011/08/22/cloudfoundry-getting-started/
 title: CloudFoundry, Getting Started
 tags: 클라우드컴퓨팅 CloudFoundry 개발 PaaS Ubuntu
 date: 2011-08-22T17:01:43+09:00
