@@ -555,6 +555,7 @@ ul.posts {
 // ## for index.html, preview-item
 .preview-item {
 	margin: 1rem 0 2rem;
+	clear: both;
 	.preview-meta {
 		float: right; text-align: right;
 		max-width: 30%; padding: 0 0 1rem 1rem;

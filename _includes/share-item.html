@@ -1,23 +1,23 @@
-{% assign uurl = site.url |append: page.url %}
+{% if include.po %}{% assign uurl = site.url |append: include.po.url %}{% assign sec = include.po.date |date: '%s' %}{% else %}{% assign uurl = site.url |append: page.url %}{% assign sec = page.date |date: '%s' %}{% endif %}
 <!-- addthis -->
 <div class="addthis_toolbox addthis_default_style addthis_custom_images">
 	<a class="addthis_button_facebook"><i class="fa fa-facebook-official"></i>
-		<sup class="share_count"><span id="share-facebook"></span></sup>
+		<sup class="share_count"><span id="sc-fb-{{sec}}"></span></sup>
 	</a>
 	<a class="addthis_button_twitter"><i class="fa fa-twitter"></i>
-		<sup class="share_count"><span id="share-twitter"></span></sup>
+		<sup class="share_count"><span id="sc-tw-{{sec}}"></span></sup>
 	</a>
 	<a class="addthis_button_google"><i class="fa fa-google-plus"></i>
-		<sup class="share_count"><span id="share-google"></span></sup>
+		<sup class="share_count"><span id="sc-gg-{{sec}}"></span></sup>
 	</a>
 	<a class="addthis_button_pocket"><i class="fa fa-get-pocket"></i>
-		<sup class="share_xcount"><span id="share-delicious"></span></sup>
+		<sup class="share_xcount"><span id="sc-gp-{{sec}}"></span></sup>
 	</a>
 	<a class="addthis_button_delicious"><i class="fa fa-delicious"></i>
-		<sup class="share_xcount"><span id="share-delicious"></span></sup>
+		<sup class="share_xcount"><span id="sc-dc-{{sec}}"></span></sup>
 	</a>
 	<a class="addthis_button_linkedin"><i class="fa fa-linkedin-square"></i>
-		<sup class="share_count"><span id="share-linkedin"></span></sup>
+		<sup class="share_count"><span id="sc-li-{{sec}}"></span></sup>
 	</a>
 </div>
 
@@ -31,10 +31,10 @@ if (typeof window.MyShare == 'undefined') {
 			$(target).html('0');
 		}
 	}
-	window.cbfb = function(d) { setCount('#share-facebook', d.shares); };
-	window.cbtt = function(d) { setCount('#share-twitter', d.count); };
-	window.cbli = function(d) { setCount('#share-linkedin', d.count); };
 }
+window.cbfb_{{sec}} = function(d) { setCount('#sc-fb-{{sec}}', d.shares); };
+window.cbtt_{{sec}} = function(d) { setCount('#sc-tw-{{sec}}', d.count); };
+window.cbli_{{sec}} = function(d) { setCount('#sc-li-{{sec}}', d.count); };
 
 // get google+ count
 $(window).load(function(){
@@ -59,16 +59,16 @@ $(window).load(function(){
 		contentType: 'application/json',
 		data: JSON.stringify(data),
 		success: function(r){
-			setCount('#share-google', r.result.metadata.globalCounts.count);
+			setCount('#sc-gg-{{sec}}', r.result.metadata.globalCounts.count);
 		}
 	});
 });
 
 
 </script>
-<script src="http://graph.facebook.com/?id={{ uurl }}&callback=cbfb"></script>
-<script src="http://urls.api.twitter.com/1/urls/count.json?url={{ uurl }}&callback=cbtt"></script>
-<script src="https://www.linkedin.com/countserv/count/share?url={{ uurl }}&format=jsonp&callback=cbli"></script>
+<script src="http://graph.facebook.com/?id={{ uurl }}&callback=cbfb_{{sec}}"></script>
+<script src="http://urls.api.twitter.com/1/urls/count.json?url={{ uurl }}&callback=cbtt_{{sec}}"></script>
+<script src="https://www.linkedin.com/countserv/count/share?url={{ uurl }}&format=jsonp&callback=cbli_{{sec}}"></script>
 
 <script type="text/javascript"
 	src="http://s7.addthis.com/js/250/addthis_widget.js#username=sio4"></script>
