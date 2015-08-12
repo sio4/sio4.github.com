@@ -8,7 +8,7 @@
 		<sup class="share_count"><span id="share-twitter"></span></sup>
 	</a>
 	<a class="addthis_button_google"><i class="fa fa-google-plus"></i>
-		<sup class="share_xcount"><span id="share-google"></span></sup>
+		<sup class="share_count"><span id="share-google"></span></sup>
 	</a>
 	<a class="addthis_button_pocket"><i class="fa fa-get-pocket"></i>
 		<sup class="share_xcount"><span id="share-delicious"></span></sup>
@@ -35,6 +35,36 @@ if (typeof window.MyShare == 'undefined') {
 	window.cbtt = function(d) { setCount('#share-twitter', d.count); };
 	window.cbli = function(d) { setCount('#share-linkedin', d.count); };
 }
+
+// get google+ count
+$(window).load(function(){
+	var data = {
+		"method":"pos.plusones.get",
+		"id":"{{ uurl }}",
+		"params":{
+			"nolog":true,
+			"id":"{{ uurl }}",
+			"source":"widget",
+			"userId":"@viewer",
+			"groupId":"@self"
+		},
+		"jsonrpc":"2.0",
+		"key":"p",
+		"apiVersion":"v1"
+	};
+	$.ajax({
+		type: "POST",
+		url: "https://clients6.google.com/rpc",
+		processData: true,
+		contentType: 'application/json',
+		data: JSON.stringify(data),
+		success: function(r){
+			setCount('#share-google', r.result.metadata.globalCounts.count);
+		}
+	});
+});
+
+
 </script>
 <script src="http://graph.facebook.com/?id={{ uurl }}&callback=cbfb"></script>
 <script src="http://urls.api.twitter.com/1/urls/count.json?url={{ uurl }}&callback=cbtt"></script>
