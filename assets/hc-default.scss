@@ -179,7 +179,8 @@ strong {
 .taj { text-align: justify !important; }
 .pull-right { float: right !important; }
 .pull-left { float: left !important; }
-.fit { max-width: 94%; margin-left: auto; margin-right: auto; display: block; }
+.fit { max-width: 94%; display: block; }
+.fit { margin-left: auto !important; margin-right: auto !important; }
 .half { max-width: 50%; margin-left: auto; margin-right: auto; display: block; }
 .nw { white-space: nowrap !important; }
 .nomargin { margin: 0 !important; }
