@@ -12,6 +12,7 @@
 
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<meta http-equiv="content-language" content="ko" />
+	<meta name="pocket-site-verification" content="9ab7951b6104ecd5d0de0ca0fbfc90" />
 	<meta name="author" content="소용환/Yonghwan SO" />
 	<meta name="keywords" content="소용환의 블로그, {{ page.tags |join:', ' }}" />
 	<meta name="description" content="{{ description }}" />
@@ -19,7 +20,7 @@
 
 	<meta property="fb:app_id" content="{{ site.app_id }}" />
 	<meta property="og:url" content="{{ site.url }}{{ page.url }}" />
-	<meta property="og:title" content="{{ page.title }}" />
+	{% if page.title %}<meta property="og:title" content="{{ page.title }}" />{% else %}<meta property="og:title" content="{{ site.title }}" />{% endif %}
 	<meta property="og:site_name" content="{{ site.title }}" />
 	<meta property="og:type" content="article" />
 	<meta property="og:locale" content="ko_KR" />
@@ -28,7 +29,7 @@
 	{% if ut %}<meta property="og:updated_time" content="{{ ut }}" />{% endif %}
 	<meta property="article:author" content="{{ site.author_page }}" />
 
-	<title>{{ page.title }} -- {{ site.title }}</title>
+	<title>{% if page.title %}{{ page.title }} -- {% endif %}{{ site.title }}</title>
 	<link href="{{ site.feedurl }}" title="{{ site.title }}"
 			rel="alternate" type="application/atom+xml" />
 
