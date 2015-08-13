@@ -2,12 +2,12 @@
 layout: site
 ---
 <div class="page-body">
-	{{ content }}
+{{ content }}
 </div>
 
 <div class="page-sidebar">
 	<div class="side-widget" id="personal">
-		{% include personal.html %}
+{% include personal.html %}
 	</div>
 
   <div class="side-widget" id="twitter-mention">
@@ -27,20 +27,19 @@ layout: site
 		<h1>Recent Posts</h1>
 		<ul class="posts">
 			{% for post in site.posts limit:5 %}
-			<li><a href="{{ post.url }}">{{ post.title }}</a>
-			{% endfor %}
+			<li><a href="{{ post.url }}">{{ post.title }}</a>{% endfor %}
 		</ul>
 	</div>
 
 	<div class="side-widget" id="my-project">
 		<h1>Projects</h1>
-		{% include projects.html %}
+{% include projects.html %}
 		<div>&raquo; <a href="/pages/projects.html">자세히...</a></div>
 	</div>
 
 	<div class="side-widget" id="categories">
 		<h1>Categories</h1>
-		{% include categories.html %}
+{% include categories.html %}
 	</div>
 
 	<div class="side-widget" id="social-networks">
@@ -53,12 +52,12 @@ layout: site
 
 	<div class="side-widget" id="tagcloud">
 		<h1>Blog Tags</h1>
-		{% include tags.html %}
+{% include tags.html %}
 	</div>
 
 	<div class="side-widget" id="social-networks">
 		<div class="widget-box tac" id="flickr-box">
-			{% include flickr-badge.html %}
+{% include flickr-badge.html %}
 		</div>
 	</div> <!-- my network -->
 </div>

@@ -18,7 +18,7 @@ task :tags do
   ## prefix for tags cloud
   cloud = ''
   cloud << <<-CLOUD
-  <div class="cloud tac">
+		<div class="cloud tac">
   CLOUD
 
   ## calculate step for font size
@@ -73,15 +73,15 @@ HTML
     s = posts.count
     font_size = 0.6 + (s * step)
     cloud << <<-CLOUD
-    <span class="nw"><a href="/tags/#{tag}.html" title="Postings tagged #{tag}"
-        style="font-size: #{font_size}em; line-height:#{font_size}rem"
-       >#{tag}</a></span>
+			<span class="nw"><a href="/tags/#{tag}.html"
+			style="font-size: #{font_size}em; line-height:#{font_size}rem"
+			title="Postings tagged #{tag}">#{tag}</a></span>
     CLOUD
   end
 
   ## postfix for tags cloud
   cloud << <<-CLOUD
-  </div>
+		</div>
   CLOUD
 
   File.open('_includes/tags.html', 'w+') do |file|
@@ -160,3 +160,4 @@ HTML
 
   puts 'Done.'
 end
+# vim: set ts=2 sw=2:

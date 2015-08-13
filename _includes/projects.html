@@ -1,12 +1,10 @@
-<ul>
-  {% for p in site.data.projects %}
-  <li class="proj-item">
-    <div class="proj-title"><a href="{{ p.page }}">{{ p.title }}</a></div>
-    <div class="proj-description">{{ p.description }}</div>
-    {% if p.project %}<div class="proj-site">Project Page:
-      <a href="{{ p.project }}">{{ p.project }}</a></div>{% endif %}
-    {% if p.repository %}<div class="proj-repository">Repository:
-      {{ p.repository }}</div>{% endif %}
-  </li>
-  {% endfor %}
-</ul>
+		<ul>{% for p in site.data.projects %}
+			<li class="proj-item">
+				<div class="proj-title"><a href="{{ p.page }}">{{ p.title }}</a></div>
+				<div class="proj-description">{{ p.description }}</div>
+				{% if p.project %}<div class="proj-site">Project Page:
+					<a href="{{ p.project }}">{{ p.project }}</a></div>{% endif %}
+				{% if p.repository %}<div class="proj-repository">Repository:
+					{{ p.repository }}</div>{% endif %}
+			</li>
+		{% endfor %}</ul>

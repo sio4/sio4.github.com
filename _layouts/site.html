@@ -26,8 +26,8 @@
 	<meta property="og:locale" content="ko_KR" />
 	<meta property="og:description" content="{{ description }}" />
 	<meta property="og:image" content="{{ og_image }}" />
-	{% if ut %}<meta property="og:updated_time" content="{{ ut }}" />{% endif %}
 	<meta property="article:author" content="{{ site.author_page }}" />
+	{% if ut %}<meta property="og:updated_time" content="{{ ut }}" />{% endif %}
 
 	<title>{% if page.title %}{{ page.title }} -- {% endif %}{{ site.title }}</title>
 	<link href="{{ site.feedurl }}" title="{{ site.title }}"
@@ -46,9 +46,9 @@
 	<script src="/assets/vendor/sequence-diagram-min.js"></script>
 </head>
 <body>
-	<div id="dummy-script-container">
-		{% include init-facebook.html %}
-	</div>
+<div id="dummy-script-container">
+{% include init-facebook.html %}
+</div>
 
 <div class="fullscreen">
 	<div class="hc-sticky-header">
@@ -64,9 +64,9 @@
 
 	<div class="hc-fixed-window hc-page">
 		<div class="hc-module-main hc-page-narrow">
-			{{ content }}
+{{ content }}
 		</div>
-		{% include page-tail.html %}
+{% include page-tail.html %}
 	</div>
 
 	<!--div class="hc-sticky-footer">
