@@ -3,7 +3,7 @@ redirect_from: /blog/2011/03/04/missing-on-gmail-and-data-liberation/
 title: GMail의 분실사고! 그리고 자료 해방!
 tags: 자료해방 Google 신뢰성 클라우드컴퓨팅
 date: 2011-03-04T14:07:26+09:00
-modified: 2011-03-04T14:08:47+09:00
+modified: 2011-03-04T14:09:00+09:00
 ---
 막강 Google이 운영하는 웹메일 서비스인 GMail에서 일부(0.02%인가 0.08% 인가
 그러던데, 따지고보면 엄청난 인구다!) 사용자의 주소록, 채팅 기록 등이
@@ -22,7 +22,7 @@ modified: 2011-03-04T14:08:47+09:00
 자료 기반의 서비스라면 백업 기능(그것이 내려받기든, AWS S3에 복제하는
 방식처럼 서비스를 이용하는 것이든)이 제공되어야 하지 않을까?
 
-[클라우드 컴퓨팅의 조건, 자유!](/blog:requirement-for-cloud-computing-liberty)
+[클라우드 컴퓨팅의 조건, 자유!]({% post_url 2009-09-21-requirement-for-cloud-computing-liberty %}){:.reference}
 
 예전에 이 문제와 관련된 소식을 적은 적이 있었는데... 요즘 그들은 어떻게
 지내나? ㅎㅎ 궁금한 것 천지, 알고싶은 것 천지, 그러나 알 수 없는 것 천지!

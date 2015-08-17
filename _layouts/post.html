@@ -52,14 +52,16 @@ layout: sidebar
 <div class="post-tail">
 	<h2>Related Posts</h2>
 	<ul class="posts">
+	{% assign ps = [] %}
 	{% for t in page.tags %}
-		{% for p in site.tags.[t] %}
-			{% if page.path != p.path %}
+		{% for p in site.tags.[t] limit: 5 %}
+			{% unless ps contains p.url %}
 				<li><span class="meta">{{ p.date |date: '%F' }}</span><a
 					href="{{ p.url }}">{{ p.title }}</a>
 					<span class="meta">&raquo; {{t}}</span>
 				</li>
-			{% endif %}
+			{% endunless %}
+			{% assign ps = ps|join: ' ' |append: ' ' |append: p.url |split: ' ' %}
 		{% endfor %}
 	{% endfor %}
 	</ul>
