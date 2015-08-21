@@ -58,6 +58,12 @@ defaults:
       for: "개발과 관련된 이야기"
   -
     scope:
+      path: "blog/sysadmin"
+    values:
+      display: "시스템 운영"
+      for: "IT 시스템 운영 이야기"
+  -
+    scope:
       path: "blog/cloudcomputing"
     values:
       display: "클라우드컴퓨팅"
