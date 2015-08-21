@@ -601,6 +601,12 @@ pre {
 	font-family: $font-code;
 	font-size: $font-xs;
 }
+p code {
+	background: #eee;
+	border: 1px solid #d9d9d9;
+	border-radius: 3px;
+	padding: 2px 3px 0;
+}
 div.highlight {
 	margin: 1rem; box-shadow: 3px 3px 5px #666;
 	&.short { pre { max-height: 26em; overflow: auto; } }
