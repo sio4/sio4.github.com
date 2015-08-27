@@ -1,6 +1,6 @@
 ---
 title: Linux Bridge로 네트워크 문제 추적하기 - vSphere 편
-image: /attachments/20150827-linux-bridge-0.jpg
+image: /attachments/20150827-linux-bridge-0.png
 tags: 리눅스 네트워크 문제해결 VMware ARP
 date: 2015-08-27 09:26:33+09:00
 ---
