@@ -518,7 +518,15 @@ ul.posts {
 				margin-bottom: 1rem;
 			}
 			.post-hierarchy {
-				text-align: center;
+				display: inline-block;
+				width: 100%;
+				font-style: italic;
+				p {
+					margin: 0.2rem 0;
+					a {
+						color: $color-link + #444444;
+					}
+				}
 			}
 		}
 		.item-bottom {

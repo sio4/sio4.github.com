@@ -32,14 +32,13 @@ layout: sidebar
 		</div>
 
 		<div class="post-hierarchy noprint">
-			{% if page.previous %}<a href="{{ page.previous.url }}"
-				title="Previous post"><i class="icon arrow left"></i> Prev</a>
-			{% else %}<i class="icon minus circle"></i> EOA
+			{% if page.previous %}<p class="pull-left"><a href="{{ page.previous.url }}"
+				title="Previous post"><i class="icon arrow left"></i>
+				{{ page.previous.title }}</a></p>
 			{% endif %}
-			&nbsp; &nbsp; | &nbsp; &nbsp;
-			{% if page.next %}<a href="{{ page.next.url }}"
-				title="Next post">Next <i class="icon arrow right"></i></a>
-			{% else %}EOA <i class="icon circle"></i>
+			{% if page.next %}<p class="pull-right"><a href="{{ page.next.url }}"
+				title="Next post">{{ page.next.title }}
+				<i class="icon arrow right"></i></a></p>
 			{% endif %}
 		</div>
 	</div>

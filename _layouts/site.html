@@ -44,6 +44,8 @@
 	<script src="/assets/vendor/raphael-min.js"></script>
 	<script src="/assets/vendor/underscore-min.js"></script>
 	<script src="/assets/vendor/sequence-diagram-min.js"></script>
+
+{% include google-analytics.html %}
 </head>
 <body>
 <div id="dummy-script-container">
@@ -75,7 +77,6 @@
 
 {% include init-twitter.html %}
 {% include init-google.html %}
-{% include google-analytics.html %}
 
 <script>
 $('.hand-diagram').sequenceDiagram({ theme: 'hand' });
