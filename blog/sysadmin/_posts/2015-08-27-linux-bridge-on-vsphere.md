@@ -3,6 +3,7 @@ title: Linux Bridge로 네트워크 문제 추적하기 - vSphere 편
 image: /attachments/20150827-linux-bridge-0.png
 tags: 리눅스 네트워크 문제해결 VMware ARP
 date: 2015-08-27 09:26:33+09:00
+modified: 2015-08-30 20:49:37+09:00
 ---
 "[Linux Bridge로 네트워크 문제 추적하기]({% post_url 2015-08-21-troubleshooting-w-linux-bridge %}){:.reference}"에서 예기했던 것과 같이, 리눅스의
 내장 Bridge 기능은 네트워크 통신과 연관된 문제를 뭐랄까... 대상의
@@ -138,8 +139,8 @@ vBridge에서 ARP Table을 저장하지 않도록 해주면, Bridge에 도달하
 (계속 좀...)
 
 #### 참고
-* Serverfault에 썼던 질답: <http://serverfault.com/a/558236/145912>
-* 참고했던 Thread: <https://communities.vmware.com/message/1509541#1509541>
+* [Serverfault에 썼던 질답](http://serverfault.com/a/558236/145912){:.ext}
+* [참고했던 커뮤니티 글](https://communities.vmware.com/message/1509541#1509541){:.ext}
 
 ## 덧붙여
 
