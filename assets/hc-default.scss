@@ -41,6 +41,7 @@ $background-tail: #000000;
 $background-header: #000000;
 $background-footer: #f0f0f0;
 $background-menubar: rgba(255,40,80,0.6);
+$background-marker: linear-gradient(transparent 50%, #ff7 70%, transparent 90%);
 
 $background-th:  -moz-linear-gradient(center bottom , #eeeeee 0%, #ffffff 100%) repeat scroll 0 0 padding-box transparent;
 $background-td: #ffffff;
@@ -163,6 +164,7 @@ img {
 strong {
 	color: black;
 	font-weight: normal;
+	background: $background-marker;
 }
 
 
@@ -543,8 +545,24 @@ ul.posts {
 	}
 }
 
-// ## post content
+// ## decorations for post content
 .post-content {
+	a {
+		&[href^="http"]:after {
+			content: "\F08E";
+			font-family: FontAwesome;
+			font-size: 0.7em;
+			vertical-align: super;
+			padding-left: 3px;
+		}
+		&[href^="/"]:after {
+			content: "\F24A";
+			font-family: FontAwesome;
+			font-size: 0.7em;
+			vertical-align: super;
+			padding-left: 3px;
+		}
+	}
 	.post-signature {
 		padding-top: 2em;
 		font-style: italic;
@@ -686,6 +704,9 @@ iframe.twitter-mention-button {
 	}
 	.hc-page-tail {
 		display: none !important;
+	}
+	a[href^="http"]:after {
+		content: " (" attr(href) ") " !important;
 	}
 }
 

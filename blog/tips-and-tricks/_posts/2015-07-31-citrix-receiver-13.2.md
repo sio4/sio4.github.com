@@ -20,8 +20,8 @@ date: 2015-07-31 00:20:27+09:00
 올리고, 기본 ruby도 2.x 버전으로 올라가고,... 그리고 이번엔 VDI
 접속을 위한 Citrix Receiver도 새 버전을 쓰게 됐다.
 
-새로 설치파일을 받으러 Citrix에 갔더니, 어? 이건 뭐지? Google
-Chrome Browser용 App 버전이 있다! 이게 잘만 돌아간다면, 설치
+새로 설치파일을 받으러 Citrix에 갔더니, 어? 이건 뭐지? **Google
+Chrome Browser용 App 버전**이 있다! 이게 잘만 돌아간다면, 설치
 크기도 작고, 복잡하지도 않고, 사용도 편할 것 같다!
 
 ![](/attachments/2015-07-31-crcvr-1.6-chrome.png){:.fit.dropshadow}

@@ -116,7 +116,7 @@ $
 있으면 좋겠다.
 
 손상된 파일시스템이 크지 않다면, 또는 충분한 용량의 외장 Disk 등을 갖고
-있다면 일단은 Disk Volume의 이미지를 떠놓는 것이 좋다.
+있다면 **일단은 Disk Volume의 이미지를 떠놓는 것**이 좋다.
 
 리눅스에서 쉽게 이미지를 뜰 수 있는 방법은 `dd`를 사용하는 것이다.
 이 Disk Dump 도구를 사용하면 Block Device, Partition 등을 Raw Level로

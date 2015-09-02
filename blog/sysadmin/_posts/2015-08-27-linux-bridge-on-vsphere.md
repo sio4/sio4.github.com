@@ -74,10 +74,11 @@ vSwitch1에 이르는 구간에서 ARP 정보가 정상적으로 Broadcast 된�
 문제가 되지 않을 것 같은데... vSwitch의 동작방식을 정확히 모르지만
 결과는 그렇다.
 
-아무튼, vSwitch1을 Promiscuous 모드로 설정해주면, 패킷이 정상적으로
-흐를 수 있게 된다. (한국어 UI에는 "비규칙 모드 허가"라고 되어있다.)
+아무튼, **vSwitch1을 Promiscuous 모드로 설정**해주면, 양단의 패킷이
+정상적으로 흐를 수 있게 된다. (한국어 UI에는 "비규칙 모드 허가"라고
+되어있다.)
 
-Promiscuous 모드는 바꿔 말하면 vSwitch를 vHub로 만드는 것과 같으니
+Promiscuous 모드는 쉽게 말하면 vSwitch를 vHub로 만드는 것과 같으니
 Switching에서 기대했던 효과를 버리는 것이 된다. (하지만 임시니까! :-)
 
 참고로, 원칙적으로 vBridge 자체의 NIC도 이러한 설정이 필요한데,
@@ -104,21 +105,21 @@ listening on eth0, link-type EN10MB (Ethernet), capture size 65535 bytes
 12:13:45.809949 ARP, Request who-has 192.168.10.1 tell 192.168.10.172, length 46
 12:13:45.810060 ARP, Request who-has 192.168.10.1 tell 192.168.10.172, length 46
 12:13:45.810742 ARP, Reply 192.168.10.1 is-at 00:00:aa:aa:aa:d9, length 46
-...
+<...>
 superhero@vbridge:~$ sudo tcpdump -i br0 -n host 192.168.10.172
 tcpdump: verbose output suppressed, use -v or -vv for full protocol decode
 listening on br0, link-type EN10MB (Ethernet), capture size 65535 bytes
 12:13:51.810928 ARP, Request who-has 192.168.10.1 tell 192.168.10.172, length 46
 12:13:51.811031 ARP, Request who-has 192.168.10.1 tell 192.168.10.172, length 46
 12:13:51.811579 ARP, Reply 192.168.10.1 is-at 00:aa:aa:aa:aa:d9, length 46
-...
+<...>
 superhero@vbridge:~$ sudo tcpdump -i eth1 -n host 192.168.10.172
 tcpdump: WARNING: eth1: no IPv4 address assigned
 tcpdump: verbose output suppressed, use -v or -vv for full protocol decode
 listening on eth1, link-type EN10MB (Ethernet), capture size 65535 bytes
 12:13:57.812937 ARP, Request who-has 192.168.10.1 tell 192.168.10.172, length 46
 12:13:57.813040 ARP, Request who-has 192.168.10.1 tell 192.168.10.172, length 46
-...
+<...>
 superhero@vbridge:~$ 
 {% endhighlight %}
 
@@ -134,8 +135,8 @@ vBridge에 역으로 들어오게 된다. (뭐지?)
 전달하지 않는다.
 
 문제를 우회하는 방법은 vBridge에서 Aging Time 설정을 0으로 조정하여
-vBridge에서 ARP Table을 저장하지 않도록 해주면, Bridge에 도달하는
-모든 패킷을 모든 Port에 선별 없이 전달하게 된다.
+**vBridge에서 ARP Table을 저장하지 않도록 해주면, Bridge에 도달하는
+모든 패킷을 모든 Port에 선별 없이 전달**하게 된다.
 (계속 좀...)
 
 #### 참고

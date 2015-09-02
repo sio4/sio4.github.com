@@ -20,7 +20,7 @@ date: 2015-08-11 04:14:32+09:00
 다시
 "[Jekyll로 Github Pages에 블로깅하기, Re!oaded]({% post_url 2015-08-08-blogging-on-github-pages-reloaded %}){:.reference}"에서
 소개한 블로그 답게 살 붙이는 작업을 몇 일 동한 틈틈히 진행하면서 글도
-몇 개 더 써봤는데... 그러고 나니, Jekyll의 Build 속도 문제가 슬슬
+몇 개 더 써봤는데... 그러고 나니, **Jekyll의 Build 속도 문제**가 슬슬
 거슬리기 시작했다.
 
 > Jekyll의 Build 속도 문제가 슬슬 거슬리기 시작했다.
