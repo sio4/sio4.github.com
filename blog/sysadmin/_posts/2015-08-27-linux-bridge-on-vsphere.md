@@ -140,8 +140,8 @@ vBridge에 역으로 들어오게 된다. (뭐지?)
 (계속 좀...)
 
 #### 참고
-* [Serverfault에 썼던 질답](http://serverfault.com/a/558236/145912){:.ext}
-* [참고했던 커뮤니티 글](https://communities.vmware.com/message/1509541#1509541){:.ext}
+* [Serverfault에 썼던 질답 (2013-11-29)](http://serverfault.com/a/558236/145912)
+* [참고했던 커뮤니티 글](https://communities.vmware.com/message/1509541#1509541)
 
 ## 덧붙여
 
