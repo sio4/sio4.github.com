@@ -1,6 +1,8 @@
 		<ul>{% for p in site.data.projects %}
 			<li class="proj-item">
-				<div class="proj-title"><a href="{{ p.page }}">{{ p.title }}</a></div>
+				<div class="proj-title">
+					{% if p.page %}<a href="{{ p.page }}">{{ p.title }}</a>{% else %}{{ p.title }}{% endif %}
+				</div>
 				<div class="proj-description">{{ p.description }}</div>
 				{% if p.project %}<div class="proj-site">Project Page:
 					<a href="{{ p.project }}">{{ p.project }}</a></div>{% endif %}

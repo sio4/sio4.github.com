@@ -28,12 +28,15 @@
 		"description": "Android Photo Manager"
 	}, {
 		"title": "GallOrg",
+		"page": "/projects/gallorg.html",
+		"project": "https://github.com/sio4/GallOrg",
 		"description": "Android Gallery Organizer"
 	}, {
 		"title": "Mirinae Swissknfe",
 		"description": "Android Root-mode Tool"
 	}, {
 		"title": "Tis2Jek",
+		"page": "/projects/tis2jek.html",
 		"project": "https://github.com/sio4/tistojek",
 		"repository": "https://github.com/sio4/tistojek.git",
 		"description": "Tistory to Jekyll 블로그 변환기"
