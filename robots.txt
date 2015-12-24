@@ -1,4 +1,5 @@
 User-Agent: *
+Disallow: /presentations/exploring-softlayer-api.html
 Disallow: /blog/2007/*
 Disallow: /blog/2008/*
 Disallow: /blog/2009/*
