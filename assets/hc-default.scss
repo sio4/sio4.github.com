@@ -645,6 +645,26 @@ div.highlight {
 		code {
 			span.lineno { }
 			span.gp { color: $color-grey; }
+
+			&.language-console {
+				white-space: pre-wrap; // for command it self.
+				span {
+					&.go {
+						white-space: pre;
+						color: #999;
+					}
+				}
+			}
+
+			&.language-diff {
+				color: #999;
+				white-space: pre;
+				span {
+					&.gu { color: #ff7; }
+					&.gi { color: #4a4; }
+					&.gd { color: #d44; }
+				}
+			}
 		}
 	}
 }
