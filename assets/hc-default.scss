@@ -104,6 +104,9 @@ a, a:visited {
 		padding-left: 3px;
 	}
 }
+ol {
+	padding: 0 0 0 2.5rem;
+}
 ul {
 	padding: 0 0 0 2.5rem;
 	li {
@@ -472,7 +475,21 @@ ul.posts {
 			padding: 0.5rem;
 			border-radius: 10px;
 			background: $background-body + #040404;
+
+			ul#markdown-toc {
+				margin: 0.5rem;
+				padding: 0.5rem 0.5rem 0.5rem 2rem;
+				background: #f9f9f9;
+				li {
+					list-style: none;
+				}
+				ul {
+					padding-bottom: 0.5rem;
+					padding-left: 1.5rem;
+				}
+			}
 		}
+
 		.page-content,
 		.post-content {
 			text-align: justify;
