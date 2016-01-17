@@ -169,7 +169,10 @@ strong {
 	font-weight: normal;
 	background: $background-marker;
 }
-
+abbr[title] {
+	text-decoration: underline dotted;
+	border-bottom: none;
+}
 
 // important!!! (for fullsize window)
 * {
@@ -196,7 +199,8 @@ strong {
 // ## styles	----------------------------------------------------------------
 .underline { border-bottom: 1px solid $color-text; }
 .grayline { border-bottom: 1px solid $color-light; }
-.dropshadow { margin: 1rem; box-shadow: 3px 3px 5px #666; }
+.dropshadow { margin-top: 1rem; margin-bottom: 1rem; }
+.dropshadow { box-shadow: 3px 3px 5px #666; }
 .warn { color: $color-warn; }
 .error { color: $color-error; }
 .disabled { color: $color-disabled; }
@@ -486,6 +490,9 @@ ul.posts {
 				ul {
 					padding-bottom: 0.5rem;
 					padding-left: 1.5rem;
+					ul {
+						padding-bottom: 0;
+					}
 				}
 			}
 		}
@@ -495,6 +502,8 @@ ul.posts {
 			text-align: justify;
 			margin: 0.5rem 0 2rem;
 
+			h1 { margin-top: 3em; }
+			#blog-posts h1 { margin-top: 1rem; }
 			h2, h3, h4, h5 { margin-top: 1.5rem; }
 			h2 { border-bottom: 1px solid $background-body - #202020; }
 			p {
@@ -502,6 +511,15 @@ ul.posts {
 				line-height: 1.8;
 				&:first-child { margin-top: 0 }
 				&:last-child { margin-bottom: 0 }
+
+				&.block-title {	// for codeblock title
+					margin-bottom: -1rem; margin-left: 1rem;
+					font-weight: bold;
+					code {
+						background: none;
+						border: none;
+					}
+				}
 			}
 			blockquote {
 				background: url('images/blockquote.png') no-repeat scroll 3px 3px;
