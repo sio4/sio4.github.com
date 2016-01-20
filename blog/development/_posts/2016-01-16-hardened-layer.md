@@ -1,7 +1,7 @@
 ---
 title: Hardened Layer, SoftLayer Custom Portal - Part 1
 image: /attachments/20160116-hl-v1-servers.png
-tags: SoftLayer 클라우드컴퓨팅 Ember.js Ruby-on-Rails API As-a-Service 
+tags: SoftLayer 클라우드컴퓨팅 Ember.js Ruby-on-Rails API As-a-Service Hardened-Layer
 date: Sat, 16 Jan 2016 02:55:00 +0900
 ---
 SoftLayer API에 대하여 파악하고 그 한계나 사용 가능성 등에 대하여 검증하기
@@ -24,6 +24,15 @@ Prototype 개발 목표는 다음과 같다.
 Hardened Layer: Console - Virtual Servers
 
 ![](/attachments/20160116-hl-v1-servers.png){:.fit.downshadow}
+
+## Hardened Layer 시리즈
+{:.no_toc}
+
+* Hardened Layer, SoftLayer Custom Portal - Part 1
+* [Hardened Layer, SoftLayer Custom Portal - Part 2][HardenedLayer-Part2]
+
+[HardenedLayer-Part2]:{% post_url 2016-01-21-hardened-layer-part2 %}
+
 
 ## 목차
 {:.no_toc}

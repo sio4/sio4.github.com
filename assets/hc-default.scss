@@ -84,6 +84,11 @@ h2 {
 h3 {
 	font-size: $font-l;
 }
+hr {
+	border-top: 1px dashed $color-border;
+	border-bottom: none;
+	margin: 2em;
+}
 a, a:visited {
 	text-decoration: none;
 	color: inherit;
