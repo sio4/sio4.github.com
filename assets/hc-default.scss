@@ -133,6 +133,7 @@ ul {
 table {
 	border-spacing: 0;
 	display: table !important;
+	margin: 1rem;
 	&.fit { width: 95%; }
 	&.filled { width: 100%; }
 	&.centered { margin: 0 auto; max-width: 80%; min-width: 50%; }
