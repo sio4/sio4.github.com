@@ -1,7 +1,9 @@
 ---
 layout: sidebar
 ---
-<div class="page-content">
-	{% if page.title %}<h1 class="underline">{{ page.title }}</h1>{% endif %}
+<div class="page-item">
+	{% if page.title %}<h1 class="post-title underline">{{ page.title }}</h1>{% endif %}
+  <div class="page-content">
 {{ content }}
+  </div>
 </div>

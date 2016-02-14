@@ -40,5 +40,11 @@
 		"project": "https://github.com/sio4/tistojek",
 		"repository": "https://github.com/sio4/tistojek.git",
 		"description": "Tistory to Jekyll 블로그 변환기"
+	}, {
+		"title": "Hardened Layer",
+		"page": "/projects/hardened-layer.html",
+		"project": "https://github.com/cloud-api/hardened-layer-ui",
+		"repository": "https://github.com/cloud-api/hardened-layer-ui.git",
+		"description": "SoftLayer Custom Portal"
 	}
 ]
