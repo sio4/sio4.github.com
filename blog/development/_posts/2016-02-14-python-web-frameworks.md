@@ -1,7 +1,7 @@
 ---
 title: API Service를 위한 Python Web Frameworks 선정
 tags: API Python Framework
-date: Sun, 14 Feb 2016 21:54:29 +0900
+date: Sun, 14 Feb 2016 22:02:29 +0900
 ---
 일반적인 Web Application이 아닌 API Backend를 위한 Python Web Framework을
 선정하기 위하여, 인기있는 Framework 몇 개를 비교해보았다. 이 글은, 이
