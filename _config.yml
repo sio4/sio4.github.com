@@ -2,9 +2,12 @@ title: "소용환의 생각저장소"
 timezone: Asia/Seoul
 url: "http://www.sauru.so"
 feedurl: "http://feeds.feedburner.com/sauru-so"
-permalink: /blog/:title/
+#permalink: /blog/:title/
+permalink: /:path/:basename:output_ext
 markdown: kramdown
 kramdown:
+        input: GFM
+        hard_wrap: false
         toc_levels: 1..3
 
 ### Facebook OG related:
@@ -20,6 +23,7 @@ gems:
         - jekyll-sitemap
 
 exclude:
+        - vendor
         - assets/vendor/fa/Gemfile
         - assets/vendor/fa/*.md
         - assets/vendor/fa/*.json
@@ -34,100 +38,11 @@ defaults:
       path: "projects"
     values:
       layout: "page"
+      type: "page"
   -
     scope:
       path: ""
       type: "posts"
     values:
       layout: "post"
-  -
-    scope:
-      path: "blog/it-talk"
-    values:
-      display: "IT Talk by SiO4"
-      for: "IT에 대한 나의 생각"
-  -
-    scope:
-      path: "blog/opensource"
-    values:
-      display: "리눅스/오픈소스"
-      for: "리눅스와 오픈소스 관련 이야기"
-  -
-    scope:
-      path: "blog/development"
-    values:
-      display: "소프트웨어 개발"
-      for: "개발과 관련된 이야기"
-  -
-    scope:
-      path: "blog/sysadmin"
-    values:
-      display: "시스템 운영"
-      for: "IT 시스템 운영 이야기"
-  -
-    scope:
-      path: "blog/cloudcomputing"
-    values:
-      display: "클라우드컴퓨팅"
-      for: "클라우드컴퓨팅 이야기"
-  -
-    scope:
-      path: "blog/virtualization"
-    values:
-      display: "가상화"
-      for: "가상화와 그 친구들"
-  -
-    scope:
-      path: "blog/it-service"
-    values:
-      display: "IT 서비스"
-      for: "IT 서비스 제공과 관련된 폭넓은 이야기"
-  -
-    scope:
-      path: "blog/android"
-    values:
-      display: "안드로이드"
-      for: "안드로이드 관련 이야기"
-  -
-    scope:
-      path: "blog/rules-of-action"
-    values:
-      display: "행동수칙"
-      for: "이래서 되겠는가? 또는 이래야 한다!"
-  -
-    scope:
-      path: "blog/productivity"
-    values:
-      display: "협업과 생산성"
-      for: "회사/협업/생산성 등에 대한 이야기와 기술/기법"
-  -
-    scope:
-      path: "blog/life-and-me"
-    values:
-      display: "삶과 나"
-      for: "삶, 사회, 이런 저런 생각의 조각들"
-  -
-    scope:
-      path: "blog/tips-and-tricks"
-    values:
-      display: "Tips&Tricks"
-      for: "Tips&Tricks, Howto, ..."
-  -
-    scope:
-      path: "blog/wind-of-change"
-    values:
-      display: "변화의 물결"
-      for: "(IT 중심의) 세상 변하는 이야기"
-  -
-    scope:
-      path: "blog/review"
-    values:
-      display: "다시 보기"
-      for: "행사/제품/App 후기"
-  -
-    scope:
-      path: "blog/misc"
-    values:
-      display: "잡동사니"
-      for: "분류가 의미없는 이야기"
-
+      permalink: /blog/:title/
