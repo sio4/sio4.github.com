@@ -676,6 +676,8 @@ p code {
 	border-radius: 3px;
 	padding: 2px 3px 0;
 }
+figure.highlight,
+div.highlighter-rouge,
 div.highlight {
 	margin: 1rem; box-shadow: 3px 3px 5px #666;
 	&.short { pre { max-height: 26em; overflow: auto; } }
@@ -854,4 +856,8 @@ iframe.twitter-mention-button {
 			}
 		}
 	}
+}
+
+.debug {
+	background: #ff9900;
 }

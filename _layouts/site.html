@@ -65,6 +65,24 @@
 	</div>
 
 	<div class="hc-fixed-window hc-page">
+    {% if jekyll.environment == "debug" %}
+    <div class="debug" id="">
+      {% assign category = page.categories |last  %}
+      {% assign cat = site.data.categories |where:"id", category |first %}
+      <div>assgined by where - cat:{{ cat }}, cat:{{ cat.name }}</div>
+      <div>
+        env:{{ jekyll.environment }},
+        layout:{{ page.layout }},
+        collection:{{ page.collection }},
+      </div>
+      <div>
+        url:{{ page.url }},
+        permalink:{{ page.permalink }},
+        path:{{ page.path }},
+        tags:{{ page.tags |join:", " }}
+      </div>
+    </div>
+    {% endif %}
 		<div class="hc-module-main hc-page-narrow">
 {{ content }}
 		</div>

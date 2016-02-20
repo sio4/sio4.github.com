@@ -1,9 +1,6 @@
-{% assign categories = site.categories |sort %}
-		<ul class="categories">{% for category in categories %}
-			{% assign cat_name = category |first %} {% if cat_name == 'blog' %}{% continue %}{% endif %}          {% assign cat_size = category |last |size %}
-			{% assign post = category |last |first %}{% assign cat_display = post.display %}{% if cat_display == null %}{% assign cat_display = cat_name %}{% endif %}
-			<li><a href="/categories/{{ cat_name }}.html"
-				 		title="Postings on {{ cat_name }}">{{ cat_display }}</a>
-				<span class="meta">» {{ cat_size }}</span>
-			</li>{% endfor %}
-		</ul>
+    <ul class="categories">{% for cat in site.data.categories %}
+      <li><a href="/categories/{{ cat.id }}.html"
+             title="Postings on {{ cat.name }}">{{ cat.name }}</a>
+        <span class="meta">» {{ site.categories[cat.id] |size }}</span>
+      </li>{% endfor %}
+    </ul>
