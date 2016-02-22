@@ -1,6 +1,6 @@
-    <ul class="categories">{% for cat in site.data.categories %}
-      <li><a href="/categories/{{ cat.id }}.html"
-             title="Postings on {{ cat.name }}">{{ cat.name }}</a>
-        <span class="meta">» {{ site.categories[cat.id] |size }}</span>
-      </li>{% endfor %}
-    </ul>
+		<ul class="categories">{% for cat in site.data.categories %}
+			<li><a href="/categories/{{ cat.id }}.html"
+						title="Postings on {{ cat.name }}">{{ cat.name }}</a>
+				<span class="meta">» {{ site.categories[cat.id] |size }}</span>
+			</li>{% endfor %}
+		</ul>

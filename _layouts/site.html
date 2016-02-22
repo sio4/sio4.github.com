@@ -47,10 +47,10 @@
 
 {% include google-analytics.html %}
 </head>
+
 <body>
 <div id="dummy-script-container">
-{% include init-facebook.html %}
-</div>
+{% include init-facebook.html %}</div>
 
 <div class="fullscreen">
 	<div class="hc-sticky-header">
@@ -65,29 +65,28 @@
 	</div>
 
 	<div class="hc-fixed-window hc-page">
-    {% if jekyll.environment == "debug" %}
-    <div class="debug" id="">
-      {% assign category = page.categories |last  %}
-      {% assign cat = site.data.categories |where:"id", category |first %}
-      <div>assgined by where - cat:{{ cat }}, cat:{{ cat.name }}</div>
-      <div>
-        env:{{ jekyll.environment }},
-        layout:{{ page.layout }},
-        collection:{{ page.collection }},
-      </div>
-      <div>
-        url:{{ page.url }},
-        permalink:{{ page.permalink }},
-        path:{{ page.path }},
-        tags:{{ page.tags |join:", " }}
-      </div>
-    </div>
-    {% endif %}
-		<div class="hc-module-main hc-page-narrow">
-{{ content }}
+		{% if jekyll.environment == "debug" %}
+		<div class="debug" id="">
+			{% assign category = page.categories |last %}
+			{% assign cat = site.data.categories |where:"id", category |first %}
+			<div>assgined by where - cat:{{ cat }}, cat:{{ cat.name }}</div>
+			<div>
+				env:{{ jekyll.environment }},
+				layout:{{ page.layout }},
+				collection:{{ page.collection }},
+			</div>
+			<div>
+				url:{{ page.url }},
+				permalink:{{ page.permalink }},
+				path:{{ page.path }},
+				tags:{{ page.tags |join:", " }}
+			</div>
 		</div>
-{% include page-tail.html %}
-	</div>
+		{% endif %}
+		<div class="hc-module-main hc-page-narrow" id="content-site">
+			{{ content }}		</div><!-- #content-site -->
+
+{% include page-tail.html %}	</div><!-- #body-site -->
 
 	<!--div class="hc-sticky-footer">
 	</div-->
