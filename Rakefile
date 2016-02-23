@@ -4,12 +4,16 @@ desc 'Generate tags page'
 task :tags do
   puts "Generating tags..."
   require 'rubygems'
+  require 'pp'
+  require 'bundler/setup'
   require 'jekyll'
   include Jekyll::Filters
   
   options = Jekyll.configuration({})
   site = Jekyll::Site.new(options)
   site.read
+
+  pp options
 
   ## clear existing files
   `rm -rf tags; mkdir tags`
@@ -74,8 +78,8 @@ HTML
     font_size = 0.6 + (s * step)
     cloud << <<-CLOUD
 			<span class="nw"><a href="/tags/#{tag}.html"
-			style="font-size: #{font_size}em; line-height:#{font_size}rem"
-			title="Postings tagged #{tag}">#{tag}</a></span>
+				style="font-size: #{font_size}em; line-height:#{font_size}rem"
+				title="Postings tagged #{tag}">#{tag}</a></span>
     CLOUD
   end
 
