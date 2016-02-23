@@ -38,7 +38,11 @@ defaults:
       path: "projects"
     values:
       layout: "page"
-      type: "page"
+  -
+    scope:
+      path: "pages"
+    values:
+      layout: "page"
   -
     scope:
       path: ""
