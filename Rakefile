@@ -8,9 +8,29 @@ include Jekyll::Filters
 options = Jekyll.configuration({})
 site = Jekyll::Site.new(options)
 
+task :default do
+  puts "Jekyll Tasks"
+  puts ""
+  puts "  rake tags                 : build tag cloud and tag pages"
+  puts "  rake categories           : build categories pages"
+  puts "  rake serve                : run test server within development mode"
+  puts "  rake serve[debug]         : run test server within debug mode"
+  puts "  rake serve[production]    : run test server within production mode"
+end
+
 desc 'Check configuration'
 task :check do
   pp options
+end
+
+task :serve, [:env] => [:tags, :categories] do |t, args|
+  if args.env != nil then
+    env=args.env
+  else
+    env='development'
+  end
+  `rm -rf _site`
+  sh "JEKYLL_ENV=#{env} bundle exec jekyll serve --watch"
 end
 
 desc 'Generate tags page'
