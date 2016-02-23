@@ -1,10 +1,9 @@
 ---
 layout: page
-title: 삶과 나
+title: "삶과 나"
 ---
 {% assign category = page.name |remove: '.html' %}
-{% assign p = site.categories.[category] |first %}
-{% assign category_name = p.display %}
+<div class="category-description"><p>삶, 사회, 이런 저런 생각의 조각들</p><p></p></div>
 <div class="wall-panel" id="blog-posts">
   <ul class="posts">
   {% for post in site.categories.[category] %}
@@ -19,4 +18,3 @@ title: 삶과 나
   {% endfor %}
   </ul>
 </div>
-<!-- vim: set ts=2 sw=2 expandtab : -->

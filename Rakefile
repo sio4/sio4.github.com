@@ -1,19 +1,22 @@
 # encoding: UTF-8
+require 'rubygems'
+require 'pp'
+require 'bundler/setup'
+require 'jekyll'
+include Jekyll::Filters
+
+options = Jekyll.configuration({})
+site = Jekyll::Site.new(options)
+
+desc 'Check configuration'
+task :check do
+  pp options
+end
 
 desc 'Generate tags page'
 task :tags do
   puts "Generating tags..."
-  require 'rubygems'
-  require 'pp'
-  require 'bundler/setup'
-  require 'jekyll'
-  include Jekyll::Filters
-  
-  options = Jekyll.configuration({})
-  site = Jekyll::Site.new(options)
   site.read
-
-  pp options
 
   ## clear existing files
   `rm -rf tags; mkdir tags`
@@ -95,73 +98,48 @@ HTML
   puts 'Done.'
 end
 
+
+desc 'Generate category pages'
 task :categories do
   puts "Generating categories..."
-  require 'rubygems'
-  require 'jekyll'
-  include Jekyll::Filters
-
-  options = Jekyll.configuration({})
-  site = Jekyll::Site.new(options)
-  site.read_posts('')
+  site.read
 
   `rm -rf categories; mkdir categories`
   `mkdir -p _includes`
 
-  cloud = ''
-  cloud << <<-CLOUD
-  <div class="cloud">
-  <ul class="posts categories">
-  CLOUD
-
-  puts "processing #{site.categories}..."
-  site.categories.sort.each do |category, posts|
-    cat_name = posts.first.to_liquid['category']
-    cat_file = category.split.join('-')
-    puts "processing #{category} (#{cat_name}/#{cat_file})..."
-
-    cloud << <<-CLOUD
-    <li><a href="/categories/#{cat_name}.html"
-      title="Postings on #{cat_name}">#{cat_name}</a>
-      <span class="post-count">» #{posts.count}</span></li>
-    CLOUD
+  site.data['categories'].each do |cat|
+    cname = cat['name']
+    fname = cat['id']
+    puts "processing #{cname}/#{fname}..."
 
     html = ''
     html << <<-HTML
 ---
 layout: page
-title: Postings on "#{cat_name}"
+title: "#{cat['name']}"
 ---
-<ul class="posts">
+{% assign category = page.name |remove: '.html' %}
+<div class="category-description"><p>#{cat['description']}</p><p></p></div>
+<div class="wall-panel" id="blog-posts">
+  <ul class="posts">
+  {% for post in site.categories.[category] %}
+    <li>» <span class="meta">{{ post.date |date: '%F %T' }}</span>
+      <a href="{{ post.url }}">{{ post.title }}</a>
+      <div class="post-tags tar">
+      {% for tag in post.tags %}<a class="tag-item" href="/tags/{{ tag }}.html"
+        title="View posts tagged with &quot;{{ tag }}&quot;">{{ tag }}</a>
+      {% endfor %}
+      </div>
+    </li>
+  {% endfor %}
+  </ul>
+</div>
 HTML
 
-    posts.each do |post|
-      post_data = post.to_liquid
-      html << <<-HTML
- <li>» <span class="meta">#{post.date.strftime('%F %T')}</span>
-   <a href="#{post.url}">#{post_data['title']}</a>
- </li>
-      HTML
-    end
-
-    html << <<-HTML
-</ul>
-    HTML
-
-    File.open("categories/#{category}.html", 'w+') do |file|
+    File.open("categories/#{fname}.html", 'w+') do |file|
       file.puts html
     end
   end
-
-  cloud << <<-CLOUD
-  </ul>
-  </div>
-  CLOUD
-
-  File.open('_includes/categories.html', 'w+') do |file|
-    file.puts cloud
-  end
-
   puts 'Done.'
 end
 # vim: set ts=2 sw=2:

@@ -1,10 +1,9 @@
 ---
 layout: page
-title: 다시 보기
+title: "다시 보기"
 ---
 {% assign category = page.name |remove: '.html' %}
-{% assign p = site.categories.[category] |first %}
-{% assign category_name = p.display %}
+<div class="category-description"><p>행사/제품/App 후기</p><p></p></div>
 <div class="wall-panel" id="blog-posts">
   <ul class="posts">
   {% for post in site.categories.[category] %}
@@ -19,4 +18,3 @@ title: 다시 보기
   {% endfor %}
   </ul>
 </div>
-<!-- vim: set ts=2 sw=2 expandtab : -->

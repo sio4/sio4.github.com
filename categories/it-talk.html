@@ -1,10 +1,9 @@
 ---
 layout: page
-title: IT Talk by SiO4
+title: "IT Talk by SiO4"
 ---
 {% assign category = page.name |remove: '.html' %}
-{% assign p = site.categories.[category] |first %}
-{% assign category_name = p.display %}
+<div class="category-description"><p>IT 서비스 제공에 관한 폭넓은 이야기</p><p></p></div>
 <div class="wall-panel" id="blog-posts">
   <ul class="posts">
   {% for post in site.categories.[category] %}
@@ -19,4 +18,3 @@ title: IT Talk by SiO4
   {% endfor %}
   </ul>
 </div>
-<!-- vim: set ts=2 sw=2 expandtab : -->
