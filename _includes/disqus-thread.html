@@ -1,3 +1,4 @@
+{% if jekyll.environment != "development" %}
 <!-- begining of disqus block -->
 <div id="disqus_thread"></div>
 <script type="text/javascript">
@@ -12,3 +13,4 @@ var disqus_shortname = 'sauru';
 	<a href="https://disqus.com/?ref_noscript"
 		rel="nofollow">comments powered by Disqus.</a></noscript>
 <!-- end of disqus block -->
+{% endif %}
