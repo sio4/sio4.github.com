@@ -1,5 +1,5 @@
 ---
-title: Linux Bridge로 네트워크 문제 추적하기
+title: "T&T: Linux Bridge로 네트워크 문제 추적하기"
 image: /attachments/20150821-linux-bridge-0.jpg
 tags: 리눅스 네트워크 문제해결
 date: 2015-08-21 15:41:00+09:00

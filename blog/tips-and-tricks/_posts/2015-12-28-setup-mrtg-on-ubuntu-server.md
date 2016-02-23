@@ -1,5 +1,5 @@
 ---
-title: Ubuntu 서버에 MRTG 설치하기
+title: "Howto: Ubuntu 서버에 MRTG 설치하기"
 image: /attachments/20151228-mrtg-000.png
 tags: MRTG 네트워크 모니터링
 date: Mon, 28 Dec 2015 12:34:51 +0900
