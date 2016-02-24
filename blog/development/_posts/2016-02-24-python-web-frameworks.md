@@ -1,7 +1,7 @@
 ---
 title: API Service를 위한 Python Web Frameworks 선정
 tags: API Python Framework
-date: Sun, 14 Feb 2016 22:02:29 +0900
+date: 2016-02-24 11:26:29 +0900
 ---
 일반적인 Web Application이 아닌 API Backend를 위한 Python Web Framework을
 선정하기 위하여, 인기있는 Framework 몇 개를 비교해보았다. 이 글은, 이
@@ -162,7 +162,7 @@ Rails나 Django와 같은 쾌속개발환경의 특징 중 하나는, Scaffoldin
 도구를 제공하여 개발자의 반복작업이나 작업을 쉽게 진행할 수 있게
 돕고 있다.
 
-{% highlight console %}
+```text
 $ django-admin help
 
 Type 'django-admin help <subcommand>' for help on a specific subcommand.
@@ -196,7 +196,7 @@ Available subcommands:
     testserver
 <...>
 $ 
-{% endhighlight %}
+```
 
 위의 `help`가 보여주는 보조명령의 이름에서 알 수 있듯이, 새로운
 프로젝트를 시작하기 위한 Tree를 만들어준다든지(`startproject`,
@@ -211,7 +211,7 @@ $
 경우에는 아래와 같이 Scaffolding이나 구성확인 등을 돕는 도구가
 제공되고 있었다.
 
-{% highlight console %}
+```text
 $ pcreate --help
 Usage: pcreate [options] -s <scaffold> output_directory
 
@@ -250,7 +250,7 @@ Usage: pviews config_uri url
 Print, for a given URL, the views that might match.
 <...>
 $ 
-{% endhighlight %}
+```
 
 ## pecan
 
@@ -258,7 +258,7 @@ $
 경우에는 아래 정도의 옵션을 제공하는 간단한 scaffolding 도구가
 들어있었다.
 
-{% highlight console %}
+```text
 $ pecan --help
 usage: pecan [-h] [--version] command ...
 
@@ -272,14 +272,14 @@ optional arguments:
   -h, --help  show this help message and exit
   --version   show program's version number and exit
 $ 
-{% endhighlight %}
+```
 
 ## falcon
 
 API 전용 Framework이면서 속도에 대한 애착이 강한 듯 한 falcon의
 경우는 특이하게도, benchmark 도구만 딸랑 들어있는 구성이었고,
 
-{% highlight console %}
+```text
 $ falcon-bench --help
 usage: falcon-bench [-h]
                     [-b {bottle,falcon,falcon-ext,flask,pecan,werkzeug} [{bottle,falcon,falcon-ext,flask,pecan,werkzeug} ...]]
@@ -297,13 +297,13 @@ optional arguments:
   -o PROFILE_OUTPUT, --profile-output PROFILE_OUTPUT
   -m, --stat-memory
 $ 
-{% endhighlight %}
+```
 
 ## bottle & hug
 
 bottle, hug와 같이 개발용 서버만 제공하는 프로젝트도 있었다.
 
-{% highlight console %}
+```text
 $ bottle.py --help
 Usage: bottle.py [options] package.module:app
 
@@ -319,9 +319,9 @@ Options:
   --debug               start server in debug mode.
   --reload              auto-reload on file changes.
 $ 
-{% endhighlight %}
+```
 
-{% highlight console %}
+```text
 $ hug --help
 usage: hug [-h] [-f FILE_NAME] [-m MODULE] [-p PORT] [-nd] [-v]
 
@@ -337,7 +337,7 @@ optional arguments:
   -nd, --no-404-documentation
   -v, --version         show program's version number and exit
 $ 
-{% endhighlight %}
+```
 
 ---
 아무래도 도구와 관련해서는, Full Stack 또는 Lightweight라고는 해도
@@ -361,7 +361,7 @@ Pyramid의 경우에는 Scaffolding을 위한 도구를 제공하고 있어서 �
 {:.block-title}
 예제 코드 - `hello.py`
 
-{% highlight python %}
+```python
 from wsgiref.simple_server import make_server
 from pyramid.config import Configurator
 from pyramid.response import Response
@@ -377,7 +377,7 @@ if __name__ == '__main__':
     app = config.make_wsgi_app()
     server = make_server('0.0.0.0', 8080, app)
     server.serve_forever()
-{% endhighlight %}
+```
 
 이 코드를 다음과 같이 실행시키면 기본적인 Application의 동작을 확인할
 수 있다.
@@ -389,14 +389,14 @@ if __name__ == '__main__':
 {:.block-title}
 실행
 
-{% highlight console %}
+```text
 $ python hello.py
 127.0.0.1 - - [03/Feb/2016 12:16:56] "GET /hello/yonghwan HTTP/1.1" 200 15
 127.0.0.1 - - [03/Feb/2016 12:17:02] "GET /hello/ HTTP/1.1" 404 159
 127.0.0.1 - - [03/Feb/2016 12:17:04] "GET /hello HTTP/1.1" 404 158
 <...>
 $ 
-{% endhighlight %}
+```
 
 Pyramid의 경우, 이렇게 간단한 시험으로 평가하는 것은 좀 무리가 있어
 보이지만, 현재 시점에서 관심이 많이 가는 Framework이 아니라서 여기까지
@@ -411,7 +411,7 @@ Flask의 경우는 명령행 도구를 제공하고 있지 않으며 개발 문�
 {:.block-title}
 예제 코드 - `hello.py`
 
-{% highlight python %}
+```python
 from flask import Flask
 app = Flask(__name__)
 
@@ -421,20 +421,20 @@ def hello():
 
 if __name__ == "__main__":
     app.run()
-{% endhighlight %}
+```
 
 Root에 대한 Route 하나만 갖는 이 App을 실행해보면 아래와 같다.
 
 {:.block-title}
 실행
 
-{% highlight console %}
+```text
 $ python hello.py 
  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
 127.0.0.1 - - [03/Feb/2016 12:07:23] "GET / HTTP/1.1" 200 -
 <...>
 $ 
-{% endhighlight %}
+```
 
 시험은 단순하게 끝냈지만, 근래에 이 Framework을 사용한 프로젝트의 구성을
 보았을 때의 느낌은, 이것 역시 구조화된 설계가 가능한 무언가를 제공하지
@@ -450,7 +450,7 @@ bottle 역시 도구를 제공하지 않는 Framework 중 하나이다. 아래�
 {:.block-title}
 예제 코드 - `hello.py`
 
-{% highlight python %}
+```python
 from bottle import route, run, template
 
 @route('/hello/<name>')
@@ -459,7 +459,7 @@ def index(name = "world"):
     return template('<b>Hello {{name}}</b>!', name=name)
 
 run(host='localhost', port=8080)
-{% endhighlight %}
+```
 
 위의 코드는 홈페이지의 예제를 그대로 옮긴 후, 네 번째 줄을 더 추가하여
 동일 Function에 Route를 하나 더 추가해보았다. (그리고 다섯 번째 줄의
@@ -468,7 +468,7 @@ run(host='localhost', port=8080)
 {:.block-title}
 실행
 
-{% highlight console %}
+```text
 $ python hello.py 
 Bottle v0.12.9 server starting up (using WSGIRefServer())...
 Listening on http://localhost:8080/
@@ -479,7 +479,7 @@ Hit Ctrl-C to quit.
 127.0.0.1 - - [03/Feb/2016 12:14:06] "GET /hello/yonghwan HTTP/1.1" 200 22
 <...>
 $ 
-{% endhighlight %}
+```
 
 위의 로그에서 알 수 있듯이, PATH에서 '/'가 있고 없고의 영향을 받는
 것을 알 수 있었고, 인수 없는 호출과 인수를 갖는 호출이 모두 정상적으로
@@ -498,7 +498,7 @@ Rails의 시험 페이지와 유사한 화면을 만날 수 있었다.
 {:.block-title}
 프로젝트 구성
 
-{% highlight console %}
+```text
 $ pecan create hello
 <...>
 $ cd hello/
@@ -560,7 +560,7 @@ serving on 0.0.0.0:8080, view at http://127.0.0.1:8080
 2016-02-03 12:49:08,816 [WARNING ] [pecan.commands.serve][MainThread] "GET /javascript/shared.js HTTP/1.1" 404 411
 2016-02-03 12:49:08,818 [INFO    ] [pecan.commands.serve][MainThread] "GET /images/logo.png HTTP/1.1" 200 20596
 $ 
-{% endhighlight %}
+```
 
 일단, 디렉터리 구조가 나름 친숙하다.
 
@@ -571,7 +571,7 @@ falcon의 경우는 다음과 같이 홈페이지의 시험코드를 이용한 �
 {:.block-title}
 예제 코드 - `hello.py`
 
-{% highlight python %}
+```python
 import falcon
 import json
  
@@ -586,7 +586,7 @@ class QuoteResource:
  
 api = falcon.API()
 api.add_route('/quote', QuoteResource())
-{% endhighlight %}
+```
 
 위의 다른 Framework 예제와는 달리, Class를 Route에 할당하고 그 내부에
 Method 별로 `GET`, `POST` 등을 처리할 수 있도록 처리하고 있는 부분이
@@ -597,7 +597,7 @@ Method 별로 `GET`, `POST` 등을 처리할 수 있도록 처리하고 있는 �
 {:.block-title}
 실행
 
-{% highlight console %}
+```text
 $ pip install gunicorn
 Downloading/unpacking gunicorn
   Downloading gunicorn-19.4.5-py2.py3-none-any.whl (112kB): 112kB downloaded
@@ -613,7 +613,7 @@ $ gunicorn hello:api
 [2016-02-03 12:23:56 +0900] [1717] [INFO] Worker exiting (pid: 1717)
 [2016-02-03 12:23:56 +0900] [1712] [INFO] Shutting down: Master
 $ 
-{% endhighlight %}
+```
 
 ---
 
@@ -656,7 +656,8 @@ Links
 ## 설치 과정(설치 의존성)
 
 ### pycnic virtualenv
-{% highlight console %}
+
+```text
 $ virtualenv virtualenv-pycnic
 Using base prefix '/usr'
 New python executable in /opt/virtualenv-pycnic/bin/python3
@@ -668,10 +669,11 @@ Collecting pycnic
 Installing collected packages: pycnic
 Successfully installed pycnic-0.0.5
 $ 
-{% endhighlight %}
+```
 
 ### hug virtualenv
-{% highlight console %}
+
+```text
 $ virtualenv virtualenv-hug
 Using base prefix '/usr'
 New python executable in /opt/virtualenv-hug/bin/python3
@@ -686,10 +688,10 @@ Collecting six>=1.4.0 (from falcon->hug)
 Installing collected packages: python-mimeparse, six, falcon, hug
 Successfully installed falcon-0.3.0 hug-1.9.9 python-mimeparse-0.1.4 six-1.10.0
 $ 
-{% endhighlight %}
+```
 
 ### falcon virtualenv
-{% highlight console %}
+```text
 $ virtualenv virtualenv-falcon
 Using base prefix '/usr'
 New python executable in /opt/virtualenv-falcon/bin/python3
@@ -703,10 +705,10 @@ Collecting six>=1.4.0 (from falcon)
 Installing collected packages: python-mimeparse, six, falcon
 Successfully installed falcon-0.3.0 python-mimeparse-0.1.4 six-1.10.0
 $ 
-{% endhighlight %}
+```
 
 ### pecan virtualenv
-{% highlight console %}
+```text
 $ virtualenv virtualenv-pecan
 Using base prefix '/usr'
 New python executable in /opt/virtualenv-pecan/bin/python3
@@ -726,10 +728,10 @@ Collecting waitress>=0.8.5 (from WebTest>=1.3.1->pecan)
 Installing collected packages: WebOb, MarkupSafe, Mako, logutils, beautifulsoup4, six, waitress, WebTest, pecan
 Successfully installed Mako-1.0.3 MarkupSafe-0.23 WebOb-1.5.1 WebTest-2.0.20 beautifulsoup4-4.4.1 logutils-0.3.3 pecan-1.0.4 six-1.10.0 waitress-0.8.10
 $ 
-{% endhighlight %}
+```
 
 ### bottle virtualenv
-{% highlight console %}
+```text
 $ virtualenv virtualenv-bottle
 Using base prefix '/usr'
 New python executable in /opt/virtualenv-bottle/bin/python3
@@ -741,10 +743,10 @@ Collecting bottle
 Installing collected packages: bottle
 Successfully installed bottle-0.12.9
 $ 
-{% endhighlight %}
+```
 
 ### Flask virtualenv
-{% highlight console %}
+```text
 $ virtualenv virtualenv-Flask
 Using base prefix '/usr'
 New python executable in /opt/virtualenv-Flask/bin/python3
@@ -760,10 +762,10 @@ Collecting MarkupSafe (from Jinja2>=2.4->Flask)
 Installing collected packages: Werkzeug, MarkupSafe, Jinja2, itsdangerous, Flask
 Successfully installed Flask-0.10.1 Jinja2-2.8 MarkupSafe-0.23 Werkzeug-0.11.3 itsdangerous-0.24
 $ 
-{% endhighlight %}
+```
 
 ### cherrypy virtualenv
-{% highlight console %}
+```text
 $ virtualenv virtualenv-cherrypy
 Using base prefix '/usr'
 New python executable in /opt/virtualenv-cherrypy/bin/python3
@@ -775,10 +777,10 @@ Collecting cherrypy
 Installing collected packages: cherrypy
 Successfully installed cherrypy-4.0.0
 $ 
-{% endhighlight %}
+```
 
 ### pyramid virtualenv
-{% highlight console %}
+```text
 $ virtualenv virtualenv-pyramid
 Using base prefix '/usr'
 New python executable in /opt/virtualenv-pyramid/bin/python3
@@ -798,10 +800,10 @@ Collecting PasteDeploy>=1.5.0 (from pyramid)
 Installing collected packages: zope.deprecation, zope.interface, translationstring, repoze.lru, WebOb, venusian, PasteDeploy, pyramid
 Successfully installed PasteDeploy-1.5.2 WebOb-1.5.1 pyramid-1.6 repoze.lru-0.6 translationstring-1.3 venusian-1.0 zope.deprecation-4.1.2 zope.interface-4.1.3
 $ 
-{% endhighlight %}
+```
 
 ### django virtualenv
-{% highlight console %}
+```text
 $ virtualenv virtualenv-django
 Using base prefix '/usr'
 New python executable in /opt/virtualenv-django/bin/python3
@@ -813,10 +815,10 @@ Collecting django
 Installing collected packages: django
 Successfully installed django-1.9.1
 $ 
-{% endhighlight %}
+```
 
 ### tg.devtools virtualenv
-{% highlight console %}
+```text
 $ virtualenv virtualenv-tg.devtools
 Using base prefix '/usr'
 New python executable in /opt/virtualenv-tg.devtools/bin/python3
@@ -848,7 +850,7 @@ Collecting unicodecsv>=0.8.0 (from cliff>=1.14.0->gearbox->tg.devtools)
 Installing collected packages: WebOb, WebTest, MarkupSafe, repoze.lru, crank, TurboGears2, pyparsing, cmd2, six, PyYAML, pbr, argparse, stevedore, PrettyTable, unicodecsv, cliff, Tempita, PasteDeploy, gearbox, backlash, tg.devtools
 Successfully installed MarkupSafe-0.23 PasteDeploy-1.5.2 PrettyTable-0.7.2 PyYAML-3.11 Tempita-0.5.2 TurboGears2-2.3.7 WebOb-1.5.1 WebTest-1.4.3 argparse-1.4.0 backlash-0.1.1 cliff-1.15.0 cmd2-0.6.8 crank-0.7.3 gearbox-0.0.11 pbr-1.8.1 pyparsing-2.0.7 repoze.lru-0.6 six-1.10.0 stevedore-1.10.0 tg.devtools-2.3.7 unicodecsv-0.14.1
 $ 
-{% endhighlight %}
+```
 
 
 
