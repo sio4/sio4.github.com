@@ -1,3 +1,4 @@
+{% if jekyll.environment != "development" %}
 {% if include.po %}{% assign uurl = site.url |append: include.po.url %}{% assign sec = include.po.date |date: '%s' %}{% else %}{% assign uurl = site.url |append: page.url %}{% assign sec = page.date |date: '%s' %}{% endif %}
 <!-- addthis -->
 <div class="addthis_toolbox addthis_default_style addthis_custom_images">
@@ -72,3 +73,4 @@ $(window).load(function(){
 <script type="text/javascript"
 	src="http://s7.addthis.com/js/250/addthis_widget.js#username=sio4"></script>
 <!-- end-of-addthis -->
+{% endif %}

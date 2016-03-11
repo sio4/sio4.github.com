@@ -11,6 +11,10 @@ site = Jekyll::Site.new(options)
 task :default do
   puts "Jekyll Tasks"
   puts ""
+  puts "  rake check                : display site configuration"
+  puts "  rake todo                 : display TODO from articles"
+  puts "  rake syntax               : build stylesheet for syntax highlighter"
+  puts "  rake linkchecker          : linkchecker for local test site"
   puts "  rake tags                 : build tag cloud and tag pages"
   puts "  rake categories           : build categories pages"
   puts "  rake serve                : run test server within development mode"
@@ -21,6 +25,24 @@ end
 desc 'Check configuration'
 task :check do
   pp options
+end
+
+desc 'Check TODO list'
+task :todo do
+  puts "Things to do ========================================================"
+  puts `grep TODO blog/*/*/*`
+end
+
+# dark: base16.dark base16.monokai monokai monokai.sublime
+# light: github base16 base16.solarized
+desc 'Build stylesheet for syntax highlighter'
+task :syntax do
+  `bundle exec rougify style base16.dark > assets/syntax.css`
+end
+
+desc 'Check links'
+task :linkchecker do
+  `linkchecker http://localhost:4000/`
 end
 
 task :serve, [:env] => [:tags, :categories] do |t, args|

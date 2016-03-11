@@ -29,17 +29,20 @@ $color-light: #cccccc;
 $color-pale: #eeeeee;
 $color-white: #ffffff;
 $color-dark: #444444;
+$color-orange: #ee5500;
 $color-strong: #222222;
 $color-accent: #990000;
 $color-link: #006599;
 $color-link-hover: #ff7777;
+$color-point: #f0f0f0;
 
 $background-black: #222222;
 $background-body: #f9f9f9;
-$background-point: #ffe0e0;
 $background-tail: #000000;
 $background-header: #000000;
 $background-footer: #f0f0f0;
+$background-point: #454545;
+
 $background-menubar: rgba(255,40,80,0.6);
 $background-marker: linear-gradient(transparent 50%, #ff7 70%, transparent 90%);
 
@@ -164,6 +167,7 @@ table {
 	}
 }
 img {
+	page-break-inside: avoid !important;
 	&.inline {
 		margin: 0 1rem;
 		&.pull-right { margin-right: 0; }
@@ -203,6 +207,7 @@ abbr[title] {
 .indented { margin-left: 2rem; }
 
 // ## styles	----------------------------------------------------------------
+.new.page { page-break-before: always !important; }
 .underline { border-bottom: 1px solid $color-text; }
 .grayline { border-bottom: 1px solid $color-light; }
 .dropshadow { margin-top: 1rem; margin-bottom: 1rem; }
@@ -211,6 +216,26 @@ abbr[title] {
 .error { color: $color-error; }
 .disabled { color: $color-disabled; }
 .grey { color: $color-grey; }
+.point {
+	background-image: url('/assets/images/pattern-10-777.png');
+	background-repeat: repeat-y;
+	background-color: $background-body - #080808;
+	padding: 4px 4px 4px 20px;
+	border-radius: 4px;
+	dt {
+		font-size: $font-l;
+		font-weight: bold;
+		color: $color-orange;
+		&:before {
+			content: "\F0E7";
+			font-family: FontAwesome;
+			padding-right: 0.5rem;
+		}
+	}
+	dd {
+		font-style: italic;
+	}
+}
 
 // #### ----------------------------------------------------------------------
 // #### layout/site full screen structure ------------------------------------
@@ -488,7 +513,7 @@ ul.posts {
 
 			ul#markdown-toc {
 				margin: 0.5rem;
-				padding: 0.5rem 0.5rem 0.5rem 2rem;
+				padding: 0.5rem 1rem;
 				background: #f9f9f9;
 				li {
 					list-style: none;
@@ -508,7 +533,12 @@ ul.posts {
 			text-align: justify;
 			margin: 0.5rem 0 2rem;
 
-			h1 { margin-top: 3em; }
+			h1 {
+				margin-top: 3em; page-break-before: always;
+				&:first-of-type {
+					page-break-before: unset;
+				}
+			}
 			#blog-posts h1 { margin-top: 1rem; }
 			h2, h3, h4, h5 { margin-top: 1.5rem; }
 			h2 { border-bottom: 1px solid $background-body - #202020; }
@@ -676,6 +706,15 @@ p code {
 	border-radius: 3px;
 	padding: 2px 3px 0;
 }
+// with rouge highlighter
+.highlight {
+	background: #111;
+}
+.wrap .highlight {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
 figure.highlight,
 div.highlighter-rouge,
 div.highlight {
@@ -696,16 +735,6 @@ div.highlight {
 						white-space: pre;
 						color: #999;
 					}
-				}
-			}
-
-			&.language-diff {
-				color: #999;
-				white-space: pre;
-				span {
-					&.gu { color: #ff7; }
-					&.gi { color: #4a4; }
-					&.gd { color: #d44; }
 				}
 			}
 		}
@@ -771,9 +800,12 @@ iframe.twitter-mention-button {
 		display: none !important;
 	}
 	a[href^="http"]:after {
-		content: " (" attr(href) ") " !important;
+		content: "" !important;
 	}
 }
+//	a[href^="http"]:after {
+//		content: "(" attr(href) ") " !important;
+//	}
 
 //****************************************************************************
 //** for web application -----------------------------------------------------
