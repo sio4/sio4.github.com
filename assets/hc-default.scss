@@ -14,7 +14,7 @@ $image-help: url(images/beatles-help.png);
 $font-family: "Titillium Web", Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
 $font-family: "Titillium Web", "맑은 고딕", "Malgun Gothic";
 $font-code: "Source Code Pro", "Menlo", "Monaco", "Ubuntu Mono", "courier new", monospace;
-$font-m: 10pt;
+$font-m: 10.5pt;
 $font-xxs: 0.8em;
 $font-xs: 0.9em;
 $font-s: 0.95em;
@@ -36,7 +36,7 @@ $color-link: #006599;
 $color-link-hover: #ff7777;
 $color-point: #f0f0f0;
 
-$background-black: #222222;
+$background-black: #111111;
 $background-body: #f9f9f9;
 $background-tail: #000000;
 $background-header: #000000;
@@ -195,8 +195,14 @@ abbr[title] {
 .tac { text-align: center !important; }
 .tar { text-align: right !important; }
 .taj { text-align: justify !important; }
-.pull-right { float: right !important; }
-.pull-left { float: left !important; }
+.pull-right {
+	float: right !important;
+	&.margin { margin-left: 1rem; }
+}
+.pull-left {
+	float: left !important;
+	&.margin { margin-right: 1rem; }
+}
 .fit { max-width: 94%; display: block; }
 .fit { margin-left: auto !important; margin-right: auto !important; }
 .half { max-width: 50%; margin-left: auto; margin-right: auto; display: block; }
@@ -519,7 +525,6 @@ ul.posts {
 					list-style: none;
 				}
 				ul {
-					padding-bottom: 0.5rem;
 					padding-left: 1.5rem;
 					ul {
 						padding-bottom: 0;
@@ -534,7 +539,8 @@ ul.posts {
 			margin: 0.5rem 0 2rem;
 
 			h1 {
-				margin-top: 3em; page-break-before: always;
+				margin-top: 3em;
+				page-break-before: auto;
 				&:first-of-type {
 					page-break-before: unset;
 				}
@@ -708,7 +714,7 @@ p code {
 }
 // with rouge highlighter
 .highlight {
-	background: #111;
+	background: $background-black;
 }
 .wrap .highlight {
 	white-space: pre-wrap;
@@ -799,8 +805,10 @@ iframe.twitter-mention-button {
 	.hc-page-tail {
 		display: none !important;
 	}
-	a[href^="http"]:after {
-		content: "" !important;
+	a {
+		&:after {
+			content: "" !important;
+		}
 	}
 }
 //	a[href^="http"]:after {

@@ -18,8 +18,13 @@ layout: page
 					</div>
 				</div>
 				<div class="preview-content">
-					{{ post.excerpt}}
-					<a href="{{ post.url }}">계속...</a>
+					<p>
+						{{ post.excerpt |strip_html }}
+						<a href="{{ post.url }}">[...]</a>
+					</p>
+					{% if post.image %}
+					<img class="fit" src="{{ post.image }}">
+					{% endif %}
 				</div>
 			</div>{% endfor %}
 		</div>
