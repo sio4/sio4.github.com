@@ -2,6 +2,7 @@
 title: 판타스틱 PaaS 서비스, Heroku 사용하기
 tags: Git 버전관리 Heroku PaaS 클라우드컴퓨팅 Ruby-on-Rails
 image: /assets/logos/heroku-light.jpg
+banner: /assets/logos/heroku-light.jpg
 date: 2016-03-13 14:55 +09:00
 ---
 첫인상이 중요한 것은 사람에게만 해당하는 것이 아닌 것 같다. "PaaS" 하면

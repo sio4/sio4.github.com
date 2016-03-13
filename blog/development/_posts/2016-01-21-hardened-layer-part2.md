@@ -1,6 +1,7 @@
 ---
 title: Hardened Layer, SoftLayer Custom Portal - Part 2
 image: /attachments/20160121-hl-v1-dashboard.png
+banner: /attachments/20160121-hl-v1-dashboard.png
 tags: SoftLayer 클라우드컴퓨팅 Ember.js Semantic-UI D3.js Hardened-Layer
 date: Thu, 21 Jan 2016 01:35:31 +0900
 ---

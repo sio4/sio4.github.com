@@ -22,8 +22,8 @@ layout: page
 						{{ post.excerpt |strip_html }}
 						<a href="{{ post.url }}">[...]</a>
 					</p>
-					{% if post.image %}
-					<img class="fit" src="{{ post.image }}">
+					{% if post.banner %}
+					<img class="fit banner" src="{{ post.banner }}">
 					{% endif %}
 				</div>
 			</div>{% endfor %}
