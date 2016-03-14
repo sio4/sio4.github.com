@@ -19,9 +19,7 @@ author_page: "https://www.facebook.com/yonghwan.so"
 ### Custom
 gravatar: bb4bb7364ee67616d9f5ff3561412772
 
-gems:
-        - jekyll-redirect-from
-        - jekyll-sitemap
+gems: []
 
 exclude:
         - vendor

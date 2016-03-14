@@ -3,11 +3,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
  
- <title>소용환의 생각저장소</title>
+ <title>{{ site.title |xml_escape }}</title>
  <link href="/atom.xml" rel="self" />
  <link href="/" />
  <updated>{{ site.time | date_to_xmlschema }}</updated>
- <id>http://sio4.github.com/</id>
+ <id>{{ site.url }}</id>
  <author>
    <name>Yonghwan SO</name>
    <email>scinix@gmail.com</email>
@@ -15,10 +15,10 @@
 
  {% for post in site.posts %}
  <entry>
-   <title>{{ post.title }}</title>
-   <link href="http://sio4.github.com{{ post.url }}/" />
+   <title>{{ post.title |xml_escape }}</title>
+   <link href="{{ site.url }}{{ post.url }}" />
    <updated>{{ post.date | date_to_xmlschema }}</updated>
-   <id>http://sio4.github.com{{ post.id }}/</id>
+   <id>{{ site.url }}{{ post.id }}</id>
    <content type="html">{{ post.content | xml_escape }}</content>
  </entry>
  {% endfor %}
