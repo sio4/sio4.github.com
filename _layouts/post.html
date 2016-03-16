@@ -3,20 +3,20 @@ layout: sidebar
 ---
 {% assign category = page.categories |last |downcase %}
 {% assign cat = site.data.categories |where:'id', category |first %}
-<div class="post item">
-	<h1 class="post-title underline">{{ page.title }}</h1>
-	<div class="post-details">
+<div class="so document post">
+	<h1 class="so document post title underline">{{ page.title }}</h1>
+	<div class="so post details">
 		<a href="/categories/{{page.categories |last |downcase}}.html"
 			class="post-category">{{ cat.name }}</a>
 		<span class="date">{{ page.date | date: "%F %T" }}</span>
 		{% if page.modified %}(Edited: <span class="date">{{ page.modified | date: "%F %T" }}</span>){% endif %}
 	</div>
 
-	<div class="post-share tar">
+	<div class="official share">
 		{% include share-official.html %}
 	</div>
 
-	<div class="post-content">
+	<div class="so document content">
 {{ content }}
 		<div class="post-signature">
 			-- <br>
@@ -25,8 +25,8 @@ layout: sidebar
 		</div>
 	</div>
 
-	<div class="post-meta">
-		<div class="post-tags">
+	<div class="so document meta">
+		<div class="tags">
 			{% for tag in page.tags %}
 			<span><a class="tag-item" href="/tags/{{ tag }}.html">{{ tag }}</a></span>
 			{% endfor %}
@@ -44,21 +44,20 @@ layout: sidebar
 		</div>
 	</div>
 
-	<div class="post-share item-bottom">
+	<div class="custom share">
 		{% include share-item.html %}
 	</div>
 </div>
 
 <div class="post-tail">
 	<h2>Related Posts</h2>
-	<ul class="posts">
+	<ul class="items">
 	{% assign ps = [] %}
 	{% for t in page.tags %}
 		{% for p in site.tags.[t] limit: 5 %}
 			{% unless ps contains p.url %}
-				<li><span class="meta">{{ p.date |date: '%F' }}</span><a
-					href="{{ p.url }}">{{ p.title }}</a>
-					<span class="meta">&raquo; {{t}}</span>
+				<li><a href="{{ p.url }}">{{ p.title }}</a>
+					<span class="meta">&raquo; {{t}}, {{ p.date |date: '%F' }}</span>
 				</li>
 			{% endunless %}
 			{% assign ps = ps|join: ' ' |append: ' ' |append: p.url |split: ' ' %}

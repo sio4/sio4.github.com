@@ -39,7 +39,7 @@
 	<script src="/assets/vendor/semantic-ui/semantic.min.js"></script>
 
 	<link rel="stylesheet" href="/assets/syntax.css" type="text/css" />
-	<link rel="stylesheet" href="/assets/hc-default.css" type="text/css" />
+	<link rel="stylesheet" href="/assets/so-web.css" type="text/css" />
 
 	<script src="/assets/vendor/raphael-min.js"></script>
 	<script src="/assets/vendor/underscore-min.js"></script>
@@ -52,45 +52,40 @@
 <div id="dummy-script-container">
 {% include init-facebook.html %}</div>
 
-<div class="fullscreen">
-	<div class="hc-sticky-header">
-		<div class="ui inverted menu">
-			<a class="item" href="/"><i class="home icon"></i>{{ site.title }}</a>
-			<a class="item" href="/pages/archives.html">Archives</a>
-			<a class="item" href="/pages/tags.html">Tags</a>
-			<div class="right menu">
-				<a class="item" href="{{ site.feedurl }}"><i class="icon rss"></i></a>
-			</div>
+<div class="ui fixed inverted top menu">
+	<a class="item" href="/"><i class="home icon"></i>{{ site.title }}</a>
+	<a class="item" href="/pages/archives.html">Archives</a>
+	<a class="item" href="/pages/tags.html">Tags</a>
+	<div class="right menu">
+		<a class="item" href="{{ site.feedurl }}"><i class="icon rss"></i></a>
+	</div>
+</div>
+
+<div class="so window">
+	{% if jekyll.environment == "debug" %}
+	<div class="debug" id="">
+		{% assign category = page.categories |last %}
+		{% assign cat = site.data.categories |where:"id", category |first %}
+		<div>assgined by where - cat:{{ cat }}, cat:{{ cat.name }}</div>
+		<div>
+			env:{{ jekyll.environment }},
+			layout:{{ page.layout }},
+			collection:{{ page.collection }},
+		</div>
+		<div>
+			url:{{ page.url }},
+			permalink:{{ page.permalink }},
+			path:{{ page.path }},
+			tags:{{ page.tags |join:", " }}
 		</div>
 	</div>
+	{% endif %}
+	<div class="so frame narrow" id="content-site">
+		{{ content }}
+	</div><!-- #content-site -->
 
-	<div class="hc-fixed-window hc-page">
-		{% if jekyll.environment == "debug" %}
-		<div class="debug" id="">
-			{% assign category = page.categories |last %}
-			{% assign cat = site.data.categories |where:"id", category |first %}
-			<div>assgined by where - cat:{{ cat }}, cat:{{ cat.name }}</div>
-			<div>
-				env:{{ jekyll.environment }},
-				layout:{{ page.layout }},
-				collection:{{ page.collection }},
-			</div>
-			<div>
-				url:{{ page.url }},
-				permalink:{{ page.permalink }},
-				path:{{ page.path }},
-				tags:{{ page.tags |join:", " }}
-			</div>
-		</div>
-		{% endif %}
-		<div class="hc-module-main hc-page-narrow" id="content-site">
-			{{ content }}		</div><!-- #content-site -->
-
-{% include page-tail.html %}	</div><!-- #body-site -->
-
-	<!--div class="hc-sticky-footer">
-	</div-->
-</div>
+{% include site-tail.html %}
+</div><!-- #body-site -->
 
 {% include init-twitter.html %}
 {% include init-google.html %}

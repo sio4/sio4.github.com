@@ -1,0 +1,623 @@
+---
+---
+/* hc-current.css, honcheonui-current style
+ *
+ * vim: set ts=2 sw=2:
+ */
+
+@import url(fonts/google/titilliumweb-v4.css);
+$image-spin: url(images/spin-head.png);
+$image-orion: url(images/orion.png);
+
+$font-family: "Titillium Web",Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
+$font-family: "Titillium Web","맑은 고딕","Malgun Gothic";
+$font-code: "Source Code Pro", "Menlo", "Monaco", "Ubuntu Mono", "courier new", monospace;
+$font-xxs: 0.8em;
+$font-xs: 0.9em;
+$font-s: 0.95em;
+$font-m: 10.5pt;
+$font-l: 1.2em;
+$font-xl: 1.4em;
+$font-xxl: 1.6em;
+$height-page-logo: 120px;
+
+$color-text: #777777;
+$color-grey: #aaaaaa;
+$color-dark: #333333;
+$color-link: #0075aa;
+$color-light: #cccccc;
+$color-orange: #ee5500;
+
+$background-body: #f9f9f9;
+$background-black: #111111;
+$background-header: #000000;
+$background-footer: #000000;
+$background-marker: linear-gradient(transparent 50%,#ff7 70%,transparent 90%);
+$background-point: #454545;
+
+$background-th:  -moz-linear-gradient(center bottom , #eeeeee 0%, #ffffff 100%) repeat scroll 0 0 padding-box transparent;
+$background-td: #ffffff;
+
+$box-shadow: 0 2px 6px rgba(70,70,70,0.9);
+
+// aliases
+$color-header: $color-light;
+$color-border: $color-light;
+
+/*
+$image-help: url(images/beatles-help.png);
+// font/color/background
+$font-xxxl: 1.8em;
+
+$color-pale: #eeeeee;
+$color-white: #ffffff;
+$color-strong: #222222;
+$color-accent: #990000;
+$color-link-hover: #ff7777;
+$color-point: #f0f0f0;
+
+$background-footer: #f0f0f0;
+
+$background-menubar: rgba(255,40,80,0.6);
+
+
+$color-error: #f00 !important;
+$color-warn: #f60 !important;
+$color-disabled: #bbb;
+$background-error: #f00 !important;
+$background-warn: #ff6600 !important;
+
+// aliases
+
+*/
+
+// mixins
+@mixin nospace() { padding: 0; margin: 0; }
+@mixin coverall() { overflow: auto !important; } // fully cover inner divs
+
+// ##### common tags ---------------------------------------------------------
+body { color: $color-text; background-color: $background-body;
+	font-size: $font-m;
+	font-family: $font-family;
+}
+h1, h2, h3, h4, h5 {
+	font-family: inherit;
+	font-weight: 600;
+}
+h1 {
+	font-size: $font-xxl;
+}
+h2 {
+	font-size: $font-xl;
+}
+h3 {
+	font-size: $font-l;
+}
+ul, ol { padding: 0 0 0 2.5rem; }
+ul {
+	li { list-style: square;
+		i.heading { margin-right: 0.2rem; }
+	}
+	&.checked {
+		padding-left: 1.5rem;
+		li {
+			list-style-type: none;
+			&:before {
+				font-size: 0.8rem; padding-right: 0.5rem;
+				font-family: FontAwesome; content: "\F00C";
+			}
+		}
+	}
+	&.dotless { li { list-style: none !important; } }
+}
+strong { color: black;
+	font-weight: normal; background: $background-marker;
+}
+hr { border-top: 1px dashed $color-border; border-bottom: none; margin: 2em; }
+table {
+	margin: 1rem auto;
+	display: table !important;
+	&.fit { width: 95%; margin: 1rem auto; }
+	&.filled { width: 100%; }
+	&.centered { margin: 1rem auto; max-width: 80%; min-width: 50%; }
+	&.styled {
+		thead {
+			tr {
+				background: $background-th; border-top: 1px solid $color-border - #222;
+			}
+		}
+		tbody {
+			tr {
+				background: $background-td; border-top: 1px solid $color-border;
+				&:nth-child(even) { background: $background-td - #030303; }
+				&:first-child { border-top: 1px solid $color-border - #222; }
+				&:last-child { border-bottom: 1px solid $color-border - #222; }
+			}
+		}
+	}
+	th, td { padding: 1px; }
+}
+img {
+	page-break-inside: avoid !important;
+	&.inline {
+		margin: 0 1rem;
+		&.pull-right { margin-right: 0; }
+		&.pull-left { margin-left: 0; }
+	}
+}
+
+
+// ##### decorations ---------------------------------------------------------
+.tal { text-align: left !important; }
+.tar { text-align: right !important; }
+.tac { text-align: center !important; }
+.taj { text-align: justify !important; }
+.pull-right {
+	float: right !important;
+	&.margin { margin-left: 1rem; }
+}
+.pull-left {
+	float: left !important;
+	&.margin { margin-right: 1rem; }
+}
+.nw { white-space: nowrap !important; } // for korean character, no wrap.
+
+.underline { border-bottom: solid 1px $color-text; }
+.grayline { border-bottom: 1px solid $color-light; }
+.dropshadow { margin-top: 1rem; margin-bottom: 1rem; }
+.dropshadow { box-shadow: 3px 3px 5px #666; }
+
+.fit { max-width: 95%; display: block; }
+.fit { margin-left: auto !important; margin-right: auto !important; }
+.half { max-width: 50%; margin-left: auto; margin-right: auto; display: block; }
+.filled { width: 100%; }
+.centered { margin: 0 auto; max-width: 95%; min-width: 50%; }
+
+
+// ##### page structure ------------------------------------------------------
+$header-height: 40px;
+$window-margin: 0px;
+// ##### layouts.site ---------------------------------------------------------
+.ui.menu {
+	&.inverted {
+		background-color: $background-header;
+		background-image: $image-spin;
+		.item {
+			color: $color-header;
+		}
+	}
+	&.fixed.top {
+		box-shadow: $box-shadow;
+	}
+
+	.item {
+		padding-left: 0.6rem;
+		padding-right: 0.6rem;
+	}
+}
+.so.window {
+	padding: $window-margin;
+	padding-top: $header-height + $window-margin;
+	.debug {
+		div {
+		}
+	}
+	.so.frame {
+		@include coverall();
+		margin: 1em auto;
+		&.narrow {
+			max-width: 61rem;
+			// {{ content }} -----
+		}
+	}
+	.so.tail {
+		@include coverall();
+		clear: both;
+		margin-top: 10em;
+		padding: 5px 20px;
+
+		font-size: $font-s;
+		color: $color-grey;
+		background-color: $background-footer;
+		background-image: $image-orion;
+		background-position: right bottom;
+		background-repeat: no-repeat;
+		background-size: auto $height-page-logo;
+		min-height: $height-page-logo + 4px;
+
+		.tail-item {
+			margin-right: 3em;
+			float: left;
+			ul { @include nospace(); }
+			&:last-child {
+				margin-right: 0;
+				margin-bottom: $height-page-logo;
+				float: right;
+				text-align: right;
+			}
+		}
+	}
+
+	a, a:visited {
+		color: $color-link;
+	}
+}
+// ##### layouts.sidebar -----------------------------------------------------
+.so.frame {
+	.so.content {
+		float: left;
+		width: 40rem;
+		// {{ .so.document }}
+	}
+	.so.sidebar {
+		float: right;
+		max-width: 20rem;
+		padding-left: 1rem;
+
+		color: $color-grey;
+
+		.side-widget {
+			margin-bottom: 1.5rem;
+			ul {
+				@include nospace();
+				margin-left: 0.1rem;
+				li {
+					margin-bottom: 0 !important;
+					line-height: 1.5rem;
+					list-style-type: none;
+					white-space: nowrap;
+					overflow: hidden;
+				}
+			}
+		}
+	}
+}
+.side-widget {
+	&#personal {
+		padding: 10px;
+		border-radius: 10px;
+		background: $background-body - #151515;
+		color: $color-dark;
+	}
+	&#google-search {}
+	&#twitter-mention {
+		.twitter-mention-button { vertical-align: middle; }
+	}
+	&#facebook-like {}
+	&#recent-posts {}
+	&#my-project {}
+	&#categories {}
+	&#social-networks {}
+	&#tagcloud {}
+	&#social-networks {}
+}
+// ##### document common -----------------------------------------------------
+.so.content {
+	.so.document {
+		.so.document.title { margin-bottom: 0.5rem; }
+		.so.document.content {
+			margin: 0.5rem 0 0.2rem; padding: 0.5rem; border-radius: 10px;
+			background: $background-body + #040404;
+			text-align: justify;
+			ul#markdown-toc {
+				margin: 0.5rem; padding: 0.5rem 1rem; background: #f9f9f9;
+				li { list-style: none; }
+			}
+			h1 {
+				margin-top: 3em;
+				page-break-before: auto;
+				&:first-of-type { page-break-before: unset; }
+			}
+			h2 { border-bottom: 1px solid $background-body - #202020; }
+			h2, h3, h4, h5 { margin-top: 2rem; }
+			p {
+				margin: 1rem 0;
+				line-height: 1.8;
+				&:first-of-type { margin-top: 0; }
+				&:last-of-type { margin-bottom: 0; }
+				&.block-title { // for codeblock title
+					margin-bottom: -1rem; margin-left: 1rem;
+					font-weight: bold;
+					code { background: none; border: none;
+					}
+				}
+			}
+			blockquote {
+				font-size: $font-l;
+				background: url('images/blockquote.png') no-repeat scroll 3px 3px;
+				background-color: $background-body - #050505;
+				margin: 1rem 0; padding: 8px 12px 8px 36px;
+				border-left: 4px solid $background-body - #222;
+				&.point { /* check and remove it. use global point! */ }
+			}
+		}
+		.so.document.meta {
+			.tags {
+				margin-bottom: 1rem;
+				text-align: right;
+				&:before { color: $color-link; content: "\F02C";
+					font-family: FontAwesome;
+				}
+			}
+		}
+
+		&.post {	// layout.post
+			.so.post.details {
+				color: $color-text + #222;
+				font-size: $font-s;
+				.post-category { background: $background-body - #090909;
+					padding: 0 5px;
+					border-radius: 20px;
+				}
+				span.date { }
+			}
+			.share {
+				&.official { text-align: right;
+					div,iframe { display: inline-block;
+						vertical-align: middle !important;
+					}
+				}
+				&.custom { margin-top: 2rem;
+					border-top: 3px solid $background-body - #111;
+					padding: 1rem 0 2rem;
+					.addthis_toolbox {
+						font-size: $font-l;
+						a { margin: 0 2px;
+							sup.share_count { background: #fff;
+								border: 1px solid #ccc;
+								border-radius: 6px 6px 6px 0;
+								font-size: 0.6em;
+								padding: 0 3px;
+								vertical-align: super;
+							}
+						}
+					}
+				}
+			}
+			.so.document.content {
+				.post-signature { padding: 2rem 0 1rem;
+					font-style: italic; }
+				a {
+					&[href^="http"]:after {
+						font-family: FontAwesome; content: "\F08E";
+						font-size: 0.7em; vertical-align: super; padding-left: 3px;
+					}
+					&[href^="/"]:after {
+						font-family: FontAwesome; content: "\F24A";
+						font-size: 0.7em; vertical-align: super; padding-left: 3px;
+					}
+				}
+			}
+			.post-hierarchy { display: inline-block; margin: 2rem 0; width: 100%;
+				font-style: italic;
+				p { margin: 0.2rem 0;
+					a { color: $color-link + #444444; }
+				}
+			}
+		}
+
+		&.page {	// layout.page
+			.so.document.content {
+
+				&.preview {	// index
+					margin: 0.5rem 0;
+					clear: both;
+					background: inherit;
+					h3 { margin-top: 0; }
+					.preview-meta {
+						float: right; text-align: right;
+						max-width: 30%; padding: 0 0 1rem 1rem;
+						font-style: italic; color: $color-light;
+					}
+					.preview-content {
+						p { margin: 0; }
+						img { margin-top: 1rem; }
+					}
+				}
+			}
+		}
+	}
+}
+// ##### layouts.post --------------------------------------------------------
+.so.content {
+	.post-tail { margin: 1em 0; padding: 0.5em;
+		border: 3px solid $background-body - #111; border-radius: 6px;
+		h2 { }
+		ul.items {
+			li {
+				span.meta {
+					font-size: $font-s;
+				}
+			}
+		}
+	}
+}
+// ##### widget.barchart -----------------------------------------------------
+div.barchart {
+	.item { margin: 2px 0;
+		.frame { display: inline-block; vertical-align: middle;
+			background: #ddd; border-radius: 3px; padding: 2px; width: 180px;
+			.bar { float: right; width: 100px; height: 6px;
+				background: $color-link; border-radius: 2px;
+			}
+		}
+		.label { display: inline-block;
+			.details { color: $color-grey; }
+		}
+	}
+}
+// ##### widget.tags ---------------------------------------------------------
+div.tags {
+	margin-bottom: 0.5rem;
+	.tag-item {
+		font-size: $font-xxs;
+		border-radius: 5px;
+		background: $background-body - #090909;
+		padding: 0px 4px 0 4px;
+		//color: $color-link + #444 !important;
+	}
+}
+// posts list of tags, categories,...
+ul.items {
+	@include nospace();
+	li {
+		list-style-type: none;
+		line-height: 1.6rem;
+		span.meta {
+			float: right;
+			margin: 0 0.5rem;
+			color: $color-light;
+			font-style: italic;
+			a { color: $color-light; }
+		}
+		.post-tags {}
+
+		&.proj-item {
+			margin-bottom: 1rem;
+			div {
+				margin-left: 4rem;
+				&.proj-title {
+					margin-left: 0;
+				}
+			}
+		}
+	}
+}
+.side-widget {
+	ul.items {
+		li {
+			&.proj-item {
+				.proj-title {
+					float: left;
+					margin-right: 1rem;
+				}
+				.proj-description {
+					text-align: right;
+				}
+				.proj-site, .proj-repository {
+					display: none;
+				}
+			}
+		}
+	}
+}
+// code block ----------------------------------------------------------------
+@mixin code-font() {
+	font-family: $font-code;
+	font-size: $font-xs;
+}
+@mixin code-block() {
+	margin: 1rem; box-shadow: 3px 3px 5px #666;
+	background: $background-black;
+	line-height: 1;
+	pre {
+		margin: 0; padding: 0.3rem 0.6rem;
+		code {
+			@include code-font();
+			&.language-console {	// for console syntax
+				white-space: pre-wrap;
+				span {
+					&.go { white-space: pre; color: #999; }
+				}
+			}
+		}
+	}
+}
+.highlighter-rouge {
+	//&.short { pre { max-height: 26em; overflow: auto; } }
+	//&.dark { code { background: $background-black; } }
+	pre.highlight {
+		margin: 1rem; box-shadow: 3px 3px 5px #666;
+		//background: $background-black;
+		padding: 0.3rem 0.6rem;
+		line-height: 1;
+		code {
+			@include code-font();
+		}
+	}
+	&.wrap {
+		pre {
+			white-space: pre-wrap;
+			word-break: break-all;
+		}
+	}
+}
+// legacy style
+figure.highlight {
+	@include code-block();
+}
+
+// inline code
+li code,
+p code {
+	@include code-font();
+	background: rgba(230,230,230,0.2);
+	border: 1px solid #d9d9d9;
+	border-radius: 3px;
+	padding: 0 2px;
+}
+// special block -------------------------------------------------------------
+.point {
+	background-image: url('/assets/images/pattern-10-777.png');
+	background-repeat: repeat-y;
+	background-color: $background-body - #080808;
+	padding: 4px 8px 4px 20px;
+	border-radius: 4px;
+	font-size: $font-m * 1.1;
+	text-shadow: 0 0 3px;
+	color: $color-dark;
+	dt {
+		font-size: $font-l * 1.1;
+		font-weight: bold;
+		color: $color-orange;
+		&:before {
+			font-family: FontAwesome; content: "\F0E7"; padding-right: 0.5rem;
+		}
+	}
+	dd { }
+}
+
+
+// ##### exclude when print out ----------------------------------------------
+@media print {
+	.noprint { display: none !important; }
+	html, body { height: auto !important; background: white; }
+	.so.window {
+		height: auto !important;
+		background: white;
+		.so.frame {
+			min-width: 100%;
+			.so.content {
+				min-width: 100%;
+				margin: 0;
+				background: none !important; 
+				.so.post.item {
+					.share { display: none !important; }
+				}
+			}
+		}
+	}
+	.ui.menu,
+	.so.sidebar,
+	.so.tail,
+	.so.document .share,
+	.post-tail { display: none !important; }
+}
+
+@media (max-width: 33em) {
+	.so.frame.narrow {
+		margin: 1em 0.5em !important;
+		.so.content {
+			float: none;
+			min-width: inherit;
+			max-width: 100%;
+			margin-right: 0;
+		}
+		.so.sidebar {
+			float: left !important;
+			max-width: 100% !important;
+			padding: 0 !important;
+		}
+	}
+}
+

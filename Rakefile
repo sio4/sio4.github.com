@@ -92,7 +92,7 @@ task :tags do
 layout: page
 title: Postings tagged as "#{tag}"
 ---
-<ul class="posts">
+<ul class="items">
 HTML
 
     ## body for <tag>.html
@@ -163,11 +163,12 @@ title: "#{cat['name']}"
 {% assign category = page.name |remove: '.html' %}
 <div class="category-description"><p>#{cat['description']}</p><p></p></div>
 <div class="wall-panel" id="blog-posts">
-  <ul class="posts">
+  <ul class="items">
   {% for post in site.categories.[category] %}
-    <li>» <span class="meta">{{ post.date |date: '%F %T' }}</span>
+    <li><i class="fa fa-file-o heading"></i>
       <a href="{{ post.url }}">{{ post.title }}</a>
-      <div class="post-tags tar">
+      <span class="meta">{{ post.date |date: '%F %T' }}</span>
+      <div class="tags tar">
       {% for tag in post.tags %}<a class="tag-item" href="/tags/{{ tag }}.html"
         title="View posts tagged with &quot;{{ tag }}&quot;">{{ tag }}</a>
       {% endfor %}

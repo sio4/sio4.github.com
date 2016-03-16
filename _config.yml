@@ -22,6 +22,7 @@ gravatar: bb4bb7364ee67616d9f5ff3561412772
 gems: []
 
 exclude:
+        - Rakefile
         - vendor
         - assets/vendor/fa/Gemfile
         - assets/vendor/fa/*.md
