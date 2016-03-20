@@ -453,7 +453,10 @@ div.tags {
 		font-size: $font-xxs;
 		border-radius: 5px;
 		background: $background-body - #090909;
-		padding: 0px 4px 0 4px;
+		padding: 3px 4px;
+		display: inline-block;
+		line-height: 1;
+		vertical-align: middle;
 		//color: $color-link + #444 !important;
 	}
 }
