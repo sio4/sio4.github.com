@@ -15,7 +15,7 @@ date: 2016-03-22 12:12 +09:00
 1. SoftLayer의 Object Storage를 활용하여 임시공유 만들기
 1. Github에서 공개소프트웨어에 기여하는 방식
 
-{:#the-biginning}
+{:#the-beginning}
 # 사건의 발단
 
 곧 자세히 말할 기회가 있을 것 같은데 개요만 말하자면, 간단하게 생활코딩(?)
