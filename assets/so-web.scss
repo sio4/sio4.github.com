@@ -110,6 +110,20 @@ ul {
 	}
 	&.dotless { li { list-style: none !important; } }
 }
+ol {
+	&.upper-alpha {
+		list-style-type: upper-alpha;
+	}
+	&.lower-alpha {
+		list-style-type: lower-alpha;
+	}
+	&.upper-roman {
+		list-style-type: upper-roman;
+	}
+	&.lower-roman {
+		list-style-type: lower-roman;
+	}
+}
 strong { color: black;
 	font-weight: normal; background: $background-marker;
 }

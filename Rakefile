@@ -45,7 +45,7 @@ task :linkchecker do
   `linkchecker http://localhost:4000/`
 end
 
-task :serve, [:env] => [:tags, :categories] do |t, args|
+task :serve, [:env] => [:tags, :categories, :post_refs] do |t, args|
   if args.env != nil then
     env=args.env
   else
@@ -53,6 +53,26 @@ task :serve, [:env] => [:tags, :categories] do |t, args|
   end
   `rm -rf _site`
   sh "JEKYLL_ENV=#{env} bundle exec jekyll serve --watch"
+end
+
+task :post_refs do
+  site.read
+
+  html = ''
+  html << <<-HTML
+---
+---
+  HTML
+  site.collections['posts'].docs.each do |post|
+    post_data = post.to_liquid
+    html << <<-HTML
+[#{post_data['title']}]:{% post_url #{File.basename(post.path, ".md")} %}
+    HTML
+  end
+
+  File.open('_post_references.md', 'w+') do |file|
+    file.puts html
+  end
 end
 
 desc 'Generate tags page'
