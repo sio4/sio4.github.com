@@ -15,6 +15,7 @@ task :default do
   puts "  rake todo                 : display TODO from articles"
   puts "  rake syntax               : build stylesheet for syntax highlighter"
   puts "  rake linkchecker          : linkchecker for local test site"
+  puts "  rake post_refs            : generate '_post_references.md'"
   puts "  rake tags                 : build tag cloud and tag pages"
   puts "  rake categories           : build categories pages"
   puts "  rake serve                : run test server within development mode"

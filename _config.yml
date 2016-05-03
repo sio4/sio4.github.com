@@ -32,6 +32,11 @@ exclude:
         - assets/vendor/fa/src
         - assets/vendor/semantic-ui-1.11.4
 
+collections:
+  docs:
+    description: Documents
+    output: true
+
 defaults:
   -
     scope:
@@ -50,3 +55,9 @@ defaults:
     values:
       layout: "post"
       permalink: /blog/:title/
+  -
+    scope:
+      path: ""
+      type: "docs"
+    values:
+      layout: "page"

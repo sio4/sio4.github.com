@@ -4,10 +4,12 @@ layout: sidebar
 <div class="so page document">
 	<h1 class="so document title underline">Blog Posts</h1>
 	{% for post in site.posts limit:10 %}
+	{% assign cat_id = post.categories |last |downcase %}
+	{% assign cat = site.data['categories'] |where: "id", cat_id |first  %}
 	<div class="so document content preview">
 		<h3 class="grayline"><a href="{{post.url}}">{{post.title}}</a></h3>
 		<div class="preview-meta">
-			<span class="nw"><a href="/categories/{{ post.categories |last |downcase }}.html">{{ post.display }}</a></span>
+			<span class="nw"><a href="/categories/{{ post.categories |last |downcase }}.html">{{ cat.name }}</a></span>
 			<span class="nw">{{ post.date | date: "%F" }}</span>
 			<div><span class="disqus-comment-count"
 					data-disqus-url="{{ site.url }}{{post.url}}"></span></div>

@@ -74,6 +74,14 @@ $background-warn: #ff6600 !important;
 // mixins
 @mixin nospace() { padding: 0; margin: 0; }
 @mixin coverall() { overflow: auto !important; } // fully cover inner divs
+@mixin meta() {
+  float: right;
+  margin: 0 0.5rem;
+  color: $color-light;
+  font-size: $font-s;
+  font-style: italic;
+  a { color: $color-light !important; }
+}
 
 // ##### common tags ---------------------------------------------------------
 body { color: $color-text; background-color: $background-body;
@@ -258,7 +266,7 @@ $window-margin: 0px;
 }
 // ##### layouts.sidebar -----------------------------------------------------
 .so.frame {
-	.so.content {
+	.so.contents {
 		float: left;
 		width: 40rem;
 		// {{ .so.document }}
@@ -306,7 +314,7 @@ $window-margin: 0px;
 	&#social-networks {}
 }
 // ##### document common -----------------------------------------------------
-.so.content {
+.so.contents {
 	.so.document {
 		.so.document.title { margin-bottom: 0.5rem; }
 		.so.document.content {
@@ -433,7 +441,7 @@ $window-margin: 0px;
 	}
 }
 // ##### layouts.post --------------------------------------------------------
-.so.content {
+.so.contents {
 	.post-tail { margin: 1em 0; padding: 0.5em;
 		border: 3px solid $background-body - #111; border-radius: 6px;
 		h2 { }
@@ -478,15 +486,10 @@ div.tags {
 ul.items {
 	@include nospace();
 	li {
+    clear: both;
 		list-style-type: none;
 		line-height: 1.6rem;
-		span.meta {
-			float: right;
-			margin: 0 0.5rem;
-			color: $color-light;
-			font-style: italic;
-			a { color: $color-light; }
-		}
+		span.meta { @include meta(); }
 		.post-tags {}
 
 		&.proj-item {
@@ -517,6 +520,10 @@ ul.items {
 			}
 		}
 	}
+}
+ul.posts li {
+  clear: both;
+  span.meta { @include meta(); }
 }
 // code block ----------------------------------------------------------------
 @mixin code-font() {
@@ -604,7 +611,7 @@ p code {
 		background: white;
 		.so.frame {
 			min-width: 100%;
-			.so.content {
+			.so.contents {
 				min-width: 100%;
 				margin: 0;
 				background: none !important; 
@@ -624,7 +631,7 @@ p code {
 @media (max-width: 33em) {
 	.so.frame.narrow {
 		margin: 1em 0.5em !important;
-		.so.content {
+		.so.contents {
 			float: none;
 			min-width: inherit;
 			max-width: 100%;
