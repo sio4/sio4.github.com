@@ -1,9 +1,11 @@
+---
+---
 /* hc-current.css, honcheonui-current style
  *
  * vim: set ts=2 sw=2:
  */
 
-@import url(fonts/google/titilliumweb-v4.css);
+@import "fonts/google/titilliumweb-v4.css";
 $image-spin: url(images/spin-head.png);
 $image-orion: url(images/orion.png);
 
@@ -227,7 +229,6 @@ $window-margin: 0px;
 		margin: 1em auto;
 		&.narrow {
 			max-width: 61rem;
-			// {{ content }} -----
 		}
 	}
 	.so.tail {
