@@ -575,9 +575,8 @@ figure.highlight {
 li code,
 p code {
 	@include code-font();
-	background: rgba(230,230,230,0.2);
-	border: 1px solid #d9d9d9;
-	border-radius: 3px;
+	background: rgba(230,230,230,0.4);
+	border-radius: 4px;
 	padding: 0 2px;
 }
 // special block -------------------------------------------------------------

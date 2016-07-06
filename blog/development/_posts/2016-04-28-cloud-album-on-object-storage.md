@@ -36,7 +36,7 @@ date: 2016-04-28 02:10:00 +0900
 
 [SoftLayer Object Storage와 임시 URL]:{% post_url 2016-03-22-tempurl-for-softlayer-object-storage %}
 [SoftLayer Object Storage와 임시 URL #2]:{% post_url 2016-03-31-tempurl-for-softlayer-object-storage-2 %}
-
+[CAOS #1, Rails 기반 환경 구성]:{% post_url 2016-07-07-rails-env-especially-for-caos %}
 
 
 # 어떤 것을 만들려고 하는가
