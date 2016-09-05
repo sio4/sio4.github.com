@@ -14,7 +14,7 @@ Rails App의 골력을 만드는 과정을 기록하려고 한다.
 여는 글을 비롯하여 이 시리즈의 글들은 다음의 순서를 참고하길 바라며,
 
 * [CAOS, Cloud Album on Object Storage] -  *The Begining~!*
-* [CAOS #1 Rails 기반 환경 구성] <-- *현위치*
+* CAOS #1 Rails 기반 환경 구성 <-- *현위치*
 * [CAOS #2 SoftLayer Object Storage 다루기]
 * [CAOS #3 Rails Application의 성능 분석]
 
@@ -28,6 +28,7 @@ Rails App의 골력을 만드는 과정을 기록하려고 한다.
 
 [CAOS, Cloud Album on Object Storage]:{% post_url 2016-04-28-cloud-album-on-object-storage %}
 [CAOS #2 SoftLayer Object Storage 다루기]:{% post_url 2016-09-05-softlayer-object-storage-and-caos %}
+[CAOS #3 Rails Application의 성능 분석]:{% post_url 2016-09-06-rails-application-performance %}
 
 
 시작에 앞서, 요즘의 내 다른 글들과 같이, 이 글 역시 지루하고 긴 글이
@@ -935,8 +936,7 @@ Form을 다룰 수 있게 되었다.
 글을 전혀 쓰지 못하고 많은 날이 지나다 보니 아주 엉망인 글이 되어버렸다.
 
 지친 글은 여기서 일단 접고, 다음에는 좀 더 주제에 접근하여,
-[CAOS #2, SoftLayer Object Storage 다루기]를
-보려고 한다.
+[CAOS #2 SoftLayer Object Storage 다루기]를 보려고 한다.
 
 
 긴 글, 쓰기에도 애썼고, 읽기에도 고생 많으셨습니다~!

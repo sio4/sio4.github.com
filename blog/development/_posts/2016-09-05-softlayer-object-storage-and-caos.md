@@ -19,7 +19,7 @@ SoftLayer의 Object Storage를 다루는 것에 대하여 기록하려고 한다
 
 * [CAOS, Cloud Album on Object Storage] -  *The Begining~!*  
 * [CAOS #1 Rails 기반 환경 구성]
-* [CAOS #2 SoftLayer Object Storage 다루기] <--*현위치*
+* CAOS #2 SoftLayer Object Storage 다루기 <--*현위치*
 * [CAOS #3 Rails Application의 성능 분석]
 
 그 중간 과정에서 만들어진 부수적인 기록도 관심이 있으면 참고하길 바란다.
@@ -32,6 +32,7 @@ SoftLayer의 Object Storage를 다루는 것에 대하여 기록하려고 한다
 
 [CAOS, Cloud Album on Object Storage]:{% post_url 2016-04-28-cloud-album-on-object-storage %}
 [CAOS #1 Rails 기반 환경 구성]:{% post_url 2016-07-07-rails-env-especially-for-caos %}
+[CAOS #3 Rails Application의 성능 분석]:{% post_url 2016-09-06-rails-application-performance %}
 
 
 ---
