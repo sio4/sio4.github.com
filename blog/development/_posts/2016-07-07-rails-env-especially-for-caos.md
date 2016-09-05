@@ -14,9 +14,9 @@ Rails App의 골력을 만드는 과정을 기록하려고 한다.
 여는 글을 비롯하여 이 시리즈의 글들은 다음의 순서를 참고하길 바라며,
 
 * [CAOS, Cloud Album on Object Storage] -  *The Begining~!*
-* [CAOS #1, Rails 기반 환경 구성] <-- *현위치*
-* [CAOS #2, SoftLayer Object Storage 다루기]
-* [CAOS #3, Rails Application의 성능 분석]
+* [CAOS #1 Rails 기반 환경 구성] <-- *현위치*
+* [CAOS #2 SoftLayer Object Storage 다루기]
+* [CAOS #3 Rails Application의 성능 분석]
 
 그 중간 과정에서 만들어진 부수적인 기록도 관심이 있으면 참고하길 바란다.
 
@@ -27,6 +27,8 @@ Rails App의 골력을 만드는 과정을 기록하려고 한다.
 [SoftLayer Object Storage와 임시 URL #2]:{% post_url 2016-03-31-tempurl-for-softlayer-object-storage-2 %}
 
 [CAOS, Cloud Album on Object Storage]:{% post_url 2016-04-28-cloud-album-on-object-storage %}
+[CAOS #2 SoftLayer Object Storage 다루기]:{% post_url 2016-09-05-softlayer-object-storage-and-caos %}
+
 
 시작에 앞서, 요즘의 내 다른 글들과 같이, 이 글 역시 지루하고 긴 글이
 될 것 같다. 게다가, 이번 글에서는 다루고자 하는 내용이 좀 많으면서,
@@ -939,4 +941,11 @@ Form을 다룰 수 있게 되었다.
 
 긴 글, 쓰기에도 애썼고, 읽기에도 고생 많으셨습니다~!
 
+
+
+# 외부연결
+
+* <https://github.com/hardenedlayer/softlayer-object-storage-ruby>
+* <https://github.com/hardenedlayer/caos>
+* <https://github.com/softlayer/softlayer-object-storage-backup>
 

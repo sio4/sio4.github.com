@@ -25,9 +25,9 @@ date: 2016-04-28 02:10:00 +0900
 스타워즈, 인디아나존스, 백 투 더 퓨쳐 같은 3부작 시리즈를 워낙에 좋아해서
 이렇게 한 것은 아니다. 그냥 우연의 일치!)
 
-* [CAOS #1, Rails 기반 환경 구성]
-* [CAOS #2, SoftLayer Object Storage 다루기]
-* [CAOS #3, Rails Application의 성능 분석]
+* [CAOS #1 Rails 기반 환경 구성]
+* [CAOS #2 SoftLayer Object Storage 다루기]
+* [CAOS #3 Rails Application의 성능 분석]
 
 
 참고로, 프로젝트는 <https://github.com/hardenedlayer/caos>에서 관리되고
@@ -36,7 +36,11 @@ date: 2016-04-28 02:10:00 +0900
 
 [SoftLayer Object Storage와 임시 URL]:{% post_url 2016-03-22-tempurl-for-softlayer-object-storage %}
 [SoftLayer Object Storage와 임시 URL #2]:{% post_url 2016-03-31-tempurl-for-softlayer-object-storage-2 %}
-[CAOS #1, Rails 기반 환경 구성]:{% post_url 2016-07-07-rails-env-especially-for-caos %}
+[CAOS #1 Rails 기반 환경 구성]:{% post_url 2016-07-07-rails-env-especially-for-caos %}
+[CAOS #2 SoftLayer Object Storage 다루기]:{% post_url 2016-09-05-softlayer-object-storage-and-caos %}
+
+
+
 
 
 # 어떤 것을 만들려고 하는가
@@ -247,16 +251,16 @@ Use Ctrl-C to stop
 
 아무튼, 개봉 박두!
 
-* [CAOS #1, Rails 기반 환경 구성]
-* [CAOS #2, SoftLayer Object Storage 다루기]
-* [CAOS #3, Rails Application의 성능 분석]
+* [CAOS #1 Rails 기반 환경 구성]
+* [CAOS #2 SoftLayer Object Storage 다루기]
+* [CAOS #3 Rails Application의 성능 분석]
 
 
 
 
 
 
-# 관련된 페이지
+# 외부연결
 
 * <https://github.com/hardenedlayer/softlayer-object-storage-ruby>
 * <https://github.com/hardenedlayer/caos>
