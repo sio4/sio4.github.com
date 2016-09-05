@@ -6,7 +6,7 @@ layout: page
 	{% for category in site.data['categories'] %}
 	<h3>{{ category.name }}</h3>
 	<ul class="posts">
-	  {% for post in site.categories.[category.id] %}
+	  {% for post in site.categories[category.id] %}
 		<li><a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
 			<span class="meta pull-right">{{ post.date |date: "%F" }}</span></li>
 		{% endfor %}

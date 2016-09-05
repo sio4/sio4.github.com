@@ -6,7 +6,7 @@ title: "리눅스/오픈소스"
 <div class="category-description"><p>리눅스와 오픈소스 관련 이야기</p><p></p></div>
 <div class="wall-panel" id="blog-posts">
   <ul class="items">
-  {% for post in site.categories.[category] %}
+  {% for post in site.categories[category] %}
     <li><i class="fa fa-file-o heading"></i>
       <a href="{{ post.url }}">{{ post.title }}</a>
       <span class="meta">{{ post.date |date: '%F %T' }}</span>

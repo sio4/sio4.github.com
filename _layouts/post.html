@@ -54,7 +54,7 @@ layout: sidebar
 	<ul class="items">
 	{% assign ps = [] %}
 	{% for t in page.tags %}
-		{% for p in site.tags.[t] limit: 5 %}
+		{% for p in site.tags[t] limit: 5 %}
 			{% unless ps contains p.url %}
 				<li><a href="{{ p.url }}">{{ p.title }}</a>
 					<span class="meta">&raquo; {{t}}, {{ p.date |date: '%F' }}</span>
