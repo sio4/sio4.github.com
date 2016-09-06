@@ -194,6 +194,7 @@ img {
 .half { max-width: 50%; display: block; }
 .filled { width: 100%; }
 .centered { margin-left: auto; margin-right: auto; }
+.bordered { border: 1px solid $color-grey; }
 
 
 // ##### page structure ------------------------------------------------------
