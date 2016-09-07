@@ -2,7 +2,6 @@
 title: "PaperTrail, Cloud에서는 Cloud 로그를!"
 tags: monitoring 클라우드컴퓨팅
 image: /attachments/papertrail/ptrail-101-concept.jpg
-banner: /attachments/papertrail/ptrail-101-concept.jpg
 date: 2016-09-07 00:51:00 +0900
 ---
 존재하지 않는 서버의 로그를 보려면 어떻게 해야 할까? 간단하다. 로그를
