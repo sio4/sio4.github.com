@@ -25,8 +25,8 @@ layout: site
 	</div>
 
 	<div class="side-widget" id="recent-posts">
-		<h1>Recent Five!</h1>
-		<ul class="posts"> {% for post in site.posts limit:5 %}
+		<h1>Recent 10!</h1>
+		<ul class="posts"> {% for post in site.posts limit:10 %}
 			<li><i class="fa fa-file-o heading"></i>
 				<a href="{{ post.url }}">{{ post.title }}</a>{% endfor %}
 		</ul>

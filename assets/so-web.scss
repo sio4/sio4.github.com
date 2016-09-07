@@ -192,6 +192,7 @@ img {
 .fit { max-width: 95%; display: block; }
 .fit { margin-left: auto !important; margin-right: auto !important; }
 .half { max-width: 50%; display: block; }
+.r34 { max-width: 75%; display: block; }
 .filled { width: 100%; }
 .centered { margin-left: auto; margin-right: auto; }
 .bordered { border: 1px solid $color-grey; }
@@ -322,7 +323,7 @@ $window-margin: 0px;
 			background: $background-body + #040404;
 			text-align: justify;
 			ul#markdown-toc {
-				margin: 0.5rem 3rem; padding: 0.5rem 1rem; background: #f9f9f9;
+				margin: 0.5rem 0 0.5rem 2rem; padding: 0.5rem 1rem; background: #f9f9f9;
 				li { list-style: none; }
 			}
 			h1 {

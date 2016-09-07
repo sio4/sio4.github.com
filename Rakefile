@@ -92,16 +92,19 @@ task :tags do
   CLOUD
 
   ## calculate step for font size
-  m_count = 7
-  l_count = 2
+  fsize_l = 1.6
+  fsize_s = 0.7
+  max_post_count = 7
+  min_post_count = 2
+
   site.tags.sort.each do |tag, posts|
-    c_count = posts.count
-    if c_count > m_count
-      m_count = c_count
+    current_post_count = posts.count
+    if current_post_count > max_post_count
+      max_post_count = current_post_count
     end
   end
-  step = ((1.6 - 0.6) / m_count).round(2)
-  puts "STEP: #{step} / #{m_count} = #{m_count * step} + 0.6"
+  step = ((fsize_l - fsize_s) / (max_post_count - min_post_count)).round(2)
+  puts "font step:#{step}, largest posts:#{max_post_count}"
 
   site.tags.sort.each do |tag, posts|
     puts "processing %5d %s..." % [posts.count, tag]
@@ -136,12 +139,11 @@ HTML
     end
 
     ## entry item for tags.html, cloud.
-    if posts.count < l_count
+    if posts.count < min_post_count
       next
     end
 
-    s = posts.count
-    font_size = 0.6 + (s * step)
+    font_size = fsize_s + (posts.count * step)
     cloud << <<-CLOUD
 			<span class="nw"><a href="/tags/#{tag}.html"
 				style="font-size: #{font_size}em; line-height:#{font_size}rem"
