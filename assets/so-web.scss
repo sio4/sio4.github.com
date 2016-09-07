@@ -434,7 +434,7 @@ $window-margin: 0px;
 					}
 					.preview-content {
 						p { margin: 0; }
-						img { margin-top: 1rem; }
+						img { margin-top: 1rem; max-height: 280px; }
 					}
 				}
 			}
