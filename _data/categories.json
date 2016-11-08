@@ -9,6 +9,8 @@
     "description": "클라우드컴퓨팅 이야기" },
   { "id": "virtualization", "name": "가상화",
     "description": "가상화와 그 친구들" },
+  { "id": "sysadmin", "name": "시스템 운영",
+    "description": "시스템/네트워크 운영" },
   { "id": "android", "name": "안드로이드",
     "description": "안드로이드 관련 이야기" },
   { "id": "rules-of-action", "name": "행동수칙",
