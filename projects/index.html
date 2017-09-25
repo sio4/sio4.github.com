@@ -1,0 +1,23 @@
+---
+title: My Projects
+layout: page
+---
+<p>
+이 목록은 나의 개인 개발 프로젝트 목록으로, 대부분 개인적인 목적으로
+개발된 Prototype 또는 보조도구들이다. 제한적인 개발로 인하여 재활용이
+가능한 경우는 거의 없을 것 같다. 아무튼, 오픈소스이며 자유롭게 활용이
+가능하다. (언제쯤 사람들에게 도움을 줄 수 있는 뭔가를 만들까? ㅋ)
+</p>
+<hr />
+<p class="" id="my-projects">
+	<ul class="items">{% for p in site.data.projects %}
+		<li class="proj-item">
+			<div class="proj-title">
+			<i class="fa fa-code-fork heading"></i>
+			{% if p.page %}<a href="{{ p.page }}">{{ p.title }}</a>{% else %}{{ p.title }}{% endif %}</div>
+			<div class="proj-description">{{p.description}}</div>{% if p.project %}
+			<div class="proj-site">Project Page: <a href="{{ p.project }}">{{ p.project }}</a></div>{% endif %}{% if p.repository %}
+			<div class="proj-repository">Repository: {{ p.repository }}</div>{% endif %}
+		</li>{% endfor %}
+	</ul>
+</p>

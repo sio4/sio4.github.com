@@ -1,0 +1,63 @@
+title: "소용환의 생각저장소"
+timezone: Asia/Seoul
+url: "http://www.sauru.so"
+feedurl: "http://feeds.feedburner.com/sauru-so"
+#permalink: /blog/:title/
+permalink: /:path/:basename:output_ext
+markdown: kramdown
+kramdown:
+        input: GFM
+        hard_wrap: false
+        toc_levels: 1..2
+future: true
+
+### Facebook OG related:
+app_id: 132708240077440
+default_image: "/assets/images/sauru-20150806.png"
+author_page: "https://www.facebook.com/yonghwan.so"
+
+### Custom
+gravatar: bb4bb7364ee67616d9f5ff3561412772
+
+gems: []
+
+exclude:
+        - Rakefile
+        - vendor
+        - assets/vendor/fa/Gemfile
+        - assets/vendor/fa/*.md
+        - assets/vendor/fa/*.json
+        - assets/vendor/fa/less
+        - assets/vendor/fa/scss
+        - assets/vendor/fa/src
+        - assets/vendor/semantic-ui-1.11.4
+
+collections:
+  docs:
+    description: Documents
+    output: true
+
+defaults:
+  -
+    scope:
+      path: "projects"
+    values:
+      layout: "page"
+  -
+    scope:
+      path: "pages"
+    values:
+      layout: "page"
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      permalink: /blog/:title/
+  -
+    scope:
+      path: ""
+      type: "docs"
+    values:
+      layout: "page"
