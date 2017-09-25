@@ -1,73 +1,46 @@
 ---
-layout: sidebar
+layout: base
 ---
-{% assign category = page.categories |last |downcase %}
-{% assign cat = site.data.categories |where:'id', category |first %}
-<div class="so document post">
-	<h1 class="so document post title underline">{{ page.title }}</h1>
-	<div class="so post details">
-		<a href="/categories/{{page.categories |last |downcase}}.html"
-			class="post-category">{{ cat.name }}</a>
-		<span class="date">{{ page.date | date: "%F %T" }}</span>
-		{% if page.modified %}(Edited: <span class="date">{{ page.modified | date: "%F %T" }}</span>){% endif %}
-	</div>
 
-	<div class="official share">
-		{% include share-official.html %}
-	</div>
+{% include header.html type="post" %}
 
-	<div class="so document content">
-{{ content }}
-		<div class="post-signature">
-			-- <br>
-			"And in the end, the love you take is equal to the love you make."
-			-- by the Beatles
-		</div>
-	</div>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 
-	<div class="so document meta">
-		<div class="tags">
-			{% for tag in page.tags %}
-			<a class="tag-item" href="/tags/{{ tag }}.html">{{ tag }}</a>
-			{% endfor %}
-		</div>
+      <article role="main" class="blog-post">
+        {{ content }}
+      </article>
 
-		<div class="post-hierarchy noprint">
-			{% if page.previous %}<p class="pull-left"><a href="{{ page.previous.url }}"
-				title="Previous post"><i class="icon arrow left"></i>
-				{{ page.previous.title }}</a></p>
-			{% endif %}
-			{% if page.next %}<p class="pull-right"><a href="{{ page.next.url }}"
-				title="Next post">{{ page.next.title }}
-				<i class="icon arrow right"></i></a></p>
-			{% endif %}
-		</div>
-	</div>
+      {% if page.tags.size > 0 %}
+        <div class="blog-tags">
+          Tags:
+          {{ page.tags | join: ", " }}
+        </div>
+      {% endif %}
 
-	<div class="custom share">
-		{% include share-item.html %}
-	</div>
+      {% unless page.social-share == false %}
+        {% include social-share.html %}
+      {% endunless %}
+
+      <ul class="pager blog-pager">
+        {% if page.previous.url %}
+        <li class="previous">
+          <a href="{{ page.previous.url | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top" title="{{page.previous.title}}">&larr; Previous Post</a>
+        </li>
+        {% endif %}
+        {% if page.next.url %}
+        <li class="next">
+          <a href="{{ page.next.url | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top" title="{{page.next.title}}">Next Post &rarr;</a>
+        </li>
+        {% endif %}
+      </ul>
+
+      {% unless page.comments == false %}
+        <div class="disqus-comments">
+          {% include disqus.html %}
+        </div>
+      {% endunless %}
+    </div>
+  </div>
 </div>
-
-<div class="post-tail">
-	<h2>Related Posts</h2>
-	<ul class="items">
-	{% assign ps = [] %}
-	{% for t in page.tags %}
-		{% for p in site.tags[t] limit: 5 %}
-			{% unless ps contains p.url %}
-				<li><a href="{{ p.url }}">{{ p.title }}</a>
-					<span class="meta">&raquo; {{t}}, {{ p.date |date: '%F' }}</span>
-				</li>
-			{% endunless %}
-			{% assign ps = ps|join: ' ' |append: ' ' |append: p.url |split: ' ' %}
-		{% endfor %}
-	{% endfor %}
-	</ul>
-</div>
-
-<div class="post-tail">
-	{% include disqus-thread.html %}
-</div>
-
-<!-- vim: set ts=2 sw=2 noexpandtab: -->
