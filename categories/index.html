@@ -2,31 +2,24 @@
 title: Categories
 layout: page
 ---
+
 {% assign categories = site.categories |sort %}
   <div class="cloud">
   {% for category in categories %}
-    {% assign cat_name = category |first %}
-    {% if cat_name == 'blog' %}
-      {% continue %}
-    {% endif %}
-
+    {% assign cat_id = category |first %}
     {% assign cat_size = category |last |size %}
 
-    {% comment %}
-      {% assign posts = category |last %}
-      {% for pp in posts %}
-        ({{ pp.title }})
-      {% endfor %}
-    {% endcomment %}
+    {% for cat in site.data['categories'] %}
+      {% if cat.id == cat_id %}
+        {% assign cat_name = cat.name %}
+        {% assign cat_desc = cat.description %}
+      {% endif %}
+    {% endfor %}
 
-    {% assign post = category |last |first %}
-    {% assign cat_display = post.display %}
-    {% if cat_display == null %}
-      {% assign cat_display = cat_name %}
-    {% endif %}
-    <li><a href="/categories/{{ cat_name }}.html"
-          title="Postings on {{ cat_name }}">{{ cat_display }}</a>
-	  <span class="post-count">» {{ cat_size }}</span>
+    <li><a href="/categories/{{ cat_id }}/"
+          title="Postings on {{ cat_id }}">{{ cat_name }}</a>
+	  <span class="category-meta">{{ cat_desc }}</span>
+	  <span class="category-count">» {{ cat_size }}</span>
     </li>
 
   {% endfor %}

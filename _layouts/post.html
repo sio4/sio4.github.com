@@ -1,46 +1,49 @@
 ---
 layout: base
 ---
-
 {% include header.html type="post" %}
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <article role="main" class="blog-post">
+{{ content }}
+        </article>
 
-<div class="container">
-  <div class="row">
-    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-
-      <article role="main" class="blog-post">
-        {{ content }}
-      </article>
-
-      {% if page.tags.size > 0 %}
-        <div class="blog-tags">
-          Tags:
-          {{ page.tags | join: ", " }}
+        <div class="post-signature">
+        -- <br>
+        "And in the end, the love you take is equal to the love you make."
+        -- the Beatles
         </div>
-      {% endif %}
+        {%
+        if page.tags.size > 0 %}
+        <div class="post-tags">{%
+          for tag in page.tags %}
+          <a class="tag-item" href="/tags/{{ tag }}/">{{ tag }}</a>{%
+          endfor %}
+        </div>{%
+        endif %}
+        {% unless page.social-share == false %}
+{% include social-share.html %}
+        {% endunless %}
 
-      {% unless page.social-share == false %}
-        {% include social-share.html %}
-      {% endunless %}
-
-      <ul class="pager blog-pager">
-        {% if page.previous.url %}
-        <li class="previous">
-          <a href="{{ page.previous.url | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top" title="{{page.previous.title}}">&larr; Previous Post</a>
-        </li>
-        {% endif %}
-        {% if page.next.url %}
-        <li class="next">
-          <a href="{{ page.next.url | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top" title="{{page.next.title}}">Next Post &rarr;</a>
-        </li>
-        {% endif %}
-      </ul>
-
-      {% unless page.comments == false %}
+        <ul class="pager blog-pager">{%
+          if page.previous.url %}
+          <li class="previous">
+            <a href="{{ page.previous.url | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top" title="{{page.previous.title}}"><i class="fa fa-arrow-left"></i> {{ page.previous.title }}</a>
+          </li>{%
+          endif %}{%
+          if page.next.url %}
+          <li class="next">
+            <a href="{{ page.next.url | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top" title="{{page.next.title}}">{{ page.next.title }} <i class="fa fa-arrow-right"></i></a>
+          </li>{%
+          endif %}
+        </ul>
+        {%
+        unless page.comments == false %}
         <div class="disqus-comments">
-          {% include disqus.html %}
-        </div>
-      {% endunless %}
+{% include disqus.html %}
+        </div>{%
+        endunless %}
+      </div>
     </div>
   </div>
-</div>

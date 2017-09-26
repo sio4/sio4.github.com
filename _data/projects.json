@@ -28,7 +28,7 @@
 		"description": "Android Photo Manager"
 	}, {
 		"title": "GallOrg",
-		"page": "/projects/gallorg.html",
+		"page": "/projects/gallorg/",
 		"project": "https://github.com/sio4/GallOrg",
 		"description": "Android Gallery Organizer"
 	}, {
@@ -36,13 +36,13 @@
 		"description": "Android Root-mode Tool"
 	}, {
 		"title": "Tis2Jek",
-		"page": "/projects/tis2jek.html",
+		"page": "/projects/tis2jek/",
 		"project": "https://github.com/sio4/tistojek",
 		"repository": "https://github.com/sio4/tistojek.git",
 		"description": "Tistory to Jekyll 블로그 변환기"
 	}, {
 		"title": "Hardened Layer",
-		"page": "/projects/hardened-layer.html",
+		"page": "/projects/hardened-layer/",
 		"project": "https://github.com/cloud-api/hardened-layer-ui",
 		"repository": "https://github.com/cloud-api/hardened-layer-ui.git",
 		"description": "SoftLayer Custom Portal"

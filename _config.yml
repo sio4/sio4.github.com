@@ -1,53 +1,34 @@
-title: "소용환의 생각저장소"
+### basement -----------------------------------------------------------------
+title: 소용환의 생각저장소
+description: >
+  소용환의 경험과 생각을 모아두는 개인의 구름 속 저장소입니다.
+  주로 소프트웨어 개발, 인프라 문제, 클라우드 컴퓨팅에 대한 이야기가 있습니다.
 timezone: Asia/Seoul
+lang: ko
 url: "http://www.sauru.so"
+baseurl: "" # the subpath of your site, e.g. /blog
 feedurl: "http://feeds.feedburner.com/sauru-so"
-#permalink: /blog/:title/
-permalink: /:path/:basename:output_ext
+
+
+### build settings: markup, rendering ----------------------------------------
 markdown: kramdown
 kramdown:
-        input: GFM
-        hard_wrap: false
-        toc_levels: 1..2
+  input: GFM
+  hard_wrap: false
+  toc_levels: 1..2
 future: true
 
-### Facebook OG related:
-app_id: 132708240077440
-default_image: "/assets/images/sauru-20150806.png"
-author_page: "https://www.facebook.com/yonghwan.so"
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-paginate
 
-### Custom
-gravatar: bb4bb7364ee67616d9f5ff3561412772
+paginate: 10
 
-gems: []
-
-exclude:
-        - Rakefile
-        - vendor
-        - assets/vendor/fa/Gemfile
-        - assets/vendor/fa/*.md
-        - assets/vendor/fa/*.json
-        - assets/vendor/fa/less
-        - assets/vendor/fa/scss
-        - assets/vendor/fa/src
-        - assets/vendor/semantic-ui-1.11.4
-
-collections:
-  docs:
-    description: Documents
-    output: true
+# default permalink
+permalink: /:path/:basename/
 
 defaults:
-  -
-    scope:
-      path: "projects"
-    values:
-      layout: "page"
-  -
-    scope:
-      path: "pages"
-    values:
-      layout: "page"
   -
     scope:
       path: ""
@@ -58,6 +39,101 @@ defaults:
   -
     scope:
       path: ""
-      type: "docs"
     values:
       layout: "page"
+  -
+    scope:
+      path: "/search.json"
+    values:
+      layout: ""
+
+### social values ------------------------------------------------------------
+# Facebook OG related:
+fb_app_id: 132708240077440
+default_image: "/assets/images/sauru-20150806.png"
+author_page: "https://www.facebook.com/yonghwan.so"
+# gravatar
+gravatar: bb4bb7364ee67616d9f5ff3561412772
+twitter_username: scinix
+github_username:  sio4
+disqus: sauru
+google_analytics: UA-10364127-2
+
+
+favicon: /assets/images/favicon.ico
+
+
+
+
+
+
+
+### theme settings -----------------------------------------------------------
+# brand logo of bootstrap navbar:
+#title-img: /assets/images/brand-logo.png
+# image in the circle:
+avatar: /assets/images/sauru-20150806.png
+# links on the navbar
+navbar-links:
+  #About: "about"
+  Projects: "projects"
+  Categories: "categories"
+  Tags: "tags"
+  #Resources:
+  #  - Github: "https://github.com/sio4/"
+
+bigimg:
+  - src: /assets/images/road.jpg
+
+author:
+  name: Yonghwan SO
+  facebook: yonghwan.so
+  github: sio4
+  google-plus: +YonghwanSO
+  linkedin: scinix
+  stackoverflow: 1111002/sio4
+
+share-links-active:
+  facebook: true
+  google: true
+  linkedin: true
+
+rss-footer: true
+
+
+
+### excludes -----------------------------------------------------------------
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - Rakefile
+  - vendor/
+  - assets/vendor/fa/Gemfile
+  - assets/vendor/fa/*.md
+  - assets/vendor/fa/*.json
+  - assets/vendor/fa/less
+  - assets/vendor/fa/scss
+  - assets/vendor/fa/src
+  - assets/vendor/semantic-ui-1.11.4
+  - .gitignore
+
+keep_files:
+  - assets/css/
+  - assets/fonts/
+  - assets/images/
+  - assets/js/
+  - assets/logos/
+  - assets/syntax.css
+  - assets/vendor/
+  - attachments/
+  - google98e44d13f12b0215.html
+  - pktc2fa0aeb7b68.html
+  - robots.txt
+  - tags/
+  - categories/
+

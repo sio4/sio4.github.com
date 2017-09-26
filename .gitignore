@@ -5,3 +5,5 @@ _site
 # bundling
 vendor
 .bundle
+
+_post_references.md
