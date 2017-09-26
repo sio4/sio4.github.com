@@ -1,0 +1,18 @@
+---
+# vim: syntax=liquid
+layout: null
+---
+[
+  {% for post in site.posts %}{
+    "title"     : "{{ post.title }}",
+    "categories": [{% for c in post.categories %}"{{ c }}", {% endfor %} null],
+    "tags"      : [{% for t in post.tags %}"{{ t }}", {% endfor %} null],
+    "href"      : "{{ post.url }}",
+      "date"    : {
+        "year"  : "{{ post.date | date: "%Y" }}",
+        "month" : "{{ post.date | date: "%m" }}",
+        "day"   : "{{ post.date | date: "%d" }}"
+    }
+  },{% endfor %}
+  null
+]
