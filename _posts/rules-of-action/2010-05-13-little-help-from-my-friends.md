@@ -50,7 +50,7 @@ modified: 2010-07-07T13:52:31+09:00
 1. 들을 준비부터 하는 것은 당연. 딴청 부릴려면 묻지도 마!
 
 <div class="embedded_video" style="text-align: center">
-<object width="425" height="344"><param name="movie" value="http://www.youtube.com/v/rrOY6myQz4g&hl=ko_KR&fs=1&rel=0&color1=0x2b405b&color2=0x6b8ab6"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/rrOY6myQz4g&hl=ko_KR&fs=1&rel=0&color1=0x2b405b&color2=0x6b8ab6" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="425" height="344"></embed></object>
+<object width="425" height="344"><param name="movie" value="http://www.youtube.com/v/rrOY6myQz4g&hl=ko_KR&fs=1&rel=0&color1=0x2b405b&color2=0x6b8ab6" /><param name="allowFullScreen" value="true" /><param name="allowscriptaccess" value="always" /><embed src="http://www.youtube.com/v/rrOY6myQz4g&hl=ko_KR&fs=1&rel=0&color1=0x2b405b&color2=0x6b8ab6" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="425" height="344" /></object>
 </div>
 
 * [With a Little Help from My Friends](http://en.wikipedia.org/wiki/With_a_Little_Help_from_My_Friends)

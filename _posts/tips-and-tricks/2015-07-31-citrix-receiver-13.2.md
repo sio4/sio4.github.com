@@ -80,7 +80,7 @@ Chrome Browser용 App 버전**이 있다! 이게 잘만 돌아간다면, 설치
 * 화면 크기를 명시적으로 설정하고, UseFullScreen 값을 False로 함으로써,
   전체화면 모드로 실행되는 불편함을 줄였다.
 
-{% highlight diff %}
+```diff
 --- a/.ICAClient/All_Regions.ini
 +++ b/.ICAClient/All_Regions.ini
 @@ -750,10 +750,10 @@ DrivePathR=
@@ -112,6 +112,6 @@ Chrome Browser용 App 버전**이 있다! 이게 잘만 돌아간다면, 설치
  TWIFullScreenMode=*
  NoWindowManager=*
  ResizeSession=
-{% endhighlight %}
+```
 
 

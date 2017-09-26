@@ -43,7 +43,7 @@ VMware의 NSX 6.2에서 제공하는 SSL VPN-Plus 기능을 우분투 리눅스�
 적당한 위치에서 먼저, 압축을 풀어준다. 아래와 같이, `linux_phat_client`
 라는 폴더가 만들어지고 그 안에 설치 스크립트가 풀리게 된다.
 
-{% highlight console %}
+```console
 $ tar xvf linux_phat_client.tgz 
 linux_phat_client/
 linux_phat_client/install_linux_phat_client.sh
@@ -53,12 +53,12 @@ linux_phat_client/linux_phat_client/user.sh
 linux_phat_client/linux_phat_client/login
 linux_phat_client/linux_phat_client/user
 $ 
-{% endhighlight %}
+```
 
 해당 디렉터리로 이동하여 설치 스크립트를 실행해준다. 역시 Root 권한을
 요구하는 것은 동일하며, `sudo`를 사용하여 Root 권한으로 설치를 진행한다.
 
-{% highlight console %}
+```console
 $ cd linux_phat_client/
 $ ./install_linux_phat_client.sh 
 Root Privileges are needed to install SSL VPN-Plus Client
@@ -80,26 +80,26 @@ To use SSL VPN-Plus Client use following commands :
     $ naclient status : to check statistics of connection from client to gateway
 
 $ 
-{% endhighlight %}
+```
 
 설치가 끝나면 관련 서비스가 등록/실행되고, 간략하게 사용법 소개가 나온다.
 그럼 사용법에 따라 접속을 시도해보자.
 
-{% highlight console %}
+```console
 $ naclient login
 Enter profile name: PROFILE_NAME
 Enter user name: USERNAME
 Enter the password: PASSWORD
 Successfully connected to SSL VPN-Plus gateway profile: PROFILE_NAME
 $ 
-{% endhighlight %}
+```
 
 `PROFILE_NAME`과 `USERNAME`, `PASSWORD`는 각각 NSX에서 VPN을 설정할 때
 사용하였던 프로파일 이름과 사용자명, 그리고 암호이다.
 정상적으로 연결되었다는 메시지가 나오면, 아래와 같이 인터페이스 설정이
 되었는지 확인할 수 있다.
 
-{% highlight console %}
+```console
 $ ifconfig
 <...>
 tap0      Link encap:Ethernet  HWaddr 00:ff:f3:87:26:68  
@@ -112,12 +112,12 @@ tap0      Link encap:Ethernet  HWaddr 00:ff:f3:87:26:68
           RX bytes:0 (0.0 B)  TX bytes:6725 (6.7 KB)
 
 $
-{% endhighlight %}
+```
 
 음. 인터페이스는 잘 되었네. 다음은 Routing Table이다. NSX VPN 설정에서
 설정한 Network에 대한 Routing 설정이 모두 잘 반영되었다.
 
-{% highlight console %}
+```console
 $ route -n
 Kernel IP routing table
 Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
@@ -129,15 +129,15 @@ Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
 169.254.0.0     0.0.0.0         255.255.0.0     U     1000   0        0 eth1
 192.168.15.0    0.0.0.0         255.255.255.0   U     100    0        0 eth1
 $ 
-{% endhighlight %}
+```
 
 사용이 끝났다면 다음과 같은 명령으로 VPN 연결을 닫을 수 있다.
 
-{% highlight console %}
+```console
 $ naclient logout
 Successfully logged out of the SSL VPN-Plus gateway
 $ 
-{% endhighlight %}
+```
 
 이렇게 간단한데, 왜 처음에 마치 Java가 없으면 안될 듯이 겁을 줬는지...
 괜히 시간을 좀 낭비했네. ㅎㅎㅎ

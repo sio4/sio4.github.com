@@ -163,7 +163,7 @@ Rails나 Django와 같은 쾌속개발환경의 특징 중 하나는, Scaffoldin
 도구를 제공하여 개발자의 반복작업이나 작업을 쉽게 진행할 수 있게
 돕고 있다.
 
-```text
+```console
 $ django-admin help
 
 Type 'django-admin help <subcommand>' for help on a specific subcommand.
@@ -212,7 +212,7 @@ $
 경우에는 아래와 같이 Scaffolding이나 구성확인 등을 돕는 도구가
 제공되고 있었다.
 
-```text
+```console
 $ pcreate --help
 Usage: pcreate [options] -s <scaffold> output_directory
 
@@ -259,7 +259,7 @@ $
 경우에는 아래 정도의 옵션을 제공하는 간단한 scaffolding 도구가
 들어있었다.
 
-```text
+```console
 $ pecan --help
 usage: pecan [-h] [--version] command ...
 
@@ -280,7 +280,7 @@ $
 API 전용 Framework이면서 속도에 대한 애착이 강한 듯 한 falcon의
 경우는 특이하게도, benchmark 도구만 딸랑 들어있는 구성이었고,
 
-```text
+```console
 $ falcon-bench --help
 usage: falcon-bench [-h]
                     [-b {bottle,falcon,falcon-ext,flask,pecan,werkzeug} [{bottle,falcon,falcon-ext,flask,pecan,werkzeug} ...]]
@@ -304,7 +304,7 @@ $
 
 bottle, hug와 같이 개발용 서버만 제공하는 프로젝트도 있었다.
 
-```text
+```console
 $ bottle.py --help
 Usage: bottle.py [options] package.module:app
 
@@ -322,7 +322,7 @@ Options:
 $ 
 ```
 
-```text
+```console
 $ hug --help
 usage: hug [-h] [-f FILE_NAME] [-m MODULE] [-p PORT] [-nd] [-v]
 
@@ -390,7 +390,7 @@ if __name__ == '__main__':
 {:.block-title}
 실행
 
-```text
+```console
 $ python hello.py
 127.0.0.1 - - [03/Feb/2016 12:16:56] "GET /hello/yonghwan HTTP/1.1" 200 15
 127.0.0.1 - - [03/Feb/2016 12:17:02] "GET /hello/ HTTP/1.1" 404 159
@@ -429,7 +429,7 @@ Root에 대한 Route 하나만 갖는 이 App을 실행해보면 아래와 같�
 {:.block-title}
 실행
 
-```text
+```console
 $ python hello.py 
  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
 127.0.0.1 - - [03/Feb/2016 12:07:23] "GET / HTTP/1.1" 200 -
@@ -469,7 +469,7 @@ run(host='localhost', port=8080)
 {:.block-title}
 실행
 
-```text
+```console
 $ python hello.py 
 Bottle v0.12.9 server starting up (using WSGIRefServer())...
 Listening on http://localhost:8080/
@@ -499,7 +499,7 @@ Rails의 시험 페이지와 유사한 화면을 만날 수 있었다.
 {:.block-title}
 프로젝트 구성
 
-```text
+```console
 $ pecan create hello
 <...>
 $ cd hello/
@@ -598,7 +598,7 @@ Method 별로 `GET`, `POST` 등을 처리할 수 있도록 처리하고 있는 �
 {:.block-title}
 실행
 
-```text
+```console
 $ pip install gunicorn
 Downloading/unpacking gunicorn
   Downloading gunicorn-19.4.5-py2.py3-none-any.whl (112kB): 112kB downloaded
@@ -658,7 +658,7 @@ Links
 
 ### pycnic virtualenv
 
-```text
+```console
 $ virtualenv virtualenv-pycnic
 Using base prefix '/usr'
 New python executable in /opt/virtualenv-pycnic/bin/python3
@@ -674,7 +674,7 @@ $
 
 ### hug virtualenv
 
-```text
+```console
 $ virtualenv virtualenv-hug
 Using base prefix '/usr'
 New python executable in /opt/virtualenv-hug/bin/python3
@@ -692,7 +692,7 @@ $
 ```
 
 ### falcon virtualenv
-```text
+```console
 $ virtualenv virtualenv-falcon
 Using base prefix '/usr'
 New python executable in /opt/virtualenv-falcon/bin/python3
@@ -709,7 +709,7 @@ $
 ```
 
 ### pecan virtualenv
-```text
+```console
 $ virtualenv virtualenv-pecan
 Using base prefix '/usr'
 New python executable in /opt/virtualenv-pecan/bin/python3
@@ -732,7 +732,7 @@ $
 ```
 
 ### bottle virtualenv
-```text
+```console
 $ virtualenv virtualenv-bottle
 Using base prefix '/usr'
 New python executable in /opt/virtualenv-bottle/bin/python3
@@ -747,7 +747,7 @@ $
 ```
 
 ### Flask virtualenv
-```text
+```console
 $ virtualenv virtualenv-Flask
 Using base prefix '/usr'
 New python executable in /opt/virtualenv-Flask/bin/python3
@@ -766,7 +766,7 @@ $
 ```
 
 ### cherrypy virtualenv
-```text
+```console
 $ virtualenv virtualenv-cherrypy
 Using base prefix '/usr'
 New python executable in /opt/virtualenv-cherrypy/bin/python3
@@ -781,7 +781,7 @@ $
 ```
 
 ### pyramid virtualenv
-```text
+```console
 $ virtualenv virtualenv-pyramid
 Using base prefix '/usr'
 New python executable in /opt/virtualenv-pyramid/bin/python3
@@ -804,7 +804,7 @@ $
 ```
 
 ### django virtualenv
-```text
+```console
 $ virtualenv virtualenv-django
 Using base prefix '/usr'
 New python executable in /opt/virtualenv-django/bin/python3
@@ -819,7 +819,7 @@ $
 ```
 
 ### tg.devtools virtualenv
-```text
+```console
 $ virtualenv virtualenv-tg.devtools
 Using base prefix '/usr'
 New python executable in /opt/virtualenv-tg.devtools/bin/python3

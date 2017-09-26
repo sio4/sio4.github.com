@@ -40,9 +40,9 @@ amd64용 deb 패키지를 받았더니 Ubuntu에서 무리 없이 설치가 되�
 
 웹을 좀 뒤져봤더니, -x 옵션을 이용하여 좀 세세한 설정을 할 수 있었다. 그래서,
 
-{% highlight console %}
+```console
 $ rdesktop -u xxx -p xxx -d xxx -g 1360x768 -x 0x80 10.10.10.10
-{% endhighlight %}{:.dark}
+```
 
 이렇게, ... 그랬더니...
 

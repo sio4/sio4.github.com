@@ -13,7 +13,7 @@ modified: 2011-01-21T14:26:55+09:00
 
 과정은 다음과 같다.
 
-{% highlight console %}
+```console
 sio4@dot:~/soc$ adb push Superuser.apk /sdcard/
 sio4@dot:~/soc$ adb push su /sdcard/
 sio4@dot:~/soc$ adb push busybox /sdcard/
@@ -51,7 +51,7 @@ $ sio4@dot:~/soc$ adb kill-server; adb shell
 /skttmp # chmod 4755 /system/bin/su
 /skttmp # ./busybox mount /system -o remount,ro
 /skttmp #
-{% endhighlight %}{:.dark}
+```
 
 생략했지만, 실제로는 `adb shell`로 진입하여 `rageagainstthecage`를 여러 차례
 외친 끝에야 루트 쉘을 얻을 수 있었다. 어쨌든, 이렇게 하여 /system에 루트 킷을

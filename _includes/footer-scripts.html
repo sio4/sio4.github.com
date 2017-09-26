@@ -29,3 +29,11 @@ if layout.common-js %}{%
 endif %}
 
 {% include google_analytics.html %}
+
+  <script>
+    $(document).ready(function(){
+      $('.hand-diagram').sequenceDiagram({ theme: 'hand' });
+      $('.diagram').sequenceDiagram({ theme: 'simple' });
+    });
+  </script>
+  <script id="dsq-count-scr" src="//sauru.disqus.com/count.js" async></script>

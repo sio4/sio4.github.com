@@ -17,9 +17,9 @@ modified: 2010-07-02T09:43:05+09:00
 원초적으로 블록디바이스(디스크 등)를 백업할 수 있는 방법이 dd를 이용하여
 말 그대로 디스크 이미지를 덤프해 두는 것이다.
 
-{% highlight console %}
+```console
 $ dd if=/dev/sdc of=cf-dump
-{% endhighlight %}
+```
 
 이렇게 하면 디스크를 통 이미지로 저장할 수 있다. 이렇게 백업해둔 이미지는
 반대 방향으로 덤프함으로써 리스토어가 가능하다.
@@ -29,7 +29,7 @@ $ dd if=/dev/sdc of=cf-dump
 cfcard-backup 인데 /dev/sdc1 등에 대응하는 것은 어떤 것인가? ㅋㅋ
 해답은 다음과 같다.
 
-{% highlight console %}
+```console
 $ fdisk -ul cf-dump
 You must set cylinders.
 You can do this from the extra functions menu.
@@ -44,25 +44,25 @@ cf-dump1 * 63 15857855 7928896+ b W95 FAT32
 Partition 1 has different physical/logical endings:
      phys=(983, 255, 63) logical=(983, 63, 63)
 $
-{% endhighlight %}
+```
 
 이렇게 fdisk 명령을 이용하여 첫번째 파티션이 시작되는 섹터의 위치를 찾을
 수 있다. 이렇게 찾아진 섹터의 위치는 mount 명령을 내릴 때 offset 옵션을
 이용하여 파티션 시작부분을 지정하기 위하여 사용된다.
 
-{% highlight console %}
+```console
 $ sudo mount -o offset=32256,ro cf-dump /mnt
 [sudo] password for sio4: 
 $ ls /mnt
 dcim
 $
-{% endhighlight %}
+```
 
 이렇게, mount 명령에 offset 옵션을 주면 파일의 특정 위치를 건너뛰고 그
 위치를 시작으로 하여 파티션/파일시스템 마운트를 진행할 수 있다. 참고로,
 다음과 같이 파일, 또는 위치의 정체를 확인할 수 있다.
 
-{% highlight console %}
+```console
 $ dd if=cf-dump of=part1 skip=63 count=5
 5+0 레코드 들어옴
 5+0 레코드 나감
@@ -72,7 +72,7 @@ cf-dump: x86 boot sector; partition 1: ID=0xb, active, starthead 1, startsector 
 $ file part1 
 part1: x86 boot sector, code offset 0x58, OEM-ID "MSDOS5.0", sectors/cluster 8, Media descriptor 0xf8, heads 255, hidden sectors 63, sectors 15857793 (volumes > 32 MB) , FAT (32 bit), sectors/FAT 15456, serial number 0xe81c0e2d, unlabeled
 $
-{% endhighlight %}
+```
 
 위와 같이, cf-dump 파일은 디스크 이미지이고 추출된 part1은 FAT32
 파일시스템으로 포맷된 파티션이다.

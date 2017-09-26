@@ -26,9 +26,9 @@ modified: 2010-07-04T21:44:26+09:00
 
 아차차! 설정을 빼먹었네.
 
-{% highlight console %}
+```console
 GSSAPIAuthentication no
-{% endhighlight %}
+```
 
 참고로, 대체로 이런 현상은 인증 모듈에 의하여 일어나는데, 예전에는 가장
 흔한 경우가 DNS 역추적에 명시적으로 빨리 실패하지 못하고 (또는 성공하지
@@ -40,11 +40,11 @@ GSSAPIAuthentication no
 명령을 수행하는 창, 화면, tty를 이어받아 원격 쉘이 실행된다. 그런데,
 "ssh user@remote.host top" 이라고 명령해보면,
 
-{% highlight console %}
+```console
 $ ssh user@remote.host top
 user@remote.host's password: 
 TERM environment variable not set.
-{% endhighlight %}
+```
 
 이렇게 화면 기반의 프로그램은 정상적으로 실행되지 않는다. 그런데, '-t'
 옵션을 사용하면 원하는 일을 할 수 있다. 원격 로긴 후 항상 같은 화면 기반
@@ -57,9 +57,9 @@ TERM environment variable not set.
 참여했으나 결국, 웹 접속은 허용되지 않았다. 그러나 얼마나 다행인가?
 우리에겐 ssh가 있으니.
 
-{% highlight console %}
+```console
 ssh -D8080 -fqCN user@proxy.host
-{% endhighlight %}
+```
 
 위의 명령을 이용하면 일반적인 ssh 서버인 proxy.host를 웹 필터 우회를 위한
 대리자로써 사용할 수 있다. -C 명령은 압축을 사용하기 위한 옵션이고 -f는
@@ -67,14 +67,14 @@ ssh -D8080 -fqCN user@proxy.host
 
 다음과 같은 파이어폭스 설정을 해주면 우회로 설정 끝.
 
-{% highlight console %}
+```console
 network.proxy.no_proxies_on: localhost, 127.0.0.1, 192.168.10.0/24, .localdomain
 network.proxy.socks: localhost  
 network.proxy.socks_port: 8080  
 network.proxy.socks.remote_dns: true  
 network.proxy.socks_version: 5  
 network.proxy.type: 1
-{% endhighlight %}
+```
 
 웹 필터 회피를 위한 경우, 또는 누군가 나의 웹생활을 훔쳐보고 있다는 느낌을
 지울 수 없다면... :-)

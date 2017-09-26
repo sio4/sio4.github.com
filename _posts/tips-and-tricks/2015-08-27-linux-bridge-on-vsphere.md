@@ -98,7 +98,7 @@ Switching에서 기대했던 효과를 버리는 것이 된다. (하지만 임�
 1. ARP가 정상인 범위는 Host를 포함하여 vSwitch1에 직접 연결된 VM까지이다.
    즉, Bridge를 통과하지 못하는 상황이다.
 
-{% highlight console %}
+```console
 superhero@vbridge:~$ sudo tcpdump -i eth0 -n host 192.168.10.172
 tcpdump: WARNING: eth0: no IPv4 address assigned
 tcpdump: verbose output suppressed, use -v or -vv for full protocol decode
@@ -122,7 +122,7 @@ listening on eth1, link-type EN10MB (Ethernet), capture size 65535 bytes
 12:13:57.813040 ARP, Request who-has 192.168.10.1 tell 192.168.10.172, length 46
 <...>
 superhero@vbridge:~$ 
-{% endhighlight %}
+```
 
 문제의 원인은 vSwitch가 동작하는 방식에 있었는데, vSwitch에 연결된
 물리 NIC가 두 장 이상일 때(이중화를 위해 당연히 그렇게 구성하는데)

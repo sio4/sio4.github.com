@@ -66,7 +66,7 @@ Windows용 공개소프트웨어 터미널 에뮬레이터인 putty를 예로 �
 그런데 어떤 프로그램을 지정할 것인가? 다음의 python 스크립트는 이를 위한
 예이다.
 
-{% highlight python linenos %}
+```python
 #!/usr/bin/python
 
 import sys
@@ -81,7 +81,7 @@ except:
 
 command = "xterm -e telnet %s" % argument
 os.system(command)
-{% endhighlight %}
+```
 
 파일 받기: [telnet-url.py](/attachments/telnet-url.py)
 

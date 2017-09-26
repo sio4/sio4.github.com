@@ -16,12 +16,12 @@ modified: 2011-12-27T12:36:17+09:00
 
 쓸 일이 있어서 간단히 시험해봤는데,
 
-{% highlight console %}
+```console
 $ sudo kpartx -v -a sdb.img
 add map loop0p1 (252:1): 0 7856128 linear /dev/loop0 8192
 $ sudo mount -o ro /dev/mapper/loop0p1 /mnt
 $
-{% endhighlight %}
+```
 
 잘 동작한다. 애용해야겠다.
 

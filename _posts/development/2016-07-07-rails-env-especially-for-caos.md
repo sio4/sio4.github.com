@@ -88,7 +88,7 @@ Skeleton을 작성하는 방식에 대하여 얘기하려고 한다.
 될 디렉터리를 만들고 그 안에서 `bundle` 명령을 실행하여 Rails 환경을
 만들어 준다.
 
-```
+```console
 $ mkdir caos
 $ cd caos
 /caos$ bundle init
@@ -123,7 +123,7 @@ Rails 환경 구성을 위한 기본 Gem들이 모두 bundle되게 된다. 위 �
 
 이제, 번들된 `rails` 명령을 이용하여 Application의 골격을 만들 차례다.
 
-```
+```console
 /caos$ bundle exec rails new . -f
        exist  
       create  README.rdoc
@@ -215,7 +215,7 @@ sqlite3를 사용하였다.)
 있는데, 이 기능은 아래와 같이 `bcrypt` Gem을 활성화하고 설치한 후에
 간단하게 사용할 수 있다.
 
-```
+```console
 $ sed -i "s/# gem 'bcrypt/gem 'bcrypt/" Gemfile
 $ bundle install
 <...>
@@ -233,7 +233,7 @@ ActiveRecord의 Field를 만들 수 있게 된다. 아래와 같이, 사용자 �
 고정되어 있다.)
 
 {:.wrap}
-```
+```console
 $ bundle exec rails g scaffold user mail:uniq name comment:text password:digest password_at:datetime perms:text --no-javascripts --no-stylesheets
 <...>
 $ bundle exec rails g scaffold session user:references login_at:datetime logout_at:datetime --no-javascripts --no-stylesheets
@@ -360,7 +360,7 @@ Mailgun은 표준 SMTP 방식과 전용 API를 사용하는 두 가지 사용 �
 구성이 되었으면 시험을 해보자. 아래 예시를 보면,
 
 {:.wrap}
-```
+```console
 $ curl -s --user 'api:key-784e12345678901234567890' \
 >  https://api.mailgun.net/v3/sbox.mailgun.org/messages \
 >  -F from='Mailgun Sandbox <postmaster@sbox.mailgun.org>' \
@@ -414,7 +414,7 @@ Action Mailer에 대한 표준 문서인 [Action Mailer Basics] 등을 참고하
 아래와 같이 Action Mailer 구성을 했다. 먼저, `rails` 명령으로 메일러의
 뼈대를 잡는다.
 
-```
+```console
 $ bin/rails g mailer notification_mailer otp_notification
       create  app/mailers/notification_mailer.rb
       create  app/mailers/application_mailer.rb
@@ -501,7 +501,7 @@ $
 확인할 수 있다.
 
 {:.wrap}
-```
+```console
 Started POST "/users" for 127.0.0.1 at 2016-03-23 23:24:25 +0900
 Processing by UsersController#create as HTML
   Parameters: {"utf8"=>"✓", "authenticity_token"=>"Erihuf9pGrLX8iNTYXbXPjx1B1QmoJ9y0Nqzrx1v5mlVXNLHqhSFp0/LAbmGPZ3yxKLQE1B2vLvlSgI5oSqsQQ==", "user"=>{"mail"=>"scinix@gmail.com"}, "commit"=>"등록"}
@@ -584,7 +584,7 @@ App의 설정을 안전하게 분리하여 다룰 수 있으며, [Twelve-Factor 
 
 Figaro를 설정하는 것은 아래와 같다.
 
-```
+```console
 $ echo -e "\n# Tweakers\ngem 'figaro'" >> Gemfile
 $ bundle install
 <...>
@@ -600,7 +600,7 @@ $
 내려주면, 이 기능을 활용하기 위한 파일 생성 등의 작업을 자동으로
 진행해준다.
 
-```
+```console
 $ bundle exec figaro install
       create  config/application.yml
       append  .gitignore
@@ -765,7 +765,7 @@ Rails 세상에서 Bootstrap을 제공하는 방식은 다양하지만, 여기�
 `bootstrap-sass` Gem을 사용하는 방식을 써봤다. 아래와 같이 Gem 설정을
 해주고,
 
-```
+```console
 $ echo "gem 'bootstrap-sass'" >> Gemfile
 $ bundle install
 <...>
@@ -846,7 +846,7 @@ Bootstrap Form을 사용하기 위해서는 아래처럼 별도의 Gem을 설치
 사용할 수 있다.
 
 
-```
+```console
 $ echo "gem 'bootstrap_form'" >> Gemfile
 $ bundle install
 <...>

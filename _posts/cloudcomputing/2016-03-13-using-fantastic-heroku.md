@@ -43,7 +43,7 @@ Toolkit 같은 용어를 많이 사용할텐데 용어 선정 자체가 Heroku�
 관리할 수 있는 CLI 도구인 Toolbelt(명령어는 `heroku`)를 설치할 수 있다.
 (아! 당연히 요즘의 내 Laptop OS인 Ubuntu Linux의 경우이다.)
 
-```
+```console
 $ wget -O- https://toolbelt.heroku.com/install-ubuntu.sh | sh
 --2016-03-08 10:16:24--  https://toolbelt.heroku.com/install-ubuntu.sh
 <...>
@@ -108,7 +108,7 @@ Toolbelt가 설치된 상태라면, 다음과 같이 `heroku login` 명령을
 수행하여 Heroku에 로그인해주어야 한다. 로그인을 하고 나면 이후에
 내리는 모든 명령이 해당 계정의 권한 범위에서 수행된다.
 
-```
+```console
 $ heroku login
 heroku-cli: Installing Toolbelt v4... done
 For more information on Toolbelt v4: https://github.com/heroku/heroku-cli
@@ -127,7 +127,7 @@ Logged in as user@example.com
 `git push` 명령을 사용하게 되며, 지금 진행하는 작업은 push할 저장소를
 설정해주는 단계이다.
 
-```
+```console
 $ cd siso
 $ heroku git:remote -a hc-siso
 set git remote heroku to https://git.heroku.com/hc-siso.git
@@ -155,7 +155,7 @@ App 이름을 인수로 전달함으로써 자동으로 URL을 지정할 수 있
 부명령(sub command)을 함께 사용하는 형식으로 되어있는데, 특히나
 관련 부명령들을 묶어서 "Topic"이라는 개념으로 관리하는 점도 재미있다.
 
-```
+```console
 $ heroku
 Usage: heroku COMMAND [--app APP] [command-specific-options]
 
@@ -209,7 +209,7 @@ $
 앞서 실행한 `git:remote`는 `git`이라는 Topic에 속한 것으로, 다음과 같은
 명령을 제공한다.
 
-```
+```console
 $ heroku help git
 Additional commands, type "heroku help COMMAND" for more details:
 
@@ -221,7 +221,7 @@ $
 
 개별 명령어에 대한 도움말은 아래와 같은 방식으로 얻을 수 있다.
 
-```
+```console
 $ heroku help git:remote
 Usage: heroku git:remote
 
@@ -256,7 +256,7 @@ $
 명령은 잘못된 부분이 있다. 일단 단계만 보고 하나씩 다시 얘기하려고
 한다.)
 
-```
+```console
 $ git checkout current
 Switched to branch 'current'
 $ git push heroku master
@@ -388,7 +388,7 @@ Heroku가 지원하지 않는 sqlite3 gem이 발견되었기 때문이라고 한
 최신의 의존성이 반영되도록 해줘야 한다.  (아래의 `bundle lock` 명령은
 .lock 파일을 최신의 `Gemfile`에 맞춰 Update하도록 하는 부명령이다.)
 
-```
+```console
 $ vi Gemfile
 $ bundle lock
 Fetching gem metadata from https://rubygems.org/..........
@@ -411,7 +411,7 @@ $
 아니고 일반적인 이야기이긴 하다.)
 
 {:.wrap}
-```
+```console
 > Running: bundle install --without development:test --path vendor/bundle --binstubs vendor/bundle/bin -j4 --deployment
 ```
 
@@ -422,7 +422,7 @@ $
 사실, 첫번째 배포 예제의 `git push` 명령은 잘 내려진 명령이 아니었다.
 (부끄러운 일이지만, 뒤늦게 발견했다.) Git이 Push를 할 때 위에서와 같이,
 
-```
+```console
 $ git push heroku master
 ```
 
@@ -431,13 +431,13 @@ $ git push heroku master
 위한 Branch인 current를 가지고 작업을 하고 있으므로, `git push`는
 다음과 같은 형식으로 바뀌어야 한다.
 
-```
+```console
 $ git push heroku current:master
 ```
 
 또는, 현재 해당 Branch를 `checkout`하여 작업하는 중이므로,
 
-```
+```console
 $ git push heroku HEAD:master
 ```
 
@@ -453,7 +453,7 @@ Gemfile을 수정하여 `sqlite3`를 제외한 상태에서 `push`를 해줬다.
 볼 수 있다. 그리고 그 다음으로 Database 설정이 진행되는데, 출력을
 잘 살펴보면 Heroku의 방식을 짐작할 수 있다.
 
-```
+```console
 $ git push heroku current:master
 <...>
 remote: -----> Installing dependencies using bundler 1.9.7
@@ -505,7 +505,7 @@ Cloud Computing
 
 문제가 발생한 지점에 주목하면,
 
-```
+```console
       PG::ConnectionBad: could not connect to server: Connection refused
       Is the server running on host "127.0.0.1" and accepting
       TCP/IP connections on port 5432?
@@ -530,7 +530,7 @@ DBMS가 없는 것이다. 실제로 App을 만들어주고 바로 배포를 시�
 통해 추가해 줄 수도 있지만, 이 글에서는 `heroku` Toolbelt를 이용하여
 추가해 주려고 한다.
 
-```
+```console
 $ heroku addons:create heroku-postgresql
 Creating postgresql-trapezoidal-38641... done, (free)
 Adding postgresql-trapezoidal-38641 to hc-siso... done
@@ -561,7 +561,7 @@ $
 
 다시 동일한 방식으로 배포를 시도해보자.
 
-```
+```console
 $ git push heroku current:master
 Counting objects: 585, done.
 Delta compression using up to 4 threads.
@@ -645,7 +645,7 @@ $
 사용하면 최근의 로그를 보거나, 필요에 따라 `tail` 처럼 변하는 Log를
 지켜볼 수 있는 옵션 `-t`를 제공한다.
 
-```
+```console
 $ heroku logs
 <...>
 2016-03-08T02:17:50.526807+00:00 app[web.1]: Completed 500 Internal Server Error in 2ms
@@ -694,7 +694,7 @@ Rails 환경에서 개발을 해본 경험이 있다면 낯선 광경은 아니�
 
 그 변경을 밀어넣는다.
 
-```
+```console
 $ git add config/environments/production.rb
 $ git commit -m "add precompile assets"
 [current b16da94] add precompile assets
@@ -733,7 +733,7 @@ Compressing objects: 100% (5/5), done.
 명령으로 이 단계를 해주게 된다. Heroku에서는 이와 유사하게, 다음과 같은
 방식으로 이 작업을 진행한다.
 
-```
+```console
 $ heroku pg:reset DATABASE_URL --confirm hc-siso
 Resetting DATABASE_URL... done
 $ heroku run rake db:migrate
@@ -757,7 +757,7 @@ $
 명령어를 수행하여 DB 설정을 해주고 App을 다시 시작해주면 이미 배포된
 Application이 다시 시작되게 된다.
 
-```
+```console
 $ heroku restart
 Restarting dynos... done
 $ 
@@ -812,7 +812,7 @@ $
 설정된 내용을 확인할 수 있다.
 
 {:.wrap}
-```
+```console
 $ heroku config
 === hc-siso Config Vars
 DATABASE_URL: postgres://aaaaaaaaaaaaaa:AAA_A1A1A1A1A1A-M1M1M1M1M1@ec2-00-00-00-00.compute-1.amazonaws.com:5432/a1a1a1a1a1a1a1
@@ -832,7 +832,7 @@ $
 인증 기능이 포함된 Application으로, 이 경우 Facebook API 접속을 위한
 Key 등의 설정이 필요하다. 그 과정을 보면 아래와 같다.
 
-```
+```console
 $ heroku config:set FACEBOOK_KEY=1010101010101010
 Setting config vars and restarting hc-siso... done
 FACEBOOK_KEY: 1010101010101010
@@ -856,7 +856,7 @@ $
 다음번 Application 구동 시 환경변수로 깔리게 되고, Application에
 영향을 주게 된다.
 
-```
+```console
 $ heroku restart
 Restarting dynos... done
 $ 
@@ -888,7 +888,7 @@ Heroku는 사용자가 **자신의 Domain을 가져와서 서비스를 위한 �
 적용**할 수 있도록 Domain 지정 기능을 제공하고 있으며, Toolbelt를
 사용할 경우, 다음과 같은 방식으로 Domain 지정을 할 수 있다.
 
-```
+```console
 $ heroku domains
 === hc-siso Heroku Domain
 hc-siso.herokuapp.com
@@ -917,7 +917,7 @@ $
 HerokuApp 도메인을 바라보도록 `CNAME` 등을 이용하여 정상적으로 설정해
 준다면 이 새로 할당한 이름을 이용하여 App에 접근할 수 있게 된다.
 
-```
+```console
 $ host siso.example.com
 siso.example.com is an alias for hc-siso.herokuapp.com.
 hc-siso.herokuapp.com is an alias for us-east-1-a.route.herokuapp.com.

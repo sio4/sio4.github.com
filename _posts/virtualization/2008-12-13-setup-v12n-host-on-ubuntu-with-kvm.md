@@ -30,9 +30,9 @@ modified: 2010-07-02T21:44:55+09:00
 성장하고 있는 중이어서일까? 어쨌든, 이번 설치의 플랫폼은 우분투 8.10이다.
 먼저, 다음 명령을 사용하여 kvm 관련 패키지를 설치했다.
 
-{% highlight console %}
+```console
 $ sudo apt-get install ubuntu-virt-server
-{% endhighlight %}{:.dark}
+```
 
 8.10 버전부터 새로 추가된 ubuntu-virt-server 패키지는 kvm, libvirt-bin,
 openssh-server 등의 세 패키지를 잡고 있는 가상화 서버 구성을 위한
@@ -46,20 +46,20 @@ python-vm-builder, virt-viewer 등의 관리용 패키지를 잡고 있는
 이용하여 사용자를 libvirtd 그룹에 추가시켜준다. (물론, 다시 로그인을 해야
 변경된 그룹 권한이 적용된다.)
 
-{% highlight console %}
+```console
 $ sudo adduser `id -un` libvirtd
-{% endhighlight %}{:.dark}
+```
 
 위의 과정이 정상적으로 수행되었다면, 다음과 같은 방식으로 작동 여부를
 확인할 수 있다.
 
-{% highlight console %}
+```console
 $ virsh -c qemu:///system list
 Connecting to uri: qemu:///system
 Id Name State
 ----------------------------------
 $
-{% endhighlight %}{:.dark}
+```
 
 ## 가상머신 설치하기 - 가상 콘솔
 
@@ -71,7 +71,7 @@ $
 
 다음과 같은 방식으로 가상 콘솔 프로그램인 virt-viewer를 설치한다.
 
-{% highlight console %}
+```console
 $ sudo apt-get install virt-viewer
 [...]
 다음 새 꾸러미를 설치할 것입니다:
@@ -87,7 +87,7 @@ $ sudo apt-get install virt-viewer
   xfonts-encodings xfonts-utils
 [...]
 $ 
-{% endhighlight %}{:.dark}
+```
 
 virt-viewer는 말 그대로 가상머신 뷰어이다. 이 프로그램을 통하여 가상머신의
 가상 콘솔에 접속할 수 있고, OS 설치 등의 현장에서만 실행할 수 있는 작업을
@@ -113,7 +113,7 @@ virt-install 이나 우분투 고유의 python-vm-builder (예전의 ubuntu-vm-b
 필요성을 느끼지도 못해서 내 스타일의 가상머신을 만들어내는 정도로 목표
 수준을 낮췄다. 다음은 스크립트의 내용이다.
 
-{% highlight bash linenos %}
+```bash
 #!/bin/sh
 
 VM_ROOT=/box/vms
@@ -183,7 +183,7 @@ cat < $vm_name.xml >>EOF
   </devices>
 </domain>
 EOF
-{% endhighlight %}{:.dark}
+```
 
 이 스크립트를 이용하면 디스크 세 개를 달고 있는 가상머신 설정을 단숨에
 만들어낼 수 있고 해당 디스크 이미지 역시 스크립트 내부에서 만들어낸다.
@@ -193,7 +193,7 @@ EOF
 떨어지게 되며, 다음 명령을 이용하여 이 xml 파일을 읽어들여 가상머신
 설정을 완료하도록 할 수 있다.
 
-{% highlight console %}
+```console
 $ ./genxml.sh
 name of vm: u810si
 size of ram: 512
@@ -206,18 +206,18 @@ Formatting '/box/vms/u810si/u810si-tmp.qcow2', fmt=qcow2, size=1048576 kB
 disk size of opt: 2
 Formatting '/box/vms/u810si/u810si-opt.qcow2', fmt=qcow2, size=2097152 kB
 $ virsh -c qemu:///system define u810si.xml
-{% endhighlight %}{:.dark}
+```
 
 이렇게, 우분투 8.10 서버용 i386 버전을 위한 가상머신 설정과 디스크 준비를
 끝냈고, 마지막으로 virsh 쉘의 define 명령을 이용하여 만들어진 설정을
 적용하였다. 이제 생성된 가상머신을 실행해보자.
 
-{% highlight console %}
+```console
 $ virsh -c qemu:///system start u810si
 Connecting to uri: qemu:///system
 
 $ virt-viewer -c qemu:///system u810si
-{% endhighlight %}{:.dark}
+```
 
 어라? 부팅에 실패했다! 왜냐하면, 기본 부팅 설정이 'hd' 즉, 하드디스크로
 되어있기 때문. xml 파일을 열어서 다음의 내용을 수정해주고 다시 define
@@ -225,12 +225,12 @@ $ virt-viewer -c qemu:///system u810si
 했을까? cdrom으로 바꿀까?)
 
 
-{% highlight diff %}
+```diff
 9c9
 < <boot dev="hd">
 ---
 > <boot dev="cdrom">
-{% endhighlight %}
+```
 
 어쨌든, cdrom으로 부팅을 하도록 설정하고, define 명령을 내려주고, 다시
 start 명령을 내린 후 접속을 해보면 설치 화면이 떠 있는 것을 볼 수 있다.
@@ -239,12 +239,12 @@ start 명령을 내린 후 접속을 해보면 설치 화면이 떠 있는 것�
 이유는 모르겠지만 어차피 다시 부팅 설정을 바꿨어야 했으므로, 다음의
 방식으로 설정을 바꿔주고 다시 시작해보자.
 
-{% highlight console %}
+```console
 $ virsh -c qemu:///system destroy u810si
 $ vi u810si.xml (boot 부분 편집)
 $ virsh -c qemu:///system define u810si.xml
 $ virsh -c qemu:///system start u810si
-{% endhighlight %}{:.dark}
+```
 
 휴, 이제 설치가 모두 끝났다.
 
@@ -258,7 +258,7 @@ tar 명령으로 묶어서 저장해두면 그 뿐. 그럼 복제는? 다음의 
 
 먼저, 간단한 스크립트를 하나 짰다. 이름은 copyvm.sh.
 
-{% highlight bash linenos %}
+```bash
 #!/bin/sh
 
 src_vm=$1
@@ -284,7 +284,7 @@ sed -i "s,<mac address=".*/">,<mac address="$vm_mac">," $dst_vm.xml
 
 ls
 cat $dst_vm.xml
-{% endhighlight %}{:.dark}
+```
 
 내용은 간단하다. 인수 두 개를 받아서 첫 번째 인수로 받은 기존 VM을 두
 번째 인수로 받은 이름의 새 VM으로 복사하고 설정 차원에서 중복되어서는
@@ -293,9 +293,9 @@ cat $dst_vm.xml
 복제된 가상머신의 hostname, sshkey 등의 값이 같다는 한계가 있지만, 어쨌든
 쓸만은 하다. 또한 복제 원본을 위한 템플릿 작업을 조금 한다면 더 좋겠지.
 
-{% highlight console %}
+```console
 $ copyvm.sh u810si rails
-{% endhighlight %}{:.dark}
+```
 
 이제 우분투 8.10 서버 i386 버전 기반의 rails 환경 복제 완료. 프로비저닝
 시간? 한 10초?
@@ -303,12 +303,12 @@ $ copyvm.sh u810si rails
 새로운 가상머신을 시작시킨 후, 다음의 명령으로 필요한 추가 패키지를
 설치해줬다.
 
-{% highlight console %}
+```console
 $ sudo apt-get install vim
 $ sudo apt-get install subversion
 $ sudo apt-get install rails
 $ sudo apt-get install rubygems
-{% endhighlight %}{:.dark}
+```
 
 ## 마치기
 

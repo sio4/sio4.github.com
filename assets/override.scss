@@ -15,6 +15,11 @@ $background-footer: #000000;
 $background-marker: linear-gradient(transparent 50%,#ff7 70%,transparent 90%);
 $background-point: #454545;
 
+$background-th:  -moz-linear-gradient(center bottom , #eeeeee 0%, #ffffff 100%) repeat scroll 0 0 padding-box transparent;
+$background-td: #ffffff;
+$color-header: $color-light;
+$color-border: $color-light;
+
 /* --- General --- */
 
 body {
@@ -39,6 +44,11 @@ ul {
 	li {
 		list-style: square;
 	}
+}
+strong {
+	color: $color-dark;
+	font-weight: normal;
+	background: linear-gradient(transparent 50%, #ff7 70%, transparent 90%);
 }
 
 /* --- Post and Post Preview --- */
@@ -94,15 +104,21 @@ article.blog-post {
     img {
       max-width: 90%;
 			&.dropshadow {
+				margin-top: 1rem;
+				margin-bottom: 1rem;
 				border: 1px solid #bbbbbb;
         box-shadow: 3px 3px 5px #888888;
 			}
-    }
-
-    strong {
-      color: $color-dark;
-      font-weight: normal;
-      background: linear-gradient(transparent 50%, #ff7 70%, transparent 90%);
+			&.inline {
+				margin-left: 1rem;
+				margin-right: 1rem;
+				&.pull-left {
+					margin-left: 0;
+				}
+				&.pull-right {
+					margin-right: 0;
+				}
+			}
     }
   }
 
@@ -838,14 +854,30 @@ footer .theme-by {
 
 /* --- Tables --- */
 table {
-	&.centered {
-		margin: 1em auto;
-		max-width: 90%;
-		min-width: 50%;
+	margin: 1rem auto;
+	display: table !important;
+	&.fit { width: 95%; margin: 1rem auto; }
+	&.filled { width: 100%; }
+	&.centered { margin: 1rem auto; max-width: 80%; min-width: 50%; }
+	&.styled {
+		thead {
+			tr {
+				background: $background-th; border-top: 1px solid $color-border - #222;
+			}
+		}
+		tbody {
+			tr {
+				background: $background-td; border-top: 1px solid $color-border;
+				&:nth-child(even) { background: $background-td - #030303; }
+				&:first-child { border-top: 1px solid $color-border - #222; }
+				&:last-child { border-bottom: 1px solid $color-border - #222; }
+			}
+		}
 	}
+	th, td { padding: 1px; }
 }
 
-
+/*
 table {
   padding: 0;
 }
@@ -885,6 +917,7 @@ table tr td:last-child,
 table tr th:last-child {
   margin-bottom: 0;
 }
+*/
 
 /* --- Code blocks --- */
 
@@ -904,7 +937,6 @@ pre {
 .highlight > pre,
 pre.highlight,
 td.code pre {
-  //background: #151515; // please use syntax.css
   //background-image: none;
   //background-repeat: repeat;
   //background-size: 3em 3em;
@@ -1023,5 +1055,44 @@ div.barchart {
 		}
 	}
 }
+
+#markdown-toc {
+	margin: 0.5rem 0 0.5rem 2rem;
+	padding: 0.5rem 1rem;
+	background: #f9f9f9;
+	li {
+		list-style: none;
+	}
+	ul {
+		padding-left: 1.5em;
+	}
+}
+
+/* --- common modifier --- */
+.bordered {
+	border: 1px solid #aaaaaa;
+}
+.centered {
+	margin-left: auto;
+	margin-right: auto;
+}
+.half {
+	max-width: 50% !important;
+	display: block;
+}
+.fit svg,
+.fit {
+	display: block;
+	margin-left: auto !important;
+	margin-right: auto !important;
+}
+
+
+/* --- for printing --- */
+img {
+	page-break-inside: avoid !important;
+}
+
+
 
 @import url("syntax.css");

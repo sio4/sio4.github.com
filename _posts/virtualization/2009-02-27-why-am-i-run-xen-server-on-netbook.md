@@ -23,7 +23,7 @@ tistory 접속 자체가 잘 안되었던 것을 감안하면, Firefox의 문제
 
 NC10은 삼성전자의 첫번째 넷북인데, [Intel의 Atom N270 프로세서](http://en.wikipedia.org/wiki/List_of_Intel_Atom_microprocessors#Atom_N2xx_series_.28single-core.29)를 사용하고 있다. CPU 사양을 잠깐 살펴보면,
 
-{% highlight console %}
+```console
 sio4@vios:~$ cat /proc/cpuinfo
 processor : 0
 vendor_id : GenuineIntel
@@ -66,7 +66,7 @@ bogomips : 3195.05
 clflush size : 64
 
 sio4@vios:~$
-{% endhighlight %}{:.short}
+```
 
 lm 도 없고, vmx 도 없다. 바꿔 말하면 x86-64 버전을 설치할 수도 없고
 하드웨어 가상화 기능을 사용할 수도 없다는 뜻이다. 내 수중에 있는 기본
@@ -85,7 +85,7 @@ lm, vmx 다 된다던데? 솔깃~)
 
 ### 참고 : NC10의 주변 기기 사양
 
-{% highlight console %}
+```console
 sio4@vios:~$ lspci
 00:00.0 Host bridge: Intel Corporation Mobile 945GME Express Memory Controller Hub (rev 03)
 00:02.0 VGA compatible controller: Intel Corporation Mobile 945GME Express Integrated Graphics Controller (rev 03)
@@ -105,7 +105,7 @@ sio4@vios:~$ lspci
 02:00.0 Ethernet controller: Atheros Communications Inc. AR242x 802.11abg Wireless PCI Express Adapter (rev 01)
 03:00.0 Ethernet controller: Marvell Technology Group Ltd. 88E8040 PCI-E Fast Ethernet Controller (rev 13)
 sio4@vios:~$
-{% endhighlight %}{:.short}
+```
 
 ## 우분투/Xen 설치하기
 
@@ -174,7 +174,7 @@ grub 패치도 있는 것 같은데 시도하지는 않았다.) 그래... 쉽게
 목표잖아. 커스텀 커널보다는 커스텀 유틸이 낫지. 결국, 생애 최초로
 dpatch 를 써가며 커스텀 버전의 915resolution패키지를 빌드, 설치, 설정했다.
 
-{% highlight console %}
+```console
 sio4@vios:~$ cat /etc/default/915resolution  
 #  
 # 915resolution default  
@@ -198,7 +198,7 @@ YRESO=600
 # you can also leave this value blank.  
 BIT=  
 sio4@vios:~$
-{% endhighlight %}{:.short}
+```
 
 휴, 이제야 깔끔한 모습의 GUI를, Xen 환경에서 볼 수 있게 되었다. 이제부터
 시작이다!

@@ -37,7 +37,7 @@ DB에는 문제가 없다는 말만 반복했다는 아픈 기억. 그렇지... 
 > - 임시 방편으로, `init{SID}.ora` 파일에서 `CURSOR_SHARING=FORCE` 설정  
 > - DSS나 QUERY REWRITE를 사용할 때에는 사용하지 말라고 함.
 
-{% highlight sql linenos %}
+```sql
 prompt
 prompt * SQL문 parsing time 구하기
 prompt
@@ -46,7 +46,7 @@ FROM V$SYSSTAT
 WHERE NAME = 'parse time cpu'
 	or NAME = 'parse time elapsed'
 	or NAME like 'parse count%';
-{% endhighlight %}
+```
 
 뭐 일단, 여기까지.
 

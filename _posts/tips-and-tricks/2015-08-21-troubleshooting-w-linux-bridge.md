@@ -87,16 +87,16 @@ On-Board의 NIC에는 목표시스템에서 뽑은 케이블을 꽂아주었고,
 (Bridge 기능 자체는 리눅스 커널에 이미 포함되어 있다.) 아래의
 명령으로 `bridge-utils`를 설치해준다. (Ubuntu 기준)
 
-{% highlight console %}
+```console
 $ sudo apt-get install bridge-utils
 <...>
 bridge-utils (1.5-7ubuntu1) 설정하는 중입니다 ...
 $
-{% endhighlight %}
+```
 
 이제 설정을 할 차례인데, 작업 전의 상황은 다음과 같다.
 
-{% highlight console %}
+```console
 superhero@vim-firewall:~$ ip addr show
 <...>
 2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP qlen 1000
@@ -108,24 +108,24 @@ superhero@vim-firewall:~$ ip addr show
 3: eth1: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN qlen 1000
     link/ether 00:0c:29:fa:6c:b5 brd ff:ff:ff:ff:ff:ff
 superhero@vim-firewall:~$ 
-{% endhighlight %}
+```
 
 `eth0`는 평범한 형태로 구성이 되어있고, 여기에 아직 설정되지 않은
 `eth1`이 함께 보인다. 그리고 아래와 같이 별도의 Bridge 설정은 아직
 존재하지 않는다.
 
-{% highlight console %}
+```console
 superhero@vim-firewall:~$ brctl show
 bridge name	bridge id		STP enabled	interfaces
 superhero@vim-firewall:~$ 
-{% endhighlight %}
+```
 
 ### Bridge의 설정 - Ubuntu
 
 이 글은 Ubuntu 리눅스를 바탕으로 씌여졌는데, 아래와 같이 네트워크
 설정파일을 수정하여 Bridge 구성을 해준다.
 
-{% highlight console %}
+```console
 superhero@vim-firewall:~$ cat /etc/network/interfaces
 # This file describes the network interfaces available on your system
 # and how to activate them. For more information, see interfaces(5).
@@ -156,20 +156,20 @@ iface br0 inet static
 	#bridge_maxwait 0
 
 superhero@vim-firewall:~$ 
-{% endhighlight %}
+```
 
 기본적인 설정은 이와 같이 매우 간단하다. 그리고 설정의 반영:
 
-{% highlight console %}
+```console
 superhero@vim-firewall:~$ sudo service networking restart
 networking stop/waiting
 networking start/running
 superhero@vim-firewall:~$ 
-{% endhighlight %}
+```
 
 이제 변경된 내용을 살펴보면 아래와 같다.
 
-{% highlight console %}
+```console
 superhero@vim-firewall:~$ ifconfig
 br0       Link encap:Ethernet  HWaddr 00:0c:29:fa:6c:ab  
           inet addr:192.168.217.170  Bcast:192.168.217.255  Mask:255.255.255.0
@@ -189,7 +189,7 @@ eth0      Link encap:Ethernet  HWaddr 00:0c:29:fa:6c:ab
 
 <...>
 superhero@vim-firewall:~$ 
-{% endhighlight %}
+```
 
 보는 바와 같이, 실제로 물리적으로 존재하는 장치가 아닌 br0가 만들어졌고
 eth0와 같은 MAC 주소를 갖고 있다. (우리 이야기에서 별로 중요하지는
@@ -197,7 +197,7 @@ eth0와 같은 MAC 주소를 갖고 있다. (우리 이야기에서 별로 중�
 
 좀 더 보면,
 
-{% highlight console %}
+```console
 superhero@vim-firewall:~$ ip addr show
 <...>
 2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq master br0 state UP qlen 1000
@@ -210,7 +210,7 @@ superhero@vim-firewall:~$ ip addr show
     inet6 fe80::20c:29ff:fefa:6cab/64 scope link 
        valid_lft forever preferred_lft forever
 superhero@vim-firewall:~$ 
-{% endhighlight %}
+```
 
 원래의 내용과 어떤 차이가 있을까? 같은 얘기의 반복인데, `eth0`가 원래
 가지고 있던 속성들을 `br0`가 이어받았고, `eth0`은 기본적으로 Ethernet
@@ -220,21 +220,21 @@ superhero@vim-firewall:~$
 마지막으로 Bridge 상태를 보면 하나의 가상 Bridge `br0`가 두 개의
 Port(=interfaces, eth0와 eth1)를 가지고 있는 것을 확인할 수 있다.
 
-{% highlight console %}
+```console
 superhero@vim-firewall:~$ brctl show
 bridge name	bridge id		STP enabled	interfaces
 br0		8000.000c29fa6cab	no		eth0
 							eth1
 superhero@vim-firewall:~$ 
-{% endhighlight %}
+```
 
-{% highlight console %}
+```console
 superhero@vim-firewall:~$ brctl showmacs br0
 port no	mac addr		is local?	ageing timer
   1	00:0c:29:fa:6c:ab	yes		   0.00
   2	00:b3:2c:14:3b:d9	yes		   0.00
 superhero@vim-firewall:~$ 
-{% endhighlight %}
+```
 
 ## 분석
 
@@ -251,7 +251,7 @@ Update하겠다.)
 때, 양단에 연결된 다른 MAC이 확인되는 것을 볼 수 있다. 대충, 아래와
 비슷한 모양일 것이다.
 
-{% highlight console %}
+```console
 superhero@vim-firewall:~$ brctl showmacs br0
 port no	mac addr		is local?	ageing timer
   1	00:0c:29:fa:6c:ab	yes		   0.00
@@ -259,7 +259,7 @@ port no	mac addr		is local?	ageing timer
   1	e8:e7:32:cd:63:53	no		   1.36
   1	e8:e7:32:cd:64:45	no		  51.59
 superhero@vim-firewall:~$ 
-{% endhighlight %}
+```
 
 위와 같이, 어느쪽 포트에서 어떤 MAC이 보이는지 확인이 가능하고, 이를
 이런 정보를 바탕으로 "분석시스템"에서 tcpdump나 유사한 도구를 이용하여

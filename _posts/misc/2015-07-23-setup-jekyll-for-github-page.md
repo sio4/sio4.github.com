@@ -14,14 +14,14 @@ date: 2015-07-23 15:07:00+09:00
 Jekyll은 Ruby를 기반으로 하고 있어서, 다음과 같은 소프트웨어의 설치를
 미리 해주어야 한다.
 
-{% highlight console linenos %}
+```console
 $ sudo apt-get install ruby
 $ sudo apt-get install ruby-dev
 $ sudo apt-get install build-essential
 $ sudo apt-get install nodejs
 $ sudo apt-get install zlib1g-dev
 $ sudo gem install bundler --no-ri --no-rdoc
-{% endhighlight %}
+```
 
 2, 3번 줄은 Native Extension을 포함하는 gem을 설치하기 위해 필수 항목이다.
 `bundle` 명령을 이용한 gem 의존성 관리를 위해 bundler 역시 설치되어야 한다.
@@ -32,7 +32,7 @@ $ sudo gem install bundler --no-ri --no-rdoc
 해줬다. 그런데 이제는 그냥 쉽게, `github-pages` gem 하나가 나머지 의존성
 관리를 해준다.
 
-{% highlight console %}
+```console
 $ cat > Gemfile <<EOF
 source 'https://rubygems.org'
 gem 'github-pages'
@@ -107,7 +107,7 @@ See html-pipeline README.md for more details.
 https://github.com/jch/html-pipeline#dependencies
 -------------------------------------------------
 $ 
-{% endhighlight %}
+```
 
 간단! 끝!
 

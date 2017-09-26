@@ -76,7 +76,7 @@ Write 모드로 해버린 것! 이 글은 그 쌩고생에 대한 기록이면�
 
 이참에, 내 파티션 구성을 기록해놓아야겠다.
 
-{% highlight console %}
+```console
 $ sudo fdisk -l
 
 Disk /dev/sda: 119.2 GiB, 128035676160 bytes, 250069680 sectors
@@ -100,7 +100,7 @@ Units: sectors of 1 * 512 = 512 bytes
 Sector size (logical/physical): 512 bytes / 512 bytes
 I/O size (minimum/optimal): 512 bytes / 512 bytes
 $ 
-{% endhighlight %}
+```
 
 ## 해볼만 한 것
 
@@ -131,22 +131,22 @@ $
 들어온다면, "`> /tmp/bash.dump`" 구문에 의해 "`/tmp/bash.dump`" 라는
 파일에 그 내용이 저장된다.
 
-{% highlight console %}
+```console
 $ nc -l 5500 > /tmp/bash.dump
-{% endhighlight %}
+```
 
 위와 같이 받는 쪽을 대기모드로 만들어두고,
 
 그리고 보내는 쪽에서는 아래와 같이 파일을 날려 보낼 수 있다. (여기서는
 단지 시험이므로 자기 자신에게 보내기로 한다.)
 
-{% highlight console %}
+```console
 $ dd if=/bin/bash |nc localhost 5500
 2011+1 레코드 들어옴
 2011+1 레코드 나감
 1029720 바이트 (1.0 MB) 복사됨, 0.00960139 초, 107 MB/초
 $ 
-{% endhighlight %}
+```
 
 위의 명령은, dd 명령에게 "`if=`" 옵션으로 읽어들일 파일을 주어, 해당
 파일을 읽어들이도록 한 후, 그 표준출력을 nc 명령에게 넘겨주고 있다.
@@ -156,12 +156,12 @@ $
 
 이제 검산.
 
-{% highlight console %}
+```console
 sio4@silver:~$ md5sum /bin/bash /tmp/bash.dump 
 f9ef659c9b42adda0ac18aa0f70945c0  /bin/bash
 f9ef659c9b42adda0ac18aa0f70945c0  /tmp/bash.dump
 $ 
-{% endhighlight %}
+```
 
 두 파일의 md5sum 값이 같다. 정확하게 원격으로 백업된 것이다.
 

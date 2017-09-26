@@ -14,7 +14,7 @@ modified: 2011-03-04T13:46:36+09:00
 띄기는 했었지. 그런데, 잠깐 logout 했다가 다시 접속했을 때, 뭔가 익숙하지
 않은 뭔가가 있는 것이 아닌가?
 
-{% highlight console %}
+```console
 sio4@jangseung:/box/vms$ ssh 192.168.122.182
 sio4@192.168.122.182's password: 
 Linux ubuntu 2.6.27-7-server #1 SMP Fri Oct 24 07:37:55 UTC 2008 i686
@@ -37,7 +37,7 @@ http://help.ubuntu.com/
   Graph this data and manage this system at https://landscape.canonical.com/
 Last login: Wed Dec  3 00:34:39 2008 from 192.168.122.1
 sio4@ubuntu:~$ 
-{% endhighlight %}{:.dark}
+```
 
 오~~ 시스템 정보 요약서비스! 좋지. 관리하던 서버가 있던 시절에는 이런
 사소한 것에도 많은 관심을 가졌던 터라... 첫번째 느낌은 "향수"랄까? 그런데

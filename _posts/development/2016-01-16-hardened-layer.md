@@ -149,7 +149,7 @@ Rails Application으로 개발하였다.  당연히, SoftLayer Ruby API로 개�
 않을 예정이므로 DB 관련 설정은 신경쓰지 않는다. 또한 Bundle은 Project
 내부에 별도로 구성할 것이기 때문에 초기 생성에서는 생략하도록 지시한다.
 
-{% highlight console %}
+```console
 $ rails new hardened-layer --skip-bundle
       create  
       create  README.rdoc
@@ -159,14 +159,14 @@ $ rails new hardened-layer --skip-bundle
       create  vendor/assets/stylesheets
       create  vendor/assets/stylesheets/.keep
 $ 
-{% endhighlight %}
+```
 
 이제, 뼈대 안으로 들어가서, bundle 명령을 내려준다. 단, 번들된 Gem들이
 시스템 전역 위치에 설치되지 않고 프로젝트 내부에 위치하도록 `--path`
 옵션을 추가해 주었다. (Bundle되는 Gem의 상세한 내용도 기록으로 남기기
 위하여, 긴 Output을 생략하지 않고 남겼다.)
 
-{% highlight console %}
+```console
 $ cd hardened-layer
 $ bundle install --path vendor/bundle
 Fetching gem metadata from https://rubygems.org/............
@@ -230,16 +230,16 @@ Installing web-console 2.2.1
 Bundle complete! 12 Gemfile dependencies, 54 gems now installed.
 Bundled gems are installed into ./vendor/bundle.
 $ 
-{% endhighlight %}{:.short}
+```
 
 이제, Git Repository를 구성하고 나면, 코딩을 시작할 준비가 끝난다.
 
-{% highlight console %}
+```console
 $ echo "/vendor/bundle" >> .gitignore
 $ git init
 $ git add .
 $ git commit -m "rails new and bundle install"
-{% endhighlight %}
+```
 
 
 ## 준비하기: SoftLayer 연동을 위한 준비
@@ -254,7 +254,7 @@ $ git commit -m "rails new and bundle install"
 
 아래와 같이, `generate`(`g`) 명령을 이용하여 Controller의 틀을 만든다.
 
-{% highlight console %}
+```console
 $ rails g controller api/api --no-javascripts --no-stylesheets
       create  app/controllers/api/api_controller.rb
       invoke  erb
@@ -276,18 +276,18 @@ $ rails g controller api/v1/accounts --no-javascripts --no-stylesheets
       invoke    coffee
       invoke    scss
 $ 
-{% endhighlight %}
+```
 
 VCS 상에서 자동생성된 부분과 수정한 부분을 구분하기 위하여, 자동생성된
 부분을 먼저 Commit해준다. (이건 나의 VSC 사용 습관일 뿐이므로 중요한
 것은 아니고...)
 
-{% highlight console %}
+```console
 $ git add app/controllers/api/
 $ git add app/helpers/api/
 $ git add test/controllers/api/
 $ git commit -m "g controllers for api"
-{% endhighlight %}
+```
 
 ### SoftLayer Ruby API Gem 추가
 
@@ -295,7 +295,7 @@ SoftLayer Ruby API를 사용하기 위하여, 해당 Gem을 Project에 추가해
 해당 Gem은 표준 Repository에 존재하므로 단순히 아래와 같이 Gemfile에
 대당 항목을 추가해주고, bundle 명령만 내려주면 된다.
 
-{% highlight console %}
+```console
 $ echo -e "\n\ngem 'softlayer_api'" >> Gemfile
 $ bundle 
 Fetching gem metadata from https://rubygems.org/............
@@ -308,7 +308,7 @@ Installing softlayer_api 3.2.0
 Bundle complete! 13 Gemfile dependencies, 56 gems now installed.
 Bundled gems are installed into ./vendor/bundle.
 $ 
-{% endhighlight %}
+```
 
 ### SoftLayer 인증 설정
 
@@ -321,7 +321,7 @@ $
 먼저, SoftLayer 인증을 포함하여 Application 설정을 담을 파일을 생성하고,
 기동 시점에 그 파일을 읽어들일 수 있도록 `initializer`를 설정한다.
 
-{% highlight console %}
+```console
 $ cat > config/application.yml.template <<EOF
 SL_USER: "@SL_USER@"
 SL_API_KEY: "@SL_KEY@"
@@ -339,7 +339,7 @@ Rails.application.config.before_configuration do
 end
 EOF
 $ 
-{% endhighlight %}
+```
 
 이제, Template 파일을 복사하여 `config/application.yml` 파일을 만들고
 `SL_USER`와 `SL_API_KEY`의 값을 SoftLayer에 등록된 사용자의 것으로
@@ -359,7 +359,7 @@ API Endpoint가 상속하게 될 Class로, `login`을 `before_action`으로 설�
 {:.block-title}
 `/app/controllers/api/api_controller.rb`
 
-{% highlight ruby %}
+```ruby
 class Api::ApiController < ActionController::Base
   before_action :login
 
@@ -387,7 +387,7 @@ class Api::ApiController < ActionController::Base
     return ha
   end
 end
-{% endhighlight %}
+```
 
 추가로 작성한 `h_from`, `ha_from`은 각각 Hash From, Hash Array From을 줄여
 만든 이름인데, 이것은 SoftLayer의 API가 반환하는 값들을 우리가 다루기 편한
@@ -407,7 +407,7 @@ end
 
 {:.block-title}
 `/app/controllers/api/v1/accounts_controller.rb`
-{% highlight ruby %}
+```ruby
 class Api::V1::AccountsController < Api::ApiController
 
   # GET /accounts.json
@@ -418,7 +418,7 @@ class Api::V1::AccountsController < Api::ApiController
     @accounts = [account]
   end
 end
-{% endhighlight %}
+```
 
 이렇게 구성된 데이터는, `@accounts`에 담겼다가, 아래와 같이 JSON Builder에
 의하여 Formatting된 후에 Client에게 전달되게 된다.
@@ -426,18 +426,18 @@ end
 {:.block-title}
 `/app/views/api/v1/accounts/index.json.jbuilder`
 
-{% highlight ruby %}
+```ruby
 json.array!(@accounts) do |account|
   json.extract! account, :id, :companyName, :email, :servers, :image_templates
   json.url api_v1_account_url(account[:id], format: :json)
 end
-{% endhighlight %}
+```
 
 마지막으로, 이렇게 구성한 Endpoint를 Route 정보에 추가해준다. 아래와 같은
 namespace 설정으로, REST API의 URL은 `/api/v1/RESOURCE` 형식을 갖게 되고,
 별도의 MIME 설정이 없는 경우에 반환될 Format을 JSON으로 지정한다.
 
-{% highlight diff %}
+```diff
 --- a/config/routes.rb
 +++ b/config/routes.rb
 @@ -1,4 +1,11 @@
@@ -452,14 +452,14 @@ namespace 설정으로, REST API의 URL은 `/api/v1/RESOURCE` 형식을 갖게 �
    # The priority is based upon order of creation: first created -> highest priority.
    # See how all your routes lay out with "rake routes".
  
-{% endhighlight %}
+```
 
 여기까지 구현된 상태에서 반환하는 데이터를 잠깐 보면, 아래와 같은 모양이다.
 실제로는 `servers`와 `image_templates`는 그 내용이 통째로 들어오게 되는데,
 아래의 예시는 JSON의 Structure만 파악하기 위해서 `id`만 남기고 다른 모든
 값들을 지웠다.
 
-{% highlight json %}
+```json
 [
    {
       "id" : 999113,
@@ -475,7 +475,7 @@ namespace 설정으로, REST API의 URL은 `/api/v1/RESOURCE` 형식을 갖게 �
       "url" : "http://localhost:3000/api/v1/accounts/999113"
    }
 ]
-{% endhighlight %}
+```
 
 위의 Format은 Rails의 매우 전형적인 Output이며, 이 데이터가 이미 Account의
 배열이라는 것을 안다는 가정에서는 문제가 되지 않는 구조이다. 반대로 말하면,
@@ -496,7 +496,7 @@ JSON 자체는 유연함에서 나오는 힘이 있기 때문에 강제적인 �
 참고로, 다음은 JSON API Spec을 따르는 JSON의 예이다.
 (위의 예제에서 따왔다.)
 
-{% highlight json %}
+```json
 {
   "data": [{
     "type": "articles",
@@ -536,7 +536,7 @@ JSON 자체는 유연함에서 나오는 힘이 있기 때문에 강제적인 �
     }
   }]
 }
-{% endhighlight %}
+```
 
 기본 JSON Object는 `data`, `errors`, `meta` 등의 Top-Level Member를 하나
 이상 포함하도록 하고 있고, 이와 함께 `jsonapi`, `links`, `included` 등을
@@ -562,7 +562,7 @@ JSON 자체는 유연함에서 나오는 힘이 있기 때문에 강제적인 �
 {:.block-title}
 `/app/controllers/api/v1/accounts_controller.rb`
 
-{% highlight ruby %}
+```ruby
 class Api::V1::AccountsController < Api::ApiController
 
   # GET /accounts.json
@@ -578,7 +578,7 @@ class Api::V1::AccountsController < Api::ApiController
     @data = { :accounts => [account] }
   end
 end
-{% endhighlight %}
+```
 
 이렇게, 먼저 최종적으로 JSON을 Build하는 과정에서 사라지게 될 `@data`라는
 변수를 넣어 Hash의 Nested 구조를 더 깊게 조정하였고,
@@ -586,16 +586,16 @@ end
 {:.block-title}
 `/app/views/api/v1/accounts/index.json.jbuilder`
 
-{% highlight ruby %}
+```ruby
 json.extract! @data, :accounts
-{% endhighlight %}
+```
 
 JSON을 만드는 과정에서는 `@data` 안에서 `:accounts`를 뽑아내는 구성으로
 전환하였다. 이제 그 결과는 아래와 같은 형식을 띄게 되며, Sideloading을
 제외하고는 Ember의 REST Adapter가 이해할 수 있는, Object 또는 Object의
 Array에 이름을 붙여주는 형식을 띄게 된다. (일단, 최상위의 것만 보자 :-)
 
-{% highlight json %}
+```json
 {
    "accounts" : [
       {
@@ -634,7 +634,7 @@ Array에 이름을 붙여주는 형식을 띄게 된다. (일단, 최상위의 �
       }
    ]
 }
-{% endhighlight %}
+```
 
 API App은 이상으로 기본적인 구현을 끝냈다. 다시 강조하자면, 이상의 과정 중,
 UI를 직접적으로 고려하는 부분은 전혀 없으며 단지 API의 응답 Format에만
@@ -668,7 +668,7 @@ Frontend는 Ember.js를 이용하여 작성했다. NVM을 이용한 Ember.js 개
 
 여기서는 다음과 같은 환경이 사용되었다.
 
-{% highlight console %}
+```console
 $ ember --version
 version: 1.13.13
 Could not find watchman, falling back to NodeWatcher for file system events.
@@ -677,7 +677,7 @@ node: 4.2.3
 npm: 2.14.10
 os: linux x64
 $ 
-{% endhighlight %}
+```
 
 ## 뼈대의 작성
 
@@ -685,7 +685,7 @@ $
 사용하기 위해 `--directory` 옵션을 사용했고, `--skip-git` 옵션으로 Git을
 자동으로 설정하는 것을 피했다.
 
-{% highlight console %}
+```console
 $ ember new hardened-layer --skip-git --directory hardened-layer-ui
 version: 1.13.13
 installing app
@@ -728,13 +728,13 @@ installing app
 Installed packages for tooling via npm.
 Installed browser packages via Bower.
 $ 
-{% endhighlight %}{:.short}
+```
 
 틀이 작성되었다면 아래와 같이 Adapter 및 Serializer를 만들어준다. Ember에서
 Backend API의 특성을 반형하여 연동 관련 특성을 Customize를 할 수 있는 지점이
 바로 이 두 곳이다.
 
-{% highlight console %}
+```console
 $ ember generate adapter softlayer
 version: 1.13.13
 installing adapter
@@ -748,13 +748,13 @@ installing serializer
 installing serializer-test
   create tests/unit/serializers/softlayer-test.js
 $ 
-{% endhighlight %}
+```
 
 다음으로, Account Object를 다루기 위한 Resource(Model, Route, Template)와
 Account Object에 대한 세부 Customizing을 위한 Adapter/Serializer를
 만들어준다.
 
-{% highlight console %}
+```console
 $ ember generate resource accounts
 version: 1.13.13
 installing model
@@ -781,16 +781,16 @@ installing serializer
 installing serializer-test
   create tests/unit/serializers/account-test.js
 $ 
-{% endhighlight %}{:.short}
+```
 
 동일한 방식으로 Server Object에 대한 것들도 만들어준다.
 
-{% highlight console %}
+```console
 $ ember generate resource servers
 $ ember generate adapter server
 $ ember generate serializer server
 $ 
-{% endhighlight %}{:.short}
+```
 
 이제, 만들어진 두 리소스와 기본 Adapter/Serializer를 수정하여 실제로
 API App과 통신할 수 있도록 구성해보자.
@@ -822,7 +822,7 @@ Object를 받을 수 있는 기본적인 속성과 방법을 갖추고 있다. �
 {:.block-title}
 `/app/adapters/softlayer.js`
 
-{% highlight javascript %}
+```javascript
 import DS from 'ember-data';
 import config from '../config/environment';
 
@@ -835,13 +835,13 @@ export default DS.RESTAdapter.extend({
     console.log('SoftLayerAdapter: ' + config.SL.host + '...');
   }
 });
-{% endhighlight %}
+```
 
 설정을 위해 사용하고 있는 `config.SL.*`은 `config/environment.js` 아래에
 담아두었다. 참고로, `init()`를 Override하는 것은 단순히 이 Adapter가
 사용되는 것을 Logging하기 위함일 뿐이다.
 
-{% highlight diff %}
+```diff
 --- a/config/environment.js
 +++ b/config/environment.js
 @@ -13,6 +13,15 @@ module.exports = function(environment) {
@@ -860,7 +860,7 @@ export default DS.RESTAdapter.extend({
      APP: {
        // Here you can pass flags/options to your application instance
        // when it is created
-{% endhighlight %}
+```
 
 위의 Diff에서 추가된 두 블록 중에서 위의 `SL` 부분은 Backend URL 작성에
 사용될 부분을 설정하는 부분이고, `contentSecurityPolicy` 부분은 Web의
@@ -875,12 +875,12 @@ Override를 하지 않은 채, `RESTSerializer`를 상속하는 자동생성된 
 {:.block-title}
 `/app/serializers/softlayer.js`
 
-{% highlight javascript %}
+```javascript
 import DS from 'ember-data';
 
 export default DS.RESTSerializer.extend({
 });
-{% endhighlight %}
+```
 
 ### Resource Adapter와 Serializer
 
@@ -897,12 +897,12 @@ Endpoint URL 등의 표준화가 정상적이라면 Adapter는 Resource 별로 �
 {:.block-title}
 `/app/adapters/account.js`
 
-{% highlight javascript %}
+```javascript
 import SoftLayerAdapter from './softlayer';
 
 export default SoftLayerAdapter.extend({
 });
-{% endhighlight %}
+```
 
 다음은 `AccountSerializer`를 손볼 차례이다. Backend로부터 넘겨받은 JSON
 형식의 데이터를 다시 Object로 변환하는 과정은 `Serializer`에서 제공하는
@@ -916,7 +916,7 @@ REST 방식의 표준형식도 아니다. 자세히 설명하지는 않았지만
 같이, 주 Object에 딸린 부속 Object들은 주 Object 내에 뭍혀있는 모습으로
 되어있다.
 
-{% highlight json %}
+```json
 {
   "bicycle" : {
     "id" : 894,
@@ -940,7 +940,7 @@ REST 방식의 표준형식도 아니다. 자세히 설명하지는 않았지만
     }]
   }
 }
-{% endhighlight %}
+```
 
 보는 바와 같이, `bicycle`이라는 Object 안에 `wheels`라는 Object의 배열이
 살고 있고, 개별 `wheel` 안에는 다시 `tire`가 살고 있다. 명확한 Key/Value
@@ -956,7 +956,7 @@ Object 안에 담겨있는 Server, Image Template 등을 개별 Object로 뽑아
 {:.block-title}
 `/app/serializers/account.js`
 
-{% highlight javascript %}
+```javascript
 import SoftLayerSerializer from './softlayer';
 
 export default SoftLayerSerializer.extend(DS.EmbeddedRecordsMixin, {
@@ -965,7 +965,7 @@ export default SoftLayerSerializer.extend(DS.EmbeddedRecordsMixin, {
     imageTemplates: { embedded: 'always' },
   }
 });
-{% endhighlight %}
+```
 
 `AccountSerializer`는 `SoftLayerSerializer`를 상속받는 것으로 끝나지 않고,
 거기에 `EmbeddedRecordsMixin`을 섞어주고, 다시 `attrs` 속성을 Override하여
@@ -982,7 +982,7 @@ Model에 대한 Relationship은 `app/models` 아래에 위치한 파일들에서
 {:.block-title}
 `/app/models/account.js`
 
-{% highlight javascript %}
+```javascript
 import DS from 'ember-data'; 
 
 export default DS.Model.extend({
@@ -996,7 +996,7 @@ export default DS.Model.extend({
   servers: DS.hasMany('server', {async: true}),
   imageTemplates: DS.hasMany('imageTemplate', {async: true}),
 });
-{% endhighlight %}
+```
 
 이제, 뒷단의 서버와 적합한 방법으로 통신을 하고, 서버로부터 원하는 데이터를
 전달받아 재구성하여 Model을 만들어내는 단계에 대한 구현이 끝났다.
@@ -1030,7 +1030,7 @@ Ember에서는 **각 URL을 어떤 데이터셋, 화면, Controller와 연계하
 {:.block-title}
 `/app/routes/accounts.js`
 
-{% highlight javascript %}
+```javascript
 import Ember from 'ember';
 
 export default Ember.Route.extend({
@@ -1038,7 +1038,7 @@ export default Ember.Route.extend({
     return this.store.findAll('account');
   }
 });
-{% endhighlight %}
+```
 
 Server에 대한 Route는 아래와 같은데, 위의 내용과 좀 다른 형태를 띄고 있다.
 아래처럼 난데없이 모든 Account를 찾더니, 모든 Server를 넘긴다.
@@ -1046,7 +1046,7 @@ Server에 대한 Route는 아래와 같은데, 위의 내용과 좀 다른 형�
 {:.block-title}
 `/app/routes/servers.js`
 
-{% highlight javascript %}
+```javascript
 import Ember from 'ember';
 
 export default Ember.Route.extend({
@@ -1055,7 +1055,7 @@ export default Ember.Route.extend({
     return this.store.all('server');
   }
 });
-{% endhighlight %}
+```
 
 동작하는 원리는 다음과 같다.
 
@@ -1076,7 +1076,7 @@ export default Ember.Route.extend({
 만들어진 Route는 Router에 등록되어야 Application이 인식하여 URL에 맞춰
 호출해줄 수 있게 된다. 아래와 같이, 작성한 Route 두 개를 추가해준다.
 
-{% highlight diff %}
+```diff
 --- a/app/router.js
 +++ b/app/router.js
 @@ -6,6 +6,8 @@ const Router = Ember.Router.extend({
@@ -1088,7 +1088,7 @@ export default Ember.Route.extend({
  });
  
  export default Router;
-{% endhighlight %}
+```
 
 아직, 열람만 가능한 간략한 Application이다 보니, Application의 복잡도가
 반영되어질 Router의 구성 역시 아직은 매우 단순하다.
@@ -1113,7 +1113,7 @@ export default Ember.Route.extend({
 {:.block-title}
 `/app/templates/application.hbs`
 
-{% highlight html+handlebars %}
+```handlebars
 {% raw %}
 <h2 id="title">Hardened Layer</h2>
 
@@ -1130,7 +1130,7 @@ export default Ember.Route.extend({
 {{outlet}}
 </div>
 {% endraw %}
-{% endhighlight %}
+```
 
 이 화면은
 
@@ -1143,7 +1143,7 @@ export default Ember.Route.extend({
 {:.block-title}
 `/app/templates/accounts.hbs`
 
-{% highlight html+handlebars %}
+```handlebars
 {% raw %}
 <ul>
 {{#each account in model}}
@@ -1158,7 +1158,7 @@ export default Ember.Route.extend({
 
 {{outlet}}
 {% endraw %}
-{% endhighlight %}
+```
 
 Account 목록을 볼 때 사용될 위의 Template은 `#each` 구문에 의해 Loop를
 돌면서 각 Account의 화사명과 이메일 정보를 표현하도록 작성되었다.
@@ -1210,7 +1210,7 @@ Sideloaded Object를 지원하도록 해보려는 시도를 해보았다.
 
 {:.block-title}
 AccountsController
-{% highlight ruby %}
+```ruby
 class Api::V1::AccountsController < Api::ApiController
   def index
     account = h_from(@account)
@@ -1227,13 +1227,13 @@ class Api::V1::AccountsController < Api::ApiController
     }
   end
 end
-{% endhighlight %}
+```
 
 {:.block-title}
 JSON Builder
-{% highlight ruby %}
+```ruby
 json.extract! @data, :accounts, :servers
-{% endhighlight %}
+```
 
 위의 내용을 보면, 서버 Hash의 Array인 `@servers`를 돌면서 ID를 추출하고,
 그것을 `account` Hash에 추가하여 데이터 구조를 만들었다.
@@ -1242,7 +1242,7 @@ json.extract! @data, :accounts, :servers
 
 {:.block-title}
 JSON output
-{% highlight json %}
+```json
 {
    "accounts" : [
       {
@@ -1281,7 +1281,7 @@ JSON output
       }
    ]
 }
-{% endhighlight %}
+```
 
 구조적으로 문제가 없으며 정상적으로 해석 가능한 구조로 만들어졌다. 다만,
 문제는 여전히 Server Object 안에 Embedded된 Object들이 많이 있다는 점,
@@ -1294,7 +1294,7 @@ JSON output
 이 방식의 코드는 Repository를 뒤지면 나올 것 같은데, 미리 정리해둔 것이
 없어서 그나마 남아있는 Mockup Data에서 그 출력만 기록으로 남긴다.
 
-{% highlight json %}
+```json
 {
    "data" : [
       {
@@ -1360,7 +1360,7 @@ JSON output
       }
    ]
 }
-{% endhighlight %}
+```
 
 # 다음 이야기...
 

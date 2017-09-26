@@ -106,7 +106,7 @@ SoftLayer의 API는 Github를 통하여 소스를 공개하고 있어서, 원한
 일단 Fork가 되었다면 다음과 같이 내 개발 Laptop에 저장소의 작업사본을
 복제할 수 있다. 아래와 같이, 복제와 Bundle된 gem의 설치를 진행한다.
 
-```
+```console
 $ git clone https://sio4@github.com/c12g/softlayer-object-storage-ruby.git
 Cloning into 'softlayer-object-storage-ruby'...
 remote: Counting objects: 71, done.
@@ -150,7 +150,7 @@ RSpec은 Ruby 개발 과정에서 단위 테스트를 돕는 도구로, 정의�
 
 일단 돌려보자.
 
-```
+```console
 $ bundle exec rspec
 /home/sio4/git/team.c12g/softlayer-object-storage-ruby/spec/spec_helper.rb:6:in `require': cannot load such file -- /home/sio4/git/team.c12g/softlayer-object-storage-ruby/spec/sl-storage.creds.rb (LoadError)
 	from /home/sio4/git/team.c12g/softlayer-object-storage-ruby/spec/spec_helper.rb:6:in `<top (required)>'
@@ -190,7 +190,7 @@ CREDS = {
 
 다시 돌여보자.
 
-```
+```console
 $ bundle exec rspec
 ..FFFFFFF
 An error occurred in an `after(:context)` hook.
@@ -237,7 +237,7 @@ end
 RSpec만 만들었을 뿐, 아무런 코드 수정도 하지 않은 현재 상태에서 Test를
 진행하면, 아래와 같이 실패 메시지를 확인할 수 있다.
 
-```
+```console
 $ bundle exec rspec spec/tempurl_spec.rb 
 F
 
@@ -351,7 +351,7 @@ Accessor를 추가하였다.
 
 이제 다시 Test Case를 돌려보자.
 
-```
+```console
 $ bundle exec rspec spec/tempurl_spec.rb 
 .
 

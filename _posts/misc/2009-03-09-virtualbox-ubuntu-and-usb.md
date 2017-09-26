@@ -26,7 +26,7 @@ modified: 2010-07-02T23:00:54+09:00
 이젠 /proc/bus/usb를 더이상 쓰지 않는다는 뜻인가? 어쨌든 좀 재미있는
 것은,
 
-{% highlight console %}
+```console
 sio4@heavy:~$ ls -l /dev/bus/usb/*/*
 crw-rw-r-- 1 root vboxusers 189, 0 2009-03-08 02:16 /dev/bus/usb/001/001
 crw-rw-r-- 1 root vboxusers 189, 128 2009-03-08 02:16 /dev/bus/usb/002/001
@@ -38,7 +38,7 @@ crw-rw-r-- 1 root vboxusers 189, 640 2009-03-08 02:16 /dev/bus/usb/006/001
 crw-rw-r-- 1 root vboxusers 189, 641 2009-03-08 02:16 /dev/bus/usb/006/002
 crw-rw-r-- 1 root vboxusers 189, 768 2009-03-08 02:16 /dev/bus/usb/007/001
 sio4@heavy:~$
-{% endhighlight %}
+```
 
 이렇게 보이더라는 것.
 

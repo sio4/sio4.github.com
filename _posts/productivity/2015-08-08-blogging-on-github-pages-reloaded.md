@@ -122,7 +122,7 @@ Github Pages에서 아쉬운 것 중 하나가, 보통의 블로그에서는 보
 `bundler`를 사용하므로 아래와 같이 간단하게 업데이트를 할 수
 있다.
 
-{% highlight console %}
+```console
 $ bundle update
 <...>
 Installing minitest 5.8.0 (was 5.7.0)
@@ -138,7 +138,7 @@ Installing github-pages 39 (was 38)
 <...>
 Bundle updated!
 $ 
-{% endhighlight %}
+```
 
 새 버전이 적용된 것이 좀 있고, 완전히 새롭게 설치되는 `ethon`와
 `typhoeus`는 `libcurl` Wrapper라고 하니, 뭔가 다른 Website와 엮을

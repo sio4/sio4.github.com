@@ -15,10 +15,10 @@ Tool을 만들어둬야...
 암튼, 다음과 같은 방법으로 대충 바쁜 놈을 잡을 수는 있다. 그런데
 정량적으로 뽑기는 거의 불가능한 듯.
 
-{% highlight console %}
+```console
 # sysctl -w vm.block_dump=1; sleep 3; sysctl -w vm.block_dump=0
 # dmesg | more
-{% endhighlight %}
+```
 
 암튼, 좀 부끄러운...
 

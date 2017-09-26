@@ -42,7 +42,7 @@ SNMP는 인터넷 표준 Protocol로, Protocol을 따르는 다양한 Server/Cli
 
 Ubuntu Linux에서는 다음의 명령으로 간단하게 Net-SNMP를 설치할 수 있다.
 
-{% highlight console %}
+```console
 $ sudo apt-get install snmp
 Reading package lists... Done
 Building dependency tree       
@@ -56,16 +56,16 @@ The following NEW packages will be installed:
 0 upgraded, 5 newly installed, 0 to remove and 0 not upgraded.
 <...>
 $ 
-{% endhighlight %}
+```
 
 설치가 되었다면, 함께 제공되는 유틸리티 중 이 글에서 SNMP 동작확인을 위해
 앞으로 사용하게 될 `snmpwalk`를 한 번 돌려보자.
 
-{% highlight console %}
+```console
 $ snmpwalk --version
 NET-SNMP version: 5.7.2
 $ 
-{% endhighlight %}
+```
 
 Ubuntu 15.04 기준으로, 5.7.2 버전의 패키지가 정상적으로 설치된 것을 확인할
 수 있다.  만약, Redhat 계열의 OS를 사용한다면 `net-snmp-utils` 패키지를
@@ -89,7 +89,7 @@ Ubuntu 15.04 기준으로, 5.7.2 버전의 패키지가 정상적으로 설치�
 설정을 진행하기 위해서는 사전에 sshd를 활성화하여야 한다. 물론, Console
 앞에서 진행할 수도 있고.)
 
-{% highlight console %}
+```console
 # esxcli system snmp get
    Authentication: 
    Communities: 
@@ -108,15 +108,15 @@ Ubuntu 15.04 기준으로, 5.7.2 버전의 패키지가 정상적으로 설치�
    Users: 
    V3targets: 
 # 
-{% endhighlight %}
+```
 
 먼저, 앞으로 설정을 진행하다가 다시 초기화가 필요하다면 아래와 같은 명령으로
 모든 설정을 날려버릴 수 있다.
 
-{% highlight console %}
+```console
 # esxcli system snmp set -r
 #
-{% endhighlight %}
+```
 
 ### 기본 설정
 
@@ -126,17 +126,17 @@ Ubuntu 15.04 기준으로, 5.7.2 버전의 패키지가 정상적으로 설치�
 정보인 location, contact를 설정하여 나중에 장비에 대한 식별이나 관리에
 도움이 되게 할 수 있다.
 
-{% highlight console %}
+```console
 # esxcli system snmp set -c cotton
 # esxcli system snmp set -L "DDC-2R27U5"
 # esxcli system snmp set -C tester@example.com
 # esxcli system snmp set -e yes
 #
-{% endhighlight %}
+```
 
 이상의 설정을 한 후 그 결과를 보면 아래와 같다.
 
-{% highlight console %}
+```console
 # esxcli system snmp get
    Authentication: 
    Communities: cotton
@@ -155,7 +155,7 @@ Ubuntu 15.04 기준으로, 5.7.2 버전의 패키지가 정상적으로 설치�
    Users: 
    V3targets: 
 # 
-{% endhighlight %}
+```
 
 ### 동작시험 - SNMP v1
 
@@ -163,7 +163,7 @@ Ubuntu 15.04 기준으로, 5.7.2 버전의 패키지가 정상적으로 설치�
 동작 상태를 확인할 수 있다. (아! 여기서 사용하는 `snmpwalk` 명령은, SNMP의
 모든 정보를 단계적으로 쭉~ 긁어주는 명령이다.)
 
-{% highlight console %}
+```console
 $ snmpwalk -v1 -c cotton 192.168.17.228 |wc -l
 2473
 $ snmpwalk -v1 -c cotton 192.168.17.228 |head 
@@ -178,7 +178,7 @@ iso.3.6.1.2.1.1.8.0 = Timeticks: (0) 0:00:00.00
 iso.3.6.1.2.1.1.9.1.2.1 = OID: iso.3.6.1.6.3.1
 iso.3.6.1.2.1.1.9.1.2.2 = OID: iso.3.6.1.2.1.31
 $ 
-{% endhighlight %}
+```
 
 첫번째 명령의 결과를 통해, 총 2493개의 정보를 SNMP를 통하여 수집할 수 있음을
 알 수 있으며 그 다음 명령으로 대충 어떤 내용들이 수집 가능한지 확인할 수 있다.
@@ -192,11 +192,11 @@ $
 버전을 지정하는 명령으로, 아래와 같이 조금 더 많은 정보가 확인 가능하다는
 것을 확인할 수 있다.
 
-{% highlight console %}
+```console
 $ snmpwalk -v2c -c cotton 192.168.17.228 |wc -l
 2628
 $ 
-{% endhighlight %}
+```
 
 SNMP는 1, 2, 3의 세 버전이 있는데, 이상의 두 예에서는 버전 1과 2를 통해서
 정보 확인을 하였다. 버전 1과 2는 위와 같이 community 저정만을 통하여 별도의
@@ -217,7 +217,7 @@ ESXi 역시, 좀 더 강한 보안을 위해 SNMP v3를 지원하고 있으며, 
 아래와 같이 인증 방식과 인증을 적용한 사용자를 설정하여 버전 3 방식으로
 서비스를 할 수 있도록 설정할 수 있다.
 
-{% highlight console %}
+```console
 # esxcli system snmp set -E 000012290000830928
 # esxcli system snmp set -a SHA1 -x AES128
 # esxcli system snmp hash -r -A secret1234 -X secret5678
@@ -226,7 +226,7 @@ ESXi 역시, 좀 더 강한 보안을 위해 SNMP v3를 지원하고 있으며, 
 # esxcli system snmp set -u  man/ab984c188af22dbc9c7fce313235a5a9325c162b/562b
 dd9cd9f455dd6f5fc7e6f4a2a6219ccaa2c2/priv
 # 
-{% endhighlight %}
+```
 
 맨 위의 줄은 각 Host의 고유 Engineid를 부여하는 과정으로, 뒤를 이어 수행될
 암호 설정 과정에서 일종의 Seed로 사용되는 값이므로 꼭 Host 별로 설정을 해줄
@@ -240,7 +240,7 @@ Text 형태의 암호를 Hash 형태로 변환해주는 역할을 한다. (명�
 
 설정된 결과를 보자.
 
-{% highlight console %}
+```console
 # esxcli system snmp get
    Authentication: SHA1
    Communities: cotton
@@ -259,7 +259,7 @@ Text 형태의 암호를 Hash 형태로 변환해주는 역할을 한다. (명�
    Users: man/ab984c188af22dbc9c7fce313235a5a9325c162b/562bdd9cd9f455dd6f5fc7e6f4a2a6219ccaa2c2/priv
    V3targets: 
 # 
-{% endhighlight %}
+```
 
 ### 동작시험 - SNMP v3
 
@@ -268,7 +268,7 @@ Text 형태의 암호를 Hash 형태로 변환해주는 역할을 한다. (명�
 대신 `-u` 옵션을 통해 사용자명을 지정하고 동시에 `-a`, `-A`, `-x`, `-X`
 옵션을 사용하여 인증정보를 제공해야 한다.
 
-{% highlight console %}
+```console
 $ snmpwalk -v3 -u man -l AuthPriv -a SHA -A secret1234 -x AES -X secret5678 192.168.17.228 |head
 iso.3.6.1.2.1.1.1.0 = STRING: "VMware ESXi 5.5.0 build-2068190 VMware, Inc. x86_64"
 iso.3.6.1.2.1.1.2.0 = OID: iso.3.6.1.4.1.6876.4.1
@@ -281,7 +281,7 @@ iso.3.6.1.2.1.1.8.0 = Timeticks: (0) 0:00:00.00
 iso.3.6.1.2.1.1.9.1.2.1 = OID: iso.3.6.1.6.3.1
 iso.3.6.1.2.1.1.9.1.2.2 = OID: iso.3.6.1.2.1.31
 $ 
-{% endhighlight %}
+```
 
 위의 결과는 정상적으로 설정이 되고 적절한 인증정보로 접속을 한 경우이며,
 원하는 출력을 얻을 수 있다.
@@ -292,7 +292,7 @@ $
 경우이다. 마지막 예시는 사용자 설정에 맞는 적절한 보안수준 지정이 되지 않은
 경우에 발생하는 오류의 예이다.
 
-{% highlight console %}
+```console
 $ snmpwalk -v3 -u man -l AuthPriv -a SHA -A secret1234 -x AES -X secret5678 192.168.17.228
 snmpwalk: Unknown user name
 $ snmpwalk -v3 -u man -l AuthPriv -a SHA -A secret1234 -x AES -X secret5678 192.168.17.228
@@ -300,7 +300,7 @@ snmpwalk: Authentication failure (incorrect password, community or key)
 $ snmpwalk -v3 -u mon -l AuthPriv -a SHA -A secret1234 -x AES -X secret5678 192.168.17.228
 snmpwalk: Unsupported security level
 $ 
-{% endhighlight %}
+```
 
 
 
@@ -332,7 +332,7 @@ SNMP 데이터의 각 줄은 각각 하나의 **Managed Object**를 나타낸다
 Net-SNMP의 Debian 패키지는 매우 기본적인 수준의 MIB 정보만을 포함하고
 있으며, 추가 MIB는 다음과 같은 방식으로 따로 설치/확보해줘야 한다.
 
-{% highlight console %}
+```console
 $ sudo apt-get install snmp-mibs-downloader
 Reading package lists... Done
 Building dependency tree       
@@ -346,7 +346,7 @@ Need to get 5126 kB of archives.
 After this operation, 5941 kB of additional disk space will be used.
 <...>
 $ 
-{% endhighlight %}
+```
 
 위와 같이, `snmp-mibs-downloader` 패키지를 설치하게 되면,
 post install script에 의해 다양한 MIB들을 내려받아 시스템에 설치해주게 된다.
@@ -356,7 +356,7 @@ post install script에 의해 다양한 MIB들을 내려받아 시스템에 설�
 앗! 그런데 좀 오류가 있는 모양이다. `snmpwalk`가 MIB 데이터를 Parsing 하는
 과정에서 아래와 같은 오류가 떳다.
 
-{% highlight console %}
+```console
 $ snmpwalk -mALL -v3 -u man -l AuthPriv -a SHA -A secret1234 -x AES -X secret5678 192.168.17.228 >/dev/null
 Unlinked OID in IPATM-IPMC-MIB: marsMIB ::= { mib-2 57 }
 Undefined identifier: mib-2 near line 18 of /usr/share/mibs/ietf/IPATM-IPMC-MIB
@@ -367,26 +367,26 @@ Bad object identifier: At line 651 in /usr/share/mibs/iana/IANA-IPPM-METRICS-REG
 Bad parse of OBJECT-IDENTITY: At line 651 in /usr/share/mibs/iana/IANA-IPPM-METRICS-REGISTRY-MIB
 <...>
 $ 
-{% endhighlight %}
+```
 
 이 MIB Parsing은 SNMP 동작 그 자체가 아닌 보여주는 부분에 대한 것으로, 오류
 여부와는 관계없이 실행은 정상적으로 된다. 어떤 문법 오류가 있는 것인지 더
 확인하고 싶기도 하지만, 목적은 그것이 아니므로... 나는 그냥 문제의 MIB를
 지워버렸다.
 
-{% highlight console %}
+```console
 $ sudo rm /usr/share/mibs/iana/IANA-IPPM-METRICS-REGISTRY-MIB
 $ sudo rm /usr/share/mibs/ietf/IPATM-IPMC-MIB
 $ sudo rm /usr/share/mibs/ietf/SNMPv2-PDU
 $ 
-{% endhighlight %}
+```
 
 이제, 아래와 같이 깔끔한 출력을 확인할 수 있다. 앞서 얘기한 바와 같이,
 예를 들어, `iso.3.6.1.2.1.1.1.0`과 같이 숫자열로 표현되던 Object가 이제는
 사람이 읽을 수 있는 `SNMPv2-MIB::sysDescr.0` 형태로 바뀐 것을 확인할 수
 있다.
 
-{% highlight console %}
+```console
 $ snmpwalk -mALL -v3 -u man -l AuthPriv -a SHA -A secret1234 -x AES -X secret5678 192.168.17.228 |head
 SNMPv2-MIB::sysDescr.0 = STRING: VMware ESXi 5.5.0 build-2068190 VMware, Inc. x86_64
 SNMPv2-MIB::sysObjectID.0 = OID: SNMPv2-SMI::enterprises.6876.4.1
@@ -399,7 +399,7 @@ SNMPv2-MIB::sysORLastChange.0 = Timeticks: (0) 0:00:00.00
 SNMPv2-MIB::sysORID.1 = OID: SNMPv2-MIB::snmpMIB
 SNMPv2-MIB::sysORID.2 = OID: IF-MIB::ifMIB
 $ 
-{% endhighlight %}
+```
 
 ## ESXi는 어떤 정보를 얼마나 주는가?
 
@@ -414,13 +414,13 @@ $
 아래의 값들을 뒤지게 되며, OID가 주어졌을 경우에는 해당 OID의 하위값을
 가져오게 된다.)
 
-{% highlight console %}
+```console
 $ snmpwalk -mALL -v3 -u man -l AuthPriv -a SHA -A secret1234 -x AES -X secret5678 192.168.17.228 |wc  
    2612   11351  158777
 $ snmpwalk -mALL -v3 -u man -l AuthPriv -a SHA -A secret1234 -x AES -X secret5678 192.168.17.228 .|wc
    2911   12702  178109
 $ 
-{% endhighlight %}
+```
 
 OID를 Root(`.`)로 했을 때, 약 300개의 데이터를 더 가져왔음을 알 수 있다.
 뭐가 얼마나 다른 것일까? 다음 일련의 명령을 통하여 SNMP 버전 및 OID 지정에
@@ -457,7 +457,7 @@ OID를 Root(`.`)로 했을 때, 약 300개의 데이터를 더 가져왔음을 �
 (1, 2버전의 경우는 동일한 방식으로 확인이 가능하며, 그 수량은 위의 표에서
 확인 가능하므로 상세 명령은 생략한다.)
 
-{% highlight console %}
+```console
 $ snmpwalk -mALL -v3 -u man -l AuthPriv -a SHA -A secret1234 -x AES -X secret5678 192.168.17.228 |cut -d: -f1 |sort |uniq -c
       1 DISMAN-EXPRESSION-MIB
      26 ENTITY-MIB
@@ -470,14 +470,14 @@ $ snmpwalk -mALL -v3 -u man -l AuthPriv -a SHA -A secret1234 -x AES -X secret567
      80 TCP-MIB
      11 UDP-MIB
 $ 
-{% endhighlight %}
+```
 
 동일한 명령을 OID 인수를 줘서 수행한 경우, 2900 개 정도가 반환되어 약 300개의
 추가정보가 있음을 알 수 있는데, 뭔가 MIB 정보가 없는 데이터도 있고,
 `SNMPv2-SMI` 아래에 뭐가 잔뜩 들어간 것을 보면, 데이터의 의미가 잘 해석되지
 않았을 것 같다.
 
-{% highlight console %}
+```console
 $ snmpwalk -mALL -v3 -u man -l AuthPriv -a SHA -A secret1234 -x AES -X secret5678 192.168.17.228 . |cut -d: -f1 |sort |uniq -c
       1 DISMAN-EXPRESSION-MIB
      26 ENTITY-MIB
@@ -515,13 +515,13 @@ $ snmpwalk -mALL -v3 -u man -l AuthPriv -a SHA -A secret1234 -x AES -X secret567
       1 iso.2.840.10006.300.43.1.1.2.1.1.14 = Hex-STRING
       1 iso.2.840.10006.300.43.1.3.0 = Timeticks
 $ 
-{% endhighlight %}
+```
 
 모자란 MIB 정보 확인을 위해 별도로 VMware사에서 제공하는 MIB를 설치한 후,
 다시 내용을 확인해보면 아래와 같다.  결과를 보면, IEEE8021, IEEE8023 관련
 내용과 VMWARE로 시작하는 MIB에 해당하는 정보가 늘었음을 볼 수 있다.
 
-{% highlight console %}
+```console
 $ snmpwalk -M+`pwd`/vmware-mibs -mALL -v3 -u man -l AuthPriv -a SHA -A secret1234 -x AES -X secret5678 192.168.17.228 .|cut -d: -f1 |sort |uniq -c
       1 DISMAN-EXPRESSION-MIB
      26 ENTITY-MIB
@@ -540,7 +540,7 @@ $ snmpwalk -M+`pwd`/vmware-mibs -mALL -v3 -u man -l AuthPriv -a SHA -A secret123
      47 VMWARE-RESOURCES-MIB
       5 VMWARE-SYSTEM-MIB
 $ 
-{% endhighlight %}
+```
 
 전체 출력은 첨부의 파일을 참고.
 ([20151230-snmp-output.txt](/attachments/20151230-snmp-output.txt))
@@ -551,7 +551,7 @@ $
 순서에 의해 다른 범주로 분리된 것을 확인할 수 있다. (상세 내용은 위의 표를
 참고하는 편이 편하다.)
 
-{% highlight console %}
+```console
 $ snmpwalk -M -`pwd`/vmware-mibs -mALL -mALL -v3 -u man -l AuthPriv -a SHA -A secret1234 -x AES -X secret5678 192.168.17.228 . |cut -d: -f1 |sort |uniq -c
       1 DISMAN-EXPRESSION-MIB
      26 ENTITY-MIB
@@ -571,12 +571,12 @@ $ snmpwalk -M -`pwd`/vmware-mibs -mALL -mALL -v3 -u man -l AuthPriv -a SHA -A se
      47 VMWARE-RESOURCES-MIB
       5 VMWARE-SYSTEM-MIB
 $ 
-{% endhighlight %}
+```
 
 해석의 차이는 IP, TCP, UDP 관련 일부 항목을 RFC1213-MIB 범주에서 처리하는지
 또는 IP-MIB, TCP-MIB, UDP-MIB 범주에 넣는지 정도로, 그 차이는 아래와 같다.
 
-{% highlight diff %}
+```diff
 --- snmp-1	2015-12-30 12:01:14.138208211 +0900
 +++ snmp-2	2015-12-30 12:01:28.674337763 +0900
 @@ -31,10 +31,10 @@
@@ -708,7 +708,7 @@ $
  ENTITY-MIB::entLogicalType.3 = OID: SNMPv2-SMI::mib-2
  ENTITY-MIB::entLogicalTAddress.1 = STRING: "192.168.17.230"
  ENTITY-MIB::entLogicalTDomain.1 = OID: TRANSPORT-ADDRESS-MIB::transportDomainUdpIpv4
-{% endhighlight %}
+```
 
 
 ### VMware 관련 MIB/OID 상세
@@ -720,7 +720,7 @@ $
 정보가 들어가 있다. 확인해보지 않았는데, 아마도 vSwitch와 관련된 값들이
 추가된 것을 보인다.
 
-{% highlight console %}
+```console
 $ snmpwalk -M -`pwd`/vmware-mibs -mALL -mALL -v3 -u man -l AuthPriv -a SHA -A secret1234 -x AES -X secret5678 192.168.17.228 . |grep ^IEEE8021-BRIDGE-MIB
 IEEE8021-BRIDGE-MIB::ieee8021BridgeBaseBridgeAddress.1 = STRING: 40:a8:f0:20:e2:fe
 IEEE8021-BRIDGE-MIB::ieee8021BridgeBaseBridgeAddress.2 = STRING: 40:a8:f0:20:e2:fd
@@ -731,11 +731,11 @@ IEEE8021-BRIDGE-MIB::ieee8021BridgeBaseComponentType.2 = INTEGER: cVlanComponent
 IEEE8021-BRIDGE-MIB::ieee8021BridgeBaseDeviceCapabilities.1 = BITS: 01 dot1dLocalVlanCapable(7) 
 IEEE8021-BRIDGE-MIB::ieee8021BridgeBaseDeviceCapabilities.2 = BITS: 01 dot1dLocalVlanCapable(7) 
 <...>
-{% endhighlight %}
+```
 
 다음은 `VMWARE-ENV-MIB` 관련 내용인데, 아래와 같은 내용들이 들어있다.
 
-{% highlight console %}
+```console
 $ snmpwalk -M -`pwd`/vmware-mibs -mALL -mALL -v3 -u man -l AuthPriv -a SHA -A secret1234 -x AES -X secret5678 192.168.17.228 . |grep VMWARE-ENV-MIB
 SNMPv2-MIB::sysORID.17 = OID: VMWARE-ENV-MIB::vmwEnv
 SNMPv2-MIB::sysORDescr.17 = STRING: VMWARE-ENV-MIB, REVISION 201005120000Z
@@ -754,13 +754,13 @@ VMWARE-ENV-MIB::vmwEnvGetClassErrs.0 = Counter32: 0
 VMWARE-ENV-MIB::vmwEnvPropertySkips.0 = Counter32: 754
 VMWARE-ENV-MIB::vmwEnvIndicationSkips.0 = Counter32: 0
 $ 
-{% endhighlight %}
+```
 
 역시 VMware사의 부가 정보인 `VMWARE-RESOURCES-MIB`를 보면 아래와 같다.
 OID 이름으로 보아 얼추 짐작할 수 있는 내용인데, CPU, Memory 등에 대한
 리소스 사용정보와 스토리지 관련 Device 정보를 담고 있다.
 
-{% highlight console %}
+```console
 $ snmpwalk -M -`pwd`/vmware-mibs -mALL -mALL -v3 -u man -l AuthPriv -a SHA -A secret1234 -x AES -X secret5678 192.168.17.228 . |grep ^VMWARE-RESOURCES-MIB
 VMWARE-RESOURCES-MIB::vmwNumCPUs.0 = Gauge32: 2
 VMWARE-RESOURCES-MIB::vmwMemSize.0 = Gauge32: 201290964 kilobytes
@@ -810,12 +810,12 @@ VMWARE-RESOURCES-MIB::vmwHbaPci.5 = STRING: 0:36:0.0
 VMWARE-RESOURCES-MIB::vmwHbaPci.6 = STRING: 0:36:0.1
 VMWARE-RESOURCES-MIB::vmwHbaPci.7 = STRING: 0:0:31.2
 $ 
-{% endhighlight %}
+```
 
 마지막으로, `VMWARE-SYSTEM-MIB`를 보니, 아래와 같이 버전 등과 관련된
 정보를 담고 있음을 볼 수 있다.
 
-{% highlight console %}
+```console
 $ snmpwalk -M -`pwd`/vmware-mibs -mALL -mALL -v3 -u man -l AuthPriv -a SHA -A secret1234 -x AES -X secret5678 192.168.17.228 . |grep ^VMWARE-SYSTEM-MIB
 VMWARE-SYSTEM-MIB::vmwProdName.0 = STRING: VMware ESXi
 VMWARE-SYSTEM-MIB::vmwProdVersion.0 = STRING: 5.5.0
@@ -823,7 +823,7 @@ VMWARE-SYSTEM-MIB::vmwProdBuild.0 = STRING: 2068190
 VMWARE-SYSTEM-MIB::vmwProdUpdate.0 = STRING: 2
 VMWARE-SYSTEM-MIB::vmwProdPatch.0 = STRING: 33
 $ 
-{% endhighlight %}
+```
 
 이상으로, vSphere ESXi의 SNMP 기능을 활성화하는 방법과 그것을 시험하는
 과정에 대한 정리를 마친다. 언제 기회가 되면,
@@ -844,7 +844,7 @@ $
 최신 버전을 찾을 수 있으므로 Link는 생략한다.)
 Zip 형태로 배포되는 파일을 풀었을 때, 아래와 같은 내용을 담고 있다.
 
-{% highlight console %}
+```console
 $ ls vmware-mibs/
 BRIDGE-MIB.mib                       SNMPv2-CONF.mib
 ENTITY-MIB.mib                       SNMPv2-MIB.mib
@@ -871,13 +871,13 @@ RMON2-MIB.mib                        list-ids-diagnostics.txt
 SNMP-FRAMEWORK-MIB.mib               notifications.txt
 SNMP-MPD-MIB.mib
 $ 
-{% endhighlight %}
+```
 
 ### ESXi의 SNMP 설정 전체 옵션
 
 `esxcli system snmp set` 명령의 전체 옵션은 아래와 같다.
 
-{% highlight console %}
+```console
 # esxcli system snmp set --help
 Usage: esxcli system snmp set [cmd options]
 
@@ -947,5 +947,5 @@ Cmd options:
                         is: ip-or-hostname[@port]/remote-user/security-
                         level/trap|inform[,...].
 # 
-{% endhighlight %}
+```
 

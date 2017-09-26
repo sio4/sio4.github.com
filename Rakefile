@@ -52,7 +52,7 @@ task :serve, [:env] => [:tags, :categories, :post_refs] do |t, args|
   else
     env='development'
   end
-  `rm -rf _site`
+  sh "JEKYLL_ENV=#{env} bundle exec jekyll clean"
   sh "JEKYLL_ENV=#{env} bundle exec jekyll serve --watch"
 end
 
@@ -82,7 +82,8 @@ task :tags do
   site.read
 
   ## clear existing files
-  `rm -rf tags; mkdir tags`
+  `mkdir -p tags`
+  `for f in tags/*; do [ "$f" != "tags/index.html" ] && rm $f; done`
   `mkdir -p _includes`
 
   ## prefix for tags cloud
@@ -156,9 +157,10 @@ HTML
 		</div>
   CLOUD
 
-  File.open('_includes/tags.html', 'w+') do |file|
-    file.puts cloud
-  end
+  ### DISABLED
+  #File.open('_includes/tags.html', 'w+') do |file|
+  #  file.puts cloud
+  #end
     
   puts 'Done.'
 end
@@ -169,7 +171,8 @@ task :categories do
   puts "Generating categories..."
   site.read
 
-  `rm -rf categories; mkdir categories`
+  `mkdir -p categories`
+  `for f in categories/*; do [ "$f" != "categories/index.html" ] && rm $f; done`
   `mkdir -p _includes`
 
   site.data['categories'].each do |cat|

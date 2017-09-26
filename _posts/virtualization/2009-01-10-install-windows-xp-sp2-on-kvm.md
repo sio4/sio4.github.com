@@ -37,7 +37,7 @@ kvm으로... 그러냐고? kvm이니까.
   
 먼저, 지난번에 작성해둔 `genxml.sh` 이라는 스크립트를 다시 사용하였다.  
   
-{% highlight console %}
+```console
 sio4@jangseung:/box/vms$ ./genxml.sh  
 name of vm: xpsp2  
 size of ram: 512  
@@ -50,7 +50,7 @@ Formatting '/box/vms/xpsp2/xpsp2-tmp.qcow2', fmt=qcow2, size=2097152 kB
 disk size of opt: 5  
 Formatting '/box/vms/xpsp2/xpsp2-opt.qcow2', fmt=qcow2, size=5242880 kB  
 sio4@jangseung:/box/vms$
-{% endhighlight %}
+```
   
 리눅스 서버를 염두에 둔 스크립트여서 sys, tmp, opt 의 세 영역을 만들고
 있다. (여기서 sys는 시스템 영역으로 혹시 가상머신을 복재하게 될 경우

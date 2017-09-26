@@ -122,7 +122,7 @@ Server->PXE Master:  3) 써 예써! 그럼 pxelinux 파일 주세요
 PXE Master->Server: 4) 받아랏!!!
 Server->>Server: 5) 메모리 적제, 제어 전환
 ```
-{:.diagram.tac}
+{:.diagram.tac.fit}
 
 먼저, PXE로 부팅하려는 Server은 아직 IP 주소도 가지고 있지 않고, 부팅을
 도와줄 Master가 근처에 있는지 조차 알지 못한다. 그래서 맨 첫 단계는 그저
@@ -199,7 +199,7 @@ PXE 마스터는 Broadcast된 연락을 받고, 상대방에게 앞으로 사용
 설치인데 Ubuntu에서는 `isc-dhcp-server` 라는 이름의 패키지를 사용할 수
 있다. (Internet Software Consortium에서 제공하는 서버이다.)
 
-{% highlight console %}
+```console
 $ sudo apt-get install isc-dhcp-server
 <...>
 다음 새 패키지를 설치할 것입니다:
@@ -208,12 +208,12 @@ $ sudo apt-get install isc-dhcp-server
 363 k바이트 아카이브를 받아야 합니다.
 <...>
 $ 
-{% endhighlight %}
+```
 
 다음에 설치할 패키지는 TFTP 서비스를 제공할 녀석으로 이건 BSD의 TFTP를
 개선한 `tftpd-hpa` 버전을 설치한다.
 
-{% highlight console %}
+```console
 $ sudo apt-get install tftpd-hpa
 <...>
 다음 새 패키지를 설치할 것입니다:
@@ -223,7 +223,7 @@ $ sudo apt-get install tftpd-hpa
 이 작업 후 146 k바이트의 디스크 공간을 더 사용하게 됩니다.
 <...>
 $ 
-{% endhighlight %}
+```
 
 마지막 패키지는 대상 서버에게 제공할 Booting Image를 담은 `pxelinux`
 라는 이름의 패키지인데, 만약 실제로 꾸미려는 환경이 Diskless 네트워크
@@ -233,7 +233,7 @@ $
 (나의 목적은 단순히 PXE 부팅의 시험이므로 이 패키지가 제공하는 Image를
 그냥 쓸 것이다.)
 
-{% highlight console %}
+```console
 $ sudo apt-get install pxelinux
 <...>
 다음 새 패키지를 설치할 것입니다:
@@ -243,7 +243,7 @@ $ sudo apt-get install pxelinux
 이 작업 후 3,925 k바이트의 디스크 공간을 더 사용하게 됩니다.
 <...>
 $
-{% endhighlight %}
+```
 
 이제 필요한 패키지의 설치를 마쳤다.
 
@@ -260,7 +260,7 @@ $
 아래와 같이, 이미 존재하는 (주석 처리된 예제 등을 담고 있는) 설정파일
 뒤에 내 용도에 맞는 `subnet` 설정을 추가하는 방식을 사용했다.
 
-{% highlight console %}
+```console
 $ cat |sudo tee -a /etc/dhcp/dhcpd.conf <<EOF
 > 
 > subnet 192.168.14.0 netmask 255.255.255.0 {
@@ -269,7 +269,7 @@ $ cat |sudo tee -a /etc/dhcp/dhcpd.conf <<EOF
 > }
 > EOF
 $
-{% endhighlight %}
+```
 
 설정의 내용을 읽어보면,
 
@@ -286,10 +286,10 @@ $
 `/etc/default/isc-dhcp-server` 파일에 담겨 있다. 아래의 명령을 통하여,
 이 서비스가 Listen할 Port를 변경해준다.
 
-{% highlight console %}
+```console
 $ sudo sed -i 's/^INTERFACES=.*/INTERFACES="p2p2"/' /etc/default/isc-dhcp-server
 $ sudo service isc-dhcp-server restart
-{% endhighlight %}
+```
 
 참고로, 설치 후 기본 설정은 `INTERFACES` 값이 비어있으며, 결과적으로
 서비스가 비활성 상태로 남아있게 된다. (대부분의 다른 서비스와는 달리,
@@ -308,9 +308,9 @@ TFTP의 설정 역시, DHCP 설정과 동일하게 서비스 내용 설정과 �
 **미리 설치해둔 `pxelinux` 패키지에서 제공하는 파일을 TFTP의 서비스
 Root인 `/var/lib/tftpboot/`에 복사**하는 것으로 이 단계를 대신한다.
 
-{% highlight console %}
+```console
 $ sudo cp /usr/lib/PXELINUX/pxelinux.0 /var/lib/tftpboot/
-{% endhighlight %}
+```
 
 다음은 서비스 구성을 위한 설정인데, Ubuntu `tftpd-hpa` 패키지의 기본
 설정은 TFTP 서비스를 제공하는 주소를 기본적으로 `[::]:69`로 설정해둔
@@ -319,24 +319,24 @@ $ sudo cp /usr/lib/PXELINUX/pxelinux.0 /var/lib/tftpboot/
 파일이다.)
 
 변경 전의 서비스 상태
-{% highlight console %}
+```console
 $ netstat -utnl |grep :69
 udp6       0      0 :::69                   :::*
 $ 
-{% endhighlight %}
+```
 
 제공 주소의 변경(Binding Address 지정)
-{% highlight console %}
+```console
 $ sudo sed -i 's/^TFTP_ADDRESS=.*/TFTP_ADDRESS="192.168.14.200:69"/' /etc/default/tftpd-hpa
 $ sudo service tftpd-hpa restart
-{% endhighlight %}
+```
 
 변경 후의 서비스 상태
-{% highlight console %}
+```console
 $ netstat -utnl |grep :69
 udp        0      0 192.168.14.200:69       0.0.0.0:*
 $ 
-{% endhighlight %}
+```
 
 전통적으로, FTP나 TFTP는 `inetd`(수퍼데몬)을 통하여 실행되므로 과거에는
 이를 위한 추가 설정이 필요했었지만, 요즘은 이런 저런 이유(아마도 복잡성
@@ -354,13 +354,13 @@ $
 있으며, 아래와 같이 `Connected`, `getting`, `Received`가 나온다면
 정상적으로 동작하는 것이다.
 
-{% highlight console %}
+```console
 $ tftp 192.168.14.200 -v -c get pxelinux.0 && rm pxelinux.0 
 Connected to 192.168.14.200 (192.168.14.200), port 69
 getting from 192.168.14.200:pxelinux.0 to pxelinux.0 [netascii]
 Received 43574 bytes in 0.0 seconds [9202548 bit/s]
 $ 
-{% endhighlight %}
+```
 
 
 

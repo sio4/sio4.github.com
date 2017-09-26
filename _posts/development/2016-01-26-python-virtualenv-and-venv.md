@@ -58,7 +58,7 @@ Python 2.x 버전 시절에는 `virtualenv`라는 이름의 3rd-Party 패키지�
 이용하여 독립실행환경을 구성할 수 있다. 이 패키지는 PIP를 이용하여
 설치할 수 있으며, 그 과정은 아래와 같다.
 
-{% highlight console %}
+```console
 $ sudo apt-get install python3-pip
 Reading package lists... Done
 Building dependency tree       
@@ -74,7 +74,7 @@ Need to get 23.7 MB of archives.
 After this operation, 40.0 MB of additional disk space will be used.
 <...>
 $ 
-{% endhighlight %}
+```
 
 Ubuntu 리눅스에서는 위의 방식으로 이미 패키지 형태로 제공되는 Python 3용
 PIP를 설치할 수 있다. 그리고 `python3-virtualenv`라는 이름으로 `virtualenv`
@@ -86,7 +86,7 @@ Global 설치가 아닌 User Local 설치를 하는 것을 원칙으로 하고 �
 
 그래서, `virtualenv`는 PIP로 설치하는 것으로 해보았다.
 
-{% highlight console %}
+```console
 $ pip3 install virtualenv
 Downloading/unpacking virtualenv
   Downloading virtualenv-14.0.0-py2.py3-none-any.whl (1.8MB): 1.8MB downloaded
@@ -94,12 +94,12 @@ Installing collected packages: virtualenv
 Successfully installed virtualenv
 Cleaning up...
 $ 
-{% endhighlight %}
+```
 
 위와 같은 방식으로 `virtualenv`를 설치하고 나면, 사용자의 `$HOME` 아래에
 다음과 같은 내용이 설치된다.
 
-{% highlight console %}
+```console
 $ tree .local/
 .local/
 ├── bin
@@ -130,7 +130,7 @@ $ tree .local/
 └── share
 <...>
 $ 
-{% endhighlight %}
+```
 
 일반적인 UNIX FSHS의 틀이 `/usr` 또는 `/usr/local` 등의 위치가 아닌
 `$HOME/.local`에 있는, 사용자 Local 구조 안에, Python Site Package가
@@ -155,7 +155,7 @@ Ubuntu 리눅스와 이의 기반이 되는 Debian 리눅스는 각각의 사용
 
 아래의 명령을 이용하여 이 `python3-venv` 패키지를 설치할 수 있다.
 
-{% highlight console %}
+```console
 $ sudo apt-get install python3-venv
 Reading package lists... Done
 Building dependency tree
@@ -173,7 +173,7 @@ Need to get 1,078 kB of archives.
 After this operation, 1,511 kB of additional disk space will be used.
 <...>
 $ 
-{% endhighlight %}
+```
 
 
 
@@ -191,7 +191,7 @@ $
 Python 3의 공식 지원방식인 `pyvenv`는 다음과 같은 방식으로 환경구성을
 하게 된다.
 
-{% highlight console %}
+```console
 $ pyvenv pyvenv
 $ 
 $ du -sh pyvenv
@@ -212,7 +212,7 @@ lrwxrwxrwx 1 sio4 sio4    9 Jan 22 23:23 python -> python3.4
 lrwxrwxrwx 1 sio4 sio4    9 Jan 22 23:23 python3 -> python3.4
 lrwxrwxrwx 1 sio4 sio4   18 Jan 22 23:23 python3.4 -> /usr/bin/python3.4
 $ 
-{% endhighlight %}
+```
 
 맨 처음 명령어는 환경을 구성하는 명령이다. `pyvenv` 라는 명령어를 쓰고
 있는데, `python3 -m venv` 같은 방식으로도 사용할 수 있다. (손가락이
@@ -230,7 +230,7 @@ $
 
 다음은, `virtualenv`를 사용하여 가상환경을 구성하는 예시이다.
 
-{% highlight console %}
+```console
 $ virtualenv -p python3 venv
 Already using interpreter /usr/bin/python3
 Using base prefix '/usr'
@@ -259,7 +259,7 @@ lrwxrwxrwx 1 sio4 sio4       7 Jan 22 23:21 python -> python3
 lrwxrwxrwx 1 sio4 sio4       7 Jan 22 23:21 python3.4 -> python3
 -rwxrwxr-x 1 sio4 sio4     245 Jan 22 23:21 wheel
 $ 
-{% endhighlight %}
+```
 
 먼저, `virtualenv` 명령에게 `-p` 옵션으로 Interpreter를 지정해 주었더니
 "이미 그거 쓸건데?"라는 메시지를 추가로 내뱉고 있으며, 그 외에도 뭔가
@@ -276,7 +276,7 @@ $
 관리하는 유틸리티이며, 앞서 주목했던 `virtualenv_support` 아래에
 함께 설치된 wheel 들의 내용과 일치한다.
 
-{% highlight console %}
+```console
 $ pyvenv/bin/pip list
 pip (1.5.6)
 setuptools (12.2)
@@ -290,7 +290,7 @@ pip 1.5.6 from /home/sio4/tmp/pyvenv/lib/python3.4/site-packages (python 3.4)
 $ venv/bin/pip -V
 pip 8.0.0 from /home/sio4/tmp/venv/lib/python3.4/site-packages (python 3.4)
 $ 
-{% endhighlight %}
+```
 
 위와 같이, 두 방식으로 구성한 가상환경에는 `pip`, `setuptools` 등의
 패키지가 설치된 것을 확인할 수 있다.  두 방식 사이의 차이는 `pyvenv`에
@@ -317,7 +317,7 @@ $
 실제로 동작하는 예를 보면 아래와 같다.
 아래와 같다.
 
-{% highlight console %}
+```console
 $ pip -V
 pip 1.5.6 from /usr/lib/python2.7/dist-packages (python 2.7)
 $ source pyvenv/bin/activate
@@ -329,7 +329,7 @@ $ source venv/bin/activate
 pip 8.0.0 from /home/sio4/tmp/venv/lib/python3.4/site-packages (python 3.4)
 (venv) $ deactivate 
 $ 
-{% endhighlight %}
+```
 
 위의 내용은, 동일한 `pip -V` 명령을 환경을 바꿔가며 내린 결과이다.
 맨 처음의 경우는 시스템에 설치된 pip가 반응을 하고 있고, `pyvenv`를

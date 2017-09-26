@@ -181,7 +181,7 @@ Thumbnail도 만들어져 있는 것을 볼 수 있다. (물론, 이 과정은 �
 있다. 다음과 같은 Package 들을 설치하면 구동을 위한 기본 환경이
 만들어진다.
 
-```
+```console
 $ sudo apt-get install git git-man liberror-perl
 $ sudo apt-get install ruby bundler
 $ sudo apt-get install zlib1g-dev libsqlite3-dev
@@ -191,7 +191,7 @@ $ sudo apt-get install nodejs
 마지막으로, 이 Application이 Thumbnail을 만들어낼 때 사용하는 도구인
 ImageMagick를 설치해줘야 한다.
 
-```
+```console
 $ sudo apt-get install imagemagick
 ```
 
@@ -202,7 +202,7 @@ $ sudo apt-get install imagemagick
 `config/application.yml` 파일에 해주어야 정상적으로 동작하게 된다.
 (예시 파일을 복사하여 원하는 부분을 수정해주면 된다.)
 
-```
+```console
 $ git clone https://github.com/hardenedlayer/caos.git
 $ cd caos
 $ bundle install --path vendor/bundle
@@ -214,14 +214,14 @@ $
 이제, DBMS 초기화 및 Asset 환경을 만들 차례이다. Production 환경으로
 가정하였을 때, 아래와 같은 명령을 내려주면 된다.
 
-```
+```console
 $ RAILS_ENV=production bin/rake db:migrate
 $ RAILS_ENV=production bin/rake assets:precompile
 ```
 
 그리고 Puma 서버를 띄우면 끝!
 
-```
+```console
 $ bundle exec puma -e production
 Puma starting in single mode...
 * Version 3.2.0 (ruby 2.3.0-p0), codename: Spring Is A Heliocentric Viewpoint
@@ -233,7 +233,7 @@ Use Ctrl-C to stop
 
 Unix Socket을 사용하려면 아래와 같이 추가 옵션을 주면 된다.
 
-```
+```console
 $ bundle exec puma -e production -b unix:///tmp/puma.caos.sock
 Puma starting in single mode...
 * Version 3.2.0 (ruby 2.3.0-p0), codename: Spring Is A Heliocentric Viewpoint

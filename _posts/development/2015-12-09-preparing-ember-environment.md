@@ -119,9 +119,9 @@ Ember-CLI의 설치는 다음과 같은 순서로 진행된다.
 
 먼저, 다음과 같은 명령으로 기본적인 Build가 가능한 환경을 구성해준다.
 
-{% highlight console %}
+```console
 $ sudo apt-get install build-essential libssl-dev
-{% endhighlight %}
+```
 
 
 ### nvm의 설치
@@ -131,7 +131,7 @@ nvm은 github repository를 통하여 설치스크립트를 내려받아 실행�
 
 다음과 같은 명령으로, 최신 버전의 nvm을 설치해준다.
 
-{% highlight console %}
+```console
 $ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.29.0/install.sh | bash
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
@@ -150,14 +150,14 @@ Checking connectivity... done.
 => Appending source string to /home/sio4/.bashrc
 => Close and reopen your terminal to start using nvm
 $ 
-{% endhighlight %}
+```
 
 위와 같이, `curl` 명령으로 내려받은 스크립트를 실행시키면, 실행시킨 사용자
 **Home아래의 `.nvm` 경로에 repository cloning**이 이루어진다.
 
 설치된 내용을 확인해보면 다음과 같다.
 
-{% highlight console %}
+```console
 $ nvm --version
 0.29.0
 $ du -sh .nvm
@@ -171,7 +171,7 @@ $ nvm ls-remote node|tail -5
          v5.1.0
          v5.1.1
 $ 
-{% endhighlight %}
+```
 
 맨 처음의 `--version` 옵션으로 설치된 `nvm` 명령의 버전확인이 가능하다.
 두 번째 명령으로 확인한 바와 같이, 이 패키지가 시스템에 차지하는
@@ -182,10 +182,10 @@ footprint는 약 2MB 정도이다.
 추가로, 위의 설치과정의 맨 끝을 보면, `.bashrc`에 뭔가 추가했다는 내용이
 나온다. 그 내용은 아래와 같으며, `nvm` 환경 초기화를 위한 구문이다.
 
-{% highlight bash %}
+```bash
 export NVM_DIR="/home/sio4/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-{% endhighlight %}
+```
 
 
 ### `node.js`의 설치
@@ -193,7 +193,7 @@ export NVM_DIR="/home/sio4/.nvm"
 이제 `node.js`를 설치할 차례이다. 다음과 같이, 원하는 버전을 인수로 주고
 `install` 부명령을 사용하게 되면 해당 버전의 `node.js`를 설치할 수 있다.
 
-{% highlight console %}
+```console
 $ nvm install v4.0.0
 Downloading https://nodejs.org/dist/v4.0.0/node-v4.0.0-linux-x64.tar.xz...
 ######################################################################## 100.0%
@@ -208,7 +208,7 @@ node -> stable (-> v4.0.0) (default)
 stable -> 4.0 (-> v4.0.0) (default)
 iojs -> N/A (default)
 $ 
-{% endhighlight %}
+```
 
 설치 과정은 위와 같이, **바이너리 버전을 공식 사이트로부터 내려받아서
 풀어주는** 행태로 진행된다.
@@ -220,7 +220,7 @@ $
 
 이제 실제의 명령을 실행해서 적용된 버전을 확인해보자.
 
-{% highlight console %}
+```console
 $ node --version
 v4.0.0
 $ npm --version
@@ -230,7 +230,7 @@ $ which node
 $ which npm
 /home/sio4/.nvm/versions/node/v4.0.0/bin/npm
 $ 
-{% endhighlight %}
+```
 
 이렇게, `node` 명령을 실행했을 때, 원했던 바와 같이 4.0 버전이 실행되는 것을
 볼 수 있고, `npm` 역시 같이 사용 가능한 상태로 있음을 볼 수 있다. 또한,
@@ -243,7 +243,7 @@ $
 수행하여 패키지를 설치하게 되면, **현재경로 아래**에 `node_modules` 라는
 이름의 경로가 생성되고 이 안에 `ember-cli`가 설치된다.
 
-{% highlight console %}
+```console
 $ npm install ember-cli
 npm WARN deprecated lodash-node@2.4.1: This package is no longer maintained. See its readme for upgrade details.
 npm WARN deprecated lodash@2.4.2: lodash@<3.0.0 is no longer maintained. Upgrade to lodash@^3.0.0
@@ -257,17 +257,17 @@ ember-cli@1.13.13 node_modules/ember-cli
 ├── ember-cli-get-dependency-depth@1.0.0
 <...>
 $ 
-{% endhighlight %}
+```
 
 설치 후, 디스크 사용량을 보면 아래와 같다.
 
-{% highlight console %}
+```console
 $ du -sh ~/.nvm ~/.npm node_modules
 43M	/home/sio4/.nvm
 42M	/home/sio4/.npm
 143M	node_modules
 $ 
-{% endhighlight %}
+```
 
 위에서 보는 바와 같이, `~/.nvm`에는 `nvm` 자체와 내려받은 버전의 `node.js`가
 차지하는 용량 만큼이 사용되며, `~/.npm`은 `npm`에 의해 내려받아진 패키지가
@@ -288,7 +288,7 @@ $
 특정 버전) 전역에서 사용 가능하도록 설치를 할 수 있게 된다. (output이
 길지만 기록을 위해...)
 
-{% highlight console %}
+```console
 $ npm -g install ember-cli
 npm WARN deprecated lodash-node@2.4.1: This package is no longer maintained. See its readme for upgrade details.
 npm WARN deprecated lodash-node@3.10.1: This package is no longer maintained. See its readme for upgrade details.
@@ -371,13 +371,13 @@ ember-cli@1.13.13 /home/sio4/.nvm/versions/node/v4.0.0/lib/node_modules/ember-cl
 ├── npm@2.14.10
 └── bower@1.7.0
 $ 
-{% endhighlight %}
+```
 
 설치가 끝면 `list` 명령으로 원하는 패키지가 의존성 관계에 있는 다른 패키지와
 함께 설치된 계층 구조를 확인할 수 있다.  눈여겨 볼 부분은, 설치 위치가 현재
 구동 중인 Node.js 버전 아래인 `~/.nvm/versions/node/v4.0.0/lib` 라는 점이다.
 
-{% highlight console %}
+```console
 $ npm -g list
 /home/sio4/.nvm/versions/node/v4.0.0/lib
 ├─┬ ember-cli@1.13.13
@@ -388,22 +388,22 @@ $ npm -g list
 │ │ ├─┬ bower-config@1.3.0
 <...>
 $ 
-{% endhighlight %}
+```
 
 각 경로 별 사용량은 아래와 같다. (현재경로에 설치되는 것은 없다.)
 
-{% highlight console %}
+```console
 $ du -sh ~/.nvm ~/.npm 
 185M	/home/sio4/.nvm
 42M	/home/sio4/.npm
 $ 
-{% endhighlight %}
+```
 
 또하나 확인할 부분은, 설치 중 출력의 맨 윗부분에 있는 다음 줄이다.
 
-{% highlight console %}
+```console
 /home/sio4/.nvm/versions/node/v4.0.0/bin/ember -> /home/sio4/.nvm/versions/node/v4.0.0/lib/node_modules/ember-cli/bin/ember
-{% endhighlight %}
+```
 
 이 줄이 설명하고 있는 내용은, `ember-cli` 패키지에서 제공하는 `ember`라는
 명령어가 Node.js 버전의 `bin` 안으로 Link되었다는 점이다. 이 과정을 통해서
@@ -417,7 +417,7 @@ $
 앞서 얘기했듯이, Ember-CLI의 사용 방식과 개발 흐름은 RoR의 그것과 유사하다.
 다음과 같이 `new` 부명령을 이용하여 **Application의 Skeleton**을 만들 수 있다.
 
-{% highlight console %}
+```console
 $ ember new hardened-layer --skip-git 
 version: 1.13.13
 Could not find watchman, falling back to NodeWatcher for file system events.
@@ -462,7 +462,7 @@ installing app
 Installed packages for tooling via npm.
 Installed browser packages via Bower.
 $ 
-{% endhighlight %}
+```
 
 명령행을 보면 `--skip-git` 옵션을 준 것을 볼 수 있는데, Ember-CLI는 App을
 만들자마자 App Tree 전체를 Git로 관리하도록 구성해버린다. 이게 편할 수도
@@ -475,7 +475,7 @@ Bower로 관리되는 Javascript 요소들을 함께 설치해준다.
 
 설치된 모습을 보면,
 
-{% highlight console %}
+```console
 $ ls -F
 README.md   bower_components/   node_modules/  testem.json
 app/        config/             package.json   tests/
@@ -494,12 +494,12 @@ $ du -sh *
 44K	tests
 4.0K	vendor
 $ 
-{% endhighlight %}
+```
 
 이렇게 `bower_components`와 `node_modules`가 부풀어 있는 것을 볼 수 있고,
 그 안에 아래와 같은 다양한 패키지가 설치된 것을 확인할 수 있다.
 
-{% highlight console %}
+```console
 $ ls node_modules
 broccoli-asset-rev/                    ember-cli-inject-live-reload/
 ember-cli/                             ember-cli-qunit/
@@ -511,12 +511,12 @@ ember-cli-shims/        ember-qunit/                loader.js/
 ember-cli-test-loader/  ember-qunit-notifications/  qunit/
 <...>
 $ 
-{% endhighlight %}
+```
 
 마지막으로, 구성한 App을 시험해본다. Ember-CLI는 `serve` 부명령을 이용해서
 개발 과정에서 시험용으로 사용할 수 있는 내장 Web Server를 구동할 수 있다.
 
-{% highlight console %}
+```console
 $ ember serve
 version: 1.13.13
 Could not find watchman, falling back to NodeWatcher for file system events.
@@ -536,7 +536,7 @@ ConcatWithMaps: Concat: Vendor (1)            | 3300ms
 Babel (6)                                     | 527ms (87 ms)       
 
 ^C$
-{% endhighlight %}
+```
 
 위의 출력을 보면, 4200 포트를 이용하여 서비스를 제공하면서, Livereload를
 위한 포트가 함께 열리는 것을 확인할 수 있다. 또한, 이 App을 빌드하는
@@ -569,7 +569,7 @@ Babel (6)                                     | 527ms (87 ms)
 아닌 중앙에 설치된 패키지의 link로 채워지게 된다. (동일한 패키지를 여러
 프로젝트에서 사용한다면 이런 방식으로 용량을 아낄 수 있다.)
 
-{% highlight console %}
+```console
 $ mkdir project-a
 $ cd project-a
 $ npm link ember-cli
@@ -578,18 +578,18 @@ $ ls -l node_modules
 합계 4
 lrwxrwxrwx 1 sio4 61 12월  8 13:12 ember-cli -> ../../../.nvm/versions/node/v4.0.0/lib/node_modules/ember-cli
 $ 
-{% endhighlight %}
+```
 
 이런 상황에서 각 경로의 사용량을 확인해보면, 위의 Global 설치와 유사한 것을
 확인할 수 있다.
 
-{% highlight console %}
+```console
 $ du  -sh ~/.nvm ~/.npm node_modules/
 185M	/home/sio4/.nvm
 45M	/home/sio4/.npm
 12K	node_modules/
 $ 
-{% endhighlight %}
+```
 
 
 ### 참고 2: 디렉터리 내용 보기
@@ -602,7 +602,7 @@ Global 모드나, Link 모드로 설정된 경우, 각 경로에는 아래와 �
 
 설명보다 명령의 결과가 깔끔하다.
 
-{% highlight console %}
+```console
 $ ls ~/.npm/ember-cli/1.13.13/
 package  package.tgz
 $ ls ~/.nvm/versions/node/v4.0.0/lib/node_modules/ember-cli/
@@ -616,7 +616,7 @@ bower                            fs-extra
 bower-config                     fs-monitor-stack
 <...>
 $ 
-{% endhighlight %}
+```
 
 
 
@@ -629,7 +629,7 @@ $
 `node`를 실행하면 OS 제공자에 의해 설치된 `system` 버전이 실행되게 되는
 것을 알게 될 것이다.
 
-{% highlight console %}
+```console
 $ node --version
 v0.10.25
 $ nvm ls
@@ -639,14 +639,14 @@ node -> stable (-> v4.0.0) (default)
 stable -> 4.0 (-> v4.0.0) (default)
 iojs -> N/A (default)
 $ 
-{% endhighlight %}
+```
 
 위와 같이, `node --version` 명령으로 확인해보면 새 세션에서는 시스템에
 기본 설치된 것이 작동하게 된다. `nvm ls` 명령으로 확인해보면 역시,
 `system` 버전이 선택되어 있는 것을 볼 수 있다. 이 상태라면, 아래와 같이
 `use` 부명령을 사용하여 이 세션에서 사용할 `node.js` 버전을 고를 수 있다.
 
-{% highlight console %}
+```console
 $ nvm use v4.0.0
 Now using node v4.0.0 (npm v2.14.2)
 $ nvm ls
@@ -660,7 +660,7 @@ v4.0.0
 $ npm --version
 2.14.2
 $ 
-{% endhighlight %}
+```
 
 간단하지만 성가신 일이다. 이런 상황에서 새 세션에 대하여 기본적으로 사용할
 버전을 지정하려면 `alias` 부명령을 사용하면 된다.
@@ -668,7 +668,7 @@ $
 
 기본값 설정 전 상태
 
-{% highlight console %}
+```console
 $ nvm ls
          v4.0.0
 ->       system
@@ -676,21 +676,21 @@ node -> stable (-> v4.0.0) (default)
 stable -> 4.0 (-> v4.0.0) (default)
 iojs -> N/A (default)
 $ 
-{% endhighlight %}
+```
 
 현재 존재하는 alias 확인
 
-{% highlight console %}
+```console
 $ nvm alias
 node -> stable (-> v4.0.0) (default)
 stable -> 4.0 (-> v4.0.0) (default)
 iojs -> N/A (default)
 $ 
-{% endhighlight %}
+```
 
 새로운 alias 생성 및 확인
 
-{% highlight console %}
+```console
 $ nvm alias default node
 default -> node (-> v4.0.0)
 $ nvm alias
@@ -699,11 +699,11 @@ node -> stable (-> v4.0.0) (default)
 stable -> 4.0 (-> v4.0.0) (default)
 iojs -> N/A (default)
 $ 
-{% endhighlight %}
+```
 
 그리고 새 쉘 세션을 시작했을 때의 결과
 
-{% highlight console %}
+```console
 $ nvm ls
 ->       v4.0.0
          system
@@ -712,7 +712,7 @@ node -> stable (-> v4.0.0) (default)
 stable -> 4.0 (-> v4.0.0) (default)
 iojs -> N/A (default)
 $ 
-{% endhighlight %}
+```
 
 
 ### 참고 4: Ubuntu의 기본 node.js는 명령어가 `node`가 아닌 `nodejs`
@@ -725,11 +725,11 @@ Ubuntu는 Debian을 기반으로 하는 배포본인데, Debian 자체가 워낙
 다음과 같은 명령을 통하여 `node`라는 명령을 내렸을 때 Node.js가 실행되도록
 해줄 수 있다.
 
-{% highlight console %}
+```console
 $ sudo update-alternatives --install /usr/bin/node node /usr/bin/nodejs 99
 update-alternatives: using /usr/bin/nodejs to provide /usr/bin/node (node) in auto mode
 $ 
-{% endhighlight %}
+```
 
 
 정말 끝!

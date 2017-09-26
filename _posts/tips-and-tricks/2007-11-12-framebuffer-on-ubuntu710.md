@@ -31,11 +31,11 @@ modified: 2010-07-02T10:54:04+09:00
 "defoptions"라는 이름을 찾아 "vga=0x315"라는 값을 추가해줬다. (해상도
 800x600의 24bit 모드)
 
-{% highlight console %}
+```console
 $ sudo vi /boot/grub/menu.list
 ## add 'vga=0x315' to 'defoptions'
 $ sudo update-grub
-{% endhighlight %}
+```
 
 ## 모듈 설정과 제한 풀어주기
 
@@ -45,30 +45,30 @@ $ sudo update-grub
 다음에 시간이 되면...) 다음과 같이 설정파일을 수정하여 필요한 모듈을
 넣어줘야 한다. (그런데 이것들이 모듈로 되어있는지는 몰랐었네...)
 
-{% highlight console %}
+```console
 $ sudo vi /etc/initramfs-tools/module
 ## add 'fbcon' and 'vesafb'
-{% endhighlight %}
+```
 
 그러나 이 중 vesafb는 요주의 모듈 목록에 기본으로 들어있었다. 다음처럼,
 설정파일을 편집하여 모듈 등록을 거부하지 않도록 해줘야 한다.
 
-{% highlight console %}
+```console
 $ sudo vi /etc/modprobe.d/blacklist-framebuffer
 ## disable 'blacklist vesafb'
-{% endhighlight %}
+```
 
 이제 initrd 이미지를 다시 만들어야 한다.
 
-{% highlight console %}
+```console
 $ sudo update-initramfs -u
-{% endhighlight %}
+```
 
 ## 다시 시작
 
-{% highlight console %}
+```console
 $ sudo reboot
-{% endhighlight %}
+```
 
 그런데 왠 일인지 이것으로는 모자람...
 
@@ -78,10 +78,10 @@ $ sudo reboot
 진행막대가 엉뚱한 위치에 표시된다. 이전의 설정이 1024x768을 기준으로
 되어있어서인데... 바로잡자.
 
-{% highlight console %}
+```console
 $ sudo vi /etc/usplash.conf
 ## modify 'xres' and 'yres'
-{% endhighlight %}
+```
 
 물론 램디스크를 다시 만들어줘야 하고, 다시 시작하면 부팅 화면도 깔끔하게
 표시된다.

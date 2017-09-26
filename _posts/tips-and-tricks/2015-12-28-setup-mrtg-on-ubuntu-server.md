@@ -31,7 +31,7 @@ date: Mon, 28 Dec 2015 12:34:51 +0900
 간단한 버전의 웹서버로 충분하지만, 여기서는 나중에 좀 더 많은 일을 할 수
 있도록 NginX의 Extras 버전을 설치했다.
 
-{% highlight console %}
+```console
 $ sudo apt-get install nginx-extras
 <...>
 The following NEW packages will be installed:
@@ -41,7 +41,7 @@ Need to get 822 kB of archives.
 After this operation, 2803 kB of additional disk space will be used.
 <...>
 $ 
-{% endhighlight %}
+```
 
 ### SNMP 설치
 
@@ -49,7 +49,7 @@ $
 처리했었는지 아닌지 기억이 정확하지 않다. 아무튼, 독립적으로 SNMP 명령을
 실행해서 그 결과를 확인할 필요가 있으므로 SNMP 도구를 설치한다.
 
-{% highlight console %}
+```console
 $ sudo apt-get install snmp
 <...>
 The following NEW packages will be installed:
@@ -59,13 +59,13 @@ Need to get 1180 kB of archives.
 After this operation, 4722 kB of additional disk space will be used.
 <...>
 $ 
-{% endhighlight %}
+```
 
 이렇게 설치를 하고 나면 `snmpwalk` 같은 명령을 사용할 수 있게 되는데, 아래
 예로 든 것과 같이, 이 도구를 이용하면 목표로 하는 Device가 정상적으로 SNMP
 응답을 하는지 확인한다든지, 또는 그 측정 값을 직접 Query하여 볼 수 있게 된다.
 
-{% highlight console %}
+```console
 $ snmpwalk -v 2c -c monitor 192.168.13.2 | head
 iso.3.6.1.2.1.1.1.0 = STRING: "Alcatel-Lucent OS6860-24 8.1.1.627.R01 Service Release, April 21, 2015."
 iso.3.6.1.2.1.1.2.0 = OID: iso.3.6.1.4.1.6486.801.1.1.2.1.11.1.1
@@ -78,7 +78,7 @@ iso.3.6.1.2.1.1.9.1.2.1 = OID: iso.3.6.1.6.3.16.2.2.1
 iso.3.6.1.2.1.1.9.1.2.2 = OID: iso.3.6.1.6.3.10.3.1.1
 iso.3.6.1.2.1.1.9.1.2.3 = OID: iso.3.6.1.6.3.11.3.1.1
 $ 
-{% endhighlight %}
+```
 
 위의 예는 BMT에 사용했던 장비 중 하나인 Alcatel-Lucent의 L3 Switch에게
 SNMP v2 질의를 던진 결과이다.
@@ -89,7 +89,7 @@ SNMP v2 질의를 던진 결과이다.
 이 때 의존성에 의해 함께 설치되는 것들을 보면, MRTG가 무슨 일을 하는지 대충
 할 수 있다.
 
-{% highlight console %}
+```console
 $ sudo apt-get install mrtg 
 <...>
 The following NEW packages will be installed:
@@ -101,7 +101,7 @@ Need to get 2699 kB of archives.
 After this operation, 8793 kB of additional disk space will be used.
 <...>
 $ 
-{% endhighlight %}
+```
 
 먼저, `libsnmp-session-perl`, `libsocket6-perl` 등을 함께 설치하고 있는데,
 MRTG가 Perl로 작성된 녀석이기 때문이다. (잘 알겠지만, 과거에는 Perl이 시스템
@@ -114,12 +114,12 @@ MRTG가 GD Library를 이용하여 그림을 그리고 있다는 것을 뜻한�
 참고로, Debian Package의 정확한 의존성 관계는 다음과 같은 명령으로 확인이
 가능하다.
 
-{% highlight console %}
+```console
 $ apt-cache showpkg mrtg |grep ^Dependencies -A1
 Dependencies: 
 2.17.4-2ubuntu2 - debconf (18 1.2.0) debconf-2.0 (0 (null)) libsnmp-session-perl (2 1.12) perl-modules (2 5.6.0) perl (0 (null)) libc6 (2 2.7) libgd3 (2 2.1.0~alpha~) mrtg-contrib (0 (null)) httpd (16 (null)) www-browser (0 (null)) mrtg:i386 (0 (null)) 
 $ 
-{% endhighlight %}
+```
 
 
 
@@ -131,7 +131,7 @@ MRTG의 기본 설정은 `/etc/mrtg.cfg` 파일에 담겨있다. 다음과 같�
 파일들을 `Include`하도록 하여 개별적인 설정을 별도의 파일로 보관할 수 있게
 해주고 있다.
 
-{% highlight console %}
+```console
 $ echo |sudo tee -a /etc/mrtg.cfg <<EOF
 
 Interval: 5
@@ -147,11 +147,11 @@ Include: /etc/mrtg.d/*.cfg
 
 EOF
 $ 
-{% endhighlight %}
+```
 
 위와 같은 Global 설정이 끝났다면, 개별 Device에 대한 설정을 추가해준다.
 
-{% highlight console %}
+```console
 $ sudo mkdir /etc/mrtg.d
 $ sudo cfgmaker --output=/etc/mrtg.d/192.168.13.1.cfg monitor@192.168.13.1
 --base: Get Device Info on monitor@192.168.13.1:
@@ -167,7 +167,7 @@ $ sudo cfgmaker --output=/etc/mrtg.d/192.168.13.2.cfg monitor@192.168.13.2
 --base: Get Interface Info
 --base: Walking ifIndex
 <...>
-{% endhighlight %}
+```
 
 맨 첫줄은 부속 설정들을 위한 디렉터리를 만들어주는 것이고, 그 뒤를 따르는
 명령들은 각 장치(IP)에 대한 설정파일을 만드는 과정이다. 보는 바와 같이,
@@ -178,7 +178,7 @@ Device로부터 SNMP 결과를 받아와서 각 포트들의 정보를 설정에
 위의 예제에서는 두 장치에 대한 설정을 하였고, 각 장치에 대한 상세 정보를
 사용하가 보기 편하게 하기 위해 아래와 같이 설정을 수정해 주었다.
 
-{% highlight console %}
+```console
 $ sudo sed -i '/MaxBytes/d' /etc/mrtg.d/192.168.13.1.cfg 
 $ sudo sed -i '/MaxBytes/d' /etc/mrtg.d/192.168.13.2.cfg 
 $ 
@@ -206,7 +206,7 @@ $ sudo sed -i 's,for 1\/1\/21 ,C1-EXT,' /etc/mrtg.d/192.168.13.2.cfg
 $ sudo sed -i 's,for 1\/1\/22 ,C2-EXT,' /etc/mrtg.d/192.168.13.2.cfg
 $ sudo sed -i 's,for 1\/1\/23 ,C3-EXT,' /etc/mrtg.d/192.168.13.2.cfg
 $ sudo sed -i 's,for 1\/1\/24 ,C4-EXT,' /etc/mrtg.d/192.168.13.2.cfg
-{% endhighlight %}
+```
 
 뭐, 길게 썼지만 내용은 별다를 게 없다. 자동으로 생성된 불필요한 설정을
 제거하고, Port 번호로 되어있는 부분을 사람이 읽을 수 있는 의미있는 값으로
@@ -216,10 +216,10 @@ $ sudo sed -i 's,for 1\/1\/24 ,C4-EXT,' /etc/mrtg.d/192.168.13.2.cfg
 index 페이지를 만드는 과정이다. 역시, MRTG가 제공하는 `indexmaker`를
 사용하면 현재의 구성정보를 바탕으로 index 페이지를 만들어준다.
 
-{% highlight console %}
+```console
 $ sudo mkdir /var/www/mrtg
 $ sudo indexmaker --output=/var/www/mrtg/index.html /etc/mrtg.cfg
-{% endhighlight %}
+```
 
 ## 웹서버 설정
 
@@ -236,7 +236,7 @@ Client에게 보여주기 위한 설정이다. 명령의 흐름은,
 
 의 과정으로, 일반적인 NginX 설정 과정과 같다.
 
-{% highlight console %}
+```console
 $ echo |sudo tee /etc/nginx/sites-available/mrtg <<EOF
 server {
 	listen 8011 default_server;
@@ -269,7 +269,7 @@ Sep 30 13:44:38 station systemd[1]: Starting A high performance web server .....
 Sep 30 13:44:38 station systemd[1]: Started A high performance web server a...r.
 Hint: Some lines were ellipsized, use -l to show in full.
 $ 
-{% endhighlight %}
+```
 
 ## 확인하기
 

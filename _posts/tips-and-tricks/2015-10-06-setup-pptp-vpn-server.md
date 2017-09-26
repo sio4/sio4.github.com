@@ -44,7 +44,7 @@ PPTP를 사용하는 것이다. 이번 작업은, 미리 준비한 "깨끗하게
 먼저, 관련된 패키지를 설치해야 한다. Ubuntu 리눅스에서 PPTP 기능은 `pptpd`
 라는 패키지를 통해서 제공된다.
 
-{% highlight console %}
+```console
 $ sudo apt-get install pptpd
 <...>
 The following NEW packages will be installed:
@@ -54,7 +54,7 @@ Need to get 105 kB of archives.
 After this operation, 364 kB of additional disk space will be used.
 <...>
 $ 
-{% endhighlight %}
+```
 
 설치는 이렇게 간단하게 된다. 참고로, 함께 설치되는 `bcrelay`라는 패키지는
 `pptpd`가 사용하는 `ppp` 인터페이스를 사용하여 Bridge를 구성할 수 없는
@@ -69,7 +69,7 @@ $
 이런 저런 옵션이 있지만, 이미 원저작자 및 Debian Package Maintainer가
 손봐둔 기본 설정으로 충분하다. (역시, 참 편하다. :-)
 
-{% highlight console %}
+```console
 $ cat |sudo tee -a /etc/pptpd.conf <<EOF
 > 
 > localip 192.168.13.254
@@ -80,7 +80,7 @@ localip 192.168.13.254
 remoteip 192.168.13.240-249
 
 $ 
-{% endhighlight %}
+```
 
 위의 설정에서 `localip`는 단 하나의 값을 갖게 되는데, 이건 VPN을 제공하는
 서버가 사용할 IP를 지정하는 부분이기 때문에 그렇다. `remoteip` 값은 보통,
@@ -104,14 +104,14 @@ IP 주소의 대역으로 지정이 된다. VPN 서버를 통하여 접속하는
 Root만 읽을 수 있다고는 해도 Plain Text로 저장된 파일이며, 사용자가 암호
 변경을 하기도 좀 애매한 부분이어서 보안 관점에서는 좀... 그렇다. ㅋ)
 
-{% highlight console %}
+```console
 $ cat |sudo tee -a /etc/ppp/chap-secrets <<EOF
 > sio4          pptpd   p4ssw0rd                   *  
 > EOF
 sio4          pptpd   p4sswr0d                   *
 
 $ 
-{% endhighlight %}
+```
 
 위의 설정은, `sio4` 라는 이름의 사용자가 `p4ssw0rd`라는 암호를 사용한다고
 등록하는 예이다. (이 파일은 일반 사용자가 읽을 수 없는 권한으로 설정해야
@@ -120,7 +120,7 @@ $
 
 이제 서비스를 시작해보자.
 
-{% highlight console %}
+```console
 $ sudo systemctl start pptpd
 $ sudo systemctl status pptpd
 * pptpd.service - PoPToP Point to Point Tunneling Server
@@ -137,7 +137,7 @@ Sep 20 21:02:39 station pptpd[10102]: MGR: Manager process started
 Sep 20 21:02:39 station pptpd[10102]: MGR: Maximum of 10 connections available
 Hint: Some lines were ellipsized, use -l to show in full.
 $ 
-{% endhighlight %}
+```
 
 로그를 잠깐 보면, `pptpd` 데몬이 시작되었고, 설정에 의해 전체 100개의
 연결을 허용하고 있으나, `remoteip` 값이 작은 범위로 설정된 까닭에 최대
@@ -213,7 +213,7 @@ Popup이 뜨면서 연결이 마무리되면 모든 것이 성공적으로 된 �
 
 ### WTMP 문제
 
-{% highlight console %}
+```console
 $ tail -f /var/log/syslog
 <...>
 Sep 19 03:17:12 station pptpd[9585]: CTRL: Client 10.45.60.5 control connection started
@@ -224,7 +224,7 @@ Sep 19 03:17:13 station pptpd[9585]: CTRL: PTY read or GRE write failed (pty,gre
 Sep 19 03:17:13 station pptpd[9585]: CTRL: Reaping child PPP[9586]
 Sep 19 03:17:13 station pptpd[9585]: CTRL: Client 10.45.60.5 control connection finished
 <...>
-{% endhighlight %}
+```
 
 뭐래는거니? 세 번째 줄에 보면, `pptpd-logwtmp.so` 파일이 `pppd` 2.4.5용의
 것인데, 지금 사용되는 `pppd`는 2.4.6이라서 호환이 안된다는 얘기다. 뭐냐...
@@ -233,10 +233,10 @@ Ubuntu/Debian 패키지의 깔끔함을 칭친한 게 불과 몇 십줄 전인�
 찾아보니, 이미 오래전부터 반복적으로 일어나는 이슈인 것 같다. 일단, 아래와
 같이 응급 조치를 할 수 있다. (해당 기능을 죽이는 방식)
 
-{% highlight console %}
+```console
 $ sudo sed -i 's/^logwtmp/# bug-1451419 logwtmp/' /etc/pptpd.conf 
 $ sudo systemctl restart pptpd
-{% endhighlight %}
+```
 
 이렇게 `pptpd.conf` 파일을 수정하여 `logwtmp`를 사용하지 않는 것. 사용자
 접속 로깅을 하지 않는 것이 좀 싫기는 하지만, 기능상 문제가 되지 않으며,
@@ -250,7 +250,7 @@ $ sudo systemctl restart pptpd
 
 일단 로그를 보자.
 
-{% highlight console %}
+```console
 <...>
 Sep 19 03:26:01 station pptpd[9724]: CTRL: Client 10.45.60.5 control connection started
 Sep 19 03:26:02 station pptpd[9724]: CTRL: Starting call (launching pppd, opening GRE)
@@ -275,7 +275,7 @@ Sep 19 03:26:02 station pptpd[9724]: CTRL: PTY read or GRE write failed (pty,gre
 Sep 19 03:26:02 station pptpd[9724]: CTRL: Reaping child PPP[9725]
 Sep 19 03:26:02 station pptpd[9724]: CTRL: Client 10.45.60.5 control connection finished
 <...>
-{% endhighlight %}
+```
 
 뭐래니? 찬찬히 들여다보니, 역시 `pppd`가 뭔가 못마땅한 부분이 있는 것이다.
 
@@ -297,7 +297,7 @@ Sep 19 03:26:02 station pptpd[9724]: CTRL: Client 10.45.60.5 control connection 
 
 **정상 연결 로그**
 
-{% highlight console %}
+```console
 <...>
 Sep 20 21:15:24 station pppd[10405]: local  IP address 192.168.99.1
 Sep 20 21:15:24 station pppd[10405]: remote IP address 192.168.99.10
@@ -316,12 +316,12 @@ Sep 20 21:15:24 station pppd[10405]: Cannot determine ethernet address for proxy
 Sep 20 21:26:55 station pppd[10772]: found interface p1p1 for proxy arp
 Sep 20 21:26:55 station pppd[10772]: local  IP address 192.168.13.254
 Sep 20 21:26:55 station pppd[10772]: remote IP address 192.168.13.240
-{% endhighlight %}
+```
 
 
 **정상 해제 로그**
 
-{% highlight console %}
+```console
 <...>
 Sep 20 21:28:14 station pppd[10772]: LCP terminated by peer (MPPE disabled)
 Sep 20 21:28:14 station pppd[10772]: Connect time 1.4 minutes.
@@ -334,7 +334,7 @@ Sep 20 21:28:14 station ifdown[10822]: /sbin/ifdown: interface ppp0 not configur
 Sep 20 21:28:14 station systemd[1]: Stopped ifup for ppp0.
 Sep 20 21:28:14 station pppd[10772]: Exit.
 Sep 20 21:28:14 station pptpd[10771]: CTRL: Client 10.45.60.5 control connection finished
-{% endhighlight %}
+```
 
 클라이언트가 연결된 상태에서 서버측 인터페이스 상태를 보면, 아래와 같이
 각 연결에 대하여 각각 하나씩의 `ppp` 인터페이스가 생성되는 것을 볼 수
@@ -342,7 +342,7 @@ Sep 20 21:28:14 station pptpd[10771]: CTRL: Client 10.45.60.5 control connection
 
 **연결 상태에서 서버측 Interface**
 
-{% highlight console %}
+```console
 $ ifconfig
 <...>
 ppp0      Link encap:Point-to-Point Protocol  
@@ -362,7 +362,7 @@ ppp1      Link encap:Point-to-Point Protocol
           RX bytes:3786495 (3.7 MB)  TX bytes:17859824 (17.8 MB)
 
 $ 
-{% endhighlight %}
+```
 
 
 
@@ -378,7 +378,7 @@ $
 정보를 함께 내려주게 되는데, 이에 대한 내용을 조금 보려고 한다. 일단,
 VPN 연결 전의 Routing은 다음과 같다. (당연한 얘기지만 사용자마다 다르다.)
 
-{% highlight console %}
+```console
 $ route -n
 Kernel IP routing table
 Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
@@ -387,12 +387,12 @@ Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
 10.250.166.0    0.0.0.0         255.255.255.0   U     100    0        0 eth0
 169.254.0.0     0.0.0.0         255.255.0.0     U     1000   0        0 eth0
 $ 
-{% endhighlight %}
+```
 
 이 상태에서 VPN을 연결하면, 다음과 같이 ppp0를 인터페이스로 하는 라우팅이
 추가로 구성되게 된다.
 
-{% highlight console %}
+```console
 $ route -n
 Kernel IP routing table
 Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
@@ -403,7 +403,7 @@ Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
 192.168.13.254  0.0.0.0         255.255.255.255 UH    0      0        0 ppp0
 10.235.199.133  10.250.166.1    255.255.255.255 UGH   0      0        0 eth0
 $ 
-{% endhighlight %}
+```
 
 눈에 잘 들어오지는 않지만, 추가된 줄은 맨 아래의 두 줄이다. 아래부터 첫번째
 라우팅은,
@@ -428,7 +428,7 @@ ppp0를 통하라는 두 번째 부분은 앞으로 이 IP가 해당 망으로 �
 사실, 위의 내용에는 추가 설정에 의해 생략된 라우팅 설정이 있다. 추가 설정을
 전혀 하지 않은 라우팅 정보를 보면 아래와 같다.
 
-{% highlight console %}
+```console
 $ route -n
 Kernel IP routing table
 Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
@@ -440,7 +440,7 @@ Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
 192.168.13.254  0.0.0.0         255.255.255.255 UH    0      0        0 ppp0
 10.235.199.133 10.250.166.1    255.255.255.255 UGH   0      0        0 eth0
 $ 
-{% endhighlight %}
+```
 
 앞서 말한 두 라우팅 외에도 맨 위의 Default Gateway 설정이 하나 추가된
 것을 알 수 있다. (심지어 Metric이 기본 Gateway보다 작은 50이다.)
@@ -469,7 +469,7 @@ $
 설정을 할 수 있게 되어있다. 이와 같은 설정을 모두 해준 후, 다시 접속을
 하면, 아래와 같이 쓸모있는 망 정보가 구성된다.
 
-{% highlight console %}
+```console
 $ route -n
 Kernel IP routing table
 Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
@@ -484,7 +484,7 @@ Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
 199.59.148.0    192.168.13.254  255.255.252.0   UG    1      0        0 ppp0
 10.235.199.133 10.250.166.1    255.255.255.255 UGH   0      0        0 eth0
 $ 
-{% endhighlight %}
+```
 
 여기서 172.16.0.0/16, 192.168.13.0/24, 192.168.14.0/24 등은 원격지 망에서만
 접속 가능한 폐쇄망이다. (199.으로 시작되는 주소는 잊어주시라.)
@@ -493,7 +493,7 @@ $
 
 **서버측 라우팅 정보**
 
-{% highlight console %}
+```console
 $ route -n
 Kernel IP routing table
 Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
@@ -502,7 +502,7 @@ Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
 192.168.13.240  0.0.0.0         255.255.255.255 UH    0      0        0 ppp0
 192.168.13.241  0.0.0.0         255.255.255.255 UH    0      0        0 ppp1
 $ 
-{% endhighlight %}
+```
 
 
 ## 서버측 추가 환경 구성
@@ -516,11 +516,11 @@ $
 Bridge 구성을 위한 유틸리티 등을 설치한 후, 다음과 같이 Port 추가를
 시도해보자.
 
-{% highlight console %}
+```console
 $ sudo brctl addif br0 ppp0
 can't add ppp0 to bridge br0: Invalid argument
 $
-{% endhighlight %}
+```
 
 아뿔싸! 앞서 잠깐 얘기했지만, `ppp` 인터페이스는 보통의 Ehternet과는
 다른 연결 방식을 사용하며, **Bridge에 포트(인터페이스)로써 추가하는 것이
@@ -531,9 +531,9 @@ Forwarding 기능을 활성화하는 것!**
 
 ㅠ.ㅠ 예상하지 못했던 급 매듭! :-)
 
-{% highlight console %}
+```console
 $ sudo sysctl net.ipv4.ip_forward=1
-{% endhighlight %}
+```
 
 이제, PPTP VPN 연결을 통해서 마음껏 원격 폐쇄망의 자원에 접속할 수 있다!
 

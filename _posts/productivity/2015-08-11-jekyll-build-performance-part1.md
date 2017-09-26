@@ -100,7 +100,7 @@ Site Layout을 원래대로 한 후에 Sidebar를 구성하는 자동화 요소�
 
 참고로, 카테고리 자동생성을 위하여 내가 사용한 코드는 아래와 같다.
 
-{% highlight liquid %}
+```liquid
 {% raw %}
 {% assign categories = site.categories |sort %}
 <ul class="categories">
@@ -130,7 +130,7 @@ Site Layout을 원래대로 한 후에 Sidebar를 구성하는 자동화 요소�
   {% endfor %}
 </ul>
 {% endraw %}
-{% endhighlight %}
+```
 
 #### Post
 
@@ -155,7 +155,7 @@ Tag를 기반으로 하여 동일한 Tag를 갖는 모든 글들의 목록을 (�
 않기 때문에, 다음의 급조된 이중 `for loop` 코드를 이용하여 Tag 기반
 관련목록을 만들고 있다.
 
-{% highlight liquid %}
+```liquid
 {% raw %}
 <ul class="posts">
 {% for t in page.tags %}
@@ -170,7 +170,7 @@ Tag를 기반으로 하여 동일한 Tag를 갖는 모든 글들의 목록을 (�
 {% endfor %}
 </ul>
 {% endraw %}
-{% endhighlight %}
+```
 
 ### 정리
 

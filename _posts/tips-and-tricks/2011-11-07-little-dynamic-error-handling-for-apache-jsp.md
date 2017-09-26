@@ -27,12 +27,12 @@ modified: 2011-11-07T02:45:42+09:00
 친하지 않았던 것을 쪼금 후회하는 터인데... 어쨌든 서버 환경은 JBoss를
 쓰고 있다.
 
-{% highlight java %}
+```java
 // ...
 out.println("request.getRequestURL() : " + request.getRequestURL() + "<br/>");
 out.println("request.getRemoteAddr() : " + request.getRemoteAddr() + "<br/>");
 // ...
-{% endhighlight %}
+```
 
 요렇게 해봤는데, 허걱! 이게 어인 일? 분명 request.getRequestURL()을
 호출하면 오류가 발생한 그 URL을 돌려줄 것이라고 생각했는데 이게
@@ -49,9 +49,9 @@ ErrorDocument로 지정된 Handler의 URL만 냅다 돌려주는 황당한 상�
 
 단순하다. 익히 들어 알고 있는 다음의 설정이면 충분하다.
 
-{% highlight conf %}
+```conf
 ErrorDocument 404 /error_handler.jsp
-{% endhighlight %}
+```
 
 요렇게 설정해주면, Apache는 404 오류가 발생했을 때, 지정한 URL로
 Redirection을 발생시킨다. 그리고 Redirection 관련 정보를 환경변수로
@@ -69,11 +69,11 @@ Apache에서 아무리 환경변수를 설정해줘도, 아무리 다양한 방�
 
 `mod_jk.conf` 등과 같은 파일에서...
 
-{% highlight conf %}
+```conf
 JkEnvVar REDIRECT_URL ""
 JkEnvVar REDIRECT_REMOTE_HOST ""
 JkEnvVar REDIRECT_PATH ""
-{% endhighlight %}
+```
 
 요렇게, `mod_jk` 설정에서... `JkEnvVar` 라는 것을 설정해줘야...
 환경변수가 넘어간다고 한다. 하긴... 지금 생각해보니 이게 정말
@@ -87,9 +87,9 @@ JkEnvVar REDIRECT_PATH ""
 이제, JSP 코드 내에서, 다음과 같은 방식으로 내게 필요한 환경변수를
 읽어올 수 있다.
 
-{% highlight java %}
+```java
 String redir_url = request.getAttribute("REDIRECT_URL");
-{% endhighlight %}
+```
 
 이걸 몰라서... 헤매도 너무 헤맸네!
 

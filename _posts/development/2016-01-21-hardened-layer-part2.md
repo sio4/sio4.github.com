@@ -259,7 +259,7 @@ Menu, Accordion, Button, Tab 등의 UI Widget과 잘 정돈된 Look&Feel을
 
 Ember App에 [Semantic UI]를 적용하는 과정을 간단히 설명하면 다음과 같다.
 
-{% highlight console %}
+```console
 $ ember install semantic-ui-ember
 version: 1.13.13
 Installed packages for tooling via npm.
@@ -271,7 +271,7 @@ Installing browser packages via Bower...
 Installed browser packages via Bower.
 Installed addon package.
 $ 
-{% endhighlight %}
+```
 
 위와 같이, `ember` 명령의 `install` 부명령을 이용하여 쉽게 Addon을
 설치하는 것이 가능하다. 이 명령을 내리면, 위의 출력이 말해 주듯이,
@@ -282,7 +282,7 @@ $
 
 {:.block-title}
 `app/templates/application.hbs`
-{% highlight html+handlebars %}
+```handlebars
 {% raw %}
 {{#ui-sidebar class="inverted vertical menu"}}
     {{link-to 'Home' 'index' class='item'}}
@@ -312,7 +312,7 @@ $
 {{outlet}}
 </div>
 {% endraw %}
-{% endhighlight %}
+```
 
 첫 단락은 Ember Addon을 이용하여 Component 방식으로 Sidebar를 구현한
 것이고, 다음 단락은 단순히 Semantic UI의 일반적인 적용 방식으로
@@ -337,7 +337,7 @@ $
 Root를 갖게 되어있는 것과 달리, Mixin은 말 그대로 수평적인 섞기라도
 할 수 있다.)
 
-{% highlight console %}
+```console
 $ ember generate mixin EsTable
 version: 1.13.13
 installing mixin
@@ -345,11 +345,11 @@ installing mixin
 installing mixin-test
   create tests/unit/mixins/es-table-test.js
 $ 
-{% endhighlight %}
+```
 
 이렇게 생성된 틀에, 다음과 같은 Code를 삽입하였다.
 
-{% highlight ruby %}
+```ruby
 import Ember from 'ember';
 
 export default Ember.Mixin.create({
@@ -406,7 +406,7 @@ export default Ember.Mixin.create({
     },
   },
 });
-{% endhighlight %}
+```
 
 이 코드를 비롯한 [Ember.js]에 대한 자세한 이야기를 할 기회는 나중에
 따로 마련하겠다.
@@ -422,7 +422,7 @@ export default Ember.Mixin.create({
 않는다. 다만, 해당 Library가 제공하는 날짜 Formatting 기능을 위해
 다음과 같이 Addon을 설치해준다.
 
-{% highlight console %}
+```console
 $ ember install ember-moment
 version: 1.13.13
 Installed packages for tooling via npm.
@@ -439,7 +439,7 @@ Installed browser packages via Bower.
 Installed addon package.
 Installed addon package.
 $ 
-{% endhighlight %}
+```
 
 보는 바와 같이, `ember-moment`를 설치하면 `ember-cli-moment-shim`,
 `moment`, `moment-timezone` 등이 함께 설치된다.
@@ -448,7 +448,7 @@ $
 시험했었다. 아래와 같이, 거의 유사한 도구들을 설치하는데, 약간의
 형식만 다르다.(`npm`인지 `bower`인지)
 
-{% highlight console %}
+```console
 $ ember install ember-cli-dates
 version: 1.13.13
 Installed packages for tooling via npm.
@@ -462,26 +462,28 @@ Installing browser packages via Bower...
 Installed browser packages via Bower.
 Installed addon package.
 $ 
-{% endhighlight %}
+```
 
 그런데 얼마 후, App에서 다음과 같은 Deprecation Warnning이 계속 발생하는
 문제가 발생했는데 추적해본 결과, 이 Addon에서 발생한다는 것을 알게 되었다.
 
-{% highlight console %}
+{:.wrap}
+```console
 DEPRECATION: Using Ember.Handlebars.makeBoundHelper is deprecated. Please refactor to using `Ember.Helper.helper`. [deprecation id: ember-htmlbars.handlebars-make-bound-helper]
-{% endhighlight %}
+```
 
 그래서 이 Addon을 제거하고, 앞서 말한 바와 같이 동일 기능을 제공하는
 `ember-moment`로 방향을 바꾸었다.
 
-{% highlight console %}
+{:.wrap}
+```console
 $ npm uninstall ember-cli-dates --save-dev
 npm WARN uninstall not installed in /home/sio4/tmp/x/hardened-layer-ui/node_modules: "ember-cli-dates"
 $ bower uninstall ember-cli-moment-shim -D
 bower uninstall     ember-cli-moment-shim
 bower uninstall     moment
 $ 
-{% endhighlight %}
+```
 
 ---
 아래 화면은, 이상 설명한 Semantic UI를 이용한 Titlebar와 Sidebar,
@@ -537,7 +539,7 @@ Ember와 함께 사용할 수 있는 시각화 도구를 찾다보니, 대부분
 `ember-c3` 인데, 이 Addon을 설치하고 사용하는 방식을 잠깐 보면
 아래와 같다.
 
-{% highlight console %}
+```console
 $ ember install ember-c3
 version: 1.13.13
 Installed packages for tooling via npm.
@@ -560,12 +562,12 @@ Installing browser packages via Bower...
 Installed browser packages via Bower.
 Installed addon package.
 $ 
-{% endhighlight %}
+```
 
 `ember-c3`를 설치하게 되면, 위와 같이 D3 Library가 함께 설치된다.
 이제, Chart를 표현할 바탕 리소스를 만들어 준다.
 
-{% highlight console %}
+```console
 $ ember generate resource dashboard
 version: 1.13.13
 installing model
@@ -573,9 +575,9 @@ installing model
 installing model-test
   create tests/unit/models/dashboard-test.js
 $ 
-{% endhighlight %}
+```
 
-{% highlight console %}
+```console
 $ ember generate route dashboard
 version: 1.13.13
 installing route
@@ -592,7 +594,7 @@ installing controller
 installing controller-test
   create tests/unit/controllers/dashboard-test.js
 $ 
-{% endhighlight %}
+```
 
 이제, 각 파일을 아래와 같이 편집하여 실제로 Chart를 그려보았다.
 
@@ -602,7 +604,7 @@ Ember Component 형태로 `c3-chart`를 불러준다.
 {:.block-title}
 `app/templates/dashboard.hbs`
 
-{% highlight html+handlebars %}
+```handlebars
 {% raw %}
 <div class="full-width">
 {{c3-chart data=data donut=donut}}
@@ -610,7 +612,7 @@ Ember Component 형태로 `c3-chart`를 불러준다.
 {{outlet}}
 </div>
 {% endraw %}
-{% endhighlight %}
+```
 
 이 때, `data` 값을 지정하게 되는데, 이 부분은 다음과 같이 Ember의
 Controller를 통하여 지정해주면 된다. (`donut` 값 등의 지정도 아래와
@@ -619,7 +621,7 @@ Controller를 통하여 지정해주면 된다. (`donut` 값 등의 지정도 �
 {:.block-title}
 `app/controllers/dashboard.js`
 
-{% highlight javascript %}
+```javascript
 import Ember from 'ember';
 import config from '../config/environment';
 
@@ -636,7 +638,7 @@ export default Ember.Controller.extend({
     title: 'Billing Distribution',
   },
 });
-{% endhighlight %}
+```
 
 위의 코드에 의한 결과물은 아래 화면과 같다. 이 도넛형 그래프는
 Deploy된 각 자원의 비용 분포를 시각적으로 표시하여, 각 자원 별로
