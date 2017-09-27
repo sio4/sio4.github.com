@@ -734,7 +734,9 @@ footer .theme-by {
 			clear: both;
 			margin-top: 5px;
 			margin-bottom: 5px;
-			max-height: 300px;
+			img {
+				max-height: 300px;
+			}
 		}
 	}
 	.post-tags {
