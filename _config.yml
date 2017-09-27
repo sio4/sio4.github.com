@@ -75,7 +75,7 @@ favicon: /assets/images/favicon.ico
 avatar: /assets/images/sauru-20150806.png
 # links on the navbar
 navbar-links:
-  #About: "about"
+  About: "about"
   Projects: "projects"
   Categories: "categories"
   Tags: "tags"
@@ -134,6 +134,3 @@ keep_files:
   - google98e44d13f12b0215.html
   - pktc2fa0aeb7b68.html
   - robots.txt
-  - tags/
-  - categories/
-

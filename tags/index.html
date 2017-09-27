@@ -1,34 +1,35 @@
 ---
-title: Index of Tags
+title: Tags
 layout: page
 ---
-{% assign m_count = 7 %}
-{% assign l_count = 2 %}
-{% for t in site.tags %}
-  {% assign c_count = t |last |size %}
-  {% if c_count > m_count %}
-    {% assign m_count = c_count %}
-  {% endif %}
-{% endfor %}
-{% assign step = 1.6 |minus:0.6 |divided_by: m_count %}
-<div class="barchart">
-{% assign tags = site.tags |sort %}
-{% for tag in tags %}
-  {% assign tag_name = tag |first %}
-  {% assign tag_size = tag |last |size %}
-  {% comment %}
+{% include tags.html %}
+{%
+assign m_count = 7 %}{%
+assign l_count = 2 %}{%
+for t in site.tags %}{%
+  assign c_count = t |last |size %}{%
+  if c_count > m_count %}{%
+    assign m_count = c_count %}{%
+  endif %}{%
+endfor %}{%
+assign step = 1.6 |minus:0.6 |divided_by: m_count %}
+<div class="barchart row">{%
+assign tags = site.tags |sort %}{%
+for tag in tags %}{%
+  assign tag_name = tag |first %}{%
+  assign tag_size = tag |last |size %}{% comment %}
   {% if false and l_count > tag_size %}
     {% continue %}
   {% endif %}
   {% assign font_size = tag_size |times: step |plus: 0.8 %}
-  {% endcomment %}
-  {% assign bs = tag_size |times: 100 |divided_by: m_count %}
-  <div class="item">
-    <div class="frame"><div class="bar" style="width: {{bs}}%"></div></div>
-    <div class="label">
+  {% endcomment %}{%
+  assign bs = tag_size |times: 100 |divided_by: m_count %}
+  <div class="chart-item">
+    <div class="chart-item-bar col-xs-5 col-xs-offset-1"><div class="bar" style="width: {{bs}}%"></div></div>
+    <div class="chart-item-label col-xs-5">
       <a href="/tags/{{tag_name}}/" title="{{tag_size}}">{{tag_name}}</a>
       <span class="details"> » {{tag_size}}</span>
     </div>
-  </div>
-{% endfor %}
+  </div>{%
+endfor %}
 </div>

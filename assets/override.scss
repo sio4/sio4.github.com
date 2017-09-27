@@ -47,6 +47,9 @@ ul {
 	li {
 		list-style: square;
 	}
+	&.nodot li {
+		list-style: none;
+	}
 }
 
 strong {
@@ -119,25 +122,27 @@ table {
 
 // --- my widgets ------------------------------------------------------------
 div.barchart {
-	.item {
-		margin: 2px 0;
-		.frame {
+	.chart-item {
+		margin-bottom: 2px;
+		clear: both;
+		.chart-item-bar {
 			display: inline-block;
 			vertical-align: middle;
-			background: #ddd;
+			border: 1px solid lighten($color-grey, 20%);
 			border-radius: 3px;
 			padding: 2px;
-			width: 180px;
 			.bar {
 				float: right;
 				width: 100px;
-				height: 6px;
+				height: 0.6em;
 				background: #0075aa;
 				border-radius: 2px;
 			}
 		}
-		.label {
+		.chart-item-label {
 			color: $color-grey;
+			line-height: 1.2;
+			padding: 0 0 0 6px;
 		}
 	}
 }
@@ -191,7 +196,10 @@ img {
 }
 
 
+// --- ------------------------ ----------------------------------------------
 // --- theme related: structure ----------------------------------------------
+// --- ------------------------ ----------------------------------------------
+#blog-archives ul.posts li,
 .post-heading,
 .post-preview {
 	.post-meta {
@@ -210,6 +218,14 @@ img {
 	}
 }
 
+#blog-archives {
+	ul.posts {
+		li {
+			clear: both;
+		}
+	}
+}
+
 // --- post ------------------------------------------------------------------
 .post-heading {
 	h1 {
@@ -217,6 +233,7 @@ img {
 	}
 }
 
+article.page,
 article.blog-post {
 	h1, h2, h3, h4, h5 {
 		margin-top: 2em;
@@ -231,6 +248,7 @@ article.blog-post {
 		line-height: 1.8;
 		text-align: justify;
 		margin: 1.2em 0;
+		word-break: keep-all;
 		&:first-of-type {
 			margin-top: 0;
 		}
@@ -712,7 +730,10 @@ footer .theme-by {
 	border-bottom: 1px solid #eee;
 	.post-entry {
 		font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-		img.post-banner {
+		.post-banner {
+			clear: both;
+			margin-top: 5px;
+			margin-bottom: 5px;
 			max-height: 300px;
 		}
 	}
@@ -1111,8 +1132,9 @@ input.gsc-input {
 }
 
 .tagcloud {
-	line-height: 1;
-	text-align: center;
+	margin: 2em 2em;
+	line-height: 1.4;
+	text-align: justify;
 	.tagdrop {
 		word-break: keep-all;
 		white-space: nowrap;

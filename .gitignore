@@ -6,4 +6,4 @@ _site
 vendor
 .bundle
 
-_post_references.md
+__references.md
