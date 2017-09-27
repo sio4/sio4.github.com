@@ -10,7 +10,7 @@ modified: 2007-05-29T17:47:23+09:00
 이 동영상을 보면, 한 편으로는... IT를 선도하는 그들에게도 이런 일이 일어나고
 있구나... 하는 생각도 들고... :-)
 
-<div class="tac">
+<div class="text-center">
 <iframe width="420" height="315" src="https://www.youtube.com/embed/Df4RnVl03Es" frameborder="0" allowfullscreen></iframe>
 </div>
 

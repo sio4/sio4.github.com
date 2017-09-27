@@ -8,10 +8,10 @@ modified: 2010-07-05T09:39:20+09:00
 ---
 이런 세상에... 이런 기타가 나오다니.
 
-<div class="tac">
+<div class="text-center">
 <object width="425" height="355"><param name="movie" value="http://www.youtube.com/v/WetVXbYRfWk&amp;rel=1&amp;border=0">
 <param name="wmode" value="transparent">
-<embed src="http://www.youtube.com/v/WetVXbYRfWk&amp;rel=1&amp;border=0" type="application/x-shockwave-flash" wmode="transparent" width="425" height="355"></embed></object>
+<embed src="http://www.youtube.com/v/WetVXbYRfWk&amp;rel=1&amp;border=0" type="application/x-shockwave-flash" wmode="transparent" width="425" height="355"></object>
 </div>
 
 비디오를 보면서 세상이 참 편리해졌다는 생각, 기술의 적용 범위가 많이

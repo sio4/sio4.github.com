@@ -5,6 +5,10 @@
  * vim: set ts=2 sw=2:
  */
 
+
+$color-grey: #aaaaaa;
+
+/* TEMPORARY
 @import "fonts/google/titilliumweb-v4.css";
 $image-spin: url(images/spin-head.png);
 $image-orion: url(images/orion.png);
@@ -22,7 +26,6 @@ $font-xxl: 1.6em;
 $height-page-logo: 120px;
 
 $color-text: #777777;
-$color-grey: #aaaaaa;
 $color-dark: #333333;
 $color-link: #0075aa;
 $color-light: #cccccc;
@@ -43,6 +46,7 @@ $box-shadow: 0 2px 6px rgba(70,70,70,0.9);
 // aliases
 $color-header: $color-light;
 $color-border: $color-light;
+TEMPORARY */
 
 /*
 $image-help: url(images/beatles-help.png);
@@ -71,6 +75,7 @@ $background-warn: #ff6600 !important;
 
 */
 
+/* TEMPORARY
 // mixins
 @mixin nospace() { padding: 0; margin: 0; }
 @mixin coverall() { overflow: auto !important; } // fully cover inner divs
@@ -168,8 +173,10 @@ img {
 	}
 }
 
+TEMPORARY */
 
 // ##### decorations ---------------------------------------------------------
+/* TEMPORARY
 .tal { text-align: left !important; }
 .tar { text-align: right !important; }
 .tac { text-align: center !important; }
@@ -198,8 +205,10 @@ img {
 .filled { width: 100%; }
 .centered { margin-left: auto; margin-right: auto; }
 .bordered { border: 1px solid $color-grey; }
+TEMPORARY */
 
 
+/* TEMPORARY
 // ##### page structure ------------------------------------------------------
 $header-height: 40px;
 $window-margin: 0px;
@@ -353,7 +362,7 @@ $window-margin: 0px;
 				background-color: $background-body - #050505;
 				margin: 1rem 0; padding: 8px 12px 8px 36px;
 				border-left: 4px solid $background-body - #222;
-				&.point { /* check and remove it. use global point! */ }
+				&.point { // check and remove it. use global point! }
 			}
 		}
 		.so.document.meta {
@@ -647,3 +656,4 @@ p code {
 	}
 }
 
+TEMPORARY */

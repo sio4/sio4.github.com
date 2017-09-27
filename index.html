@@ -23,7 +23,9 @@ bigimg: /assets/images/road.jpg
             <a href="{{ post.url }}" class="post-read-more">[읽기]</a>{%
             endif %}{%
             if post.banner %}
-            <img class="post-banner" src="{{ post.banner }}">{%
+            <div class="post-banner col-sm-6 col-sm-offset-3">
+              <img src="{{ post.banner }}">
+            </div>{%
             endif %}
           </div>
           {%

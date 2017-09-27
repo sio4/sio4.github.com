@@ -21,26 +21,26 @@ modified: 2008-03-09T01:36:38+09:00
   
 ### Architecture Overview
 
-<div class="tac">
+<div class="text-center">
 <object width="425" height="355"><param name="movie" value="http://www.youtube.com/v/Mm6Ju0xhUW8&amp;rel=1">
 <param name="wmode" value="transparent">
-<embed src="http://www.youtube.com/v/Mm6Ju0xhUW8&amp;rel=1" type="application/x-shockwave-flash" wmode="transparent" width="425" height="355"></embed></object>
+<embed src="http://www.youtube.com/v/Mm6Ju0xhUW8&amp;rel=1" type="application/x-shockwave-flash" wmode="transparent" width="425" height="355"></object>
 </div>
   
 ### Application Lifecycle
 
-<div class="tac">
+<div class="text-center">
 <object width="425" height="355"><param name="movie" value="http://www.youtube.com/v/ITfRuRkf2TM&amp;rel=1">
 <param name="wmode" value="transparent">
-<embed src="http://www.youtube.com/v/ITfRuRkf2TM&amp;rel=1" type="application/x-shockwave-flash" wmode="transparent" width="425" height="355"></embed></object>
+<embed src="http://www.youtube.com/v/ITfRuRkf2TM&amp;rel=1" type="application/x-shockwave-flash" wmode="transparent" width="425" height="355"></object>
 </div>
 
 ### APIs
 
-<div class="tac">
+<div class="text-center">
 <object width="425" height="355"><param name="movie" value="http://www.youtube.com/v/iiD4fGjjXcc&amp;rel=1">
 <param name="wmode" value="transparent">
-<embed src="http://www.youtube.com/v/iiD4fGjjXcc&amp;rel=1" type="application/x-shockwave-flash" wmode="transparent" width="425" height="355"></embed></object>
+<embed src="http://www.youtube.com/v/iiD4fGjjXcc&amp;rel=1" type="application/x-shockwave-flash" wmode="transparent" width="425" height="355"></object>
 </div>
 
 확~ 끌리는데... 이 삼십년 묵은 게으름은 정말...

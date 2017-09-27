@@ -43,7 +43,7 @@ modified: 2010-07-02T13:53:48+09:00
 
 나의 부실한 발표자료 : [소프트웨어 어플라이언스, 가상화, 멀티미디어](http://www.slideshare.net/sio4/barcampseoul2-software-appliance-virtualization-and-multimedia)
 
-{:.tac}
+{:.centered}
 <iframe src="//www.slideshare.net/slideshow/embed_code/key/bE43h1JzHX65wv" width="340" height="290" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/sio4/barcampseoul2-software-appliance-virtualization-and-multimedia" title="BarcampSeoul2: Software Appliance, Virtualization, and Multimedia" target="_blank">BarcampSeoul2: Software Appliance, Virtualization, and Multimedia</a> </strong> from <strong><a href="//www.slideshare.net/sio4" target="_blank">Yonghwan SO</a></strong> </div>
 
 어쨌든 그랬다.
