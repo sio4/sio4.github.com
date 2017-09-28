@@ -3,6 +3,10 @@
   unless page.social-share == false %}{%
     include soofficial-init.html %}{%
   endunless %}{%
+else %}{%
+  if page.social-share == true %}{%
+    include soofficial-init.html %}{%
+  endif %}{%
 endif %}{%
 
 if page.bigimg or page.title %}{%
@@ -43,6 +47,10 @@ if page.bigimg or page.title %}{%
             unless page.social-share == false %}
 {% include soofficial-share.html %}{%
             endunless %}{%
+          else %}{%
+            if page.social-share == true %}
+{% include soofficial-share.html %}{%
+            endif %}{%
           endif %}
           </div>
         </div>
@@ -72,6 +80,10 @@ if page.bigimg or page.title %}{%
             unless page.social-share == false %}
 {% include soofficial-share.html %}{%
             endunless %}{%
+          else %}{%
+            if page.social-share == true %}
+{% include soofficial-share.html %}{%
+            endif %}{%
           endif %}
           </div>
         </div>

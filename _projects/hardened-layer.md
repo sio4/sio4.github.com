@@ -1,5 +1,9 @@
 ---
 title: Hardened Layer
+subtitle: A Sample Project for SoftLayer API Test
+date: 2016-02-14T00:00:00+09:00
+repository: https://github.com/c12g/hardened-layer-rails
+social-share: true
 ---
 **Hardened Layer** is a custom portal for SoftLayer cloud service.
 
@@ -7,8 +11,8 @@ currently, It supports RESTful API for SoftLayer.  SoftLayer also provides
 REST API but I think it is not a RESTful one. (It is just a Wrapped API of
 XML-RPC API, I think.)
 
-* Emger.js Console: <https://github.com/cloud-api/hardened-layer-ui>
-* Rails API Backend: <https://github.com/cloud-api/hardened-layer-rails>
+* Emger.js Console: <https://github.com/c12g/hardened-layer-ui>
+* Rails API Backend: <https://github.com/c12g/hardened-layer-rails>
 
 ## Install and Configuration
 

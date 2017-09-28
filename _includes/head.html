@@ -112,4 +112,7 @@
     elsif site.avatar %}
     <meta name="twitter:image" content="{{ site.url }}{{ site.avatar }}" />{%
     endif %}
+    {% if site.shareaholic_site_id %}
+    <script type="text/javascript" data-cfasync="false" src="//dsms0mj1bbhn4.cloudfront.net/assets/pub/shareaholic.js" data-shr-siteid="{{ site.shareaholic_site_id }}" async="async"></script>{%
+    endif %}
   </head>

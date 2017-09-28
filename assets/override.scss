@@ -182,7 +182,7 @@ div.barchart {
 
 // --- override bootstrap default --------------------------------------------
 .navbar-default .navbar-toggle {
-	border-color: unset;
+	border-color: black;
 	&:hover,
 	&:focus {
 		background-color: unset;
@@ -200,6 +200,7 @@ img {
 // --- theme related: structure ----------------------------------------------
 // --- ------------------------ ----------------------------------------------
 #blog-archives ul.posts li,
+.page-heading,
 .post-heading,
 .post-preview {
 	.post-meta {
@@ -207,6 +208,9 @@ img {
 		font-size: 0.9em;
 		margin: 0 0 10px;
 	}
+}
+.page-heading,
+.post-heading {
 	.post-social-shares {
 		text-align: right;
 		div {
@@ -233,7 +237,7 @@ img {
 	}
 }
 
-article.page,
+article.blog-page,
 article.blog-post {
 	h1, h2, h3, h4, h5 {
 		margin-top: 2em;
@@ -302,6 +306,14 @@ article.blog-post {
 
 		dd {
 			margin-left: 20px;
+		}
+	}
+	//** for project page
+	.post-repository {
+		margin: 5px 0 !important;
+		font-weight: 600;
+		a {
+			color: $color-link;
 		}
 	}
 }
@@ -725,7 +737,6 @@ footer .theme-by {
 
 .post-preview {
 	clear: both;
-	display: table;
 	padding: 20px 0;
 	border-bottom: 1px solid #eee;
 	.post-entry {
@@ -917,7 +928,7 @@ footer .theme-by {
 	display: block;
 	font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	font-weight: 300;
-	margin: 10px 0 0;
+	margin: 10px 0 20px;
 }
 
 .intro-header .post-heading .post-subheading {

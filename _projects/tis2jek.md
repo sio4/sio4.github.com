@@ -1,11 +1,15 @@
 ---
-title: Tistojek or Tis2Jek, Tistory to Jekyll
+title: Tistojek or Tis2Jek
+subtitle: A Blog Converter from Tistory to Jekyll
+repository: https://github.com/sio4/tistojek
+date: 2015-07-24T00:00:00+09:00
+social-share: true
 ---
 `tistojek` is **TIS**tory to **JEK**yll Markdown converter for
 tistory.com users who consider migrate thier blog to jekyll/markdown
 based blogging system like [Github Pages](https://pages.github.com/).
 
-* Github Project: <https://https://github.com/sio4/tistojek/>
+* Github Project: <https://github.com/sio4/tistojek/>
 
 It takes Tistory's backup XML file as the one and only argument,
 then exports all posts and its attachments into directory named
@@ -21,19 +25,19 @@ posts.
 `tistojek` is ruby application so you need to install `ruby` and
 some required gems. (`bundler` also used for gem management)
 
-{% highlight console %}
+```console
 $ sudo apt-get install ruby ruby-dev
 $ sudo apt-get install build-essential
 $ sudo apt-get install zlib1g-dev
 $ sudo gem install bundler --no-ri --no-rdoc
-{% endhighlight %}
+```
 
 (`nokogiri` gem has native extensions so you need to install compiler
 and zlib dev files.)
 
 then,
 
-{% highlight console %}
+```console
 $ bundle install --path ./vendor/bundle
 Fetching gem metadata from https://rubygems.org/.........
 Fetching version metadata from https://rubygems.org/..
@@ -44,7 +48,7 @@ Using bundler 1.10.5
 Bundle complete! 2 Gemfile dependencies, 4 gems now installed.
 Bundled gems are installed into ./vendor/bundle.
 $ 
-{% endhighlight %}
+```
 
 OK, installation done!
 
@@ -52,13 +56,13 @@ OK, installation done!
 
 Now, you can run `tistojek` like below:
 
-{% highlight console %}
+```console
 $ bundle exec ./tistojek.rb Tistory-Backup-20150721.xml 
 Input: Tistory-Backup-20150721.xml
 Read 7751254 Byte from Tistory-Backup-20150721.xml.
 <...>
 $ 
-{% endhighlight %}
+```
 
 ## Limitation
 

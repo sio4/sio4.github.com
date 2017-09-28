@@ -28,19 +28,24 @@ paginate: 10
 # default permalink
 permalink: /:path/:basename/
 
+collections:
+  projects:
+    output: true
+    permalink: /:collection/:title/
+
 defaults:
   -
     scope:
       path: ""
-      type: "posts"
+      type: posts
     values:
-      layout: "post"
+      layout: post
       permalink: /blog/:title/
   -
     scope:
       path: ""
     values:
-      layout: "page"
+      layout: page
   -
     scope:
       path: "/search.json"
@@ -100,7 +105,8 @@ share-links-active:
 
 rss-footer: true
 
-
+#shareaholic_site_id: 6ca6d65705f34cad71e990b26cbca8e5
+#shareaholic_share_id: 27578313
 
 ### excludes -----------------------------------------------------------------
 exclude:
