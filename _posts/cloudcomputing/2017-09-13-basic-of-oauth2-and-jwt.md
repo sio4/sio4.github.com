@@ -1,6 +1,6 @@
 ---
 title:  OAuth2와 JWT, 웹기반 SSO 인증
-tags: 클라우드컴퓨팅 CloudComputing API Authentication 인증
+tags: OAuth2 JWT SingleSignOn CloudComputing API Authentication
 categories: ["cloudcomputing"]
 image: /attachments/20170913-oauth2/oauth2-generic.png
 banner: /attachments/20170913-oauth2/oauth2-generic.png
