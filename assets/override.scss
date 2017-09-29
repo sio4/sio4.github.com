@@ -67,18 +67,12 @@ a {
 }
 
 blockquote {
-	font-size: 1.2em;
+	font-size: 1.1em;
 	background: url(images/blockquote.png) no-repeat scroll 3px 3px;
-	background-color: #f4f4f4;
-	margin: 1rem 0;
-	padding: 8px 12px 8px 36px;
+	background-color: transparent;
+	margin: 1em 0;
+	padding: 10px 15px 10px 40px;
 	border-left: 4px solid #d7d7d7;
-	& p:first-child {
-		margin-top: 0;
-	}
-	& p:last-child {
-		margin-bottom: 0;
-	}
 }
 
 pre {
@@ -256,6 +250,9 @@ article.blog-post {
 		word-break: keep-all;
 		&:first-of-type {
 			margin-top: 0;
+		}
+		&:last-of-type {
+			margin-bottom: 0;
 		}
 
 		a {

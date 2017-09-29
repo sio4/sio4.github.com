@@ -4,6 +4,7 @@ subtitle: Universal Authorizaion, Role and Team
 tags: UART OAuth2 SingleSignOn Authentication GoLang
 date: 2017-09-29T01:28:00+09:00
 repository: https://github.com/hyeoncheon/uart
+comments: true
 social-share: true
 ---
 UART is an Universal Authorizaion, Role and Team management service software.  
