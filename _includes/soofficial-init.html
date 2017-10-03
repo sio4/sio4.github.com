@@ -1,4 +1,5 @@
 {% comment %}
+    https://developers.facebook.com/docs/plugins/share-button?locale=ko_KR#
     for google+ button, https://developers.google.com/+/web/+1button/?hl=ko
     https://dev.twitter.com/web/javascript/loading, 2015-08-01
 {% endcomment %}
@@ -9,7 +10,7 @@
 		var js, fjs = d.getElementsByTagName(s)[0];
 		if (d.getElementById(id)) return;
 		js = d.createElement(s); js.id = id;
-    js.src = "//connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v2.4&appId={{ site.fb_app_id }}";
+		js.src = "//connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v2.10&appId={{ site.facebook.app_id }}";
 		fjs.parentNode.insertBefore(js, fjs);
 	}(document, 'script', 'facebook-jssdk'));
 </script>

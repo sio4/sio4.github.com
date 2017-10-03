@@ -3,6 +3,7 @@ title: Tistojek or Tis2Jek
 subtitle: A Blog Converter from Tistory to Jekyll
 repository: https://github.com/sio4/tistojek
 date: 2015-07-24T00:00:00+09:00
+lang: en-US
 social-share: true
 ---
 `tistojek` is **TIS**tory to **JEK**yll Markdown converter for

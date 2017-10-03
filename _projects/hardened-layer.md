@@ -3,6 +3,7 @@ title: Hardened Layer
 subtitle: A Sample Project for SoftLayer API Test
 date: 2016-02-14T00:00:00+09:00
 repository: https://github.com/c12g/hardened-layer-rails
+lang: en-US
 social-share: true
 ---
 **Hardened Layer** is a custom portal for SoftLayer cloud service.

@@ -17,8 +17,13 @@ common-js:
   - "/assets/vendor/sequence-diagram-min.js"
 ---
 
-<!DOCTYPE html>
-<html lang="{{ site.lang }}">
+<!DOCTYPE html>{%
+if page.lang
+%}
+<html lang="{{ page.lang | split: '-' | first }}">{%
+else %}
+<html lang="{{ site.lang | split: '-' | first }}">{%
+endif %}
 {% include head.html %}
   <body>
 {% include nav.html %}

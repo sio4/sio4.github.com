@@ -4,7 +4,7 @@ description: >
   소용환의 경험과 생각을 모아두는 개인의 구름 속 저장소입니다.
   주로 소프트웨어 개발, 인프라 문제, 클라우드 컴퓨팅에 대한 이야기가 있습니다.
 timezone: Asia/Seoul
-lang: ko
+lang: ko-KR
 url: "http://www.sauru.so"
 baseurl: "" # the subpath of your site, e.g. /blog
 feedurl: "http://feeds.feedburner.com/sauru-so"
@@ -22,6 +22,7 @@ plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-paginate
+  - jekyll-seo-tag
 
 paginate: 10
 
@@ -48,15 +49,22 @@ defaults:
       layout: page
   -
     scope:
+      path: ""
+      type: pages
+    values:
+      seo:
+        name: 소용환의 생각저장소
+  -
+    scope:
       path: "/search.json"
     values:
       layout: ""
 
 ### social values ------------------------------------------------------------
 # Facebook OG related:
-fb_app_id: 132708240077440
-default_image: "/assets/images/sauru-20150806.png"
-author_page: "https://www.facebook.com/yonghwan.so"
+#DEL fb_app_id: 132708240077440
+#DEL default_image: "/assets/images/sauru-20150806.png"
+#DEL author_page: "https://www.facebook.com/yonghwan.so"
 # gravatar
 gravatar: bb4bb7364ee67616d9f5ff3561412772
 twitter_username: scinix
@@ -71,7 +79,20 @@ favicon: /assets/images/favicon.ico
 
 
 
-
+### for seo plugin -----------------------------------------------------------
+image: /assets/images/sauru-20150806.png
+twitter:
+  username: scinix
+facebook:
+  app_id: 132708240077440
+  publisher: https://www.facebook.com/yonghwan.so
+logo: /assets/images/sauru-20150806.png
+social:
+  name: Yonghwan SO
+  links:
+    - https://www.facebook.com/yonghwan.so
+    - https://github.com/sio4
+    - https://www.linkedin.com/in/scinix
 
 ### theme settings -----------------------------------------------------------
 # brand logo of bootstrap navbar:
@@ -93,6 +114,7 @@ bigimg:
 author:
   name: Yonghwan SO
   facebook: yonghwan.so
+  twitter: scinix
   github: sio4
   google-plus: +YonghwanSO
   linkedin: scinix

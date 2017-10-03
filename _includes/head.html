@@ -2,27 +2,61 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-
-    <title>{%
-      if page.title %}{{ page.title }}{%
-      else %}{{ site.title }}{% endif %}</title>{%
-    if site.favicon %}
-    <link href='{{ site.favicon }}' rel='icon' type='image/x-icon'/>{% endif %}
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <meta http-equiv="content-language" content="ko" />{%
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />{%
+    if page.lang %}
+    <meta http-equiv="content-language" content="{{ page.lang }}" />{%
+    else %}
+    <meta http-equiv="content-language" content="{{ site.lang }}" />{%
+    endif %}{%
     if page.tags %}
     <meta name="keywords" content="소용환, {{ page.tags | join: ', ' }}" />{%
+    else %}
+    <meta name="keywords" content="소용환의 블로그, Yonghwan SO's Blog" />{%
+    endif %}{%
+    if site.favicon %}
+    <link href='{{ site.favicon }}' rel='icon' type='image/x-icon'/>{%
+    endif %}
+    {% seo %}{% comment %}
+    seo provides followings:
+      - tilte, meta author, meta description
+      - link:canonical
+      - og:title, locale, description, url, site_name, image, type
+      - article:publisher, published_time
+      - fb:app_id
+      - twitter:card, site, creator
+      -
+    {% endcomment %}
+    <!-- additional facebook open graph -->{%
+    if site.facebook.publisher %}
+    <meta property="article:author" content="{{ site.facebook.publisher }}" />{%
+    endif %}{%
+    unless page.image %}
+    <meta property="og:image" content="{{ site.url }}{{ site.image }}" />{%
+    endunless %}{%
+    unless page.id %}
+    <meta property="og:type" content="website" />{%
+    endunless %}
+    <!-- additional twitter summary cards -->{%
+    if page.meta-title %}
+    <meta name="twitter:title" content="{{ page.meta-title }}" />{%
+    elsif page.title %}
+    <meta name="twitter:title" content="{{ page.title }}" />{%
+    else %}
+    <meta name="twitter:title" content="{{ site.title }}" />{%
     endif %}{%
     if page.meta-description %}
-    <meta name="description" content="{{ page.meta-description }}">{%
+    <meta name="twitter:description" content="{{ page.meta-description }}">{%
     elsif page.id %}
-    <meta name="description" content="{{ page.excerpt | strip_html | xml_escape | normalize_whitespace }}">{%
+    <meta name="twitter:description" content="{{ page.excerpt | strip_html | xml_escape | normalize_whitespace }}">{%
     else %}
-    <meta name="description" content="{{ site.description | normalize_whitespace }}">{%
+    <meta name="twitter:description" content="{{ site.description | normalize_whitespace }}">{%
+    endif %}{%
+    if page.image %}
+    <meta name="twitter:image" content="{{ site.url }}{{ page.image }}" />{%
+    elsif site.avatar %}
+    <meta name="twitter:image" content="{{ site.url }}{{ site.avatar }}" />{%
     endif %}
-    <meta name="author" content="{{ site.author.name }}" />{%
-    if page.subtitle %}
-    <meta name="description" content="{{ page.subtitle }}">{% endif %}{%
+    {%
     if layout.common-ext-css %}{%
       for css in layout.common-ext-css %}
     <link rel="stylesheet" href="{{ css }}" />{%
@@ -52,67 +86,8 @@
       for font in page.googlefonts %}
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family={{ font }}" />{%
       endfor %}{%
-    endif %}
-
-    <!-- facebook open graph -->
-    <meta property="og:site_name" content="{{ site.title }}" />{%
-    if page.meta-title %}
-    <meta property="og:title" content="{{ page.meta-title }}" />{%
-    elsif page.title %}
-    <meta property="og:title" content="{{ page.title }}" />{%
-    else %}
-    <meta property="og:title" content="{{ site.title }}" />{%
     endif %}{%
-    if page.meta-description %}
-    <meta property="og:description" content="{{ page.meta-description }}">{%
-    elsif page.id %}
-    <meta property="og:description" content="{{ page.excerpt | strip_html | xml_escape | normalize_whitespace }}">{%
-    else %}
-    <meta property="og:description" content="{{ site.description | normalize_whitespace }}">{%
-    endif %}{%
-    if page.image %}
-    <meta property="og:image" content="{{ site.url }}{{ page.image }}" />{%
-    elsif site.avatar %}
-    <meta property="og:image" content="{{ site.url }}{{ site.default_image }}" />{%
-    endif %}{%
-    if page.id %}
-    <meta property="article:author" content="https://www.facebook.com/yonghwan.so" />
-    <meta property="og:type" content="article" />{%
-    else %}
-    <meta property="og:type" content="website" />{%
-    endif %}{%
-    if page.id %}
-    <meta property="og:url" content="{{ site.url }}{{ page.url }}" />
-    <link rel="canonical" href="{{ site.url }}{{ page.url }}" />{%
-    else %}
-    <meta property="og:url" content="{{ site.url }}{{ page.url | remove: '/index.html' | remove: '.html' }}" />
-    <link rel="canonical" href="{{ site.url }}{{ page.url | remove: '/index.html' | remove: '.html' }}" />{%
-    endif %}
-  
-    <!-- twitter summary cards -->
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:site" content="@{{ site.author.twitter }}" />
-    <meta name="twitter:creator" content="@{{ site.author.twitter }}" />{%
-    if page.meta-title %}
-    <meta name="twitter:title" content="{{ page.meta-title }}" />{%
-    elsif page.title %}
-    <meta name="twitter:title" content="{{ page.title }}" />{%
-    else %}
-    <meta name="twitter:title" content="{{ site.title }}" />{%
-    endif %}{%
-    if page.meta-description %}
-    <meta name="twitter:description" content="{{ page.meta-description }}">{%
-    elsif page.id %}
-    <meta name="twitter:description" content="{{ page.excerpt | strip_html | xml_escape | normalize_whitespace }}">{%
-    else %}
-    <meta name="twitter:description" content="{{ site.description | normalize_whitespace }}">{%
-    endif %}{%
-    if page.share-img %}
-    <meta name="twitter:image" content="{{ site.url }}{{ page.image }}" />{%
-    elsif site.avatar %}
-    <meta name="twitter:image" content="{{ site.url }}{{ site.avatar }}" />{%
-    endif %}
-    {% if site.shareaholic_site_id %}
+    if site.shareaholic_site_id %}
     <script type="text/javascript" data-cfasync="false" src="//dsms0mj1bbhn4.cloudfront.net/assets/pub/shareaholic.js" data-shr-siteid="{{ site.shareaholic_site_id }}" async="async"></script>{%
     endif %}
   </head>
