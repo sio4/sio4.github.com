@@ -76,7 +76,9 @@ google_analytics: UA-10364127-2
 favicon: /assets/images/favicon.ico
 
 
-
+### other social plugins...
+addthis:
+  username: sio4
 
 
 ### for seo plugin -----------------------------------------------------------

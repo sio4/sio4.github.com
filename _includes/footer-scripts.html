@@ -28,12 +28,20 @@ if layout.common-js %}{%
   endfor %}{%
 endif %}
 
-{% include google_analytics.html %}
-
   <script>
     $(document).ready(function(){
       $('.hand-diagram').sequenceDiagram({ theme: 'hand' });
       $('.diagram').sequenceDiagram({ theme: 'simple' });
     });
   </script>
-  <script id="dsq-count-scr" src="//sauru.disqus.com/count.js" async></script>
+
+{%
+if jekyll.environment != "development" %}{%
+  include google_analytics.html %}{%
+  if site.disqus %}
+  <script id="dsq-count-scr" src="//{{ site.disqus }}.disqus.com/count.js" async></script>{%
+  endif %}{%
+  if site.addthis.username %}
+  <!-- Go to www.addthis.com/dashboard to customize your tools --><script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid={{ site.addthis.username }}"></script>{%
+  endif %}{%
+endif %}
