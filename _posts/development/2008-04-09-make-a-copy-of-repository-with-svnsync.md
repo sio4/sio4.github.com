@@ -1,7 +1,7 @@
 ---
 redirect_from: /blog/2008/04/09/make-a-copy-of-repository-with-svnsync/
 title: "서브버전 저장소 사본 만들기, svnsync"
-tags: 생산성 버전관리 Howto 가용성 프로젝트
+tags: productivity version-control howto availability project
 categories: ["development"]
 date: 2008-04-09T01:01:59+09:00
 modified: 2010-07-02T19:20:10+09:00

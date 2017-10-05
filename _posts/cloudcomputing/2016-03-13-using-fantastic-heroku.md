@@ -1,6 +1,6 @@
 ---
 title: 판타스틱 PaaS 서비스, Heroku 사용하기
-tags: Git 버전관리 Heroku PaaS 클라우드컴퓨팅 Ruby-on-Rails
+tags: Heroku PaaS cloud-computing Git version-control ruby-on-rails
 categories: ["cloudcomputing"]
 image: /assets/logos/heroku-light.jpg
 banner: /assets/logos/heroku-light.jpg

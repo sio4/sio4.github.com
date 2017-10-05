@@ -1,0 +1,385 @@
+acquisition:
+  ko: 인수합병
+  en: Acquisition
+adaptive:
+  ko: 적응형
+  en: Adaptive
+agile:
+  ko: 애자일
+  en: Agile
+android:
+  ko: 안드로이드
+  en: Android
+animation:
+  ko: 애니메이션
+  en: Animation
+app:
+  ko: 앱
+  en: App
+appliance:
+  ko: 가전
+  en: Appliance
+architect:
+  ko: 아키텍트
+  en: Architect
+as-a-service:
+  ko: As a Service
+  en: As a Service
+authentication:
+  ko: 인증
+  en: Authentication
+automation:
+  ko: 자동화
+  en: Automation
+availability:
+  ko: 가용성
+  en: availability
+berkeley-db:
+  ko: Berkeley DB
+blogging:
+  ko: 블로깅
+  en: Blogging
+book:
+  ko: 책
+  en: Book
+brand:
+  ko: 브랜드
+  en: Brand
+c-language:
+  ko: C 언어
+  en: C Language
+cloud-computing:
+  ko: 클라우드컴퓨팅
+  en: Cloud Computing
+code-review:
+  ko: 코드리뷰
+  en: Code Review
+codec:
+  en: Codec
+collaboration:
+  ko: 협업
+  en: Collaboration
+comapny:
+  ko: 회사
+  en: Comapny
+communication:
+  ko: 소통
+  en: Communication
+community:
+  ko: 공동체
+  en: Community
+conference:
+  ko: 행사
+  en: Conference
+convergence:
+  ko: 융합
+  en: Convergence
+copyright:
+  ko: 저작권
+  en: Copyright
+d3js:
+  en: D3.js
+data-liberation:
+  ko: 자료해방
+  en: Data Liberation
+debugging:
+  ko: 디버깅
+  en: Debugging
+delayed-job:
+  ko: 지연작업
+  en: Delayed Job
+democracy:
+  ko: 민주주의
+  en: democracy
+developer:
+  ko: 개발자
+  en: developer
+development:
+  ko: 개발
+  en: development
+disclosure:
+  ko: 유출
+  en: disclosure
+disk:
+  ko: 디스크
+  en: disk
+education:
+  ko: 교육
+  en: education
+embedded:
+  en: Embedded
+emberjs:
+  en: Ember.js
+engineer:
+  ko: 엔지니어
+  en: engineer
+error-handling:
+  ko: 오류처리
+  en: Error Handling
+fault-analyzing:
+  ko: 장애분석
+  en: Fault Analyzing
+framework:
+  ko: 프레임웍
+  en: Framework
+free-software:
+  ko: 자유소프트웨어
+  en: Free Software
+galaxy-s:
+  ko: 겔럭시 S
+  en: Galaxy S
+gallorg:
+  en: Gallorg
+geology:
+  ko: 지질학
+  en: Geology
+go-lang:
+  ko: Go 언어
+  en: Go Lang
+google:
+  ko: 구글
+  en: Google
+goul:
+  ko: 거울
+  en: Goul
+guitar:
+  ko: 기타
+  en: Guitar
+hardened-layer:
+  en: Hardened Layer
+hardware:
+  ko: 하드웨어
+  en: Hardware
+home-network:
+  ko: 홈네트워크
+  en: Home Network
+howto:
+  en: Howto
+hybrid-cloud:
+  en: Hybrid Cloud
+idea:
+  ko: 아이디어
+  en: Idea
+innovation:
+  ko: 혁신
+  en: Innovation
+internet:
+  ko: 인터넷
+  en: Internet
+interoperability:
+  ko: 상호운용성
+  en: Interoperability
+isolation:
+  ko: 격리
+  en: Isolation
+java:
+  en: Java
+leadership:
+  ko: 지도력
+  en: Leadership
+life:
+  ko: 삶
+  en: life
+logging:
+  ko: 로그관리
+  en: Logging
+management-cost:
+  ko: 관리비용
+  en: Management Cost
+memories:
+  ko: 기억
+  en: memories
+mobile:
+  ko: 모바일
+  en: mobile
+monitoring:
+  ko: 모니터링
+  en: monitoring
+movie:
+  ko: 영화
+  en: movie
+multimedia:
+  ko: 멀티미디어
+  en: Multimedia
+music:
+  ko: 음악
+  en: Music
+my-projects:
+  ko: 내 프로젝트
+  en: My Projects
+name:
+  ko: 이름
+  en: Name
+nested-request:
+  en: Nested Request
+network:
+  ko: 네트워크
+  en: Network
+news:
+  ko: 소식
+  en: News
+nodejs:
+  en: Node.js
+notebook:
+  ko: 노트북
+  en: Notebook
+object-storage:
+  en: Object Storage
+open-source:
+  ko: 오픈소스
+  en: Open Source
+operation:
+  ko: 운영
+  en: Operation
+patch:
+  ko: 패치
+  en: Patch
+people:
+  ko: 사람들
+  en: People
+performance:
+  ko: 성능
+  en: Performance
+personal-information:
+  ko: 개인정보
+  en: Personal Information
+personalization:
+  ko: 개인화
+  en: Personalization
+photo:
+  ko: 사진
+  en: Photo
+planner:
+  ko: 플래너
+  en: Planner
+platform:
+  ko: 플랫폼
+  en: Platform
+productivity:
+  ko: 생산성
+  en: Productivity
+profiling:
+  ko: 프로파일링
+  en: Profiling
+project:
+  ko: 프로젝트
+  en: Project
+protocol:
+  ko: 프로토콜
+  en: Protocol
+readings:
+  ko: 읽어보기
+  en: Readings
+recovery:
+  ko: 복구
+  en: Recovery
+reliability:
+  ko: 신뢰성
+  en: Reliability
+remote-terminal:
+  ko: 원격터미널
+  en: Remote Terminal
+rendering:
+  ko: 렌더링
+  en: Rendering
+resource:
+  ko: 자원
+  en: Resource
+rooting:
+  ko: 루팅
+  en: Rooting
+ruby-on-rails:
+  en: Ruby on Rails
+rules-of-action:
+  ko: 행동수칙
+  en: Rules of Action
+security:
+  ko: 보안
+  en: Security
+semantic-ui:
+  en: Semantic-UI
+service:
+  ko: 서비스
+  en: Service
+setup:
+  ko: 설정
+  en: Setup
+silver-bullet:
+  ko: 은총알
+  en: Silver Bullet
+single-sign-on:
+  en: Single Sign On
+social-network:
+  ko: 사회관계망
+  en: Social Network
+social-platform:
+  en: Social Platform
+social-problem:
+  ko: 사회문제
+  en: Social Problem
+social-responsibility:
+  ko: 사회적책임
+  en: Social Responsibility
+software-appliance:
+  en: Software Appliance
+software-engineering:
+  ko: 소프트웨어 엔지니어링
+  en: Software Engineering
+stereotypes:
+  ko: 고정관념
+  en: Stereotypes
+storage:
+  ko: 스토리지
+  en: Storage
+streaming:
+  ko: 스트리킹
+  en: Streaming
+sun-microsystems:
+  en: Sun Microsystems
+telecom:
+  ko: 텔레콤
+  en: Telecom
+test:
+  ko: 시험
+  en: Test
+tips:
+  ko: 팁
+  en: Tips
+troubleshooting:
+  ko: 문제해결
+  en: Troubleshooting
+twitter:
+  ko: 트위터
+  en: Twitter
+user-interface:
+  ko: 사용자 인터페이스
+  en: User Interface
+user-oriented:
+  ko: 사용자지향
+  en: User Oriented
+utility:
+  en: Utility
+version-control:
+  ko: 형상관리
+  en: Version Control
+video:
+  ko: 비디오
+  en: Video
+virtualization:
+  ko: 가상화
+  en: Virtualization
+web-service:
+  ko: 웹서비스
+  en: Web Service
+white-paper:
+  ko: 백서
+  en: White Paper
+wind-of-change:
+  ko: 변화의 물결
+  en: Wind of Change
+windows:
+  ko: 윈도우즈
+  en: Windows
+writing:
+  ko: 글쓰기
+  en: Writing

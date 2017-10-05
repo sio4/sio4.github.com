@@ -1,7 +1,7 @@
 ---
 redirect_from: /blog/2010/02/01/dd-mount-for-memorycard-backup/
 title: 메모리카드 백업, dd, mount,...
-tags: Disk Recovery
+tags: disk recovery
 categories: ["tips-and-tricks"]
 date: 2010-02-01T15:46:39+09:00
 modified: 2010-07-02T09:43:05+09:00

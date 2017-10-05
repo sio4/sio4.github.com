@@ -1,7 +1,7 @@
 ---
 redirect_from: /blog/2009/09/12/redhat-delta-cloud-project/
 title: 레드햇, 델타구름 프로젝트 소개
-tags: 상호운용성 Redhat 오픈소스 클라우드컴퓨팅
+tags: interoperability RedHat open-source cloud-computing
 categories: ["cloudcomputing"]
 date: 2009-09-12T19:30:00+09:00
 modified: 2011-03-04T13:52:02+09:00

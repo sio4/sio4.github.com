@@ -1,7 +1,7 @@
 ---
 redirect_from: /blog/2009/11/13/enomalism2-opensource-virtualization-platform/
 title: Enomalism2, Open Source Virtualization Platform
-tags: Enomalism 가상화 클라우드컴퓨팅
+tags: Enomalism virtualization cloud-computing
 categories: ["cloudcomputing"]
 date: 2009-11-13T08:42:37+09:00
 modified: 2011-03-04T13:50:46+09:00

@@ -1,7 +1,7 @@
 ---
 redirect_from: /blog/2007/11/06/뒤늦은-기록-BarCampSeoul2/
 title: "행사: 뒤늦은 기록, BarCampSeoul2"
-tags: 공동체 컨퍼런스 Software-Appliance
+tags: community conference software-appliance
 categories: ["review"]
 date: 2007-11-06T01:11:09+09:00
 modified: 2010-07-02T13:53:48+09:00

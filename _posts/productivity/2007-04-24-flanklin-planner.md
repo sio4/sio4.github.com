@@ -1,7 +1,7 @@
 ---
 redirect_from: /blog/2007/04/24/flanklin-planner/
 title: "프랭클린 플래너를 쓰는 사람의 시간은 다르다"
-tags: 생산성 플래너
+tags: productivity planner
 categories: ["productivity"]
 date: 2007-04-24T14:06:57+09:00
 modified: 2008-03-09T02:28:50+09:00

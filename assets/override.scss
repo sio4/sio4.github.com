@@ -344,6 +344,26 @@ article.blog-post {
 	}
 }
 
+div.posts-related {
+	.related-item {
+		margin: 4px 0;
+		color: $color-grey;
+		font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+		&:before {
+			content: "\F054";
+			font-family: FontAwesome;
+			margin-right: 0px;
+		}
+		.item-link {
+			font-weight: 800;
+			text-transform: uppercase;
+		}
+		.item-meta {
+			color: $color-grey;
+		}
+	}
+}
+
 ul.post-related {
 	list-style: none;
 	padding: 0;
@@ -411,7 +431,7 @@ ul.post-related {
 }
 
 .pager {
-	margin: 10px 0 0;
+	margin: 10px 0;
 }
 
 .pager.blog-pager {
@@ -741,8 +761,8 @@ footer .theme-by {
 		font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 		.post-banner {
 			clear: both;
-			margin-top: 5px;
-			margin-bottom: 5px;
+			margin-top: 15px;
+			margin-bottom: 15px;
 			img {
 				max-height: 300px;
 			}

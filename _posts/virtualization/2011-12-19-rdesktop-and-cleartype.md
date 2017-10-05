@@ -1,7 +1,7 @@
 ---
 redirect_from: /blog/2011/12/19/rdesktop-and-cleartype/
 title: "VDI: rdesktop과 ClearType"
-tags: 가상화 VDI 원격터미널
+tags: virtualization VDI remote-terminal
 categories: ["virtualization"]
 date: 2011-12-19T14:42:24+09:00
 modified: 2011-12-19T14:43:20+09:00

@@ -1,7 +1,7 @@
 ---
 redirect_from: /blog/2007/04/29/yeongjin-seo-the-developer/
 title: 서영진님, 골수 개발자, 그리고 그리운 20세기!
-tags: 삶 기억 오픈소스 사람
+tags: life memories open-source people
 categories: ["opensource"]
 date: 2007-04-29T21:46:53+09:00
 modified: 2008-03-09T02:21:50+09:00

@@ -17,6 +17,16 @@ assign step = 1.6 |minus:0.6 |divided_by: m_count %}
 assign tags = site.tags |sort %}{%
 for tag in tags %}{%
   assign tag_name = tag |first %}{%
+  if site.data.tags[tag_name] %}{%
+    if site.data.tags[tag_name].ko %}{%
+      assign display = site.data.tags[tag_name].ko %}{%
+    else %}{%
+      assign display = site.data.tags[tag_name].en %}{%
+    endif %}{%
+  else %}{%
+    assign display = tag_name %}{%
+  endif %}{%
+  assign slug = tag_name |slugify %}{%
   assign tag_size = tag |last |size %}{% comment %}
   {% if false and l_count > tag_size %}
     {% continue %}
@@ -27,7 +37,7 @@ for tag in tags %}{%
   <div class="chart-item">
     <div class="chart-item-bar col-xs-5 col-xs-offset-1"><div class="bar" style="width: {{bs}}%"></div></div>
     <div class="chart-item-label col-xs-5">
-      <a href="/tags/{{tag_name}}/" title="{{tag_size}}">{{tag_name}}</a>
+      <a href="/tags/{{slug}}/" title="{{tag_size}}">{{display}}</a>
       <span class="details"> » {{tag_size}}</span>
     </div>
   </div>{%

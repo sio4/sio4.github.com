@@ -1,7 +1,7 @@
 ---
 redirect_from: /blog/2007/11/19/understanding-full-v12n-para-v12n/
 title: "Understanding Full Virtualization, Paravirtualization, and..."
-tags: 가상화 VMware 백서
+tags: virtualization VMware white-paper
 categories: ["virtualization"]
 date: 2007-11-19T16:07:37+09:00
 modified: 2007-11-19T16:07:37+09:00

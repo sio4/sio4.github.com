@@ -1,7 +1,7 @@
 ---
 redirect_from: /blog/2007/04/17/what-is-codec/
 title: "코덱이 뭐에요? (원래는: 우리 솔루션이 MPEG를 지원하나요?)"
-tags: 멀티미디어 코덱 MPEG RTP
+tags: multimedia codec MPEG RTP
 categories: ["tips-and-tricks"]
 date: 2007-04-17T23:56:00+09:00
 modified: 2010-07-05T09:41:40+09:00

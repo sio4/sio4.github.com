@@ -1,6 +1,6 @@
 ---
 title: SoftLayer Object Storage와 임시 URL
-tags: SoftLayer swift 클라우드컴퓨팅 API Ruby Object-Storage Github
+tags: SoftLayer object-storage cloud-computing API Ruby swift Github
 categories: ["development"]
 image: /attachments/20160322-sl-objs-002.png
 date: 2016-03-22 12:12 +09:00

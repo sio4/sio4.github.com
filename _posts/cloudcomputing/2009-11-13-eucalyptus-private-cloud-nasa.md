@@ -1,7 +1,7 @@
 ---
 redirect_from: /blog/2009/11/13/eucalyptus-private-cloud-nasa/
 title: Eucalyptus, Private Cloud, NASA,...
-tags: Eucalyptus NASA 클라우드컴퓨팅
+tags: Eucalyptus NASA cloud-computing
 categories: ["cloudcomputing"]
 date: 2009-11-13T08:45:30+09:00
 modified: 2011-03-04T13:45:48+09:00

@@ -1,7 +1,7 @@
 ---
 redirect_from: /blog/2007/05/03/my-life-in-front-of-my-friends/
 title: 동지들 앞에 나의 삶은...
-tags: 음악 민주주의 삶
+tags: music democracy life
 categories: ["misc"]
 date: 2007-05-03T17:36:53+09:00
 modified: 2008-03-09T02:19:07+09:00

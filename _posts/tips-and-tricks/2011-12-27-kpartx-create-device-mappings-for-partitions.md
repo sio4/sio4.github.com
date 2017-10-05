@@ -1,7 +1,7 @@
 ---
 redirect_from: /blog/2011/12/27/kpartx-create-device-mappings-for-partitions/
 title: Kpartx, Create device mappings for partitions
-tags: Disk Recovery
+tags: disk recovery
 categories: ["tips-and-tricks"]
 date: 2011-12-27T12:36:17+09:00
 modified: 2011-12-27T12:36:17+09:00

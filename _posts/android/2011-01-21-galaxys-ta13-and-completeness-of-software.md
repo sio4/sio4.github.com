@@ -1,7 +1,7 @@
 ---
 redirect_from: /blog/2011/01/21/galaxys-ta13-and-completeness-of-software/
 title: 갤럭시S TA13 업데이트, 그리고 소프트웨어의 완성도
-tags: 행동수칙 사용자지향 안드로이드 갤럭시S
+tags: rules-of-action user-oriented android galaxy-s
 categories: ["android"]
 date: 2011-01-21T11:02:24+09:00
 modified: 2011-01-21T11:04:40+09:00

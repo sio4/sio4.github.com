@@ -1,6 +1,6 @@
 ---
 title: "Howto: PXE Master 구성하기"
-tags: Howto PXE 자동화 클라우드컴퓨팅
+tags: howto PXE automation cloud-computing
 categories: ["tips-and-tricks"]
 date: 2015-09-15 09:27:20+09:00
 ---

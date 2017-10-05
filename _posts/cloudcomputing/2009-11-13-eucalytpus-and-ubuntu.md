@@ -1,7 +1,7 @@
 ---
 redirect_from: /blog/2009/11/13/eucalytpus-and-ubuntu/
 title: Eucalytpus and Ubuntu Linux
-tags: Eucalyptus Ubuntu 오픈소스 클라우드컴퓨팅
+tags: Eucalyptus Ubuntu open-source cloud-computing
 categories: ["cloudcomputing"]
 date: 2009-11-13T08:45:21+09:00
 modified: 2011-03-04T13:49:01+09:00

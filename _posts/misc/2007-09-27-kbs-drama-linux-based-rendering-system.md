@@ -1,7 +1,7 @@
 ---
 redirect_from: /blog/2007/09/27/kbs-drama-linux-based-rendering-system/
 title: KBS 드라마, 리눅스 기반 렌더링「효과만점」
-tags: 리눅스 Rendering 애니메이션 기억
+tags: Linux rendering animation memories
 categories: ["misc"]
 date: 2007-09-27T09:54:03+09:00
 modified: 2007-09-27T09:54:03+09:00

@@ -1,7 +1,7 @@
 ---
 redirect_from: /blog/2011/11/07/little-dynamic-error-handling-for-apache-jsp/
 title: Apache+JSP 환경에서 쫌 동적인 ErrorDocument
-tags: 오류처리 모니터링 개발 서비스
+tags: error-handling monitoring development service
 categories: ["tips-and-tricks"]
 date: 2011-11-07T02:41:38+09:00
 modified: 2011-11-07T02:45:42+09:00

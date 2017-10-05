@@ -1,7 +1,7 @@
 ---
 redirect_from: /blog/2008/04/26/book-practices-of-an-agile-developer/
 title: '책: "애자일 프랙티스 (Practices of an Agile Developer)"'
-tags: 삶 개발 소프트웨어-공학 애자일 생산성 책
+tags: life development software-engineering agile productivity book
 categories: ["review"]
 date: 2008-04-26T02:11:07+09:00
 modified: 2010-07-02T10:38:39+09:00

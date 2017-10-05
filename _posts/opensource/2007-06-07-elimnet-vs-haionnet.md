@@ -1,7 +1,7 @@
 ---
 redirect_from: /blog/2007/06/07/elimnet-vs-haionnet/
 title: 엘림넷 대 하이온넷 사건
-tags: 오픈소스 저작권
+tags: open-source copyright
 categories: ["opensource"]
 date: 2007-06-07T13:27:36+09:00
 modified: 2008-03-09T01:41:35+09:00

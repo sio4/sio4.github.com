@@ -14,18 +14,10 @@ layout: base
         "And in the end, the love you take is equal to the love you make."
         -- the Beatles
         </div>
-        {%
-        if page.tags.size > 0 %}
-        <div class="post-tags">{%
-          for tag in page.tags %}
-          <a class="tag-item" href="/tags/{{ tag }}/">{{ tag }}</a>{%
-          endfor %}
-        </div>{%
-        endif %}
-        {% unless page.social-share == false %}
-{% include social-share.html %}
-        {% endunless %}
-
+        {% include tags-ribbon.html post=page %}{%
+        unless page.social-share == false %}{%
+          include social-share.html %}{%
+        endunless %}
         <ul class="pager blog-pager">{%
           if page.previous.url %}
           <li class="previous">
@@ -38,6 +30,23 @@ layout: base
           </li>{%
           endif %}
         </ul>
+
+        <div class="posts-related">{% assign ps = page.url|split: "," %}
+          <h3>Related Posts</h3>{%
+          for t in page.tags limit: 3 %}{%
+            for p in site.tags[t] limit: 6 %}{%
+              unless ps contains p.url %}
+          <div class="related-item">
+            <a class="item-link" href="{{ p.url }}">{{ p.title }}</a>{% comment %}
+          <span class="item-meta">&raquo; {{ p.date |date: '%F' }}</span>
+          {% endcomment %}
+          </div>{%
+              endunless %}{%
+              assign ps = ps|push: p.url %}{%
+            endfor %}{%
+          endfor %}
+          </ul>
+        </div>
         {%
         unless page.comments == false %}
         <div class="disqus-comments">

@@ -1,7 +1,7 @@
 ---
 redirect_from: /blog/2012/06/12/IO-Debugging/
 title: I/O Debugging
-tags: 디버깅 리눅스 성능
+tags: debugging Linux performance
 categories: ["tips-and-tricks"]
 date: 2012-06-12T12:30:49+09:00
 modified: 2012-06-12T12:30:49+09:00

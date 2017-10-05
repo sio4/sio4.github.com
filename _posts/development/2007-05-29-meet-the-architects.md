@@ -1,7 +1,7 @@
 ---
 redirect_from: /blog/2007/05/29/meet-the-architects/
 title: Meet the Architects
-tags: Architect 개발 동영상
+tags: architect development video
 categories: ["development"]
 date: 2007-05-29T17:47:23+09:00
 modified: 2007-05-29T17:47:23+09:00

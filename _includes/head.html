@@ -8,8 +8,17 @@
     else %}
     <meta http-equiv="content-language" content="{{ site.lang }}" />{%
     endif %}{%
-    if page.tags %}
-    <meta name="keywords" content="소용환, {{ page.tags | join: ', ' }}" />{%
+    if page.tags %}{%
+      assign keywords = "" |split: "," %}{%
+      for tag in page.tags %}{%
+        if site.data.tags[tag] %}{%
+          assign keywords = keywords |push: site.data.tags[tag].ko %}{%
+          assign keywords = keywords |push: site.data.tags[tag].en %}{%
+        else %}{%
+          assign keywords = keywords |push: tag %}{%
+        endif %}{%
+      endfor %}
+    <meta name="keywords" content="소용환, {{ keywords | join: ', ' }}" />{%
     else %}
     <meta name="keywords" content="소용환의 블로그, Yonghwan SO's Blog" />{%
     endif %}{%

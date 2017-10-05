@@ -1,7 +1,7 @@
 ---
 redirect_from: /blog/2010/07/12/deltacloud---many-clouds-one-api/
 title: 클라우드 답기 위하여... Deltacloud - Many Clouds, One API
-tags: DeltaCloud Redhat API Ruby-on-Rails Hybrid-Cloud 클라우드컴퓨팅
+tags: DeltaCloud RedHat API ruby-on-rails hybrid-cloud cloud-computing
 categories: ["cloudcomputing"]
 date: 2010-07-12T10:32:13+09:00
 modified: 2011-03-04T13:44:04+09:00

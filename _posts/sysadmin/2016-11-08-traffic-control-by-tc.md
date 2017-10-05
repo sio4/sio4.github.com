@@ -1,6 +1,6 @@
 ---
 title: TC, 리눅스 Traffic Control
-tags: 네트워크 QoS
+tags: network QoS Linux
 categories: ["sysadmin"]
 date: 2016-11-08T21:36:30+0900
 ---

@@ -1,7 +1,7 @@
 ---
 redirect_from: /blog/2007/04/24/make-useful-production/
 title: "목표: 쓸만한 제품을 만들자!"
-tags: 행동수칙 아이디어
+tags: rules-of-action idea
 categories: ["rules-of-action"]
 date: 2007-04-24T10:56:21+09:00
 modified: 2010-07-02T15:42:54+09:00

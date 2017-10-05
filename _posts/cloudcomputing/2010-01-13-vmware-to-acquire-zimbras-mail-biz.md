@@ -1,7 +1,7 @@
 ---
 redirect_from: /blog/2010/01/13/vmware-to-acquire-zimbras-mail-biz/
 title: "VM웨어, 야후 짐브라 오픈소스 이메일 사업부 인수"
-tags: VMware Zimbra 인수합병 클라우드컴퓨팅
+tags: VMware Zimbra acquisition cloud-computing
 categories: ["cloudcomputing"]
 date: 2010-01-13T17:56:37+09:00
 modified: 2011-03-04T13:48:31+09:00

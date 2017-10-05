@@ -1,7 +1,7 @@
 ---
 redirect_from: /blog/2007/05/21/the-power-of-code-review/
 title: '"The Power of Code Review"'
-tags: 형상관리 개발 협업 코드리뷰
+tags: version-control development collaboration code-review
 categories: ["development"]
 date: 2007-05-21T14:15:45+09:00
 modified: 2010-07-02T18:59:11+09:00

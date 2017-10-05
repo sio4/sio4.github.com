@@ -1,7 +1,7 @@
 ---
 redirect_from: /blog/2008/12/03/landscape-canonicals-monitoring-as-a-service/
 title: 'Landscape: Canonical의 새로운 "Monitoring as a Service"'
-tags: Canonical Ubuntu 모니터링 클라우드컴퓨팅 As-a-Service
+tags: Canonical Ubuntu monitoring cloud-computing as-a-service
 categories: ["opensource"]
 date: 2008-12-03T01:08:32+09:00
 modified: 2011-03-04T13:46:36+09:00

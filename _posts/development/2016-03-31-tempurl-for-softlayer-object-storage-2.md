@@ -1,6 +1,6 @@
 ---
 title: SoftLayer Object Storage와 임시 URL - Part 2
-tags: SoftLayer swift 클라우드컴퓨팅 API Ruby Object-Storage Github RSpec
+tags: SoftLayer object-storage cloud-computing API Ruby swift Github RSpec
 categories: ["development"]
 image: /assets/logos/hardenedlayer.png
 banner: /assets/logos/hardenedlayer-banner.png

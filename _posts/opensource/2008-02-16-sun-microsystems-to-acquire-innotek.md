@@ -1,7 +1,7 @@
 ---
 redirect_from: /blog/2008/02/16/sun-microsystems-to-acquire-innotek/
 title: '"Sun Microsystems to Acquire innotek"'
-tags: 소식 Sun-Microsystems VirtualBox 변화의물결 오픈소스
+tags: news sun-microsystems VirtualBox wind-of-change open-source
 categories: ["opensource"]
 date: 2008-02-16T16:03:57+09:00
 modified: 2008-03-09T02:38:58+09:00

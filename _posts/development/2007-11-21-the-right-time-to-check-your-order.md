@@ -1,7 +1,7 @@
 ---
 redirect_from: /blog/2007/11/21/the-right-time-to-check-your-order/
 title: 남에게 일을 주었다. 언제 검수해야 하는가?
-tags: 프로젝트 행동수칙
+tags: project rules-of-action
 categories: ["development"]
 date: 2007-11-21T22:34:21+09:00
 modified: 2010-07-02T19:05:35+09:00

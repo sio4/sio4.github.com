@@ -1,7 +1,7 @@
 ---
 redirect_from: /blog/2008/03/01/why-opensource-and-what-it-is/
 title: 왜 오픈소스인가? 그게 뭔데?
-tags: 오픈소스 Sun-Microsystems
+tags: open-source sun-microsystems
 categories: ["opensource"]
 date: 2008-03-01T00:10:30+09:00
 modified: 2008-03-09T01:25:50+09:00
