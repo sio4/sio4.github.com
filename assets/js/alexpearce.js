@@ -56,19 +56,19 @@
       tagsContainer.style.display = 'none';
       categoriesContainer.style.display = 'block';
       children = categoriesContainer.children;
-      searchTerm = decodeURI(params.category);
+      searchTerm = decodeURI(params.category).toLowerCase();
     }
     if (hasTag) {
       tagsContainer.style.display = 'block';
       categoriesContainer.style.display = 'none';
       children = tagsContainer.children;
-      searchTerm = decodeURI(params.tag);
+      searchTerm = decodeURI(params.tag).toLowerCase();
     }
 
     for (i = 0; i < children.length; i++) {
       child = children[i];
-      if (decodeURI(child.dataset.name) === searchTerm) {
-        child.style.display = 'display';
+      if (decodeURI(child.dataset.name).toLowerCase() === searchTerm) {
+        child.style.display = 'block';
         hasMatch = true;
       } else {
         child.style.display = 'none';

@@ -1,9 +1,10 @@
 ---
 layout: page
-title: Search results
+title: Blog Search
 js: /assets/js/alexpearce.js
 ---
 {% comment %}
+Blog search without search.json
 
 https://alexpearce.me/2012/04/simple-jekyll-searching/
 https://github.com/alexpearce/alexpearce.github.com/blob/master/search.html
@@ -19,63 +20,77 @@ It relies on any links to this page either having a `tag` or a `category` key,
 with a value that's been escaped with the Liquid `escape` filter, such that the
 escape names on this page match those in the URL.
 {% endcomment %}
-<div class="category-index">
-  {% for category in site.categories %}
-    {% assign nposts = category | last | size %}
-    <div class="collection" data-name="{{ category | first | escape }}">
+  <div class="search-box text-center">
+    <form action="" id="search-form">
+      <input type=text name="tag">
+      <button type="submit" form="search-form" value="Submit">Search</button>
+      <label>or <a href="/blog/"><b>BLOG ARCHIVE</b></a></label>
+    </form>
+  </div>
+
+  <div class="category-index">{%
+  for category in site.categories %}{%
+    assign nposts = category | last | size %}
+    <div class="collection" data-name="{{ category | first | escape }}" style="display: none;">
       <header>
-        <h1>{{ category | first }}</h1>
-        <h2>{{ nposts }} post{% if nposts != 1 %}s{% endif %}</h2>
+        <h1>Search Result for "{{ category | first }}"</h1>
+        <h2>{{ nposts }} Post{% if nposts != 1 %}s{% endif %}</h2>
       </header>
-      <ul>
-        {% for posts in category %}
-          {% for post in posts %}
-            {% comment %}
+      <ul>{%
+    for posts in category %}{%
+      for post in posts %}{% comment %}
             I'm not sure why I need to check for the title, I think because the
             category is itself part of the posts list for some reason.
-            {% endcomment %}
-            {% if post.title %}
-              <li><a href="{{ post.url }}">{{ post.title }}</a></li>
-            {% endif %}
-          {% endfor %}
-        {% endfor %}
+        {% endcomment %}{%
+        if post.title %}
+        <li><a href="{{ post.url }}">{{ post.title }}</a></li>{%
+        endif %}{%
+      endfor %}{%
+    endfor %}
       </ul>
-    </div>
-  {% endfor %}
-</div>
-
+    </div>{%
+  endfor %}
+  </div>
 {% comment %}This is the same as above, just looping over tags{% endcomment %}
-<div class="tag-index">
-  {% for tag in site.tags %}
-    {% assign nposts = tag | last | size %}
-    <div class="collection" data-name="{{ tag | first | escape }}">
-      <header>
-        <h1>{{ tag | first }}</h1>
-        <h2>{{ nposts }} post{% if nposts != 1 %}s{% endif %}</h2>
-      </header>
-      <ul>
-        {% for posts in tag %}
-          {% for post in posts %}
-            {% comment %}
+  <div class="tag-index">{%
+  for tag in site.tags %}{%
+    assign nposts = tag | last | size %}
+    <div class="collection" data-name="{{ tag | first | escape }}" style="display: none;">
+      <h2>Search Result for "{{ tag | first }}"</h2>
+      <div class="search-preview">{%
+    for posts in tag %}{%
+      for post in posts %}{% comment %}
             I'm not sure why I need to check for the title, I think because the
             tag is itself part of the posts list for some reason.
-            {% endcomment %}
-            {% if post.title %}
-              <li><a href="{{ post.url }}">{{ post.title }}</a></li>
-            {% endif %}
-          {% endfor %}
-        {% endfor %}
-      </ul>
-    </div>
-  {% endfor %}
-</div>
+        {% endcomment %}{%
+        if post.title %}
+        <h4><a href="{{ post.url }}">{{ post.title }}</a></h4>
+        <div>{{ post.excerpt | strip_html | xml_escape | normalize_whitespace }}</div>{%
+        endif %}{%
+      endfor %}{%
+    endfor %}
+      </div>
+    </div>{%
+  endfor %}
+  </div>
 
-<div class="error" style="display: none;">
-  <header>
-    <h1>Error</h1>
-  </header>
-  <p class="too-few-parameters">You didn't specify any search parameters.</p>
-  <p class="too-many-parameters">You specified too many search parameters.</p>
-  <p class="no-results">There were no results found for your query.</p>
-  <p><a href="/blog/">Return to the post index</a> and try again.</p>
-</div>
+  <div>
+    <h3>불편을 드려 죄송합니다.</h3>
+    <p>
+    아마 이 페이지를 보시고 계시다면, 저의 이전 블로그에 대한 북마크나
+    검색엔진의 검색 결과로부터 주소가 재설정되어 오신 것이 아닌지 생각합니다.
+    </p>
+    <p>
+    재설정 시, 원래의 URL에 상응하는 페이지에 도착할 수 있도록 해보려고
+    노력을 했으나 쉽지가 않네요.
+    만약, 이 곳에 찾으시는 정보가 있을 것이라고 생각하신다면, 위의 검색창에
+    키워드를 입력하여 <strong>태그검색</strong>을 해보시거나, 아래의
+    <strong>Google 맞춤검색</strong>을 통하여 다시 검색해 주시면 좋겠습니다.
+    </p>
+    <p>
+    감사합니다.
+    </p>
+    <p>
+    {% include google-search.html %}
+    </p>
+  </div>

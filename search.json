@@ -4,9 +4,10 @@ layout: null
 ---
 [
   {% for post in site.posts %}{
-    "title"     : "{{ post.title }}",
+    "title"     : "{{ post.title |replace: '"', "'" }}",
     "categories": [{% for c in post.categories %}"{{ c }}", {% endfor %} null],
     "tags"      : [{% for t in post.tags %}"{{ t }}", {% endfor %} null],
+    "excerpt"   : "{{ post.excerpt | strip_html | xml_escape | normalize_whitespace }}",
     "href"      : "{{ post.url }}",
       "date"    : {
         "year"  : "{{ post.date | date: "%Y" }}",
