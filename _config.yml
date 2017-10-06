@@ -47,13 +47,9 @@ defaults:
       path: ""
     values:
       layout: page
-  -
-    scope:
-      path: ""
-      type: pages
-    values:
-      seo:
-        name: 소용환의 생각저장소
+      author:
+        name: 소용환(Yonghwan SO)
+        twitter: scinix
   -
     scope:
       path: "/search.json"
