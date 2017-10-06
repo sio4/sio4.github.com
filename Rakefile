@@ -53,7 +53,7 @@ task :serve, [:env] => [:tags, :categories, :post_refs] do |t, args|
     env='development'
   end
   sh "JEKYLL_ENV=#{env} bundle exec jekyll clean"
-  sh "JEKYLL_ENV=#{env} bundle exec jekyll serve --watch --incremental"
+  sh "JEKYLL_ENV=#{env} bundle exec jekyll serve --watch --incremental --drafts"
 end
 
 task :post_refs do
