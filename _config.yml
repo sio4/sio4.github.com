@@ -22,7 +22,6 @@ plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-paginate
-  - jekyll-seo-tag
 
 paginate: 10
 
@@ -48,8 +47,14 @@ defaults:
     values:
       layout: page
       author:
-        name: 소용환(Yonghwan SO)
+        name: 소용환
+        alias: Yonghwan SO
+        image: /assets/images/sauru-20150806.png
+        nationality: Republic of Korea
+        job_title: Cloud Architect
+        alumni_of: Chonbuk National University
         twitter: scinix
+        facebook: https://www.facebook.com/yonghwan.so
   -
     scope:
       path: "/search.json"
@@ -83,7 +88,7 @@ twitter:
   username: scinix
 facebook:
   app_id: 132708240077440
-  publisher: https://www.facebook.com/yonghwan.so
+  publisher: https://www.facebook.com/sauru.so
 logo: /assets/images/sauru-20150806.png
 social:
   name: Yonghwan SO
@@ -111,6 +116,7 @@ bigimg:
 
 author:
   name: Yonghwan SO
+  alias: 소용환
   facebook: yonghwan.so
   twitter: scinix
   github: sio4

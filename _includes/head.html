@@ -8,63 +8,10 @@
     else %}
     <meta http-equiv="content-language" content="{{ site.lang }}" />{%
     endif %}{%
-    if page.tags %}{%
-      assign keywords = "" |split: "," %}{%
-      for tag in page.tags %}{%
-        if site.data.tags[tag] %}{%
-          assign keywords = keywords |push: site.data.tags[tag].ko %}{%
-          assign keywords = keywords |push: site.data.tags[tag].en %}{%
-        else %}{%
-          assign keywords = keywords |push: tag %}{%
-        endif %}{%
-      endfor %}
-    <meta name="keywords" content="소용환, {{ keywords | join: ', ' }}" />{%
-    else %}
-    <meta name="keywords" content="소용환의 블로그, Yonghwan SO's Blog" />{%
-    endif %}{%
     if site.favicon %}
     <link href='{{ site.favicon }}' rel='icon' type='image/x-icon'/>{%
     endif %}
-    {% seo %}{% comment %}
-    seo provides followings:
-      - tilte, meta author, meta description
-      - link:canonical
-      - og:title, locale, description, url, site_name, image, type
-      - article:publisher, published_time
-      - fb:app_id
-      - twitter:card, site, creator
-      -
-    {% endcomment %}
-    <!-- additional facebook open graph -->{%
-    if site.facebook.publisher %}
-    <meta property="article:author" content="{{ site.facebook.publisher }}" />{%
-    endif %}{%
-    unless page.image %}
-    <meta property="og:image" content="{{ site.url }}{{ site.image }}" />{%
-    endunless %}{%
-    unless page.id %}
-    <meta property="og:type" content="website" />{%
-    endunless %}
-    <!-- additional twitter summary cards -->{%
-    if page.meta-title %}
-    <meta name="twitter:title" content="{{ page.meta-title }}" />{%
-    elsif page.title %}
-    <meta name="twitter:title" content="{{ page.title }}" />{%
-    else %}
-    <meta name="twitter:title" content="{{ site.title }}" />{%
-    endif %}{%
-    if page.meta-description %}
-    <meta name="twitter:description" content="{{ page.meta-description }}">{%
-    elsif page.id %}
-    <meta name="twitter:description" content="{{ page.excerpt | strip_html | xml_escape | normalize_whitespace }}">{%
-    else %}
-    <meta name="twitter:description" content="{{ site.description | normalize_whitespace }}">{%
-    endif %}{%
-    if page.image %}
-    <meta name="twitter:image" content="{{ site.url }}{{ page.image }}" />{%
-    elsif site.avatar %}
-    <meta name="twitter:image" content="{{ site.url }}{{ site.avatar }}" />{%
-    endif %}
+{% include seo.html %}
     {%
     if layout.common-ext-css %}{%
       for css in layout.common-ext-css %}

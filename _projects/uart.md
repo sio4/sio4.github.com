@@ -2,11 +2,12 @@
 title: UART, OAuth2/SSO Provider
 subtitle: Universal Authorizaion, Role and Team
 tags: UART OAuth2 SingleSignOn Authentication GoLang
-date: 2017-09-29T01:28:00+09:00
 repository: https://github.com/hyeoncheon/uart
 lang: en-US
 comments: true
 social-share: true
+date: 2017-09-29T01:28:00+09:00
+modified: 2017-10-07 23:50:00 +0900
 ---
 UART is an Universal Authorizaion, Role and Team management service software.  
 UART was developed to succeed my old SiSO project, the original SSO service

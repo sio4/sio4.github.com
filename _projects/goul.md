@@ -2,12 +2,13 @@
 title: Goul, Cloud Port Mirroring
 subtitle: Mirror Your Cloud Network Traffic over the Internet
 tags: Goul CloudComputing Network Monitoring Security GoLang
-date: 2017-09-29T17:12:00+09:00
 repository: https://github.com/hyeoncheon/goul
 image: /attachments/goul/goul-flow-all-client.png
 lang: en-US
 comments: true
 social-share: true
+date: 2017-09-29T17:12:00+09:00
+modified: 2017-10-07 23:50:00 +0900
 ---
 
 Goul(거울; Mirror in English) is a tool for virtual network port mirroring

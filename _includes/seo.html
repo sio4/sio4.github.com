@@ -1,0 +1,124 @@
+<!-- seo tags, my implementation, start -->{%
+assign url = site.url |append: page.url |replace: '//', '/' |replace: ':/', '://' %}{%
+if page.url == '/' %}{%
+  assign full_title = site.title %}{%
+  assign desc = site.description |normalize_whitespace %}{%
+else %}{%
+  assign full_title = page.title |append: " | " |append: site.title %}{%
+  assign desc = page.excerpt |strip_html |xml_escape |normalize_whitespace %}{%
+endif %}{%
+if page.lang %}{%
+  assign lang = page.lang %}{%
+else %}{%
+  assign lang = site.lang %}{%
+endif %}{%
+if page.image %}{%
+  assign image = site.url |append: page.image %}{%
+else %}{%
+  assign image = site.url |append: site.image %}{%
+endif %}{%
+assign kwds = site.author.name |split: ',' %}{%
+assign kwds = kwds |push: site.author.alias %}{%
+if page.tags %}{%
+  for tag in page.tags %}{%
+    if site.data.tags[tag] %}{%
+      assign kwds = kwds |push: site.data.tags[tag].ko %}{%
+      assign kwds = kwds |push: site.data.tags[tag].en %}{%
+    else %}{%
+      assign kwds = kwds |push: tag %}{%
+    endif %}{%
+  endfor %}{%
+endif %}{%
+assign keywords = kwds | join: ', ' %}
+<title>{{ full_title }}</title>
+<link rel="canonical" href="{{ url }}" />
+<link rel="alternate" href="{{ url }}" hreflang="{{ lang }}">
+<meta name="keywords" content="{{ keywords }}" />
+<meta name="description" content="{{ desc }}" />
+<meta name="generator" content="Jekyll v{{ jekyll.version }}" />{%
+if site.facebook %}{%
+  if site.facebook.app_id %}
+<meta property="fb:app_id" content="{{ site.facebook.app_id }}" />{%
+  endif %}{%
+  if site.facebook.publisher %}
+<meta property="article:publisher" content="{{ site.facebook.publisher }}" />{%
+  endif %}{%
+  if page.author.facebook %}
+<meta property="article:author" content="{{ page.author.facebook }}" />{%
+  endif %}{%
+  if page.date %}
+<meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}" />
+<meta property="og:type" content="article" />{%
+  else %}
+<meta property="og:type" content="website" />{%
+  endif %}
+<meta property="og:site_name" content="{{ site.title }}" />
+<meta property="og:url" content="{{ url }}" />
+<meta property="og:locale" content="{{ lang |replace: '-', '_' }}" />
+<meta property="og:title" content="{{ page.title }}" />
+<meta property="og:description" content="{{ desc }}" />
+<meta property="og:image" content="{{ image }}" />{%
+endif %}{%
+if site.twitter %}
+<meta name="twitter:site" content="@{{ site.twitter.username | replace:"@","" }}" />{%
+  if page.author.twitter %}
+<meta name="twitter:creator" content="@{{ page.author.twitter }}" />{%
+  endif %}
+<meta name="twitter:card" content="summary_large_image" />{%
+endif %}
+<script type="application/ld+json">
+{
+  "@context":"http://schema.org",{%
+if page.date %}
+  "@type": "BlogPosting",
+  "dateCreated": "{{ page.date |date_to_xmlschema }}",
+  "datePublished": "{{ page.date |date_to_xmlschema }}",{%
+  if page.modified %}
+  "dateModified": "{{ page.modified |date_to_xmlschema }}",{%
+  else %}
+  "dateModified": "{{ page.date |date_to_xmlschema }}",{%
+  endif %}
+  "editor": "{{ page.author.name }}",
+  "keywords": "{{ keywords }}",
+  "wordcount": "{{ page.content | number_of_words }}",
+  "mainEntityOfPage":{
+    "@type":"WebPage",
+    "@id":"{{ url }}"
+  },{%
+else %}
+  "@type":"WebSite",
+  "name": "{{ site.title }}",{%
+endif %}
+  "url":"{{ site.url }}",
+  "publisher":{
+    "@type": "Organization",
+    "name": "{{ site.title }}",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "{{ site.url |append: site.image }}"
+    },
+    "sameAs": {{ site.social.links |jsonify }}
+  },
+  "author":{
+    "@type": "Person",
+    "name": "{{ page.author.name }}",
+    "alternateName": "{{ page.author.alias }}",
+    "nationality": "{{ page.author.nationality }}",
+    "url": "{{ site.url }}",
+    "jobTitle": "{{ page.author.job_title }}",
+    "alumniOf": "{{ page.author.alumni_of }}",
+    "image": "{{ site.url |append: page.author.image }}",
+    "sameAs": {{ site.social.links |jsonify }}
+  },
+  "headline":"{{ page.title }}",
+  "description": "{{ desc }}",
+  "image": "{{ image }}"
+}
+</script>{%
+if paginator.previous_page %}
+<link rel="prev" href="{{ paginator.previous_page_path | absolute_url }}">{%
+endif %}{%
+if paginator.next_page %}
+<link rel="next" href="{{ paginator.next_page_path | absolute_url }}">{%
+endif %}
+<!-- seo tags, my implementation, end -->
