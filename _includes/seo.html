@@ -85,9 +85,14 @@ if page.date %}
     "@type":"WebPage",
     "@id":"{{ url }}"
   },{%
-else %}
+else %}{%
+  if page.url == '/' %}
   "@type":"WebSite",
   "name": "{{ site.title }}",{%
+  else %}
+  "@type":"WebPage",
+  "name": "{{ full_title }}",{%
+  endif %}{%
 endif %}
   "url":"{{ site.url }}",
   "publisher":{
