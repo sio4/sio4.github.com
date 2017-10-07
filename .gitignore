@@ -1,9 +1,9 @@
-_site
-.sass-cache
-.jekyll-metadata
+/_site
+/.sass-cache
+/.jekyll-metadata
 
 # bundling
-vendor
-.bundle
+/vendor
+/.bundle
 
 __references.md

@@ -21,7 +21,6 @@ $color-border: $color-light;
 
 // --- general ---------------------------------------------------------------
 body {
-	//font-family: 'Lora', 'Times New Roman', serif;
 	font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	font-size: 15px;
 	line-height: 1.5;
@@ -317,6 +316,11 @@ article.blog-post {
 		a {
 			color: $color-link;
 		}
+	}
+}
+@media only screen and (max-width: 767px) {
+	p {
+		word-break: normal;
 	}
 }
 
