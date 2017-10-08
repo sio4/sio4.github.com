@@ -23,13 +23,13 @@ VM에게 논리적으로 독립된 망을 부여할 수 있어야 하므로 이 
 
 먼저, `bridge-utils`와 `vlan`을 설치한다.
 
-{% highlight console %}
+```console
 $ sudo apt-get install bridge-utils vlan
 <...>
 bridge-utils (1.5-7ubuntu1) 설정하는 중입니다 ...
 vlan (1.9-3.2ubuntu1) 설정하는 중입니다 ...
 $
-{% endhighlight %}
+```
 
 ## 설정
 
@@ -38,7 +38,7 @@ Debian 계열의 배포본인 Ubuntu `/etc/network/interfaces` 파일에 네트�
 정보를 담게 되는데, 언제부터인지 기억할 수는 없지만 여기도 _사랑스러운_
 "`.d`" 구조를 사용할 수 있게 되었다.
 
-{% highlight console %}
+```console
 $ cat |sudo tee /etc/network/interfaces.d/cotton <<EOF
 > # cotton candy network configurations
 >
@@ -65,7 +65,7 @@ $ cat |sudo tee /etc/network/interfaces.d/cotton <<EOF
 >       bridge_fd 0.0
 > EOF
 $
-{% endhighlight %}
+```
 
 위의 "`.d`" 안에 만들어질 설정파일은 가상네트워크 정보만을 담고 있으며,
 물리망 정보는 OS 설치 시 입력한 내용 그대로 `/etc/network/interfaces`
@@ -73,7 +73,7 @@ $
 
 설정이 끝났으면 설정된 VLAN과 Bridge를 살려본다.
 
-{% highlight console %}
+```console
 $ sudo ifup vlan100
 Set name-type for VLAN subsystem. Should be visible in /proc/net/vlan/config
 Added VLAN with VID == 100 to IF -:p2p1:-
@@ -81,13 +81,13 @@ $ sudo ifup br100
 Set name-type for VLAN subsystem. Should be visible in /proc/net/vlan/config
 
 Waiting for br100 to get ready (MAXWAIT is 2 seconds).
-{% endhighlight %}
+```
 
 설정에서 보는 바와 같이, `br100`은 `vlan100`에 의존적이어서, 위와 같이
 VLAN을 먼저 살린 후에 Bridge를 살려야 한다. 물론, 아래와 같이 두 개의
 쌍을 한 번에 올리는 것도 가능하다.
 
-{% highlight console %}
+```console
 $ sudo ifup vlan110 br110
 Set name-type for VLAN subsystem. Should be visible in /proc/net/vlan/config
 Added VLAN with VID == 110 to IF -:p2p1:-
@@ -95,18 +95,18 @@ Set name-type for VLAN subsystem. Should be visible in /proc/net/vlan/config
 
 Waiting for br110 to get ready (MAXWAIT is 2 seconds).
 $
-{% endhighlight %}
+```
 
 위와 같이 정상적으로 두 Bridge 세트를 올렸다면, 다음 명령으로 Bridge의
 구성상태를 확인할 수 있다.
 
-{% highlight console %}
+```console
 $ brctl show
 bridge name     bridge id               STP enabled     interfaces
 br100           8000.002655daf3aa       no              vlan100
 br110           8000.002655daf3aa       no              vlan110
 $
-{% endhighlight %}
+```
 
 `br100`, `br110` 두 Bridge가 각각 `vlan100` 및 `vlan110`과 연결되어
 올라온 것을 확인할 수 있다. 망에 참여할 두 서버에서 이와 같은 설정을
@@ -114,7 +114,7 @@ $
 `ping` 또는 `ssh` 등을 이용하여 망 연결 시험이 끝났다면, 다음과 같이
 Bridge가 각각의 서버를 MAC으로 인식하고 있는 상태를 볼 수 있다.
 
-{% highlight console %}
+```console
 $ brctl showmacs br100
 port no mac addr                is local?       ageing timer
   1     00:26:55:da:f3:aa       yes                0.00
@@ -122,11 +122,11 @@ port no mac addr                is local?       ageing timer
   1     e8:e7:32:cd:63:53       no                 0.54
   1     e8:e7:32:cd:64:45       no               221.69
 $
-{% endhighlight %}
+```
 
 참고로, `ip` 명령으로 본 설정 상태는 아래와 같다.
 
-{% highlight console %}
+```console
 $ ip addr show
 <...>
 2: p2p1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
@@ -146,6 +146,6 @@ $ ip addr show
        valid_lft forever preferred_lft forever
 <...>
 $
-{% endhighlight %}
+```
 
 

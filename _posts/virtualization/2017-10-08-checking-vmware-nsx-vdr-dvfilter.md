@@ -1,16 +1,74 @@
 ---
+title: "VMware NSX: VDR/DVFilter 정보확인"
+tags: NSX VMware virtualization network
+categories: ["virtualization"]
+image: /assets/logos/vmware-nsx-logo.png
+banner: /assets/logos/vmware-nsx-logo.png
+date: 2017-10-08T16:40:00+09:00
 ---
-VMware Network 장치에 대한 이런 저런 정보를 확인하는 방법. 해를 넘기기 전에
-메모되어있는 그대로를 기록으로 남긴다.
+이 글은 VMware의 네트워크 가상화 기술인 NSX 6.2를 이용한 프로젝트에서
+네트워크 트래픽과 이상현상을 분석하는 과정에서, VDR과 DVS, vmnic 등의
+정보를 확인했던 내용들을 간략하게 정리하는 글이다. 아쉬운 점은,
+벌써 2년이 지난 기록이라서 현재의 상황에 맞지 않는 내용이 포함되었을
+수 있고, 간단하게 메모로 남겼던 것을 편집한 것이다 보니 이야기의 맥이
+없다. :-(
 
+![](/assets/logos/vmware-nsx-logo.png)
 
-## `vmnic` 관련
+# 개요
+
+* TOC
+{:toc .half.pull-right}
+
+Private Cloud 플랫폼을 준비하던 2015년의 가을과 겨울을 VMware의 NSX 6.2,
+그리고 OpenStack+Open vSwitch와 함께 보냈었다. 이 과정에서 중요하게 봤던
+부분 중 하나가 **네트워크의 안정성과 무결성, 그리고 Tenant 독립성**에 관한
+부분이었다.  
+Cloud 환경에 있어서 네트워크는 (보는 관점에 따라 다르지만) 그다지 크게
+강조되는 부분은 아니다. DNS나 Load Balance 등, 업무와 밀접한 "기능"들은
+그나마 많은 관심을 받지만 인프라, 특히 네트워크는 Application과 업무 등,
+"내 일"에 집중하는 "고객관점"에서는 조금 희미한 부분일 수 있기 때문이
+아닐까 생각한다.
+
+그러나 제공자의 입장에서 네트워크는 구성/관리에 있어서 우선순위가 매우
+높은 부분이다.  클라우드 위에서 동작하게 될 거의 모든 업무는 네트워크
+상에 퍼져있는 여러 요소와의 통신에 의존하여 동작하게 되므로 그 업무가
+정상적으로 수행되기 위해서는 **통신의 안정성**이 매우 중요하다.
+또한, 가상 인스턴스 등에 비해 상대적으로 열린 공간으로 받아들여질 수
+있으므로 (Tenant 관점의) **독립성과 보안**에 있어서 확실한 보장이 필요한
+부분이기도 하다.  
+뭐랄까, 네트워크라는 것이 현실세계로 치면 "길"에 해당하는 것이기 때문에
+항상 잘 통해야 하는 것은 물론, 길에서 강도를 만나거나 사고를 당해도
+안되는 것이라고나 할까?
+
+아무튼 아래는, 이 과정에서 VMware NSX의 네트워크 정보를 확인하는 방법에
+대한 메모를 그대로 기록한 것이다. (사실, 이 이야기보다 100배는 더 재미가
+있는 NSX에서 Traffic 이상 증상, Packet 유실 문제 등에 대한 기록을 남겨야
+하는데... 당시의 환경은 이미 철수한 상태이니 그 자료를 다시 찾아 정리할
+기회가 있을지... 모르겠다.)
+
+# VMware Network Information
+
+## 가장 아래, vmnic
 
 ### `vmnic`의 Offload 설정 확인하기
 
-리눅스 전통적인 방식으로,
+Offload란 OS의 네트워크 스텍에서 처리해야 하는 여러 단계의 기능 중 일부를
+하위 장치(보통은 NIC)에게 위임함으로써, OS가 CPU를 사용하여 처리해야 하는
+일의 부담을 줄이는 기술이다. 예를 들어 TSO 또는 TCP Segmentation Offload라
+불리는 기능은, 다양한 크기의 사용자 데이터를 네트워크를 통해 전송할 때,
+규약과 설정에 따라 여러 개의 Packet으로 쪼개어 보내게 되는데, 이 때 TCP
+Packet 크기에 맞춰 원본 데이터를 자르는 과정을 OS Kernel이 수행하지 않고
+NIC에게 위임하는 기술이다.
 
-{% highlight console %}
+클라우드 구성 검토을 하다가 뜬금없이 Offload에 대해서 확인하게 된 이유는,
+NSX의 패킷 유실현상을 발견한 이후 여러 증상을 점검하던 중, 사라지는
+Packet의 패턴이 이 TCP Segmentation과 연관이 있다는 것을 확인하게 되었고
+그 유실 지점을 확인하기 위해 `vmnic`의 구성을 확인하여야 했던 것이다.
+
+리눅스 전통적인 방식으로, 다음과 같이 NIC의 구성을 확인할 수 있다.
+
+```console
 [root@ESXi-04:~] ethtool -k vmnic1 
 Offload parameters for vmnic1:
 Cannot get device udp large send offload settings: Function not implemented
@@ -22,34 +80,44 @@ tcp segmentation offload: on
 udp fragmentation offload: off
 generic segmentation offload: off
 [root@ESXi-04:~] 
-{% endhighlight %}
+```
 
-같은 내용, VMware 명령으로.
+위의 결과를 보면, TSO는 활성화가 되어있는 것을 알 수 있다.
 
-{% highlight console %}
+같은 내용의 확인을 VMware 전용의 명령으로도 할 수 있는데, 아래와 같다.
+
+```console
 [root@ESXi-04:~] esxcli network nic tso get -n vmnic1
 NIC     Value
 ------  -----
 vmnic1  on   
 [root@ESXi-04:~] 
-{% endhighlight %}
+```
 
 ### `vmk` 목록
 
-{% highlight console %}
+위 이야기와 관련은 없으나 아래의 명령으로 `vmk`의 목록을 확인할 수 있다.
+
+```console
 [root@ESXi-04:~] esxcfg-vmknic -l
 Interface  Port Group/DVPort/Opaque Network        IP Family IP Address                              Netmask         Broadcast       MAC Address       MTU     TSO MSS   Enabled Type                NetStack            
 vmk0       Management Network                      IPv4      172.18.128.14                           255.255.192.0   172.18.191.255  c4:34:6b:b8:fd:40 1500    65535     true    STATIC              defaultTcpipStack   
 vmk1       ISCSI                                   IPv4      172.18.0.114                            255.255.255.0   172.18.0.255    00:50:56:6b:b7:14 1500    65535     true    STATIC              defaultTcpipStack   
 vmk2       8                                       IPv4      172.18.192.21                           255.255.192.0   172.18.255.255  00:50:56:65:d0:7f 1600    65535     true    STATIC              vxlan               
 [root@ESXi-04:~] 
-{% endhighlight %}
+```
+
+
 
 ## vSwitch 확인
 
+실제 VM 들이 네트워킹을 하기 위해서는 Host 안에 구성된 가상 스위치인 vSwitch에
+접속을 하여야 한다. (물리세계의 이야기로 하자면 LAN 선을 꽂아야 한다는 뜻)
+이 vSwitch의 구성상태와 Port 구성, 사용 현황은 아래와 같이 확인할 수 있다.
+
 ### vSwitch 목록 나열
 
-{% highlight console %}
+```console
 [root@ESXi-04:~] esxcfg-vswitch -l
 Switch Name      Num Ports   Used Ports  Configured Ports  MTU     Uplinks   
 vSwitch0         8192        5           128               1500    vmnic0    
@@ -94,11 +162,22 @@ DSwitch          8192        3           512               1500    vmnic10
   15                  0           
 
 [root@ESXi-04:~] 
-{% endhighlight %}
+```
+
+내용을 보면, 중간의 출력을 기준으로 `vDS-C-Transport` 등으로 명명된 vSwitch가
+보이고, 그 vSwitch에 대하여 DVPort 라고 불리는 가상의 포트가 512개로 구성되어
+있고 MTU는 1600, Uplink로 `vmnic1`이 쓰이고 있다는 등의 정보를 표기하고 있다.
+또한 DVPort 목록을 통하여 16번 포트에 AW1이라는 이름의 VM의 eth0가 연결되어
+있다는 것도 확인이 가능하다.
+
+
 
 ### VDS 목록 확인 및 VxLAN 목록 보기
 
-{% highlight console %}
+아래와 같이, 각 Distributed vSwitch 의 목록과 그들이 어떤 VxLAN을 갖고 있는지
+확인할 수도 있다.
+
+```console
 [root@ESXi-04:~] esxcli network vswitch dvs vmware vxlan list
 VDS ID                                           VDS Name          MTU  Segment ID    Gateway IP    Gateway MAC        Network Count  Vmknic Count
 -----------------------------------------------  ---------------  ----  ------------  ------------  -----------------  -------------  ------------
@@ -120,13 +199,25 @@ VXLAN ID  Multicast IP               Control Plane                        Contro
     5011  0.0.0.0                    Disabled                             0.0.0.0 (down)                  1                0                0
     5009  0.0.0.0                    Disabled                             0.0.0.0 (down)                  1                0                0
 [root@ESXi-04:~] 
-{% endhighlight %}
+```
+
+
 
 ## NSX의 VDR 정보
 
+Distributed vSwitch는 NSX의 기능은 아니고 ESXi Host, vSphere의 상위 라이선스가
+제공하는 가상 스위치이다. vSphere는 VM들의 통신을 위해 필수 조건이 되는 가상의
+스위치를 제공하는 정도까지만 네트워크 기능을 제공한다.
+
+반면에, 본격적인 네트워크 가상화(또는 NFV)는 NSX에 의해 제공되는데, 그 중의
+하나가 가상 라우터의 제공이다.
+
 ### VDR 목록
 
-{% highlight console %}
+아래와 같은 명령으로 VDR, Virtual Distributed Router의 목록을 확인할 수 있다.
+(이게 ESR, DLR, VDR, 뭔가 헷갈리는 이름이 많은데 이건 다음에 기회가 되면...)
+
+```console
 [root@ESXi-04:~] net-vdr --instance -l
 
 VDR Instance Information :
@@ -169,11 +260,15 @@ Generation Number:          0
 Edge Active:                No
 
 [root@ESXi-04:~]
-{% endhighlight %}
+```
 
 ### 특정 VDR의 LIF 목록
 
-{% highlight console %}
+VDR을 확인했으면, 특정 VDR에 구성되어 있는 LIF, Logical Interface의 목록은
+아래와 같이 확인할 수 있다.
+
+
+```console
 [root@ESXi-04:~] net-vdr --lif -l ClientA+edge-8
 
 VDR ClientA+edge-8 LIF Information :
@@ -223,11 +318,13 @@ Flags:               0x2288
 DHCP Relay:          Not enabled
 
 [root@ESXi-04:~] 
-{% endhighlight %}
+```
 
-### 그리고 VDR의 Route 정보 보기
+### VDR의 Route 정보 보기
 
-{% highlight console %}
+이번에는 Routing 정보를 확인하는 명령
+
+```console
 [root@ESXi-04:~] net-vdr -R -l ClientA+edge-8
 
 VDR ClientA+edge-8 Route Table
@@ -251,11 +348,13 @@ Destination      GenMask          Gateway          Flags    Ref Origin   UpTime 
 10.30.20.0       255.255.255.0    10.10.1.2        UG       1   AUTO     29536      138800000002
 10.30.30.0       255.255.255.0    10.10.1.2        UG       1   AUTO     29536      138800000002
 [root@ESXi-04:~] 
-{% endhighlight %}
+```
 
 ### 각 Port 별 DVFilter 목록
 
-{% highlight console %}
+이번엔 가상 Firewall에 해당하는 DVFilter 목록의 확인
+
+```console
 [root@ESXi-04:~] summarize-dvfilter
 Fastpaths:
 agent: dvfilter-faulter, refCount: 1, rev: 0x1010000, apiRev: 0x1010000, module: dvfilter
@@ -332,11 +431,13 @@ world 36445 vmm0:AW1 vcUuid:'50 19 37 10 7d 3b 25 9f-40 6f a4 bc 7e 0d af b8'
    slowPathID: none
    filter source: Alternate Opaque Channel
 [root@ESXi-04:~] 
-{% endhighlight %}
+```
 
 ### 특정 DVFilter에 대한 상세 주소세트 정보
 
-{% highlight console %}
+목록을 봤으면, 그 중 하나를 골라서 주소세트 설정을 보고,
+
+```console
 [root@ESXi-04:~] vsipioctl getaddrsets -f nic-36445-eth0-vmware-sfw.2
 addrset ip-ipset-3 {
 ip 10.10.2.0/24,
@@ -369,11 +470,14 @@ ip fe80::250:56ff:fe99:5662,
 ip fe80::250:56ff:fe99:59ea,
 }
 [root@ESXi-04:~] 
-{% endhighlight %}
+```
 
 ### 특정 DVFilter에 대한 상세 Rule 정보
 
-{% highlight console %}
+같은 방식으로 해당 Filter에 구성된 접근제어 Rule을 볼 수 있다. (여기서 앞서
+확인했던 주소세트가 어디에 어떻게 사용되었는지도 볼 수 있다.)
+
+```console
 [root@ESXi-04:~] vsipioctl getrules -f nic-36445-eth0-vmware-sfw.2
 ruleset domain-c28 {
   # Filter rules
@@ -400,13 +504,26 @@ ruleset domain-c28_L2 {
 }
 
 [root@ESXi-04:~] 
-{% endhighlight %}
+```
+
+(그냥 정보 확인 방법만 기술하다 보니 재미가 없긴 하다.)
+
+
+
 
 ## Packet Capture 명령
 
+네트워크 관련 문제를 풀 때, 아주 중요한 기술요소 중의 하나가 Traffic을
+Dump하여 그 내용을 세밀하게 살펴보는 것인데, 나는 보통 이것을 **진맥**이라고
+표현한다. vSphere 환경에서는 아래의 `pktcap-uw` 명령을 통하여 패킷을 잡아
+볼 수 있다.
+
+
 ### Packet Capture 명령 도움말
 
-{% highlight console %}
+일단 도움말 한 번 보고!
+
+```console
 [root@ESXi-04:~] pktcap-uw -h
 Packet Capture and Trace command usage:
 	== Create session to capture packets == 
@@ -509,28 +626,43 @@ Flow filter options, it will be applied when set:
 	--vxlan <vxlan id>
 		The vxlan id of flow.
 [root@ESXi-04:~] 
-{% endhighlight %}
+```
+
+도움말을 보면, 어디서 어떻게 패킷을 잡을 것인지 등을 포함한 다양한 옵션을
+제공하는 것을 알 수 있다. 그런데 실제로 해봤을 때, 잡을 수 있는 위치가
+vSwitch의 특정 포트로 한정된다든지, 양방향 Traffic을 한 번에 뜰 수 없고
+한 명령으로는 한 방향(Rx든 Tx든)의 패킷 밖에 뜰 수가 없다든지, 뜨는 과정에서
+누락이 발생하는 등의 문제가 있긴 했다.
 
 ### Capture 명령 실행
 
-{% highlight console %}
+아무튼, 다음과 같이 명령을 내리면 `nic-36445-eth0-vmware-sfw.2` 라는 Filter
+의 앞단(`--capture PreDVFilter`)에서 즉, Filter를 거치기 직전의, Filter가
+적용되지 않은 Packet을 잡아볼 수 있다.
+
+```console
 [root@ESXi-04:~] pktcap-uw --capture PreDVFilter --dvfilter nic-36445-eth0-vmware-sfw.2 -o aw2_pre.pcap
-{% endhighlight %}
+```
 
-### 기타 관련 명령
+뭐, 단기간의 패킷 수집을 위해서는 나름 나쁘지 않았다.
 
-{% highlight console %}
-vsish -e  get /net/pNics/vmnicX/rxqueues/info
-esxcfg-module -g bnx2x
-ethtool -S vmnic1 | grep rx_ucast_packets
-{% endhighlight %}
+
+### 기타
+
+VMware의 NSX는 매우 흥미로운 제품이었다. 시험 기간이 약 1달 정도로 짧아서
+많은 기능을 충분히 보지 못했고, 또 중간에 Packet 유실 문제가 발생하여 이를
+확인하는 과정에 많은 리소스를 사용하는 바람에 더더욱 아쉬움이 남는다.
+
+다음에 시간이 되면, Traffic 분석에 대한 이야기를 한 번 했으면 좋겠다. :-)
+
+
 
 ## References
 
-* http://www.yet.org/2014/09/nsxv-troubleshooting/
-* http://blog.cyberexplorer.me/2013/03/improving-vm-to-vm-network-throughput.html
-* http://chansblog.com/tag/vtep/
-* http://www.routetocloud.com/2015/04/nsx-distributed-firewall-deep-dive/
-* http://kb.vmware.com/selfservice/microsites/search.do?language=en_US&cmd=displayKC&externalId=2055140
+* [NSX vSphere troubleshooting](http://www.yet.org/2014/09/nsxv-troubleshooting/)
+* [Improving VM to VM network throughput on an ESXi platform](http://blog.cyberexplorer.me/2013/03/improving-vm-to-vm-network-throughput.html)
+* [5. VXLAN & LOGICAL SWITCH DEPLOYMENT](http://chansblog.com/tag/vtep/)
+* [NSX Distributed Firewall Deep Dive](http://www.routetocloud.com/2015/04/nsx-distributed-firewall-deep-dive/)
+* [Understanding TCP Segmentation Offload (TSO) and Large Receive Offload (LRO) in a VMware environment (2055140)](http://kb.vmware.com/selfservice/microsites/search.do?language=en_US&cmd=displayKC&externalId=2055140)
 
 
