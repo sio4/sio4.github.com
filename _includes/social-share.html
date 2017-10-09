@@ -4,7 +4,7 @@ and site.share-links-active.facebook == false
 and site.share-links-active.google == false
 and site.share-links-active.linkedin == false %}{%
 else %}
-        <section id = "social-share-section">
+        <section id="social-share-section" class="hidden-print">
           <!--- Share on Twitter -->{%
           unless site.share-links-active.twitter == false %}
           <a href="https://twitter.com/intent/tweet?text={{ page.title | url_encode }}+{{ site.url }}{{ page.url }}" target="_blank"

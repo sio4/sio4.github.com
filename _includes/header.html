@@ -41,7 +41,14 @@ if page.bigimg or page.title %}{%
             endif %}{%
           endif %}{%
           if include.type == "post" %}
-            <span class="post-meta">게시일: {{ page.date | date: "%Y-%m-%d" }}</span>{%
+            <span class="post-meta">{%
+            if page.categories %}{%
+              assign cat = page.categories |first %}{%
+              assign cat_d = site.data['categories'] |where: "id", cat |first
+            %}<i class="fa fa-book"></i> <a href="/categories/{{ cat }}">{{ cat_d.name }}</a>, {%
+            endif
+            %}<i class="fa fa-calendar"></i> {{ page.date | date: "%Y-%m-%d" }}
+            </span>{%
           endif %}{%
           if include.type == "post" %}{%
             unless page.social-share == false %}
@@ -74,7 +81,14 @@ if page.bigimg or page.title %}{%
             endif %}{%
           endif %}{%
           if include.type == "post" %}
-            <span class="post-meta">게시일: {{ page.date | date: "%Y-%m-%d" }}</span>{%
+            <span class="post-meta">{%
+            if page.categories %}{%
+              assign cat = page.categories |first %}{%
+              assign cat_d = site.data['categories'] |where: "id", cat |first
+            %}<i class="fa fa-book"></i> <a href="/categories/{{ cat }}">{{ cat_d.name }}</a>, {%
+            endif
+            %}<i class="fa fa-calendar"></i> {{ page.date | date: "%Y-%m-%d" }}
+            </span>{%
           endif %}{%
           if include.type == "post" %}{%
             unless page.social-share == false %}

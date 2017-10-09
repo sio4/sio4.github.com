@@ -324,6 +324,23 @@ article.blog-post {
 	}
 }
 
+.footnote {
+	&:before {
+		content: '[' !important;
+	}
+	&:after {
+		content: ']' !important;
+	}
+}
+.footnotes {
+	font-size: 0.9em;
+	margin: 30px 0;
+	border-top: 1px solid #ccc;
+	ol {
+		padding: 0 0 0 1em;
+	}
+}
+
 // no parent on layout:post (under article.blog-post)
 .post-signature {
 	padding: 2rem 0;
@@ -484,7 +501,6 @@ hr.small {
 	border-color: inherit;
 	border-radius: 3px;
 }
-
 
 // --- unchecked
 
@@ -1180,7 +1196,32 @@ input.gsc-input {
 	}
 }
 
-
+// --- for printing ----------------------------------------------------------
+@media print {
+	.intro-header {
+		margin: 40px 0;
+	}
+	#markdown-toc {
+		page-break-inside: avoid !important;
+		border: 1px solid #ccc;
+		border-radius: 4px;
+	}
+	pre code {
+		white-space: pre-wrap;
+		word-break: break-all;
+	}
+	.post-meta a[href]:after,
+	.post-tags a[href]:after {
+		content: none !important;
+	}
+	.print-footer {
+		border-top: 1px solid #ccc;
+	}
+	img {
+		max-height: 70vh;
+		max-width: 90% !important;
+	}
+}
 
 // --- syntax highlight ------------------------------------------------------
 @import url("syntax.css");

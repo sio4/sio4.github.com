@@ -38,7 +38,7 @@ endif %}
 {%
 if jekyll.environment != "development" %}{%
   include google_analytics.html %}{%
-  if site.disqus %}
+  if site.disqus and site.discus_count == true %}
   <script id="dsq-count-scr" src="//{{ site.disqus }}.disqus.com/count.js" async></script>{%
   endif %}{%
   if site.addthis.username %}

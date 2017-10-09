@@ -13,8 +13,13 @@ bigimg: /assets/images/road.jpg
               <h3 class="post-subtitle">{{ post.subtitle }}</h3>{%
             endif %}
           </a>
-          <p class="post-meta">
-            게시일: {{ post.date | date: "%Y-%m-%d" }}
+          <p class="post-meta">{%
+            if post.categories %}{%
+              assign cat = post.categories |first %}{%
+              assign cat_d = site.data['categories'] |where: "id", cat |first
+            %}<i class="fa fa-book"></i> <a href="/categories/{{ cat }}">{{ cat_d.name }}</a>, {%
+            endif
+            %}<i class="fa fa-calendar"></i> {{ post.date | date: "%Y-%m-%d" }}
           </p>
           <div class="post-entry">
 {{ post.excerpt | strip_html | xml_escape }}{%

@@ -27,11 +27,6 @@ Goul(거울)은 네트워크 흐름 분석이나 보안 모니터링을 목적�
 미러링이 필요할 때, 그 범위를 단위 Switch나 관련 망이 아닌 인터넷을
 넘어 어딘가로 확장해주는 가상 네트워크 포트 미러링 도구이다.
 
-[![Build Status](https://travis-ci.org/hyeoncheon/goul.svg?branch=master)](https://travis-ci.org/hyeoncheon/goul){:.inline}
-[![Go Report Card](https://goreportcard.com/badge/github.com/hyeoncheon/goul)](https://goreportcard.com/report/github.com/hyeoncheon/goul){:.inline}
-[![Code Climate](https://codeclimate.com/github/hyeoncheon/goul/badges/gpa.svg)](https://codeclimate.com/github/hyeoncheon/goul){:.inline}
-[![Coverage Status](https://coveralls.io/repos/github/hyeoncheon/goul/badge.svg?branch=master)](https://coveralls.io/github/hyeoncheon/goul?branch=master){:.inline}
-
 물리 스위치를 사용하는 기존 인프라 환경에서는 스위치의
 [port mirroring] (Cisco 식으로 말하면 [SPAN; Switched Port Analyzer])
 기능을 이용하여 쉽게 모니터링 또는 흐름 분석을 하거나 보안분석 장비와

@@ -1,5 +1,5 @@
   <footer>
-    <div class="container beautiful-jekyll-footer">
+    <div class="container beautiful-jekyll-footer hidden-print">
       <div class="row">
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
           <ul class="list-inline text-center footer-links">{%
@@ -145,6 +145,13 @@
           <a href="http://deanattali.com/beautiful-jekyll/">beautiful-jekyll</a>
           mod by Yonghwan SO
           </p>
+        </div>
+      </div>
+    </div>
+    <div class="container visible-print-block print-footer">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          {{ site.title }} {{ site.url }}{{ page.url }}
         </div>
       </div>
     </div>

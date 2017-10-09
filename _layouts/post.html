@@ -18,7 +18,7 @@ layout: base
         unless page.social-share == false %}{%
           include social-share.html %}{%
         endunless %}
-        <ul class="pager blog-pager">{%
+        <ul class="pager blog-pager hidden-print">{%
           if page.previous.url %}
           <li class="previous">
             <a href="{{ page.previous.url | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top" title="{{page.previous.title}}"><i class="fa fa-arrow-left"></i> {{ page.previous.title }}</a>
@@ -31,10 +31,11 @@ layout: base
           endif %}
         </ul>
 
-        <div class="posts-related">{% assign ps = page.url|split: "," %}
+        <div class="posts-related hidden-print">{%
+          assign ps = page.url|split: "," %}
           <h3>Related Posts</h3>{%
           for t in page.tags limit: 3 %}{%
-            for p in site.tags[t] limit: 6 %}{%
+            for p in site.tags[t] limit: 4 %}{%
               unless ps contains p.url %}
           <div class="related-item">
             <a class="item-link" href="{{ p.url }}">{{ p.title }}</a>{% comment %}

@@ -17,7 +17,7 @@ for post in posts_by_date %}{%
   <ul class="posts">{%
   endif %}
     <li><a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-      <span class="post-meta pull-right"><a href="/categories/{{ cat.id }}/">{{ cat.name }}</a>, {{ post.date |date: "%F" }}</span></li>{%
+      <span class="post-meta pull-right"><i class="fa fa-book"></i> <a href="/categories/{{ cat.id }}/">{{ cat.name }}</a>, <i class="fa fa-calendar"></i> {{ post.date |date: "%F" }}</span></li>{%
   if forloop.last %}
   </ul>{%
   endif %}{%

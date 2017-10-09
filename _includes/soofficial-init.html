@@ -3,7 +3,8 @@
     for google+ button, https://developers.google.com/+/web/+1button/?hl=ko
     https://dev.twitter.com/web/javascript/loading, 2015-08-01
 {% endcomment %}
-<!-- initialize official social shares for facebook, google, and twitter -->
+<!-- initialize official social shares for facebook, google, and twitter -->{%
+if site.facebook.app_id %}
 <div id="fb-root"></div>
 <script>
 	(function(d, s, id) {
@@ -13,7 +14,8 @@
 		js.src = "//connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v2.10&appId={{ site.facebook.app_id }}";
 		fjs.parentNode.insertBefore(js, fjs);
 	}(document, 'script', 'facebook-jssdk'));
-</script>
+</script>{%
+endif %}
 <script src="https://apis.google.com/js/platform.js" async defer>
 	{lang: 'ko'}
 </script>
