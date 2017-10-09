@@ -94,10 +94,10 @@ else %}{%
   "name": "{{ full_title }}",{%
   endif %}{%
 endif %}
-  "url":"{{ site.url }}",
   "publisher":{
     "@type": "Organization",
     "name": "{{ site.title }}",
+    "url": "{{ site.url }}",
     "logo": {
       "@type": "ImageObject",
       "url": "{{ site.url |append: site.image }}"
@@ -115,6 +115,7 @@ endif %}
     "image": "{{ site.url |append: page.author.image }}",
     "sameAs": {{ site.social.links |jsonify }}
   },
+  "url":"{{ url }}",
   "headline":"{{ page.title }}",
   "description": "{{ desc }}",
   "image": "{{ image }}"
