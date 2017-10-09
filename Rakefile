@@ -43,7 +43,7 @@ end
 
 desc 'Check links'
 task :linkchecker do
-  `linkchecker http://localhost:4000/`
+  exec 'linkchecker', 'http://localhost:4000/'
 end
 
 task :serve, [:env] => [:tags, :categories, :post_refs] do |t, args|
