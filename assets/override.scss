@@ -204,7 +204,6 @@ img {
 		font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 		color: #808080;
 		font-size: 0.9em;
-		margin: 0 0 10px;
 	}
 }
 .page-heading,
@@ -220,10 +219,21 @@ img {
 	}
 }
 
-#blog-archives {
+.category-description {
+	margin: 10px 0;
+}
+
+#blog-archives { // for category details, tag details
 	ul.posts {
+		padding: 0;
 		li {
 			clear: both;
+			margin: 5px 0;
+			padding: 5px 0;
+			border-bottom: 1px dotted #ccc;
+			& > a {
+				font-weight: 700;
+			}
 		}
 	}
 }
@@ -352,7 +362,6 @@ article.blog-post {
 .post-tags {
 	clear: both;
 	text-align: right;
-	color: $color-text;
 	&:before {
 		content: "\F02C";
 		font-family: FontAwesome;

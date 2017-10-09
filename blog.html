@@ -10,11 +10,11 @@ for post in posts_by_date %}{%
   assign cat = site.data['categories'] |where: "id", cat_id |first %}{%
   if forloop.first %}
   <h3>{{ ym }}</h3>
-  <ul class="posts">{%
+  <ul class="posts nodot">{%
   elsif ym != p_ym %}
   </ul>
   <h3>{{ ym }}</h3>
-  <ul class="posts">{%
+  <ul class="posts nodot">{%
   endif %}
     <li><a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
       <span class="post-meta pull-right"><i class="fa fa-book"></i> <a href="/categories/{{ cat.id }}/">{{ cat.name }}</a>, <i class="fa fa-calendar"></i> {{ post.date |date: "%F" }}</span></li>{%
