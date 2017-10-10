@@ -47,8 +47,18 @@ ul {
 	li {
 		list-style: square;
 	}
-	&.nodot li {
+	&.nodot > li {
 		list-style: none;
+	}
+	&.angle > li {
+		list-style: none;
+		&:before {
+			content: "\f105"; // angle-right
+			font-family: FontAwesome;
+			display: inline-block;
+			margin-left: -1em;
+			width: 1em;
+		}
 	}
 }
 
