@@ -1,0 +1,21 @@
+@font-face {
+    font-family: 'NanumBarunGothic';
+    font-weight: 200;
+    src: url('NanumBarunGothicUltraLight.woff') format('woff');
+}
+@font-face {
+    font-family: 'NanumBarunGothic';
+    font-weight: 300;
+    src: url('NanumBarunGothicLight.woff') format('woff');
+}
+@font-face {
+    font-family: 'NanumBarunGothic';
+    font-weight: 500;
+    src: url('NanumBarunGothic.woff') format('woff');
+}
+@font-face {
+    font-family: 'NanumBarunGothic';
+    font-weight: 700;
+    src: url('NanumBarunGothicBold.woff') format('woff');
+}
+

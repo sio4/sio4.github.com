@@ -1,0 +1,20 @@
+@font-face {
+    font-family: 'NanumSquare';
+    font-weight: 300;
+    src: url('NanumSquareLight.woff') format('woff');
+}
+@font-face {
+    font-family: 'NanumSquare';
+    font-weight: 400;
+    src: url('NanumSquareRegular.woff') format('woff');
+}
+@font-face {
+    font-family: 'NanumSquare';
+    font-weight: 700;
+    src: url('NanumSquareBold.woff') format('woff');
+}
+@font-face {
+    font-family: 'NanumSquare';
+    font-weight: 800;
+    src: url('NanumSquareExtraBold.woff') format('woff');
+}

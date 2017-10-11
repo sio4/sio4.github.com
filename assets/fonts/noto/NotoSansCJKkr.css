@@ -1,0 +1,35 @@
+@font-face {
+    font-family: 'NotoSansCJKkr';
+    font-weight: 100;
+    src: url('NotoSansCJKkr-Thin.woff') format('woff');
+}
+@font-face {
+    font-family: 'NotoSansCJKkr';
+    font-weight: 200;
+    src: url('NotoSansCJKkr-Light.woff') format('woff');
+}
+@font-face {
+    font-family: 'NotoSansCJKkr';
+    font-weight: 300;
+    src: url('NotoSansCJKkr-DemiLight.woff') format('woff');
+}
+@font-face {
+    font-family: 'NotoSansCJKkr';
+    font-weight: 400;
+    src: url('NotoSansCJKkr-Regular.woff') format('woff');
+}
+@font-face {
+    font-family: 'NotoSansCJKkr';
+    font-weight: 500;
+    src: url('NotoSansCJKkr-Medium.woff') format('woff');
+}
+@font-face {
+    font-family: 'NotoSansCJKkr';
+    font-weight: 700;
+    src: url('NotoSansCJKkr-Bold.woff') format('woff');
+}
+@font-face {
+    font-family: 'NotoSansCJKkr';
+    font-weight: 900;
+    src: url('NotoSansCJKkr-Black.woff') format('woff');
+}

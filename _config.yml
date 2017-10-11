@@ -106,8 +106,9 @@ avatar: /assets/images/sauru-20150806.png
 navbar-links:
   About: "about"
   Projects: "projects"
-  Categories: "categories"
+  Cats: "categories"
   Tags: "tags"
+  RSS: "http://feeds.feedburner.com/sauru-so"
   #Resources:
   #  - Github: "https://github.com/sio4/"
 

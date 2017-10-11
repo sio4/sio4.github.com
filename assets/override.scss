@@ -1,5 +1,16 @@
 ---
 ---
+//$font-head: 'Open Sans','NanumBarunGothic','Helvetica Neue',sans-serif;
+//$font-head: 'Open Sans','NotoSansCJKkr','Helvetica Neue',sans-serif;
+$font-head: 'Open Sans','NanumSquare','Helvetica Neue',sans-serif;
+$font-norm: 'Open Sans','NotoSansCJKkr','Helvetica Neue',sans-serif;
+//$font-norm: 'Open Sans','NanumSquare','Helvetica Neue',sans-serif;
+$font-meta: 'Open Sans','NotoSansCJKkr','Helvetica Neue',sans-serif;
+$font-type: Monaco, "Ubuntu Mono", "Courier New", monospace !important;
+//$font-head-weight: 700; // for NotoSansCJKkr
+$font-head-weight: 800; // for NanumBarunGothic/NanumSquare
+$font-thin-weight: 300;
+
 $color-text: #404040;
 $color-grey: #aaaaaa;
 $color-dark: #202020;
@@ -11,7 +22,7 @@ $background-body: #f9f9f9;
 $background-black: #111111;
 $background-header: #000000;
 $background-footer: #000000;
-$background-marker: linear-gradient(transparent 50%,#ff7 70%,transparent 90%);
+$background-marker: linear-gradient(transparent 55%, #a8e3ff 65%);
 $background-point: #454545;
 
 $background-th: linear-gradient(#eeeeee 0%, #ffffff 40%, #ffffff 60%, #eeeeee 100%);
@@ -21,7 +32,7 @@ $color-border: $color-light;
 
 // --- general ---------------------------------------------------------------
 body {
-	font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-family: $font-norm;
 	font-size: 15px;
 	line-height: 1.5;
 
@@ -38,8 +49,8 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-	font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-	font-weight: 800;
+	font-family: $font-head;
+	font-weight: $font-head-weight;
 	word-break: keep-all;
 }
 
@@ -65,7 +76,7 @@ ul {
 strong {
 	color: $color-dark;
 	font-weight: normal;
-	background: linear-gradient(transparent 50%, #ff7 70%, transparent 90%);
+	background: $background-marker;
 }
 
 a {
@@ -77,7 +88,7 @@ a {
 }
 
 blockquote {
-	font-size: 1.1em;
+	font-size: 1em;
 	background: url(images/blockquote.png) no-repeat scroll 3px 3px;
 	background-color: transparent;
 	margin: 1em 0;
@@ -86,11 +97,11 @@ blockquote {
 }
 
 pre {
-	font-family: Monaco, "Ubuntu Mono", "Courier New", monospace !important;
+	font-family: $font-type;
 	font-size: 0.9em;
 	line-height: 1.3;
 	& code {
-		font-family: Monaco, "Ubuntu Mono", "Courier New", monospace !important;
+		font-family: $font-type;
 		white-space: pre;
 		.wrap & {
 			white-space: pre-wrap;
@@ -211,7 +222,7 @@ img {
 .post-heading,
 .post-preview {
 	.post-meta {
-		font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+		font-family: $font-meta;
 		color: #808080;
 		font-size: 0.9em;
 	}
@@ -242,7 +253,7 @@ img {
 			padding: 5px 0;
 			border-bottom: 1px dotted #ccc;
 			& > a {
-				font-weight: 700;
+				font-weight: $font-head-weight;
 			}
 		}
 	}
@@ -311,7 +322,7 @@ article.blog-post {
 		background-repeat: repeat-y;
 		background-color: #f6f6f6;
 		padding: 4px 8px 4px 20px;
-		font-size: 1.05em;
+		font-size: 1em;
 
 		dt {
 			font-size: 1.05em;
@@ -332,7 +343,7 @@ article.blog-post {
 	//** for project page
 	.post-repository {
 		margin: 5px 0 !important;
-		font-weight: 600;
+		font-weight: $font-head-weight;
 		a {
 			color: $color-link;
 		}
@@ -392,14 +403,14 @@ div.posts-related {
 	.related-item {
 		margin: 4px 0;
 		color: $color-grey;
-		font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+		font-family: $font-norm;
 		&:before {
 			content: "\F054";
 			font-family: FontAwesome;
 			margin-right: 0px;
 		}
 		.item-link {
-			font-weight: 800;
+			font-weight: $font-head-weight;
 			text-transform: uppercase;
 		}
 		.item-meta {
@@ -438,9 +449,9 @@ ul.post-related {
 // --- pager -----------------------------------------------------------------
 .pager li {
 	& a, & span {
-		font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+		font-family: $font-norm;
 		text-transform: uppercase;
-		font-weight: 800;
+		font-weight: $font-head-weight;
 		padding: 5px 5px;
 		border: 0; // override bootstrap
 		border-radius: 0;
@@ -533,7 +544,7 @@ hr.small {
 }
 
 .main-explain-area {
-	font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-family: $font-norm;
 	padding: 15px inherit;
 }
 
@@ -583,7 +594,7 @@ img {
 .navbar-custom {
 	background: #000000;
 	border-bottom: 1px solid #000000;
-	font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-family: $font-head;
 }
 
 .navbar-custom .nav li a {
@@ -594,7 +605,7 @@ img {
 
 .navbar-custom .nav li a,
 .navbar-custom .navbar-brand {
-	font-weight: 800;
+	font-weight: $font-head-weight;
 	color: #FFFFFF;
 }
 
@@ -771,7 +782,7 @@ footer .list-inline {
 }
 
 footer .copyright {
-	font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-family: $font-norm;
 	text-align: center;
 	margin-bottom: 0;
 }
@@ -801,7 +812,7 @@ footer .theme-by {
 	padding: 20px 0;
 	border-bottom: 1px solid #eee;
 	.post-entry {
-		font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+		font-family: $font-norm;
 		.post-banner {
 			clear: both;
 			margin-top: 15px;
@@ -843,7 +854,7 @@ footer .theme-by {
 
 .post-preview .post-subtitle {
 	margin: 0;
-	font-weight: 300;
+	font-weight: $font-thin-weight;
 	margin-bottom: 10px;
 }
 
@@ -875,7 +886,7 @@ footer .theme-by {
 }
 
 .post-preview .post-read-more {
-	font-weight: 800;
+	font-weight: $font-head-weight;
 	float: right;
 }
 @media only screen and (min-width: 768px) {
@@ -887,7 +898,7 @@ footer .theme-by {
 /* --- Tags --- */
 
 .blog-tags {
-	font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-family: $font-norm;
 	color: #999;
 	font-size: 15px;
 	margin-bottom: 30px;
@@ -987,8 +998,8 @@ footer .theme-by {
 	font-size: 27px;
 	line-height: 1.1;
 	display: block;
-	font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-	font-weight: 300;
+	font-family: $font-norm;
+	font-weight: $font-thin-weight;
 	margin: 10px 0 20px;
 }
 
@@ -998,7 +1009,7 @@ footer .theme-by {
 
 .intro-header.big-img .page-heading .page-subheading,
 .intro-header.big-img .post-heading .post-subheading {
-	font-weight: 400;
+	font-weight: $font-thin-weight + 100;
 }
 
 .intro-header.big-img .page-heading hr {
@@ -1017,7 +1028,7 @@ footer .theme-by {
 	padding: 5px 10px;
 	font-size: 11px;
 	color: #EEE;
-	font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-family: $font-norm;
 	right: 0;
 	bottom: 0;
 	display: none;
