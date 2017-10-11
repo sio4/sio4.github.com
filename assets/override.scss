@@ -9,7 +9,7 @@ $font-meta: 'Open Sans','NotoSansCJKkr','Helvetica Neue',sans-serif;
 $font-type: Monaco, "Ubuntu Mono", "Courier New", monospace !important;
 //$font-head-weight: 700; // for NotoSansCJKkr
 $font-head-weight: 800; // for NanumBarunGothic/NanumSquare
-$font-thin-weight: 300;
+$font-thin-weight: 200;
 
 $color-text: #404040;
 $color-grey: #aaaaaa;
@@ -94,6 +94,13 @@ blockquote {
 	margin: 1em 0;
 	padding: 10px 15px 10px 40px;
 	border-left: 4px solid #d7d7d7;
+	&.boxed {
+		margin: 1em 0px;
+		padding: 10px 20px;
+		border: 1px solid #ccc;
+		border-radius: 5px;
+		background: none;
+	}
 }
 
 pre {
@@ -808,6 +815,7 @@ footer .theme-by {
 /* --- Post preview --- */
 
 .post-preview {
+	display: table;
 	clear: both;
 	padding: 20px 0;
 	border-bottom: 1px solid #eee;
