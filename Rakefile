@@ -43,7 +43,7 @@ end
 
 desc 'Check links'
 task :linkchecker do
-  exec 'linkchecker', 'http://localhost:4000/'
+  exec 'linkchecker', '--ignore-url=.*glyphicons-halflings-regular.*', 'http://localhost:4000/'
 end
 
 task :serve, [:env] => [:tags, :categories, :post_refs] do |t, args|

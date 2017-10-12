@@ -21,10 +21,10 @@ date: 2017-10-11T22:00:00+09:00
 글부터 읽어도 된다. (마지막편은 읽을 것이 없어요)
 
 {:.angle}
-* Calling All Logs! Graylog2 1편: 설치하기
-* Calling All Logs! Graylog2 2편: 맛보기
-* Calling All Logs! Graylog2 3편: 추가설정
-* Calling All Logs! Graylog2 4편: 기록
+* _Calling All Logs! Graylog2 1편: 설치하기_
+* [Calling All Logs! Graylog2 2편: 맛보기]
+* [Calling All Logs! Graylog2 3편: 추가설정]
+* [Calling All Logs! Graylog2 4편: 기록]
 
 {:.boxed}
 > 오픈소스 로그분석 시스템인 [Graylog]에 대한 문서는 [Graylog Docs]에서
@@ -529,11 +529,14 @@ $
 #### 다음 이야기...
 
 {:.angle}
-* Calling All Logs! Graylog2 1편: 설치하기
-* Calling All Logs! Graylog2 2편: 맛보기
-* Calling All Logs! Graylog2 3편: 추가설정
-* Calling All Logs! Graylog2 4편: 기록
+* _Calling All Logs! Graylog2 1편: 설치하기_
+* [Calling All Logs! Graylog2 2편: 맛보기]
+* [Calling All Logs! Graylog2 3편: 추가설정]
+* [Calling All Logs! Graylog2 4편: 기록]
 
+
+[Calling All Logs! Graylog2 1편: 설치하기]:{% link _posts/sysadmin/2017-10-11-calling-all-logs-graylog2-installation.md %}
+[Calling All Logs! Graylog2 2편: 맛보기]:{% link _posts/sysadmin/2017-10-12-calling-all-logs-graylog2-overview.md %}
 
 
 [Graylog]:https://www.graylog.org/
