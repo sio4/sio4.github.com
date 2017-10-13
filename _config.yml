@@ -46,6 +46,7 @@ defaults:
       path: ""
     values:
       layout: page
+      lang: ko-KR
       author:
         name: 소용환
         alias: Yonghwan SO

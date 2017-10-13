@@ -6,6 +6,7 @@ repository: https://github.com/hyeoncheon/uart
 lang: en-US
 comments: true
 social-share: true
+translate: true
 date: 2017-09-29T01:28:00+09:00
 modified: 2017-10-07 23:50:00 +0900
 ---
