@@ -4,7 +4,7 @@ title: Jekyll로 github에 블로깅하기
 tags: blogging Github Jekyll
 categories: ["misc"]
 date: 2010-05-27T13:42:00+09:00
-modified: 2010-07-07T13:52:31+09:00
+last_modified_at: 2010-07-07T13:52:31+09:00
 ---
 
 성격 탓으로, 대부분의 블로그 서비스에서 제공하는 WYSIWYG 방식의 편집기에

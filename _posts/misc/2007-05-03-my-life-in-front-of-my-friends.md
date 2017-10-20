@@ -4,7 +4,7 @@ title: 동지들 앞에 나의 삶은...
 tags: music democracy life
 categories: ["misc"]
 date: 2007-05-03T17:36:53+09:00
-modified: 2008-03-09T02:19:07+09:00
+last_modified_at: 2008-03-09T02:19:07+09:00
 ---
 나의 삶은 얼마나 진지하고 치열한지...
 

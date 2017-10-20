@@ -4,7 +4,7 @@ title: "VM웨어, 야후 짐브라 오픈소스 이메일 사업부 인수"
 tags: VMware Zimbra acquisition cloud-computing
 categories: ["cloudcomputing"]
 date: 2010-01-13T17:56:37+09:00
-modified: 2011-03-04T13:48:31+09:00
+last_modified_at: 2011-03-04T13:48:31+09:00
 ---
 VMWare가 가상화를 바탕으로 한 IaaS 시장 뿐만 아니라 SMB를 대상으로 한
 SaaS 서비스 영역에서도 뭔가 해보겠다는 뜻이 아닐까? 혹시 이미 이런

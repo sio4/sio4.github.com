@@ -4,7 +4,7 @@ title: "EMC, 데이터 분석 전문업체 그린플럼 인수"
 tags: DBMS EMC Greenplum PostgreSQL cloud-computing
 categories: ["cloudcomputing"]
 date: 2010-07-08T10:10:29+09:00
-modified: 2011-03-04T13:50:02+09:00
+last_modified_at: 2011-03-04T13:50:02+09:00
 ---
 이미 오래 전에 가상화 분야의 선두업체인 VMWare를 인수한 바 있는 EMC가 이번엔
 대용량 자료 분석 전문업체인 [그린 플럼](http://www.greenplum.com/)을

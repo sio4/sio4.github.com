@@ -4,7 +4,7 @@ title: "Gibson gets official with the self-tuning Robot Guitar"
 tags: guitar Gibson life video
 categories: ["misc"]
 date: 2007-11-13T14:57:26+09:00
-modified: 2010-07-05T09:39:20+09:00
+last_modified_at: 2010-07-05T09:39:20+09:00
 ---
 이런 세상에... 이런 기타가 나오다니.
 

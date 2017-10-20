@@ -4,7 +4,7 @@ title: 공개소프트웨어, 그리고 관리비용
 tags: management-cost google open-source
 categories: ["opensource"]
 date: 2007-06-07T10:53:13+09:00
-modified: 2008-03-09T01:43:18+09:00
+last_modified_at: 2008-03-09T01:43:18+09:00
 ---
 어제 함께 일하는 사람이 말하기를, 윈도가 관리비용이 싸기 때문에 회사들이
 리눅스를 피하고 윈도 서버로 전향하려는 움직임이 있다고 한다. 그리고 정말

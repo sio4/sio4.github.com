@@ -4,7 +4,7 @@ title: CloudFoundry, Getting Started
 tags: cloud-computing CloudFoundry development PaaS Ubuntu
 categories: ["cloudcomputing"]
 date: 2011-08-22T17:01:43+09:00
-modified: 2011-08-22T17:06:06+09:00
+last_modified_at: 2011-08-22T17:06:06+09:00
 ---
 CloudFoundry 맛보기. 이 정도로 사실, 맛을 볼 수는 없겠으나 일단 시간과 능력의
 부족으로 Getting Started Guide를 따라해보는 수준으로 정리, 간만에 신세계

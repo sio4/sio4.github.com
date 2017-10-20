@@ -4,7 +4,7 @@ title: HowtoForge에 대한 모질라 검색사이트
 tags: Firefox
 categories: ["tips-and-tricks"]
 date: 2009-03-19T13:10:59+09:00
-modified: 2010-06-30T17:04:37+09:00
+last_modified_at: 2010-06-30T17:04:37+09:00
 ---
 IE 역시 그런 기능이 있는 것으로 아는데, 파이어폭스 웹브라우져에는
 검색사이트를 추가할 수 있는 기능이 있다. 그리고

@@ -4,7 +4,7 @@ title: Kpartx, Create device mappings for partitions
 tags: disk recovery
 categories: ["tips-and-tricks"]
 date: 2011-12-27T12:36:17+09:00
-modified: 2011-12-27T12:36:17+09:00
+last_modified_at: 2011-12-27T12:36:17+09:00
 ---
 재밌는 프로그램이네. 예전에는 통짜 Disk Image를 loopback으로 마운트하기
 위해 partition 시작 위치 찾고 어쩌고... 그랬었던 기억인데, 이 물건이

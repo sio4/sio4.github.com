@@ -4,7 +4,7 @@ title: "행사: 소셜 플랫폼과 소셜 게임 컨퍼런스"
 tags: social-platform social-network conference
 categories: ["review"]
 date: 2010-06-01T13:30:55+09:00
-modified: 2011-03-04T13:42:28+09:00
+last_modified_at: 2011-03-04T13:42:28+09:00
 ---
 
 지난 24일(2010년 5월 24일), 상암동 LG텔리콤 사옥에서 "소셜 플랫폼 & 소셜 게임

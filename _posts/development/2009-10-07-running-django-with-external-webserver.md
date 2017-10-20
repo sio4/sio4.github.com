@@ -4,7 +4,7 @@ title: Django를 다른 웹서버에 의존하여 돌리기
 tags: delayed-job Django nested-request Ongsung
 categories: ["development"]
 date: 2009-10-07T01:02:10+09:00
-modified: 2009-10-07T01:06:01+09:00
+last_modified_at: 2009-10-07T01:06:01+09:00
 ---
 얼마 전부터 작은 오픈소스 프로젝트를 하나 (업무로써) 진행하고 있는데[^1]
 공부도 할 겸, 프로젝트의 웹 부분을 Django 프레임웍을 사용하여 작성하고 있다.

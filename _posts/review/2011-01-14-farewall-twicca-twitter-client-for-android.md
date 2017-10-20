@@ -4,7 +4,7 @@ title: "앱: 잘가 Twicca, 안드로이드용 트위터 클라이언트"
 tags: android social-network twitter app
 categories: ["review"]
 date: 2011-01-14T13:10:18+09:00
-modified: 2011-01-14T13:10:18+09:00
+last_modified_at: 2011-01-14T13:10:18+09:00
 ---
 간만에 글 하나 써본다. 안드로이드용 트위터 클라이언트 심층 비교,
 제 1 탄 twicca! ㅋㅋㅋ

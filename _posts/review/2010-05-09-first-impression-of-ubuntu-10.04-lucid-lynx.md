@@ -4,7 +4,7 @@ title: "리뷰: Ubuntu 10.04 Lucid Lynx의 첫인상"
 tags: Ubuntu
 categories: ["review"]
 date: 2010-05-09T13:29:00+09:00
-modified: 2010-07-07T13:34:43+09:00
+last_modified_at: 2010-07-07T13:34:43+09:00
 ---
 
 내 눈에 콩깍지가 씌워져 있는 것인지는 모르겠지만, 확실히

@@ -4,7 +4,7 @@ title: '"밖에서는 휴대 전화, 안에서는 인터넷 전화로" 란다.'
 tags: convergence VoIP mobile telecom home-network
 categories: ["wind-of-change"]
 date: 2007-11-07T19:34:14+09:00
-modified: 2010-07-02T13:06:38+09:00
+last_modified_at: 2010-07-02T13:06:38+09:00
 ---
 옆집에 가서 뱅글뱅글 손잡이 돌려서 교환에게 "누구네 집" 걸어달라고
 부탁하고는 기다리고 않아있던 시절도 있었다. 동그라미 다이얼, 네모 버튼,

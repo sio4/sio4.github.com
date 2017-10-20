@@ -4,7 +4,7 @@ title: Ubuntu 새버전(9.10), 간편한 Cloud Computing 지원
 tags: Ubuntu cloud-computing
 categories: ["cloudcomputing"]
 date: 2009-10-30T04:00:00+09:00
-modified: 2011-03-04T13:50:59+09:00
+last_modified_at: 2011-03-04T13:50:59+09:00
 ---
 지난 버전에서도 관련된 지원이 있었지만, 이번엔 아주 적극적인 모습이다.
 Ubuntu Linux의 새 버전인 9.10에는 Eucalyptus 기반의 Cloud Computing 지원이

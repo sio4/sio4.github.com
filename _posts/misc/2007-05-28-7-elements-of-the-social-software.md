@@ -4,7 +4,7 @@ title: 소셜 소프트웨어의 7 요소
 tags: social-network
 categories: ["misc"]
 date: 2007-05-28T11:49:52+09:00
-modified: 2007-05-28T11:49:52+09:00
+last_modified_at: 2007-05-28T11:49:52+09:00
 ---
   
   

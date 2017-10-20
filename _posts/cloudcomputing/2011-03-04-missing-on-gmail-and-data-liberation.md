@@ -4,7 +4,7 @@ title: GMail의 분실사고! 그리고 자료 해방!
 tags: data-liberation google reliability cloud-computing
 categories: ["cloudcomputing"]
 date: 2011-03-04T14:07:26+09:00
-modified: 2011-03-04T14:09:00+09:00
+last_modified_at: 2011-03-04T14:09:00+09:00
 ---
 막강 Google이 운영하는 웹메일 서비스인 GMail에서 일부(0.02%인가 0.08% 인가
 그러던데, 따지고보면 엄청난 인구다!) 사용자의 주소록, 채팅 기록 등이

@@ -4,7 +4,7 @@ title: "프랭클린 플래너를 쓰는 사람의 시간은 다르다"
 tags: productivity planner
 categories: ["productivity"]
 date: 2007-04-24T14:06:57+09:00
-modified: 2008-03-09T02:28:50+09:00
+last_modified_at: 2008-03-09T02:28:50+09:00
 ---
 "프랭클린 플래너는 비싸다.",  
 "프랭클린 플래너를 사용하면 시간을 벌 수 있다.",  

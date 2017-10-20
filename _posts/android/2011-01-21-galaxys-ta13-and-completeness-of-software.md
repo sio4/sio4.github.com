@@ -4,7 +4,7 @@ title: 갤럭시S TA13 업데이트, 그리고 소프트웨어의 완성도
 tags: rules-of-action user-oriented android galaxy-s
 categories: ["android"]
 date: 2011-01-21T11:02:24+09:00
-modified: 2011-01-21T11:04:40+09:00
+last_modified_at: 2011-01-21T11:04:40+09:00
 ---
 소프트웨어의 완성도를 높이는 일, 그리고 발표 이후에 그 완성도를 유지해
 나가거나 더욱 견고하게 하는 것은 쉬운 일이 아니다. 소프트웨어 개발/생산

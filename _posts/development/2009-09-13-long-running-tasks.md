@@ -4,7 +4,7 @@ title: Background Jobs, Long Running Tasks
 tags: delayed-job
 categories: ["development"]
 date: 2009-09-13T13:48:00+09:00
-modified: 2009-09-13T13:47:20+09:00
+last_modified_at: 2009-09-13T13:47:20+09:00
 ---
 시간을 내어 읽어볼 것!
 

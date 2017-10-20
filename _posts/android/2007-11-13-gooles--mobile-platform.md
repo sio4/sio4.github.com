@@ -4,7 +4,7 @@ title: Androidology, 구글의 또는 구글에 의한 모바일 플랫폼.
 tags: google mobile open-source android
 categories: ["android"]
 date: 2007-11-13T10:25:37+09:00
-modified: 2008-03-09T01:36:38+09:00
+last_modified_at: 2008-03-09T01:36:38+09:00
 ---
 구글(Google)이 또 하나의 MS라는 둥 이런 저런 소리도 많이 듣고 있지만
 그래도 차별화되는 또는 인정하지 않을 수 없는 것이 있다면 바로 이런

@@ -4,7 +4,7 @@ title: 상업 회사의 오픈소스 기여도
 tags: open-source
 categories: ["opensource"]
 date: 2008-04-21T16:19:26+09:00
-modified: 2008-04-21T16:19:26+09:00
+last_modified_at: 2008-04-21T16:19:26+09:00
 ---
 오픈소스 소프트웨어, 오픈소스 커뮤니티, 그리고 상업회사가 공존하는 방법.
 

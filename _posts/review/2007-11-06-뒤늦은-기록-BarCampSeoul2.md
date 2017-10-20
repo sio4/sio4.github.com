@@ -4,7 +4,7 @@ title: "행사: 뒤늦은 기록, BarCampSeoul2"
 tags: community conference software-appliance
 categories: ["review"]
 date: 2007-11-06T01:11:09+09:00
-modified: 2010-07-02T13:53:48+09:00
+last_modified_at: 2010-07-02T13:53:48+09:00
 ---
 그 날이 6월 2일이었나 보다. :-) 그렇게 5개월이, 거의 반년이 지나가 버린
 후의 기록을 남긴다. 어~엄청 '후'의 '기'록이지만... 좀 웃기긴 하네.

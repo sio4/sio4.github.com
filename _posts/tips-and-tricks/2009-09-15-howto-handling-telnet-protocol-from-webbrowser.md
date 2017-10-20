@@ -4,7 +4,7 @@ title: 웹브라우져에서 telnet 프로토콜을 처리하려면
 tags: network Ongsung protocol Python
 categories: ["tips-and-tricks"]
 date: 2009-09-15T03:51:57+09:00
-modified: 2009-09-28T08:50:38+09:00
+last_modified_at: 2009-09-28T08:50:38+09:00
 ---
 예전엔 기본이었던것 같은데, 이젠 설정을 따로 해야 하는 것이 되어버렸다.
 telnet://localhost 이런거 말이다. 그것도 꽤 복잡해졌다.

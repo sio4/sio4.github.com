@@ -4,7 +4,7 @@ title: 어쩌자고... 넷북에서 Xen을 돌리겠다는 건데?
 tags: Ubuntu Xen virtualization
 categories: ["virtualization"]
 date: 2009-02-27T10:15:59+09:00
-modified: 2010-07-02T21:20:07+09:00
+last_modified_at: 2010-07-02T21:20:07+09:00
 ---
 좀 우끼는 일이지만,
 [삼성전자의 넷북인 NC10](http://en.wikipedia.org/wiki/Samsung_NC10)에

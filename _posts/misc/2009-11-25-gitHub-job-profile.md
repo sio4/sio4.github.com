@@ -4,7 +4,7 @@ title: "GitHub Job Profile: 뭐랄까..."
 tags: Github developer social-network
 categories: ["misc"]
 date: 2009-11-25T08:32:52+09:00
-modified: 2011-03-04T13:38:46+09:00
+last_modified_at: 2011-03-04T13:38:46+09:00
 ---
 GitHub에서 새로운 서비스를 시작하는데, 일자리 찾기란다. 프로그래머를
 위한 소셜 네트워크 서비스의 진화... 결국 SN은 일자리와 연결되는...

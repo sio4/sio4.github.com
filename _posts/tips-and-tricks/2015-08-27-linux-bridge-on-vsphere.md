@@ -4,9 +4,10 @@ image: /attachments/20150827-linux-bridge-0.png
 tags: Linux network troubleshooting VMware ARP
 categories: ["tips-and-tricks"]
 date: 2015-08-27 09:26:33+09:00
-modified: 2015-08-30 20:49:37+09:00
+last_modified_at: 2017-10-20 20:49:37+09:00
 ---
-"[Linux Bridge로 네트워크 문제 추적하기]({% post_url tips-and-tricks/2015-08-21-troubleshooting-w-linux-bridge %}){:.reference}"에서 예기했던 것과 같이, 리눅스의
+"[Linux Bridge로 네트워크 문제 추적하기]({% post_url tips-and-tricks/2015-08-21-troubleshooting-w-linux-bridge %}){:.reference}"에서
+얘기했던 것과 같이, 리눅스의
 내장 Bridge 기능은 네트워크 통신과 연관된 문제를 뭐랄까... 대상의
 OS 또는 구성과 관계없이 객관적 위치에서 추적할 때 유용하게 사용할
 수 있다. 이번엔 VMware vSphere 가상환경 속에 위치한 VM을 대상으로
@@ -67,7 +68,8 @@ Hub가 아닌 Switch이다 보니까.
 Switch, 다른 표현으로 Switching Hub는 각 Port와 이와 연결된 단말이
 갖는 MAC의 연결정보(ARP Table)를 장치에서 관리하면서 들어온 패킷의
 목적지에 따라 어떤, 그리고 단 하나의 Port에게 그 패킷을 내보낼지를
-결정(Switching)하는 두뇌를 가진 Hub의 한 종류이다.
+결정(Switching)하는 방식으로 동작하는, "Multi-Port Network Bridge"
+이다.
 
 그래서 위의 단순한 구성에서는 vSwitch1에서 의도한 바와 같이 양단에
 위치한 기계에게 패킷을 전달하지 못하는 현상이 있었다. vSwitch0에서

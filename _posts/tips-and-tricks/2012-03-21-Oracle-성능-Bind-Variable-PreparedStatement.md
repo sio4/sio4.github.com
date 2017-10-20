@@ -4,7 +4,7 @@ title: Oracle 성능, Bind Variable, PreparedStatement
 tags: DBMS Oracle performance
 categories: ["tips-and-tricks"]
 date: 2012-03-21T13:12:53+09:00
-modified: 2012-03-21T13:13:07+09:00
+last_modified_at: 2012-03-21T13:13:07+09:00
 ---
 매번 볼 때 마다 까먹으니깐 일단 기록.
 

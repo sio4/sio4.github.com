@@ -4,7 +4,7 @@ title: '"Sun Microsystems to Acquire MySQL"'
 tags: news MySQL sun-microsystems open-source
 categories: ["opensource"]
 date: 2008-01-18T00:42:36+09:00
-modified: 2008-03-10T02:07:05+09:00
+last_modified_at: 2008-03-10T02:07:05+09:00
 ---
 맙소사! 아니, 오! 마이 썬!
 

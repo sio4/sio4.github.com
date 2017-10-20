@@ -4,7 +4,7 @@ title: 클라우드 컴퓨팅의 조건, 자유!
 tags: cloud-computing interoperability data-liberation google
 categories: ["cloudcomputing"]
 date: 2009-09-21T02:30:00+09:00
-modified: 2011-03-04T14:08:24+09:00
+last_modified_at: 2011-03-04T14:08:24+09:00
 ---
 클라우드 컴퓨팅의 본질 중 가장 으뜸인 것이, 내가 직접 인프라를 소유하지 않고
 필요할 때 필요한 만큼만 빌려 쓰겠다는 것이다. 렌터카처럼, 빌리는 대상이

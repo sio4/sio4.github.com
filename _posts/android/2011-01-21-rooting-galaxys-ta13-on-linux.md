@@ -4,7 +4,7 @@ title: 갤럭시S TA13, 리눅스 컴에서 루팅하기
 tags: android galaxy-s rooting
 categories: ["android"]
 date: 2011-01-21T14:23:31+09:00
-modified: 2011-01-21T14:26:55+09:00
+last_modified_at: 2011-01-21T14:26:55+09:00
 ---
 깔끔한 앱 형식의 안드로이드 루팅 도구인 z4root가 TA13에서 동작하지 않는다.
 아뿔싸! 그럼 역방향 USB 테더링도 루팅 없이는 안된다! 어쩌지? 다른 루팅도구를

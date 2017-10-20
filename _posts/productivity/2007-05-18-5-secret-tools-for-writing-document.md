@@ -4,7 +4,7 @@ title: 문서작성의 5가지 口訣
 tags: writing productivity
 categories: ["productivity"]
 date: 2007-05-18T09:41:56+09:00
-modified: 2010-07-02T15:48:28+09:00
+last_modified_at: 2010-07-02T15:48:28+09:00
 ---
 현재 안랩코코넛의 대표이사이시며 IBM, 안철수연구소 등에서 22년간 IT 산업에
 종사하셨다는 이정규님의 글.

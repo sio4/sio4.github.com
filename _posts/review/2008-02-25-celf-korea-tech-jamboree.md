@@ -4,7 +4,7 @@ title: "행사: CELF Korea Tech Jamboree"
 tags: community appliance open-source embedded
 categories: ["review"]
 date: 2008-02-25T00:45:38+09:00
-modified: 2008-03-09T01:30:10+09:00
+last_modified_at: 2008-03-09T01:30:10+09:00
 ---
 "CELF Korea Tech Jamboree" 라는 이름의 행사에 와있다. 임베디드 리눅스
 관련 행사인데, 내가 알았을 정도니 그렇게 홍보가 약하진 않았나보다.

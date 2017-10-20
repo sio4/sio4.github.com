@@ -4,7 +4,7 @@ title: GallOrg, Gallery Organizer for Android 1.0.0 released!
 tags: android gallorg app photo
 categories: ["android"]
 date: 2010-10-06T13:12:26+09:00
-modified: 2010-10-20T16:14:26+09:00
+last_modified_at: 2010-10-20T16:14:26+09:00
 ---
 안드로이드(Android)의 기본 갤러리앱은 자체적인 앨범/폴더 관리 기능이 들어있지
 않아서 사진을 분류하여 보관하기가 쉽지 않다. Astro Filemanager, ES Filemanager

@@ -4,7 +4,7 @@ title: 왜 오픈소스인가? 그게 뭔데?
 tags: open-source sun-microsystems
 categories: ["opensource"]
 date: 2008-03-01T00:10:30+09:00
-modified: 2008-03-09T01:25:50+09:00
+last_modified_at: 2008-03-09T01:25:50+09:00
 ---
 회사를 옮기고 난 후, 요즘들어 많이 받는 질문, 또는 가끔 내 자신에게 던지는
 질문이 바로 " **왜 오픈소스인가?**"이다.

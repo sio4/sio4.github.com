@@ -4,7 +4,7 @@ title: Eucalytpus and Ubuntu Linux
 tags: Eucalyptus Ubuntu open-source cloud-computing
 categories: ["cloudcomputing"]
 date: 2009-11-13T08:45:21+09:00
-modified: 2011-03-04T13:49:01+09:00
+last_modified_at: 2011-03-04T13:49:01+09:00
 ---
 알려진 바와 같이, 우분투 리눅스의 새 버전인 9.10 Karmic Koala는 오픈소스
 클라우드 컴퓨팅 플랫폼인 Eucalyptus를 포함하고 있다. 캐노니컬의 진로를

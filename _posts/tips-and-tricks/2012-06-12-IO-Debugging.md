@@ -4,7 +4,7 @@ title: I/O Debugging
 tags: debugging Linux performance
 categories: ["tips-and-tricks"]
 date: 2012-06-12T12:30:49+09:00
-modified: 2012-06-12T12:30:49+09:00
+last_modified_at: 2012-06-12T12:30:49+09:00
 ---
 맨날 리눅스 리눅스 하면서도, 참 아는 게 없다. 어쩌면 Technician 수준.
 I/O가 마구 치솟는데, 누가 그러는지를 모른다. iotop을 떠올리는데도 한참

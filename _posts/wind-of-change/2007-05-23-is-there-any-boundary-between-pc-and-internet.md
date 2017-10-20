@@ -4,7 +4,7 @@ title: "인터넷 생활: 인터넷, 로컬 카피, 글로벌 카피"
 tags: platform internet
 categories: ["wind-of-change"]
 date: 2007-05-23T14:33:48+09:00
-modified: 2011-03-04T13:25:15+09:00
+last_modified_at: 2011-03-04T13:25:15+09:00
 ---
 북마크만 의미없는게 아니다. 파일도 늘 다시 받고 있다. 참 우습다!
 

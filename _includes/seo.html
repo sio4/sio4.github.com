@@ -73,8 +73,8 @@ if page.date %}
   "@type": "BlogPosting",
   "dateCreated": "{{ page.date |date_to_xmlschema }}",
   "datePublished": "{{ page.date |date_to_xmlschema }}",{%
-  if page.modified %}
-  "dateModified": "{{ page.modified |date_to_xmlschema }}",{%
+  if page.last_modified_at %}
+  "dateModified": "{{ page.last_modified_at |date_to_xmlschema }}",{%
   else %}
   "dateModified": "{{ page.date |date_to_xmlschema }}",{%
   endif %}

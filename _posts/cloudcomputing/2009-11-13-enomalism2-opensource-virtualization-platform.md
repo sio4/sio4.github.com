@@ -4,7 +4,7 @@ title: Enomalism2, Open Source Virtualization Platform
 tags: Enomalism virtualization cloud-computing
 categories: ["cloudcomputing"]
 date: 2009-11-13T08:42:37+09:00
-modified: 2011-03-04T13:50:46+09:00
+last_modified_at: 2011-03-04T13:50:46+09:00
 ---
 산뜻한 디자인의 Web UI가 돋보이는 오픈소스 가상화/클라우드컴퓨팅
 플렛폼이다. 상용 서포트 회사도 있고... Lab에서 얼마간 시험을 해봤는데,

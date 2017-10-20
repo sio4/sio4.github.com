@@ -4,7 +4,7 @@ title: "서브버전 저장소 사본 만들기, svnsync"
 tags: productivity version-control howto availability project
 categories: ["development"]
 date: 2008-04-09T01:01:59+09:00
-modified: 2010-07-02T19:20:10+09:00
+last_modified_at: 2010-07-02T19:20:10+09:00
 ---
 지금의 업무 환경이 마땅치 않아서 이기고 하고 또 한편으로는 작은 오픈소스
 프로젝트를 열어보고자 하는 생각도 있고 하여, 요 얼마간 서브버전을 지원하는

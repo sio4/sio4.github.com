@@ -9,7 +9,7 @@ comments: true
 social-share: true
 translate: true
 date: 2017-09-29T17:12:00+09:00
-modified: 2017-10-07 23:50:00 +0900
+last_modified_at: 2017-10-07 23:50:00 +0900
 ---
 
 Goul(거울; Mirror in English) is a tool for virtual network port mirroring
@@ -31,7 +31,7 @@ This tool is for someone like me who want to mirror some port of the
 virtual instances or virtual network appliances.
 
 Goul is now on development using [Go language] with [gopacket] and [pcap]
-library ant not yet stable enough.
+library but not yet stable enough.
 
 [port mirroring]:https://en.wikipedia.org/wiki/Port_mirroring
 [SPAN; Switched Port Analyzer]:https://supportforums.cisco.com/t5/network-infrastructure-documents/understanding-span-rspan-and-erspan/ta-p/3144951

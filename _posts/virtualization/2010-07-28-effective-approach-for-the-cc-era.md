@@ -4,7 +4,7 @@ title: 클컴 시대, OS 사업자의 효과적 접근방식
 tags: Canonical Ubuntu software-appliance cloud-computing
 categories: ["virtualization"]
 date: 2010-07-28T11:56:48+09:00
-modified: 2011-03-04T13:45:21+09:00
+last_modified_at: 2011-03-04T13:45:21+09:00
 ---
 지난 주에, 우분투 리눅스(Ubuntu Linux)의 제작사인 캐노니컬은 IBM DB2의
 구동을 위한 가상 어플라이언스를 발표했다. 뭐... 별 일이 아닐 수도 있지만,

@@ -4,7 +4,7 @@ title: 클라우드 컴퓨팅의 SLA, 개념의 전환
 tags: SLA cloud-computing
 categories: ["cloudcomputing"]
 date: 2009-11-23T14:05:06+09:00
-modified: 2010-07-09T18:13:27+09:00
+last_modified_at: 2010-07-09T18:13:27+09:00
 ---
 "클라우드 컴퓨팅이란 것이 쓸만한 것인지, 과연 어디까지 어떻게 쓸만한
 것인지"에 대해서 나 역시, 여전히, 고민이 많다. 관련 엔지니어로써,

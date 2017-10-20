@@ -4,7 +4,7 @@ title: GlusterSP, Gluster Storage Platform
 tags: software-appliance storage cloud-computing
 categories: ["cloudcomputing"]
 date: 2009-10-07T01:00:00+09:00
-modified: 2011-03-04T13:44:41+09:00
+last_modified_at: 2011-03-04T13:44:41+09:00
 ---
 문제를 푸는 기술이 있으면 그것이 해법/솔루션이고 그것을 소프트웨어적으로
 구현하면 응용프로그램이 된다. 그런데 소프트웨어라는 것이 "무른" 만큼,
