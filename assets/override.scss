@@ -30,6 +30,8 @@ $background-td: #ffffff;
 $color-header: $color-light;
 $color-border: $color-light;
 
+@import url(syntax-extra.css);
+
 // --- general ---------------------------------------------------------------
 body {
 	font-family: $font-norm;
