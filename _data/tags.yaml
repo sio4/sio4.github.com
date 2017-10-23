@@ -33,7 +33,10 @@ automation:
   en: Automation
 availability:
   ko: 가용성
-  en: availability
+  en: Availability
+backup:
+  ko: 백업
+  en: Backup
 berkeley-db:
   ko: Berkeley DB
 blogging:
@@ -90,29 +93,29 @@ delayed-job:
   en: Delayed Job
 democracy:
   ko: 민주주의
-  en: democracy
+  en: Democracy
 developer:
   ko: 개발자
-  en: developer
+  en: Developer
 development:
   ko: 개발
-  en: development
+  en: Development
 disclosure:
   ko: 유출
-  en: disclosure
+  en: Disclosure
 disk:
   ko: 디스크
-  en: disk
+  en: Disk
 education:
   ko: 교육
-  en: education
+  en: Education
 embedded:
   en: Embedded
 emberjs:
   en: Ember.js
 engineer:
   ko: 엔지니어
-  en: engineer
+  en: Engineer
 error-handling:
   ko: 오류처리
   en: Error Handling
@@ -126,7 +129,7 @@ free-software:
   ko: 자유소프트웨어
   en: Free Software
 galaxy-s:
-  ko: 겔럭시 S
+  ko: 갤럭시 S
   en: Galaxy S
 gallorg:
   en: Gallorg
@@ -179,7 +182,7 @@ leadership:
   en: Leadership
 life:
   ko: 삶
-  en: life
+  en: Life
 logging:
   ko: 로그관리
   en: Logging
@@ -188,16 +191,19 @@ management-cost:
   en: Management Cost
 memories:
   ko: 기억
-  en: memories
+  en: Memories
+memory-card:
+  ko: 메모리카드
+  en: Memory Card
 mobile:
   ko: 모바일
-  en: mobile
+  en: Mobile
 monitoring:
   ko: 모니터링
-  en: monitoring
+  en: Monitoring
 movie:
   ko: 영화
-  en: movie
+  en: Movie
 multimedia:
   ko: 멀티미디어
   en: Multimedia
