@@ -7,6 +7,7 @@ include Jekyll::Filters
 
 options = Jekyll.configuration({})
 site = Jekyll::Site.new(options)
+site.read
 
 task :default do
   puts "Jekyll Tasks"
@@ -57,7 +58,6 @@ task :serve, [:env] => [:tags, :categories, :post_refs] do |t, args|
 end
 
 task :post_refs do
-  site.read
 
   html = ''
   html << <<-HTML
@@ -80,7 +80,7 @@ end
 desc 'Generate tags page'
 task :tags do
   puts "Generating tags..."
-  site.read
+  #site.read
 
   ## clear existing files
   `mkdir -p tags`
@@ -192,7 +192,7 @@ end
 desc 'Generate category pages'
 task :categories do
   puts "Generating categories..."
-  site.read
+  #site.read
 
   `mkdir -p categories`
   `for f in categories/*; do [ "$f" != "categories/index.html" ] && rm $f; done`

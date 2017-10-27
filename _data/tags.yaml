@@ -7,6 +7,9 @@ adaptive:
 agile:
   ko: 애자일
   en: Agile
+analytics:
+  ko: 분석
+  en: Analytics
 android:
   ko: 안드로이드
   en: Android
@@ -109,6 +112,8 @@ disk:
 education:
   ko: 교육
   en: Education
+elastic-stack:
+  en: Elastic Stack
 embedded:
   en: Embedded
 emberjs:

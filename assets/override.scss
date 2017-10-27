@@ -105,10 +105,17 @@ blockquote {
 	}
 }
 
+div.highlight { // who's bug? double classed for div and pre.
+	background: transparent;
+}
 pre {
 	font-family: $font-type;
 	font-size: 0.9em;
 	line-height: 1.3;
+	border: 0; // override bootstrap
+	border-radius: 0; // override bootstrap
+	margin: 0 1em;
+	box-shadow: 2px 2px 4px #888888;
 	& code {
 		font-family: $font-type;
 		white-space: pre;
