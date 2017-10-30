@@ -20,6 +20,8 @@ Elastic Stack을 시작하는 입장에서 관심있는 부분을 참고하면 �
 * _Elastic NMS Part 2: Syslog 원격로깅_
 * [Elastic NMS Part 3: Mapping과 Template]
 * [Elastic NMS Part 4: Kibana로 Visualize하기]
+* [Elastic NMS Part 5: NetFlow 수신하기]
+* [Elastic NMS Part 6: SNMP 수신하기]
 
 이 묶음글과 직접적인 관련은 없지만, 혹시 로그중앙화를 위한 간편한 솔루션을
 찾는다면 이보다 앞서 검토했던 Graylog2에 대해 정리했던 글이 더욱 도움이 될
@@ -488,10 +490,14 @@ Template에 대한 자세한 얘기는 다음 편에 이어서...
 * _Elastic NMS Part 2: Syslog 원격로깅_
 * [Elastic NMS Part 3: Mapping과 Template]
 * [Elastic NMS Part 4: Kibana로 Visualize하기]
+* [Elastic NMS Part 5: NetFlow 수신하기]
+* [Elastic NMS Part 6: SNMP 수신하기]
 
 [Elastic NMS Part 1: 엔진을 켜라!]:{% link _posts/cloudcomputing/2017-10-28-elastic-nms-part1-start-your-engine.md %}
 [Elastic NMS Part 3: Mapping과 Template]:{% link _posts/cloudcomputing/2017-10-30-elastic-nms-part3-mapping-and-template.md %}
 [Elastic NMS Part 4: Kibana로 Visualize하기]:{% link _posts/cloudcomputing/2017-10-30-elastic-nms-part4-visualize-with-kibana.md %}
+[Elastic NMS Part 5: NetFlow 수신하기]:{% link _posts/cloudcomputing/2017-10-31-elastic-nms-part5-netflow-monitoring.md %}
+[Elastic NMS Part 6: SNMP 수신하기]:{% link _posts/cloudcomputing/2017-10-31-elastic-nms-part6-snmp-monitoring.md %}
 
 ### 함께 읽기
 
