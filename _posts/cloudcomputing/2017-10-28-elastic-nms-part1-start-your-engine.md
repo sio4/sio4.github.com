@@ -397,6 +397,8 @@ $
 * [Elastic NMS Part 3: Mapping과 Template]
 * [Elastic NMS Part 4: Kibana Visualiz]
 
+[Elastic NMS Part 2: Syslog 원격로깅]:{% link _posts/cloudcomputing/2017-10-30-elastic-nms-part2-syslog-remote-logging.md %}
+
 ### 함께 읽기
 
 * [Calling All Logs! Graylog2 1편: 설치하기]
