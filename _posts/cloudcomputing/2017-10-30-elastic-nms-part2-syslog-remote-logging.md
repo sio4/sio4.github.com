@@ -456,7 +456,7 @@ output {
 있다.
 
 
-## Tempalte 설정하기
+## Template 설정하기
 
 앞서 GeoIP에 대한 이야기를 하다가, 자료형 입력을 명시적으로 하기 위해
 Template을 사용할 수 있다는 얘기를 했다. 이 설정은 Elasticsearch에 저장될
@@ -490,6 +490,7 @@ Template에 대한 자세한 얘기는 다음 편에 이어서...
 * [Elastic NMS Part 4: Kibana Visualiz]
 
 [Elastic NMS Part 1: 엔진을 켜라!]:{% link _posts/cloudcomputing/2017-10-28-elastic-nms-part1-start-your-engine.md %}
+[Elastic NMS Part 3: Mapping과 Template]:{% link _posts/cloudcomputing/2017-10-30-elastic-nms-part3-mapping-and-template.md %}
 
 ### 함께 읽기
 

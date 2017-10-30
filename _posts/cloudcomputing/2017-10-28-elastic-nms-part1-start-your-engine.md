@@ -398,6 +398,7 @@ $
 * [Elastic NMS Part 4: Kibana Visualiz]
 
 [Elastic NMS Part 2: Syslog 원격로깅]:{% link _posts/cloudcomputing/2017-10-30-elastic-nms-part2-syslog-remote-logging.md %}
+[Elastic NMS Part 3: Mapping과 Template]:{% link _posts/cloudcomputing/2017-10-30-elastic-nms-part3-mapping-and-template.md %}
 
 ### 함께 읽기
 
