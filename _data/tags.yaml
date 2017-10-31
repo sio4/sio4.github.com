@@ -57,6 +57,8 @@ c-language:
 cloud-computing:
   ko: 클라우드컴퓨팅
   en: Cloud Computing
+cloud-z:
+  en: Cloud Z
 code-review:
   ko: 코드리뷰
   en: Code Review

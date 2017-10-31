@@ -32,6 +32,9 @@ collections:
   projects:
     output: true
     permalink: /:collection/:title/
+  docs:
+    output: true
+    permalink: /:collection/:categories/:title/
 
 defaults:
   -
