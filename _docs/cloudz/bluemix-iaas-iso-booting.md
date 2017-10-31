@@ -1,6 +1,7 @@
 ---
 title: IBM Bluemix IaaS ISO 부팅
 subtitle: Cloud Z, IBM IaaS에서 ISO를 사용하여 VSI 부팅하기
+categories: cloudz
 date: 2017-10-31T11:50:00+0900
 ---
 클라우드컴퓨팅 환경에서 가상 인스턴스를 만들 때, 일반적으로는 제공자가

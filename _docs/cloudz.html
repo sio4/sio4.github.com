@@ -1,11 +1,10 @@
 ---
-title: Documents and Howtos
+title: "Documents and Howtos: Cloud Z"
+index: true
 ---
-{% assign docs = site.docs %}
+{% assign docs = site.docs |where: "categories", "cloudz" |sort: "title" %}
         <div class="posts-list" id="docs">{%
-        for post in docs %}{%
-          if post.index == true
-          %}{% continue %}{% endif %}
+        for post in docs %}
           <article class="post-preview">
             <a href="{{ post.url }}">
               <h2 class="post-title">{{ post.title }}</h2>{%
