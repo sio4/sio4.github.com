@@ -1,4 +1,9 @@
 language: ruby
+
 rvm:
-        - 2.3.3
+  - 2.3.3
+
+before_install:
+  - rm Gemfile.lock
+
 script: "bundle exec jekyll build"
