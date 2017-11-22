@@ -53,7 +53,7 @@ defaults:
       author:
         name: 소용환
         alias: Yonghwan SO
-        image: /assets/images/sauru-20150806.png
+        image: /assets/images/sauru-20150806.jpg
         nationality: Republic of Korea
         job_title: Cloud Architect
         alumni_of: Chonbuk National University
@@ -68,7 +68,7 @@ defaults:
 ### social values ------------------------------------------------------------
 # Facebook OG related:
 #DEL fb_app_id: 132708240077440
-#DEL default_image: "/assets/images/sauru-20150806.png"
+#DEL default_image: "/assets/images/sauru-20150806.jpg"
 #DEL author_page: "https://www.facebook.com/yonghwan.so"
 # gravatar
 gravatar: bb4bb7364ee67616d9f5ff3561412772
@@ -87,13 +87,13 @@ addthis:
 
 
 ### for seo plugin -----------------------------------------------------------
-image: /assets/images/sauru-20150806.png
+image: /assets/images/sauru-20150806.jpg
 twitter:
   username: scinix
 facebook:
   app_id: 132708240077440
   publisher: https://www.facebook.com/sauru.so
-logo: /assets/images/sauru-20150806.png
+logo: /assets/images/sauru-20150806.jpg
 social:
   name: Yonghwan SO
   links:
@@ -105,7 +105,7 @@ social:
 # brand logo of bootstrap navbar:
 #title-img: /assets/images/brand-logo.png
 # image in the circle:
-avatar: /assets/images/sauru-20150806.png
+avatar: /assets/images/sauru-20150806.jpg
 # links on the navbar
 navbar-links:
   About: "about"
