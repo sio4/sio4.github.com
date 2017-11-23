@@ -1,6 +1,6 @@
 ---
 title: Elastic Stack 6.0 설치하기
-subtitle: Elastic Stack을 활용해서 서비스 이벤트 분석하기
+subtitle: Elastic Stack을 활용해서 서비스 이벤트 해석하기
 tags: elastic-stack analytics cloud-computing howto
 categories: ["cloudcomputing"]
 image: /attachments/elastic-stack/kibana-6.0-discover.png
@@ -24,6 +24,13 @@ Elastic Stack이라는 공식적인 명칭으로 사용하면서 더 활발하�
 * [Elastic NMS Part 5: NetFlow 수신하기]
 * [Elastic NMS Part 6: SNMP 수신하기]
 
+{:.boxed}
+> 이 글은 다음 묶음글을 위한 준비과정을 담은 글이다.
+> Elastic Stack을 이용한 이벤트 해석에 관심이 있다면 다음 글들도 함께!
+> 
+> * [모니터링은 경보가 아니라 해석]
+> * [Elastic Stack Visual Builder로 이벤트 묶어 보기]
+> * [Elastic Stack Heatmap으로 2차원으로 펼쳐 보기]
 
 
 # 기반환경
@@ -448,6 +455,19 @@ $
 의미를 찾아내기 위한 분석환경을 구성한 얘기를 해보려고 한다.
 
 *-- TO BE CONTINUED*
+
+
+### 함께 읽기
+
+이 글은 다음 묶음글을 위한 준비과정을 담은 글이다.
+Elastic Stack을 이용한 이벤트 해석에 관심이 있다면 다음 글들도 함께!
+
+* [모니터링은 경보가 아니라 해석]
+* [Elastic Stack Visual Builder로 이벤트 묶어 보기]
+* [Elastic Stack Heatmap으로 2차원으로 펼쳐 보기]
+
+[모니터링은 경보가 아니라 해석]:{% link _posts/cloudcomputing/2017-11-23-monitoring-is-not-alert-but-analytics.md %}
+
 
 
 [Elastic NMS Part 1: 엔진을 켜라!]:{% link _posts/cloudcomputing/2017-10-28-elastic-nms-part1-start-your-engine.md %}
