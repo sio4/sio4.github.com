@@ -6,6 +6,7 @@ categories: ["cloudcomputing"]
 image: /attachments/silrok/silrok-visualbuilder-pl-annotations.png
 banner: /attachments/silrok/silrok-visualbuilder-pl-annotations.png
 date: 2017-11-24T14:05:00+0900
+last_modified_at: 2017-11-24T18:09:00+0900
 ---
 앞선 글 "[모니터링은 경보가 아니라 해석]"에서, 기존 모니터링 환경의 한계
 중 하나로 "기능 단위의 고립"과 "서비스 관점의 통찰 부재"를 들었다. 개별
@@ -22,7 +23,7 @@ date: 2017-11-24T14:05:00+0900
 > 
 > * [모니터링은 경보가 아니라 해석]
 > * _Kibana Visual Builder로 이벤트 묶어 보기_
-> * [Kibana Heatmap으로 3차원으로 펼쳐 보기]
+> * [Kibana Heat Map으로 3차원으로 펼쳐 보기]
 > * 환경구성 과정은 "[Elastic Stack 6.0 설치하기]"에서
 
 # 큰 그림
@@ -331,7 +332,7 @@ WAS나 Application에서 OOME 등의 메모리 관련 로그를 함께 표시했
 
 * [모니터링은 경보가 아니라 해석]
 * _Kibana Visual Builder로 이벤트 묶어 보기_
-* [Kibana Heatmap으로 3차원으로 펼쳐 보기]
+* [Kibana Heat Map으로 3차원으로 펼쳐 보기]
 
 그리고 그 환경의 준비는
 
@@ -340,7 +341,7 @@ WAS나 Application에서 OOME 등의 메모리 관련 로그를 함께 표시했
 에 정리해 두었다.
 
 
-[Elastic Stack 6.0 설치하기]:{% link _posts/cloudcomputing/2017-11-22-install-elastic-stack-6.0.md %}
 [모니터링은 경보가 아니라 해석]:{% link _posts/cloudcomputing/2017-11-23-monitoring-is-not-alert-but-analytics.md %}
+[Kibana Heat Map으로 3차원으로 펼쳐 보기]:{% link _posts/cloudcomputing/2017-11-24-3dimensional-view-with-heat-map.md %}
 
-
+[Elastic Stack 6.0 설치하기]:{% link _posts/cloudcomputing/2017-11-22-install-elastic-stack-6.0.md %}

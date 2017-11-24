@@ -6,6 +6,7 @@ categories: ["cloudcomputing"]
 image: /attachments/elastic-stack/kibana-6.0-discover.png
 banner: /attachments/elastic-stack/kibana-6.0-init.png
 date: 2017-11-22T19:15:00+0900
+last_modified_at: 2017-11-24T18:07:00+0900
 ---
 서로 독립적인 버전체계를 사용하면서 개별 제품의 연합군 같은 느낌이 더 강했던
 ELK Stack, 즉 Elasticsearch, Logstash, Kibana는 이제 버전체계를 통일하고
@@ -30,7 +31,7 @@ Elastic Stack이라는 공식적인 명칭으로 사용하면서 더 활발하�
 > 
 > * [모니터링은 경보가 아니라 해석]
 > * [Kibana Visual Builder로 이벤트 묶어 보기]
-> * [Kibana Heatmap으로 2차원으로 펼쳐 보기]
+> * [Kibana Heat Map으로 3차원으로 펼쳐 보기]
 
 
 # 기반환경
@@ -464,10 +465,11 @@ Elastic Stack을 이용한 이벤트 해석에 관심이 있다면 다음 글들
 
 * [모니터링은 경보가 아니라 해석]
 * [Kibana Visual Builder로 이벤트 묶어 보기]
-* [Kibana Heatmap으로 2차원으로 펼쳐 보기]
+* [Kibana Heat Map으로 3차원으로 펼쳐 보기]
 
 [모니터링은 경보가 아니라 해석]:{% link _posts/cloudcomputing/2017-11-23-monitoring-is-not-alert-but-analytics.md %}
 [Kibana Visual Builder로 이벤트 묶어 보기]:{% link _posts/cloudcomputing/2017-11-24-aggregate-events-with-visual-builder.md %}
+[Kibana Heat Map으로 3차원으로 펼쳐 보기]:{% link _posts/cloudcomputing/2017-11-24-3dimensional-view-with-heat-map.md %}
 
 
 

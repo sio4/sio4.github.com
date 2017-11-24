@@ -5,7 +5,7 @@ tags: monitoring analytics elastic-stack cloud-computing
 categories: ["cloudcomputing"]
 image: /attachments/silrok/silrok-dashboard-current.png
 date: 2017-11-23T17:15:00+0900
-last_modified_at: 2017-11-24T00:15:00+0900
+last_modified_at: 2017-11-24T18:08:00+0900
 ---
 사실, 나를 아는 사람들은 믿지 않을 수도 있지만, 나는 조금 강하게 말해서
 운영관점의 모니터링에 대하여 매우 회의적이다. 거의 무용론자에 가깝다.
@@ -31,7 +31,7 @@ last_modified_at: 2017-11-24T00:15:00+0900
 > 
 > * _모니터링은 경보가 아니라 해석_
 > * [Kibana Visual Builder로 이벤트 묶어 보기]
-> * [Kibana Heatmap으로 3차원으로 펼쳐 보기]
+> * [Kibana Heat Map으로 3차원으로 펼쳐 보기]
 > * 환경구성 과정은 "[Elastic Stack 6.0 설치하기]"에서
 
 
@@ -107,7 +107,7 @@ Elastic Stack으로
 
 * _모니터링은 경보가 아니라 해석_
 * [Kibana Visual Builder로 이벤트 묶어 보기]
-* [Kibana Heatmap으로 3차원으로 펼쳐 보기]
+* [Kibana Heat Map으로 3차원으로 펼쳐 보기]
 
 그리고 그 환경의 준비는
 
@@ -117,6 +117,6 @@ Elastic Stack으로
 
 
 [Kibana Visual Builder로 이벤트 묶어 보기]:{% link _posts/cloudcomputing/2017-11-24-aggregate-events-with-visual-builder.md %}
+[Kibana Heat Map으로 3차원으로 펼쳐 보기]:{% link _posts/cloudcomputing/2017-11-24-3dimensional-view-with-heat-map.md %}
 
 [Elastic Stack 6.0 설치하기]:{% link _posts/cloudcomputing/2017-11-22-install-elastic-stack-6.0.md %}
-
