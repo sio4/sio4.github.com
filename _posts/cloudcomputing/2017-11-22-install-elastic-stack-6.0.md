@@ -29,8 +29,8 @@ Elastic Stack이라는 공식적인 명칭으로 사용하면서 더 활발하�
 > Elastic Stack을 이용한 이벤트 해석에 관심이 있다면 다음 글들도 함께!
 > 
 > * [모니터링은 경보가 아니라 해석]
-> * [Elastic Stack Visual Builder로 이벤트 묶어 보기]
-> * [Elastic Stack Heatmap으로 2차원으로 펼쳐 보기]
+> * [Kibana Visual Builder로 이벤트 묶어 보기]
+> * [Kibana Heatmap으로 2차원으로 펼쳐 보기]
 
 
 # 기반환경
@@ -463,10 +463,11 @@ $
 Elastic Stack을 이용한 이벤트 해석에 관심이 있다면 다음 글들도 함께!
 
 * [모니터링은 경보가 아니라 해석]
-* [Elastic Stack Visual Builder로 이벤트 묶어 보기]
-* [Elastic Stack Heatmap으로 2차원으로 펼쳐 보기]
+* [Kibana Visual Builder로 이벤트 묶어 보기]
+* [Kibana Heatmap으로 2차원으로 펼쳐 보기]
 
 [모니터링은 경보가 아니라 해석]:{% link _posts/cloudcomputing/2017-11-23-monitoring-is-not-alert-but-analytics.md %}
+[Kibana Visual Builder로 이벤트 묶어 보기]:{% link _posts/cloudcomputing/2017-11-24-aggregate-events-with-visual-builder.md %}
 
 
 
