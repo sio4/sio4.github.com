@@ -5,7 +5,7 @@ tags: monitoring analytics elastic-stack cloud-computing
 categories: ["cloudcomputing"]
 image: /attachments/silrok/silrok-visualbuilder-pl-annotations.png
 banner: /attachments/silrok/silrok-visualbuilder-pl-annotations.png
-xdate: 2017-11-23T17:15:00+0900
+date: 2017-11-23T14:05:00+0900
 ---
 앞선 글 "[모니터링은 경보가 아니라 해석]"에서, 기존 모니터링 환경의 한계
 중 하나로 "기능 단위의 고립"과 "서비스 관점의 통찰 부재"를 들었다. 개별
