@@ -126,9 +126,9 @@ engineer:
 error-handling:
   ko: 오류처리
   en: Error Handling
-fault-analyzing:
+failure-analysis:
   ko: 장애분석
-  en: Fault Analyzing
+  en: Failure Analysis
 framework:
   ko: 프레임웍
   en: Framework
@@ -244,6 +244,9 @@ open-source:
 operation:
   ko: 운영
   en: Operation
+packet-analysis:
+  ko: 패킷분석
+  en: Packet Analysis
 patch:
   ko: 패치
   en: Patch

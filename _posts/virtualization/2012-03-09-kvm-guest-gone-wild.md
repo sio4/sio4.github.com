@@ -1,7 +1,7 @@
 ---
 redirect_from: /blog/2012/03/09/kvm-guest-gone-wild/
 title: kvm, kvmclock, 그리고 "폭주 게스트"
-tags: fault-analyzing kvm strace
+tags: troubleshooting kvm strace
 categories: ["virtualization"]
 date: 2012-03-09T13:57:05+09:00
 last_modified_at: 2012-03-09T13:57:05+09:00
