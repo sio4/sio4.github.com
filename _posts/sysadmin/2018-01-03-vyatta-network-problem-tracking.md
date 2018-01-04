@@ -480,4 +480,6 @@ Dump 분석 중심의 다음 이야기는 쉬었다 간다.
 * [Vyatta 네트워크 문제 추적 Part 3 - Dump]
 
 
+[Vyatta 네트워크 문제 추적 Part 1]:{% link _posts/sysadmin/2018-01-03-vyatta-network-problem-tracking.md %}
 [Vyatta 네트워크 문제 추적 Part 2 - LACP]:{% link _posts/sysadmin/2018-01-03-reset-lag-on-vyatta.md %}
+[Vyatta 네트워크 문제 추적 Part 3 - DUMP]:{% link _posts/sysadmin/2018-01-04-analyzing-huge-dump-with-tcpdump.md %}
