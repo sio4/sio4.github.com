@@ -112,7 +112,10 @@ navbar-links:
   Projects: "projects"
   Cats: "categories"
   Tags: "tags"
-  RSS: "http://feeds.feedburner.com/sauru-so"
+  <i class="fa fa-github-alt"></i>: "https://github.com/sio4/"
+  <i class="fa fa-stack-overflow"></i>: "https://stackoverflow.com/users/1111002/sio4"
+  <i class="fa fa-linkedin"></i>: "https://linkedin.com/in/scinix/"
+  <i class="fa fa-rss"></i>: "http://feeds.feedburner.com/sauru-so"
   #Resources:
   #  - Github: "https://github.com/sio4/"
 
