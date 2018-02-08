@@ -1,7 +1,7 @@
 ---
 title: "Docker: Getting Started with Docker"
 subtitle: Docker 시작하기
-tags: Docker Container cloud-computing howto
+tags: Docker Container cloud-computing
 categories: ["cloudcomputing"]
 image: /assets/logos/docker-horizontal.800.png
 banner: /assets/logos/docker-horizontal.800.png
@@ -24,6 +24,13 @@ PaaS는 _"나는 내 일을 할테니 너는 '내' 떡을 썰어라"_ 라는 개
 상황으로부터 사용자와 제공자를 동시에 구해주는 기술 중 하나가 바로 Container
 라는 기술이다.
 (뭐, 관점이 하나 뿐이겠냐마는...)
+
+
+{:.boxed}
+> 이 묶음글은 아직 몇 회까지 쓸지 정하지 못했다. 조금 써보고,...
+> 
+> * _Docker: Getting Started with Docker_
+> * [Docker: Installation and Test Drive]
 
 
 
@@ -215,6 +222,18 @@ Jail 관리와 배포 자동화를 위한 환경을 수제품으로 만들어 Pr
 다음 글에서는 Ubuntu에 Docker를 설치하기 시험운전을 하는 과정에 대하여
 살펴보려고 한다.
 
+
+
+### 함께 읽기
+
+이 묶음글은 아직 몇 회까지 쓸지 정하지 못했다.
+
+* _Docker: Getting Started with Docker_
+* [Docker: Installation and Test Drive]
+
+
+[Docker: Getting Started with Docker]:{% link _posts/cloudcomputing/2018-02-08-getting-started-with-docker.md %}
+[Docker: Installation and Test Drive]:{% link _posts/cloudcomputing/2018-02-08-docker-installation-and-test-drive.md %}
 
 
 [^5]: 지금 시점에서 이 동네의 변화를 살펴보니, 이제 Docker는 더 이상 Open
