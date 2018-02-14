@@ -80,6 +80,11 @@ strong {
 	font-weight: normal;
 	background: $background-marker;
 }
+em {
+	color: $color-dark;
+	font-weight: normal;
+	text-decoration: underline;
+}
 
 a {
 	color: $color-link;
