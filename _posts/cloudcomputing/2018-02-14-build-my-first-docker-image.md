@@ -51,7 +51,7 @@ Image를 만들 필요가 있는데, 이 글은 내 목적에 맞는 Image를 �
 > * [Docker: Getting Started with Docker]
 > * [Docker: Installation and Test Drive]
 > * _Docker: 나의 첫 Docker Image_
-
+> * ['쓸만한' Docker Image 만들기 - Part 1]
 
 
 # 내 Docker Image 만들기
@@ -226,7 +226,9 @@ Registry 등록 과정은 다음 글에 정리하도록 하겠다.
 * [Docker: Getting Started with Docker]
 * [Docker: Installation and Test Drive]
 * _Docker: 나의 첫 Docker Image_
+* ['쓸만한' Docker Image 만들기 - Part 1]
 
+['쓸만한' Docker Image 만들기 - Part 1]:{% link _posts/cloudcomputing/2018-02-19-build-usable-docker-image-part1.md %}
 [Docker: 나의 첫 Docker Image]:{% link _posts/cloudcomputing/2018-02-14-build-my-first-docker-image.md %}
 [Docker: Installation and Test Drive]:{% link _posts/cloudcomputing/2018-02-08-docker-installation-and-test-drive.md %}
 [Docker: Getting Started with Docker]:{% link _posts/cloudcomputing/2018-02-08-getting-started-with-docker.md %}

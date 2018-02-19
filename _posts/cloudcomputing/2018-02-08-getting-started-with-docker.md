@@ -32,6 +32,7 @@ PaaS는 _"나는 내 일을 할테니 너는 '내' 떡을 썰어라"_ 라는 개
 > * _Docker: Getting Started with Docker_
 > * [Docker: Installation and Test Drive]
 > * [Docker: 나의 첫 Docker Image]
+> * ['쓸만한' Docker Image 만들기 - Part 1]
 
 
 
@@ -232,7 +233,9 @@ Jail 관리와 배포 자동화를 위한 환경을 수제품으로 만들어 Pr
 * _Docker: Getting Started with Docker_
 * [Docker: Installation and Test Drive]
 * [Docker: 나의 첫 Docker Image]
+* ['쓸만한' Docker Image 만들기 - Part 1]
 
+['쓸만한' Docker Image 만들기 - Part 1]:{% link _posts/cloudcomputing/2018-02-19-build-usable-docker-image-part1.md %}
 [Docker: 나의 첫 Docker Image]:{% link _posts/cloudcomputing/2018-02-14-build-my-first-docker-image.md %}
 [Docker: Installation and Test Drive]:{% link _posts/cloudcomputing/2018-02-08-docker-installation-and-test-drive.md %}
 [Docker: Getting Started with Docker]:{% link _posts/cloudcomputing/2018-02-08-getting-started-with-docker.md %}

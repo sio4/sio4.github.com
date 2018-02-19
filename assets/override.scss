@@ -108,6 +108,9 @@ blockquote {
 		border-radius: 5px;
 		background: none;
 	}
+	& *:first-of-type {
+		margin-top: 0 !important;
+	}
 }
 
 div.highlight { // who's bug? double classed for div and pre.
@@ -186,14 +189,19 @@ div.barchart {
 }
 
 #markdown-toc {
-	margin: 0.5rem 0 0.5rem 2rem;
+	margin: 0.5rem 2rem;
 	padding: 0.5rem 1rem;
 	background: #f9f9f9;
+	border-radius: 0.5rem;
 	li {
 		list-style: none;
 	}
 	ul {
 		padding-left: 1.5em;
+	}
+	&.pull-right {
+		margin-right: 0;
+		min-width: 40%;
 	}
 }
 
