@@ -1,7 +1,7 @@
 ---
 title: "UART, Semi-Social OAuth2 Provider"
 subtitle: 현천 프로젝트를 위한 OAuth2 제공자 UART를 소개합니다
-tags: UART OAuth2 authentication single-sign-on cloud-computing
+tags: UART OAuth2 authentication single-sign-on cloud-computing golang
 categories: ["cloudcomputing"]
 image: /attachments/uart/uart-uart-position.png
 banner: /attachments/uart/uart-uart-position.png
@@ -513,7 +513,7 @@ UART는 인증통합의 필요성과 소셜인증의 편리함, 폐쇄그룹의 
 
 
 
-[Go 언어]:/tags/go-lang/
+[Go 언어]:/tags/golang/
 [UART, OAuth2/SSO Provider]:/projects/uart
 [UART on Github]:https://github.com/hyeoncheon/uart
 [Go Buffalo]:https://github.com/gochigo/buffalo
