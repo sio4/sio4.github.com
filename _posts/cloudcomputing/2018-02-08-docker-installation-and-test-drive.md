@@ -28,6 +28,7 @@ Docker는 리눅스가 제공하는 자원 격리기술을 이용하는 것이�
 > * [Docker: 나의 첫 Docker Image]
 > * ['쓸만한' Docker Image 만들기 - Part 1]
 > * ['쓸만한' Docker Image 만들기 - Part 2]
+> * [Docker Cloud에서 자동빌드하기]
 
 
 
@@ -590,7 +591,9 @@ root@a642d5f9492c:/#
 * [Docker: 나의 첫 Docker Image]
 * ['쓸만한' Docker Image 만들기 - Part 1]
 * ['쓸만한' Docker Image 만들기 - Part 2]
+* [Docker Cloud에서 자동빌드하기]
 
+[Docker Cloud에서 자동빌드하기]:{% link _posts/cloudcomputing/2018-02-21-automated-build-with-docker-cloud.md %}
 ['쓸만한' Docker Image 만들기 - Part 2]:{% link _posts/cloudcomputing/2018-02-20-build-usable-docker-image-part2.md %}
 ['쓸만한' Docker Image 만들기 - Part 1]:{% link _posts/cloudcomputing/2018-02-19-build-usable-docker-image-part1.md %}
 [Docker: 나의 첫 Docker Image]:{% link _posts/cloudcomputing/2018-02-14-build-my-first-docker-image.md %}

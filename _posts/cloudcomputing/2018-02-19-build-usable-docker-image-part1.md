@@ -21,6 +21,7 @@ date: 2018-02-19T21:00:00+0900
 > * [Docker: 나의 첫 Docker Image]
 > * _'쓸만한' Docker Image 만들기 - Part 1_
 > * ['쓸만한' Docker Image 만들기 - Part 2]
+> * [Docker Cloud에서 자동빌드하기]
 
 
 
@@ -400,7 +401,9 @@ Ubuntu의 112MB 크기에 비하면 여전히 1/10의 작은 크기 만으로 �
 * [Docker: 나의 첫 Docker Image]
 * _'쓸만한' Docker Image 만들기 - Part 1_
 * ['쓸만한' Docker Image 만들기 - Part 2]
+* [Docker Cloud에서 자동빌드하기]
 
+[Docker Cloud에서 자동빌드하기]:{% link _posts/cloudcomputing/2018-02-21-automated-build-with-docker-cloud.md %}
 ['쓸만한' Docker Image 만들기 - Part 2]:{% link _posts/cloudcomputing/2018-02-20-build-usable-docker-image-part2.md %}
 ['쓸만한' Docker Image 만들기 - Part 1]:{% link _posts/cloudcomputing/2018-02-19-build-usable-docker-image-part1.md %}
 [Docker: 나의 첫 Docker Image]:{% link _posts/cloudcomputing/2018-02-14-build-my-first-docker-image.md %}

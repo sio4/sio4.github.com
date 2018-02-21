@@ -22,6 +22,7 @@ Go 언어 개발환경을 위한 Docker Image를 만들고 그것을 Registry에
 > * [Docker: 나의 첫 Docker Image]
 > * ['쓸만한' Docker Image 만들기 - Part 1]
 > * _'쓸만한' Docker Image 만들기 - Part 2_
+> * [Docker Cloud에서 자동빌드하기]
 
 이 글은, 바로 앞선 글은 ['쓸만한' Docker Image 만들기 - Part 1]의 연장선에
 위에 있는 글로, 거기서 사용했던 Image 작성 방식을 활용하게 된다.
@@ -886,7 +887,9 @@ Image는 이와 유사한 틀 내에서 움직이리라 생각한다.
 * [Docker: 나의 첫 Docker Image]
 * ['쓸만한' Docker Image 만들기 - Part 1]
 * _'쓸만한' Docker Image 만들기 - Part 2_
+* [Docker Cloud에서 자동빌드하기]
 
+[Docker Cloud에서 자동빌드하기]:{% link _posts/cloudcomputing/2018-02-21-automated-build-with-docker-cloud.md %}
 ['쓸만한' Docker Image 만들기 - Part 2]:{% link _posts/cloudcomputing/2018-02-20-build-usable-docker-image-part2.md %}
 ['쓸만한' Docker Image 만들기 - Part 1]:{% link _posts/cloudcomputing/2018-02-19-build-usable-docker-image-part1.md %}
 [Docker: 나의 첫 Docker Image]:{% link _posts/cloudcomputing/2018-02-14-build-my-first-docker-image.md %}
