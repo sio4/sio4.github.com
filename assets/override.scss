@@ -224,8 +224,17 @@ div.barchart {
 	margin-right: auto !important;
 }
 .filled { width: 100%; }
-.mix-clear { clear: both; }
 .inline { display: inline-block; }
+.mix-clear { clear: both; }
+.mix-margin {
+	margin: 0.5rem 2rem !important;
+	&.pull-right {
+		margin-right: 0 !important;
+	}
+	&.pull-left {
+		margin-left: 0 !important;
+	}
+}
 
 // --- override bootstrap default --------------------------------------------
 .navbar-default .navbar-toggle {

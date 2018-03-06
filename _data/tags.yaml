@@ -79,6 +79,9 @@ community:
 conference:
   ko: 행사
   en: Conference
+continuous-integration:
+  ko: 지속적 통합
+  en: Continuous Integration
 convergence:
   ko: 융합
   en: Convergence
