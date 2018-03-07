@@ -6,6 +6,7 @@ categories: ["cloudcomputing"]
 image: /assets/logos/docker-horizontal.800.png
 banner: /assets/logos/docker-horizontal.800.png
 date: 2018-02-08T10:00:00+0900
+last_modified_at: 2018-03-07T22:16:00+0900
 ---
 예상하지 못했던 여유가 생겨서, 미루고 또 미뤘던 주제를 하나 정리하려고 한다.
 이미 많은 사람들에게 친숙한 기술용어가 되어버린 Container, 그리고 그 시대를
@@ -35,6 +36,7 @@ PaaS는 _"나는 내 일을 할테니 너는 '내' 떡을 썰어라"_ 라는 개
 > * ['쓸만한' Docker Image 만들기 - Part 1]
 > * ['쓸만한' Docker Image 만들기 - Part 2]
 > * [Docker Cloud에서 자동빌드하기]
+> * [Docker Machine으로 Docker Node 뿌리기]
 
 
 
@@ -238,7 +240,9 @@ Jail 관리와 배포 자동화를 위한 환경을 수제품으로 만들어 Pr
 * ['쓸만한' Docker Image 만들기 - Part 1]
 * ['쓸만한' Docker Image 만들기 - Part 2]
 * [Docker Cloud에서 자동빌드하기]
+* [Docker Machine으로 Docker Node 뿌리기]
 
+[Docker Machine으로 Docker Node 뿌리기]:{% link _posts/cloudcomputing/2018-03-07-provision-docker-node-with-docker-machine.md %}
 [Docker Cloud에서 자동빌드하기]:{% link _posts/cloudcomputing/2018-02-21-automated-build-with-docker-cloud.md %}
 ['쓸만한' Docker Image 만들기 - Part 2]:{% link _posts/cloudcomputing/2018-02-20-build-usable-docker-image-part2.md %}
 ['쓸만한' Docker Image 만들기 - Part 1]:{% link _posts/cloudcomputing/2018-02-19-build-usable-docker-image-part1.md %}

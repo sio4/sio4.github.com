@@ -6,6 +6,7 @@ categories: ["cloudcomputing"]
 image: /attachments/docker/docker-cloud.automated-build.png
 banner: /attachments/docker/docker-cloud.automated-build.png
 date: 2018-02-21T17:30:00+0900
+last_modified_at: 2018-03-07T22:16:00+0900
 ---
 "['쓸만한' Docker Image 만들기 - Part 2]"에서 Docker Cloud에 Image를 올리는
 과정에 대해서 정리하면서, Docker Hub, Docker Cloud 등의 화면을 잠깐 봤다.
@@ -24,6 +25,7 @@ Commit이 일어나면, 이에 반응하여 Docker Image를 자동으로 만들�
 > * ['쓸만한' Docker Image 만들기 - Part 1]
 > * ['쓸만한' Docker Image 만들기 - Part 2]
 > * _Docker Cloud에서 자동빌드하기_
+> * [Docker Machine으로 Docker Node 뿌리기]
 
 이 글은, **Github의 특정 저장소에 Commit이 일어나면, 이에 반응하여 Docker
 Image를 자동으로 만들어내도록 설정하는 과정**에 대해서 설명한다. 대부분의
@@ -299,6 +301,12 @@ Build된 것으로 표시되어 있고, 마지막으로 맨 아래 "ReadMe" 부�
 > 아무튼, Docker Cloud! 이거 쓸만하다?
 
 
+{:.boxed}
+> #### 공식문서
+> * [Docker Cloud > Manage builds and images > Automated builds](https://docs.docker.com/docker-cloud/builds/automated-build/)
+> * [Docker Hub > Automated builds](https://docs.docker.com/docker-hub/builds/)
+> * [Docker Hub > Webhooks for automated builds](https://docs.docker.com/docker-hub/webhooks/)
+
 
 [Docker Hub]:https://hub.docker.com/
 [Docker Store]:https://store.docker.com/
@@ -315,7 +323,9 @@ Build된 것으로 표시되어 있고, 마지막으로 맨 아래 "ReadMe" 부�
 * ['쓸만한' Docker Image 만들기 - Part 1]
 * ['쓸만한' Docker Image 만들기 - Part 2]
 * _Docker Cloud에서 자동빌드하기_
+* [Docker Machine으로 Docker Node 뿌리기]
 
+[Docker Machine으로 Docker Node 뿌리기]:{% link _posts/cloudcomputing/2018-03-07-provision-docker-node-with-docker-machine.md %}
 [Docker Cloud에서 자동빌드하기]:{% link _posts/cloudcomputing/2018-02-21-automated-build-with-docker-cloud.md %}
 ['쓸만한' Docker Image 만들기 - Part 2]:{% link _posts/cloudcomputing/2018-02-20-build-usable-docker-image-part2.md %}
 ['쓸만한' Docker Image 만들기 - Part 1]:{% link _posts/cloudcomputing/2018-02-19-build-usable-docker-image-part1.md %}

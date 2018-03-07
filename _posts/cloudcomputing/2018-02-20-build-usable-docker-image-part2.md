@@ -6,6 +6,7 @@ categories: ["cloudcomputing"]
 image: /attachments/docker/docker-cloud-banner.png
 banner: /attachments/docker/go-alpine-docker.png
 date: 2018-02-20T23:00:00+0900
+last_modified_at: 2018-03-07T22:16:00+0900
 ---
 "Hello World 급" Image 작성을 맛봤던 "[Docker: 나의 첫 Docker Image]", 그리고
 Alpine Linux를 활용하여 C Library를 포함한 "운영체계급" 기반 Image를 만들었던
@@ -23,6 +24,7 @@ Go 언어 개발환경을 위한 Docker Image를 만들고 그것을 Registry에
 > * ['쓸만한' Docker Image 만들기 - Part 1]
 > * _'쓸만한' Docker Image 만들기 - Part 2_
 > * [Docker Cloud에서 자동빌드하기]
+> * [Docker Machine으로 Docker Node 뿌리기]
 
 이 글은, 바로 앞선 글은 ['쓸만한' Docker Image 만들기 - Part 1]의 연장선에
 위에 있는 글로, 거기서 사용했던 Image 작성 방식을 활용하게 된다.
@@ -888,7 +890,9 @@ Image는 이와 유사한 틀 내에서 움직이리라 생각한다.
 * ['쓸만한' Docker Image 만들기 - Part 1]
 * _'쓸만한' Docker Image 만들기 - Part 2_
 * [Docker Cloud에서 자동빌드하기]
+* [Docker Machine으로 Docker Node 뿌리기]
 
+[Docker Machine으로 Docker Node 뿌리기]:{% link _posts/cloudcomputing/2018-03-07-provision-docker-node-with-docker-machine.md %}
 [Docker Cloud에서 자동빌드하기]:{% link _posts/cloudcomputing/2018-02-21-automated-build-with-docker-cloud.md %}
 ['쓸만한' Docker Image 만들기 - Part 2]:{% link _posts/cloudcomputing/2018-02-20-build-usable-docker-image-part2.md %}
 ['쓸만한' Docker Image 만들기 - Part 1]:{% link _posts/cloudcomputing/2018-02-19-build-usable-docker-image-part1.md %}

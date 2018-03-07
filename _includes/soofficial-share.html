@@ -8,7 +8,8 @@
                 data-layout="button_count"></div-->{%
               endif %}
               <div class="twitter-share"><a href="https://twitter.com/share"
-                class="twitter-share-button" data-hashtags="{{ site.url }}"
+                class="twitter-share-button"
+                data-hashtags="{{ site.title | replace: ' ', '' }}"
                 data-url="{{ site.url }}{{ page.url }}"
                 data-via="{{ site.author.twitter }}">Tweet</a></div>
               <div class="g-plus" data-action="share" data-annotation="bubble"
