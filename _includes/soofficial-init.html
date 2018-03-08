@@ -2,6 +2,8 @@
     https://developers.facebook.com/docs/plugins/share-button?locale=ko_KR#
     for google+ button, https://developers.google.com/+/web/+1button/?hl=ko
     https://dev.twitter.com/web/javascript/loading, 2015-08-01
+    https://publish.twitter.com/ and
+    https://dev.twitter.com/web/tweet-button, 2018-03-08
 {% endcomment %}
 <!-- initialize official social shares for facebook, google, and twitter -->{%
 if site.facebook.app_id %}
@@ -11,28 +13,12 @@ if site.facebook.app_id %}
 		var js, fjs = d.getElementsByTagName(s)[0];
 		if (d.getElementById(id)) return;
 		js = d.createElement(s); js.id = id;
-		js.src = "//connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v2.10&appId={{ site.facebook.app_id }}";
+		js.src = "//connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v2.12&appId={{ site.facebook.app_id }}&autoLogAppEvents=1";
 		fjs.parentNode.insertBefore(js, fjs);
 	}(document, 'script', 'facebook-jssdk'));
 </script>{%
 endif %}
 <script src="https://apis.google.com/js/platform.js" async defer>
 	{lang: 'ko'}
-</script>
-<script>
-  window.twttr = (function(d, s, id) {
-	  var js, fjs = d.getElementsByTagName(s)[0],
-	  t = window.twttr || {};
-	  if (d.getElementById(id)) return t;
-	  js = d.createElement(s);
-	  js.id = id;
-	  js.src = "https://platform.twitter.com/widgets.js";
-	  fjs.parentNode.insertBefore(js, fjs);
-	  t._e = [];
-	  t.ready = function(f) {
-		  t._e.push(f);
-	  };
-	  return t;
-  }(document, "script", "twitter-wjs"));
 </script>
 <!-- initialize official social shares for facebook, google, and twitter -->

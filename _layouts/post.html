@@ -4,7 +4,7 @@ layout: base
 {% include header.html type="post" %}
   <div class="container">
     <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <div class="page col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
         <article role="main" class="blog-post">
 {{ content }}
         </article>
@@ -29,7 +29,13 @@ layout: base
             <a href="{{ page.next.url | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top" title="{{page.next.title}}">{{ page.next.title }} <i class="fa fa-arrow-right"></i></a>
           </li>{%
           endif %}
-        </ul>
+        </ul>{%
+        unless page.comments == false %}
+        <div class="disqus-comments">{%
+          include disqus.html %}{%
+          include facebook-comments.html %}
+        </div>{%
+        endunless %}
 
         <div class="posts-related hidden-print">{%
           assign ps = page.url|split: "," %}
@@ -38,9 +44,11 @@ layout: base
             for p in site.tags[t] limit: 4 %}{%
               unless ps contains p.url %}
           <div class="related-item">
-            <a class="item-link" href="{{ p.url }}">{{ p.title }}</a>{% comment %}
-          <span class="item-meta">&raquo; {{ p.date |date: '%F' }}</span>
-          {% endcomment %}
+            <a class="item-link" href="{{ p.url }}">{{ p.title }}</a>
+            <div class="excerpt">
+              {{ p.excerpt | strip_html | xml_escape }}
+              ({{ p.date |date: '%F' }})
+            </div>
           </div>{%
               endunless %}{%
               assign ps = ps|push: p.url %}{%
@@ -48,12 +56,6 @@ layout: base
           endfor %}
           </ul>
         </div>
-        {%
-        unless page.comments == false %}
-        <div class="disqus-comments">
-{% include disqus.html %}
-        </div>{%
-        endunless %}
       </div>
     </div>
   </div>
