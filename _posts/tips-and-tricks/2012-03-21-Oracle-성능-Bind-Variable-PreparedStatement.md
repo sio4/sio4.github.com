@@ -1,5 +1,5 @@
 ---
-redirect_from: /blog/2012/03/21/Oracle-성능-Bind-Variable-PreparedStatement/
+redirect_from: /entry/oracle-performance-bind-variable-preparedstatement/
 title: Oracle 성능, Bind Variable, PreparedStatement
 tags: DBMS Oracle performance
 categories: ["tips-and-tricks"]

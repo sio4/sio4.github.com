@@ -1,5 +1,5 @@
 ---
-redirect_from: /blog/2012/03/09/kvm-guest-gone-wild/
+redirect_from: /entry/kvm-kvmclock-crazy-train-Guest-WORK-HARD/
 title: kvm, kvmclock, 그리고 "폭주 게스트"
 tags: troubleshooting kvm strace
 categories: ["virtualization"]

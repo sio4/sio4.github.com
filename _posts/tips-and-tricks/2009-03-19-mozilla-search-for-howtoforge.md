@@ -1,5 +1,5 @@
 ---
-redirect_from: /blog/2009/03/19/mozilla-search-for-howtoforge/
+redirect_from: /entry/howtoforge-search-addon-for-firefox/
 title: HowtoForge에 대한 모질라 검색사이트
 tags: Firefox
 categories: ["tips-and-tricks"]

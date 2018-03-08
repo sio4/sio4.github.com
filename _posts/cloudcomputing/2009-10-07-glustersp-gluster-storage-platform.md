@@ -1,5 +1,5 @@
 ---
-redirect_from: /blog/2009/10/07/glustersp-gluster-storage-platform/
+redirect_from: /entry/GlusterSP-Gluster-Storage-Platform/
 title: GlusterSP, Gluster Storage Platform
 tags: software-appliance storage cloud-computing
 categories: ["cloudcomputing"]

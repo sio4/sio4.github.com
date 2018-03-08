@@ -1,5 +1,5 @@
 ---
-redirect_from: /blog/2009/09/21/requirement-for-cloud-computing-liberty/
+redirect_from: /entry/requirement-for-cloud-computing-liberty/
 title: 클라우드 컴퓨팅의 조건, 자유!
 tags: cloud-computing interoperability data-liberation google
 categories: ["cloudcomputing"]

@@ -1,5 +1,4 @@
 ---
-redirect_from: /blog/2009/09/13/long-running-tasks/
 title: Background Jobs, Long Running Tasks
 tags: delayed-job
 categories: ["development"]

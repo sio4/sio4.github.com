@@ -1,5 +1,4 @@
 ---
-redirect_from: /blog/2009/02/27/why-am-i-run-xen-server-on-netbook/
 title: 어쩌자고... 넷북에서 Xen을 돌리겠다는 건데?
 tags: Ubuntu Xen virtualization
 categories: ["virtualization"]

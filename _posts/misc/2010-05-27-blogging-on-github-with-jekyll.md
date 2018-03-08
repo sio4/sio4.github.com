@@ -1,5 +1,5 @@
 ---
-redirect_from: /blog/2010/05/27/blogging-on-github-with-jekyll/
+redirect_from: /entry/blogging-on-github-with-jekyll/
 title: Jekyll로 github에 블로깅하기
 tags: blogging Github Jekyll
 categories: ["misc"]

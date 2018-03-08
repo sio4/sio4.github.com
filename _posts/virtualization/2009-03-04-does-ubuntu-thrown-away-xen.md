@@ -1,5 +1,4 @@
 ---
-redirect_from: /blog/2009/03/04/does-ubuntu-thrown-away-xen/
 title: 정말 우분투는 Xen을 버리는 것일까?
 tags: Ubuntu Xen
 categories: ["virtualization"]

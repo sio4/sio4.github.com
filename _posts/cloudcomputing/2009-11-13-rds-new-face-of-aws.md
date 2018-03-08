@@ -1,5 +1,5 @@
 ---
-redirect_from: /blog/2009/11/13/rds-new-face-of-aws/
+redirect_from: /entry/rds-new-face-of-aws/
 title: "소개: 아마존 웹 서비스의 새로운 식구, RDS"
 tags: AWS cloud-computing
 categories: ["cloudcomputing"]

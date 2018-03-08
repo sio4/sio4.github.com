@@ -1,5 +1,5 @@
 ---
-redirect_from: /blog/2009/10/30/ubuntu-910-easy-cloud-computing-support/
+redirect_from: /entry/ubuntu-910-easy-cloud-computing-support/
 title: Ubuntu 새버전(9.10), 간편한 Cloud Computing 지원
 tags: Ubuntu cloud-computing
 categories: ["cloudcomputing"]

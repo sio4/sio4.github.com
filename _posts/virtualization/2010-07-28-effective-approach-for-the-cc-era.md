@@ -1,5 +1,5 @@
 ---
-redirect_from: /blog/2010/07/28/effective-approach-for-the-cc-era/
+redirect_from: /entry/cloud-era-effective-approach-of-os-vendor/
 title: 클컴 시대, OS 사업자의 효과적 접근방식
 tags: Canonical Ubuntu software-appliance cloud-computing
 categories: ["virtualization"]

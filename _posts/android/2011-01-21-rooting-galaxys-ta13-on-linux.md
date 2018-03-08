@@ -1,5 +1,5 @@
 ---
-redirect_from: /blog/2011/01/21/rooting-galaxys-ta13-on-linux/
+redirect_from: /entry/galaxy-s-ta13-rooting-within-linux-pc/
 title: 갤럭시S TA13, 리눅스 컴에서 루팅하기
 tags: android galaxy-s rooting
 categories: ["android"]

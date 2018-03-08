@@ -1,5 +1,5 @@
 ---
-redirect_from: /blog/2010/03/11/fundamental-nature-of-free-software/
+redirect_from: /entry/fundamental-nature-of-freesoftware/
 title: 자유소프트웨어, 근원적 본질
 tags: free-software open-source social-responsibility rules-of-action
 categories: ["rules-of-action"]

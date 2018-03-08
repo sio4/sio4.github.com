@@ -1,5 +1,4 @@
 ---
-redirect_from: /blog/2010/07/09/agile-practics-guideline/
 title: 애자일 프랙티스 가이드라인 요약
 tags: agile productivity
 categories: ["productivity"]

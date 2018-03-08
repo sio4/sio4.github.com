@@ -23,6 +23,7 @@ plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-paginate
+  - jekyll-redirect-from
 
 paginate: 15
 

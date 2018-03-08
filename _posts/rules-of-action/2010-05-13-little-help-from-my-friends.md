@@ -1,5 +1,5 @@
 ---
-redirect_from: /blog/2010/05/13/little-help-from-my-friends/
+redirect_from: /entry/little-help-from-my-friends/
 title: 도움 구하기
 tags: rules-of-action Help Beatles video
 categories: ["rules-of-action"]

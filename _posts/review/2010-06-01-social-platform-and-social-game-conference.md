@@ -1,5 +1,5 @@
 ---
-redirect_from: /blog/2010/06/01/social-platform-and-social-game-conference/
+redirect_from: /entry/social-game-and-social-platform/
 title: "행사: 소셜 플랫폼과 소셜 게임 컨퍼런스"
 tags: social-platform social-network conference
 categories: ["review"]

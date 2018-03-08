@@ -1,5 +1,4 @@
 ---
-redirect_from: /blog/2009/01/10/install-windows-xp-sp2-on-kvm/
 title: kvm에 Windows XP SP2 설치하기
 tags: kvm windows virtualization
 categories: ["virtualization"]

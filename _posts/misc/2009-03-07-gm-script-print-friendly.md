@@ -1,5 +1,4 @@
 ---
-redirect_from: /blog/2009/03/07/gm-script-print-friendly/
 title: "GM Script: Print Friendly WebPage."
 tags: Firefox GreaseMonkey
 categories: ["misc"]

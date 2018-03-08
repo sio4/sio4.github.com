@@ -1,5 +1,5 @@
 ---
-redirect_from: /blog/2009/11/25/gitHub-job-profile/
+redirect_from: /entry/github-job-profile/
 title: "GitHub Job Profile: 뭐랄까..."
 tags: Github developer social-network
 categories: ["misc"]

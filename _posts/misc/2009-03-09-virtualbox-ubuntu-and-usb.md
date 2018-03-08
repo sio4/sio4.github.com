@@ -1,5 +1,5 @@
 ---
-redirect_from: /blog/2009/03/09/virtualbox-ubuntu-and-usb/
+redirect_from: /entry/virtualbox-ubuntu-and-usb-device/
 title: VirtualBox, Ubuntu, 그리고 USB
 tags: Ubuntu hardware VirtualBox
 categories: ["misc"]

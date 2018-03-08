@@ -1,5 +1,5 @@
 ---
-redirect_from: /blog/2011/01/14/farewall-twicca-twitter-client-for-android/
+redirect_from: /entry/farewell-twicca-twitter-client-for-android/
 title: "앱: 잘가 Twicca, 안드로이드용 트위터 클라이언트"
 tags: android social-network twitter app
 categories: ["review"]

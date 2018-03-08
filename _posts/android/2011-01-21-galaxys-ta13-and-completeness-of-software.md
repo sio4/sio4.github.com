@@ -1,5 +1,5 @@
 ---
-redirect_from: /blog/2011/01/21/galaxys-ta13-and-completeness-of-software/
+redirect_from: /entry/galaxy-s-ta13-update-and-completeness-of-software/
 title: 갤럭시S TA13 업데이트, 그리고 소프트웨어의 완성도
 tags: rules-of-action user-oriented android galaxy-s
 categories: ["android"]

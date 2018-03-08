@@ -1,5 +1,5 @@
 ---
-redirect_from: /blog/2010/10/07/gallorg-for-android-1.0.1-released/
+redirect_from: /entry/gallorg-101-released-android-gallery-organizer/
 title: GallOrg 1.0.1 released! (Android Gallery Organizer)
 tags: android gallorg app photo
 categories: ["android"]
