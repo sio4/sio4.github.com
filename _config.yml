@@ -94,7 +94,7 @@ twitter:
 facebook:
   app_id: 132708240077440
   publisher: https://www.facebook.com/sauru.so
-  comments: true
+  comments: false
 logo: /assets/images/sauru-20150806.jpg
 social:
   name: Yonghwan SO
