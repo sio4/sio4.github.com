@@ -1,5 +1,5 @@
 ---
-redirect_from: /blog/2007/05/09/sun-the-best-stupid-company/
+redirect_from: /entry/썬-오픈소스로-사업을-하는-가장-멍청한-기업-인가/
 title: '"썬: 오픈소스로 사업을 하는 가장 멍청한 기업" 인가?'
 tags: sun-microsystems open-source
 categories: ["opensource"]

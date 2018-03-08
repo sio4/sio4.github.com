@@ -1,5 +1,5 @@
 ---
-redirect_from: /blog/2007/04/26/karaoke-appliance-for-ucc-recoding/
+redirect_from: /entry/a-kind-of-appliance-ucc-karaoke-machine/
 title: 개인 뮤직비디오 녹화용 노래 "박스"
 tags: software-appliance
 categories: ["virtualization"]

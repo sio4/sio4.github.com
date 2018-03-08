@@ -1,5 +1,5 @@
 ---
-redirect_from: /blog/2007/06/07/opensource-and-management-cost/
+redirect_from: /entry/공개소프트웨어-그리고-관리비용-Web-Server-Software-and-Malware/
 title: 공개소프트웨어, 그리고 관리비용
 tags: management-cost google open-source
 categories: ["opensource"]

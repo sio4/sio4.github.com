@@ -1,5 +1,5 @@
 ---
-redirect_from: /blog/2007/05/03/my-life-in-front-of-my-friends/
+redirect_from: /entry/동지들-앞에-나의-삶은/
 title: 동지들 앞에 나의 삶은...
 tags: music democracy life
 categories: ["misc"]

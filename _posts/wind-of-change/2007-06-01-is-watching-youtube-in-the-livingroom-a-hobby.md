@@ -1,5 +1,5 @@
 ---
-redirect_from: /blog/2007/06/01/is-watching-youtube-in-the-livingroom-a-hobby/
+redirect_from: /entry/is-watching-youtube-in-the-livingroom-a-hobby/
 title: 유튜브를 거실에서 볼 수 있는게 취미라고라?!
 tags: IPTV Youtube multimedia convergence rules-of-action
 categories: ["wind-of-change"]

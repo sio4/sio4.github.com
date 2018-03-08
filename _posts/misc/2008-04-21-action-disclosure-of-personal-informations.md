@@ -1,5 +1,4 @@
 ---
-redirect_from: /blog/2008/04/21/action-disclosure-of-personal-informations/
 title: 옥션 회원정보 유출
 tags: personal-information disclosure
 categories: ["misc"]

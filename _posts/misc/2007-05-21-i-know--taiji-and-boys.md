@@ -1,5 +1,4 @@
 ---
-redirect_from: /blog/2007/05/21/i-know--taiji-and-boys/
 title: '"난 알아요" - 서태지와 아이들'
 tags: memories video
 categories: ["misc"]

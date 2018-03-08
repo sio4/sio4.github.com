@@ -1,5 +1,4 @@
 ---
-redirect_from: /blog/2008/04/28/ssh-socks-proxy/
 title: SSH SOCKS Proxy, 그리고 보안
 tags: security network SSH
 categories: ["tips-and-tricks"]

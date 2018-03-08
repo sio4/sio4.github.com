@@ -1,5 +1,5 @@
 ---
-redirect_from: /blog/2007/04/24/make-useful-production/
+redirect_from: /entry/make-production-that-meet-targeted-level/
 title: "목표: 쓸만한 제품을 만들자!"
 tags: rules-of-action idea
 categories: ["rules-of-action"]

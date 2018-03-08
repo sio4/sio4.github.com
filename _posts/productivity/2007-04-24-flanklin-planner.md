@@ -1,5 +1,5 @@
 ---
-redirect_from: /blog/2007/04/24/flanklin-planner/
+redirect_from: /entry/프랭클린-플래너를-쓰는-사람의-시간은-다르다/
 title: "프랭클린 플래너를 쓰는 사람의 시간은 다르다"
 tags: productivity planner
 categories: ["productivity"]

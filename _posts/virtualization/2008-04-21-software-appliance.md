@@ -1,5 +1,4 @@
 ---
-redirect_from: /blog/2008/04/21/software-appliance/
 title: 소프트웨어 어플라이언스,
 tags: software-appliance virtualization Linux
 categories: ["virtualization"]

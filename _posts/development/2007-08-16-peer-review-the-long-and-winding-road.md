@@ -1,5 +1,4 @@
 ---
-redirect_from: /blog/2007/08/16/peer-review-the-long-and-winding-road/
 title: Peer Review. 언제쯤?
 tags: development productivity
 categories: ["development"]

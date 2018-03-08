@@ -1,5 +1,4 @@
 ---
-redirect_from: /blog/2007/05/28/7-elements-of-the-social-software/
 title: 소셜 소프트웨어의 7 요소
 tags: social-network
 categories: ["misc"]

@@ -1,5 +1,5 @@
 ---
-redirect_from: /blog/2007/06/07/elimnet-vs-haionnet/
+redirect_from: /entry/엘림넷-대-하이온넷-사건/
 title: 엘림넷 대 하이온넷 사건
 tags: open-source copyright
 categories: ["opensource"]

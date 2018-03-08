@@ -1,5 +1,5 @@
 ---
-redirect_from: /blog/2007/04/27/adobe-to-open-source-flex/
+redirect_from: /entry/Adobe-to-Open-Source-Flex/
 title: '"Adobe to Open Source Flex"'
 tags: Adobe open-source java
 categories: ["opensource"]

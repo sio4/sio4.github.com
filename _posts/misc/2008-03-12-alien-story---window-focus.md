@@ -1,5 +1,5 @@
 ---
-redirect_from: /blog/2008/03/12/alien-story---window-focus/
+redirect_from: /entry/focusing-and-activating-on-windows/
 title: 이방인 이야기 - 창 포커스
 tags: user-interface Linux windows comapny
 categories: ["misc"]

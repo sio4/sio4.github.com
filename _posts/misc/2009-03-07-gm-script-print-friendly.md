@@ -1,4 +1,5 @@
 ---
+redirect_from: /entry/grease-monkey-script-for-print-friendly-web/
 title: "GM Script: Print Friendly WebPage."
 tags: Firefox GreaseMonkey
 categories: ["misc"]

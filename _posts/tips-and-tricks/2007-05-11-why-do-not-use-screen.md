@@ -1,5 +1,5 @@
 ---
-redirect_from: /blog/2007/05/11/why-do-not-use-screen/
+redirect_from: /entry/왜-screen을-사용하지-않는가/
 title: 왜 screen을 사용하지 않는가?
 tags: Linux operation tips open-source utility
 categories: ["tips-and-tricks"]

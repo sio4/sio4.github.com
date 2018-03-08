@@ -1,5 +1,5 @@
 ---
-redirect_from: /blog/2007/05/23/is-there-any-boundary-between-pc-and-internet/
+redirect_from: /entry/is-there-any-boundary-between-pc-and-internet/
 title: "인터넷 생활: 인터넷, 로컬 카피, 글로벌 카피"
 tags: platform internet
 categories: ["wind-of-change"]

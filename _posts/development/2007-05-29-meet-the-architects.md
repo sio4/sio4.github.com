@@ -1,5 +1,4 @@
 ---
-redirect_from: /blog/2007/05/29/meet-the-architects/
 title: Meet the Architects
 tags: architect development video
 categories: ["development"]

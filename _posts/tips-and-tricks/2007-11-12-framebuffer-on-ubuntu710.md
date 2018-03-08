@@ -1,5 +1,5 @@
 ---
-redirect_from: /blog/2007/11/12/framebuffer-on-ubuntu710/
+redirect_from: /entry/using-framebuffer-console-on-ubuntu-710/
 title: Ubuntu 7.10 에서 프레임버퍼 콘솔 사용하기
 tags: hardware Ubuntu
 categories: ["tips-and-tricks"]

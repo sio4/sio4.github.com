@@ -1,5 +1,5 @@
 ---
-redirect_from: /blog/2007/11/13/gibson-gets-official-with-the-self-tuning-guitar/
+redirect_from: /entry/Gibson-gets-official-with-the-self-tuning-Robot-Guitar/
 title: "Gibson gets official with the self-tuning Robot Guitar"
 tags: guitar Gibson life video
 categories: ["misc"]

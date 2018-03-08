@@ -1,5 +1,5 @@
 ---
-redirect_from: /blog/2007/11/21/the-right-time-to-check-your-order/
+redirect_from: /entry/the-right-time-to-check/
 title: 남에게 일을 주었다. 언제 검수해야 하는가?
 tags: project rules-of-action
 categories: ["development"]

@@ -1,5 +1,5 @@
 ---
-redirect_from: /blog/2008/02/25/celf-korea-tech-jamboree/
+redirect_from: /entry/CELF-Korea-Tech-Jamboree/
 title: "행사: CELF Korea Tech Jamboree"
 tags: community appliance open-source embedded
 categories: ["review"]

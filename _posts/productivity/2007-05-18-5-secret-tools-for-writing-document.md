@@ -1,5 +1,5 @@
 ---
-redirect_from: /blog/2007/05/18/5-secret-tools-for-writing-document/
+redirect_from: /entry/5-secret-tools-for-writing-documents/
 title: 문서작성의 5가지 口訣
 tags: writing productivity
 categories: ["productivity"]

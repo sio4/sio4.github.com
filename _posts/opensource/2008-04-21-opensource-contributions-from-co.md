@@ -1,5 +1,4 @@
 ---
-redirect_from: /blog/2008/04/21/opensource-contributions-from-co/
 title: 상업 회사의 오픈소스 기여도
 tags: open-source
 categories: ["opensource"]

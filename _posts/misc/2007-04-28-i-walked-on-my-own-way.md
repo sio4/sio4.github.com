@@ -1,5 +1,5 @@
 ---
-redirect_from: /blog/2007/04/28/i-walked-on-my-own-way/
+redirect_from: /entry/읽어볼-것-나는-내-식대로-살아왔다/
 title: '읽어볼 것: "나는 내 식대로 살아왔다"'
 tags: readings
 categories: ["misc"]
