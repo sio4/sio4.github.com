@@ -3,8 +3,8 @@ title: "Docker Machine 다시 보기"
 subtitle: A Little More About Docker Machine
 tags: Docker Container SoftLayer cloud-computing
 categories: ["cloudcomputing"]
-image: /attachments/docker/docker-machine-more.png
-banner: /attachments/docker/docker-machine-more.png
+image: /attachments/docker/docker-machine-more.jpg
+banner: /attachments/docker/docker-machine-more.jpg
 date: 2018-03-09T21:44:00+0900
 ---
 Docker Engine을 탑재한 Dockerized Host, Docker Node를 손쉽게 펼쳤다가, 다시
@@ -15,7 +15,7 @@ Docker Engine을 탑재한 Dockerized Host, Docker Node를 손쉽게 펼쳤다�
 (Docker Machine의 개요를 담은 "**[Docker Machine으로 Docker Node 뿌리기]**"
 를 먼저 참고하시면 좋습니다.)
 
-![](/attachments/docker/docker-machine.png){:.fit}
+![](/attachments/docker/docker-machine.jpg){:.fit}
 
 {:.caption.tight.centered}
 Dock!ron Man vs. War Machine!
