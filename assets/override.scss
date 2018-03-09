@@ -398,7 +398,11 @@ article.blog-post {
 		}
 	}
 }
+// mostly for mobile...
 @media only screen and (max-width: 767px) {
+	body {
+		font-size: 15px;
+	}
 	p {
 		word-break: normal;
 	}
