@@ -6,7 +6,7 @@ categories: ["cloudcomputing"]
 image: /assets/logos/alpinelinux.org.jpg
 banner: /assets/logos/alpinelinux.org.jpg
 date: 2018-02-19T21:00:00+0900
-last_modified_at: 2018-03-07T22:16:00+0900
+last_modified_at: 2018-03-09T13:16:00+0900
 ---
 설날 연휴가 시작되기 전, [Docker: 나의 첫 Docker Image]라는 글을 통해 아주
 기본적인 Docker Image를 만들어서 그것을 기반으로 Container를 실행하는 예에
@@ -24,6 +24,7 @@ last_modified_at: 2018-03-07T22:16:00+0900
 > * ['쓸만한' Docker Image 만들기 - Part 2]
 > * [Docker Cloud에서 자동빌드하기]
 > * [Docker Machine으로 Docker Node 뿌리기]
+> * [Docker Machine 다시 보기]
 
 
 두 편으로 분리하여 작성한 이 글에서는, 먼저 내 업무 목적에 맞는 전용 Docker
@@ -404,7 +405,9 @@ Ubuntu의 112MB 크기에 비하면 여전히 1/10의 작은 크기 만으로 �
 * ['쓸만한' Docker Image 만들기 - Part 2]
 * [Docker Cloud에서 자동빌드하기]
 * [Docker Machine으로 Docker Node 뿌리기]
+* [Docker Machine 다시 보기]
 
+[Docker Machine 다시 보기]:{% link _posts/cloudcomputing/2018-03-09-little-more-about-docker-machine.md %}
 [Docker Machine으로 Docker Node 뿌리기]:{% link _posts/cloudcomputing/2018-03-07-provision-docker-node-with-docker-machine.md %}
 [Docker Cloud에서 자동빌드하기]:{% link _posts/cloudcomputing/2018-02-21-automated-build-with-docker-cloud.md %}
 ['쓸만한' Docker Image 만들기 - Part 2]:{% link _posts/cloudcomputing/2018-02-20-build-usable-docker-image-part2.md %}

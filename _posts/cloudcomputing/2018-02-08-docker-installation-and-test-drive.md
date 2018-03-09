@@ -6,7 +6,7 @@ categories: ["cloudcomputing"]
 image: /attachments/docker/docker-hello-world.png
 banner: /attachments/docker/docker-hello-world-banner.png
 date: 2018-02-08T14:30:00+0900
-last_modified_at: 2018-03-07T22:16:00+0900
+last_modified_at: 2018-03-09T13:16:00+0900
 ---
 Docker는 Linux 위에서 동작하는 Container 관리 소프트웨어다. 지난 글
 [Docker: Getting Started with Docker]에서는 Container와 Docker의 개념을
@@ -31,6 +31,7 @@ Docker는 리눅스가 제공하는 자원 격리기술을 이용하는 것이�
 > * ['쓸만한' Docker Image 만들기 - Part 2]
 > * [Docker Cloud에서 자동빌드하기]
 > * [Docker Machine으로 Docker Node 뿌리기]
+> * [Docker Machine 다시 보기]
 
 
 
@@ -595,7 +596,9 @@ root@a642d5f9492c:/#
 * ['쓸만한' Docker Image 만들기 - Part 2]
 * [Docker Cloud에서 자동빌드하기]
 * [Docker Machine으로 Docker Node 뿌리기]
+* [Docker Machine 다시 보기]
 
+[Docker Machine 다시 보기]:{% link _posts/cloudcomputing/2018-03-09-little-more-about-docker-machine.md %}
 [Docker Machine으로 Docker Node 뿌리기]:{% link _posts/cloudcomputing/2018-03-07-provision-docker-node-with-docker-machine.md %}
 [Docker Cloud에서 자동빌드하기]:{% link _posts/cloudcomputing/2018-02-21-automated-build-with-docker-cloud.md %}
 ['쓸만한' Docker Image 만들기 - Part 2]:{% link _posts/cloudcomputing/2018-02-20-build-usable-docker-image-part2.md %}

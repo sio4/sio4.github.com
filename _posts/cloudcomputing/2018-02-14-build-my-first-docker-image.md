@@ -6,7 +6,7 @@ categories: ["cloudcomputing"]
 image: /assets/logos/docker-horizontal.800.png
 banner: /assets/logos/docker-horizontal.800.png
 date: 2018-02-14T13:20:00+0900
-last_modified_at: 2018-03-07T22:16:00+0900
+last_modified_at: 2018-03-09T13:16:00+0900
 ---
 프로그램이 메모리에 올라와 제어를 넘겨 받으면 프로세스가 되고, Disk 위의
 Kernel Image가 메모리에 올라오면 컴퓨터가 살아난다. 이렇게, 컴퓨터 세상은
@@ -56,6 +56,7 @@ Image를 만들 필요가 있는데, 이 글은 내 목적에 맞는 Image를 �
 > * ['쓸만한' Docker Image 만들기 - Part 2]
 > * [Docker Cloud에서 자동빌드하기]
 > * [Docker Machine으로 Docker Node 뿌리기]
+> * [Docker Machine 다시 보기]
 
 
 # 내 Docker Image 만들기
@@ -234,7 +235,9 @@ Registry 등록 과정은 다음 글에 정리하도록 하겠다.
 * ['쓸만한' Docker Image 만들기 - Part 2]
 * [Docker Cloud에서 자동빌드하기]
 * [Docker Machine으로 Docker Node 뿌리기]
+* [Docker Machine 다시 보기]
 
+[Docker Machine 다시 보기]:{% link _posts/cloudcomputing/2018-03-09-little-more-about-docker-machine.md %}
 [Docker Machine으로 Docker Node 뿌리기]:{% link _posts/cloudcomputing/2018-03-07-provision-docker-node-with-docker-machine.md %}
 [Docker Cloud에서 자동빌드하기]:{% link _posts/cloudcomputing/2018-02-21-automated-build-with-docker-cloud.md %}
 ['쓸만한' Docker Image 만들기 - Part 2]:{% link _posts/cloudcomputing/2018-02-20-build-usable-docker-image-part2.md %}

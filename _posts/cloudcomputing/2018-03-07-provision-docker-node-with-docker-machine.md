@@ -6,6 +6,7 @@ categories: ["cloudcomputing"]
 image: /attachments/docker/docker-machine.png
 banner: /attachments/docker/docker-machine.png
 date: 2018-03-07T22:16:00+0900
+last_modified_at: 2018-03-09T13:16:00+0900
 ---
 Docker를 개인 목적이 아닌 어느 정도 규모가 있는 서비스를 위해 사용하려고
 한다면, Container가 구동될 복수의 Host Node를 어떻게 쉽게 관리할 것인지
@@ -33,6 +34,7 @@ Docker 프로젝트의 식구 중 하나인 Docker Machine을 활용하는 방�
 > * ['쓸만한' Docker Image 만들기 - Part 2]
 > * [Docker Cloud에서 자동빌드하기]
 > * _Docker Machine으로 Docker Node 뿌리기_
+> * [Docker Machine 다시 보기]
 
 
 물론, 어떤 영역이든, 하나의 결과를 위해 단 하나의 방법만 사용할 수 있는
@@ -256,6 +258,17 @@ To see how to connect your Docker Client to the Docker Engine running on this vi
 $ 
 ```
 
+맨 첫 두 줄의 출력, Creating CA 등은 맨 처음 Docker Machine을 실행했기
+때문에 나오는 줄이며, 그 이후의 줄은 클라우드 서비스에 API로 접속하여
+VM을 만들고, SSH Key를 만들어 넣어 접속이 가능하도록 설정하고, VM이 완전히
+배치되기를 기다렸다가 Docker Engine을 설치하는 과정을 차례대로 표시하고
+있다.
+
+마지막에, Up and Running! 반갑다.
+
+
+### Driver Specific Options
+
 각 클라우드 서비스는 그들 고유의 특성과 방식이 있기 때문에, Driver는 해당
 서비스에 맞는 옵션을 제공하게 되는데, 위 화면에서 가령, `--softlayer-user`
 등과 같이, Driver 명을 접두어로 한 옵션이 이런 Driver 특성을 반영한 옵션을
@@ -265,16 +278,77 @@ VirtualBox 등의 설명은 `create` 명령을 `-h`로 실행했을 때 보여�
 목록에나 Auto Completion되는 옵션에 표시가 되지만, SoftLayer의 옵션은
 확인이 되지 않는다. 상세 옵션은
 [Github의 설명파일](https://github.com/docker/docker.github.io/blob/master/machine/drivers/soft-layer.md)을
-확인해야 한다. 적어도 현재로써는.
+확인해야 한다. ...고 (제품 완결성에 비해 좀 이상하다고) 생각했는데,
 
 
-맨 첫 두 줄의 출력, Creating CA 등은 맨 처음 Docker Machine을 실행했기
-때문에 나오는 줄이며, 그 이후의 줄은 클라우드 서비스에 API로 접속하여
-VM을 만들고, SSH Key를 만들어 넣어 접속이 가능하도록 설정하고, VM이 완전히
-배치되기를 기다렸다가 Docker Engine을 설치하는 과정을 차례대로 표시하고
-있다.
+#### 수정, 2018-03-08
 
-마지막에, Up and Running! 반갑다.
+{:.boxed.wrap}
+> 글을 쓴 후에, 천천히 다시 들여다보고 있는데, 그 과정에서 다음과 같은
+> 내용을 발견했다.
+>
+> ```console
+> $ docker-machine create -h
+> Usage: docker-machine create [OPTIONS] [arg...]
+> 
+> Create a machine
+> 
+> Description:
+>    Run 'docker-machine create --driver name --help' to include the create flags for that driver in the help text.
+> 
+> Options:
+> <...>
+> ```
+>
+> Driver 별로 달라지는 옵션은 위와 같이, `--driver name --help`라고 명하면
+> 보여준다고 한다.
+>
+> ```console
+> $ docker-machine create --driver softlayer --help
+> Usage: docker-machine create [OPTIONS] [arg...]
+> 
+> Create a machine
+> 
+> Description:
+>    Run 'docker-machine create --driver name --help' to include the create flags for that driver in the help text.
+> 
+> <...>
+>    --softlayer-api-endpoint "https://api.softlayer.com/rest/v3"			softlayer api endpoint to use [$SOFTLAYER_API_ENDPOINT]
+>    --softlayer-api-key 								softlayer user API key [$SOFTLAYER_API_KEY]
+>    --softlayer-cpu "1"								number of CPU's for the machine [$SOFTLAYER_CPU]
+> <...>
+> $ 
+> ```
+>
+> 어, 정말이다. 자세하게 다 보여준다. 그리고,
+>
+> ```console
+> $ docker-machine create --driver softlayer --<TAB>
+> --driver                       --softlayer-memory
+> --engine-env                   --softlayer-network-max-speed
+> --engine-insecure-registry     --softlayer-private-net-only
+> --engine-install-url           --softlayer-private-vlan-id
+> --engine-label                 --softlayer-public-vlan-id
+> --engine-opt                   --softlayer-region
+> --engine-registry-mirror       --softlayer-user
+> --engine-storage-driver        --swarm
+> --help                         --swarm-addr
+> --softlayer-api-endpoint       --swarm-discovery
+> --softlayer-api-key            --swarm-experimental
+> --softlayer-cpu                --swarm-host
+> --softlayer-disk-size          --swarm-image
+> --softlayer-domain             --swarm-join-opt
+> --softlayer-hostname           --swarm-master
+> --softlayer-hourly-billing     --swarm-opt
+> --softlayer-image              --swarm-strategy
+> --softlayer-local-disk         --tls-san
+> sio4@light:~$ docker-machine create --driver softlayer --
+> ```
+>
+> 이렇게, Auto Completion도 잘 된다. (Tab을 누르기 전에, `--`를 먼저
+> 입력하는 것이 키다.)
+
+
 
 
 ### List Nodes
@@ -731,7 +805,9 @@ Host로 만들고 싶지는 않았기 때문...
 * ['쓸만한' Docker Image 만들기 - Part 2]
 * [Docker Cloud에서 자동빌드하기]
 * _Docker Machine으로 Docker Node 뿌리기_
+* [Docker Machine 다시 보기]
 
+[Docker Machine 다시 보기]:{% link _posts/cloudcomputing/2018-03-09-little-more-about-docker-machine.md %}
 [Docker Machine으로 Docker Node 뿌리기]:{% link _posts/cloudcomputing/2018-03-07-provision-docker-node-with-docker-machine.md %}
 [Docker Cloud에서 자동빌드하기]:{% link _posts/cloudcomputing/2018-02-21-automated-build-with-docker-cloud.md %}
 ['쓸만한' Docker Image 만들기 - Part 2]:{% link _posts/cloudcomputing/2018-02-20-build-usable-docker-image-part2.md %}
