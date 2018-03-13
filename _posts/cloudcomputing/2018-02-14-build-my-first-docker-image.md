@@ -57,6 +57,10 @@ Image를 만들 필요가 있는데, 이 글은 내 목적에 맞는 Image를 �
 > * [Docker Cloud에서 자동빌드하기]
 > * [Docker Machine으로 Docker Node 뿌리기]
 > * [Docker Machine 다시 보기]
+> * [Getting Started with Docker Swarm]
+> * [Docker Swarm에 Service 올려보기]
+> * [Docker Swarm 다시 보기]
+> * [Docker Swarm의 고가용성]
 
 
 # 내 Docker Image 만들기
@@ -236,7 +240,12 @@ Registry 등록 과정은 다음 글에 정리하도록 하겠다.
 * [Docker Cloud에서 자동빌드하기]
 * [Docker Machine으로 Docker Node 뿌리기]
 * [Docker Machine 다시 보기]
+* [Getting Started with Docker Swarm]
+* [Docker Swarm에 Service 올려보기]
+* [Docker Swarm 다시 보기]
+* [Docker Swarm의 고가용성]
 
+[Getting Started with Docker Swarm]:{% link _posts/cloudcomputing/2018-03-13-getting-started-with-docker-swarm.md %}
 [Docker Machine 다시 보기]:{% link _posts/cloudcomputing/2018-03-09-little-more-about-docker-machine.md %}
 [Docker Machine으로 Docker Node 뿌리기]:{% link _posts/cloudcomputing/2018-03-07-provision-docker-node-with-docker-machine.md %}
 [Docker Cloud에서 자동빌드하기]:{% link _posts/cloudcomputing/2018-02-21-automated-build-with-docker-cloud.md %}

@@ -163,6 +163,9 @@ hardened-layer:
 hardware:
   ko: 하드웨어
   en: Hardware
+high-availability:
+  ko: 고가용성
+  en: High Availability
 home-network:
   ko: 홈네트워크
   en: Home Network
@@ -247,6 +250,9 @@ open-source:
 operation:
   ko: 운영
   en: Operation
+orchestration:
+  ko: 오케스트레이션
+  en: Orchestration
 packet-analysis:
   ko: 패킷분석
   en: Packet Analysis

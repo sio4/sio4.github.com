@@ -109,6 +109,13 @@ blockquote {
 		border-radius: 5px;
 		background: none;
 	}
+	&.definition {
+		dl {
+			dt {
+				margin-top: 0.5em;
+			}
+		}
+	}
 	& *:first-child {
 		margin-top: 0 !important;
 	}

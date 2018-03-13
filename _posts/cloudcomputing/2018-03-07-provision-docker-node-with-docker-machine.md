@@ -35,6 +35,10 @@ Docker 프로젝트의 식구 중 하나인 Docker Machine을 활용하는 방�
 > * [Docker Cloud에서 자동빌드하기]
 > * _Docker Machine으로 Docker Node 뿌리기_
 > * [Docker Machine 다시 보기]
+> * [Getting Started with Docker Swarm]
+> * [Docker Swarm에 Service 올려보기]
+> * [Docker Swarm 다시 보기]
+> * [Docker Swarm의 고가용성]
 
 
 물론, 어떤 영역이든, 하나의 결과를 위해 단 하나의 방법만 사용할 수 있는
@@ -806,7 +810,12 @@ Host로 만들고 싶지는 않았기 때문...
 * [Docker Cloud에서 자동빌드하기]
 * _Docker Machine으로 Docker Node 뿌리기_
 * [Docker Machine 다시 보기]
+* [Getting Started with Docker Swarm]
+* [Docker Swarm에 Service 올려보기]
+* [Docker Swarm 다시 보기]
+* [Docker Swarm의 고가용성]
 
+[Getting Started with Docker Swarm]:{% link _posts/cloudcomputing/2018-03-13-getting-started-with-docker-swarm.md %}
 [Docker Machine 다시 보기]:{% link _posts/cloudcomputing/2018-03-09-little-more-about-docker-machine.md %}
 [Docker Machine으로 Docker Node 뿌리기]:{% link _posts/cloudcomputing/2018-03-07-provision-docker-node-with-docker-machine.md %}
 [Docker Cloud에서 자동빌드하기]:{% link _posts/cloudcomputing/2018-02-21-automated-build-with-docker-cloud.md %}

@@ -27,6 +27,10 @@ Commit이 일어나면, 이에 반응하여 Docker Image를 자동으로 만들�
 > * _Docker Cloud에서 자동빌드하기_
 > * [Docker Machine으로 Docker Node 뿌리기]
 > * [Docker Machine 다시 보기]
+> * [Getting Started with Docker Swarm]
+> * [Docker Swarm에 Service 올려보기]
+> * [Docker Swarm 다시 보기]
+> * [Docker Swarm의 고가용성]
 
 이 글은, **Github의 특정 저장소에 Commit이 일어나면, 이에 반응하여 Docker
 Image를 자동으로 만들어내도록 설정하는 과정**에 대해서 설명한다. 대부분의
@@ -326,7 +330,12 @@ Build된 것으로 표시되어 있고, 마지막으로 맨 아래 "ReadMe" 부�
 * _Docker Cloud에서 자동빌드하기_
 * [Docker Machine으로 Docker Node 뿌리기]
 * [Docker Machine 다시 보기]
+* [Getting Started with Docker Swarm]
+* [Docker Swarm에 Service 올려보기]
+* [Docker Swarm 다시 보기]
+* [Docker Swarm의 고가용성]
 
+[Getting Started with Docker Swarm]:{% link _posts/cloudcomputing/2018-03-13-getting-started-with-docker-swarm.md %}
 [Docker Machine 다시 보기]:{% link _posts/cloudcomputing/2018-03-09-little-more-about-docker-machine.md %}
 [Docker Machine으로 Docker Node 뿌리기]:{% link _posts/cloudcomputing/2018-03-07-provision-docker-node-with-docker-machine.md %}
 [Docker Cloud에서 자동빌드하기]:{% link _posts/cloudcomputing/2018-02-21-automated-build-with-docker-cloud.md %}

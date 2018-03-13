@@ -26,6 +26,10 @@ Go 언어 개발환경을 위한 Docker Image를 만들고 그것을 Registry에
 > * [Docker Cloud에서 자동빌드하기]
 > * [Docker Machine으로 Docker Node 뿌리기]
 > * [Docker Machine 다시 보기]
+> * [Getting Started with Docker Swarm]
+> * [Docker Swarm에 Service 올려보기]
+> * [Docker Swarm 다시 보기]
+> * [Docker Swarm의 고가용성]
 
 이 글은, 바로 앞선 글은 ['쓸만한' Docker Image 만들기 - Part 1]의 연장선에
 위에 있는 글로, 거기서 사용했던 Image 작성 방식을 활용하게 된다.
@@ -893,7 +897,12 @@ Image는 이와 유사한 틀 내에서 움직이리라 생각한다.
 * [Docker Cloud에서 자동빌드하기]
 * [Docker Machine으로 Docker Node 뿌리기]
 * [Docker Machine 다시 보기]
+* [Getting Started with Docker Swarm]
+* [Docker Swarm에 Service 올려보기]
+* [Docker Swarm 다시 보기]
+* [Docker Swarm의 고가용성]
 
+[Getting Started with Docker Swarm]:{% link _posts/cloudcomputing/2018-03-13-getting-started-with-docker-swarm.md %}
 [Docker Machine 다시 보기]:{% link _posts/cloudcomputing/2018-03-09-little-more-about-docker-machine.md %}
 [Docker Machine으로 Docker Node 뿌리기]:{% link _posts/cloudcomputing/2018-03-07-provision-docker-node-with-docker-machine.md %}
 [Docker Cloud에서 자동빌드하기]:{% link _posts/cloudcomputing/2018-02-21-automated-build-with-docker-cloud.md %}
