@@ -19,7 +19,7 @@ $color-light: #cccccc;
 $color-orange: #ee5500;
 
 $background-body: #f9f9f9;
-$background-box: #fcfcfc;
+$background-box: #fbfbfb;
 $background-black: #111111;
 $background-header: #000000;
 $background-footer: #000000;
@@ -84,7 +84,7 @@ strong {
 em {
 	color: $color-dark;
 	font-weight: normal;
-	text-decoration: underline;
+	//text-decoration: underline;
 }
 
 a {
@@ -109,8 +109,11 @@ blockquote {
 		border-radius: 5px;
 		background: none;
 	}
-	& *:first-of-type {
+	& *:first-child {
 		margin-top: 0 !important;
+	}
+	& *:last-child {
+		margin-bottom: 0 !important;
 	}
 }
 
@@ -236,6 +239,18 @@ div.barchart {
 		margin-left: 0 !important;
 	}
 }
+.mix-large {
+	font-size: 1.2em;
+}
+.mix-xlarge {
+	font-size: 1.4em;
+}
+.mix-xxlarge {
+	font-size: 1.6em;
+}
+.mix-xxxlarge {
+	font-size: 1.8em;
+}
 
 // --- override bootstrap default --------------------------------------------
 .navbar-default .navbar-toggle {
@@ -332,9 +347,6 @@ article.blog-post {
 		&:first-of-type {
 			margin-top: 0;
 		}
-		&:last-of-type {
-			margin-bottom: 0;
-		}
 
 		a {
 			/* text-decoration: underline */
@@ -364,29 +376,28 @@ article.blog-post {
 		}
 	}
 
-	dl,
-	dl.point {
-		margin: 10px;
-		background-image: url("/assets/images/pattern-10-777.png");
-		background-repeat: repeat-y;
-		background-color: #f6f6f6;
-		padding: 4px 8px 4px 20px;
-		font-size: 1em;
-
-		dt {
-			font-size: 1.05em;
-			font-weight: bold;
-			color: #ee5500;
-			text-shadow: 0 0 2px #aaaaaa;
-			&:before {
-				font-family: FontAwesome;
-				content: "\F0E7";
-				padding-right: 0.5rem;
+	dl {
+		&.point {
+			margin: 10px;
+			background-image: url("/assets/images/pattern-10-777.png");
+			background-repeat: repeat-y;
+			background-color: #f6f6f6;
+			padding: 4px 8px 4px 20px;
+			dt {
+				font-size: 1.05em;
+				font-weight: bold;
+				color: #ee5500;
+				text-shadow: 0 0 2px #aaaaaa;
+				&:before {
+					font-family: FontAwesome;
+					content: "\F0E7";
+					padding-right: 0.5rem;
+				}
 			}
 		}
 
 		dd {
-			margin-left: 20px;
+			margin-left: 1em;
 		}
 	}
 	//** for project page
@@ -449,6 +460,14 @@ article.blog-post {
 		display: inline-block;
 		line-height: 1;
 		vertical-align: middle;
+	}
+}
+.post-message {
+	margin: 2em 0;
+	.post-request {
+		text-align: center;
+		font-style: italic;
+		background: $background-box;
 	}
 }
 

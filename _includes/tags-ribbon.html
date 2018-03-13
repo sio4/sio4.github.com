@@ -1,17 +1,17 @@
-          {%
-          if include.post.tags.size > 0 %}
-          <div class="post-tags">{%
-            for tag in include.post.tags %}{%
-              if site.data.tags[tag] %}{%
-                if site.data.tags[tag].ko %}{%
-                  assign tagname = site.data.tags[tag].ko %}{%
-                else %}{%
-                  assign tagname = site.data.tags[tag].en %}{%
-                endif %}{%
+        {%
+        if include.post.tags.size > 0 %}
+        <div class="post-tags">{%
+          for tag in include.post.tags %}{%
+            if site.data.tags[tag] %}{%
+              if site.data.tags[tag].ko %}{%
+                assign tagname = site.data.tags[tag].ko %}{%
               else %}{%
-                assign tagname = tag %}{%
-              endif %}
-            <a class="tag-item" href="/tags/{{ tag |slugify }}/">{{ tagname }}</a>{%
-            endfor %}
-          </div>{%
-          endif %}
+                assign tagname = site.data.tags[tag].en %}{%
+              endif %}{%
+            else %}{%
+              assign tagname = tag %}{%
+            endif %}
+          <a class="tag-item" href="/tags/{{ tag |slugify }}/">{{ tagname }}</a>{%
+          endfor %}
+        </div>{%
+        endif %}

@@ -14,7 +14,14 @@ layout: base
         "And in the end, the love you take is equal to the love you make."
         -- the Beatles
         </div>
-        {% include tags-ribbon.html post=page %}{%
+        {% include tags-ribbon.html post=page %}
+        <div class="post-message">
+          <blockquote class="boxed post-request">
+            <p>묶음글, 관련된 글, 잊지 마세요~!</p>
+            <p>잘못된 부분의 제보나 의견, 요청 있으시면 댓글! 환영합니다.</p>
+          </blockquote>
+        </div>
+        {%
         unless page.social-share == false %}{%
           include social-share.html %}{%
         endunless %}
