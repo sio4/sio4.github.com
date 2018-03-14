@@ -3,8 +3,8 @@ title: Getting Started with Docker Swarm
 subtitle: 나무토막 모아서 뗏목 만들기
 tags: Docker Container orchestration high-availability cloud-computing
 categories: ["cloudcomputing"]
-image: /assets/logos/docker-swarm-detail.png
-banner: /assets/logos/docker-swarm-detail.png
+image: /attachments/docker/docker-swarm-cluster.png
+banner: /attachments/docker/docker-swarm-cluster.png
 date: 2018-03-13T21:30:00+0900
 ---
 지난 글에서는 여러 Docker Host 들을 손쉽게 관리하기 위한 기술 중 하나로
