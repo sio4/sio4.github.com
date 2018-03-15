@@ -17,7 +17,10 @@ for post in posts_by_date %}{%
   <ul class="posts nodot">{%
   endif %}
     <li><a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-      <span class="post-meta pull-right"><i class="fa fa-book"></i> <a href="/categories/{{ cat.id }}/">{{ cat.name }}</a>, <i class="fa fa-calendar"></i> {{ post.date |date: "%F" }}</span></li>{%
+      <span class="post-meta pull-right"><i class="fa fa-book"></i> <a href="/categories/{{ cat.id }}/">{{ cat.name }}</a>, <i class="fa fa-calendar"></i> {{ post.date |date: "%F" }} {%
+      if jekyll.environment == "development"
+      %}<a href="https://developers.facebook.com/tools/debug/sharing/?q={{ site.real_url }}{{ post.url }}%3Futm_source%3Dfacebook%26utm_medium%3Dsocial%26utm_campaign%3Dsauru.so">DBG</a>
+      {% endif %}</span></li>{%
   if forloop.last %}
   </ul>{%
   endif %}{%
