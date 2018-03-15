@@ -215,6 +215,15 @@ div.barchart {
 		min-width: 40%;
 	}
 }
+@media only screen and (max-width: 767px) {
+	#markdown-toc {
+		&.pull-right {
+			float: none !important;
+			margin-right: 2rem;
+			max-width: 100% !important;
+		}
+	}
+}
 
 // --- common modifier -------------------------------------------------------
 .bordered {
@@ -416,16 +425,6 @@ article.blog-post {
 		}
 	}
 }
-// mostly for mobile...
-@media only screen and (max-width: 767px) {
-	body {
-		font-size: 15px;
-	}
-	p {
-		word-break: normal;
-	}
-}
-
 .footnote {
 	&:before {
 		content: '[' !important;
@@ -1323,6 +1322,34 @@ input.gsc-input {
 	.tagdrop {
 		word-break: keep-all;
 		white-space: nowrap;
+		a {
+			padding: 0 0.2em;
+		}
+	}
+}
+
+// --- for mobile ------------------------------------------------------------
+@media only screen and (max-width: 767px) {
+	body {
+		font-size: 15px;
+	}
+	.intro-header .page-heading h1,
+	.intro-header .post-heading h1,
+	h1 { font-size: 34px; }
+	h2 { font-size: 28px; }
+	h3 { font-size: 22px; }
+	h4 { font-size: 18px; }
+	h5 { font-size: 15px; }
+	p {
+		word-break: normal;
+	}
+	.container {
+		padding-right: 0.5em;
+		padding-left: 0.5em;
+		article.blog-page p,
+		article.blog-post p {
+			line-height: 1.6;
+		}
 	}
 }
 
