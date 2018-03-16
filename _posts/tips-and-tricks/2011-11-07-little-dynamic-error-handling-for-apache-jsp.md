@@ -1,5 +1,6 @@
 ---
 redirect_from: /entry/dynamic-error-handling-with-apache-and-jsp/
+redirect_from: /253/
 title: Apache+JSP 환경에서 쫌 동적인 ErrorDocument
 tags: error-handling monitoring development service
 categories: ["tips-and-tricks"]

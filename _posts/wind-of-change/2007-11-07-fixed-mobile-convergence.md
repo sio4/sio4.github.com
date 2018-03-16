@@ -1,5 +1,6 @@
 ---
 redirect_from: /entry/fixed-mobile-convergence/
+redirect_from: /116/
 title: '"밖에서는 휴대 전화, 안에서는 인터넷 전화로" 란다.'
 tags: convergence VoIP mobile telecom home-network
 categories: ["wind-of-change"]
