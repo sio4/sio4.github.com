@@ -27,8 +27,8 @@ last_modified_at: 2018-03-09T13:16:00+0900
 > * [Docker Machine 다시 보기]
 > * [Getting Started with Docker Swarm]
 > * [Docker Swarm에 Service 올려보기]
-> * [Docker Swarm 다시 보기]
 > * [Docker Swarm의 고가용성]
+> * [Docker Swarm 다시 보기]
 
 
 두 편으로 분리하여 작성한 이 글에서는, 먼저 내 업무 목적에 맞는 전용 Docker
@@ -412,9 +412,10 @@ Ubuntu의 112MB 크기에 비하면 여전히 1/10의 작은 크기 만으로 �
 * [Docker Machine 다시 보기]
 * [Getting Started with Docker Swarm]
 * [Docker Swarm에 Service 올려보기]
-* [Docker Swarm 다시 보기]
 * [Docker Swarm의 고가용성]
+* [Docker Swarm 다시 보기]
 
+[Docker Swarm의 고가용성]:{% link _posts/cloudcomputing/2018-03-15-high-availability-of-docker-swarm.md %}
 [Docker Swarm에 Service 올려보기]:{% link _posts/cloudcomputing/2018-03-14-run-a-service-on-docker-swarm.md %}
 [Getting Started with Docker Swarm]:{% link _posts/cloudcomputing/2018-03-13-getting-started-with-docker-swarm.md %}
 [Docker Machine 다시 보기]:{% link _posts/cloudcomputing/2018-03-09-little-more-about-docker-machine.md %}

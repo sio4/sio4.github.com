@@ -37,8 +37,8 @@ Docker Swarm은 Docker Engine에 결합된 형태로 제공되는 Orchestration 
 > * [Docker Machine 다시 보기]
 > * [Getting Started with Docker Swarm]
 > * _Docker Swarm에 Service 올려보기_
-> * [Docker Swarm 다시 보기]
 > * [Docker Swarm의 고가용성]
+> * [Docker Swarm 다시 보기]
 
 
 지금까지 걸어온 길과 앞으로 가려고 하는 길은 위의 묶음글을 참고하시고,
@@ -991,9 +991,10 @@ Task에 대한 할당 또는 재할당은 Task의 새로운 할당, 장애 발�
 * [Docker Machine 다시 보기]
 * [Getting Started with Docker Swarm]
 * _Docker Swarm에 Service 올려보기_
-* [Docker Swarm 다시 보기]
 * [Docker Swarm의 고가용성]
+* [Docker Swarm 다시 보기]
 
+[Docker Swarm의 고가용성]:{% link _posts/cloudcomputing/2018-03-15-high-availability-of-docker-swarm.md %}
 [Docker Swarm에 Service 올려보기]:{% link _posts/cloudcomputing/2018-03-14-run-a-service-on-docker-swarm.md %}
 [Getting Started with Docker Swarm]:{% link _posts/cloudcomputing/2018-03-13-getting-started-with-docker-swarm.md %}
 [Docker Machine 다시 보기]:{% link _posts/cloudcomputing/2018-03-09-little-more-about-docker-machine.md %}

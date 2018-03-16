@@ -28,8 +28,8 @@ Go 언어 개발환경을 위한 Docker Image를 만들고 그것을 Registry에
 > * [Docker Machine 다시 보기]
 > * [Getting Started with Docker Swarm]
 > * [Docker Swarm에 Service 올려보기]
-> * [Docker Swarm 다시 보기]
 > * [Docker Swarm의 고가용성]
+> * [Docker Swarm 다시 보기]
 
 이 글은, 바로 앞선 글은 ['쓸만한' Docker Image 만들기 - Part 1]의 연장선에
 위에 있는 글로, 거기서 사용했던 Image 작성 방식을 활용하게 된다.
@@ -899,9 +899,10 @@ Image는 이와 유사한 틀 내에서 움직이리라 생각한다.
 * [Docker Machine 다시 보기]
 * [Getting Started with Docker Swarm]
 * [Docker Swarm에 Service 올려보기]
-* [Docker Swarm 다시 보기]
 * [Docker Swarm의 고가용성]
+* [Docker Swarm 다시 보기]
 
+[Docker Swarm의 고가용성]:{% link _posts/cloudcomputing/2018-03-15-high-availability-of-docker-swarm.md %}
 [Docker Swarm에 Service 올려보기]:{% link _posts/cloudcomputing/2018-03-14-run-a-service-on-docker-swarm.md %}
 [Getting Started with Docker Swarm]:{% link _posts/cloudcomputing/2018-03-13-getting-started-with-docker-swarm.md %}
 [Docker Machine 다시 보기]:{% link _posts/cloudcomputing/2018-03-09-little-more-about-docker-machine.md %}

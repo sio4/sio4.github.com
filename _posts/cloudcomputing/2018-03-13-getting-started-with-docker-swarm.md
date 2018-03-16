@@ -57,8 +57,8 @@ Software에게, 이것을 마치 관악기, 현악기, 타악기 등이 어우�
 > * [Docker Machine 다시 보기]
 > * _Getting Started with Docker Swarm_
 > * [Docker Swarm에 Service 올려보기]
-> * [Docker Swarm 다시 보기]
 > * [Docker Swarm의 고가용성]
+> * [Docker Swarm 다시 보기]
 
 
 # Docker Swarm
@@ -515,9 +515,10 @@ Swarm standalone을 설치/관리하는 방식을 사용할 때에 사용되는 
 * [Docker Machine 다시 보기]
 * _Getting Started with Docker Swarm_
 * [Docker Swarm에 Service 올려보기]
-* [Docker Swarm 다시 보기]
 * [Docker Swarm의 고가용성]
+* [Docker Swarm 다시 보기]
 
+[Docker Swarm의 고가용성]:{% link _posts/cloudcomputing/2018-03-15-high-availability-of-docker-swarm.md %}
 [Docker Swarm에 Service 올려보기]:{% link _posts/cloudcomputing/2018-03-14-run-a-service-on-docker-swarm.md %}
 [Getting Started with Docker Swarm]:{% link _posts/cloudcomputing/2018-03-13-getting-started-with-docker-swarm.md %}
 [Docker Machine 다시 보기]:{% link _posts/cloudcomputing/2018-03-09-little-more-about-docker-machine.md %}

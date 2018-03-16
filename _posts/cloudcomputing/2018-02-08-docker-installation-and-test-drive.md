@@ -34,8 +34,8 @@ Docker는 리눅스가 제공하는 자원 격리기술을 이용하는 것이�
 > * [Docker Machine 다시 보기]
 > * [Getting Started with Docker Swarm]
 > * [Docker Swarm에 Service 올려보기]
-> * [Docker Swarm 다시 보기]
 > * [Docker Swarm의 고가용성]
+> * [Docker Swarm 다시 보기]
 
 
 
@@ -603,9 +603,10 @@ root@a642d5f9492c:/#
 * [Docker Machine 다시 보기]
 * [Getting Started with Docker Swarm]
 * [Docker Swarm에 Service 올려보기]
-* [Docker Swarm 다시 보기]
 * [Docker Swarm의 고가용성]
+* [Docker Swarm 다시 보기]
 
+[Docker Swarm의 고가용성]:{% link _posts/cloudcomputing/2018-03-15-high-availability-of-docker-swarm.md %}
 [Docker Swarm에 Service 올려보기]:{% link _posts/cloudcomputing/2018-03-14-run-a-service-on-docker-swarm.md %}
 [Getting Started with Docker Swarm]:{% link _posts/cloudcomputing/2018-03-13-getting-started-with-docker-swarm.md %}
 [Docker Machine 다시 보기]:{% link _posts/cloudcomputing/2018-03-09-little-more-about-docker-machine.md %}

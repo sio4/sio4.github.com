@@ -33,8 +33,8 @@ Dock!ron Man vs. War Machine!
 > * _Docker Machine 다시 보기_
 > * [Getting Started with Docker Swarm]
 > * [Docker Swarm에 Service 올려보기]
-> * [Docker Swarm 다시 보기]
 > * [Docker Swarm의 고가용성]
+> * [Docker Swarm 다시 보기]
 
 
 
@@ -1134,9 +1134,10 @@ Code Level로 조금 더 살펴봐야 할 것 같다.
 * _Docker Machine 다시 보기_
 * [Getting Started with Docker Swarm]
 * [Docker Swarm에 Service 올려보기]
-* [Docker Swarm 다시 보기]
 * [Docker Swarm의 고가용성]
+* [Docker Swarm 다시 보기]
 
+[Docker Swarm의 고가용성]:{% link _posts/cloudcomputing/2018-03-15-high-availability-of-docker-swarm.md %}
 [Docker Swarm에 Service 올려보기]:{% link _posts/cloudcomputing/2018-03-14-run-a-service-on-docker-swarm.md %}
 [Getting Started with Docker Swarm]:{% link _posts/cloudcomputing/2018-03-13-getting-started-with-docker-swarm.md %}
 [Docker Machine 다시 보기]:{% link _posts/cloudcomputing/2018-03-09-little-more-about-docker-machine.md %}

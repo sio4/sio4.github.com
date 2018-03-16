@@ -37,8 +37,8 @@ Docker 프로젝트의 식구 중 하나인 Docker Machine을 활용하는 방�
 > * [Docker Machine 다시 보기]
 > * [Getting Started with Docker Swarm]
 > * [Docker Swarm에 Service 올려보기]
-> * [Docker Swarm 다시 보기]
 > * [Docker Swarm의 고가용성]
+> * [Docker Swarm 다시 보기]
 
 
 물론, 어떤 영역이든, 하나의 결과를 위해 단 하나의 방법만 사용할 수 있는
@@ -812,9 +812,10 @@ Host로 만들고 싶지는 않았기 때문...
 * [Docker Machine 다시 보기]
 * [Getting Started with Docker Swarm]
 * [Docker Swarm에 Service 올려보기]
-* [Docker Swarm 다시 보기]
 * [Docker Swarm의 고가용성]
+* [Docker Swarm 다시 보기]
 
+[Docker Swarm의 고가용성]:{% link _posts/cloudcomputing/2018-03-15-high-availability-of-docker-swarm.md %}
 [Docker Swarm에 Service 올려보기]:{% link _posts/cloudcomputing/2018-03-14-run-a-service-on-docker-swarm.md %}
 [Getting Started with Docker Swarm]:{% link _posts/cloudcomputing/2018-03-13-getting-started-with-docker-swarm.md %}
 [Docker Machine 다시 보기]:{% link _posts/cloudcomputing/2018-03-09-little-more-about-docker-machine.md %}
