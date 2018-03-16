@@ -5,6 +5,7 @@ and site.share-links-active.google == false
 and site.share-links-active.linkedin == false %}{%
 else %}
         <section id="social-share-section" class="hidden-print">
+          <!-- Go to www.addthis.com/dashboard to customize your tools --> <div class="addthis_sharing_toolbox"></div>{% if false %}
           <!--- Share on Twitter -->{%
           unless site.share-links-active.twitter == false %}
           <a href="https://twitter.com/intent/tweet?text={{ page.title | url_encode }}+{{ site.url }}{{ page.url }}%3Futm_source%3Dtwitter%26utm_medium%3Dsocial%26utm_campaign%3Dsauruso" target="_blank"
@@ -32,6 +33,6 @@ else %}
             class="btn btn-social-icon btn-linkedin" title="Share on LinkedIn">
             <span class="fa fa-fw fa-linkedin" aria-hidden="true"></span>
           </a>{%
-          endunless %}
+          endunless %}{% endif %}
         </section>{%
 endif %}

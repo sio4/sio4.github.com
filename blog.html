@@ -20,6 +20,12 @@ for post in posts_by_date %}{%
       <span class="post-meta pull-right"><i class="fa fa-book"></i> <a href="/categories/{{ cat.id }}/">{{ cat.name }}</a>, <i class="fa fa-calendar"></i> {{ post.date |date: "%F" }} {%
       if jekyll.environment == "development"
       %}<a href="https://developers.facebook.com/tools/debug/sharing/?q={{ site.real_url }}{{ post.url }}%3Futm_source%3Dfacebook%26utm_medium%3Dsocial%26utm_campaign%3Dsauru.so">DBG</a>
+      <!--- Share on Facebook -->{%
+      unless site.share-links-active.facebook == false %}
+      <a href="https://www.facebook.com/sharer/sharer.php?u={{ site.real_url }}{{ post.url }}" target="_blank"
+        class="" title="Share on Facebook">
+        <span class="fa fa-facebook" aria-hidden="true"></span>
+      </a>{% endunless %}
       {% endif %}</span></li>{%
   if forloop.last %}
   </ul>{%
