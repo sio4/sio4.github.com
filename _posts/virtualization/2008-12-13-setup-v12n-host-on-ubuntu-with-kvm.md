@@ -1,5 +1,7 @@
 ---
-redirect_from: /entry/setup-virtualization-environment-on-ubuntu10-with-kvm/
+redirect_from:
+- /entry/setup-virtualization-environment-on-ubuntu10-with-kvm/
+- /177/
 title: 우분투 8.10에서 kvm을 이용한 가상 호스트 설정
 tags: kvm virtualization howto Ubuntu
 categories: ["virtualization"]

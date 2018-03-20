@@ -1,5 +1,7 @@
 ---
-redirect_from: /entry/kpartx-create-device-mappings-for-partitions/
+redirect_from:
+- /entry/kpartx-create-device-mappings-for-partitions/
+- /255/
 title: Kpartx, Create device mappings for partitions
 tags: disk recovery
 categories: ["tips-and-tricks"]

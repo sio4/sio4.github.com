@@ -1,5 +1,7 @@
 ---
-redirect_from: /entry/telnet-protocol-support-on-web-browser/
+redirect_from:
+- /entry/telnet-protocol-support-on-web-browser/
+- /200/
 title: 웹브라우져에서 telnet 프로토콜을 처리하려면
 tags: network Ongsung protocol Python
 categories: ["tips-and-tricks"]
