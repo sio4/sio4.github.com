@@ -6,6 +6,7 @@ categories: ["cloudcomputing"]
 image: /attachments/docker/docker-machine-more.jpg
 banner: /attachments/docker/docker-machine-more.jpg
 date: 2018-03-09T21:44:00+0900
+last_modified_at: 2018-03-17T00:30:00+0900
 ---
 Docker Engine을 탑재한 Dockerized Host, Docker Node를 손쉽게 펼쳤다가, 다시
 모았다가 하는 용도로 Docker Machine을 적절히 활용할 수 있을지 확인하기 위해
@@ -885,7 +886,7 @@ $
 | env    | Display the commands to set up the environment for the Docker client|
 | ip     | Get the IP address of a machine                                     |
 | url    | Get the URL of a machine                                            |
-| use    | UNDOCUMENTED                                                        |
+| use    | (Bash shell warpper에 의해 지원됨                                   |
 
 먼저, 이미 앞선 글에서 봤던 `active` 명령
 
@@ -948,14 +949,17 @@ export DOCKER_MACHINE_NAME="dev01"
 $
 ```
 
-그런데! 그런데, 이게 좀 불편하지 않은가? 왜 지가 설정을 해버리지 변수만
-반환하는 걸까? (이게 궁금했는데...)
+그런데! 그런데, 이게 좀 불편하지 않은가? 그냥 환경설정이 되어버리면
+좋은데 변수만 반환하다니... 부르르...
 
-우연히 Tab Auto Completion을 통해 확인된 명령이 하나 더 있으니, 그게
-`use`라는 명령이다. 명령 이름에서 감이 오는데, 이 명령을 내리면 위의
-`eval $(docker-machine env dev01)`을 실행한 것과 동일한 효과를 내게
+그러다, 우연히 Tab Auto Completion을 통해 확인된 명령이 하나 더 있으니,
+그게 `use`라는 명령이다. 명령 이름에서 감이 오는데, 이 명령을 내리면
+위의 `eval $(docker-machine env dev01)`을 실행한 것과 동일한 효과를 내게
 된다.
 
+이 `use` 명령은, 아래와 같은 도움말을 보여주는데, 이게 `docker-machine`의
+내장 명령은 아니고, 함께 설치한 Bash Auto Completion 스트립트에 포함된
+Wrapper 함수에 의해 제공되는 것이다.
 
 ```console
 $ docker-machine use --help
