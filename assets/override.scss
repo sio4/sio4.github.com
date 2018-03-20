@@ -300,9 +300,11 @@ img {
 .page-heading,
 .post-heading {
 	.post-social-shares {
+		margin-top: 0.5em;
 		text-align: right;
 		div {
 			display: inline-block;
+			vertical-align: top !important;
 			&.fb-like span {
 				vertical-align: baseline !important;
 			}
