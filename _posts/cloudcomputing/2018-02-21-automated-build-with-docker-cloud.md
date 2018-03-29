@@ -335,6 +335,7 @@ Build된 것으로 표시되어 있고, 마지막으로 맨 아래 "ReadMe" 부�
 * [Docker Swarm의 고가용성]
 * [Docker Swarm 다시 보기]
 
+[Docker Swarm 다시 보기]:{% link _posts/cloudcomputing/2018-03-29-little-more-about-docker-swarm.md %}
 [Docker Swarm의 고가용성]:{% link _posts/cloudcomputing/2018-03-15-high-availability-of-docker-swarm.md %}
 [Docker Swarm에 Service 올려보기]:{% link _posts/cloudcomputing/2018-03-14-run-a-service-on-docker-swarm.md %}
 [Getting Started with Docker Swarm]:{% link _posts/cloudcomputing/2018-03-13-getting-started-with-docker-swarm.md %}
