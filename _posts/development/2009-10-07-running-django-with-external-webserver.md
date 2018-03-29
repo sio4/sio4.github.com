@@ -1,5 +1,7 @@
 ---
-redirect_from: /entry/running-django-with-external-web-server/
+redirect_from:
+- /entry/running-django-with-external-web-server/
+- /198/
 title: Django를 다른 웹서버에 의존하여 돌리기
 tags: delayed-job Django nested-request Ongsung
 categories: ["development"]

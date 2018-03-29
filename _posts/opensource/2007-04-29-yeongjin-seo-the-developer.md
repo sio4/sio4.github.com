@@ -1,5 +1,7 @@
 ---
-redirect_from: /entry/서영진-골수-개발자-그립다-20세기/
+redirect_from:
+- /entry/서영진-골수-개발자-그립다-20세기/
+- /24/
 title: 서영진님, 골수 개발자, 그리고 그리운 20세기!
 tags: life memories open-source people
 categories: ["opensource"]

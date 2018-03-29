@@ -1,5 +1,7 @@
 ---
-redirect_from: /entry/rdesktop-and-cleartype/
+redirect_from:
+- /entry/rdesktop-and-cleartype/
+- /254/
 title: "VDI: rdesktop과 ClearType"
 tags: virtualization VDI remote-terminal
 categories: ["virtualization"]
