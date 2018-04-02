@@ -26,6 +26,8 @@ for post in posts_by_date %}{%
         class="" title="Share on Facebook">
         <span class="fa fa-facebook" aria-hidden="true"></span>
       </a>{% endunless %}
+      <span data-url="{{ site.real_url }}{{ post.url }}"
+        class="graph-get">Graph</span>
       {% endif %}</span></li>{%
   if forloop.last %}
   </ul>{%
