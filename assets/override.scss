@@ -109,6 +109,12 @@ blockquote {
 		border-radius: 5px;
 		background: none;
 	}
+	&.ribbon {
+		margin: 1em 0px;
+		padding: 2px 20px;
+		border-left: 4px solid #000;
+		background: none;
+	}
 	&.definition {
 		dl {
 			dt {
