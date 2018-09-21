@@ -23,6 +23,12 @@ DBMS에 관련된 것이라기 보다는 어쩌면 시스템 자동화 등, [클
 {:.ribbon}
 > *그나저나 여행 다녀온 얘기는 언제 쓰나...*
 
+{:.boxed}
+> CockroachDB 맛보기 묶음글은 다음과 같습니다.
+>
+> * _CockroachDB 안녕?_
+> * [CockroachDB 클러스터 구성하기]
+
 
 
 # 왜 CockroachDB에 관심을 갖나?
@@ -389,7 +395,16 @@ Metrics 다음은 Databases에 대한 정보를 표시하는 메뉴가 있다. �
 
 ---
 
-
 [DBMS]:/tags/dbms
 [클라우드 컴퓨팅]:/tags/cloud-computing
 [오픈소스]:/tags/open-source
+
+### 함께 읽기
+
+CockroachDB 맛보기 묶음글은 다음과 같습니다.
+
+* _CockroachDB 안녕?_
+* [CockroachDB 클러스터 구성하기]
+
+[CockroachDB 안녕?]:{% link _posts/cloudcomputing/2018-09-20-say-hello-to-cockroachdb.md %}
+[CockroachDB 클러스터 구성하기]:{% link _posts/cloudcomputing/2018-09-21-setup-cockroach-cluster.md %}

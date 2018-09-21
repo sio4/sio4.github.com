@@ -17,6 +17,7 @@ $color-dark: #202020;
 $color-link: #0075aa;
 $color-light: #cccccc;
 $color-orange: #ee5500;
+$color-accent: #ee5500;
 
 $background-body: #f9f9f9;
 $background-box: #fbfbfb;
@@ -82,7 +83,7 @@ strong {
 	background: $background-marker;
 }
 em {
-	color: $color-dark;
+	color: $color-dark !important;
 	font-weight: normal;
 	//text-decoration: underline;
 }
@@ -114,6 +115,21 @@ blockquote {
 		padding: 2px 20px;
 		border-left: 4px solid #000;
 		background: none;
+	}
+	&.comment {
+		background: none;
+		color: $color-grey !important;
+		&:before {
+			font-family: FontAwesome;
+			content: "\f075"; // font-awesome comment
+			display: inline-block;
+			width: 1.5em;
+			margin-left: -40px;
+			float: left;
+		}
+		* {
+			color: $color-grey !important;
+		}
 	}
 	&.definition {
 		dl {
@@ -407,21 +423,40 @@ article.blog-post {
 			background-repeat: repeat-y;
 			background-color: #f6f6f6;
 			padding: 4px 8px 4px 20px;
+			border-radius: 6px;
 			dt {
 				font-size: 1.05em;
 				font-weight: bold;
-				color: #ee5500;
+				color: $color-accent;
 				text-shadow: 0 0 2px #aaaaaa;
 				&:before {
 					font-family: FontAwesome;
 					content: "\F0E7";
-					padding-right: 0.5rem;
+					display: inline-block;
+					width: 1.5em;
+				}
+			}
+		}
+		&.keypoint {
+			padding: 4px 8px 4px 10px;
+			dt {
+				font-weight: normal;
+				color: $color-accent;
+				border-bottom: 1px dotted $color-light;
+				&:before {
+					font-family: FontAwesome;
+					content: "\f084"; // font-awesome key
+					display: inline-block;
+					width: 1.5em;
 				}
 			}
 		}
 
+		dt {
+			margin-top: 0.5em;
+		}
 		dd {
-			margin-left: 1em;
+			padding-left: 1.5em;
 		}
 	}
 	//** for project page
