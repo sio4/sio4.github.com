@@ -19,6 +19,7 @@ date: 2018-09-21T17:20:00+0900
 >
 > * [CockroachDB 안녕?]
 > * _CockroachDB 클러스터 구성하기_
+> * [CockroachDB Architecture]
 
 
 {:toc .half.pull-right}
@@ -928,6 +929,8 @@ CockroachDB 맛보기 묶음글은 다음과 같습니다.
 
 * [CockroachDB 안녕?]
 * _CockroachDB 클러스터 구성하기_
+* [CockroachDB Architecture]
 
 [CockroachDB 안녕?]:{% link _posts/cloudcomputing/2018-09-20-say-hello-to-cockroachdb.md %}
 [CockroachDB 클러스터 구성하기]:{% link _posts/cloudcomputing/2018-09-21-setup-cockroach-cluster.md %}
+[CockroachDB Architecture]:{% link _posts/cloudcomputing/2018-10-01-architecture-of-cockroachdb.md %}

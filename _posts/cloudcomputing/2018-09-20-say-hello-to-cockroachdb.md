@@ -28,6 +28,7 @@ DBMS에 관련된 것이라기 보다는 어쩌면 시스템 자동화 등, [클
 >
 > * _CockroachDB 안녕?_
 > * [CockroachDB 클러스터 구성하기]
+> * [CockroachDB Architecture]
 
 
 
@@ -405,6 +406,8 @@ CockroachDB 맛보기 묶음글은 다음과 같습니다.
 
 * _CockroachDB 안녕?_
 * [CockroachDB 클러스터 구성하기]
+* [CockroachDB Architecture]
 
 [CockroachDB 안녕?]:{% link _posts/cloudcomputing/2018-09-20-say-hello-to-cockroachdb.md %}
 [CockroachDB 클러스터 구성하기]:{% link _posts/cloudcomputing/2018-09-21-setup-cockroach-cluster.md %}
+[CockroachDB Architecture]:{% link _posts/cloudcomputing/2018-10-01-architecture-of-cockroachdb.md %}

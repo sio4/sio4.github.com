@@ -437,18 +437,57 @@ article.blog-post {
 				}
 			}
 		}
+		&.help,
+		&.info,
+		&.warn,
 		&.keypoint {
 			padding: 4px 8px 4px 10px;
 			dt {
 				font-weight: normal;
-				color: $color-accent;
 				border-bottom: 1px dotted $color-light;
 				&:before {
 					font-family: FontAwesome;
-					content: "\f084"; // font-awesome key
 					display: inline-block;
 					width: 1.5em;
 				}
+			}
+		}
+		&.keypoint {
+			dt {
+				color: $color-accent;
+				&:before {
+					content: "\f084"; // font-awesome key
+				}
+			}
+		}
+		&.warn {
+			dt {
+				color: $color-accent;
+				&:before {
+					content: "\f071"; // font-awesome exclamation-triangle
+				}
+			}
+		}
+		&.info {
+			dt {
+				color: $color-text;
+				&:before {
+					content: "\f05a"; // font-awesome info-circle
+				}
+			}
+			dd {
+				color: $color-grey;
+			}
+		}
+		&.help {
+			dt {
+				color: $color-text;
+				&:before {
+					content: "\f059"; // font-awesome question-circle
+				}
+			}
+			dd {
+				color: $color-grey;
 			}
 		}
 
