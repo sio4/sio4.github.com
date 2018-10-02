@@ -318,6 +318,9 @@ ruby-on-rails:
 rules-of-action:
   ko: 행동수칙
   en: Rules of Action
+script:
+  ko: 스크립트
+  en: Script
 security:
   ko: 보안
   en: Security
