@@ -983,7 +983,6 @@ footer .theme-by {
 	width: 100%;
 	clear: both;
 	padding: 20px 0;
-	border-bottom: 1px solid #eee;
 	.post-entry {
 		font-family: $font-norm;
 		.post-banner {
@@ -1004,7 +1003,7 @@ footer .theme-by {
 
 @media only screen and (min-width: 768px) {
 	.post-preview {
-		padding: 35px 0;
+		padding: 35px 0 10px;
 	}
 }
 
@@ -1061,10 +1060,6 @@ footer .theme-by {
 	width: 192px;
 }
 
-.post-preview .post-read-more {
-	font-weight: $font-head-weight;
-	float: right;
-}
 @media only screen and (min-width: 768px) {
 	.post-preview .post-title {
 		font-size: 36px;
