@@ -5,8 +5,8 @@ description: >
   주로 소프트웨어 개발, 인프라 문제, 클라우드 컴퓨팅에 대한 이야기가 있습니다.
 timezone: Asia/Seoul
 lang: ko-KR
-url: "http://www.sauru.so"
-real_url: "http://www.sauru.so"
+url: "https://www.sauru.so"
+real_url: "https://www.sauru.so"
 baseurl: "" # the subpath of your site, e.g. /blog
 feedurl: "http://feeds.feedburner.com/sauru-so"
 
