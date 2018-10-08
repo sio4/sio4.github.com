@@ -1,7 +1,7 @@
 ---
 redirect_from: /entry/make-a-copy-of-subversion-repository-with-svnsync/
 title: "서브버전 저장소 사본 만들기, svnsync"
-tags: productivity version-control howto availability project
+tags: productivity version-control howto high-availability project
 categories: ["development"]
 date: 2008-04-09T01:01:59+09:00
 last_modified_at: 2010-07-02T19:20:10+09:00
