@@ -18,6 +18,7 @@ Android 폰, 또는 카메라에서 쓰기 위해 구입했던 SD Card에 대하
 {:.fit.styled}
 | READ SPEED                     | 1st  | 2nd  | 3rd  | 4th  | 5th  | average |
 |--------------------------------|------|------|------|------|------|---------|
+| SanDisk Ultra 200GB 2018 Spain | 82.6 | 81.3 | 83.3 | 82.5 | 82.9 |   82.62 |
 | SanDisk Ultra Plus 128GB       | 76.0 | 76.1 | 76.0 | 75.5 | 75.9 |   75.90 |
 | SanDisk Extream 64GB SDXC I U3 | 54.0 | 54.0 | 54.0 | 54.0 | 54.0 |   54.00 |
 | SanDisk 64GB SDXC I U1         | 67.4 | 67.6 | 67.6 | 67.6 | 67.5 |   67.54 |
@@ -28,6 +29,7 @@ Android 폰, 또는 카메라에서 쓰기 위해 구입했던 SD Card에 대하
 {:.fit.styled}
 | WRITE SPEED                    | 1st  | 2nd  | 3rd  | 4th  | 5th  | average |
 |--------------------------------|------|------|------|------|------|---------|
+| SanDisk Ultra 200GB 2018 Spain | 28.1 | 32.7 | 31.9 | 31.8 | 32.0 |   31.30 |
 | SanDisk Ultra Plus 128GB       | 34.4 | 30.0 | 31.1 | 36.1 | 33.3 |   32.97 |
 | SanDisk Extream 64GB SDXC I U3 | 34.4 | 35.0 | 30.8 | 35.9 | 37.6 |   34.73 |
 | SanDisk 64GB SDXC I U1         | 35.6 | 36.2 | 31.6 | 39.0 | 35.7 |   35.62 |
@@ -39,7 +41,11 @@ Android 폰, 또는 카메라에서 쓰기 위해 구입했던 SD Card에 대하
 
 ## Method
 
+Case of "SanDisk Ultra Plus 128GB"
+
 #### Read
+
+Just use reported value
 
 {:.wrap}
 ```console
@@ -53,6 +59,8 @@ $
 ```
 
 #### Write
+
+Use calculated value `1024 MB / real second`
 
 {:.wrap}
 ```console
@@ -85,3 +93,7 @@ sys	0m0.148s
 $ 
 ```
 
+```
+1024 / 29.797
+34.36587575930462798268
+```
