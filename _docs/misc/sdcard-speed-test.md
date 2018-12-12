@@ -18,6 +18,7 @@ Android 폰, 또는 카메라에서 쓰기 위해 구입했던 SD Card에 대하
 {:.fit.styled}
 | READ SPEED                     | 1st  | 2nd  | 3rd  | 4th  | 5th  | average |
 |--------------------------------|------|------|------|------|------|---------|
+| SanDisk Extreme PRO V30 U3 C10 | 82.6 | 83.9 | 83.5 | 83.4 | 84.2 |   83.52 |
 | SanDisk Ultra 200GB 2018 Spain | 82.6 | 81.3 | 83.3 | 82.5 | 82.9 |   82.62 |
 | SanDisk Ultra Plus 128GB       | 76.0 | 76.1 | 76.0 | 75.5 | 75.9 |   75.90 |
 | SanDisk Extream 64GB SDXC I U3 | 54.0 | 54.0 | 54.0 | 54.0 | 54.0 |   54.00 |
@@ -29,6 +30,7 @@ Android 폰, 또는 카메라에서 쓰기 위해 구입했던 SD Card에 대하
 {:.fit.styled}
 | WRITE SPEED                    | 1st  | 2nd  | 3rd  | 4th  | 5th  | average |
 |--------------------------------|------|------|------|------|------|---------|
+| SanDisk Extreme PRO V30 U3 C10 | 89.6 | 90.4 | 63.0 | 89.6 | 90.2 |   84.56 |
 | SanDisk Ultra 200GB 2018 Spain | 28.1 | 32.7 | 31.9 | 31.8 | 32.0 |   31.30 |
 | SanDisk Ultra Plus 128GB       | 34.4 | 30.0 | 31.1 | 36.1 | 33.3 |   32.97 |
 | SanDisk Extream 64GB SDXC I U3 | 34.4 | 35.0 | 30.8 | 35.9 | 37.6 |   34.73 |
