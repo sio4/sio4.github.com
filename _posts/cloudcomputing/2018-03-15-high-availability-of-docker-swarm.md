@@ -111,7 +111,7 @@ Swarm의 경우, Worker 관점에서 보면 하나의 Service를 여러 개의 T
   클러스터 구성이 매우 단순해진다. 단, 동기화할 Manager의 수가 너무 많으면
   상대정보 동기화가 Overhead가 될 수 있으므로 규모나 중요성에 따라 적절한
   수량의 Manager를 유지하여야 한다.
-* **지능화**를 위해, Swarm 클러스터는 Ralf Concensus Algorithm을 사용한다.
+* **지능화**를 위해, Swarm 클러스터는 Raft Concensus Algorithm을 사용한다.
   이 알고리즘의 사용으로 인하여, 전체 Manager의 과반수 이상이 유효한 경우,
   서비스를 멈추지 않고 가동시킬 수 있다. 과반수 규칙을 지키기 위해
   Manager의 수를 3, 5, 7 식으로 홀수로 유지하는 것이 효과적이다.
