@@ -424,7 +424,7 @@ CONFIGURED PORT. IT CAN BREAK YOUR ENTIRE NETWORK.
 
 ## Author
 
-Yonghwan SO <https://github.com/sio4>, <http://www.sauru.so>
+Yonghwan SO <https://github.com/sio4>, <https://sauruso.com>
 
 
 ## Copyright (GNU General Public License v3.0)
