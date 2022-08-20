@@ -77,7 +77,7 @@ Skeleton을 작성하는 방식에 대하여 얘기하려고 한다.
 있는 것은 아니다.
 
 [Hardened Layer, SoftLayer Custom Portal - Part 1]:{% post_url development/2016-01-16-hardened-layer %}
-[MEMO.T.C]:http://wiki.sauru.so
+[MEMO.T.C]:http://sio4.wikidot.com
 
 
 

@@ -11,6 +11,7 @@
     if site.favicon %}
     <link href='{{ site.favicon }}' rel='icon' type='image/x-icon'/>{%
     endif %}
+{% if jekyll.environment != "development" %}{% include ga4.html %}{% endif %}
 {% include seo.html %}
     {%
     if layout.common-ext-css %}{%
