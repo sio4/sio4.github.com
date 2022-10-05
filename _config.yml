@@ -66,6 +66,21 @@ defaults:
       path: "/search.json"
     values:
       layout: ""
+  -
+    scope:
+      path: "/categories/**"
+    values:
+      sitemap: false
+  -
+    scope:
+      path: "/tags/**"
+    values:
+      sitemap: false
+  -
+    scope:
+      path: "/page*/"
+    values:
+      sitemap: false
 
 ### social values ------------------------------------------------------------
 # Facebook OG related:
