@@ -1,7 +1,6 @@
 {%
 if site.share-links-active.twitter == false
 and site.share-links-active.facebook == false
-and site.share-links-active.google == false
 and site.share-links-active.linkedin == false %}{%
 else %}
         <section id="social-share-section" class="hidden-print">
@@ -18,13 +17,6 @@ else %}
           <a href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ page.url }}%3Futm_source%3Dfacebook%26utm_medium%3Dsocial%26utm_campaign%3Dsauruso" target="_blank"
             class="btn btn-social-icon btn-facebook" title="Share on Facebook">
             <span class="fa fa-fw fa-facebook" aria-hidden="true"></span>
-          </a>{%
-          endunless %}
-          <!--- Share on Google Plus -->{%
-          unless site.share-links-active.google == false %}
-          <a href="https://plus.google.com/share?url={{ site.url }}{{ page.url }}%3Futm_source%3Dgplus%26utm_medium%3Dsocial%26utm_campaign%3Dsauruso" target="_blank"
-            class="btn btn-social-icon btn-google" title="Share on Google+">
-            <span class="fa fa-fw fa-google-plus" aria-hidden="true"></span>
           </a>{%
           endunless %}
           <!--- Share on LinkedIn -->{%
