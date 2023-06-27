@@ -1,6 +1,6 @@
 ---
 title: "Understanding Full Virtualization, Paravirtualization, and..."
-tags: virtualization VMware white-paper
+tags: ["virtualization", "VMware", "white-paper"]
 categories: ["virtualization"]
 date: 2007-11-19T16:07:37+09:00
 last_modified_at: 2007-11-19T16:07:37+09:00

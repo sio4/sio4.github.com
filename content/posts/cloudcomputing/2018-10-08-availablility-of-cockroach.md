@@ -1,7 +1,7 @@
 ---
 title: CockroachDB 클러스터 가용성 시험
 subtitle: CockroachDB는 가용성 확보를 위해 어떻게 동작하는지?
-tags: DBMS high-availability cloud-computing
+tags: ["DBMS", "high-availability", "cloud-computing"]
 categories: ["cloudcomputing"]
 image: /assets/images/common/red-five-standing-by.jpg
 banner: /assets/images/common/red-five-standing-by.jpg

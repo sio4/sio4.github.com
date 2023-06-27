@@ -3,7 +3,7 @@ redirect_from:
 - /entry/getting-started-cloudfoundry/
 - /252/
 title: CloudFoundry, Getting Started
-tags: cloud-computing CloudFoundry development PaaS Ubuntu
+tags: ["cloud-computing", "CloudFoundry", "development", "PaaS", "Ubuntu"]
 categories: ["cloudcomputing"]
 date: 2011-08-22T17:01:43+09:00
 last_modified_at: 2011-08-22T17:06:06+09:00

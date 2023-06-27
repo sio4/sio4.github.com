@@ -1,7 +1,7 @@
 ---
 redirect_from: /blog/2015/07/23/setup-jekyll-for-github-page/
 title: Setup Jekyll for Github Pages
-tags: Jekyll Github Github-Pages howto
+tags: ["Jekyll", "Github", "Github-Pages", "howto"]
 categories: ["misc"]
 date: 2015-07-23 15:07:00+09:00
 ---

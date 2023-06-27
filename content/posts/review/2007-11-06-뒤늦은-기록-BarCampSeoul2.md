@@ -3,7 +3,7 @@ redirect_from:
 - /entry/records-on-conference-barcampseoul2/
 - /98/
 title: "행사: 뒤늦은 기록, BarCampSeoul2"
-tags: community conference software-appliance
+tags: ["community", "conference", "software-appliance"]
 categories: ["review"]
 date: 2007-11-06T01:11:09+09:00
 last_modified_at: 2010-07-02T13:53:48+09:00

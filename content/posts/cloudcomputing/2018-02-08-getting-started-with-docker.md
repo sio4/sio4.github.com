@@ -1,7 +1,7 @@
 ---
 title: "Docker: Getting Started with Docker"
 subtitle: Docker 시작하기
-tags: Docker Container cloud-computing
+tags: ["Docker", "Container", "cloud-computing"]
 categories: ["cloudcomputing"]
 image: /assets/logos/docker-horizontal.800.png
 banner: /assets/logos/docker-horizontal.800.png

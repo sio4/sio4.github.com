@@ -1,7 +1,7 @@
 ---
 title: Kibana Visual Builder로 이벤트 묶어 보기
 subtitle: Elastic Stack을 활용해서 서비스 이벤트 해석하기
-tags: monitoring analytics elastic-stack cloud-computing
+tags: ["monitoring", "analytics", "elastic-stack", "cloud-computing"]
 categories: ["cloudcomputing"]
 image: /attachments/silrok/silrok-visualbuilder-pl-annotations.png
 banner: /attachments/silrok/silrok-visualbuilder-pl-annotations.png

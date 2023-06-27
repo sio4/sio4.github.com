@@ -1,6 +1,6 @@
 ---
 title: CAOS, Cloud Album on Object Storage #1
-tags: object-storage SoftLayer cloud-computing my-projects photo
+tags: ["object-storage", "SoftLayer", "cloud-computing", "my-projects", "photo"]
 categories: ["development"]
 image: /attachments/20160428-caos/caos-202-sel-2.png
 banner: /attachments/20160428-caos/caos-202-sel-2.png

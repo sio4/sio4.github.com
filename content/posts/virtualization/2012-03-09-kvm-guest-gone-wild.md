@@ -1,7 +1,7 @@
 ---
 redirect_from: /entry/kvm-kvmclock-crazy-train-Guest-WORK-HARD/
 title: kvm, kvmclock, 그리고 "폭주 게스트"
-tags: troubleshooting kvm strace
+tags: ["troubleshooting", "kvm", "strace"]
 categories: ["virtualization"]
 date: 2012-03-09T13:57:05+09:00
 last_modified_at: 2012-03-09T13:57:05+09:00

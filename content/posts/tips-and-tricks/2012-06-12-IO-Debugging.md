@@ -1,7 +1,7 @@
 ---
 redirect_from: /entry/io-debugging/
 title: I/O Debugging
-tags: debugging Linux performance
+tags: ["debugging", "Linux", "performance"]
 categories: ["tips-and-tricks"]
 date: 2012-06-12T12:30:49+09:00
 last_modified_at: 2012-06-12T12:30:49+09:00

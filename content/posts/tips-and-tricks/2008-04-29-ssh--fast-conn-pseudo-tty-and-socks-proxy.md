@@ -1,7 +1,7 @@
 ---
 redirect_from: /entry/ssh-tweaks-quick-connection-pseudo-tty-sock-proxy/
 title: "SSH: 빠른 접속, Pseudo-tty, 웹필터 회피"
-tags: network tips
+tags: ["network", "tips"]
 categories: ["tips-and-tricks"]
 date: 2008-04-29T02:36:57+09:00
 last_modified_at: 2010-07-04T21:44:26+09:00

@@ -1,6 +1,6 @@
 ---
 title: Meet the Architects
-tags: architect development video
+tags: ["architect", "development", "video"]
 categories: ["development"]
 date: 2007-05-29T17:47:23+09:00
 last_modified_at: 2007-05-29T17:47:23+09:00

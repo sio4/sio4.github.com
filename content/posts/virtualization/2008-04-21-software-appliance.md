@@ -1,6 +1,6 @@
 ---
 title: 소프트웨어 어플라이언스,
-tags: software-appliance virtualization Linux
+tags: ["software-appliance", "virtualization", "Linux"]
 categories: ["virtualization"]
 date: 2008-04-21T16:03:53+09:00
 last_modified_at: 2008-04-21T16:03:53+09:00

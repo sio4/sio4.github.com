@@ -1,7 +1,7 @@
 ---
 redirect_from: /entry/The-top-10-dead-or-dying-computer-skills/
 title: "The top 10 dead (or dying) computer skills"
-tags: development wind-of-change
+tags: ["development", "wind-of-change"]
 categories: ["wind-of-change"]
 date: 2007-05-25T09:47:47+09:00
 last_modified_at: 2008-03-09T01:47:17+09:00

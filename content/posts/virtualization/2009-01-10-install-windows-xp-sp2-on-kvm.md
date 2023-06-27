@@ -1,6 +1,6 @@
 ---
 title: kvm에 Windows XP SP2 설치하기
-tags: kvm windows virtualization
+tags: ["kvm", "windows", "virtualization"]
 categories: ["virtualization"]
 date: 2009-01-10T19:12:51+09:00
 last_modified_at: 2009-01-10T19:12:51+09:00

@@ -1,7 +1,7 @@
 ---
 title: "Docker Cloud에서 자동빌드하기"
 subtitle: Setting Automated Build on Docker Cloud
-tags: Docker Container Github cloud-computing
+tags: ["Docker", "Container", "Github", "cloud-computing"]
 categories: ["cloudcomputing"]
 image: /attachments/docker/docker-cloud.automated-build.png
 banner: /attachments/docker/docker-cloud.automated-build.png

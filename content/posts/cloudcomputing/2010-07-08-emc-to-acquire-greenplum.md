@@ -3,7 +3,7 @@ redirect_from:
 - /entry/emc-to-acquire-greenplum/
 - /240/
 title: "EMC, 데이터 분석 전문업체 그린플럼 인수"
-tags: DBMS EMC Greenplum PostgreSQL cloud-computing
+tags: ["DBMS", "EMC", "Greenplum", "PostgreSQL", "cloud-computing"]
 categories: ["cloudcomputing"]
 date: 2010-07-08T10:10:29+09:00
 last_modified_at: 2011-03-04T13:50:02+09:00

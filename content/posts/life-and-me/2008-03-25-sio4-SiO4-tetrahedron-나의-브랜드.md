@@ -3,7 +3,7 @@ redirect_from:
 - /entry/sio4-tetrahedron-my-digital-brand/
 - /151/
 title: sio4, SiO4 Tetrahedron, 나의 브랜드.
-tags: brand geology
+tags: ["brand", "geology"]
 categories: ["life-and-me"]
 date: 2008-03-25T00:55:07+09:00
 last_modified_at: 2010-07-02T15:07:01+09:00

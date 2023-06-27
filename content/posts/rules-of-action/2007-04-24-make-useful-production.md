@@ -1,7 +1,7 @@
 ---
 redirect_from: /entry/make-production-that-meet-targeted-level/
 title: "목표: 쓸만한 제품을 만들자!"
-tags: rules-of-action idea
+tags: ["rules-of-action", "idea"]
 categories: ["rules-of-action"]
 date: 2007-04-24T10:56:21+09:00
 last_modified_at: 2010-07-02T15:42:54+09:00

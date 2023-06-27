@@ -1,7 +1,7 @@
 ---
 title: 사랑으로 일하기
 subtitle: 국민대학교 소프트웨어학부 이민석 교수님
-tags: rules-of-action memories
+tags: ["rules-of-action", "memories"]
 categories: ["life-and-me"]
 date: 2018-10-04T11:42:00+0900
 ---

@@ -1,7 +1,7 @@
 ---
 redirect_from: /entry/focusing-and-activating-on-windows/
 title: 이방인 이야기 - 창 포커스
-tags: user-interface Linux windows comapny
+tags: ["user-interface", "Linux", "windows", "comapny"]
 categories: ["misc"]
 date: 2008-03-12T00:46:59+09:00
 last_modified_at: 2010-07-05T09:10:26+09:00

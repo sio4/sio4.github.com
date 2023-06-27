@@ -1,6 +1,6 @@
 ---
 title: SSH SOCKS Proxy, 그리고 보안
-tags: security network SSH
+tags: ["security", "network", "SSH"]
 categories: ["tips-and-tricks"]
 date: 2008-04-28T00:08:59+09:00
 last_modified_at: 2008-04-28T00:08:59+09:00

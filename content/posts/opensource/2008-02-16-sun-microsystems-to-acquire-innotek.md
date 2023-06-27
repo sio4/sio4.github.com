@@ -1,7 +1,7 @@
 ---
 redirect_from: /entry/Sun-Microsystems-Announces-Agreement-to-Acquire-innotek/
 title: '"Sun Microsystems to Acquire innotek"'
-tags: news sun-microsystems VirtualBox wind-of-change open-source
+tags: ["news", "sun-microsystems", "VirtualBox", "wind-of-change", "open-source"]
 categories: ["opensource"]
 date: 2008-02-16T16:03:57+09:00
 last_modified_at: 2008-03-09T02:38:58+09:00

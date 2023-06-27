@@ -1,7 +1,7 @@
 ---
 title: "돌아보기: 가상화와 클라우드 컴퓨팅"
 subtitle: "Look back: About Virtualization And Cloud Computing"
-tags: cloud-computing virtualization
+tags: ["cloud-computing", "virtualization"]
 categories: ["wind-of-change"]
 date-original: 2009-08-24T00:00:00+09:00
 date: 2018-02-01T14:00:00+09:00

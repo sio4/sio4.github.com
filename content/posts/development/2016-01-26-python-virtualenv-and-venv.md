@@ -1,6 +1,6 @@
 ---
 title: Python Virtual(Isolated) Environments
-tags: Python isolation setup
+tags: ["Python", "isolation", "setup"]
 categories: ["development"]
 date: Tue, 26 Jan 2016 14:11:55 +0900
 ---

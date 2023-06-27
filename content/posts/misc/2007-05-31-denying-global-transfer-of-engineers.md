@@ -1,7 +1,7 @@
 ---
 redirect_from: /blog/2007/05/31/denying-global-transfer-of-engineers/
 title: 엔지니어의 외국기업 이직을 금지?
-tags: engineer 
+tags: ["engineer", ""]
 categories: ["misc"]
 date: 2007-05-31T13:53:56+09:00
 last_modified_at: 2007-05-31T13:53:56+09:00

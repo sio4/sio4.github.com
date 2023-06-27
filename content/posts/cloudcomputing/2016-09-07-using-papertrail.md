@@ -1,6 +1,6 @@
 ---
 title: Cloud App에서 PaperTrail 사용하기
-tags: logging monitoring cloud-computing
+tags: ["logging", "monitoring", "cloud-computing"]
 categories: ["cloudcomputing"]
 image: /attachments/papertrail/ptrail-101-concept.jpg
 banner: /attachments/papertrail/ptrail-101-concept.jpg

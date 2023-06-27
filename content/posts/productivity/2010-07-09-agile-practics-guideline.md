@@ -1,7 +1,7 @@
 ---
 redirect_from: /entry/practices-of-an-agile-developer/
 title: 애자일 프랙티스 가이드라인 요약
-tags: agile productivity
+tags: ["agile", "productivity"]
 categories: ["productivity"]
 date: 2010-07-09T16:36:43+09:00
 last_modified_at: 2010-07-09T16:36:43+09:00

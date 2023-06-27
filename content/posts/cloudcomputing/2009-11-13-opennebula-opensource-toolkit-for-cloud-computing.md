@@ -1,7 +1,7 @@
 ---
 redirect_from: /entry/opennebula-opensource-toolkit-for-cloud-computing/
 title: "OpenNebula: 클라우드 컴퓨팅을 위한 오픈소스 도구"
-tags: OpenNebula virtualization open-source cloud-computing
+tags: ["OpenNebula", "virtualization", "open-source", "cloud-computing"]
 categories: ["cloudcomputing"]
 date: 2009-11-13T08:45:42+09:00
 last_modified_at: 2011-03-04T13:50:20+09:00

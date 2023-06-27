@@ -2,7 +2,7 @@
 title: Hardened Layer, SoftLayer Custom Portal - Part 1
 image: /attachments/20160116-hl-v1-servers.png
 banner: /attachments/20160116-hl-v1-servers.png
-tags: hardened-layer SoftLayer cloud-computing emberjs ruby-on-rails API
+tags: ["hardened-layer", "SoftLayer", "cloud-computing", "emberjs", "ruby-on-rails", "API"]
 categories: ["development"]
 date: Sat, 16 Jan 2016 02:55:00 +0900
 ---

@@ -1,7 +1,7 @@
 ---
 redirect_from: /entry/eucalyptus-open-source-cloud-computing-platform/
 title: Eucalyptus, Open Source CloudComputing Platform
-tags: Eucalyptus open-source cloud-computing
+tags: ["Eucalyptus", "open-source", "cloud-computing"]
 categories: ["cloudcomputing"]
 date: 2009-11-13T08:42:26+09:00
 last_modified_at: 2011-03-04T13:49:16+09:00

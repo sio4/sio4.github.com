@@ -1,7 +1,7 @@
 ---
 redirect_from: /entry/공개소프트웨어-그리고-관리비용-Web-Server-Software-and-Malware/
 title: 공개소프트웨어, 그리고 관리비용
-tags: management-cost google open-source
+tags: ["management-cost", "google", "open-source"]
 categories: ["opensource"]
 date: 2007-06-07T10:53:13+09:00
 last_modified_at: 2008-03-09T01:43:18+09:00

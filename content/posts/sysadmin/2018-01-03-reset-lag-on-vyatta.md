@@ -1,7 +1,7 @@
 ---
 title: Vyatta 네트워크 문제 추적 Part 2 - LACP
 subtitle: Vyatta의 LACP 단절 문제에 대한 Work Around
-tags: Vyatta LACP troubleshooting network
+tags: ["Vyatta", "LACP", "troubleshooting", "network"]
 categories: ["sysadmin"]
 image: /attachments/vyatta-troubleshooting/vyatta-lacp-reset.png
 banner: /attachments/vyatta-troubleshooting/vyatta-lacp-reset.png

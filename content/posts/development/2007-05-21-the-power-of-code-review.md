@@ -1,7 +1,7 @@
 ---
 redirect_from: /entry/the-power-of-code-review/
 title: '"The Power of Code Review"'
-tags: version-control development collaboration code-review
+tags: ["version-control", "development", "collaboration", "code-review"]
 categories: ["development"]
 date: 2007-05-21T14:15:45+09:00
 last_modified_at: 2010-07-02T18:59:11+09:00

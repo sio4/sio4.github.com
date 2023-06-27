@@ -1,7 +1,7 @@
 ---
 redirect_from: /entry/first-sight-of-ubuntu-1004-lucid-lynx%EC%9D%98/
 title: "리뷰: Ubuntu 10.04 Lucid Lynx의 첫인상"
-tags: Ubuntu
+tags: ["Ubuntu"]
 categories: ["review"]
 date: 2010-05-09T13:29:00+09:00
 last_modified_at: 2010-07-07T13:34:43+09:00

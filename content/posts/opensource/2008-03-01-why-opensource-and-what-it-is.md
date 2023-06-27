@@ -1,7 +1,7 @@
 ---
 redirect_from: /entry/왜-오픈소스인가-그게-뭔데/
 title: 왜 오픈소스인가? 그게 뭔데?
-tags: open-source sun-microsystems
+tags: ["open-source", "sun-microsystems"]
 categories: ["opensource"]
 date: 2008-03-01T00:10:30+09:00
 last_modified_at: 2008-03-09T01:25:50+09:00

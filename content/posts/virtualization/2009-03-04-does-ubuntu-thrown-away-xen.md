@@ -1,6 +1,6 @@
 ---
 title: 정말 우분투는 Xen을 버리는 것일까?
-tags: Ubuntu Xen
+tags: ["Ubuntu", "Xen"]
 categories: ["virtualization"]
 date: 2009-03-04T09:43:40+09:00
 last_modified_at: 2009-03-04T10:08:33+09:00
