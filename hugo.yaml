@@ -1,3 +1,50 @@
-baseURL: 'http://example.org/'
-languageCode: 'en-us'
-title: 'My New Hugo Site'
+baseURL: https://sauruso.com/
+languageCode: ko-KR
+title: 소용환의 생각 저장소
+
+# next two line is important to make the URL as the same as before
+# frontmatter.date and permalinks.posts
+frontmatter:
+  date: [":filename", ":default"]
+
+permalinks:
+  posts: /blog/:slug
+
+# theme settings -------------------------------------------------------------
+theme: beautifulhugo
+
+params:
+  subtitle: Free Software, Cloud Computing, and Troubleshooting
+  favicon: /assets/images/favicon.ico
+  logo: /assets/images/sauru-20150806.jpg
+  bigimg:
+    - src: /assets/images/road.jpg
+      desc: Highway 89, Page, AZ
+      # https://www.google.com/maps/@36.94091,-111.4952814,2a,75y,4.29h,82.84t/data=!3m9!1e1!3m7!1stIxgWycq0dkCs1Mg6sJD6w!2e0!7i13312!8i6656!9m2!1b1!2i40?entry=ttu
+  rss: true
+
+author:
+  # name: Yonghwan SO
+  # alias: 소용환
+  facebook: yonghwan.so
+  # twitter: scinix
+  github: sio4
+  linkedin: scinix
+  stackoverflow: users/1111002/sio4
+
+menu:
+  main:
+    - name: About
+      url: /about
+      weight: 1
+    - name: Projects
+      url: /projects
+      weight: 2
+    - name: Cats
+      url: /categories
+      weight: 3
+    - name: Tags
+      url: /tags
+      weight: 4
+    - name: Feeds
+      url: http://feeds.feedburner.com/sauru-so
