@@ -8,7 +8,7 @@ frontmatter:
   date: [":filename", ":default"]
 
 permalinks:
-  posts: /blog/:slug
+  blog: /blog/:slug
 
 # theme settings -------------------------------------------------------------
 theme: beautifulhugo
