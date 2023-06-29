@@ -11,7 +11,6 @@ date: 2018-09-17T15:40:00+0900
 손보게 됐고, 이 글은 그 과정 중 일부를 기록으로 남기는 것이다.  
 애초에 괜히 건드렸다... 싶기도 하고, 뭐, 그러면서 하나 더 배우는 거지...
 
-{:.boxed}
 > 지난 봄, 나름 활발하게 Docker 관련 글을 써 올리다가, 한동안 쉬었다.
 > 생각지도 못했던 가족여행을 두 번이나, 그것도 해외로 다녀오면서 좀
 > 바빴었고, 글을 쓸 틈도, 주제도 갖지 못했었다. 사실, 다음 글은...
@@ -53,7 +52,6 @@ VSI를 다시 시작했다. 그런데... 내 시스템은 다시 올라오지 �
 
 Logstash 로그를 보니 다음과 같은 로그가 쌓이고 있더라...
 
-{:.wrap}
 ```
 [2018-09-17T11:17:49,067][WARN ][logstash.outputs.elasticsearch] Could not index event to Elasticsearch. {:status=>400, :action=>["index", {:_id=>"65511479", :_index=>"ticket-2018.09", :_type=>"doc", :_routing=>nil}, #<LogStash::Event:0x9e27d6b>], :response=>{"index"=>{"_index"=>"ticket-2018.09", "_type"=>"doc", "_id"=>"65511479", "status"=>400, "error"=>{"type"=>"illegal_argument_exception", "reason"=>"Rejecting mapping update to [ticket-2018.09] as the final mapping would have more than 1 type: [ticket, doc]"}}}}
 ```
@@ -172,7 +170,6 @@ Logstash 로그를 보니 다음과 같은 로그가 쌓이고 있더라...
 만들어내는 것이 가능하다고 한다. 해보자. (아래의 예는, 시험삼아 하나의
 Index를 잡아서 해본 것이다.)
 
-{:.wrap}
 ```console
 $ curl -X POST "localhost:9200/_reindex" -H 'Content-Type: application/json' -d'
 {
@@ -199,7 +196,7 @@ $ curl -X POST "localhost:9200/_reindex" -H 'Content-Type: application/json' -d'
 오호라... 봐라. `took`는 걸린 시간일 것이고 `total`은 처리한 건 수겠지. 뭔가
 했다! 한 번 보자. 아마 지 의도대로 원하는 값을 넣어서 뭔가 했겠지!
 
-![](/attachments/es-misc/reindex-1.png){:.border.dropshadow}
+![](/attachments/es-misc/reindex-1.png)
 
 오! 역시 했다! 그런데 어라? 뭔가 의도했던 것과는 다르다.
 `ticket-2018.08-1`이라는 이름으로 새롭게 Index를 만들긴 했는데, 여전히
@@ -228,7 +225,6 @@ $ curl -X POST "localhost:9200/_reindex" -H 'Content-Type: application/json' -d'
 
 실천은?
 
-{:.wrap}
 ```console
 $ curl -X POST "localhost:9200/_reindex" -H 'Content-Type: application/json' -d'
 {
@@ -252,7 +248,7 @@ $
 명령을 존중하는 Elasticsearch에게 던져줬다. "`_type`을 `doc`으로 지정해줘"
 이렇게... 그 결과는,
 
-![](/attachments/es-misc/reindex-2.png){:.border.dropshadow}
+![](/attachments/es-misc/reindex-2.png)
 
 이렇게, 나머지는 원본 Index와 동일한 Field와 값을 갖지만 별도로 지정한
 `_type`은 새로운 값으로 변경된 새 Index를 만들어냈다. 이제 전체적으로 이
@@ -263,7 +259,6 @@ $
 
 이제, 전체 Index, `ticket-*`를 참고하여 아래와 같이 새 Index를 만들어준다.
 
-{:.wrap}
 ```console
 $ curl -X POST "localhost:9200/_reindex" -H 'Content-Type: application/json' -d'
 {
@@ -285,7 +280,6 @@ $
 
 그리고 기존 Index를 모두 지우고,
 
-{:.wrap}
 ```console
 $ for y in 2014 2015 2016 2017 2018; do
 >   for m in 01 02 03 04 05 06 07 08 09 10 11 12; do
@@ -299,7 +293,6 @@ $
 새 임시 Index로부터 다시 원래의 이름으로 Index를 만들어준다. (뭐, Index의
 이름이 딱히 중요한 것은 아니니 구테여 하지 않아도 되는 작업이긴 하다.)
 
-{:.wrap}
 ```console
 $ curl -X POST "localhost:9200/_reindex" -H 'Content-Type: application/json' -d'
 {
@@ -328,7 +321,6 @@ $
 이제, 새 버전에 맞는 새로운 Index 세트를 갖게 되었다.
 
 
-{:.boxed}
 이 글은 [Elastic Stack](/tags/elastic-stack/) 묶음글의 외전입니다~!
 
 

@@ -47,7 +47,7 @@ date: 2015-09-17 11:23:00+09:00
 설정이 되어있었지만(= 아래 그림처럼 "Network Boot"로 되어있어야 해당
 NIC를 PXE 부팅에 사용한다.) IPL 순서에서는 아예 항목이 빠져 있었다!
 
-![](/attachments/20150917-pxe-1-bootoptions.jpg){:.fit}
+![](/attachments/20150917-pxe-1-bootoptions.jpg)
 
 이게 무슨 일인가? Firmware 설정을 초기화도 해보고, 아예 Jumper Switch를
 조절하여 Clear도 해봤지만, 어떤 조치로도 IPL 목록에서 사라진 NIC를 찾을
@@ -60,7 +60,7 @@ NIC를 PXE 부팅에 사용한다.) IPL 순서에서는 아예 항목이 빠져 
 
 그래서 부팅 화면을 다시 찬찬히 들여다 봤다! 그리고 그 화면!
 
-![](/attachments/20150917-pxe-2-nic-config.jpg){:.fit}
+![](/attachments/20150917-pxe-2-nic-config.jpg)
 
 이렇게, Broadcom OEM의 Onboard NIC 역시 Configuration Menu에 진입하는
 키가 있었다는 것. (기왕에 Onboard면 ROM-Based Setup에서 다 처리하면
@@ -69,7 +69,7 @@ NIC를 PXE 부팅에 사용한다.) IPL 순서에서는 아예 항목이 빠져 
 Ctrl-S를 누리고 메뉴에 진입해보니, 아래와 같이 개별 Port 목록이 나와
 있었다.
 
-![](/attachments/20150917-pxe-3-nic-list.jpg){:.fit}
+![](/attachments/20150917-pxe-3-nic-list.jpg)
 
 사용하려는 첫번째 Port를 선택하여 설정 상태를 보니... "Boot Protocol"
 이라는 항목의 값이 "NONE"으로 되어있는 것이 아닌가?
@@ -79,7 +79,7 @@ Ctrl-S를 누리고 메뉴에 진입해보니, 아래와 같이 개별 Port 목�
 값 변경을 해보니, PXE 외에도 Remote Program Load 라는 항목도 있었다.
 우리에게 필요한 PXE로 설정을 한 상태의 내용은 아래와 같다.
 
-![](/attachments/20150917-pxe-4-enabled.jpg){:.fit}
+![](/attachments/20150917-pxe-4-enabled.jpg)
 
 (전에 몰랐던 것인데, NIC 차원에서 VLAN을 지정할 수 있게 되어있더라.
 이건 몰랐는데... OS에서 제어 가능한 것을 이렇게 딱딱하게 설정하는
@@ -88,7 +88,7 @@ Ctrl-S를 누리고 메뉴에 진입해보니, 아래와 같이 개별 Port 목�
 아무튼, 설정을 마치고 다시 ROM-Based Setup에 진입하여 보니 다음과
 같이 IPL 목록에 정상적으로 항목이 등장하였다.
 
-![](/attachments/20150917-pxe-5-ipl-list.jpg){:.fit}
+![](/attachments/20150917-pxe-5-ipl-list.jpg)
 
 참으로 말도 많고 탈도 많은... 그러나 남는 것은 없을 것 같은 프로젝트.
 이렇게 시시한 경험과 상식만 생기는구나...
@@ -99,10 +99,10 @@ Ctrl-S를 누리고 메뉴에 진입해보니, 아래와 같이 개별 Port 목�
 눈에 보이는 방식들.
 
 Discovery 에 실패하였을 때 발생하는 E51 오류.
-![](/attachments/20150917-pxe-6-e51.jpg){:.fit}
+![](/attachments/20150917-pxe-6-e51.jpg)
 
 Cable 연결이 정상적이지 않을 때(Carrier가 없을 때) 나타나는 E61 오류.
-![](/attachments/20150917-pxe-7-e61.jpg){:.fit}
+![](/attachments/20150917-pxe-7-e61.jpg)
 
 아무튼, 위의 두 오류 역시 PXE가 동작하는 증거!
 

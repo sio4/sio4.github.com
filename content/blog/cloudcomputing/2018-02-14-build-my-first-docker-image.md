@@ -106,7 +106,6 @@ hello: hello.c
 아... Hello World에 무슨 `-Wall` 이냐... ㅠ.ㅠ 아무튼, `make` 명령으로
 이 코드를 컴파일한 후, 정상적으로 정적 컴파일이 되었는지 확인한다.
 
-{:.wrap}
 ```console
 $ make
 gcc -static -Wall hello.c -o hello
@@ -192,7 +191,6 @@ $
 
 오... 돌아간다. 추가로, 만들어진 이미지 정보를 보면 아래와 같다.
 
-{:.wrap}
 ```console
 $ sudo docker image ls
 REPOSITORY              TAG                     IMAGE ID            CREATED             SIZE

@@ -235,7 +235,7 @@ $
 (앞서 한 번 본 적이 있는 녀석이긴 하다.) 이제, 위의 설정에 의해 아래와
 같이 정리된 결과를 얻을 수 있다.
 
-![SHOT](/attachments/elastic-nms/elk-501-netflow-index.jpg){:.fit.bordered}
+![SHOT](/attachments/elastic-nms/elk-501-netflow-index.jpg)
 
 
 
@@ -292,7 +292,7 @@ filter {
 
 이제, 이렇게... 의도한 바에 맞는 데이터가 쌓이는 것을 확인할 수 있다.
 
-![SHOT](/attachments/elastic-nms/elk-502-netflow-translated.jpg){:.fit.bordered}
+![SHOT](/attachments/elastic-nms/elk-502-netflow-translated.jpg)
 
 시험삼아서 파일을 하나 땡겨보자.
 
@@ -395,7 +395,7 @@ filter {
 이제 좀 깔끔해졌다.
 
 
-![SHOT](/attachments/elastic-nms/elk-503-netflow-dashboard.png){:.fit.bordered}
+![SHOT](/attachments/elastic-nms/elk-503-netflow-dashboard.png)
 
 
 최종적으로, `translate`를 이용한 부가정보 입력과 일부 계산에 의한 필드 삽입

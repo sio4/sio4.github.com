@@ -11,7 +11,7 @@ date: 2016-03-13 14:55 +09:00
 Heroku에 신규 App을 등록/배포하면서, 그 과정을 정리한 것으로 Heroku를
 사용하기 위한 가장 기본적인 Workflow를 설명하고 있다.
 
-![](/assets/logos/heroku-light.jpg){:.fit.dropshadow}
+![](/assets/logos/heroku-light.jpg)
 
 2009년에 [Heroku]를 처음 접했던 느낌을 정확하게 기억하지는 못하겠지만,
 뭐랄까... "아! 이것이야말로 클라우드!?" 같은 생각을 했었던 것 같다.
@@ -78,7 +78,6 @@ $
 Application 재배포**가 된다면, "지속적인 개발" 모드에서 상당히 편한
 방식이 될 것이다.
 
-{:.point}
 PaaS
 : 개발, 배포, 운영 Life Cycle을 통합하여 Cycle로 단순화해줘야 PaaS!
 
@@ -327,7 +326,7 @@ Heroku 환경으로 밀어 넣으면 배포가 끝나게 된다.
 확인이 가능하다. (이 방식의 확인은 지나간 오류를 확인할 수도 있으니
 특히나 자동배포 환경이라면 꼭 사용하게 될 기능이기도 하다.)
 
-![](/attachments/heroku-siso-01-deploy-failed.png){:.fit.dropshadow}
+![](/attachments/heroku-siso-01-deploy-failed.png)
 
 뭔가 많은 것이 기다리고 있을 것 같은데, 하나씩 천천히 풀어봐야 할
 것 같다.
@@ -410,7 +409,6 @@ $
 이미 Heroku는 이에 대한 대비가 되어있다. (뭐, Heroku 만의 특별한 것은
 아니고 일반적인 이야기이긴 하다.)
 
-{:.wrap}
 ```console
 > Running: bundle install --without development:test --path vendor/bundle --binstubs vendor/bundle/bin -j4 --deployment
 ```
@@ -498,7 +496,6 @@ $
 붙여주게 되며, 이렇게 as-a-service로 제공되는 **DBMS에 대한 연결을
 서비스 제공자가 알아서** 해주는 것이라고 볼 수 있다.
 
-{:.point}
 Cloud Computing
 : 사용자가 많은 것을 잊을 수 있어야 Cloud Computing이다.
 : 그러기 위해서 Cloud Computing은, 친절해야 한다.
@@ -552,7 +549,7 @@ $
 이렇게 추가된 Addon은 Web Console을 통해서도 그 상태를 볼 수 있다.
 (그림의 아래쪽)
 
-![](/attachments/heroku-siso-02-pre-provision.png){:.fit.dropshadow}
+![](/attachments/heroku-siso-02-pre-provision.png)
 
 
 
@@ -627,12 +624,12 @@ $
 본 화면에서는 비어있던 Dynos(Heroku가 Process, Computing을 다루는
 개념/단위)에 web과 worker가 Free Dynos로 생성되어 있는 것을 볼 수 있다.
 
-![](/attachments/heroku-siso-03-resources.png){:.fit.dropshadow}
+![](/attachments/heroku-siso-03-resources.png)
 
 그리고 Activity Feed에는 Build 및 Deploy가 성공적으로 된 것을 확인할
 수 있다.
 
-![](/attachments/heroku-siso-06-deployed.png){:.fit.dropshadow}
+![](/attachments/heroku-siso-06-deployed.png)
 
 
 
@@ -772,7 +769,7 @@ $
 
 이제 화면이 떴다!
 
-![](/attachments/heroku-siso-10-running.png){:.fit.dropshadow}
+![](/attachments/heroku-siso-10-running.png)
 
 다시, 위에서 활용했던 `heroku logs` 명령으로 로그를 보면,
 
@@ -811,7 +808,6 @@ $
 이용하여 실행환경을 확인하고 설정할 수 있다. 먼저, 다음과 같이 이미
 설정된 내용을 확인할 수 있다.
 
-{:.wrap}
 ```console
 $ heroku config
 === hc-siso Config Vars
@@ -872,7 +868,7 @@ ENV['FACEBOOK_KEY']
 이제, Facebook과 연동이 가능해졌다. 다음 화면은 이 App에 대한 인증을
 Facebook을 통하여 얻는 과정을 잡은 것이다.
 
-![](/attachments/heroku-siso-11-facebook.png){:.fit.dropshadow}
+![](/attachments/heroku-siso-11-facebook.png)
 
 
 
@@ -929,7 +925,6 @@ $
 자유롭게 흘러가는 구름 속의 물방울에 기어이 좌표(IP)를 붙이는 것이 아닌
 논리적인 DNS의 연결고리를 통한 접근성으로 제공되어야 한다.
 
-{:.point}
 Service Address
 : 흘러가는 구름 속의 무의미한 IP 주소가 아닌 논리적 DNS의 연결고리
 
@@ -951,12 +946,12 @@ Service Address
 서비스를 받는 것이다. 그래서 보면, 아래 그림에서 보는 바와 같이
 하루 24시간 중 18시간만 사용할 수 있도록 제한되어 있다.
 
-![](/attachments/heroku-siso-04-free-plan.png){:.fit.dropshadow}
+![](/attachments/heroku-siso-04-free-plan.png)
 
 공짜가 아닌 plan을 보면, 아래와 같이 Hobby, Standard, Performance 등의
 plan이 존재하고 각각의 자원 규모에 따라 비용이 발생하게 된다.
 
-![](/attachments/heroku-siso-05-plans.png){:.fit.dropshadow}
+![](/attachments/heroku-siso-05-plans.png)
 
 Professional로 분류되어 있는 Standard의 가장 저렴한 Plan은 비용이
 월간 $25이며, 4년 TCO로 환산하면 $1,200. 우리 돈으로 환산하면 약
@@ -969,4 +964,4 @@ Professional로 분류되어 있는 Standard의 가장 저렴한 Plan은 비용�
 
 끝!
 
-![](/assets/logos/heroku-mark.png){:.fit.dropshadow}
+![](/assets/logos/heroku-mark.png)

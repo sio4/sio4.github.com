@@ -24,7 +24,6 @@ date: 2017-10-13T10:00:00+09:00
 * _Calling All Logs! Graylog2 3편: 추가설정_
 * [Calling All Logs! Graylog2 4편: 기록]
 
-{:.boxed}
 > 오픈소스 로그분석 시스템인 [Graylog]에 대한 문서는 [Graylog Docs]에서
 > 찾을 수 있으며, [Graylog Github]에서 그 소스를 받아볼 수 있다.
 
@@ -63,18 +62,18 @@ date: 2017-10-13T10:00:00+09:00
 클러스터 정보, ElasticSearch 클러스터 정보, 인덱서 문제 등을 확인할 수
 있으며,
 
-![](/attachments/graylog2/graylog-510-overview-1.png){:.dropshadow}
+![](/attachments/graylog2/graylog-510-overview-1.png)
 
 아래쪽으로 내려가보면, 시스템 시간 정보(로그 관리 시스템에서 시간은 매우
 중요한 정보다.) 시스템 메시지 등의 정보도 확인이 가능하다.
 
-![](/attachments/graylog2/graylog-510-overview-2.png){:.dropshadow}
+![](/attachments/graylog2/graylog-510-overview-2.png)
 
 그리고 설정 부분에는 아래와 같이 Plugins에 대한 항목이 등장하는데, 아래
 보는 바와 같이, 이 시스템에는 Geo-Location Processor가 구성되어 있다.
 (이 얘기는 다시 등장한다)
 
-![](/attachments/graylog2/graylog-511-conf-plugins.png){:.dropshadow}
+![](/attachments/graylog2/graylog-511-conf-plugins.png)
 
 사실, 특별한 것은 없는 부분이긴 하다. :-)
 
@@ -148,7 +147,7 @@ Graylog 클러스터는 다량의 데이터를 처리하는 클러스터이며, 
 노드에 얼마나 많은 부하가 걸리고 있는지, 메모리 사용량에 부담은 없는지
 등의 다양한 정보를 확인할 수 있다.
 
-![](/attachments/graylog2/graylog-520-nodes.png){:.dropshadow}
+![](/attachments/graylog2/graylog-520-nodes.png)
 
 좀더 자세한 정보를 보게 되면, 아래와 같이 상태정보 요약을 함께 볼 수
 있으며 메모리, Heap 상태 외에도 처리량에 따른 Buffer의 상태에 대해서도
@@ -156,7 +155,7 @@ Graylog 클러스터는 다량의 데이터를 처리하는 클러스터이며, 
 올라가는 것을 볼 수 있는데 아쉽게 샷이 없네.) I/O 의존성이 큰 만큼,
 Disk Journal에 대해서도 친절하게 설명하고 있다.
 
-![](/attachments/graylog2/graylog-521-nodes-details.png){:.dropshadow}
+![](/attachments/graylog2/graylog-521-nodes-details.png)
 
 
 
@@ -166,7 +165,7 @@ Disk Journal에 대해서도 친절하게 설명하고 있다.
 Graylog의 관리 기능 중, 어떤 면에서는 가장 중요한 부분이 바로 이 인덱스
 관리 부분이다. 인덱스 관리 화면은 아래와 같다.
 
-![](/attachments/graylog2/graylog-540-indices.png){:.dropshadow}
+![](/attachments/graylog2/graylog-540-indices.png)
 
 상단의 Settings 부분을 보면 자동화된 인덱스 관리를 위한 설정 부분을
 확인할 수 있다. 현재 설정된 값을 보면, 시간을 기준으로 Rotation을 하도록
@@ -180,7 +179,7 @@ Graylog의 관리 기능 중, 어떤 면에서는 가장 중요한 부분이 바
 화면을 더 내려보면 아래와 같은 부분이 나온다. (일부 이미지 중첩이 있으니
 참고)
 
-![](/attachments/graylog2/graylog-541-indices-old.png){:.dropshadow}
+![](/attachments/graylog2/graylog-541-indices-old.png)
 
 현재 데이터가 쌓이고 있는 `graylog_2` 의 바로 전 인덱스인 `graylog_1`이
 아래에 보이는데, 설명을 보면 3일 전의 데이터를 담고 있다는 설명이 있다.
@@ -203,14 +202,14 @@ Graylog의 관리 기능 중, 어떤 면에서는 가장 중요한 부분이 바
 그리고 각각에 대하여 Role을 부여하여 별도의 권한을 줄 수 있는 구조가
 마련되어 있다. (Role 관리 화면은 그냥 지웠지만 비슷한 모양으로 되어있다.)
 
-![](/attachments/graylog2/graylog-550-users.png){:.dropshadow}
+![](/attachments/graylog2/graylog-550-users.png)
 
 사용자를 찍어서 들어가보면 다음과 같은 상세 설정 화면을 만나게 된다.
 이름 등의 기본정보 외에. 스트림에 대한 권한, 대시보드에 대한 권한 등을
 설정할 수 있다. 이러한 세부 권한 설정을 통하여, 각 관리자의 성격과 권한에
 맞는 기능 제공을 할 수 있다.
 
-![](/attachments/graylog2/graylog-551-users-details.png){:.dropshadow}
+![](/attachments/graylog2/graylog-551-users-details.png)
 
 나름 깔끔하고 정리가 잘 되어있으나 아쉬운 부분이 있다. 바로, 사용자에게
 Role을 줄 수는 있으나 그룹으로 관리하거나, Tenant 개념을 적용할 수 없다는
@@ -229,7 +228,7 @@ Role을 줄 수는 있으나 그룹으로 관리하거나, Tenant 개념을 적�
 이런 이유로, 기존 LDAP과의 연동이 지원된다면, 별도의 사용자 관리를 하지
 않아도 기업은 손쉽게 사용자 구성원의 인증과 권한 관리를 할 수 있다.
 
-![](/attachments/graylog2/graylog-552-users-ldap.png){:.dropshadow}
+![](/attachments/graylog2/graylog-552-users-ldap.png)
 
 운영하고 있는 LDAP이 없어서 연동시험을 해보지 못한 것은 아쉬운데...
 위의 그림을 보면, 편리하게 사용자의 연결, 그룹관리, 인증 관리 등을 할
@@ -244,7 +243,7 @@ Role을 줄 수는 있으나 그룹으로 관리하거나, Tenant 개념을 적�
 등의 것들을 파일 형태로 내려받거나, 이미 받아놓은 구성을 새 시스템에 올려
 편리하게 새로운 환경을 구성할 수 있도록 해주는 기능이다.
 
-![](/attachments/graylog2/graylog-560-content-pack.png){:.dropshadow}
+![](/attachments/graylog2/graylog-560-content-pack.png)
 
 위 와면의 Create 버튼은 일종의 설정 백업과 같은 역할을 할 수 있고, 왼쪽
 아래의 Import 기능을 이용하여 새 설정을 올릴 수도 있다.

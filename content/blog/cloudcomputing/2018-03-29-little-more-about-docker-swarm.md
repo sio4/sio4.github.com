@@ -110,7 +110,6 @@ Swarm Cluster의 Node가 된 상태가 아닌가? (앞서 말했지만, 라벨�
 
 아! 생각났다. (좀 어설펐나?)
 
-{:.wrap}
 ```console
 $ docker-machine ssh dev01 ps ax |grep dockerd
  1216 ?        Ssl  231:12 /usr/bin/dockerd -H tcp://0.0.0.0:2376 -H unix:///var/run/docker.sock --storage-driver overlay2 --tlsverify --tlscacert /etc/docker/ca.pem --tlscert /etc/docker/server.pem --tlskey /etc/docker/server-key.pem --label mode=standalone --label cluster=dev --label provider=softlayer
@@ -122,7 +121,6 @@ Host에 접속하여 `dockerd` 프로세스를 보면, 명령행에 Label 정보
 "[Docker Machine 다시 보기 #Mount]({{< relref "/blog/cloudcomputing/2018-03-09-little-more-about-docker-machine.md" >}}#mount)"
 부분의 끝부분에서 잠깐 설명했지만, 이 설정은 다음 파일에서 온다.
 
-{:.wrap}
 ```console
 $ docker-machine ssh dev01 cat /etc/systemd/system/docker.service.d/10-machine.conf
 [Service]
@@ -150,7 +148,6 @@ Engine을 대신해서, 이제 Node에 꼬리표를 달자. 우리는 지금 Doc
 
 먼저 현재의 Node 정보를 보면,
 
-{:.wrap}
 ```console
 $ docker node inspect dev01 --pretty 
 ID:			z9dj9cobdat235ou65kl0ztr3
@@ -162,7 +159,6 @@ Joined at:             	2018-03-12 06:37:37.783528309 +0000 utc
 요렇게 생겼다. 이제, `docker node update` 명령을 사용하여 새로운 꼬리표를
 달아보자.
 
-{:.wrap}
 ```console
 $ docker node update --label-add manager --label-add power=2x2 dev01 
 dev01
@@ -171,7 +167,6 @@ $
 
 결과는,
 
-{:.wrap}
 ```console
 $ docker node inspect --pretty self
 ID:			z9dj9cobdat235ou65kl0ztr3
@@ -193,7 +188,6 @@ Engine에 연연하지 말라더니 왜 그토록 라벨 타령을 하냐면, �
 
 아래의 예를 보자.
 
-{:.wrap}
 ```console
 $ docker service create --name ping --replicas 4 --constraint 'node.labels.power==2x2' alpine ping docker.com
 vrw0lj3h0qk6nf6wlj2fxsgg0
@@ -210,7 +204,6 @@ $
 Service를 생성하였다. 그리고 그 옵션의 인수로 준 것은 바로 앞서 지정한
 꼬리표 중의 하나이다. 결과는 어떻게 되었을까?
 
-{:.wrap}
 ```console
 $ docker service ps ping
 ID            NAME    IMAGE          NODE   DESIRED STATE CURRENT STATE
@@ -231,7 +224,6 @@ Label 외에도 `node.id`, `node.hostname`, `node.role`, `node.labels`,
 특정할 필요가 있을 때에는 유용할 수 있겠다.)
 
 
-{:.point}
 Placement Constraints
 : 어떤 Service를 실행할 때, 조건을 만족하는 특정 Node에서만 실행되도록
 배치 위치를 제한하고 모아주는 기능
@@ -269,7 +261,6 @@ Service를 각 지역에 골고루 배치시키게 되면 서비스 응답속도
 효과도 기대할 수 있다. 이렇게, **Service가 특정 조건에 대하여 골고루
 배치될 수 있도록 조정**해주는 기능 역시 Swarm은 제공하고 있다.
 
-{:.point}
 Placement Preferences
 : 어떤 Service를 특정 조건에 만족하는 Node들에게 고르게 분포시키도록
 배치 위치를 조정하고 펼쳐주는 기능 
@@ -315,7 +306,6 @@ Node를 의미하지는 않는다. 또한, Preferences의 경우에도 "가능�
 
 일단, 현재 상태는 이렇다.
 
-{:.wrap}
 ```console
 $ docker service ls
 ID            NAME  MODE        REPLICAS  IMAGE        PORTS
@@ -326,7 +316,6 @@ $
 여기서 아래와 같이, `docker service create` 명령을 사용해서 서비스를
 하나 더 만들어보자.
 
-{:.wrap}
 ```console
 $ docker service create --name mon --mode global alpine:3.7 ping 127.0.0.1
 qa8h079smnybfynbbbzt48hjt
@@ -341,7 +330,6 @@ $
 여기서도 새로운 옵션이 하나 등장하는데, `--mode`라는 옵션이다. 그리고
 다시 Service 목록을 살펴보면,
 
-{:.wrap}
 ```console
 $ docker service ls
 ID            NAME  MODE        REPLICAS  IMAGE        PORTS
@@ -360,7 +348,6 @@ default 값이기 때문에 `--mode` 옵션을 주지 않고 생성했었다.) �
 앞선 `docker service create` 명령에서 `--replicas` 옵션을 주지도 않았는데
 스스로 판단해서 세 개의 Task를 만들어냈다. 어디에?
 
-{:.wrap}
 ```console
 $ docker service ps mon
 ID            NAME                           IMAGE       NODE   DESIRED STATE
@@ -380,7 +367,6 @@ Task의 이름이 만들어지는 방식에 대해 알아봤었다. 그런데 �
 "1에서 출발하여 Replica의 수 만큼 증가하는 자연수"로 되어있는 Slot 번호가
 아닌 이상한 문자열이 그 자리를 차고 앉아 있는 것을 볼 수 있다. 뭐지? 뭐지?
 
-{:.wrap}
 ```console
 $ docker node ls
 ID                          HOSTNAME  STATUS  AVAILABILITY  MANAGER STATUS
@@ -403,7 +389,6 @@ Global Mode Service의 개념이기 때문에, 여기서는 Replica 수에 따�
 실행*"된다는 조건이다. Task의 갯수는 사람이 정하는 것이 아니고 Node의
 수가 정한다. 그래서,
 
-{:.wrap}
 ```console
 $ docker service scale mon=6
 mon: scale can only be used with replicated mode

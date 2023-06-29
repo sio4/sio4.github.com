@@ -88,7 +88,6 @@ Elastic Stack의 최신 버전을 사용하기 위해서 Elastic의 공식 저�
 APT 저장소를 구성하기 위해, 아래와 같이 Elastic에서 제공하는 GPG 키를 먼저
 등록해준다.
 
-{:.wrap}
 ```console
 $ wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
 OK
@@ -99,7 +98,6 @@ $
 수 있다. (설명을 간단하게 하기 위해 명령을 이용하여 파일을 생성하는 방식을
 사용하고 있지만, 편집기를 사용하여 해당 내용을 적어줘도 된다.)
 
-{:.wrap}
 ```console
 $ echo "deb https://artifacts.elastic.co/packages/6.x/apt stable main" | sudo tee -a /etc/apt/sources.list.d/elastic-6.x.list
 deb https://artifacts.elastic.co/packages/6.x/apt stable main

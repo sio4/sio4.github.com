@@ -11,7 +11,7 @@ last_modified_at: 2009-09-28T08:50:38+09:00
 예전엔 기본이었던것 같은데, 이젠 설정을 따로 해야 하는 것이 되어버렸다.
 telnet://localhost 이런거 말이다. 그것도 꽤 복잡해졌다.
 
-![](/attachments/2009-09-15-missing-handler.png){:.fit}
+![](/attachments/2009-09-15-missing-handler.png)
 
 요즘 진행하고 있는 프로젝트 중 하나에서 이 기능을 사용한다. 그래서 간만에
 들여다봤다.
@@ -46,18 +46,18 @@ Windows용 공개소프트웨어 터미널 에뮬레이터인 putty를 예로 �
 
 그리고 이런 식으로 시험해본다.
 
-![](/attachments/2009-09-15-telnet-protocol.png){:.fit}
+![](/attachments/2009-09-15-telnet-protocol.png)
 
 (프로토콜 처리기로 지정한 것이 있다면) 지정한 프로그램이 뜨기를 기대했건만,
 
-![](/attachments/2009-09-15-after-setup.png){:.fit}
+![](/attachments/2009-09-15-after-setup.png)
 
 그런데 이게 왠 대화상자? 헨들러를 지정했음에도 다시 어떤 것을 쓰겠냐고
 묻는다. 그래서 "아... 어떤건지는 알겠는데 계속 쓸건지를 묻나?" 하고
 "...기억합니다."에 표시하고 "확인"을 누르면 아무런 동작도 이루어지지
 않았다. 그래서,
 
-![](/attachments/2009-09-15-select-manually.png){:.fit}
+![](/attachments/2009-09-15-select-manually.png)
 
 이렇게, 대화상자에서 "실행 프로그램 선택"을 이용하여 아까 입력한 그
 프로그램을 다시 지정하면 이번엔 정상적으로, 그리고 반복적으로 해당

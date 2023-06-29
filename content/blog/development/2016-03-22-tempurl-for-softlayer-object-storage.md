@@ -28,7 +28,6 @@ date: 2016-03-22 12:12 +09:00
 파일을 사용기한의 제한이 있는 임시 URL을 사용하여 특정인에게만 공유하는
 기능을 활용하려고 했다.(있는 기능이다.) 그런데...
 
-{:.point}
 API가 없다!
 : 뭐야! 모든 기능의 API가 모든 언어에 동일하게 지원된다며!!!
 
@@ -48,15 +47,15 @@ Object Storage를 사용하는 방법에 대한 글이었다. (SoftLayer가 Open
 사용자 포탈에서는 아래와 같이 공유하고자 하는 파일을 선택하여 "조치"를
 해주면 임시 URL을 생성할 수 있다.
 
-![](/attachments/20160322-sl-objs-002.png){:.fit.dropshadow}
+![](/attachments/20160322-sl-objs-002.png)
 
 임시 공유의 유효기간을 설정하고 확인을 눌러주면,
 
-![](/attachments/20160322-sl-objs-003.png){:.fit.dropshadow}
+![](/attachments/20160322-sl-objs-003.png)
 
 아래와 같이 파일에 접근할 수 있는 URL이 만들어진다.
 
-![](/attachments/20160322-sl-objs-004.png){:.fit.dropshadow}
+![](/attachments/20160322-sl-objs-004.png)
 
 내가 원하는 것은, 이 URL에 들어가는 암호화된 부분(공유 URL이 정상적인
 것인지 판별하기 위한 부분)을 API를 통하여 계산해 내는 것이다.
@@ -175,7 +174,6 @@ $
 약간의 실망을 뒤로 하고, 코드를 열어보니 다음과 같은 설정이 필요함을
 알게 되었다.
 
-{:.block-title}
 `/spec/sl-storage.creds.rb`
 
 ```ruby
@@ -205,7 +203,6 @@ $
 발생했다. 이 Test Case에 의미를 두고 작업하는 것은 불가능할 것 같고, 일단
 나를 위한 RSpec을 하나 작성하는 것으로 개발을 시작한다.
 
-{:.block-title}
 `/spec/tempurl_spec.rb`
 
 ```ruby
@@ -378,19 +375,19 @@ $
 안타까운 부분이지만, 말 그대로 General Question이라고 분류를 한다면
 이해할 수도 있는 부분이긴 하다.
 
-![](/attachments/20160322-sl-objs-001.png){:.fit.dropshadow}
+![](/attachments/20160322-sl-objs-001.png)
 
 그렇지만 74 followers, 175 questions의 빈약한 [Tag, SoftLayer]에 대하여,
 SO에서의 모든 활동이 이 하나의 Tag에 집중되어있는, 전문적인 답변을 하는
 인력을 고용하고 있다면 사실상 Official한 지원이라고 볼 수도 있을 것
 같은데...
 
-![](/attachments/20160322-sl-objs-006.png){:.fit.dropshadow}
+![](/attachments/20160322-sl-objs-006.png)
 
 너무 쉽게 찾을 수 있는 틀에 밖힌 답변은 그렇다고 치더라도 커뮤니티에서
 내는 목소리의 수준이 이렇다니...
 
-![](/attachments/20160322-sl-objs-005.png){:.fit.dropshadow}
+![](/attachments/20160322-sl-objs-005.png)
 
 참 답답하네... ㅎㅎ
 

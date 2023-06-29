@@ -130,7 +130,6 @@ Google Colossus, Gmail, Bigtable 등에 관여했던 인물들이라고 하는�
 기본적인 상태 모니터링을 할 수 있는 모니터링 콘솔을 Built-in으로 제공한다.
 아뿔싸... DBMS를 설치하고 겉모습을 얘기하게 될 줄이야...
 
-{:.point}
 대세는 모니터링
 : 어째서... 요즘 발표되는 이런 저런 소프트웨어들은 자체적으로 모니터링
   콘솔을 제공하는 경우가 참 많다. 최소한, 모니터링 API는 기본이 되었다.
@@ -368,31 +367,31 @@ Metrics 다음은 Databases에 대한 정보를 표시하는 메뉴가 있다. �
 
 #### Runtime Dashboard
 
-![](/attachments/cockroachdb/cockroach-22-metrics-runtime.png){:.bordered.dropshadow}
+![](/attachments/cockroachdb/cockroach-22-metrics-runtime.png)
 
 #### SQL Dashboard
 
-![](/attachments/cockroachdb/cockroach-23-metrics-sql.png){:.bordered.dropshadow}
+![](/attachments/cockroachdb/cockroach-23-metrics-sql.png)
 
 #### Storage Dashboard
 
-![](/attachments/cockroachdb/cockroach-24-metrics-storage.png){:.bordered.dropshadow}
+![](/attachments/cockroachdb/cockroach-24-metrics-storage.png)
 
 #### Replication Dashboard
 
-![](/attachments/cockroachdb/cockroach-25-metrics-replication.png){:.bordered.dropshadow}
+![](/attachments/cockroachdb/cockroach-25-metrics-replication.png)
 
 #### Distributed Dashboard
 
-![](/attachments/cockroachdb/cockroach-26-metrics-distributed.png){:.bordered.dropshadow}
+![](/attachments/cockroachdb/cockroach-26-metrics-distributed.png)
 
 #### Queues Dashboard
 
-![](/attachments/cockroachdb/cockroach-27-metrics-queues.png){:.bordered.dropshadow}
+![](/attachments/cockroachdb/cockroach-27-metrics-queues.png)
 
 #### Slow Requests Dashboard
 
-![](/attachments/cockroachdb/cockroach-28-metrics-slow-requests.png){:.bordered.dropshadow}
+![](/attachments/cockroachdb/cockroach-28-metrics-slow-requests.png)
 
 
 ---

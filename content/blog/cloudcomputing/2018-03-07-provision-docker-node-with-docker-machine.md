@@ -79,7 +79,6 @@ Docker 프로젝트의 식구 중 하나인 Docker Machine을 활용하는 방�
 **아직 존재하지도 않는 기계를 새로 만들어서 Engine까지 한 방에** 설치해주는
 멋진 도구다!
 
-{:.point}
 Docker Machine
 : Not In My BackYard, But on the Cloud!
 
@@ -97,7 +96,6 @@ Docker Machine
 (왜 나는 딱 한 번 실행할 작업을 스크립트로 만들고 있는 것인가...)
 
 
-{:.wrap}
 ```bash
 #!/bin/bash
 
@@ -153,7 +151,6 @@ Docker Machine은 Docker Engine 처럼 시스템 권한으로 동작하는 서�
 아무튼, 위의 스크립트를 돌려 Docker Machine을 설치하였고, 원하는 위치에
 정상적으로 설치되었는지 확인해 보았다.
 
-{:.wrap}
 ```console
 $ ./docker-machine.sh 
 $ which docker-machine 
@@ -171,7 +168,6 @@ $
 
 Bash Auto Completion도 잘 되는지 보자. 먼저 파일이 잘 들어왔는지 보고,
 
-{:.wrap}
 ```console
 $ ls ~/.bash_completion.d
 docker-machine-prompt.bash  docker-machine-wrapper.bash  docker-machine.bash
@@ -183,7 +179,6 @@ $
 읽어오도록 설정되어 있으므로 Login을 다시 할 필요는 없고 Shell만 다시
 열면 된다.)
 
-{:.wrap}
 ```console
 $ docker-machine <TAB>
 active            ip                restart           stop
@@ -234,7 +229,6 @@ VirtualBox 등의 설치형 가상환경에 이르는 다양한 환경을 지원
 먼저, 아래와 같이 `docker-machine create` 명령을 이용하면 VM을 생성하고
 그 위에 Docker Engine을 구성하는 과정을 자동으로 처리해준다.
 
-{:.wrap}
 ```console
 $ docker-machine create --driver softlayer --softlayer-user tony.stark --softlayer-api-key <my_api_key> --softlayer-hostname worker01 --softlayer-domain example.com --softlayer-cpu 2 --softlayer-memory 2 --softlayer-network-max-speed 1000 --softlayer-region seo01 --softlayer-hourly-billing worker01
 Creating CA: /home/sio4/.docker/machine/certs/ca.pem
@@ -382,7 +376,6 @@ $
 클라우드 서비스의 관리콘솔에 접속해서 만들어진 VM이 잘 떠있는지 확인했고,
 접속정보를 확인하여 SSH로 접속해봤다.
 
-{:.wrap}
 ```console
 $ ssh root@198.51.100.214
 root@198.51.100.214's password: 
@@ -408,7 +401,6 @@ root@worker01:~#
 주입한 SSH Key를 사용해서, 계정과 암호를 사용하지 않고도 쉽게 접근할 수
 있다.
 
-{:.wrap}
 ```console
 $ docker-machine ssh worker01
 Welcome to Ubuntu 16.04.3 LTS (GNU/Linux 4.4.0-112-generic x86_64)
@@ -474,7 +466,6 @@ root@worker01:~#
 확인하고 내부적인 동작여부를 간접적으로 확인해보자.
 
 
-{:.wrap}
 ```console
 root@worker01:~# docker version
 Client:
@@ -571,7 +562,6 @@ $
 
 그래서, Docker Machine은 그것을 돕기 위한 기능을 내장하고 있다.
 
-{:.wrap}
 ```console
 $ docker-machine env worker01
 export DOCKER_TLS_VERIFY="1"
@@ -587,7 +577,6 @@ $
 Docker의 환경변수를 위와 같이 출력해준다. 그리고, 맨 아래에는 친절히
 이걸 어떻게 쓰면 편한지도 안내하고 있다. 해보자. 물론, Hello World first.
 
-{:.wrap}
 ```console
 $ eval "$(docker-machine env worker01)"
 $ docker run hello-world
@@ -628,7 +617,6 @@ $
 어라? 그런데 똑같으니까 오히려... "이거 Local에서 실행되는 거 아냐?" 의심이
 생기네? 그럼 이번엔,
 
-{:.wrap}
 ```console
 $ docker run -it scinix/golang
 WARNING: Error loading config file: /home/sio4/.docker/config.json - open /home/sio4/.docker/config.json: permission denied
@@ -667,7 +655,6 @@ root@worker01:~#
 오호라! Container 프로세스가 정상적으로 떠있는 것을 볼 수 있다. 역시
 조금 더 세련되게, `docker` 명령을 써보자.
 
-{:.wrap}
 ```console
 root@worker01:~# docker image ls
 REPOSITORY       TAG             IMAGE ID          CREATED           SIZE

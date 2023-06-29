@@ -46,7 +46,6 @@ Goul은 현재 [Go language]를 이용하여, [gopacket]과 그 아래 깔린 [p
 [gopacket]:https://github.com/google/gopacket
 [pcap]:http://www.tcpdump.org/pcap.html
 
-{:.point}
 잠깐만~!
 : Go가 나를 살렸다! Go, goroutine, channel, 각종 buffer들, 그리고 gopacket!
   이들이 없었다면 아직도 죽도록 디버깅하며 개발 중이었을 것이다!

@@ -61,7 +61,6 @@ Hello World는 한 번 메시지를 토하고 사라져버리기 때문에. 그�
 가용성 확인을 위해 비슷한 기능의 VM을 돌려본 적이 있으니 완전히 말이
 안 되는 예제는 아니라고... 우겨보자.)
 
-{:.boxed}
 > "서비스"와 "Service"가 혼용되어 헷갈리는데, 한글로 표기한 "서비스"는
 > 우리가 일반적으로 말하는 바로 그 뜻이다. 다른 표현으로 하면 "업무"나
 > "Application" 정도가 되겠다. 영문 "Service"로 표기한 것은 Swarm과
@@ -85,7 +84,6 @@ $
 날리면 된다. 이 명령은, `alpine` Image를 이용하여 `docker.com`에 `ping`을
 날리는 Service를 생성하는 명령이다.
 
-{:.wrap}
 ```console
 $ docker service create alpine ping docker.com
 87m0t5wenl1543k5a8v2mw5c9
@@ -181,7 +179,6 @@ $
 혹시나, 이 Container가 어떻게 돌고 있는지, `docker container` 명령으로도
 확인해봤다.
 
-{:.wrap}
 ```console
 $ docker container ls
 CONTAINER ID  IMAGE          COMMAND            CREATED        STATUS        PORTS  NAMES
@@ -226,7 +223,6 @@ $
 첫번째 명령은 `inspect` 명령이다. 이제, `docker`, `docker-machine` 등 여기
 저기서 많이 봐서 새롭지도 않다.
 
-{:.wrap}
 ```console
 $ docker service inspect --pretty ping
 
@@ -266,7 +262,6 @@ $
 다음은, 각각의 Task, Container가 뿌리는 출력을 확인하기 위한 명령인 `logs`
 명령이다.
 
-{:.wrap}
 ```console
 $ docker service logs ping
 ping.1.lsypb1jj05ua@dev01    | PING docker.com (34.236.167.46): 56 data bytes
@@ -291,7 +286,6 @@ $
 이 내용은 `docker container ls` 또는 `docker ps` 명령으로 확인할 수 있는
 내용과 유사하다.
 
-{:.wrap}
 ```console
 $ docker ps
 CONTAINER ID   IMAGE          COMMAND            CREATED          STATUS         PORTS     NAMES
@@ -461,7 +455,6 @@ $
 
 최종적으로는 아래와 같이,
 
-{:.wrap}
 ```console
 $ docker service ps ping
 ID            NAME    IMAGE          NODE   DESIRED STATE CURRENT STATE
@@ -503,7 +496,6 @@ Image로 변경할 일이 생겼다. 이 가정은 논리적으로 Rollback에 �
 서비스 유지보수를 위한 Rolling Update를 시험하기 위해, 시험에 사용될
 Service를 새로 만들어봤다.
 
-{:.wrap}
 ```console
 $ docker service create --name ping --replicas 4 --update-delay 10s alpine ping docker.com
 j8aohe3hif1jgq506trybuf4a
@@ -524,7 +516,6 @@ $
 
 이렇게 설정한 값은, `service inspect` 명령을 사용하여 확인할 수 있다.
 
-{:.wrap}
 ```console
 $ docker service inspect --pretty ping
 
@@ -692,7 +683,6 @@ $
 이렇게 의미가 달라지게 되면, 그 두 작업에 대한 정책이 달라질 수 있다는
 점을 짐작할 수 있다.
 
-{:.point}
 Update와 Rollback
 : 의미의 차이 x 정책의 차이 + 구현의 차이
 
@@ -846,7 +836,6 @@ $
 
 일단, 아래와 같이, 네 개의 복제본을 갖는 Service를 만들어보자.
 
-{:.wrap}
 ```console
 $ docker service create --name ping --replicas 4 alpine ping docker.com
 medasdd1i4dj488pbcjmo2w4l
@@ -909,7 +898,6 @@ $
 상태가 변한 것을 확인할 수 있다. 그리고 이 때, Service 상태를 보면
 아래와 같다.
 
-{:.wrap}
 ```console
 $ docker service ps ping
 ID           NAME       IMAGE         NODE  DESIRED STATE CURRENT STATE

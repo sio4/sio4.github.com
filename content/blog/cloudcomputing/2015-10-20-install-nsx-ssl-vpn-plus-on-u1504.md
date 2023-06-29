@@ -17,16 +17,16 @@ VMware의 NSX 6.2에서 제공하는 SSL VPN-Plus 기능을 우분투 리눅스�
 살아났다. (나중에 알게 되었지만, SSL VPN-Plus를 사용하기 위해 JDK를
 설치할 필요는 없었다.)
 
-![](/attachments/20151020-vmw-sslvpn-101.png){:.fit.dropshadow}
+![](/attachments/20151020-vmw-sslvpn-101.png)
 
 그리고 클릭하라는 곳을 클릭하고 설치를 시작하면, 다음과 같이 NeoAccel이
 게시자로 되어있는 설치 프로그램이 동작하게 된다.
 
-![](/attachments/20151020-vmw-sslvpn-102.png){:.fit.dropshadow}
+![](/attachments/20151020-vmw-sslvpn-102.png)
 
 그런데 이게 뭐야? Root 사용자가 아니라고 설치가 되지 않는다.
 
-![](/attachments/20151020-vmw-sslvpn-103.png){:.fit.dropshadow}
+![](/attachments/20151020-vmw-sslvpn-103.png)
 
 이런... 그래서 포기하려다가... 페이지 안의 "클러스터에 호스트 프로파일을
 연결하려면"이 링크로 되어있는 것을 발견했다. 위 아래 두 개의 같은 문구가
@@ -34,7 +34,7 @@ VMware의 NSX 6.2에서 제공하는 SSL VPN-Plus 기능을 우분투 리눅스�
 맨 첫번째 그림을 보면 알 수 있듯이, 이 링크는 `linux_phat_client.tgz`라는
 파일을 내려받을 수 있는 링크였다. 뭔가 아하! 스럽지 않은가?
 
-![](/attachments/20151020-vmw-sslvpn-104.png){:.fit.dropshadow}
+![](/attachments/20151020-vmw-sslvpn-104.png)
 
 ## 설치의 진행
 
@@ -150,12 +150,12 @@ init 파일만 `/etc/init.d/`, `/usr/local/bin/` 등에 설치되었으니 참�
 안내문이었다. 아마도 좀 개발된지 오래된 SSL VPN 제품을 VMware에서 사서
 사용하는 것 같다. 기왕에 좀 깔끔하게 수정 좀 하지...
 
-![](/attachments/20151020-vmw-sslvpn-105.png){:.fit.dropshadow}
+![](/attachments/20151020-vmw-sslvpn-105.png)
 
 아! 이해하기 어려운 이유로 CLI가 싫다면 GUI Client도 제공되니 참고하시기
 바람. 그런데 TK... 역시 후져...
 
-![](/attachments/20151020-vmw-sslvpn-200.png){:.fit.dropshadow}
+![](/attachments/20151020-vmw-sslvpn-200.png)
 
 
 

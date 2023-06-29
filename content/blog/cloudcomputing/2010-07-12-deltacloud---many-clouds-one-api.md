@@ -39,7 +39,7 @@ EC2 등의 퍼블릭 클라우드 서비스와 [OpenNebula](http://opennebula.or
 
 > Start an instance on an internal cloud, then with the same code start another on EC2 or Rackspace. Deltacloud protects your apps from cloud API changes and incompatibilities, so you can concentrate on managing cloud instances the way you want.
 
-![](/attachments/2010-07-12-deltacloud.png){:.fit}
+![](/attachments/2010-07-12-deltacloud.png)
 
 내내야 첫 페이지의 설명인데, 조금 더 상세한 설명은...
 

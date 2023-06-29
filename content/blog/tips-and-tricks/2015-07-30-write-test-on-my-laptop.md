@@ -260,13 +260,13 @@ $
 이제 파티션이 망가져 버렸으니... 파티션 복구를 시도했다. 먼저
 `gpart` 출동~! 그러나 생각보다 결과는 그렇네...
 
-![](/attachments/2015-07-30-gpart.png){:.fit.dropshadow}
+![](/attachments/2015-07-30-gpart.png)
 
 보는 바와 같이, 아무 파티션도 잡아내지 못했다. 이건 지금 시점에서는
 사용할 수 없는 도구가 되어버렸나보다. 그래서 다시, `TestDisk`로
 시도!
 
-![](/attachments/2015-07-30-testdisk.png){:.fit.dropshadow}
+![](/attachments/2015-07-30-testdisk.png)
 
 어? 뭔가 보인다! 보여!
 

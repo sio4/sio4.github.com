@@ -74,7 +74,6 @@ Go 개발환경을 위한 Docker Image는 이미 [Official Docker Image for Gola
 
 공식 이미지 저장소에는 몇 가지 버전이 있는데, 예를 들면 다음과 같다.
 
-{:.styled.fit}
 | Tag             |  OS   |  Arch  | Base         | Image Size | Merged |
 |-----------------|:-----:|:------:|:------------:|-----------:|-------:|
 | 1.9.4-alpine3.7 | Linux | x86-64 | Alpine 3.7   |      83 MB | 269 MB |
@@ -139,7 +138,6 @@ WORKDIR $GOPATH
 
 `docker build` 명령을 사용해서 위의 `Dockerfile`을 이용한 Image를 만든다.
 
-{:.wrap}
 ```console
 $ sudo docker build -t golang:cross .
 Sending build context to Docker daemon  3.072kB
@@ -210,7 +208,6 @@ $
 
 오우... 뭐가 좀 복잡하다. 일단 이미지가 어떻게 만들어졌는지 보자.
 
-{:.wrap}
 ```console
 $ sudo docker image ls golang
 REPOSITORY       TAG                IMAGE ID          CREATED           SIZE
@@ -272,7 +269,6 @@ $
 긴 출력이 있었지만, 지금 당장 관심있는 부분만 뽑아서 읽기 쉽게 데이터를
 조금 지워봤다.
 
-{:.wrap}
 ```json
 [
     {
@@ -438,7 +434,6 @@ $
 
 동일한 방식으로 정리해봤다.
 
-{:.wrap}
 ```json
 [
     {
@@ -478,7 +473,6 @@ $
 관점에 따라 맞는 얘기다. 하지만 아직까지의 경험으로는, 하나의 `Dockerfile`로
 만드는 Layer는 하나면 족할 것 같다.
 
-{:.point}
 Dockerfile 작성규칙
 : `RUN`이 Layer를 만든다.
 : 복잡해서 좋을 게 뭐냐, 가능하면 한 Layer로 끝내자!
@@ -677,7 +671,6 @@ Public하게 공개된 경우, 최종 사용자가 `Dockerfile`을 검토하여 
 사용자 Image는 개설된 Docker ID를 통하여 올리게 되며, Image를 올리기에
 앞서 로그인을 해야한다.
 
-{:.wrap}
 ```console
 $ sudo docker login
 Login with your Docker ID to push and pull images from Docker Hub. If you don't have a Docker ID, head over to https://hub.docker.com to create one.
@@ -752,7 +745,6 @@ cd7100a72410: Mounted from library/golang
 
 이렇게 내려받을 때와 비슷한 화면이 진행되다가,
 
-{:.wrap}
 ```console
 $ sudo docker push scinix/golang:cross
 The push refers to repository [docker.io/scinix/golang]
@@ -769,7 +761,6 @@ cross: digest: sha256:7d285ca153625258377d40757675a6b612f2d175d4374631b20a6adb31
 
 마져 올려보자.
 
-{:.wrap}
 ```console
 $ sudo docker push scinix/golang:1.9.4
 The push refers to repository [docker.io/scinix/golang]
@@ -798,7 +789,7 @@ $
 이미지를 확인하고, 사용할 수 있다. 아래는, Docker Hub에 접속했을 때 볼 수
 있는 화면이다.
 
-![](/attachments/docker/repository-hub.docker.com.png){:.bordered.dropshadow}
+![](/attachments/docker/repository-hub.docker.com.png)
 
 URL: <https://hub.docker.com/r/scinix/golang/>
 
@@ -807,7 +798,7 @@ URL: <https://hub.docker.com/r/scinix/golang/>
 더 깔끔한 화면을 볼 수 있다. 또한, 이 Docker Cloud를 이용하면 Github 등과
 연동하여 Commit에 의한 자동 Build가 이루어지도록 설정할 수도 있다.
 
-![](/attachments/docker/repository-cloud.docker.com.png){:.bordered.dropshadow}
+![](/attachments/docker/repository-cloud.docker.com.png)
 
 URL: <https://cloud.docker.com/app/scinix/repository/docker/scinix/golang/general>
 
@@ -815,7 +806,7 @@ URL: <https://cloud.docker.com/app/scinix/repository/docker/scinix/golang/genera
 목적을 중심으로 하기 때문인 것 같은데, 공식 Publisher가 아닌 내 계정으로는
 아래와 같은 Readonly 인터페이스 외에는 제공되지 않는 것 같다.
 
-![](/attachments/docker/repository-store.docker.com.png){:.bordered.dropshadow}
+![](/attachments/docker/repository-store.docker.com.png)
 
 URL: <https://store.docker.com/community/images/scinix/golang>
 

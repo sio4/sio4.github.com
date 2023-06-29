@@ -91,14 +91,13 @@ last_modified_at: 2017-11-24T18:08:00+0900
 
 위의 이야기는 그냥 허공에 두고, 먼저...
 
-{:.point}
 Elastic Stack으로
 : 여러 시스템 이벤트를 종합하여 살펴볼 수 있는 플랫폼을 하나 만들어
   보려고 한다.
 
 지난 몇일 동안 꾸며본 프로토타입은 아래 모양과 같다.
 
-![](/attachments/silrok/silrok-dashboard-current.png){:.bordered}
+![](/attachments/silrok/silrok-dashboard-current.png)
 
 
 ### 함께 읽기

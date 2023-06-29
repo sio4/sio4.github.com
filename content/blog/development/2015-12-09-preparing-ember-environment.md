@@ -10,7 +10,7 @@ npm 환경을 간단하게 구성하는 과정을 정리한 글이며, 궁극적
 Ember-CLI 환경을 구성하고 Ember.js 프로젝트를 진행할 수 있는 환경을 완성하는
 과정의 기록이다.
 
-![](/attachments/20151209-embercli-npm-nodejs.png){:.fit.dropshadow}
+![](/attachments/20151209-embercli-npm-nodejs.png)
 
 ## 시대의 변화와 나의 목표
 
@@ -89,7 +89,6 @@ Node.js Version Manager를 줄인 이름으로, Ember.js, Ember-CLI, 또는 Node
 Node.js 환경을 구성하는 방식은 여러가지가 있는데, 간략하게 보았을 때, 각각
 다음과 같은 특성을 갖고 있다.
 
-{:.fit.styled}
 | 방식 | 버전 | 장점 |
 |:-----|:-----|:-----|
 | OS 표준 패키지 사용 | OS 제공자가 정한 버전 | 설치가 간단하고 익숙함 |
@@ -545,7 +544,7 @@ Babel (6)                                     | 527ms (87 ms)
 
 이제 Web Browser를 이용하여 위의 `http://localhost:4200/`로 접속해보자.
 
-![](/attachments/20151209-ember-browser.png){:.fit.dropshadow}
+![](/attachments/20151209-ember-browser.png)
 
 > 떳다!
 

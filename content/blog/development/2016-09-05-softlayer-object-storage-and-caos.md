@@ -99,7 +99,6 @@ Bundle complete! 14 Gemfile dependencies, 57 gems now installed.
 Bundled gems are installed into ./vendor/bundle.
 $ 
 ```
-{:.wrap}
 
 참고로, 이 글에서는 공식 저장소를 사용하지 않고 Fork한 나의 저장소를
 사용하고 있다. (일부, 내 필요에 의해 추가한 기능이 제공된다.)
@@ -138,7 +137,6 @@ end
 
 시험은 다음과 같이, `bundle exec rake test` 명령을 사용하여 진행한다.
 
-{:.wrap}
 ```console
 $ bundle exec rake test test/backend/storage_object_test.rb
 Running via Spring preloader in process 28381
@@ -255,7 +253,7 @@ $
 사진에 담긴 Exif 값을 이용하여 똑바로 보이도록 회전하여 미리보기 파일로
 저장한 후 보여주고 있다.
 
-![](/attachments/20160428-caos/caos-200-album-list.png){:.fit.dropshadow}
+![](/attachments/20160428-caos/caos-200-album-list.png)
 
 다음과 같은 과정을 통하여 Album 페이지에 보여줄 미리보기를 만든다.
 
@@ -276,7 +274,6 @@ Bundle complete! 20 Gemfile dependencies, 64 gems now installed.
 Bundled gems are installed into ./vendor/bundle.
 $ 
 ```
-{:.wrap}
 
 이 주제에 흥미가 있다면 아래의 코드를 참고해 보는 것도 좋을 것 같다.
 
@@ -404,14 +401,12 @@ rity.
 ```
 ### DEBUG: Generate Thumb from https://hkg02.objectstorage.softlayer.net:443/v1/AUTH_00aa00aa-00aa-00aa-00aa-00aa00aa00aa/caos/CM2016/iaas-marketshare.jpg?temp_url_sig=e000020f07040500090c090e06090a001030d0d0&temp_url_expires=1459097817...
 ```
-{:.wrap}
 
 또는 이미 존재하는 미리보기 파일을 다시 사용하게 된다.
 
 ```
 ### DEBUG: File exists: tmp/thumbs/a208008e00104b0a004509e0b40800a2-CM2016%2FCM2016.JPG. using it!
 ```
-{:.wrap}
 
 ## Etag의 활용!
 
@@ -434,7 +429,6 @@ rity.
 것인데, 실제로 Swift에서는 Object의 `MD5SUM` 값을 이용하여 `Etag`를
 생성한다.
 
-{:.point}
 정확하게 Cache해라!
 : Object Storage를 사용하여 Application을 작성할 때, 전송량과 불필요한
   API Call을 줄이기 위해서는 적절한 정보를 이용하여 판별이 가능하도록
@@ -580,7 +574,6 @@ Select의 구현 등, 재미있는 부분이 더 있었던 것 같은데, 그냥
 
 Connection:
 
-{:.wrap}
 ```
 $ curl -i -H "X-Auth-User: IBMOS000000-1:user" -H "X-Auth-Key: 00aa00aa00aa00aa00aa00aa00aa00aa00aa00aa00aa00aa00aa00aa00aa00aa" https://hkg02.objectstorage.softlayer.net/auth/v1.0
 HTTP/1.1 200 OK
@@ -599,7 +592,6 @@ $
 
 Containers:
 
-{:.wrap}
 ```
 $ curl -i -H "X-Auth-Token: AUTH_tk00bb00bb00bb00bb00bb00bb00bb00bb" https://hkg02.objectstorage.softlayer.net/v1/AUTH_00aa00aa-00aa-00aa-00aa-00aa00aa00aa
 HTTP/1.1 200 OK
@@ -650,7 +642,6 @@ $
 
 Objects JSON:
 
-{:.wrap}
 ```
 $ curl -i -H "X-Auth-Token: AUTH_tk00bb00bb00bb00bb00bb00bb00bb00bb" https://hkg02.objectstorage.softlayer.net/v1/AUTH_00aa00aa-00aa-00aa-00aa-00aa00aa00aa/caos -H "Accept: application/json"
 HTTP/1.1 200 OK

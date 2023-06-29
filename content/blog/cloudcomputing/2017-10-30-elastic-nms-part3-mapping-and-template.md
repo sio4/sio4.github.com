@@ -50,11 +50,11 @@ Elasticsearch가 인덱스에 자료를 저장할 때, **그것을 어떻게 다
 자료를 받도록 설정했을 때에는 모든 자료가 아래와 같이 단순히 숫자 또는
 텍스트로 인식되었었다.
 
-![SHOT](/attachments/elastic-nms/elk-212-grok-parsed.jpg){:.bordered}
+![SHOT](/attachments/elastic-nms/elk-212-grok-parsed.jpg)
 
 그리고 Template을 통해 Mapping 구성을 해주고 나니,
 
-![SHOT](/attachments/elastic-nms/elk-302-mapped-parsed.jpg){:.bordered}
+![SHOT](/attachments/elastic-nms/elk-302-mapped-parsed.jpg)
 
 이렇게 Elasticsearch가 각각의 필드에 대하여 의미있는 형식으로 인식하게
 되었다. 이렇게 각 필드를 인식하는 방법이 달라지면, Elasticsearch가 각
@@ -331,7 +331,7 @@ Syslog와 NetFilter 방화벽에 대한 로그를 위한 Template은 아래와 �
 
 그 결과는 아래와 같이, 인덱스의 필드 목록에서 확인할 수 있다.
 
-![SHOT](/attachments/elastic-nms/elk-301-mapped-index.jpg){:.bordered}
+![SHOT](/attachments/elastic-nms/elk-301-mapped-index.jpg)
 
 
 

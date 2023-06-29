@@ -191,7 +191,6 @@ Password 방식으로 전환해보는 것이다.
 * 시스템 역시, 암호를 외우지 않는다.
 * 즉, **DBMS/LDAP 등에 암호를 저장해둘 필요가 없다!!!**
 
-{:.point}
 One-Time-Password!
 : OTP를 쓰는 사용자는 물론, 시스템도 암호를 잊을 수 있다.
 : 본인인증도 본인인증이지만, 암호를 털릴 일도 없고...
@@ -232,7 +231,6 @@ ActiveRecord의 Field를 만들 수 있게 된다. 아래와 같이, 사용자 �
 (주의할 점은, 이 `digest`를 사용하는 Field의 이름은 `password`로
 고정되어 있다.)
 
-{:.wrap}
 ```console
 $ bundle exec rails g scaffold user mail:uniq name comment:text password:digest password_at:datetime perms:text --no-javascripts --no-stylesheets
 <...>
@@ -337,7 +335,7 @@ Cookie 대신 Active Record를 사용하도록 하고, 세션 유지 시간을
 이런 고민을 하는 개발자나 회사를 위해, Rackspace가 제공하는 클라우드
 시대의 메일발송 서비스가 있는데, 그 이름이 Mailgun이다.
 
-![](/assets/logos/mailgun-home.png){:.fit.dropshadow}
+![](/assets/logos/mailgun-home.png)
 
 {:#mailgun-intro}
 ## Mailgun 시작하기
@@ -355,11 +353,10 @@ Mailgun은 표준 SMTP 방식과 전용 API를 사용하는 두 가지 사용 �
 정보 등이 자동으로 또는 사용자의 선택에 의해 만들어지며, 도메인에
 대한 Confirmation 과정을 거쳐 Active 상태가 되면 바로 사용할 수 있다.
 
-![](/assets/logos/mailgun-domain.png){:.fit.dropshadow}
+![](/assets/logos/mailgun-domain.png)
 
 구성이 되었으면 시험을 해보자. 아래 예시를 보면,
 
-{:.wrap}
 ```console
 $ curl -s --user 'api:key-784e12345678901234567890' \
 >  https://api.mailgun.net/v3/sbox.mailgun.org/messages \
@@ -500,7 +497,6 @@ $
 이제, 해당 기능이 동작할 때, 아래와 같이 메일 발송의 로그가 찍히는 것을
 확인할 수 있다.
 
-{:.wrap}
 ```console
 Started POST "/users" for 127.0.0.1 at 2016-03-23 23:24:25 +0900
 Processing by UsersController#create as HTML
@@ -551,15 +547,15 @@ Completed 302 Found in 6487ms (ActiveRecord: 17.5ms)
 
 이렇게 발송된 메일은, 아래와 같이 발송 로그를 확인할 수도 있고,
 
-![](/assets/logos/mailgun-logs.png){:.fit.dropshadow}
+![](/assets/logos/mailgun-logs.png)
 
 발송 통계를 볼 수도 있으며,
 
-![](/assets/logos/mailgun-status.png){:.fit.dropshadow}
+![](/assets/logos/mailgun-status.png)
 
 오고 가는 메일의 규모 등을 확인할 수도 있다.
 
-![](/assets/logos/mailgun-tracking.png){:.fit.dropshadow}
+![](/assets/logos/mailgun-tracking.png)
 
 
 ---

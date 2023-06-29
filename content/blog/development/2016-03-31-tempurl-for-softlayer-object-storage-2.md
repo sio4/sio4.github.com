@@ -11,7 +11,7 @@ date: 2016-03-31 13:00 +09:00
 간 길은 옳은 길이 아닐 수 있어서 왔던 길을 다시 걸어야 할 때가 있다.
 지금이 그 상황이다.
 
-![](/assets/logos/hardenedlayer.png){:.fit.dropshadow}
+![](/assets/logos/hardenedlayer.png)
 
 {:#review}
 # 다시보기
@@ -132,7 +132,6 @@ RSpec 시험은 잘 통과했던 코드지만 실제로 활용하려고 보니 �
 Object에 종속적인 것이기 때문에 자연스럽게 `StorageObject` 클래스에
 구현을 했었다. 사람의 머리로, "Straightforward" 방식으로 구현한 것이다.
 
-{:.point}
 직관적 판단, 직선적 구현!
 : 코드를 읽기 편하게 하기 위해서는 직선적인 구현이 좋다.
 : 그러나, Loop와 연관된 구현을 할 때에도 그럴까?!
@@ -302,7 +301,6 @@ end
 그 시간이 2초 이상 걸리지 않는다. (처음, 10여 개의 Object의 Temp URL을
 가져오기 위해서 7초 정도가 걸리던 것이, 이제는 보통 1초 안에 끝난다.)
 
-{:.point}
 인터넷 기반 개발, 느린 장치의 고려
 : 다루는 장치가 느리다면 Cache에 대한 고려는 필수이다.
 : 느린 Disk를 위해 Cache와 Buffer가 있듯이,
@@ -362,6 +360,6 @@ end
 [HardenedLayer]:https://github.com/hardenedlayer
 [HardenedLayer/softlayer-object-storage-ruby]:https://github.com/hardenedlayer/softlayer-object-storage-ruby
 
-![](/assets/logos/hardenedlayer.png){:.fit.dropshadow}
+![](/assets/logos/hardenedlayer.png)
 
 

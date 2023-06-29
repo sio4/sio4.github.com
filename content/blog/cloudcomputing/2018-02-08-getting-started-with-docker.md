@@ -96,7 +96,7 @@ Software의 실행을 위해서는 기반 OS와 Library를 포함하여 이 Soft
 각각이 요구하는 조건을 모두 만족시켜야 하며, 경우에 따라서는 그 조건들
 사이에서 충돌이 발생할 수 있다.
 
-![](/attachments/docker/without-confirm.png){:.half.pull-right}
+![](/attachments/docker/without-confirm.png)
 
 극단적인 예를 들어, Software A와 B가 동일한 Library를 사용하지만 서로
 다른 버전을 필요로 한다면 두 Software가 같은 시스템 위에서 동작하게 만드는

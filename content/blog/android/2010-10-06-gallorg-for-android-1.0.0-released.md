@@ -33,7 +33,6 @@ last_modified_at: 2010-10-20T16:14:26+09:00
 
 모양은 이렇다.
 
-{:.centered}
 | "공유" 기능 활용 | 기본 폴더 = "오늘" | 다른 앨범 선택 |
 |:----:|:----:|:----:|
 | ![](/attachments/2010-10-06-gallorg-share.png){:width="150px"} | ![](/attachments/2010-10-06-gallorg-default.png){:width="150px"} | ![](/attachments/2010-10-06-gallorg-recent.png){:width="150px"} |

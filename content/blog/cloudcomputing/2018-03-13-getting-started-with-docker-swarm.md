@@ -14,7 +14,7 @@ Docker Machine에 대해 살펴봤다. Docker Machine은 그 초점이 기계를
 마치 하나인 것처럼 다룰 수 있게 해주는 Clustering 도구, 또는 유식한 말로
 Orchestration 도구**이다.
 
-![](/assets/logos/docker-swarm-detail.png){:.centered.half}
+![](/assets/logos/docker-swarm-detail.png)
 
 지나치게 빠른 속도로 변해가는 정보기술 분야가, 심지어 영어권을 중심으로
 발전하다 보니 만나게 되는 문제 중 하나가 바로 영어로 된 용어 문제다.
@@ -92,7 +92,6 @@ Host 중 일부에서 장애가 발생하더라도 서비스의 연속성을 최
 논리적 단위로 포장하여 그 생명주기 및 요소 간 상호 관계 등을 정의하고
 관리하는 **Orchestrator로써의 역할**을 함께 제공한다.
 
-{:.point}
 Docker Swarm
 : Virtual Docker Host + Host Clustering + Service Orchestration
 
@@ -198,7 +197,6 @@ $
 Engine이 어떤 상태인지 확인해보면, 아래와 같이 Swarm mode가 비활성 상태임을
 확인할 수 있다.
 
-{:.wrap}
 ```console
 $ docker info
 <...>
@@ -223,7 +221,6 @@ docker swarm init --advertise-addr IP_ADDRESS
 하고 나니 조금 복잡해 보이기도 하는데, 아래와 같이 Bash의 명령어 치환을
 활용하면 딱히 IP를 확인하지 않더라도 초기화 명령을 수행할 수 있다.
 
-{:.wrap}
 ```console
 $ docker swarm init --advertise-addr $(docker-machine ip `docker-machine active`)
 Swarm initialized: current node (z9dj9cobdat235ou65kl0ztr3) is now a manager.
@@ -245,7 +242,6 @@ Host가 어떤 Swarm Cluster에도 포함되지 않은 상태라면, 위와 같�
 
 이제, 초기화를 끝낸 Engine의 정보가 변했는지 확인해보자.
 
-{:.wrap}
 ```console
 $ docker info
 <...>
@@ -285,7 +281,6 @@ Swarm mode에서 Node를 관리하고 Service를 관리할 때에는 다른 명�
 `node` 명령을 사용해서 새로 만든 Cluster의 관리 영역 안으로 들어온 Node를
 확인해보자. (물론, 아직 외롭게 혼자겠지만)
 
-{:.wrap}
 ```console
 $ docker node ls
 ID                            HOSTNAME  STATUS  AVAILABILITY  MANAGER STATUS
@@ -303,7 +298,6 @@ $
 같은 방식으로, `docker-machine use`를 사용해서 앞으로 내릴 `docker` 명령을
 받을 Host를 결정한다.
 
-{:.wrap}
 ```console
 $ docker-machine use dev02
 Active machine: dev02
@@ -323,7 +317,6 @@ $
 아! Docker가 친절해서 참 맘에 든다는 얘기를 했던가? 만약 Cluster 초기화 후
 시간이 지나 Token을 잊었다면...
 
-{:.wrap}
 ```console
 $ docker swarm join-token worker
 To add a worker to this swarm, run the following command:
@@ -336,7 +329,6 @@ $
 이렇게, 다시 한 번 명령과 인수를 포함한 합류 명령행을 확인할 수 있다. 또는,
 스크립트로 만들기 위해 값만 받고 싶다면,
 
-{:.wrap}
 ```console
 $ docker swarm join-token manager -q
 SWMTKN-1-0zq5k1zwxqo8hills9d3ezxu2dzxwuy3t2dcz4vdc1kj01saiy-6aj42alvbpqb0y9zzxgy127ko
@@ -350,7 +342,6 @@ $
 
 그럼, 합류 명령을 내려보자.
 
-{:.wrap}
 ```console
 $ docker swarm join --token SWMTKN-1-0zq5k1zwxqo8hills9d3ezxu2dzxwuy3t2dcz4vdc1kj01saiy-5pp2qrc60ia8j0qvw1hzgh6ck 198.51.100.222:2377
 This node joined a swarm as a worker.
@@ -364,7 +355,6 @@ $
 Worker의 신분을 가지고 있다. 그래서 이 상태에서 앞선 예에서 처럼 Manager가
 처리해야 할 명령을 내리게 되면, 가령 아래와 같이,
 
-{:.wrap}
 ```console
 $ docker node ls
 Error response from daemon: This node is not a swarm manager. Worker nodes can't be used to view or modify cluster state. Please run this command on a manager node or promote the current node to a manager.
@@ -376,7 +366,6 @@ $
 없어요. 지배인에게 말하거나 저를 지배인으로 승진시켜주세요" 라고 말하고
 있다. 오호라... 승진이란 게 있단 말이지... 아무튼,
 
-{:.wrap}
 ```console
 $ docker node ls
 Error response from daemon: This node is not a swarm manager. Use "docker swarm init" or "docker swarm join" to connect this node to swarm and try again.
@@ -393,7 +382,6 @@ $
 
 새 Node는 어떤 설정을 갖는지 보자.
 
-{:.wrap}
 ```console
 $ docker info
 <...>
@@ -413,7 +401,6 @@ Manager가 어디에 있는지는 알고 있고... 라고 한다.
 이제, 다시 Manager Node에게 `docker node ls` 명령을 내려, 그 쪽에서도 새
 Node에 대해 잘 알고 있는지 확인해보자.
 
-{:.wrap}
 ```console
 $ docker-machine use dev01
 Active machine: dev01
@@ -431,7 +418,6 @@ $
 어떻게 될까? 내 고유의 표현으로, 다시 실행하더라도 안전한, "Re Run Safe" 한
 명령인지 확인하고 싶다.
 
-{:.wrap}
 ```console
 $ docker-machine use dev02
 Active machine: dev02

@@ -58,9 +58,9 @@ Oracle DB의 리눅스버전을 발표했으며 OEL라는 리눅스 배포본도
 - OpenOffice야 사실 따질 여지가 없지만...  
 
 
-![](/attachments/2009-04-22-oracle-buys-sun-s.png){:.fit}
+![](/attachments/2009-04-22-oracle-buys-sun-s.png)
 
-![](/attachments/2009-04-22-oracle-buys-sun-o.png){:.fit}
+![](/attachments/2009-04-22-oracle-buys-sun-o.png)
 
 
 

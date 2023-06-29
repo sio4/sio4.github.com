@@ -436,7 +436,7 @@ Timestamp가 "지금"으로 바뀌어 버린다! 이건 정말 용납할 수 없
 USB 2.0 Card Reader를 하나 구해서... 진행할 수 밖에 없었다.
 응, 날짜를 구하기 위해서...
 
-![](/attachments/android/usb-card-reader.jpg){:.dropshadow}
+![](/attachments/android/usb-card-reader.jpg)
 
 
 

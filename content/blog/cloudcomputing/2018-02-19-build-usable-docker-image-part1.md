@@ -164,7 +164,6 @@ $
 위의 과정을 거치고 나면, 만드는 과정에서 내려받은 `alpine:latest`와, 새롭게
 만들어진 `hello:alpine`이 Image 목록에 들어온 것을 확인할 수 있다.
 
-{:.wrap}
 ```console
 $ sudo docker image ls
 REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
@@ -180,7 +179,6 @@ $
 
 새로 만든 이미지가 잘 동작하는지 확인하자.
 
-{:.wrap}
 ```console
 $ sudo docker run hello:alpine
 standard_init_linux.go:195: exec user process caused "no such file or directory"
@@ -214,7 +212,7 @@ Utility 모음이다. 하나의 Binary 안에 일반적으로 많이 사용되�
 Alpine Linux 홈페이지에는 다음과 같이 설명되어 있다.
 (<https://alpinelinux.org>)
 
-![](/assets/logos/alpinelinux.org.jpg){:.dropshadow.bordered}
+![](/assets/logos/alpinelinux.org.jpg)
 
 > ##### Small. Simple. Secure.
 > Alpine Linux is a security-oriented, lightweight Linux distribution based on musl libc and busybox.
@@ -369,7 +367,6 @@ $
 원했던 그대로 잘 동작한다. 그리고, 이 상태에서 Host에 저장되어 있는
 Image의 목록을 보면 다음과 같다.
 
-{:.wrap}
 ```console
 $ sudo docker image ls
 REPOSITORY              TAG                     IMAGE ID            CREATED             SIZE

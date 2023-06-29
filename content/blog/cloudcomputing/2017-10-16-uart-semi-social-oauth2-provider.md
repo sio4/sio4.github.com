@@ -196,7 +196,7 @@ UART는 자체적으로 사용자의 비밀번호를 저장하지도 않으며, 
 현재버전에서 시스템에 접속하게 되면, 아래와 같이 세 종류의 소셜 인증을
 제공하는 로그인 페이지를 보게 된다.
 
-![](/attachments/uart/uart-01-welcome.png){:.dropshadow}
+![](/attachments/uart/uart-01-welcome.png)
 
 
 
@@ -257,7 +257,7 @@ UART는 인증 시 소셜 제공자로부터 Email주소 등의 **사용자 기�
 관리하며, 이와 함께 사용자가 UART를 통해 접속하는 애플리케이션 별로 각
 서비스로부터 허가받은 역할 등의 부가정보를 함께 관리한다.
 
-![](/attachments/uart/uart-10-members.png){:.dropshadow}
+![](/attachments/uart/uart-10-members.png)
 
 위의 그림과 같이, 등록된 사용자는 이름과 메일정보 등을 소셜제공자로부터
 받아 관리하게 되며, 관리자에 의해 활성상태(Active)가 되기 전에는 비활성
@@ -271,7 +271,7 @@ UART는 인증 시 소셜 제공자로부터 Email주소 등의 **사용자 기�
 
 아래의 그림은, 제한된 페이지에 접근했을 때 사용자에게 표시되는 메시지이다.
 
-![](/attachments/uart/uart-91-no-right.png){:.dropshadow}
+![](/attachments/uart/uart-91-no-right.png)
 
 ## 'A' 애플리케이션 등록 및 관리
 
@@ -284,7 +284,7 @@ UART는 인증 시 소셜 제공자로부터 Email주소 등의 **사용자 기�
 UART의 App 메뉴는, 이렇게 UART를 사용하고자 하는 앱을 등록하고 관리하는
 곳이다.
 
-![](/attachments/uart/uart-20-all-apps.png){:.dropshadow}
+![](/attachments/uart/uart-20-all-apps.png)
 
 위의 그림과 같이, 관리자 권한을 갖는 Tony Stark는 UART 자체를 포함하여
 UART에 등록된 모든 응용서비스의 등록정보를 확인할 수 있다.
@@ -296,7 +296,7 @@ UART에 등록된 모든 응용서비스의 등록정보를 확인할 수 있다
 앱만을 보게 된다. 아래는 Black Widow라는, 앱 관리자 권한을 가진 사용자가
 동일한 메뉴에 접속했을 때의 화면이다.
 
-![](/attachments/uart/uart-92-apps-widow.png){:.dropshadow}
+![](/attachments/uart/uart-92-apps-widow.png)
 
 또한, 앱 관리자 권한을 가진 사용자는 새로운 앱을 등록할 수 있는데, 아래와
 같이 앱의 이름, 앱을 식별하기 위한 코드, 간단한 설명과 앱이 서비스되는
@@ -304,14 +304,14 @@ URL, 그리고 마지막으로 UART를 통해 인증을 할 때 사용할 OAuth2
 URL을 등록해주게 된다. Icon 항목은 선택적으로 사용할 수 있는데, 해당 앱을
 표시할 때 사용하는 이미지이다.
 
-![](/attachments/uart/uart-22-new-app.png){:.dropshadow}
+![](/attachments/uart/uart-22-new-app.png)
 
 앱 목록에서 앱을 선택해주면 앱의 자세한 사항을 확인할 수도 있다. 아래와
 같이, 앱 등록 시 입력했던 일반사항과 자동으로 생성되는 OAuth2 인증 시
 사용하기 위한 App Key, App Secret 등이 표시되며, 이 서비스에서 사용할
 역할에 대한 정보와 각 역할에 대한 요청 현황을 확인할 수 있다.
 
-![](/attachments/uart/uart-21-app-detail.png){:.dropshadow}
+![](/attachments/uart/uart-21-app-detail.png)
 
 위의 앱상세 화면에는 각 역할에 대한 활성사용자 수와 요청 현황 등을 표시해
 준다. 그러나, 각 사용자에 대한 상세 정보는 표시하지 않는데, 이러한 상세
@@ -339,7 +339,7 @@ admin이라는 코드를 갖는 관리자 역할과 user라는 코드를 갖는 
 해당 서비스의 특성에 따른 다양한 역할이 필요할 수 있는데, 앱의 관리자는
 위의 상세화면에서 "New Role" 버튼을 이용하여 추가해줄 수 있다.
 
-![](/attachments/uart/uart-31-new-role.png){:.dropshadow}
+![](/attachments/uart/uart-31-new-role.png)
 
 위의 그림에서는, lead라는 코드와 Team Lead라는 이름을 갖는 추가 역할을
 서비스에 추가하는 화면이다. 이렇게 역할을 추가해주고 사용자가 이 역할을
@@ -374,7 +374,7 @@ admin이라는 코드를 갖는 관리자 역할과 user라는 코드를 갖는 
 일단, 다음 화면을 보면, UART에서 발생하는 다양한 메시지가 관리자에게 전달된
 상태를 확인할 수 있다.
 
-![](/attachments/uart/uart-40-messages-stark.png){:.dropshadow}
+![](/attachments/uart/uart-40-messages-stark.png)
 
 대충 눈에 띄는 것을 보면, 사용자가 권한을 넘어 어디엔가 접속했을 때, 접속
 원한 위반을 관리자에게 알려주는 "access violation" 메시지, 새로운 사용자가
@@ -385,12 +385,12 @@ admin이라는 코드를 갖는 관리자 역할과 user라는 코드를 갖는 
 
 또한, 권한이 다른 사용자에게는 그 권한에 맞는 메시지가 가게 되는데,
 
-![](/attachments/uart/uart-40-messages-widow.png){:.dropshadow}
+![](/attachments/uart/uart-40-messages-widow.png)
 
 앱 관리자 권한을 갖는 Black Widow에게는 "role ... requested by..." 같은
 앱에 관련된 메시지가 전달된다. 그 중 하나를 자세히 보면 아래와 같다.
 
-![](/attachments/uart/uart-41-message-detail.png){:.dropshadow}
+![](/attachments/uart/uart-41-message-detail.png)
 
 위의 메시지는 새로운 역할요청이 사용자로부터 발생하였을 때 해당 앱의
 관리자가 받게 되는 메시지인데, 발송자, 앱, 구분 등의 일반정보와 함께
@@ -412,7 +412,7 @@ UART에 등록한 사용자가 로그인을 하면 뭐... 볼 게 없다. 그러
 내가 사용하는(Grant한) 앱의 정보, 그 앱 내에서 허용된 역할에 대한 정보,
 그리고 로그인에 사용한 신임정보(Credential)를 확인할 수 있는 것이 전부다.
 
-![](/attachments/uart/uart-50-membership.png){:.dropshadow}
+![](/attachments/uart/uart-50-membership.png)
 
 ### 권한 요청
 
@@ -421,7 +421,7 @@ UART에 등록한 사용자가 로그인을 하면 뭐... 볼 게 없다. 그러
 역할을 갖게 된다. 그런데 사용자가 일반 사용자의 권한 이상을 필요로 하는
 경우에는 이 페이지로 이동하여 역할신청(Role Request)을 할 수 있다.
 
-![](/attachments/uart/uart-51-role-request.png){:.dropshadow}
+![](/attachments/uart/uart-51-role-request.png)
 
 위의 그림은 앱의 역할을 신청하는 화면인데, 해당 앱의 여러 역할 중, 내가
 아직 가지고 있지 않은 역할의 목록을 보여주게 되고, 이 중에서 원하는 역할을
@@ -441,7 +441,7 @@ UART에 등록한 사용자가 로그인을 하면 뭐... 볼 게 없다. 그러
 앞서 보았던 화면이다. 다음과 같이, 서비스를 등록해줘야 UART를 통한 인증을
 받을 수 있다.
 
-![](/attachments/uart/uart-22-new-app.png){:.dropshadow}
+![](/attachments/uart/uart-22-new-app.png)
 
 이 단계는 시스템적인 연동 설정일 뿐, 이것만으로 모든 구성이 끝난 것은 아니다.
 사용자는 자신의 서비스앱이 OAuth2 표준에 의한 인증을 사용할 수 있도록 구성을
@@ -458,7 +458,7 @@ UART에 등록한 사용자가 로그인을 하면 뭐... 볼 게 없다. 그러
 상호작용을 포함하고 있지만 대부분이 기계적 통신으로 이루어진 OAuth2 인증을
 할 수 있으며, 그 중 중요한 부분의 정보를 디버깅용으로 찍어보면 아래와 같다.
 
-![](/attachments/uart/uart-71-client-raw.png){:.dropshadow}
+![](/attachments/uart/uart-71-client-raw.png)
 
 OAuth2 인증의 첫번째 단계는 인증서버로부터 Authorization Code를 받아오는
 것으로부터 시작된다. 이 예에서는 `dSJlPTQ-S165-FqhEfMJpQ`라는, 그 문자열
@@ -483,7 +483,7 @@ UART의 인증서를 가지고 있다면 인증서에 포함된 Public Key를 �
 수동 Client를 사용하지 않고 Postman을 활용하여 웹브라우저에서 시험해보면
 아래와 같은 정보를 볼 수도 있고. 다를 것은 없다.
 
-![](/attachments/uart/uart-72-client-userinfo.png){:.dropshadow}
+![](/attachments/uart/uart-72-client-userinfo.png)
 
 여기서 UART와 관련하여 눈여겨 볼 부분은 JSON 본문 중간의 `roles` 부분이다.
 UART는 사용자가 역할요청을 해서 역할을 가지고 있을 경우에, 사용자 정보를

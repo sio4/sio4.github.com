@@ -17,7 +17,7 @@ last_modified_at: 2011-03-04T13:50:02+09:00
 
 > EMC가 데이터 분석 전문업체 그린플럼을 인수한다. 인수 조건은 공개되지 않았으며, EMC는 그린플럼의 데이터 웨어하우징 기술을 이용해 새로운 사업부를 구성할 계획인 것으로 알려졌다.
 
-![](/attachments/2010-07-08-greenplum.png){:.fit}
+![](/attachments/2010-07-08-greenplum.png)
 
 그린플럼은 MPP, Massively Parallel Processing을 지원하는 Data Warehousing,
 DBMS 솔루션 등을 중심으로 기업 환경을 위한 대규모 자료 분석 플랫폼을

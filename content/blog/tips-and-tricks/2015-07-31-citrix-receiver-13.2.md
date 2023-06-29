@@ -25,7 +25,7 @@ date: 2015-07-31 00:20:27+09:00
 Chrome Browser용 App 버전**이 있다! 이게 잘만 돌아간다면, 설치
 크기도 작고, 복잡하지도 않고, 사용도 편할 것 같다!
 
-![](/attachments/2015-07-31-crcvr-1.6-chrome.png){:.fit.dropshadow}
+![](/attachments/2015-07-31-crcvr-1.6-chrome.png)
 
 이 버전은 Google Chrome Web Store에서 직접 받아야 한다고 하여
 받아 사용하여 보았다. 일단 편한 점은,
@@ -42,7 +42,7 @@ Chrome Browser용 App 버전**이 있다! 이게 잘만 돌아간다면, 설치
 확인을 하고 싶으나, 급한 마음에 바로 Native Linux 용 새 버전을
 설치하였다.
 
-![](/attachments/2015-07-31-crcvr-13.2-linux.png){:.fit.dropshadow}
+![](/attachments/2015-07-31-crcvr-13.2-linux.png)
 
 1년 전 기억을 돌이켜보면, 그 땐 배포파일 자체로는 잘 동작하지
 않았고 인증서 추가 설치를 포함해서 이런 저런 것들을 해줘야 했다.
@@ -55,12 +55,12 @@ Chrome Browser용 App 버전**이 있다! 이게 잘만 돌아간다면, 설치
 
 혹시나 일단, Handler 설정 확인 먼저. 기본값은 아래와 같았다.
 
-![](/attachments/2015-07-31-icaclient-ff-n.png){:.fit.dropshadow}
+![](/attachments/2015-07-31-icaclient-ff-n.png)
 
 기본값은 "Citrix Receiver for Linux 사용 (Firefox)"라고 되어있었고,
 아래처럼 다른 옵션도 있었다.
 
-![](/attachments/2015-07-31-icaclient-ff-w.png){:.fit.dropshadow}
+![](/attachments/2015-07-31-icaclient-ff-w.png)
 
 어디에 문제가 있는지 찬찬히 추적을 해봐야겠지만, 그보다 먼저 옵션이
 있다면 바꿔보고 싶었다. "Citrix Receiver Engine 사용 (기본값)"은

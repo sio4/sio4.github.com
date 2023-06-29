@@ -16,7 +16,7 @@ date: 2016-09-06 03:00:00 +0900
 Point로 삼을 수 있도록 돕는 행위를 소프트웨어 공학에서는 Profiling이라고
 부른다.
 
-![](/attachments/20160428-caos/caos-performance.png){:.fit.dropshadow}
+![](/attachments/20160428-caos/caos-performance.png)
 
 C 프로그래머로 살던 시절에는, 업무 영역의 특징도 있거니와 Profiling
 자체에 대한 개인적인 호기심도 있어서 꽤 재미나게 Profiling을 하곤
@@ -223,7 +223,7 @@ $
 
 그 결과를 보면 아래처럼 Callee Map 비슷한 것을 만들어준다. :-)
 
-![](/attachments/20160428-caos/caos-pf-21-callstack-1.png){:.fit.dropshadow}
+![](/attachments/20160428-caos/caos-pf-21-callstack-1.png)
 
 위 그림은 성능문제가 있는 상태에서 Call을 분석한 것인데, 단일 요청에
 대한 처리량 중에서 `#show`의 비중이 99.37에 달하며 `Hash#each`에 의한
@@ -233,7 +233,7 @@ $
 
 반면에, 개선된 상태인 아래 그림을 보면,
 
-![](/attachments/20160428-caos/caos-pf-23-callstack-2.png){:.fit.dropshadow}
+![](/attachments/20160428-caos/caos-pf-23-callstack-2.png)
 
 `#show`의 비중이 약 72%로 줄었을 뿐만 아니라, `#set_container`나
 `#objects_detail` 등의 비중이 오히려 `Hash#each`보다 높은 것을 볼
@@ -246,8 +246,8 @@ $
 맨 위의 루틴의 내부 Callee들을 소요시간 순으로 정렬하여 보여주고 있으며,
 그 내용은 위의 Map과 같다.
 
-![](/attachments/20160428-caos/caos-pf-22-graph-1.png){:.fit.dropshadow}
-![](/attachments/20160428-caos/caos-pf-24-graph-2.png){:.fit.dropshadow}
+![](/attachments/20160428-caos/caos-pf-22-graph-1.png)
+![](/attachments/20160428-caos/caos-pf-24-graph-2.png)
 
 
 # 그래서 뭐가 변했다고?

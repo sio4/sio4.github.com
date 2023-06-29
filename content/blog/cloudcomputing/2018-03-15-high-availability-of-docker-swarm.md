@@ -13,7 +13,7 @@ Docker의 기본 Orchestration 도구인 Swarm의 기본적인 구성에 대하�
 이번 글에서는 이러한 기능을 안정적으로 제공할 수 있도록 고가용성 환경을
 꾸미는 방법에 대해 정리하였다.
 
-![](/attachments/docker/docker-swarm-ha.png){:.centered.half}
+![](/attachments/docker/docker-swarm-ha.png)
 
 아... 그림을 조금씩 손봐서 각각의 영역에 맞게 표현해보고 있는데... 어찌
 어설프다. 아무튼,
@@ -163,7 +163,6 @@ Swarm 클러스터의 실제 구성은 매우 단순하다. Swarm의 매력 중 
 3 대 이상의 Node를 Manager로 지정하기만 하면, 말 그대로 추가적인 어떠한
 작업도 없이 지정하기만 하면, Swarm 클러스터는 완성된다.
 
-{:.boxed}
 > 일반적으로, 클러스터가 두 대 또는 짝수의 시스템으로 구성된 경우, 그 중
 > 하나 또는 반이 Offline이 되었을 때 클러스터가 정상적으로 동작하기가
 > 어렵다. 왜냐하면, 남아있는 시스템의 입장에서 그 상황이 자신만 살아남은
@@ -431,7 +430,6 @@ $
 "*원격으로 다 할 수 있다*" 아니더냐, 그리고 간단하게 다시 Manager에게 갈
 명령을 내려봤다.
 
-{:.wrap}
 ```console
 $ docker node ls
 error during connect: Get https://198.51.100.222:2376/v1.35/nodes: dial tcp 198.51.100.222:2376: getsockopt: no route to host
@@ -445,7 +443,6 @@ $
 그럼, 아직 살아있는 또하나의 Manager인 `dev02`를 바라보고, 다시 동일한
 명령을 날려보자.
 
-{:.wrap}
 ```console
 $ docker-machine use dev02
 Active machine: dev02
@@ -478,7 +475,6 @@ Manager도 자신의 결백함을 증명할 길이 없어서 Manager의 역할�
 정족수에 미치지 못해 클러스터가 정상적으로 동작하지 않는 상황에서, 문제가
 발생했던 Manager를 다시 살려내 봤다.
 
-{:.wrap}
 ```console
 $ docker-machine start dev01
 Starting "dev01"...
@@ -533,7 +529,6 @@ Manager다. 어쩔 수 없이 이 Node를 다시 죽였다!
 
 그럼 상태를 볼까?
 
-{:.wrap}
 ```console
 $ docker node ls
 Error response from daemon: rpc error: code = Unknown desc = The swarm does not have a leader. It's possible that too few managers are online. Make sure more than half of the managers are online.
@@ -542,7 +537,6 @@ $
 
 이번에도 똑같은 이유로 Swarm은 동작하지 않았다. 그리고,
 
-{:.wrap}
 ```console
 $ docker ps 
 CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
@@ -634,7 +628,6 @@ $
 이제, 새로 만든 Host를 Swarm에 등록할건데, 아예 처음부터 Worker가 아닌
 Manager로 채용하려고 한다.
 
-{:.wrap}
 ```console
 $ docker-machine use dev03
 Active machine: dev03
@@ -745,7 +738,6 @@ $
 
 죽었던 Node가 다시 살아난 상황에서 Task 상황을 다시 보면,
 
-{:.wrap}
 ```console
 $ docker service ps ping
 ID           NAME       IMAGE         NODE  DESIRED STATE CURRENT STATE          ERROR
@@ -766,7 +758,6 @@ $
 있었다. 만약, 해당 Task, Service가 공유 리소스에 대한 배타적 접근이
 필요한 경우였다면 어떻게 됐을까?
 
-{:.point}
 배타적 자원 접근이 필요한 서비스와 Swarm
 : Swarm은 배타적 자원 접근에 대한 타당한 처리를 지원하지 않는 것 같다!
 

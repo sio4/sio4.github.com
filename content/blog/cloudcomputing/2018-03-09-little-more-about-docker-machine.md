@@ -16,7 +16,7 @@ Docker Engine을 탑재한 Dockerized Host, Docker Node를 손쉽게 펼쳤다�
 (Docker Machine의 개요를 담은 "**[Docker Machine으로 Docker Node 뿌리기]**"
 를 먼저 참고하시면 좋습니다.)
 
-![](/attachments/docker/docker-machine.jpg){:.fit}
+![](/attachments/docker/docker-machine.jpg)
 
 {:.caption.tight.centered}
 Dock!ron Man vs. War Machine!
@@ -79,7 +79,6 @@ Machine을 활용할 수 있는 범위는 어디까지일까?**
 `docker-machine`이 제공하는 부명령 중, Host 운영체계의 관리에 사용할만한
 것들을 뽑아보면, 다음과 같다.
 
-{:.styled.fit}
 | 부명령           | 설명                                                    |
 |:-----------------|:--------------------------------------------------------|
 | mount            | Mount or unmount a directory from a machine with SSHFS. |
@@ -144,7 +143,6 @@ Mount Point를 차례대로 인수로 주면 끝. 위와 같이, 원격지의 �
 
 이번엔 다른 경로를 연결해보자.
 
-{:.wrap}
 ```console
 $ docker-machine mount worker01:/var/lib/docker worker01
 $
@@ -207,7 +205,6 @@ $
 
 아무튼, 조금 더 보자.
 
-{:.wrap}
 ```console
 $ docker-machine mount worker01:/etc worker01
 $ docker-machine mount worker02:/etc worker02
@@ -234,7 +231,6 @@ $
 
 `/etc`를 열은 김에, Docker 서비스에 대한 `systemd` 설정도 열어봤다.
 
-{:.wrap}
 ```console
 $ cat worker01/systemd/system/docker.service.d/10-machine.conf
 [Service]
@@ -320,7 +316,6 @@ $
 이런 분류는 Official한 것이 아니고, 내가 그냥 편의 상 하는 거임.)
 
 
-{:.styled.fit}
 | 부명령           | 설명                                                    |
 |:-----------------|:--------------------------------------------------------|
 | inspect          | Inspect information about a machine                     |
@@ -495,7 +490,6 @@ $
 
 새로 설치하자. 앞선 실수(?)를 보완하여 아예 배포 방식을 바꿔보면 된다.
 
-{:.wrap}
 ```console
 $ docker-machine create \
 	--engine-label mode=standalone --engine-label cluster=dev \
@@ -625,7 +619,6 @@ $
 
 먼저, VM을 관리하기 위한 명령으로는 아래와 같은 것들이 있다.
 
-{:.styled.fit}
 | 부명령           | 설명                                                    |
 |:-----------------|:--------------------------------------------------------|
 | create           | Create a machine                                        |
@@ -770,7 +763,6 @@ $
 
 꺼져있는 기계를 켜려면,
 
-{:.wrap}
 ```console
 $ docker-machine start worker02
 Starting "worker02"...
@@ -817,7 +809,6 @@ $
 
 엥? 그런데!
 
-{:.wrap}
 ```console
 $ docker-machine start dev01 dev02 worker02
 Starting "dev01"...
@@ -850,7 +841,6 @@ VSI가 되살아나는 모습을 SoftLayer 관리콘솔에서 확인한 모습: 
 
 마지막으로, `restart` 명령은 이렇게,
 
-{:.wrap}
 ```console
 $ docker-machine restart worker02
 Restarting "worker02"...
@@ -877,7 +867,6 @@ $
 앞서 `status` 명령과 같이 VM의 가동 상태를 보는 것도 있지만, 그 외의
 논리적인 정보를 확인할 수 있는 부명령으로는 아래와 같은 것들이 있다.
 
-{:.styled.fit}
 | 부명령 | 설명                                                                |
 |:-------|:--------------------------------------------------------------------|
 | active | Print which machine is active                                       |

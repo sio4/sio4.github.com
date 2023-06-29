@@ -242,7 +242,7 @@ $
 
 올렸으니 바로 접속을 해보자.
 
-![SHOT](/attachments/elastic-nms/elk-kibana-01-initializing.jpg){:.bordered}
+![SHOT](/attachments/elastic-nms/elk-kibana-01-initializing.jpg)
 
 Kibana는 첫번째 사용자가 접속할 때, 위와 같이 Initialize 과정을 거친다.
 조금 당황스러운 것은, 이게, 기본적으로는 인증이라는 절차가 없다.
@@ -253,7 +253,7 @@ Kibana는 첫번째 사용자가 접속할 때, 위와 같이 Initialize 과정�
 아무튼, 초기화가 되면 다음과 같이, Index 정보가 없으니 만들라는 화면으로
 넘어간다.
 
-![SHOT](/attachments/elastic-nms/elk-kibana-02-no-index.jpg){:.bordered}
+![SHOT](/attachments/elastic-nms/elk-kibana-02-no-index.jpg)
 
 그러나 우리는 아직 Index를 가지고 있지 않다. Index는 일종의 Database, 또는
 Oracle의 Schema, 뭐 그런 비슷한 개념인데, 연관된 문서를 담는 큰 그릇이라
@@ -371,23 +371,23 @@ $
 것이다. 이번에는 앞선 화면에서 비활성 상태였던 "Create" 버튼이 녹색으로
 활성화되어 보인다!
 
-![SHOT](/attachments/elastic-nms/elk-101-configure-an-index.jpg){:.bordered}
+![SHOT](/attachments/elastic-nms/elk-101-configure-an-index.jpg)
 
 위의 화면에서 Create 버튼을 눌러 Index 정보를 생성해주면, 아래의 화면으로
 넘어가게 된다. 이 화면은, 사용자가 지정한 Index에 담겨있는 데이터의 형과
 형식, 분석여부와 색인여부를 표시하고 있다.
 
-![SHOT](/attachments/elastic-nms/elk-102-default-index.jpg){:.bordered}
+![SHOT](/attachments/elastic-nms/elk-102-default-index.jpg)
 
 이제 화면 상단의 Discover 메뉴를 선택하여 실제의 데이터를 본다. 아래와 같이
 이미 많은 데이터가 쌓여 있는 것을 볼 수 있다. (ES와 LS의 기동 로그겠지)
 
-![SHOT](/attachments/elastic-nms/elk-103-discover.jpg){:.bordered}
+![SHOT](/attachments/elastic-nms/elk-103-discover.jpg)
 
 둘러보는 김에 각 열의 왼쪽에 붙어있는 세모를 눌러 상세 정보를 표시해보면,
 아래 그림에서 보는 것과 같이 자세한 내용을 확인할 수 있다.
 
-![SHOT](/attachments/elastic-nms/elk-104-file-fields.jpg){:.bordered}
+![SHOT](/attachments/elastic-nms/elk-104-file-fields.jpg)
 
 좋았어! 일단 설치는 잘 된 것 같다!
 

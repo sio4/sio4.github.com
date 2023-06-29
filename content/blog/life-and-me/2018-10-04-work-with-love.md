@@ -33,7 +33,6 @@ date: 2018-10-04T11:42:00+0900
 
 [\[릴레이 인터뷰\] 국민대학교 소프트웨어학부 이민석 교수님 - S1 E09](http://monthly-jiandson.tistory.com/m/24)
 
-{:.comment}
 > 그러고 보니, 요즘은 블로그에 "생각의 잔상" 같은 것을 전혀 적지 않고
 > 있었구나. 아마, 페이스북을 낙서장처럼 쓰는 까닭도 있을 것 같고, 내
 > 블로깅 환경을 예전의 Browser Extension을 써서 간단하게 포스팅하던
@@ -47,5 +46,4 @@ date: 2018-10-04T11:42:00+0900
 [이민석]:http://hl1itj.tistory.com/
 [정진호]:http://lovesera.tistory.com/
 
-{:.centered}
 <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fyonghwan.so%2Fposts%2F2296185923729233&width=500" width="500" height="442" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>

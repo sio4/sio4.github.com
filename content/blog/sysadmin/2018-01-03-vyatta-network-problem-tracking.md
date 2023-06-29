@@ -79,7 +79,6 @@ Keepalived_vrrp[75]: VRRP_Group(vgroup1): Sending SNMP notification
 엔지니어는 그들의 경험과 전문성, 그리고 직감을 활용하여 문제 해결의 방향을
 잡아야 하는 것이다.
 
-{:.point}
 로그는...
 : 아프다는 "현상"을 말하는 것이지, "문제 자체"를 말하는 것이 아니다.
 
@@ -158,7 +157,7 @@ rotate 되어 사라지는) 로그가 없도록 해줘야 할 필요가 있으�
 또한, 원격지에 남길 로그는 위와 같이 기본 `level`을 `info`로 올려서 조금 더
 상세한 내용을 남기도록 설정하였다.
 
-![](/attachments/vyatta-troubleshooting/vyatta-network-problem-tracking.png){:.bordered.dropshadow}
+![](/attachments/vyatta-troubleshooting/vyatta-network-problem-tracking.png)
 
 위의 그림은, 원격 로그수집의 결과를 나중에 설명할 Traffic Check 자료와 함께
 표출한 그림으로, 그래프 부분은 데이터 전송량을 나타내고 있으며 붉은 폭탄
@@ -322,7 +321,6 @@ Ping의 Timeout과 관련된 것이니 무시할 수 있다.)
 알게 되었다.
 
 
-{:.point}
 원인 파악
 : 이렇게, 사실을 하나 하나 확인해가는 것이 바로 원인 파악의 과정이다.
 
@@ -438,7 +436,6 @@ Slave 인터페이스를 제거했다가 다시 추가하는 과정을 거치면
 부하의 문제였단 말인가? 장애 기본 자료를 봤을 때, 부하에 대한 얘기는 없었다.
 심지어, 그럴 만한 시스템도 아니다! 이상하다!
 
-{:.point}
 이상하면 치과 가라
 : 이상한 점이 있을 때 그냥 넘어가면 안된다. 불투명한 것을 없애는 과정이
   바로 문제 추적 과정이다.

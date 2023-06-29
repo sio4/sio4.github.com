@@ -71,7 +71,7 @@ Elastic Computing(특정 사업자를 지칭하려는 것은 아니다.) 환경�
 홈페이지 <https://papertrailapp.com>에 접속하면, 아래와 같은 화면을
 만나게 된다.
 
-![](/attachments/papertrail/ptrail-100-home.png){:.fit.centered.bordered}
+![](/attachments/papertrail/ptrail-100-home.png)
 
 이 회사는 아래 그림과 같은 컨셉을 바탕으로 서비스를 제공하고 있다.
 즉, OS나 Application 등의 모든 로그를 한 곳으로 모으고, 그것을
@@ -79,14 +79,14 @@ Elastic Computing(특정 사업자를 지칭하려는 것은 아니다.) 환경�
 Web Hook을 통하여 다른 서비스와 연계시키는 것이다. 마지막으로, 나중에
 활용할 수 있도록 외부에 보관하는 연결도 제공한다.
 
-![](/attachments/papertrail/ptrail-101-concept.jpg){:.fit.centered.bordered}
+![](/attachments/papertrail/ptrail-101-concept.jpg)
 
 이 서비스는, 아래와 같은 Plan을 갖는데, 나처럼 취미로 서비스를 제공하는
 경우를 위해(뭐, 맛들이라는 얘기긴 한데), 7일의 단기 보관과 48시간 내의
 자료만 검색이 가능하고 한 달에 100MB 이내의 Traffic만 처리할 수 있는
 무료 Plan이 제공된다.
 
-![](/attachments/papertrail/ptrail-001-price.png){:.fit.centered.bordered}
+![](/attachments/papertrail/ptrail-001-price.png)
 
 
 
@@ -95,26 +95,26 @@ Web Hook을 통하여 다른 서비스와 연계시키는 것이다. 마지막�
 서비스에 가입하고, 설정을 해주면 아래와 같은 Dashboard를 사용할 수 있다.
 등록한 시스템의 목록과 각각에 대한 저장된 검색조건이 표시된다.
 
-![](/attachments/papertrail/ptrail-110-dash.png){:.fit.centered.bordered}
+![](/attachments/papertrail/ptrail-110-dash.png)
 
 특정 그룹이나 서버를 선택하게 되면, 아래와 같은 좀 더 세부적인 사항을
 볼 수 있으며 얼마나 많은 로그가 기록되고 있는지도 확인할 수 있다.
 
-![](/attachments/papertrail/ptrail-112-caos.png){:.fit.centered.bordered}
+![](/attachments/papertrail/ptrail-112-caos.png)
 
 실제 로그를 확인하면, 아래와 같이 친숙한, 그리고 시스템 Console로 보는
 것 보다는 나름 깔끔한 로그를 확인할 수 있다.
 
-![](/attachments/papertrail/ptrail-210-events.png){:.fit.centered.bordered}
+![](/attachments/papertrail/ptrail-210-events.png)
 
 또한 특정 문자열 등으로 검색한 결과를 보여줌으로써 문제를 쉽게 찾을 수
 있으며,
 
-![](/attachments/papertrail/ptrail-210-filtered.png){:.fit.centered.bordered}
+![](/attachments/papertrail/ptrail-210-filtered.png)
 
 병합된 로그가 아닌 단일 시스템의 로그를 뽑아서 볼 수도 있다.
 
-![](/attachments/papertrail/ptrail-220-selected.png){:.fit.centered.bordered}
+![](/attachments/papertrail/ptrail-220-selected.png)
 
 
 
@@ -129,19 +129,19 @@ Papertrail은 실시간으로 로그를 추적하면서, 미리 정의할 수 �
 것과 같이, Email이나 Chat으로 알림을 주기도 하고, PagerDuty같은 별도의
 서비스를 연계하여 문제가 발생했음을 전달하기도 한다.
 
-![](/attachments/papertrail/ptrail-300-alert.png){:.fit.centered.bordered}
+![](/attachments/papertrail/ptrail-300-alert.png)
 
 알림을 등록하는 과정은 아래와 같다. 이름과 대상 그룹을 정하고, 검색할
 질의를 등록하면 기본 설정이 끝난다. 알림을 작성했다면 어떻게 관리자에게
 전달할지도 등록해주게 된다.
 
-![](/attachments/papertrail/ptrail-310-alert-new.png){:.fit.centered.bordered}
+![](/attachments/papertrail/ptrail-310-alert-new.png)
 
 작성된 알림을 수정할 수도 있고, 상세 설명을 볼 수도 있다. 아래 그림은,
 `GET /albums/4 HTTP`라는 문자열이 검색된다면 Slack을 통해서 메시지를
 날리도록 설정한 것이다.
 
-![](/attachments/papertrail/ptrail-321-alert-edit.png){:.fit.centered.bordered}
+![](/attachments/papertrail/ptrail-321-alert-edit.png)
 
 
 
@@ -150,35 +150,35 @@ Papertrail은 실시간으로 로그를 추적하면서, 미리 정의할 수 �
 서비스 전반에 대한 설정을 아래와 같이 제공한다. 이 부분은 따로 설명이
 필요할 것 같지는 않고, 스샷만 기록해둔다.
 
-![](/attachments/papertrail/ptrail-401-settings.png){:.fit.centered.bordered}
+![](/attachments/papertrail/ptrail-401-settings.png)
 
 계정 프로필
 
-![](/attachments/papertrail/ptrail-402-profile.png){:.fit.centered.bordered}
+![](/attachments/papertrail/ptrail-402-profile.png)
 
 사용자 목록
 
-![](/attachments/papertrail/ptrail-403-members.png){:.fit.centered.bordered}
+![](/attachments/papertrail/ptrail-403-members.png)
 
 저장 설정
 
-![](/attachments/papertrail/ptrail-404-archives.png){:.fit.centered.bordered}
+![](/attachments/papertrail/ptrail-404-archives.png)
 
 로그 전송 설정
 
-![](/attachments/papertrail/ptrail-405-destinations.png){:.fit.centered.bordered}
+![](/attachments/papertrail/ptrail-405-destinations.png)
 
 빌링 정보
 
-![](/attachments/papertrail/ptrail-406-payments.png){:.fit.centered.bordered}
+![](/attachments/papertrail/ptrail-406-payments.png)
 
 청소하기 설정
 
-![](/attachments/papertrail/ptrail-407-purge.png){:.fit.centered.bordered}
+![](/attachments/papertrail/ptrail-407-purge.png)
 
 선전해주세요 :-)
 
-![](/attachments/papertrail/ptrail-408-refer.png){:.fit.centered.bordered}
+![](/attachments/papertrail/ptrail-408-refer.png)
 
 ---
 

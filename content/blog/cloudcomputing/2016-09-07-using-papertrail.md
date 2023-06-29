@@ -59,7 +59,7 @@ Syslog에 필요한 설정을 추가하는 방식과 Application의 비표준 �
 어디로 쏴야하는지만 알면 되는데, Papertrail은 다음과 같이 설정페이지의
 Log Destinations에서 설정을 할 수 있도록 하고 있다.
 
-![](/attachments/papertrail/ptrail-405-destinations.png){:.fit.centered.bordered}
+![](/attachments/papertrail/ptrail-405-destinations.png)
 
 Destination은 `hostname:port` 형태로 제공되는데, Destination 당 서버와
 Port를 달리하여 여러 Destination을 구성할 수 있다.
@@ -95,7 +95,6 @@ Papertrail은 개발 언어에 따른 Library나 API를 별도로 제공하지 �
 대신, `remote-syslog`라는 패키지를 자체적으로 배포하고 있으며, 이것을
 설치하고 설정해주면 모든 파일 기반의 로그를 수집할 수 있다.
 
-{:.wrap}
 ```console
 $ wget https://github.com/papertrail/remote_syslog2/releases/download/v0.17-beta-pkgs/remote-syslog2_0.17_amd64.deb
 $ sudo dpkg -i remote-syslog2_0.17_amd64.deb 
@@ -137,7 +136,6 @@ destination 정보를 설정해주면 된다. 이 예에서는, Nginx의 로그�
 
 아무튼, 이제 설정이 마무리되었으면 다음과 같이 데몬을 시작한다.
 
-{:.wrap}
 ```console
 superhero@caos:~$ sudo service remote_syslog start
 superhero@caos:~$ sudo service remote_syslog status
@@ -169,7 +167,7 @@ superhero@caos:~$
 서버의 로그만 보거나, 또는 아래 그림과 같이 특정 문자열로 검색을 하여
 로그를 찾아볼 수 있다. 그리고 경보의 발생은, 이러한 검색을 바탕으로 한다.
 
-![](/attachments/papertrail/ptrail-210-filtered.png){:.fit.centered.bordered}
+![](/attachments/papertrail/ptrail-210-filtered.png)
 
 ## 경보! 상황발생!
 
@@ -179,14 +177,14 @@ superhero@caos:~$
 Slack에 메시지를 보내는 URL을 정의하고 있다. (이 부분은 좀 더 설명이
 필요하지만, 우리의 주제는 아니니까 생략)
 
-![](/attachments/papertrail/ptrail-321-alert-edit.png){:.fit.centered.bordered}
+![](/attachments/papertrail/ptrail-321-alert-edit.png)
 
 이번에는 Application 개발자가 명시적으로 경보를 발생시킬 수 있도록
 사전에 정의된 경보를 만들어봤다. 단순히, `ALERT`라는 문자열이 보이면
 위의 경보와 비슷한 방식으로 메시지를 보내개 한 것인데, 아래 화면은
 이렇게 두 가지 검색에 대한 경보가 Slack 앱에 수신된 모습이다.
 
-![](/attachments/papertrail/ptrail-slack-alert.png){:.half.centered.bordered}
+![](/attachments/papertrail/ptrail-slack-alert.png)
 
 이렇게 되면, 개발자는 자신이 경보를 받고 싶은 로그를 생성할 때,
 의도적으로 ALERT이라는 문자열을 추가하여 경보를 받도록 프로그래밍을

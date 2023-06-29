@@ -277,7 +277,7 @@ $
 (아, 이게 일정한 시간간격을 두고 데이터를 수집하는 것이기 때문에, 조금 시간이
 지나야 그래프가 정상적으로 나올 것이다.)
 
-![](/attachments/20151228-mrtg-001.png){:.fit.dropshadow}
+![](/attachments/20151228-mrtg-001.png)
 
-![](/attachments/20151228-mrtg-002.png){:.fit.dropshadow}
+![](/attachments/20151228-mrtg-002.png)
 

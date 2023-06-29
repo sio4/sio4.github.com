@@ -26,7 +26,6 @@ date: 2017-10-11T22:00:00+09:00
 * [Calling All Logs! Graylog2 3편: 추가설정]
 * [Calling All Logs! Graylog2 4편: 기록]
 
-{:.boxed}
 > 오픈소스 로그분석 시스템인 [Graylog]에 대한 문서는 [Graylog Docs]에서
 > 찾을 수 있으며, [Graylog Github]에서 그 소스를 받아볼 수 있다.
 
@@ -85,7 +84,6 @@ date: 2017-10-11T22:00:00+09:00
 공개 소프트웨어**이다.
 
 
-{:.point}
 왜 로그를 중앙화해야 하는가?
 : 모든 서비스 구성요소의 로그를 모아 한 눈에 확인하여 문제의 인과관계와
   원인을 찾아내고, 또한 긴급 오류를 자동 탐지하여 사용자의 개입을 유도,
@@ -130,7 +128,7 @@ date: 2017-10-11T22:00:00+09:00
 
 보자.  내가 따낸 그림은 좀 후져서, 인터넷에서 한 장 가져왔다.
 
-![](/attachments/graylog2/graylog-sample.png){:.dropshadow}
+![](/attachments/graylog2/graylog-sample.png)
 
 최종적으로 우리가 보게 될 화면은 이런 것이다. (화면 이외의 기능은 조금
 있다가...)
@@ -140,7 +138,7 @@ date: 2017-10-11T22:00:00+09:00
 원본 로그 데이터를 분석하고 체계화하거나, 세부적인 로그를 찾아볼 수 있는
 **검색화면**도 함께 제공된다.
 
-![](/attachments/graylog2/graylog-110-search.png){:.dropshadow}
+![](/attachments/graylog2/graylog-110-search.png)
 
 이 외의 부가 기능은 [Calling All Logs! Graylog2 2편: 맛보기]에서 다시
 살펴볼 예정이다.
@@ -157,7 +155,7 @@ date: 2017-10-11T22:00:00+09:00
 개별 요소의 설치에 앞서, 전체적인 구조를 볼 필요가 있을 것 같다. 다음
 그림은 Graylog의 개념적 구성요소와 상관관계를 설명하고 있다.
 
-![](/attachments/graylog2/graylog-arch-concept.png){:.dropshadow}
+![](/attachments/graylog2/graylog-arch-concept.png)
 
 맨 위의 구름은 로그수집 대상이 되는 기계, 애플리케에션 등을 나타내며,
 부하분산기를 거쳐 여러 대의 Cluster로 구성된 Graylog 서버에 메시지가
@@ -177,7 +175,7 @@ SPoF가 없는 구성이 되므로 비교적 높은 가용성을 얻을 수 있�
 독립적인 서버군으로 묶어 Cluster를 만들어 놓았고(왼쪽) 다른 한 쪽에는
 Graylog와 MongoDB를 탑재한 서버를 구성해 놓았다.
 
-![](/attachments/graylog2/graylog-arch-large.png){:.dropshadow}
+![](/attachments/graylog2/graylog-arch-large.png)
 
 이 문서에서는 (맛보기니까...) Cluster 구성은 생략하고, 각각에 대한
 단일 구성을 하나의 서버에 몽땅 얹은 구성으로 시험환경을 구성하였다.
@@ -217,7 +215,6 @@ Elastic 저장소로부터 Elasticsearch를 설치한다.
 작성 과정에서 최신 버전에 대한 업데이트는 생략하였으므로, 이 부분은
 따로 확인해야 한다.)
 
-{:.wrap}
 ```console
 $ wget -qO - https://packages.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
 OK
@@ -231,7 +228,6 @@ $
 MongoDB는 설치만 하면 바로 사용이 가능하며, Elasticsearch는 기본적으로
 자동시작을 하지 않는다. 먼저, 아래와 같이 `cluster.name`의 설정을 한 후,
 
-{:.wrap}
 ```console
 $ sudo cat /etc/elasticsearch/elasticsearch.yml |grep -v ^#
 $ sudo sed -i 's/.*cluster.name: .*/cluster.name: graylog/' /etc/elasticsearch/elasticsearch.yml
@@ -342,7 +338,6 @@ $
 
 다음과 같이, 구동에 앞서 암호를 설정해주어야 한다.
 
-{:.wrap}
 ```console
 $ cat /etc/graylog/server/server.conf |grep '^\(root_password\|password\)'
 password_secret =
@@ -519,7 +514,7 @@ $
 
 이제 해당 서버에 웹브라우져로 접속해본다.
 
-![](/attachments/graylog2/graylog-101-login.png){:.dropshadow}
+![](/attachments/graylog2/graylog-101-login.png)
 
 음, 이 고전적이며 뭔가 무게가 잡힌 로그인 페이지를 봤다면 설치가 잘 되었을
 가능성이 90% 정도? (혹시 뒤쪽에서 뭔가 꼬이지 않았다면 :-)

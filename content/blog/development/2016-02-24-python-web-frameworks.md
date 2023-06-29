@@ -57,10 +57,8 @@ Community에 의해 정리된 자료를 시작점으로 하여 관심이 가는 
 선별하였고, 이 자료를 기반으로 각 Framework의 홈페이지와 인터넷의
 글들을 참고하여 다음과 같은 후보를 선정하였다.
 
-{:.block-title}
 Project Information
 
-{:.fit.styled}
 | Framework | Type        | Version | Python  | Footprint  |
 |:----------|:-----------:|:-------:|:-------:|-----------:|
 |Django     | Full Stack  | 1.9.1   | 3.x     | 40 MB      |
@@ -115,10 +113,8 @@ Github는 가장 인기 있는 Social Development, Social Repository Site로,
 
 자세한 수치는 아래 표를 참고하기 바란다.
 
-{:.block-title}
 Stack Overflow & Github Statistics
 
-{:.fit.styled}
 | Framework  |Followers|Questions |Commits|Contributors|Stars     |Forks     |
 |:-----------|--------:|---------:|------:|-----------:|---------:|---------:|
 |[Django]    |17,800   |111,400   |22,020 |1,071       |17,698    |7,194     |
@@ -359,7 +355,6 @@ Pyramid의 경우에는 Scaffolding을 위한 도구를 제공하고 있어서 �
 것 같다. 그러나, Homepage에 기술되어 있는 바와 같이, 다음과 같은 간단한
 코드 하나로도 서비스 기동은 가능했다.
 
-{:.block-title}
 예제 코드 - `hello.py`
 
 ```python
@@ -387,7 +382,6 @@ if __name__ == '__main__':
 번거롭게 느껴지고 귀찮은 일이 많아 보인다. 아마도, 함께 제공되는 도구들의
 도움을 받아야 뭔가 구조화된 개발이 가능할 것 같다.
 
-{:.block-title}
 실행
 
 ```console
@@ -409,7 +403,6 @@ Pyramid의 경우, 이렇게 간단한 시험으로 평가하는 것은 좀 무�
 Flask의 경우는 명령행 도구를 제공하고 있지 않으며 개발 문서를 살펴보지도
 않았다. 단지, 홈페이지의 예제를 가지고 시험해본 결과는 아래와 같다.
 
-{:.block-title}
 예제 코드 - `hello.py`
 
 ```python
@@ -426,7 +419,6 @@ if __name__ == "__main__":
 
 Root에 대한 Route 하나만 갖는 이 App을 실행해보면 아래와 같다.
 
-{:.block-title}
 실행
 
 ```console
@@ -448,7 +440,6 @@ $
 bottle 역시 도구를 제공하지 않는 Framework 중 하나이다. 아래와 같이
 단순한 시험을 해봤다.
 
-{:.block-title}
 예제 코드 - `hello.py`
 
 ```python
@@ -466,7 +457,6 @@ run(host='localhost', port=8080)
 동일 Function에 Route를 하나 더 추가해보았다. (그리고 다섯 번째 줄의
 `index` 함수에 대하여 인수의 기본값을 주었다.)
 
-{:.block-title}
 실행
 
 ```console
@@ -496,7 +486,6 @@ pecan은 간단한 수준의 유틸리티가 제공되는 Framework이다. 프�
 과정을 문서에 따라 간단히 실행해보았으며, 다음과 같은 실행 후에 마치,
 Rails의 시험 페이지와 유사한 화면을 만날 수 있었다.
 
-{:.block-title}
 프로젝트 구성
 
 ```console
@@ -569,7 +558,6 @@ $
 
 falcon의 경우는 다음과 같이 홈페이지의 시험코드를 이용한 시험을 해보았다.
 
-{:.block-title}
 예제 코드 - `hello.py`
 
 ```python
@@ -595,7 +583,6 @@ Method 별로 `GET`, `POST` 등을 처리할 수 있도록 처리하고 있는 �
 
 `gunicorn`을 설치하여 기동해본 결과는 다음과 같다.
 
-{:.block-title}
 실행
 
 ```console
@@ -635,10 +622,8 @@ $
 
 ## 홈페이지와 Repository
 
-{:.block-title}
 Links
 
-{:.fit.styled}
 | Homepage     | Github Repository     | Stackoverflow Tag               |
 |:-------------|:----------------------|:--------------------------------|
 | [Django]     | [Django - github]     | [stackoverflow/django]          |
