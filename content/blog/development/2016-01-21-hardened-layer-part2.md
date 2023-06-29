@@ -14,7 +14,7 @@ Console App의 방향을 다시 명확하게 잡고, 이 과정에서 Semantic U
 
 Hardened Layer Console: Dashboard
 
-![](/attachments/20160121-hl-v1-dashboard.png)
+![.dropshadow](/attachments/20160121-hl-v1-dashboard.png)
 
 앞선 [글][HardenedLayer-Part1]에서는 **Ruby on Rails를 이용하여 API App**을
 만들고, API App이 제공하는 API를 이용하여 SoftLayer에 Deploy된 VM 등의
@@ -32,12 +32,7 @@ App을 조금씩 다듬어서, 사용자 관점에서 Console을 보다 사용�
 * [Hardened Layer, SoftLayer Custom Portal - Part 1][HardenedLayer-Part1]
 * Hardened Layer, SoftLayer Custom Portal - Part 2
 
-[HardenedLayer-Part1]:{% post_url development/2016-01-16-hardened-layer %}
-
-## 목차
-
-* ToC
-{:toc}
+[HardenedLayer-Part1]:{{< relref "/blog/development/2016-01-16-hardened-layer.md" >}}
 
 
 
@@ -484,7 +479,7 @@ $
 
 Hardened Layer Console: Servers
 
-![](/attachments/20160116-hl-v1-servers.png)
+![.dropshadow](/attachments/20160116-hl-v1-servers.png)
 
 화면 위쪽의 검은 줄은 Semantic UI의 `menu`이며, Menu 왼쪽의 버튼을
 누르게 되면 Sidebar가 등장하는 구조다. 화면 중앙은 EsTable에 의한
@@ -636,7 +631,7 @@ Deploy된 각 자원의 비용 분포를 시각적으로 표시하여, 각 자�
 
 Hardened Layer Console: Dashboard
 
-![](/attachments/20160121-hl-v1-dashboard.png)
+![.dropshadow](/attachments/20160121-hl-v1-dashboard.png)
 
 
 # 맺음말

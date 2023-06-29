@@ -97,7 +97,7 @@ Elastic Stack으로
 
 지난 몇일 동안 꾸며본 프로토타입은 아래 모양과 같다.
 
-![](/attachments/silrok/silrok-dashboard-current.png)
+![.dropshadow](/attachments/silrok/silrok-dashboard-current.png)
 
 
 ### 함께 읽기

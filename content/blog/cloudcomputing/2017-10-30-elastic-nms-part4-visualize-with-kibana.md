@@ -39,8 +39,6 @@ Elastic Stack을 시작하는 입장에서 관심있는 부분을 참고하면 �
 
 # Kibana의 위상
 
-* TOC
-{:toc .half.pull-right}
 
 분석 플랫폼을 사용하는 내부 사용자로써 다양한 분석을 진행하려는 경우에는
 Kibana의 편리한 질의기능, 검색 및 자료 열람 기능, 다양한 형태의 시각적
@@ -61,7 +59,7 @@ Kibana의 주화면을 보면, 상단에 Discover, Visualize, Dashboard가 Setti
 기준에 따라 검색된 레코드의 시계열 분포를 표시하는 Histogram과 함께 개별
 레코드가 선택된 필드에 대한 테이블 형태로 표시되는 것을 확인할 수 있다.
 
-![SHOT](/attachments/elastic-nms/elk-401-saved-search.jpg)
+![.dropshadow](/attachments/elastic-nms/elk-401-saved-search.jpg)
 
 화면의 맨 위쪽을 보면, `tags:iptables AND message:"default-D"`라는 값이
 들어있는 검색창이 보이는데, 이 검색창을 이용하여 원하는 조건을 기반으로
@@ -93,7 +91,7 @@ Kibana의 시각화 기능은 다음과 같은 순서에 의해 진행된다.
 저장한 "Firewall Default Denied"가 선택할 수 있게 나타나 있는 것을 볼 수
 있다.
 
-![SHOT](/attachments/elastic-nms/elk-402-visualize-from-search.jpg)
+![.dropshadow](/attachments/elastic-nms/elk-402-visualize-from-search.jpg)
 
 데이터를 선택하고 나면, 이미 선택했던 시각화 유형에 따라 조금은 달라지지만
 아래와 같은 Data와 Option을 선택하는 단계로 넘어가게 된다. 아래의 예에는
@@ -102,7 +100,7 @@ Kibana의 시각화 기능은 다음과 같은 순서에 의해 진행된다.
 선택하였다. 그리고 그 결과가 중앙의 화면과 같이, 세계지도 위에 원의 크기로
 표현되고 있는 것을 볼 수 있다.
 
-![SHOT](/attachments/elastic-nms/elk-403-tile-map.jpg)
+![.dropshadow](/attachments/elastic-nms/elk-403-tile-map.jpg)
 
 ## 분석되지 않는 필드를 이용한 질의
 
@@ -125,12 +123,12 @@ Elasticsearch가 데이터 필드를 다루는 방식을 조금 다루면 좋을
 값이 `in2.*`라는 Regex에 매칭되는 값을 찾아 표시하고 있는 것을 확인할 수
 있다.
 
-![SHOT](/attachments/elastic-nms/elk-404-search-denied.jpg)
+![.dropshadow](/attachments/elastic-nms/elk-404-search-denied.jpg)
 
 위의 검색 결과를 보면, 필드 전체에 대하여 일치하는 레코드를 찾았다는 것을
 느낄 수... 있다. (느끼는 것은 아닌데 좀...)
 
-![SHOT](/attachments/elastic-nms/elk-405-table-and-save.jpg)
+![.dropshadow](/attachments/elastic-nms/elk-405-table-and-save.jpg)
 
 이렇게, 관심을 가져야 하는 여러 조건들을 미리 확인하고 위와 같이 저정해
 놓으면 Kibana 안에서 자유롭게 사용할 수 있다.
@@ -151,7 +149,7 @@ Elasticsearch가 데이터 필드를 다루는 방식을 조금 다루면 좋을
 등에는 아래와 같은 형태의 선형 또는 면형 분석이 유용하다. 특히, 면으로
 나타내는 경우, 시각적으로 그 양의 변화를 가늠할 수 있어서 유용하다.
 
-![SHOT](/attachments/elastic-nms/elk-406-area-chart.jpg)
+![.dropshadow](/attachments/elastic-nms/elk-406-area-chart.jpg)
 
 위 그림의 왼쪽 부분은 Option 창을 표시하고 있는데, 라인을 부드럽게 표현할
 것인지, 현재시간에 대하여 명시적인 표시를 할 것인지 등에 대한 결정을 할
@@ -164,7 +162,7 @@ Elasticsearch가 데이터 필드를 다루는 방식을 조금 다루면 좋을
 예는 어떤 IP에서 침해로 간주할 수 있는 접속을 많이 시도했는지, 그리고 해당
 IP에서 시도한 접속이 어느 포트에 대한 접속이었는지 등을 표시하고 있다.
 
-![SHOT](/attachments/elastic-nms/elk-407-vertical-bar.jpg)
+![.dropshadow](/attachments/elastic-nms/elk-407-vertical-bar.jpg)
 
 왼쪽 Buckets 부분에서도 확인할 수 있는 것과 같이 먼저 `fw_src_ip`를 기준으로
 막대를 표시하고, 그 막대를 다시 `fw_dst_port`로 쪼개어, 어느 IP로부터 어느
@@ -179,7 +177,7 @@ Port에 대한 접속을 시도하고 있는지를 시각화하는 예를 들어
 숫자가 아닌 그 데이터의 전체를 기준으로 하여 개별 데이터가 차지하는
 백분률을 이용하여 시각화를 하는 것이다.
 
-![SHOT](/attachments/elastic-nms/elk-408-donut.jpg)
+![.dropshadow](/attachments/elastic-nms/elk-408-donut.jpg)
 
 역시, 이것도 이중의 Bucket을 사용하여 잘린 Donut의 형태를 만들면, 위의
 경우와 유사하게 "그 중에서도"를 표시할 수 있다.
@@ -196,7 +194,7 @@ Port에 대한 접속을 시도하고 있는지를 시각화하는 예를 들어
 표시하거나, 외부로부터의 접속시도에 대한 지리분포를 표시하거나(아 중국),
 동일한 검색을 그래프가 아닌 테이블로 표시하는 등의 것을 한 화면에 짠!
 
-![SHOT](/attachments/elastic-nms/elk-411-dash-firewall.jpg)
+![.dropshadow](/attachments/elastic-nms/elk-411-dash-firewall.jpg)
 
 물론, 나처럼 최종 목표가 정형화된 검색과 시각화를 다수의 사용자에게
 제공하는 것인 경우에는 이렇게 자유롭게 검색하고, 저장하고, 표출하는

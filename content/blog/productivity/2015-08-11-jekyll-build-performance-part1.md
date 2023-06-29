@@ -16,10 +16,10 @@ date: 2015-08-11 04:14:32+09:00
 한 것.
 
 그리고 얼마 전,
-"[블로그, Tistory로부터 Github Pages로 이주]({% post_url productivity/2015-07-24-migration-from-tistory %}){:.reference}"에
+"[블로그, Tistory로부터 Github Pages로 이주]({{< relref "/blog/productivity/2015-07-24-migration-from-tistory.md" >}}){:.reference}"에
 정리했던 것과 같이 내 블로그의 모든 글들을 이 쪽으로 완전히 이사하였고,
 다시
-"[Jekyll로 Github Pages에 블로깅하기, Re!oaded]({% post_url productivity/2015-08-08-blogging-on-github-pages-reloaded %}){:.reference}"에서
+"[Jekyll로 Github Pages에 블로깅하기, Re!oaded]({{< relref "/blog/productivity/2015-08-08-blogging-on-github-pages-reloaded.md" >}}){:.reference}"에서
 소개한 블로그 답게 살 붙이는 작업을 몇 일 동한 틈틈히 진행하면서 글도
 몇 개 더 써봤는데... 그러고 나니, **Jekyll의 Build 속도 문제**가 슬슬
 거슬리기 시작했다.

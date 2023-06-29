@@ -27,13 +27,10 @@ EC2와 같은 **IaaS 방식 중심으로 클라우드컴퓨팅이라는 개념�
 기록으로 남기려 한다.
 
 [Heroku]:https://heroku.com
-[환상적! Ruby on Rails를 위한 PaaS 서비스!]:{% post_url cloudcomputing/2009-11-13-fantastic-paas-for-ruby-on-rails %}
+[환상적! Ruby on Rails를 위한 PaaS 서비스!]:{{< relref "/blog/cloudcomputing/2009-11-13-fantastic-paas-for-ruby-on-rails.md" >}}
 
-* TOC
-{:toc}
 
-{:#install-toolbelt}
-# Toolbelt 설치
+# Toolbelt 설치 {#install-toolbelt}
 
 Toolbelt라니... 내게는 생소한, 특이한 표현이다. 보통은 Toolchain이나
 Toolkit 같은 용어를 많이 사용할텐데 용어 선정 자체가 Heroku의 범상치
@@ -65,8 +62,7 @@ $
 패키지 설치까지 진행된다.
 
 
-{:#deploying-application}
-# Application 배포
+# Application 배포 {#deploying-application}
 
 이제 실제로 내 Application을 heroku에 배포해볼 차례이다. 가물가물한
 기억으로, 초기에는 Git을 이용한 배포가 유일한 방법이었던 것 같은데,
@@ -85,8 +81,7 @@ PaaS
 
 
 
-{:#preparing-application-and-heroku-login}
-## Application 준비와 Heroku Login
+## Application 준비와 Heroku Login {#preparing-application-and-heroku-login}
 
 이제, 이미 만들어놓은 Application을 Heroku 배포하려고 한다. 새로운
 Application을 만드는 경우라 하여도, 이하의 과정은 동일하게 적용할
@@ -247,8 +242,7 @@ $
 
 
 
-{:#deploying-with-git}
-## Git를 이용한 배포
+## Git를 이용한 배포 {#deploying-with-git}
 
 이제 Heroku 실행환경에 Application을 밀어넣을 차례이다. 다음과 같이
 `git push` 명령을 사용하여 밀어넣을 수 있다. (미리 말해두자면, 아래
@@ -313,8 +307,7 @@ Heroku 환경으로 밀어 넣으면 배포가 끝나게 된다.
 
 
 
-{:#trouble-shooting}
-# 문제해결
+# 문제해결 {#trouble-shooting}
 
 언제든, 문제의 해결은 문제를 파악하는 것으로부터 시작된다. 다행히,
 위에서 보는 바와 같이 Heroku에 push를 할 때 발생하는 모든 과정과
@@ -326,19 +319,18 @@ Heroku 환경으로 밀어 넣으면 배포가 끝나게 된다.
 확인이 가능하다. (이 방식의 확인은 지나간 오류를 확인할 수도 있으니
 특히나 자동배포 환경이라면 꼭 사용하게 될 기능이기도 하다.)
 
-![](/attachments/heroku-siso-01-deploy-failed.png)
+![.dropshadow](/attachments/heroku-siso-01-deploy-failed.png)
 
 뭔가 많은 것이 기다리고 있을 것 같은데, 하나씩 천천히 풀어봐야 할
 것 같다.
 
 
 
-{:#sqlite-is-not-supported-on-heroku}
-## Heroku는 SQLite을 지원하지 않는다
+## Heroku는 SQLite을 지원하지 않는다 {#sqlite-is-not-supported-on-heroku}
 
 위의 출력을 보면,
 
-```
+```text
 !     Failed to install gems via Bundler.
 !     
 !     Detected sqlite3 gem which is not supported on Heroku.
@@ -443,8 +435,7 @@ $ git push heroku HEAD:master
 
 
 
-{:#could-net-connect-to-server}
-## 존재하지 않는 데이터베이스에 접속하려 했음
+## 존재하지 않는 데이터베이스에 접속하려 했음 {#could-net-connect-to-server}
 
 Gemfile을 수정하여 `sqlite3`를 제외한 상태에서 `push`를 해줬다. 아래
 출력에서 보는 바와 같이, Bundling은 31초 만에 정상적으로 끝난 것을
@@ -481,7 +472,7 @@ $
 
 먼저 주목할 부분은,
 
-```
+```text
 -----> Writing config/database.yml to read from DATABASE_URL
 ```
 
@@ -549,12 +540,11 @@ $
 이렇게 추가된 Addon은 Web Console을 통해서도 그 상태를 볼 수 있다.
 (그림의 아래쪽)
 
-![](/attachments/heroku-siso-02-pre-provision.png)
+![.dropshadow](/attachments/heroku-siso-02-pre-provision.png)
 
 
 
-{:#deployed-successfully}
-## 드디어 배포 성공!
+## 드디어 배포 성공!  {#deployed-successfully}
 
 다시 동일한 방식으로 배포를 시도해보자.
 
@@ -624,17 +614,16 @@ $
 본 화면에서는 비어있던 Dynos(Heroku가 Process, Computing을 다루는
 개념/단위)에 web과 worker가 Free Dynos로 생성되어 있는 것을 볼 수 있다.
 
-![](/attachments/heroku-siso-03-resources.png)
+![.dropshadow](/attachments/heroku-siso-03-resources.png)
 
 그리고 Activity Feed에는 Build 및 Deploy가 성공적으로 된 것을 확인할
 수 있다.
 
-![](/attachments/heroku-siso-06-deployed.png)
+![.dropshadow](/attachments/heroku-siso-06-deployed.png)
 
 
 
-{:#css-isnt-precompiled}
-## Assets Precompile!
+## Assets Precompile!  {#css-isnt-precompiled}
 
 배포는 별다른 오류없이 정상적으로 되었지만 실제로 페이지를 읽었을 때
 다음과 같은 오류가 발생했다. 참고로, 원격지에서 실행되는 Log를 확인할
@@ -708,14 +697,13 @@ Compressing objects: 100% (5/5), done.
 
 
 
-{:#undefined-table}
-## 테이블이 없어요!
+## 테이블이 없어요!  {#undefined-table}
 
 뭐, 순서가 뒤죽박죽이다 보니 어찌 이 단계에서 이런 오류가 떴다.
 `PG` 입장에서는 `UndefinedTable`, `ActionView` 입장에서는 relation을 찾을
 수 없다는 오류가 원인이다.
 
-```
+```text
 2016-03-08T02:36:31.729169+00:00 app[web.1]: Completed 500 Internal Server Error in 29ms
 2016-03-08T02:36:31.731799+00:00 app[web.1]: 
 2016-03-08T02:36:31.731815+00:00 app[web.1]: ActionView::Template::Error (PG::UndefinedTable: ERROR:  relation "sessions" does not exist
@@ -764,16 +752,15 @@ $
 
 
 
-{:#it-works}
-## IT WORKS!
+## IT WORKS!  {#it-works}
 
 이제 화면이 떴다!
 
-![](/attachments/heroku-siso-10-running.png)
+![.dropshadow](/attachments/heroku-siso-10-running.png)
 
 다시, 위에서 활용했던 `heroku logs` 명령으로 로그를 보면,
 
-```
+```text
 2016-03-08T02:43:26.693600+00:00 app[web.1]: Started GET "/siso/" for 211.45.60.2 at 2016-03-08 02:43:26 +0000
 2016-03-08T02:43:26.735819+00:00 app[web.1]: Processing by ServicesController#index as HTML
 2016-03-08T02:43:26.745523+00:00 app[web.1]:   Rendered services/_authentications_tab.html.erb (0.5ms)
@@ -787,8 +774,7 @@ $
 
 
 
-{:#additional-configuration}
-# 추가 설정
+# 추가 설정 {#additional-configuration}
 
 이상의 설정으로, 일단 Application의 기본적인 설정과 배포는 마무리가
 되었다. 복잡한 기능이 없거나 외부 의존적인 부분이 없는 간단한 App은
@@ -801,8 +787,7 @@ $
 
 
 
-{:#heroku-app-configuration}
-## Heroku App 설정
+## Heroku App 설정 {#heroku-app-configuration}
 
 `heroku` Toolbelt에는 `config`라는 부명령을 제공하고 있으며, 이것을
 이용하여 실행환경을 확인하고 설정할 수 있다. 먼저, 다음과 같이 이미
@@ -868,7 +853,7 @@ ENV['FACEBOOK_KEY']
 이제, Facebook과 연동이 가능해졌다. 다음 화면은 이 App에 대한 인증을
 Facebook을 통하여 얻는 과정을 잡은 것이다.
 
-![](/attachments/heroku-siso-11-facebook.png)
+![.dropshadow](/attachments/heroku-siso-11-facebook.png)
 
 
 
@@ -946,12 +931,12 @@ Service Address
 서비스를 받는 것이다. 그래서 보면, 아래 그림에서 보는 바와 같이
 하루 24시간 중 18시간만 사용할 수 있도록 제한되어 있다.
 
-![](/attachments/heroku-siso-04-free-plan.png)
+![.dropshadow](/attachments/heroku-siso-04-free-plan.png)
 
 공짜가 아닌 plan을 보면, 아래와 같이 Hobby, Standard, Performance 등의
 plan이 존재하고 각각의 자원 규모에 따라 비용이 발생하게 된다.
 
-![](/attachments/heroku-siso-05-plans.png)
+![.dropshadow](/attachments/heroku-siso-05-plans.png)
 
 Professional로 분류되어 있는 Standard의 가장 저렴한 Plan은 비용이
 월간 $25이며, 4년 TCO로 환산하면 $1,200. 우리 돈으로 환산하면 약

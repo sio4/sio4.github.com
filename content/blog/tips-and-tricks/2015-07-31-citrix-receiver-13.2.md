@@ -6,15 +6,15 @@ categories: ["tips-and-tricks"]
 image: /attachments/2015-07-31-icaclient-ff-w.png
 date: 2015-07-31 00:20:27+09:00
 ---
-![](/attachments/2015-07-31-citrix-receiver.png){:.inline.pull-left}
 "디스크 구멍내기" 사건 이후로 OS를 다시 설치하고 설정하는 중에,
 회사 VDI 접속을 위한 Citrix Receiver도 다시 설치했다. 지난번에
 비해 많은 변화가 있었는데, Google Chrome App 버전도 있고 리눅스
 버전에도 꽤 변화가 있었나보다.  그 내용을 정리한다.
+![](/attachments/2015-07-31-citrix-receiver.png)
 
 ## 세옹지마
 
-"[처참한 디스크 쓰기 성능 시험]({% post_url tips-and-tricks/2015-07-30-write-test-on-my-laptop %})"을
+"[처참한 디스크 쓰기 성능 시험]({{< relref "/blog/tips-and-tricks/2015-07-30-write-test-on-my-laptop.md" >}})"을
 해버리는 바람에, 요즘, OS부터 시작해서 모든 것을 새로 구성하고
 있는 중이다. 마른 하늘에 날벼락 같은 사건.
 하지만, 좋게 생각하면 그 덕분에 OS도 Ubuntu 15.04 최신 버전으로
@@ -55,12 +55,12 @@ Chrome Browser용 App 버전**이 있다! 이게 잘만 돌아간다면, 설치
 
 혹시나 일단, Handler 설정 확인 먼저. 기본값은 아래와 같았다.
 
-![](/attachments/2015-07-31-icaclient-ff-n.png)
+![.dropshadow](/attachments/2015-07-31-icaclient-ff-n.png)
 
 기본값은 "Citrix Receiver for Linux 사용 (Firefox)"라고 되어있었고,
 아래처럼 다른 옵션도 있었다.
 
-![](/attachments/2015-07-31-icaclient-ff-w.png)
+![.dropshadow](/attachments/2015-07-31-icaclient-ff-w.png)
 
 어디에 문제가 있는지 찬찬히 추적을 해봐야겠지만, 그보다 먼저 옵션이
 있다면 바꿔보고 싶었다. "Citrix Receiver Engine 사용 (기본값)"은

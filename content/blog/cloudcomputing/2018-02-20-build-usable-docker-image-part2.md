@@ -35,8 +35,6 @@ Go 언어 개발환경을 위한 Docker Image를 만들고 그것을 Registry에
 
 이 글에서는 다음과 같은 내용을 다룬다. 조금 길어질 것 같다.
 
-* TOC
-{:toc}
 
 
 # Go 개발환경을 위한 Docker Image
@@ -789,7 +787,7 @@ $
 이미지를 확인하고, 사용할 수 있다. 아래는, Docker Hub에 접속했을 때 볼 수
 있는 화면이다.
 
-![](/attachments/docker/repository-hub.docker.com.png)
+![.dropshadow](/attachments/docker/repository-hub.docker.com.png)
 
 URL: <https://hub.docker.com/r/scinix/golang/>
 
@@ -798,7 +796,7 @@ URL: <https://hub.docker.com/r/scinix/golang/>
 더 깔끔한 화면을 볼 수 있다. 또한, 이 Docker Cloud를 이용하면 Github 등과
 연동하여 Commit에 의한 자동 Build가 이루어지도록 설정할 수도 있다.
 
-![](/attachments/docker/repository-cloud.docker.com.png)
+![.dropshadow](/attachments/docker/repository-cloud.docker.com.png)
 
 URL: <https://cloud.docker.com/app/scinix/repository/docker/scinix/golang/general>
 
@@ -806,7 +804,7 @@ URL: <https://cloud.docker.com/app/scinix/repository/docker/scinix/golang/genera
 목적을 중심으로 하기 때문인 것 같은데, 공식 Publisher가 아닌 내 계정으로는
 아래와 같은 Readonly 인터페이스 외에는 제공되지 않는 것 같다.
 
-![](/attachments/docker/repository-store.docker.com.png)
+![.dropshadow](/attachments/docker/repository-store.docker.com.png)
 
 URL: <https://store.docker.com/community/images/scinix/golang>
 

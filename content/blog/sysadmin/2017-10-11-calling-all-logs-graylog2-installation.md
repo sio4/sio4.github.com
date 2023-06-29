@@ -20,7 +20,6 @@ date: 2017-10-11T22:00:00+09:00
 글로 이루어져 있다. 내용이 독립적이어서 순서에 큰 관계가 없으니 원하는
 글부터 읽어도 된다. (마지막편은 읽을 것이 없어요)
 
-{:.angle}
 * _Calling All Logs! Graylog2 1편: 설치하기_
 * [Calling All Logs! Graylog2 2편: 맛보기]
 * [Calling All Logs! Graylog2 3편: 추가설정]
@@ -32,9 +31,6 @@ date: 2017-10-11T22:00:00+09:00
 
 
 # 로그 중앙화
-
-* toc
-{:toc .pull-right}
 
 컴퓨터 소프트웨어 또는 프로그래머와 사용자 간의 **가장 원초적인 대화
 방식이 바로 로그**이다.  프로그램은, 자신이 하고싶은 말이 있을 때 그
@@ -128,7 +124,7 @@ date: 2017-10-11T22:00:00+09:00
 
 보자.  내가 따낸 그림은 좀 후져서, 인터넷에서 한 장 가져왔다.
 
-![](/attachments/graylog2/graylog-sample.png)
+![.dropshadow](/attachments/graylog2/graylog-sample.png)
 
 최종적으로 우리가 보게 될 화면은 이런 것이다. (화면 이외의 기능은 조금
 있다가...)
@@ -138,7 +134,7 @@ date: 2017-10-11T22:00:00+09:00
 원본 로그 데이터를 분석하고 체계화하거나, 세부적인 로그를 찾아볼 수 있는
 **검색화면**도 함께 제공된다.
 
-![](/attachments/graylog2/graylog-110-search.png)
+![.dropshadow](/attachments/graylog2/graylog-110-search.png)
 
 이 외의 부가 기능은 [Calling All Logs! Graylog2 2편: 맛보기]에서 다시
 살펴볼 예정이다.
@@ -204,7 +200,7 @@ $
 뭐, Ubuntu에서 MongoDB와 ElasticSearch 설치하는 거야 어렵지 않다.  먼저,
 다음과 같이 배포본에서 제공하는 MongoDB를 설치해주고,
 
-```shell_session
+```console
 $ sudo apt-get install mongodb-server
 <...>
 $ 
@@ -514,7 +510,7 @@ $
 
 이제 해당 서버에 웹브라우져로 접속해본다.
 
-![](/attachments/graylog2/graylog-101-login.png)
+![.dropshadow](/attachments/graylog2/graylog-101-login.png)
 
 음, 이 고전적이며 뭔가 무게가 잡힌 로그인 페이지를 봤다면 설치가 잘 되었을
 가능성이 90% 정도? (혹시 뒤쪽에서 뭔가 꼬이지 않았다면 :-)
@@ -523,7 +519,6 @@ $
 
 #### 다음 이야기...
 
-{:.angle}
 * _Calling All Logs! Graylog2 1편: 설치하기_
 * [Calling All Logs! Graylog2 2편: 맛보기]
 * [Calling All Logs! Graylog2 3편: 추가설정]

@@ -19,7 +19,6 @@ Tenant 지원이라든지 일부 기능이 나의 요구사항과 맞지 않아�
 글로 이루어져 있다. 내용이 독립적이어서 순서에 큰 관계가 없으니 원하는
 글부터 읽어도 된다. (마지막편은 읽을 것이 없어요)
 
-{:.angle}
 * [Calling All Logs! Graylog2 1편: 설치하기]
 * [Calling All Logs! Graylog2 2편: 맛보기]
 * [Calling All Logs! Graylog2 3편: 추가설정]
@@ -30,9 +29,6 @@ Tenant 지원이라든지 일부 기능이 나의 요구사항과 맞지 않아�
 
 
 ## 설정의 기록
-
-* toc
-{:toc .pull-right}
 
 정말이다 읽은 거리는 없다. 단지, 이 곳에서 두 개의 파일을 원본으로 링크하고,
 어차피 텍스트인 그 파일들을 나중에라도 읽어보기 쉽게 넣어두었을 뿐이다.
@@ -877,7 +873,6 @@ sudo ufw disable && sudo ufw enable
 
 #### 최종회 - 끝 -
 
-{:.angle}
 * [Calling All Logs! Graylog2 1편: 설치하기]
 * [Calling All Logs! Graylog2 2편: 맛보기]
 * [Calling All Logs! Graylog2 3편: 추가설정]

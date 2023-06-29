@@ -20,7 +20,7 @@ Papertrail이라는 서비스의 개요를 살펴봤다.  서비스 모델을 �
 있도록 묶어주고, 그것을 바탕으로 검색과 경보 등을 포함하여 다양한 후속
 작업을 할 수 있는 길을 제공하는 서비스이다.
 
-![](/attachments/papertrail/ptrail-101-concept.jpg){:.r34.centered.bordered}
+![](/attachments/papertrail/ptrail-101-concept.jpg)
 
 이번 글은, Cloud 위에 구성된 CAOS 앱에 이 서비스를 붙이는 과정을
 기록하려고 한다. 실제로 Papertrail을 살펴보고 사용한 이유는, 앞선
@@ -34,16 +34,13 @@ Papertrail이라는 서비스의 개요를 살펴봤다.  서비스 모델을 �
 * [CAOS #2 SoftLayer Object Storage 다루기]
 * [CAOS #3 Rails Application의 성능 분석]
 
-[PaperTrail, Cloud에서는 Cloud 로그를!]:{% post_url cloudcomputing/2016-09-07-cloud-log-papertrail %}
-[CAOS, Cloud Album on Object Storage]:{% post_url development/2016-04-28-cloud-album-on-object-storage %}
-[CAOS #1 Rails 기반 환경 구성]:{% post_url development/2016-07-07-rails-env-especially-for-caos %}
-[CAOS #2 SoftLayer Object Storage 다루기]:{% post_url development/2016-09-05-softlayer-object-storage-and-caos %}
-[CAOS #3 Rails Application의 성능 분석]:{% post_url development/2016-09-06-rails-application-performance %}
+[PaperTrail, Cloud에서는 Cloud 로그를!]:{{< relref "/blog/cloudcomputing/2016-09-07-cloud-log-papertrail.md" >}}
+[CAOS, Cloud Album on Object Storage]:{{< relref "/blog/development/2016-04-28-cloud-album-on-object-storage.md" >}}
+[CAOS #1 Rails 기반 환경 구성]:{{< relref "/blog/development/2016-07-07-rails-env-especially-for-caos.md" >}}
+[CAOS #2 SoftLayer Object Storage 다루기]:{{< relref "/blog/development/2016-09-05-softlayer-object-storage-and-caos.md" >}}
+[CAOS #3 Rails Application의 성능 분석]:{{< relref "/blog/development/2016-09-06-rails-application-performance.md" >}}
 
 # 로그 모으기
-
-* TOC
-{:toc .half.pull-right}
 
 Papertail은 도움말 페이지에 몇가지 입력 방식에 대하여 설명하고 있지만,
 기본적으로는 Syslog 프로토콜을 이용한 입력을 기반으로 한다. 통신 방식
@@ -59,7 +56,7 @@ Syslog에 필요한 설정을 추가하는 방식과 Application의 비표준 �
 어디로 쏴야하는지만 알면 되는데, Papertrail은 다음과 같이 설정페이지의
 Log Destinations에서 설정을 할 수 있도록 하고 있다.
 
-![](/attachments/papertrail/ptrail-405-destinations.png)
+![.dropshadow](/attachments/papertrail/ptrail-405-destinations.png)
 
 Destination은 `hostname:port` 형태로 제공되는데, Destination 당 서버와
 Port를 달리하여 여러 Destination을 구성할 수 있다.
@@ -167,7 +164,7 @@ superhero@caos:~$
 서버의 로그만 보거나, 또는 아래 그림과 같이 특정 문자열로 검색을 하여
 로그를 찾아볼 수 있다. 그리고 경보의 발생은, 이러한 검색을 바탕으로 한다.
 
-![](/attachments/papertrail/ptrail-210-filtered.png)
+![.dropshadow](/attachments/papertrail/ptrail-210-filtered.png)
 
 ## 경보! 상황발생!
 
@@ -177,14 +174,14 @@ superhero@caos:~$
 Slack에 메시지를 보내는 URL을 정의하고 있다. (이 부분은 좀 더 설명이
 필요하지만, 우리의 주제는 아니니까 생략)
 
-![](/attachments/papertrail/ptrail-321-alert-edit.png)
+![.dropshadow](/attachments/papertrail/ptrail-321-alert-edit.png)
 
 이번에는 Application 개발자가 명시적으로 경보를 발생시킬 수 있도록
 사전에 정의된 경보를 만들어봤다. 단순히, `ALERT`라는 문자열이 보이면
 위의 경보와 비슷한 방식으로 메시지를 보내개 한 것인데, 아래 화면은
 이렇게 두 가지 검색에 대한 경보가 Slack 앱에 수신된 모습이다.
 
-![](/attachments/papertrail/ptrail-slack-alert.png)
+![.dropshadow](/attachments/papertrail/ptrail-slack-alert.png)
 
 이렇게 되면, 개발자는 자신이 경보를 받고 싶은 로그를 생성할 때,
 의도적으로 ALERT이라는 문자열을 추가하여 경보를 받도록 프로그래밍을

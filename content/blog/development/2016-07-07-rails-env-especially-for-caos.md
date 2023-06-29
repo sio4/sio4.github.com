@@ -24,12 +24,12 @@ Rails App의 골력을 만드는 과정을 기록하려고 한다.
 * [SoftLayer Object Storage와 임시 URL]
 * [SoftLayer Object Storage와 임시 URL #2]
 
-[SoftLayer Object Storage와 임시 URL]:{% post_url development/2016-03-22-tempurl-for-softlayer-object-storage %}
-[SoftLayer Object Storage와 임시 URL #2]:{% post_url development/2016-03-31-tempurl-for-softlayer-object-storage-2 %}
+[SoftLayer Object Storage와 임시 URL]:{{< relref "/blog/development/2016-03-22-tempurl-for-softlayer-object-storage.md" >}}
+[SoftLayer Object Storage와 임시 URL #2]:{{< relref "/blog/development/2016-03-31-tempurl-for-softlayer-object-storage-2.md" >}}
 
-[CAOS, Cloud Album on Object Storage]:{% post_url development/2016-04-28-cloud-album-on-object-storage %}
-[CAOS #2 SoftLayer Object Storage 다루기]:{% post_url development/2016-09-05-softlayer-object-storage-and-caos %}
-[CAOS #3 Rails Application의 성능 분석]:{% post_url development/2016-09-06-rails-application-performance %}
+[CAOS, Cloud Album on Object Storage]:{{< relref "/blog/development/2016-04-28-cloud-album-on-object-storage.md" >}}
+[CAOS #2 SoftLayer Object Storage 다루기]:{{< relref "/blog/development/2016-09-05-softlayer-object-storage-and-caos.md" >}}
+[CAOS #3 Rails Application의 성능 분석]:{{< relref "/blog/development/2016-09-06-rails-application-performance.md" >}}
 
 
 시작에 앞서, 요즘의 내 다른 글들과 같이, 이 글 역시 지루하고 긴 글이
@@ -47,13 +47,9 @@ Rails App의 골력을 만드는 과정을 기록하려고 한다.
 
 ---
 
-* TOC
-{:toc .half.pull-right}
 
 
-
-{:#start-your-rails-engine}
-# Start Your Rails Engine!
+# Start Your Rails Engine!  {#start-your-rails-engine}
 
 근래의, Hardened Layer의 개발 과정을 담았던
 [Hardened Layer, SoftLayer Custom Portal - Part 1]를 비롯하여, 그동안
@@ -76,13 +72,12 @@ Skeleton을 작성하는 방식에 대하여 얘기하려고 한다.
 중간에 Gem Update를 해준 상황이라면, 실행시점을 기준으로는 큰 차이가
 있는 것은 아니다.
 
-[Hardened Layer, SoftLayer Custom Portal - Part 1]:{% post_url development/2016-01-16-hardened-layer %}
+[Hardened Layer, SoftLayer Custom Portal - Part 1]:{{< relref "/blog/development/2016-01-16-hardened-layer.md" >}}
 [MEMO.T.C]:http://sio4.wikidot.com
 
 
 
-{:#bundling-rails}
-## Bundler로 Rails 땡기기
+## Bundler로 Rails 땡기기 {#bundling-rails}
 
 아예 시스템에 Rails가 없는 상태에서, 다음과 같이 Application의 뼈대가
 될 디렉터리를 만들고 그 안에서 `bundle` 명령을 실행하여 Rails 환경을
@@ -118,8 +113,7 @@ Rails 환경 구성을 위한 기본 Gem들이 모두 bundle되게 된다. 위 �
 * `bundle install` 명령으로 현재 경로 아래에 관련 Gem들을 번들
 
 
-{:#build-rails-app-skeleton}
-## Rails App 골격 만들기
+## Rails App 골격 만들기 {#build-rails-app-skeleton}
 
 이제, 번들된 `rails` 명령을 이용하여 Application의 골격을 만들 차례다.
 
@@ -172,8 +166,7 @@ Bundled gems are installed into ./vendor/bundle.
 
 
 
-{:#user-and-authentication}
-# 사용자와 인증
+# 사용자와 인증 {#user-and-authentication}
 
 App에 따라 다를 수 있지만, 일반적인 Application의 공통적인 부분 중
 하나가 바로 사용자와 인증, Session 관리에 대한 부분이다. 이 글에서
@@ -202,8 +195,7 @@ sqlite3를 사용하였다.)
 
 
 
-{:#scaffolding-user-and-session}
-## 기초공사
+## 기초공사 {#scaffolding-user-and-session}
 
 (이 문서에서 암호를 어떤 시각으로 보든,) 우리가 Application을 개발할
 때, 여기서 사용되는 암호를 어떻게 DBMS에 저장할 것인지를 고민해야
@@ -239,8 +231,7 @@ $ bin/rake db:migrate
 $ 
 ```
 
-{:#implement-session-details}
-## 상세 구현
+## 상세 구현 {#implement-session-details}
 
 위의 과정에서 만들어진 기반을 다듬어서 사용자가 OTP로 로그인할 수 있는
 기능을 구현하였다. 자세한 내용은 
@@ -318,8 +309,7 @@ Cookie 대신 Active Record를 사용하도록 하고, 세션 유지 시간을
 
 
 
-{:#mailgun}
-# Mailgun!
+# Mailgun!  {#mailgun}
 
 서비스를 만들다 보면 서비스의 사용자에게 다양한 알람 서비스를 제공할
 필요가 있는데, 이 때 SMTP 서버를 직접 구성해서 운영하려고 하면, 대충
@@ -335,10 +325,9 @@ Cookie 대신 Active Record를 사용하도록 하고, 세션 유지 시간을
 이런 고민을 하는 개발자나 회사를 위해, Rackspace가 제공하는 클라우드
 시대의 메일발송 서비스가 있는데, 그 이름이 Mailgun이다.
 
-![](/assets/logos/mailgun-home.png)
+![.dropshadow](/assets/logos/mailgun-home.png)
 
-{:#mailgun-intro}
-## Mailgun 시작하기
+## Mailgun 시작하기 {#mailgun-intro}
 
 Mailgun은 표준 SMTP 방식과 전용 API를 사용하는 두 가지 사용 방식을
 제공하는데, 사용자의 구미에 맞게 사용하면 된다. 대체로, 대부분의
@@ -353,7 +342,7 @@ Mailgun은 표준 SMTP 방식과 전용 API를 사용하는 두 가지 사용 �
 정보 등이 자동으로 또는 사용자의 선택에 의해 만들어지며, 도메인에
 대한 Confirmation 과정을 거쳐 Active 상태가 되면 바로 사용할 수 있다.
 
-![](/assets/logos/mailgun-domain.png)
+![.dropshadow](/assets/logos/mailgun-domain.png)
 
 구성이 되었으면 시험을 해보자. 아래 예시를 보면,
 
@@ -562,8 +551,7 @@ Completed 302 Found in 6487ms (ActiveRecord: 17.5ms)
 
 
 
-{:#figaro}
-# 하나 더! Figaro - Site 설정
+# 하나 더! Figaro - Site 설정 {#figaro}
 
 간단한 In-House App이 아니라 배포 가능한 Application을 만드는 경우엔
 각 사이트마다 다르게 설정되어야 하는 부분을 별도의 설정으로 만들어 담을
@@ -921,9 +909,9 @@ Form을 다룰 수 있게 되었다.
 * <http://getbootstrap.com/css/>
 * <http://getbootstrap.com/components/>
 * <http://bootstrap-live-customizer.com/>
-
-* <https://github.com/bootstrap-ruby/rails-bootstrap-forms>
-* <https://github.com/bokmann/font-awesome-rails>
+* Repositories
+  * <https://github.com/bootstrap-ruby/rails-bootstrap-forms>
+  * <https://github.com/bokmann/font-awesome-rails>
 
 
 ---

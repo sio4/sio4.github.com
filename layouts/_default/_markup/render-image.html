@@ -1,0 +1,4 @@
+<figure>
+	<img src="{{ .Destination | safeURL }}" alt="{{ .Text }}" {{ with .Title }} title="{{ . }}"{{ end }} class="{{ if eq .Text ".dropshadow" }}dropshadow{{ end }}" />
+	<figcaption>{{ if ne .Text ".dropshadow" }}{{ .Text }}{{ end }}</figcaption>
+</figure>

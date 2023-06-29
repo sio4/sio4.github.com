@@ -14,8 +14,7 @@ date: 2018-10-02T16:30:00+0900
 배치를 준비함에 있어서 공통적으로 참고하거나 적용할 수 있을 것이다.
 
 
-{: title="(c) Karunakar Rayker, https://www.flickr.com/photos/krayker/2117746551"}
-![](/assets/images/common/shell-on-the-beach.jpg)
+![](/assets/images/common/shell-on-the-beach.jpg "(c) Karunakar Rayker, https://www.flickr.com/photos/krayker/2117746551")
 
 
 지난 세 편의 글을 통하여, 클라우드 컴퓨팅 환경의 장점에 힘입어 전지구적
@@ -39,10 +38,6 @@ Node를 자동으로 설치하고 제어하는 과정에 대해 다뤘다. 이 �
 
 
 # 클라우드 컴퓨팅과 구성 자동화
-
-{:toc .half.pull-right}
-* TOC
-
 
 클라우드 컴퓨팅 환경이 우리에게 주는 이익, 또는 특징 중 가장 두드러진 것을
 몇 가지 고르라고 한다면, 나는 "자원의 일회용화[^1]"와 "구성 자동화[^2]"를

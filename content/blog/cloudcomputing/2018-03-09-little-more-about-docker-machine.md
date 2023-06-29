@@ -16,10 +16,7 @@ Docker Engine을 탑재한 Dockerized Host, Docker Node를 손쉽게 펼쳤다�
 (Docker Machine의 개요를 담은 "**[Docker Machine으로 Docker Node 뿌리기]**"
 를 먼저 참고하시면 좋습니다.)
 
-![](/attachments/docker/docker-machine.jpg)
-
-{:.caption.tight.centered}
-Dock!ron Man vs. War Machine!
+![Dock!ron Man vs. War Machine!](/attachments/docker/docker-machine.jpg)
 
 > Docker에 대한 이 묶음글은 아직 몇 개를 쓸지 정하지 못했다. 써보고,...
 
@@ -52,9 +49,6 @@ Machine을 활용할 수 있는 범위는 어디까지일까?**
 `docker-machine` 명령의 모든 부명령을 한 번씩 실행해 봤다.
 
 
-
-* TOC
-{:toc}
 
 
 # 내가 원하는 버전, 환경으로 맞추고 싶다요!
@@ -362,11 +356,8 @@ $
 이렇게, VSI(Virtual Server Instance) 제어를 위한 Driver 특유의 정보들을
 비롯한 다양한 정보를 보여준다. (전체 내용은 맨 아래에...
 
-![](/attachments/docker/docker-machine-10-keys.png)
-
-{:.caption.tight.centered}
-참고: Docker Machine에 의해 자동 생성된 ssh key는 SoftLayer 관리콘솔에도
-함께 등록된다. (이후, Provisioning 시 참조됨)
+![참고: Docker Machine에 의해 자동 생성된 ssh key는 SoftLayer 관리콘솔에도
+함께 등록된다. (이후, Provisioning 시 참조됨)](/attachments/docker/docker-machine-10-keys.png)
 
 
 ### Provision, Regenerate Certs, and Upgrade
@@ -534,11 +525,9 @@ $
 주어 이 Engine이 사용할 스토리지 방식을 지정했다. 마지막으로 Driver 관련
 옵션을 기존과 같이 넣어줬고, 이름도 잘 줬다.
 
-![](/attachments/docker/docker-machine-01-create.png)
+![Virtual Server Instance가 생성되는 과정을 SoftLayer 관리콘솔에서 확인한
+모습](/attachments/docker/docker-machine-01-create.png)
 
-{:.caption.tight.centered}
-Virtual Server Instance가 생성되는 과정을 SoftLayer 관리콘솔에서 확인한
-모습
 
 
 ### 유용한 옵션들
@@ -715,10 +704,7 @@ $
 관련된 모든 것을 지워주게 되며, 정상적으로 지워지고 나면 Local의 정보 역시
 지워버리게 된다.
 
-![](/attachments/docker/docker-machine-02-remove.png)
-
-{:.caption.tight.centered}
-기계를 지운 후, 관리콘솔에서 Cancellation 요청이 접수된 것을 확인할 수 있음
+![기계를 지운 후, 관리콘솔에서 Cancellation 요청이 접수된 것을 확인할 수 있음](/attachments/docker/docker-machine-02-remove.png)
 
 
 ### Start, Stop, Kill and Restart
@@ -745,10 +731,8 @@ $
 
 만약 꺼지지 않는다면 강제로 죽이기 위한 명령.
 
-![](/attachments/docker/docker-machine-03-kill.png)
+![전원 강제 차단에 의해, 연결이 끊어지고 네트워크 모니터링 경보가 발생한 상태](/attachments/docker/docker-machine-03-kill.png)
 
-{:.caption.tight.centered}
-전원 강제 차단에 의해, 연결이 끊어지고 네트워크 모니터링 경보가 발생한 상태
 
 그리고,
 
@@ -833,11 +817,9 @@ Production에서 쓰려면 `softlayer` Driver에 대하여 Provider의 API 특�
 문제상황을 만난 것인지 Code 점검이 필요할 것 같다. (나머지 둘은 API
 단계를 벋어난 것 같은데 왜 같이 죽었을까?)
 
-![](/attachments/docker/docker-machine-04-restarted.png)
+![VSI가 되살아나는 모습을 SoftLayer 관리콘솔에서 확인한 모습: 경보는 아직
+남아있고 연결은 되지 않았으나, 전원이 켜져 있음](/attachments/docker/docker-machine-04-restarted.png)
 
-{:.caption.tight.centered}
-VSI가 되살아나는 모습을 SoftLayer 관리콘솔에서 확인한 모습: 경보는 아직
-남아있고 연결은 되지 않았으나, 전원이 켜져 있음
 
 마지막으로, `restart` 명령은 이렇게,
 

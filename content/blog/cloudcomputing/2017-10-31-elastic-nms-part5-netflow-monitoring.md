@@ -37,8 +37,6 @@ Elastic Stack을 시작하는 입장에서 관심있는 부분을 참고하면 �
 
 # NetFlow와 SNMP
 
-* TOC
-{:toc .half.pull-right}
 
 네트워크 모니터링을 얘기할 때, SNMP와 NetFlow는 따로 얘기할 필요가 없을
 정도로 잘 알려진 관리용 프로토콜이다. 이 시험환경에서는 각 포트, 그러니까
@@ -235,7 +233,7 @@ $
 (앞서 한 번 본 적이 있는 녀석이긴 하다.) 이제, 위의 설정에 의해 아래와
 같이 정리된 결과를 얻을 수 있다.
 
-![SHOT](/attachments/elastic-nms/elk-501-netflow-index.jpg)
+![.dropshadow](/attachments/elastic-nms/elk-501-netflow-index.jpg)
 
 
 
@@ -292,7 +290,7 @@ filter {
 
 이제, 이렇게... 의도한 바에 맞는 데이터가 쌓이는 것을 확인할 수 있다.
 
-![SHOT](/attachments/elastic-nms/elk-502-netflow-translated.jpg)
+![.dropshadow](/attachments/elastic-nms/elk-502-netflow-translated.jpg)
 
 시험삼아서 파일을 하나 땡겨보자.
 
@@ -364,7 +362,7 @@ $
 그래서, "받은 시간"도 유지하고 분석을 위한 시간도 편리하게 `@timestamp`로
 사용하기 위해서 다음과 같은 방식을 적용했다.
  
-```
+```ruby
 input {
   udp {
     type => "netflow"
@@ -379,7 +377,7 @@ input {
 이제 입력을 받으면서 동시에 `received_at`이라는 값을 `@timestamp`로부터
 뽑아서 만들어 넣는다. 그리고,
 
-```
+```ruby
 filter {
   if [type] == "netflow" {
     date {
@@ -395,7 +393,7 @@ filter {
 이제 좀 깔끔해졌다.
 
 
-![SHOT](/attachments/elastic-nms/elk-503-netflow-dashboard.png)
+![.dropshadow](/attachments/elastic-nms/elk-503-netflow-dashboard.png)
 
 
 최종적으로, `translate`를 이용한 부가정보 입력과 일부 계산에 의한 필드 삽입

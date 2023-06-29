@@ -24,20 +24,15 @@ Prototype 개발 목표는 다음과 같다.
 
 Hardened Layer: Console - Virtual Servers
 
-![](/attachments/20160116-hl-v1-servers.png)
+![.dropshadow](/attachments/20160116-hl-v1-servers.png)
 
 ## Hardened Layer 시리즈
 
 * Hardened Layer, SoftLayer Custom Portal - Part 1
 * [Hardened Layer, SoftLayer Custom Portal - Part 2][HardenedLayer-Part2]
 
-[HardenedLayer-Part2]:{% post_url development/2016-01-21-hardened-layer-part2 %}
+[HardenedLayer-Part2]:{{< relref "/blog/development/2016-01-21-hardened-layer-part2.md" >}}
 
-
-## 목차
-
-* ToC
-{:toc}
 
 # 설계
 
@@ -83,6 +78,8 @@ Hardened Layer->Hardened Console: 조합된 정보 반환
 Hardened Console->Hardened Console: Model화, View 제공
 ```
 {:.diagram.tac.fit}
+
+
 
 ## API App 설계 기준
 
@@ -639,7 +636,7 @@ UI를 직접적으로 고려하는 부분은 전혀 없으며 단지 API의 응�
 어쩌면 상당 부분은 개발 생산성과 개발구조의 변화와 맥을 함께하기 때문일
 수도 있을 것이라고 생각한다.
 
-![](/attachments/20160116-backend-as-an-api.png)
+![.dropshadow](/attachments/20160116-backend-as-an-api.png)
 
 > "Backend as an API" 는 단지 좋은 Architecture일 뿐만 아니라 개발팀 구조에도
 > 좋다.
@@ -655,7 +652,7 @@ UI를 직접적으로 고려하는 부분은 전혀 없으며 단지 API의 응�
 
 Frontend는 Ember.js를 이용하여 작성했다. NVM을 이용한 Ember.js 개발의 손쉬운
 환경구성에 대한 상세 내용은 얼마 전에 작성했던
-[Ember CLI 환경 구성하기]({% post_url development/2015-12-09-preparing-ember-environment %})
+[Ember CLI 환경 구성하기]({{< relref "/blog/development/2015-12-09-preparing-ember-environment.md" >}})
 에서 참고하기 바란다.
 
 여기서는 다음과 같은 환경이 사용되었다.
@@ -1161,9 +1158,9 @@ Account 정보를 기점으로 어떤 연계정보가 더 존재하는지 쫓아
 
 이들을 추가한 상태에서 실제로 동작하는 화면 몇개를 보면 다음과 같다.
 
-![](/attachments/20160116-hl-ui-servers.png)
+![.dropshadow](/attachments/20160116-hl-ui-servers.png)
 
-![](/attachments/20160116-hl-ui-images.png)
+![.dropshadow](/attachments/20160116-hl-ui-images.png)
 
 
 # 지나간 시도들
@@ -1351,10 +1348,8 @@ Prototyping에 대한 초기 개발 내용을 정리하여 보았다.
 
 * Semantic UI 및 보조도구를 활용하여 Console을 좀 보기 좋게 만들기
 * Billing 자료를 따로 시각화하여 분석에 도움이 되는 정보로 만들기
-
 * 단위 서비스/업무 차원의 모니터링 통합을 할 수 있는 방안 찾기
 * 자동화를 위한 Engine App 개발하기
-
 * 그리고 Python으로 API 언어 전환하기
 
 이번 글은, 실제로 Prototype을 개발했던 기간보다 더 긴 시간을 이 글의

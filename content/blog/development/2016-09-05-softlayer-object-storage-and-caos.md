@@ -28,19 +28,18 @@ SoftLayer의 Object Storage를 다루는 것에 대하여 기록하려고 한다
 * [SoftLayer Object Storage와 임시 URL]
 * [SoftLayer Object Storage와 임시 URL #2] 
 
-[SoftLayer Object Storage와 임시 URL]:{% post_url development/2016-03-22-tempurl-for-softlayer-object-storage %}
-[SoftLayer Object Storage와 임시 URL #2]:{% post_url development/2016-03-31-tempurl-for-softlayer-object-storage-2 %}
+[SoftLayer Object Storage와 임시 URL]:{{< relref "/blog/development/2016-03-22-tempurl-for-softlayer-object-storage.md" >}}
+[SoftLayer Object Storage와 임시 URL #2]:{{< relref "/blog/development/2016-03-31-tempurl-for-softlayer-object-storage-2.md" >}}
 
-[CAOS, Cloud Album on Object Storage]:{% post_url development/2016-04-28-cloud-album-on-object-storage %}
-[CAOS #1 Rails 기반 환경 구성]:{% post_url development/2016-07-07-rails-env-especially-for-caos %}
-[CAOS #3 Rails Application의 성능 분석]:{% post_url development/2016-09-06-rails-application-performance %}
+[CAOS, Cloud Album on Object Storage]:{{< relref "/blog/development/2016-04-28-cloud-album-on-object-storage.md" >}}
+[CAOS #1 Rails 기반 환경 구성]:{{< relref "/blog/development/2016-07-07-rails-env-especially-for-caos.md" >}}
+[CAOS #3 Rails Application의 성능 분석]:{{< relref "/blog/development/2016-09-06-rails-application-performance.md" >}}
 
 
 ---
 
 
-{:#preparing-object-storage}
-# Object Storage
+# Object Storage {#preparing-object-storage}
 
 이제는 새로울 것도 없는 **Object Storage**란 Cloud 시대를 대표하는 변화
 중의 하나이다. 흔히들 Cloud Computing을, "*구름 위에 모든 것을 던져버리고
@@ -53,8 +52,6 @@ Amazon Web Service의 S3, OpenStack의 Swift로 대표되는 Object Storage는
 쓰는, 그리고 그것이 Cloud 내에서 안전하게 다루어지는 것은 서비스 제공자
 몫으로 하는 방식의 데이터 저장 방식이다.
 
-* TOC
-{:toc .half.pull-right}
 
 과거에는, 네트워크 상에 데이터를 저장하고 공유하기 위하여 NAS나 SAN 같은
 데이터 저장 방식을 써왔다. 이들은 사용자에게 각각 File System 또는 Block
@@ -75,8 +72,7 @@ Application 개발의 예를 기록한다.
 
 
 
-{:#install-softlayer-api}
-## SoftLayer API의 설치
+## SoftLayer API의 설치 {#install-softlayer-api}
 
 SoftLayer Ruby API는 공식적으로 Gem 저장소를 통하여 제공이 되고 있다.
 그러나 Object Storage API는 그렇지가 않으며, 다음과 같이 Github에서
@@ -160,8 +156,7 @@ URL을 가져오는 작업이 정상적으로 실행되었다. (Link된 앞선 �
 부분이다.)
 
 
-{:#setup-album-scaffold}
-## Album 만들기
+## Album 만들기 {#setup-album-scaffold}
 
 이제 실제 작업에 들어갈 차례이다. 아래와 같이, Album으로 사용될 모델을
 Scaffolding 방식을 사용하여 만들어준다.
@@ -245,15 +240,14 @@ $
 +require 'softlayer/object_storage'
 ```
 
-{:#generate-preview}
-## 미리보기 만들기
+## 미리보기 만들기 {#generate-preview}
 
 앨범 Application이라면 Album 보기에서 미리보기를 제공하지 않을 수 없다.
 아래의 화면은 이번 작업의 최종 결과로, 사진을 적당한 크기로 줄이고
 사진에 담긴 Exif 값을 이용하여 똑바로 보이도록 회전하여 미리보기 파일로
 저장한 후 보여주고 있다.
 
-![](/attachments/20160428-caos/caos-200-album-list.png)
+![.dropshadow](/attachments/20160428-caos/caos-200-album-list.png)
 
 다음과 같은 과정을 통하여 Album 페이지에 보여줄 미리보기를 만든다.
 
@@ -398,13 +392,13 @@ rity.
 
 위의 코드가 동작하는 로그를 보면, 아래와 같이 새로 미리보기를 만들거나...
 
-```
+```text
 ### DEBUG: Generate Thumb from https://hkg02.objectstorage.softlayer.net:443/v1/AUTH_00aa00aa-00aa-00aa-00aa-00aa00aa00aa/caos/CM2016/iaas-marketshare.jpg?temp_url_sig=e000020f07040500090c090e06090a001030d0d0&temp_url_expires=1459097817...
 ```
 
 또는 이미 존재하는 미리보기 파일을 다시 사용하게 된다.
 
-```
+```text
 ### DEBUG: File exists: tmp/thumbs/a208008e00104b0a004509e0b40800a2-CM2016%2FCM2016.JPG. using it!
 ```
 
@@ -574,7 +568,7 @@ Select의 구현 등, 재미있는 부분이 더 있었던 것 같은데, 그냥
 
 Connection:
 
-```
+```console
 $ curl -i -H "X-Auth-User: IBMOS000000-1:user" -H "X-Auth-Key: 00aa00aa00aa00aa00aa00aa00aa00aa00aa00aa00aa00aa00aa00aa00aa00aa" https://hkg02.objectstorage.softlayer.net/auth/v1.0
 HTTP/1.1 200 OK
 Content-Length: 1348
@@ -592,7 +586,7 @@ $
 
 Containers:
 
-```
+```console
 $ curl -i -H "X-Auth-Token: AUTH_tk00bb00bb00bb00bb00bb00bb00bb00bb" https://hkg02.objectstorage.softlayer.net/v1/AUTH_00aa00aa-00aa-00aa-00aa-00aa00aa00aa
 HTTP/1.1 200 OK
 Content-Length: 5
@@ -617,7 +611,7 @@ $
 
 Objects:
 
-```
+```console
 $ curl -i -H "X-Auth-Token: AUTH_tk00bb00bb00bb00bb00bb00bb00bb00bb" https://hkg02.objectstorage.softlayer.net/v1/AUTH_00aa00aa-00aa-00aa-00aa-00aa00aa00aa/caos
 HTTP/1.1 200 OK
 Content-Length: 2808
@@ -642,7 +636,7 @@ $
 
 Objects JSON:
 
-```
+```console
 $ curl -i -H "X-Auth-Token: AUTH_tk00bb00bb00bb00bb00bb00bb00bb00bb" https://hkg02.objectstorage.softlayer.net/v1/AUTH_00aa00aa-00aa-00aa-00aa-00aa00aa00aa/caos -H "Accept: application/json"
 HTTP/1.1 200 OK
 Content-Length: 40725

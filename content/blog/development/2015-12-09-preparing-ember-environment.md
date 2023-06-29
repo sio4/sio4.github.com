@@ -544,7 +544,7 @@ Babel (6)                                     | 527ms (87 ms)
 
 이제 Web Browser를 이용하여 위의 `http://localhost:4200/`로 접속해보자.
 
-![](/attachments/20151209-ember-browser.png)
+![.dropshadow](/attachments/20151209-ember-browser.png)
 
 > 떳다!
 

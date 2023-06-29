@@ -6,7 +6,7 @@ categories: ["cloudcomputing"]
 image: /attachments/docker/docker-hello-world.png
 banner: /attachments/docker/docker-hello-world-banner.png
 date: 2018-02-08T14:30:00+0900
-last_modified_at: 2018-03-09T13:16:00+0900
+last_modified_at: 2018-03-09T13:17:00+0900
 ---
 Docker는 Linux 위에서 동작하는 Container 관리 소프트웨어다. 지난 글
 [Docker: Getting Started with Docker]에서는 Container와 Docker의 개념을

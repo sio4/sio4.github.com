@@ -12,8 +12,12 @@
         {{ partial "post_meta.html" . }}
     </p>
 
+    {{ if .Params.banner }}
+    <img src="{{ .Params.banner }}" alt="{{ .Title }}" class="img-title" />
+    {{ else }}
     {{ if .Params.image }}
     <img src="{{ .Params.image }}" alt="{{ .Title }}" class="img-title" />
+    {{ end }}
     {{ end }}
     {{ if .Params.video }}
     <video loop autoplay muted playsinline class="img-title">

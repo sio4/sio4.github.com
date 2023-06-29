@@ -47,12 +47,12 @@ VSI를 다시 시작했다. 그런데... 내 시스템은 다시 올라오지 �
 * 업그레이드하는 과정에서 Elastic Stack의 패키지들이 같이 업그레이드 됐다.
   (이런... 다짜고짜 자동으로 올리는 것은 내 스타일이 아닌데... 내가 그랬어...)
 * 업그레이드가 끝나니 Elastic Stack이 보다 멋진 모습을 보여주기에 기뻐했다.
-
-* 그런데... 몇일 후, 더 이상 데이터가 쌓이지 않는 다는 것을 발견!!!
+* 그런데...
+* 몇일 후, 더 이상 데이터가 쌓이지 않는 다는 것을 발견!!!
 
 Logstash 로그를 보니 다음과 같은 로그가 쌓이고 있더라...
 
-```
+```console
 [2018-09-17T11:17:49,067][WARN ][logstash.outputs.elasticsearch] Could not index event to Elasticsearch. {:status=>400, :action=>["index", {:_id=>"65511479", :_index=>"ticket-2018.09", :_type=>"doc", :_routing=>nil}, #<LogStash::Event:0x9e27d6b>], :response=>{"index"=>{"_index"=>"ticket-2018.09", "_type"=>"doc", "_id"=>"65511479", "status"=>400, "error"=>{"type"=>"illegal_argument_exception", "reason"=>"Rejecting mapping update to [ticket-2018.09] as the final mapping would have more than 1 type: [ticket, doc]"}}}}
 ```
 

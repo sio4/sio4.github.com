@@ -46,9 +46,6 @@ Docker 프로젝트의 식구 중 하나인 Docker Machine을 활용하는 방�
 점에서 눈여겨 볼 필요가 있을 것 같다. 글은 다음과 같은 순서로 진행된다.
 
 
-* TOC
-{:toc}
-
 
 
 # What is Docker Machine
@@ -280,72 +277,73 @@ VirtualBox 등의 설명은 `create` 명령을 `-h`로 실행했을 때 보여�
 
 #### 수정, 2018-03-08
 
-{:.boxed.wrap}
-> 글을 쓴 후에, 천천히 다시 들여다보고 있는데, 그 과정에서 다음과 같은
-> 내용을 발견했다.
->
-> ```console
-> $ docker-machine create -h
-> Usage: docker-machine create [OPTIONS] [arg...]
-> 
-> Create a machine
-> 
-> Description:
->    Run 'docker-machine create --driver name --help' to include the create flags for that driver in the help text.
-> 
-> Options:
-> <...>
-> ```
->
-> Driver 별로 달라지는 옵션은 위와 같이, `--driver name --help`라고 명하면
-> 보여준다고 한다.
->
-> ```console
-> $ docker-machine create --driver softlayer --help
-> Usage: docker-machine create [OPTIONS] [arg...]
-> 
-> Create a machine
-> 
-> Description:
->    Run 'docker-machine create --driver name --help' to include the create flags for that driver in the help text.
-> 
-> <...>
->    --softlayer-api-endpoint "https://api.softlayer.com/rest/v3"			softlayer api endpoint to use [$SOFTLAYER_API_ENDPOINT]
->    --softlayer-api-key 								softlayer user API key [$SOFTLAYER_API_KEY]
->    --softlayer-cpu "1"								number of CPU's for the machine [$SOFTLAYER_CPU]
-> <...>
-> $ 
-> ```
->
-> 어, 정말이다. 자세하게 다 보여준다. 그리고,
->
-> ```console
-> $ docker-machine create --driver softlayer --<TAB>
-> --driver                       --softlayer-memory
-> --engine-env                   --softlayer-network-max-speed
-> --engine-insecure-registry     --softlayer-private-net-only
-> --engine-install-url           --softlayer-private-vlan-id
-> --engine-label                 --softlayer-public-vlan-id
-> --engine-opt                   --softlayer-region
-> --engine-registry-mirror       --softlayer-user
-> --engine-storage-driver        --swarm
-> --help                         --swarm-addr
-> --softlayer-api-endpoint       --swarm-discovery
-> --softlayer-api-key            --swarm-experimental
-> --softlayer-cpu                --swarm-host
-> --softlayer-disk-size          --swarm-image
-> --softlayer-domain             --swarm-join-opt
-> --softlayer-hostname           --swarm-master
-> --softlayer-hourly-billing     --swarm-opt
-> --softlayer-image              --swarm-strategy
-> --softlayer-local-disk         --tls-san
-> sio4@light:~$ docker-machine create --driver softlayer --
-> ```
->
-> 이렇게, Auto Completion도 잘 된다. (Tab을 누르기 전에, `--`를 먼저
-> 입력하는 것이 키다.)
+---
 
+글을 쓴 후에, 천천히 다시 들여다보고 있는데, 그 과정에서 다음과 같은
+내용을 발견했다.
 
+```console
+$ docker-machine create -h
+Usage: docker-machine create [OPTIONS] [arg...]
+
+Create a machine
+
+Description:
+   Run 'docker-machine create --driver name --help' to include the create flags for that driver in the help text.
+
+Options:
+<...>
+```
+
+Driver 별로 달라지는 옵션은 위와 같이, `--driver name --help`라고 명하면
+보여준다고 한다.
+
+```console
+$ docker-machine create --driver softlayer --help
+Usage: docker-machine create [OPTIONS] [arg...]
+
+Create a machine
+
+Description:
+   Run 'docker-machine create --driver name --help' to include the create flags for that driver in the help text.
+
+<...>
+   --softlayer-api-endpoint "https://api.softlayer.com/rest/v3"			softlayer api endpoint to use [$SOFTLAYER_API_ENDPOINT]
+   --softlayer-api-key 								softlayer user API key [$SOFTLAYER_API_KEY]
+   --softlayer-cpu "1"								number of CPU's for the machine [$SOFTLAYER_CPU]
+<...>
+$ 
+```
+
+어, 정말이다. 자세하게 다 보여준다. 그리고,
+
+```console
+$ docker-machine create --driver softlayer --<TAB>
+--driver                       --softlayer-memory
+--engine-env                   --softlayer-network-max-speed
+--engine-insecure-registry     --softlayer-private-net-only
+--engine-install-url           --softlayer-private-vlan-id
+--engine-label                 --softlayer-public-vlan-id
+--engine-opt                   --softlayer-region
+--engine-registry-mirror       --softlayer-user
+--engine-storage-driver        --swarm
+--help                         --swarm-addr
+--softlayer-api-endpoint       --swarm-discovery
+--softlayer-api-key            --swarm-experimental
+--softlayer-cpu                --swarm-host
+--softlayer-disk-size          --swarm-image
+--softlayer-domain             --swarm-join-opt
+--softlayer-hostname           --swarm-master
+--softlayer-hourly-billing     --swarm-opt
+--softlayer-image              --swarm-strategy
+--softlayer-local-disk         --tls-san
+sio4@light:~$ docker-machine create --driver softlayer --
+```
+
+이렇게, Auto Completion도 잘 된다. (Tab을 누르기 전에, `--`를 먼저
+입력하는 것이 키다.)
+
+---
 
 
 ### List Nodes

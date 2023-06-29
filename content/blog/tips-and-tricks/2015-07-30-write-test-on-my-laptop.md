@@ -13,9 +13,9 @@ Write 모드로 해버린 것! 이 글은 그 쌩고생에 대한 기록이면�
 이런 일을 당한 사람들에게 드리는 "해! 하지마!" 가이드이다.
 
 혹시 손상된 것이 디스크가 아니라 메모리카드라면, 예전에 적었던
-[메모리카드 백업, dd, mount,...]({% post_url tips-and-tricks/2010-02-01-dd-mount-for-memorycard-backup %})와
+[메모리카드 백업, dd, mount,...]({{< relref "/blog/tips-and-tricks/2010-02-01-dd-mount-for-memorycard-backup.md" >}})와
 이미지 파일의 loopback 마운트를 쉽게 해주는 유틸리티인
-[Kpartx, Create device mappings for partitions]({% post_url tips-and-tricks/2011-12-27-kpartx-create-device-mappings-for-partitions %})도
+[Kpartx, Create device mappings for partitions]({{< relref "/blog/tips-and-tricks/2011-12-27-kpartx-create-device-mappings-for-partitions.md" >}})도
 참고할만 하다.
 
 ## 사건의 발단: Disk에 구멍이 났다!
@@ -260,13 +260,13 @@ $
 이제 파티션이 망가져 버렸으니... 파티션 복구를 시도했다. 먼저
 `gpart` 출동~! 그러나 생각보다 결과는 그렇네...
 
-![](/attachments/2015-07-30-gpart.png)
+![.dropshadow](/attachments/2015-07-30-gpart.png)
 
 보는 바와 같이, 아무 파티션도 잡아내지 못했다. 이건 지금 시점에서는
 사용할 수 없는 도구가 되어버렸나보다. 그래서 다시, `TestDisk`로
 시도!
 
-![](/attachments/2015-07-30-testdisk.png)
+![.dropshadow](/attachments/2015-07-30-testdisk.png)
 
 어? 뭔가 보인다! 보여!
 

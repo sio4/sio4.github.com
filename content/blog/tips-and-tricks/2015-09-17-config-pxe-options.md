@@ -5,7 +5,7 @@ tags: ["howto", "PXE", "hardware"]
 categories: ["tips-and-tricks"]
 date: 2015-09-17 11:23:00+09:00
 ---
-몇일 전에 [PXE Mater 구성하기]({% post_url tips-and-tricks/2015-09-15-setup-pxe-master %})라는
+몇일 전에 [PXE Mater 구성하기]({{< relref "/blog/tips-and-tricks/2015-09-15-setup-pxe-master.md" >}})라는
 글을 올렸다. 이것으로 PXE에 대한 이슈는 정리된 것으로 생각하고 있었는데,
 또다른 복병이 나타났다. 바로 대상 Hardware의 PXE 설정!
 

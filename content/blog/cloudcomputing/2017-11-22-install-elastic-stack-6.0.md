@@ -35,9 +35,6 @@ Elastic Stack이라는 공식적인 명칭으로 사용하면서 더 활발하�
 
 # 기반환경
 
-* TOC
-{:toc .half.pull-right}
-
 역시, 이번에도 Ubuntu Linux를 기반으로 환경을 구성했으며, 데이터의 양과
 가용성 조건이 약하기 때문에 단일 서버에 모든 구성요소를 올리는 방식으로
 구성을 하였다. Elastic Stack은 복잡한 기반 구성이 필요하지 않으며, 다음
@@ -436,7 +433,7 @@ $
 이제 데이터도 볼 수 있겠다. (사실, 처음 기동하고 뜬 스샷이 아니다 보니, 이미
 초기 기동 시 발생한 로그가 저만큼 가있다.)
 
-![](/attachments/elastic-stack/kibana-6.0-discover.png)
+![.dropshadow](/attachments/elastic-stack/kibana-6.0-discover.png)
 
 특별하지 않게 느낄 수도 있지만, 내 시각에서 이전 버전의 화면 구성에 비해
 발전했다고 느껴지는 부분 중 하나는 왼쪽으로 자리를 옮긴 브랜드와 주메뉴

@@ -840,9 +840,9 @@ $
 
 
 
-[Hardened Layer, SoftLayer Custom Portal - Part 1]:{% post_url development/2016-01-16-hardened-layer %}
-[Hardened Layer, SoftLayer Custom Portal - Part 2]:{% post_url development/2016-01-21-hardened-layer-part2 %}
-[Python Virtual Environments]:{% post_url development/2016-01-26-python-virtualenv-and-venv %}
+[Hardened Layer, SoftLayer Custom Portal - Part 1]:{{< relref "/blog/development/2016-01-16-hardened-layer.md" >}}
+[Hardened Layer, SoftLayer Custom Portal - Part 2]:{{< relref "/blog/development/2016-01-21-hardened-layer-part2.md" >}}
+[Python Virtual Environments]:{{< relref "/blog/development/2016-01-26-python-virtualenv-and-venv.md" >}}
 
 [Stack Overflow]:https://stackoverflow.com
 [Github]:https://github.com

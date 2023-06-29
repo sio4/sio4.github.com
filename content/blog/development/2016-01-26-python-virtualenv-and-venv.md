@@ -349,7 +349,7 @@ API와 Custom Portal을 시험하기 위한 환경을 구성하던 중, 그 과�
 API 시험에 들어가겠다.
 
 
-[Ember CLI 환경 구성하기]:{% post_url development/2015-12-09-preparing-ember-environment %}
+[Ember CLI 환경 구성하기]:{{< relref "/blog/development/2015-12-09-preparing-ember-environment.md" >}}
 [virtualenv]:https://virtualenv.pypa.io/
 [pyvenv]:https://www.python.org/dev/peps/pep-0405/
 [Bundler]:http://bundler.io/

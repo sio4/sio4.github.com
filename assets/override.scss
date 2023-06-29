@@ -16,6 +16,7 @@ $color-link: #0075aa;
 $color-light: #cccccc;
 $color-orange: #ee5500;
 $color-accent: #ee5500;
+$color-comment: #a09090;
 
 $background-body: #f9f9f9;
 $background-box: #fbfbfb;
@@ -25,7 +26,8 @@ $background-footer: #000000;
 $background-marker: linear-gradient(transparent 30%, #ddf3ff 60%, #c0f9ff 80%);
 $background-point: #454545;
 
-$background-th: linear-gradient(#eeeeee 0%, #ffffff 40%, #ffffff 60%, #eeeeee 100%);
+//$background-th: linear-gradient(#eeeeee 0%, #ffffff 40%, #ffffff 60%, #eeeeee 100%);
+$background-th: #eeeeee;
 $background-td: #ffffff;
 $color-header: $color-light;
 $color-border: $color-light;
@@ -66,11 +68,12 @@ ul {
 	&.angle > li {
 		list-style: none;
 		&:before {
-			content: "\f105"; // angle-right
 			font-family: "Font Awesome 5 Free";
+			content: "\f105"; // font-awesome angle-right
 			display: inline-block;
-			margin-left: -1em;
-			width: 1em;
+			width: 1.5em;
+			margin-left: -30px;
+			float: left;
 		}
 	}
 }
@@ -119,7 +122,7 @@ blockquote {
 	// hugo does not support classing. use it as a default mode
 	//&.comment {
 		background: none;
-		color: $color-grey !important;
+		color: $color-comment !important;
 		&:before {
 			font-family: "Font Awesome 5 Free";
 			content: "\f075"; // font-awesome comment
@@ -129,7 +132,7 @@ blockquote {
 			float: left;
 		}
 		* {
-			color: $color-grey !important;
+			color: $color-comment !important;
 		}
 	//}
 	&.definition {
@@ -184,22 +187,33 @@ table {
 	&.fit { width: 95%; margin: 1rem auto; }
 	&.filled { width: 100%; }
 	&.centered { margin: 1rem auto; max-width: 80%; min-width: 50%; }
-	&.styled {
+	margin: 1rem auto; max-width: 95%; min-width: 80%; // originally .centered
+	// hugo does not support classing. use it as a default mode
+	//&.styled {
 		thead {
 			tr {
 				background: $background-th;
 				border-top: 1px solid darken($color-border, 15%);
+				th {
+					border-width: 1px 0;
+					padding: 2px 4px;
+				}
 			}
 		}
 		tbody {
 			tr {
-				background: $background-td; border-top: 1px solid $color-border;
+				background: $background-td;
+				border-top: 1px dotted $color-border;
 				&:nth-child(even) { background: darken($background-td, 3%); }
 				&:first-child { border-top: 1px solid darken($color-border, 15%); }
 				&:last-child { border-bottom: 1px solid darken($color-border, 15%); }
+				td {
+					border-width: 1px 0;
+					padding: 2px 4px;
+				}
 			}
 		}
-	}
+	//}
 	th, td { padding: 1px 2px; }
 }
 
@@ -322,6 +336,7 @@ img {
 #blog-archives ul.posts li,
 .page-heading,
 .post-heading,
+.blog-heading,
 .post-preview {
 	.post-meta {
 		font-family: $font-meta;
@@ -404,18 +419,20 @@ article.blog-post {
 			/* text-decoration: underline */
 			color: $color-link;
 		}
+	}
 
+	figure {
 		img {
 			display: block;
 			margin: auto;
 			max-width: 95%;
 			// hugo does not support classing. use it as a default mode
-			//&.dropshadow {
+			&.dropshadow {
 				margin-top: 1rem;
 				margin-bottom: 1rem;
 				border: 1px solid #bbbbbb;
 				box-shadow: 3px 3px 5px #888888;
-			//}
+			}
 			&.inline {
 				margin-left: 2rem;
 				margin-right: 2rem;
@@ -426,6 +443,13 @@ article.blog-post {
 					margin-right: 0;
 				}
 			}
+		}
+
+		figcaption {
+			margin-top: 0.5em;
+			text-align: center !important;
+			font-style: italic;
+			font-size: 0.9em;
 		}
 	}
 
@@ -546,14 +570,17 @@ article.blog-post {
 }
 
 // no parent on layout:post (under article.blog-post)
+.blog-tags,
 .post-tags {
 	clear: both;
 	text-align: right;
+	/*
 	&:before {
 		content: "\F02C";
 		font-family: "Font Awesome 5 Free";
 		margin-right: 4px;
 	}
+	*/
 	.tag-item {
 		font-size: 0.8em;
 		padding: 3px 4px;
@@ -663,6 +690,7 @@ ul.post-related {
 .blog-pager {
 	li a {
 		color: $color-link;
+		font-size: 1em;
 	}
 	.previous>a, .previous>span {
 		float: left;
@@ -686,11 +714,11 @@ ul.post-related {
 }
 
 .pager.blog-pager {
-	margin-top: 0;
+	margin-top: 40px;
 }
 @media only screen and (min-width: 768px) {
 	.pager.blog-pager {
-		margin-top: 10px;
+		//margin-top: 10px;
 	}
 }
 
@@ -1100,15 +1128,15 @@ footer .theme-by {
 }
 
 .blog-tags a {
-	color: #008AFF;
+	color: $color-link;
 	text-decoration: none;
-	padding: 0 5px;
+	padding: 0 0px;
 }
 
 .blog-tags a:hover {
 	border-radius: 2px;
-	color: #008AFF;
-	background-color: #CCC;
+	color: $color-link;
+	background-color: $color-light;
 }
 
 .post-preview .blog-tags {

@@ -17,9 +17,6 @@ date: 2017-10-08T16:40:00+09:00
 
 # 개요
 
-* TOC
-{:toc .half.pull-right}
-
 Private Cloud 플랫폼을 준비하던 2015년의 가을과 겨울을 VMware의 NSX 6.2,
 그리고 OpenStack+Open vSwitch와 함께 보냈었다. 이 과정에서 중요하게 봤던
 부분 중 하나가 **네트워크의 안정성과 무결성, 그리고 Tenant 독립성**에 관한

@@ -51,7 +51,7 @@ ErrorDocument로 지정된 Handler의 URL만 냅다 돌려주는 황당한 상�
 
 단순하다. 익히 들어 알고 있는 다음의 설정이면 충분하다.
 
-```conf
+```apache
 ErrorDocument 404 /error_handler.jsp
 ```
 
@@ -71,7 +71,7 @@ Apache에서 아무리 환경변수를 설정해줘도, 아무리 다양한 방�
 
 `mod_jk.conf` 등과 같은 파일에서...
 
-```conf
+```apache
 JkEnvVar REDIRECT_URL ""
 JkEnvVar REDIRECT_REMOTE_HOST ""
 JkEnvVar REDIRECT_PATH ""

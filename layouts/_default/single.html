@@ -5,11 +5,11 @@
       <article role="main" class="blog-post">
         {{ .Content }}
 
-				<div class="post-signature">
-				--<br>
-				"And in the end, the love you take is equal to the love you make."
-				-- the Beatles
-				</div>
+        <div class="post-signature">
+        --<br>
+        "And in the end, the love you take is equal to the love you make."
+        -- the Beatles
+        </div>
 
         {{ if .Params.tags }}
           <div class="blog-tags">
@@ -18,6 +18,11 @@
             {{ end }}
           </div>
         {{ end }}
+
+        <div class="post-goodbye" style="text-align: center">
+          묶음글, 관련글 잊지 마세요!
+          오류에 대한 제보나 의견이 있다면 댓글 남겨주세요!
+        </div>
 
         {{ if $.Param "socialShare" }}
             <hr/>
@@ -50,12 +55,12 @@
         <ul class="pager blog-pager">
           {{ if .PrevInSection }}
             <li class="previous">
-              <a href="{{ .PrevInSection.Permalink }}" data-toggle="tooltip" data-placement="top" title="{{ .PrevInSection.Title }}">&larr; {{ .PrevInSection.Title }}</a>
+              <a href="{{ .PrevInSection.Permalink }}" data-toggle="tooltip" data-placement="top" title="{{ .PrevInSection.Title }}"><i class="fas fa-arrow-left"></i> {{ .PrevInSection.Title }}</a>
             </li>
           {{ end }}
           {{ if .NextInSection }}
             <li class="next">
-              <a href="{{ .NextInSection.Permalink }}" data-toggle="tooltip" data-placement="top" title="{{ .NextInSection.Title }}">{{ .NextInSection.Title }} &rarr;</a>
+              <a href="{{ .NextInSection.Permalink }}" data-toggle="tooltip" data-placement="top" title="{{ .NextInSection.Title }}">{{ .NextInSection.Title }} <i class="fas fa-arrow-right"></i></a>
             </li>
           {{ end }}
         </ul>

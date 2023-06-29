@@ -62,9 +62,6 @@ Software에게, 이것을 마치 관악기, 현악기, 타악기 등이 어우�
 
 # Docker Swarm
 
-* TOC
-{:toc .half.pull-right}
-
 Docker Swarm은 2014년에 시작된 Docker Orchestration 도구를 가르키기도 하며,
 동시에 버전 1.12 부터 Docker Engine에 결합되어 제공되는 [Swarmkit] 기능을
 뜻하기도 한다. 같은 역할을 하지만 서로 별개의 프로젝트로 존재하는 이 둘을
@@ -82,8 +79,7 @@ Docker Engine이 Swarm mode로 실행되게 되면, Swarm의 통제 하에서 �
 방법에 대하여 위의 목차와 같은 순서로 정리한다.
 
 
-{:#feature-of-docker-swarm}
-## Docker Swarm의 기능
+## Docker Swarm의 기능 {#feature-of-docker-swarm}
 
 앞서 잠깐 언급한 것처럼, Docker Swarm은 여러 Host 들을 엮어서 마치 거대한
 단일 Host처럼 다룰 수 있도록 해주는 **사용자 인터페이스**, Cluster에 속한
@@ -109,38 +105,36 @@ Docker Swarm
 * Rolling updates
 
 
-{:#terms-of-docker-and-swarm}
-## Docker Swarm의 용어와 동작
+## Docker Swarm의 용어와 동작 {#terms-of-docker-and-swarm}
 
 진도가 나갈 수록, 용어의 혼선이 예상된다. 여기서 일부 용어에 대한 정리를
 하고 넘어간다.
 
-{:.boxed.definition}
-> Container
-> : 사용자가 실행하고자 하는 프로그램의 독립적 실행을 보장하기 위한
-  격리된 실행 공간/환경
->
-> Task
-> : Docker Container 또는 그 격리 공간 안에서 실행되는 단위 작업으로,
-> Swarm이 작업계획을 관리하는 최소단위 (Container와 1:1 관계임)
->
-> Service
-> : 사용자가 Docker Swarm에게 단위 업무를 할당하는 논리적 단위로,
-> Swarm에 의해 여러 Task로 분할되어 처리됨
->
-> Dockerized Host 또는 Host
-> : Docker Engine이 탑재된 Virtual Machine이나 Baremetal
-> 
-> Swarm Node 또는 Node
-> : Docker Engine이 Swarm mode로 동작하는 Host
-> 하지만 오랜 버릇으로 인해, 이전 글에서는 Host와 같은 의미로 사용하기도 했다.
->
-> Manager Node 또는 Manager
-> : Swarm Node 중에서 Cluster 관리 역할을 수행하는 Node
->
-> Worker Node 또는 Worker
-> : Swarm Node 중에서 Container를 실행하여 실제 일을 처리하는 Node.
-> 일부러 제외하지 않으면 모든 Node는 기본적으로 Worker가 됨
+Container
+: 사용자가 실행하고자 하는 프로그램의 독립적 실행을 보장하기 위한
+격리된 실행 공간/환경
+
+Task
+: Docker Container 또는 그 격리 공간 안에서 실행되는 단위 작업으로,
+Swarm이 작업계획을 관리하는 최소단위 (Container와 1:1 관계임)
+
+Service
+: 사용자가 Docker Swarm에게 단위 업무를 할당하는 논리적 단위로,
+Swarm에 의해 여러 Task로 분할되어 처리됨
+
+Dockerized Host 또는 Host
+: Docker Engine이 탑재된 Virtual Machine이나 Baremetal
+
+Swarm Node 또는 Node
+: Docker Engine이 Swarm mode로 동작하는 Host
+하지만 오랜 버릇으로 인해, 이전 글에서는 Host와 같은 의미로 사용하기도 했다.
+
+Manager Node 또는 Manager
+: Swarm Node 중에서 Cluster 관리 역할을 수행하는 Node
+
+Worker Node 또는 Worker
+: Swarm Node 중에서 Container를 실행하여 실제 일을 처리하는 Node.
+일부러 제외하지 않으면 모든 Node는 기본적으로 Worker가 됨
 
 ### Docker Swarm의 기본 흐름
 
@@ -157,14 +151,12 @@ Node에서 생성, 삭제, 장애의 생명주기를 마치게 된다.
 
 
 
-{:#setup-swarm-cluster}
-# Swarm Cluster 구성하기
+# Swarm Cluster 구성하기 {#setup-swarm-cluster}
 
 일단 만들어보자. (설명보다 해보는 게 쉬운 Docker. 그래서 예쁘다.)
 
 
-{:#initialize-swarm-cluster}
-## Swarm Cluster 초기화하기
+## Swarm Cluster 초기화하기 {#initialize-swarm-cluster}
 
 Swarm Cluster의 구성은 매우 간단하다. 별도의 DBMS나 도구를 준비할 필요도
 없고, 뭔가 복잡한 사전 구성이 필요하지도 않다. 단 하나, 이미 구성되어
@@ -214,7 +206,7 @@ Swarm mode 자체와 관련된 부명령은 `swarm` 명령이다. `swarm` 명령
 몇 개의 부명령을 갖는데, 그 중 `init` 명령은 Cluster를 초기화하기 위해
 사용하는 명령이다. 이 명령은 다음과 같은 형식으로 실행하게 된다.
 
-```
+```console
 docker swarm init --advertise-addr IP_ADDRESS
 ```
 
@@ -292,8 +284,7 @@ $
 
 
 
-{:#add-new-node-to-swarm-cluster}
-## 새 Node 추가하기
+## 새 Node 추가하기 {#add-new-node-to-swarm-cluster}
 
 같은 방식으로, `docker-machine use`를 사용해서 앞으로 내릴 `docker` 명령을
 받을 Host를 결정한다.
@@ -463,7 +454,6 @@ Swarm standalone을 설치/관리하는 방식을 사용할 때에 사용되는 
   [Docker Swarm의 고가용성] 편에 정리해보려고 한다.
 
 
-{:.mix-xlarge}
 > Happy Docking!!!
 
 
@@ -473,9 +463,9 @@ Swarm standalone을 설치/관리하는 방식을 사용할 때에 사용되는 
 * [Swarm mode overview]
 * [Swarm mode key concepts]
 * [Getting started with swarm mode]
-
-* [Docker Swarm standalone] : Github Repository of Legacy
-* [Swarmkit] : Github Repository of Swarmkit
+* Repositories
+  * [Docker Swarm standalone] : Github Repository of Legacy
+  * [Swarmkit] : Github Repository of Swarmkit
 
 [Docker Swarm standalone]:https://github.com/docker/swarm
 [Swarmkit]:https://github.com/docker/swarmkit

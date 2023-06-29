@@ -6,15 +6,15 @@ image: /attachments/20150808-ghp-reloaded-1.png
 date: 2015-08-08 23:04:33+09:00
 ---
 몇 주 전
-"[블로그, Tistory로부터 Github Pages로 이주]({% post_url productivity/2015-07-24-migration-from-tistory %}){:.reference}"라는
+"[블로그, Tistory로부터 Github Pages로 이주]({{< relref "/blog/productivity/2015-07-24-migration-from-tistory.md" >}}){:.reference}"라는
 글을 통해서, "**어떤 방식으로 Tistory로부터 Github Pages로 이사를
 했는지**"를 중심으로 기록을 남긴 바 있다. 이번에는 내 글들의 새
 터를 "**좀더 블로그답게 정비한**" 이야기이다.
 
 따지자면 5년 전에 적었던 
-"[Jekyll로 github에 블로깅하기]({% post_url misc/2010-05-27-blogging-on-github-with-jekyll %}){:.reference}"의
+"[Jekyll로 github에 블로깅하기]({{< relref "/blog/misc/2010-05-27-blogging-on-github-with-jekyll.md" >}}){:.reference}"의
 2탄인 샘이고, 얼마 전, 좀 대충 적은 듯 한
-"[Setup Jekyll for Github Pages]({% post_url misc/2015-07-23-setup-jekyll-for-github-page %}){:.reference}"와
+"[Setup Jekyll for Github Pages]({{< relref "/blog/misc/2015-07-23-setup-jekyll-for-github-page.md" >}}){:.reference}"와
 함께 읽으면 Github Pages를 이용한 블로깅을 새로 시작하는 사람들에게는
 그럭 저럭 읽어볼만한 "시작하기+@ Guide"가 될 수 있을 것이다.
 
@@ -42,14 +42,14 @@ Posting한 글에 대한 소셜 연동은 예전에 Addthis를 이용하여 이�
 [Delicious](https://delicious.com/tools){:.ext}를
 더 붙이고 싶은데, 공식 제공하는 버튼이 좀 후져서 뺐다. :-)
 
-![](/attachments/20150808-ghp-reloaded-1.png)
+![.dropshadow](/attachments/20150808-ghp-reloaded-1.png)
 
 Icon 구성 등이 편한 AddThis에게도 미련이 남아, 예전에 쓰던 AddThis
 버튼은, Custom Image를 쓰던 부분을 FontAwesome 글꼴로 대신한 후, 각
 서비스가 제공하는 JSON API를 이용하여 공유된 Count를 받아 표시하도록
 수정하여, 아래와 같이 Post 하단에 유지하였다.
 
-![](/attachments/20150808-ghp-reloaded-3.png)
+![.dropshadow](/attachments/20150808-ghp-reloaded-3.png)
 
 위에서 볼 수 있듯이, Prev/Next 버튼을 Post 하단에 두고 있는데, 이
 부분은 Liquid Template의 `page.previous`, `page.next`를 이용하여
@@ -65,7 +65,7 @@ Github의 코드를 그대로 따와야 할 때가 있다. 이 때 사용할 수
 이 서비스를 이용하면, 아래와 같이 나름 깔끔하게 Github에 위치한
 파일을 바로 끓어다 붙일 수 있다.
 
-![](/attachments/20150808-ghp-reloaded-2.png)
+![.dropshadow](/attachments/20150808-ghp-reloaded-2.png)
 
 물론 이 내용은, Github Pages를 사용할 때 만나는 제한점을 피할 때
 필요한 방법이라기 보다는 Github에서 Hosting되는 Code를 참조하기
@@ -89,7 +89,7 @@ Github Pages에서 아쉬운 것 중 하나가, 보통의 블로그에서는 보
 나오긴 한다.
 하지만, 단지 최근 문서를 관련 문서라고 보여주는 것 보다야...
 
-![](/attachments/20150808-ghp-reloaded-4.png)
+![.dropshadow](/attachments/20150808-ghp-reloaded-4.png)
 
 다음은 "**댓글**"인데, 정적 특성의 Github Pages는 동적인 댓글의
 수용이 아얘 불가능한 구조이다. 이 것을 해결해줄 수 있는 서비스가
@@ -102,7 +102,7 @@ Github Pages에서 아쉬운 것 중 하나가, 보통의 블로그에서는 보
 모습으로 토론 참여를 할 수 있고, 그 중심이 관점에 따라 참여자일
 수도, 사이트일 수도 있는 그런 서비스이다.
 
-![](/attachments/20150808-ghp-reloaded-5.png)
+![.dropshadow](/attachments/20150808-ghp-reloaded-5.png)
 
 이와 유사한 것을 요즘은 Facebook을 통해 하는 경우가 많은데, 이에
 대한 얘기는 다음에 기회가 되면...
@@ -112,7 +112,7 @@ Github Pages에서 아쉬운 것 중 하나가, 보통의 블로그에서는 보
 [Feedburner](https://feedburner.google.com/){:.ext}를
 사용하여 제공하도록 설정하였다.
 
-![](/attachments/20150808-ghp-reloaded-6.png)
+![.dropshadow](/attachments/20150808-ghp-reloaded-6.png)
 
 
 ## 그리고 Github Pages 호환성 유지

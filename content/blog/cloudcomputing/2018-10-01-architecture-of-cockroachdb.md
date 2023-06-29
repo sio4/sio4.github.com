@@ -35,9 +35,6 @@ date: 2018-10-01T14:30:00+0900
 
 ## 21세기의 IT
 
-{:toc .half.pull-right}
-* TOC
-
 21세기가 언제부터더라? 2000년? 2001년? 모르겠다. 좀 거창하게 제목줄을
 써봤는데... IT의 역사나 그 변화 속도를 놓고 보면 여기에 "세기"를 가져다
 붙이는 것은 좀 오버. 어쨌든, 2000년대에 들어서면서, 1990년대 후반부터
@@ -277,7 +274,6 @@ A2는 특정 시점에 그 Range에 대한 Lease를 같게 된다. 이렇게 Lea
 Range Lease 관리를 위해 CockroachDB는 Raft Concensus Algorithm을
 사용하는데, 이 부분은 가용성 시험에 대한 글에서 다시 다루려고 한다.
 
-{:.info}
 잠깐, 이 Raft. 어디서 봤는데?
 : 그렇다. Docker에 관함 묶음글 중, "[Docker Swarm의 고가용성]"을 보면,
   Docker Swarm이 사용하는 유사한 구조의 대칭형 Cluster 방식에서 바로
@@ -296,7 +292,6 @@ Range Lease 관리를 위해 CockroachDB는 Raft Concensus Algorithm을
 표현한 것인데, 각 Node의 입장에서는 각각 다섯 개의 Range를 담고 있는
 형태다.
 
-{:.info}
 참고
 : 위의 예에서는 Cluster가 딱 세 개의 Node로 구성되었기 때문에, 3 개의
   복제본을 가질 경우, 모든 Node는 동일한 수의 Range를 갖게 된다.

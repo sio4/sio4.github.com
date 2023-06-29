@@ -35,7 +35,7 @@ NMA의 분포를 나타내는 그래프가 자리하고 있다. (이게 이 글�
 그리고 그 아래로는 요일별, 시간대별 NMA 분포 등이 연이어 배열되어 있다.
 (이 부분은 다음 글에서 다룬다.)
 
-![](/attachments/silrok/silrok-dashboard-current.png)
+![.dropshadow](/attachments/silrok/silrok-dashboard-current.png)
 
 # Kibana, Visual Builder
 
@@ -51,7 +51,7 @@ NMA의 분포를 나타내는 그래프가 자리하고 있다. (이게 이 글�
 아래 그림은, 이 글에서 소개하고자 하는 데이터 표현이 최종적으로 완성된
 모습이다.
 
-![](/attachments/silrok/silrok-visualbuilder-00-preview.png)
+![.dropshadow](/attachments/silrok/silrok-visualbuilder-00-preview.png)
 
 그림 상단의 메뉴를 보면, Time Series, Metric, Top N, Gauge, Markdown
 등이 표시되어 있는데, 앞서 얘기했듯이 이 Visual Builder는 시계열 데이터
@@ -89,7 +89,7 @@ Spread, Average라고 이름 붙인 네 가지 데이터를 플로팅하고 있�
 아래와 같이, Index Pattern, Time Field, Interval, Axis나 Legend 등과
 관련된 값들, 그리고 마지막으로 Filter를 지정할 수 있도록 하고 있다.
 
-![](/attachments/silrok/silrok-visualbuilder-01-panel-options.png)
+![.dropshadow](/attachments/silrok/silrok-visualbuilder-01-panel-options.png)
 
 먼저, Index Pattern 값을 이용해서 어떤 Elasticsearch 인덱스에서 데이터를
 가져올 것인지를 정하고, 그 인텍스에 들어있는 시간 데이터 중에서 시간축에
@@ -114,7 +114,7 @@ Discover를 사용할 때 사용하는 검색 방식과 동일한데, 한 가지
 네트워크 모니터 경보의 합산 수치를 표현하려고 하는데, 이게 가장 단순하고
 기본이 되는 시계열 데이터 표출 방식이다.
 
-![](/attachments/silrok/silrok-visualbuilder-11-count.png)
+![.dropshadow](/attachments/silrok/silrok-visualbuilder-11-count.png)
 
 위의 그림을 보면, 눈을 뜬 Aggregation 에 `Count`라는 값이 선택되어 있는
 것을 볼 수 있다. `Count` 외에도 `Average`, `Min`, `Max`, `Sum` 등 우리가
@@ -126,7 +126,7 @@ Discover를 사용할 때 사용하는 검색 방식과 동일한데, 한 가지
 바로 옆의 Options 탭에서 설정할 수 있다. 조금 잘리긴 했는데, 아래 그림과
 같다.
 
-![](/attachments/silrok/silrok-visualbuilder-11-options.png)
+![.dropshadow](/attachments/silrok/silrok-visualbuilder-11-options.png)
 
 데이터가 단순 수치인지 백분율값인지, Byte인지 등을 정하는 Data Formatter나
 개별 데이터를 표현할 때 사용할 Template 등 다양한 설정이 가능한데, 그 중
@@ -153,12 +153,12 @@ Aggregation 방식을 `Cardinality`로 설정하고 대상 Field를 정해주면
 [Cardinality Aggregation]:https://www.elastic.co/guide/en/elasticsearch/guide/current/cardinality.html
 [Finding Distict Counts]:https://www.elastic.co/guide/en/elasticsearch/guide/current/cardinality.html
 
-![](/attachments/silrok/silrok-visualbuilder-12-cardinality.png)
+![.dropshadow](/attachments/silrok/silrok-visualbuilder-12-cardinality.png)
 
 Metrics를 설정한 후, 플로팅 방식을 Events와 동일하게 설정해주면 이 두 값이
 함께 표시되어 아래와 같은 모양이 된다.
 
-![](/attachments/silrok/silrok-visualbuilder-pl-count.png)
+![.dropshadow](/attachments/silrok/silrok-visualbuilder-pl-count.png)
 
 이때, Options에서 Fill, Line Width 등을 이용해서 투명도나 선의 굵기 등을
 조정할 수 있다. (색상 조정은 아이템 제목의 왼쪽에 위치한 색깔 아이콘을
@@ -177,7 +177,7 @@ Metrics를 설정한 후, 플로팅 방식을 Events와 동일하게 설정해�
 단일 지표를 이용하는 것이 아니기 때문에 아래 그림과 같이 조금은 복잡한
 설정을 해줘야 한다.
 
-![](/attachments/silrok/silrok-visualbuilder-13-calculation.png)
+![.dropshadow](/attachments/silrok/silrok-visualbuilder-13-calculation.png)
 
 보면, `Count`, `Cardinality` 방식으로 설정되었으며 감은 눈 Aggregation이
 두 개 있고, 그 아래에는 `Calculation` 방식으로 설정되어 있는 눈을 뜬
@@ -207,7 +207,7 @@ if (params.events > 5) {
 이제 그래프는 아래와 같이 확산정도를 백분율로 표시한 꺾은선 그래프가
 추가된 모양으로 변했다.
 
-![](/attachments/silrok/silrok-visualbuilder-pl-calculation.png)
+![.dropshadow](/attachments/silrok/silrok-visualbuilder-pl-calculation.png)
 
 이제 조금 더 명시적으로, 어떤 시점에 소수의 가입자에게 사건이 발생했는지,
 어떤 시점에 다수의 가입자에게 영향을 주는 사건이 발생했는지를 확인할 수
@@ -231,7 +231,7 @@ if (params.events > 5) {
 
 일단 설정을 보자.
 
-![](/attachments/silrok/silrok-visualbuilder-14-moving-avg.png)
+![.dropshadow](/attachments/silrok/silrok-visualbuilder-14-moving-avg.png)
 
 위쪽 세 개의 감은 눈은 앞선 `Calculation`의 부분을 그대로 가져온 것이다.
 차이점은, 앞서 설명한 방식으로 수식이 변했는데, 이번에는 "5개 초과의 사건"
@@ -253,13 +253,13 @@ if (params.events > 0) {
 
 이걸 적용하여 그려보면 아래와 같다.(눈에 잘 띄도록 색을 좀 바꿔봤다.)
 
-![](/attachments/silrok/silrok-visualbuilder-pl-moving-10.png)
+![.dropshadow](/attachments/silrok/silrok-visualbuilder-pl-moving-10.png)
 
 그림에서 보듯이, 10개 데이터지점 단위로 선형의 이동 평균을 내보면, 사건
 발생의 비율이 크게 변하지 않았다는 것을 알 수 있다. 차이를 좀 확연히 보기
 위해서 Window를 `2`로 바꿔보면 아래처럼 조금 더 꺾이는 그래프가 된다.
 
-![](/attachments/silrok/silrok-visualbuilder-pl-moving-2.png)
+![.dropshadow](/attachments/silrok/silrok-visualbuilder-pl-moving-2.png)
 
 이제 이 값을 이용해서, 사건(또는 사건의 수)이 아닌 서비스 품질에 집중할
 때 봐야 할 곡선을 하나 더 추가해 넣었다.
@@ -276,7 +276,7 @@ if (params.events > 0) {
 Annotations 탭에 가보면, 빈 화면에 버튼이 하나 보이는데, 그 버튼을 눌러
 Annotation을 추가하면 아래와 같은 설정을 할 수 있게 된다.
 
-![](/attachments/silrok/silrok-visualbuilder-30-annotations.png)
+![.dropshadow](/attachments/silrok/silrok-visualbuilder-30-annotations.png)
 
 내용은 단순한데, 어느 인덱스에셔 어떤 질의를 사용하여 값을 가져올 것인지,
 그리고 그것을 어떻게 표현할 것인지를 정하는 것이다.
@@ -287,7 +287,7 @@ Annotation을 추가하면 아래와 같은 설정을 할 수 있게 된다.
 개별 데이터에 대한 값을 표현할 방식을 설정하고(포인터를 올렸을 때 등장)
 `Bomb`라는 이름의 아이콘을 사용하도록 설정하고 있다. 설명이 길다. 보자.
 
-![](/attachments/silrok/silrok-visualbuilder-pl-annotations.png)
+![.dropshadow](/attachments/silrok/silrok-visualbuilder-pl-annotations.png)
 
 위의 그림에서 보면, 앞서 설명한 방식으로 세 개의 Annotation을 설정한
 상태인데, 각각 불, 종, 폭탄의 아이콘을 사용하여 표현하는 부가정보가
@@ -310,7 +310,7 @@ WAS나 Application에서 OOME 등의 메모리 관련 로그를 함께 표시했
 이런 경우에는 아래와 같이, Data를 설정할 때 Group By 값을 설정해주는
 방법이 있다.
 
-![](/attachments/silrok/silrok-visualbuilder-40-group-by.png)
+![.dropshadow](/attachments/silrok/silrok-visualbuilder-40-group-by.png)
 
 이렇게, 묶을 기준을 `accountId`로 해주면, 막대그래프를 가입자별 막대의
 적층 형태로 보여준다. 물론, 묶고 싶은 기준이 다르다면 그 기준을 따르면

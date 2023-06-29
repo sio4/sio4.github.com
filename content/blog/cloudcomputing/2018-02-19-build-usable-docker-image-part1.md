@@ -40,7 +40,6 @@ Image를 기존 Image를 활용하여 만드는 방법에 대하여 설명하고
 이번 글은 다음과 같은 내용을 다루려고 한다.
 
 * TOC
-{:toc}
 
 목차와 같이, 기존 Image를 바탕으로 한 전용 Image 만들기와 함께, 부수적으로
 Alpine Linux에 대한 이야기도 조금 자세히 참고할만한 수준으로 다루려고 한다.
@@ -212,7 +211,7 @@ Utility 모음이다. 하나의 Binary 안에 일반적으로 많이 사용되�
 Alpine Linux 홈페이지에는 다음과 같이 설명되어 있다.
 (<https://alpinelinux.org>)
 
-![](/assets/logos/alpinelinux.org.jpg)
+![.dropshadow](/assets/logos/alpinelinux.org.jpg)
 
 > ##### Small. Simple. Secure.
 > Alpine Linux is a security-oriented, lightweight Linux distribution based on musl libc and busybox.

@@ -20,7 +20,7 @@ date: 2017-11-24T18:10:00+0900
 그 활동 주기에 따른 리듬을 타게 된다. 이 글에서 확인하고자 하는 것은,
 우리의 관심대상을 이 리듬에 맞춰 바라보는 것이다.
 
-![](/attachments/silrok/silrok-heatmap-00-rhythm.png)
+![.dropshadow](/attachments/silrok/silrok-heatmap-00-rhythm.png)
 
 뭔가... 리듬이 보이나?
 
@@ -39,7 +39,7 @@ date: 2017-11-24T18:10:00+0900
 이번 글에서는 그 아래에 위치한 Weekly Distribution 과 Hourly Distribution
 부분에 해당하는 입체적 분석 부분에 대하여 살펴보려고 한다.
 
-![](/attachments/silrok/silrok-dashboard-current.png)
+![.dropshadow](/attachments/silrok/silrok-dashboard-current.png)
 
 
 
@@ -47,7 +47,7 @@ date: 2017-11-24T18:10:00+0900
 
 머릿말에 등장하는 이 그림,
 
-![](/attachments/silrok/silrok-heatmap-00-rhythm.png)
+![.dropshadow](/attachments/silrok/silrok-heatmap-00-rhythm.png)
 
 어렴풋하긴 하지만, 뭔가 물결이 보인다. 그리고 그 물결이 주 단위의 주기를
 갖는 것이 아닌가 하는 생각도 하게 된다. 이것을 명확히 하기 위해서는 저
@@ -56,7 +56,7 @@ date: 2017-11-24T18:10:00+0900
 
 일단 답을 보자.
 
-![](/attachments/silrok/silrok-heatmap-00-weekly.png)
+![.dropshadow](/attachments/silrok/silrok-heatmap-00-weekly.png)
 
 위의 그래프는 Heat Map이라 불리는, 2차원 배열의 기준값 위에 관심값을
 색으로, 입체화하는 그래프인데(나는 3차원으로 보이는데 나만 그런가??),
@@ -70,7 +70,7 @@ Y축의 숫자는 요일을 뜻하는데, 1은 월요일, 7은 일요일에 해�
 
 같은 방식으로, 요일 대신 시간대 별 분석을 해보면 그 결과가 아래와 같다.
 
-![](/attachments/silrok/silrok-heatmap-00-hourly.png)
+![.dropshadow](/attachments/silrok/silrok-heatmap-00-hourly.png)
 
 역시 대부분의 사건은 오전 9시 이후, 그리고 점심시간인 12시 경에 살짝
 주춤했다가 오후 7시 경까지 집중적으로 발생하는 것을 어렴풋하게나마
@@ -88,18 +88,18 @@ Kibana의 Visualize 메뉴에 보면, Heat Map을 생성할 수 있는 메뉴가
 있다. 다른 Visualize 기능과 마찬가지로, 왼쪽에는 설정을 할 수 있는
 입력들이 위치해 있고, 오른쪽으로는 그 결과에 대한 Preview를 볼 수 있다.
 
-![](/attachments/silrok/silrok-heatmap-10-preview.png)
+![.dropshadow](/attachments/silrok/silrok-heatmap-10-preview.png)
 
 이 Heat Map의 설정은 Metrics와 Buckets로 나누어 이루어지는데, Metrics는
 표현하고자 하는 값을 정의하는 부분이다. 우리는 사건의 빈도, 즉 숫자를
 보고 싶기 때문에 아래와 같이 `Count` Aggregation을 사용하게 된다.
 
-![](/attachments/silrok/silrok-heatmap-11-metrics.png)
+![.dropshadow](/attachments/silrok/silrok-heatmap-11-metrics.png)
 
 Heat Map에 있어서 중요한 부분은 Bucket의 설정인데, Bucket은 X 축과
 Y 축으로 구분되어 설정하도록 되어있다. 그림을 보면,
 
-![](/attachments/silrok/silrok-heatmap-21-bucket-terms.png)
+![.dropshadow](/attachments/silrok/silrok-heatmap-21-bucket-terms.png)
 
 위의 내용은 `Terms`라는 Aggregation을 사용하는 예인데, Y 축을 이룰 값을
 특정 항목, 여기서는 `WeekDay`라는 Field를 가져다 쓰도록 설정하고 있다.
@@ -110,7 +110,7 @@ Y 축으로 구분되어 설정하도록 되어있다. 그림을 보면,
 
 이런 경우, 아래와 같이 Aggregation을 `Histogram`으로 변경하면,
 
-![](/attachments/silrok/silrok-heatmap-22-bucket-histogram.png)
+![.dropshadow](/attachments/silrok/silrok-heatmap-22-bucket-histogram.png)
 
 간격(Interval)을 지정할 수 있으며 별도의 순서 지정 없이 Field를 기준으로
 값을 배열하게 된다. 이렇게, 필요에 따라 Aggregation 방식을 바꾸면 용도에
@@ -121,12 +121,12 @@ Y 축으로 구분되어 설정하도록 되어있다. 그림을 보면,
 이용하도록 했다. 그리고 간격 설정은 주간(`Weekly`)으로 맞춰서 각 줄이
 한 주를 의미하도록 지정했다.
 
-![](/attachments/silrok/silrok-heatmap-23-bucket-x-date.png)
+![.dropshadow](/attachments/silrok/silrok-heatmap-23-bucket-x-date.png)
 
 마지막으로 설정할 부분은 Options 부분인데, 이 곳에서는 주로 화면 구성
 등에 대한 설정을 하게 된다.
 
-![](/attachments/silrok/silrok-heatmap-30-options.png)
+![.dropshadow](/attachments/silrok/silrok-heatmap-30-options.png)
 
 Legend를 어디어 둘 것인지 등이 있는데, 내가 관심을 두는 부분은
 Color Schema와 Color Scale 부분이다.  이 값은, 보는 대상과 사람이
@@ -161,14 +161,14 @@ Management 메뉴를 통해서 인덱스 관리 화면으로 가면, 아래와 �
 Scripted Field를 새로 작성하거나 이미 작성된 내용을 보고 수정할 수
 있는 화면을 찾을 수 있다.
 
-![](/attachments/silrok/silrok-scripted-field-00-list.png)
+![.dropshadow](/attachments/silrok/silrok-scripted-field-00-list.png)
 
 ## Script 작성
 
 목록에서 `WeekDay`를 선택하여 편집 화면으로 넘어가면 아래와 같은 화면을
 만나게 된다.
 
-![](/attachments/silrok/silrok-scripted-field-11-weekday.png)
+![.dropshadow](/attachments/silrok/silrok-scripted-field-11-weekday.png)
 
 먼저, Script를 작성할 언어나 출력될 값 등을 정하게 되고, 맨 아래 Script
 부분에 적절한 Script를 작성해 넣으면 완성이 된다.
@@ -218,7 +218,7 @@ Hour의 경우, 이미 숫자이기 때문에 별도의 변환은 필요없다. 
 있지만 귀찮은 일이다. 이런 상황을 쉽게 해결해주기 위해, (예전에는
 없던) Dev Tools 기능이 제공되고 있다!
 
-![](/attachments/silrok/silrok-scripted-field-dev-tool.png)
+![.dropshadow](/attachments/silrok/silrok-scripted-field-dev-tool.png)
 
 Dev Tools는, 위와 같이, 두 개의 패널로 구성되어 있는데, 왼쪽 패널에
 질의를 만들어 넣고 녹색의 실행 버튼을 눌러주면, 알아서 Elasticsearch에
