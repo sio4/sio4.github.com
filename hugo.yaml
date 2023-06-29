@@ -1,6 +1,11 @@
-baseURL: https://sauruso.com/
-languageCode: ko-KR
+baseURL: https://sauruso.com
+languageCode: ko-kr
+defaultContentLanguage: ko
 title: 소용환의 생각 저장소
+description: >
+  소용환의 경험과 생각을 모아두는 개인의 구름 속 저장소입니다.
+  주로 소프트웨어 개발, 인프라 문제, 클라우드 컴퓨팅에 대한 이야기가 있습니다.
+# timezone: Asia/Seoul
 
 # next two line is important to make the URL as the same as before
 # frontmatter.date and permalinks.posts
@@ -9,6 +14,22 @@ frontmatter:
 
 permalinks:
   blog: /blog/:slug
+
+languages:
+  ko:
+    languagedirection: rtl
+    title: 소용환의 생각저장소
+    weight: 1
+
+disqusShortname: sauru
+#googleAnalytics: UA-10364127-2
+
+
+markup:
+  tableOfContents:
+    startLevel: 1
+    endLevel: 2
+    ordered: false
 
 # theme settings -------------------------------------------------------------
 theme: beautifulhugo
@@ -21,16 +42,30 @@ params:
     - src: /assets/images/road.jpg
       desc: Highway 89, Page, AZ
       # https://www.google.com/maps/@36.94091,-111.4952814,2a,75y,4.29h,82.84t/data=!3m9!1e1!3m7!1stIxgWycq0dkCs1Mg6sJD6w!2e0!7i13312!8i6656!9m2!1b1!2i40?entry=ttu
+  hideAuthor: true
+  readingTime: true
+  wordCount: true
+  #useHLJS: true
+  socialShare: true
+  showRelatedPosts: true
+  comments: true
   rss: true
+  #disclaimerText: "The opinions expressed herein are my own personal opinions and do not represent my employer’s view in any way."
 
 author:
-  # name: Yonghwan SO
-  # alias: 소용환
+  name: Yonghwan SO
   facebook: yonghwan.so
   # twitter: scinix
   github: sio4
   linkedin: scinix
   stackoverflow: users/1111002/sio4
+  # youtube: user/username
+  # paypal: username
+  # telegram: username
+  # 500px: username
+  # slack: username
+  # medium: username
+  # strava: userid
 
 menu:
   main:
