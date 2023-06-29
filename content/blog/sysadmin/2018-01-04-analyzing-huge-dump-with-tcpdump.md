@@ -21,9 +21,6 @@ date: 2018-01-04T17:30:00+09:00
 
 잡설이 길었는데, 본론으로 들어간다.
 
-* TOC
-{:toc}
-
 이 묶음글의 첫 번째 이야기인 [Vyatta 네트워크 문제 추적 Part 1]에서는 관련된
 로그를 더 자세히 남기게 하고, 시간의 흐름에 따라 변하는 상태정보를 모으면서
 동시에 Network의 모든 Traffic을 Capture하도록 하는 과정에 대하여 이야기했고,
@@ -36,13 +33,12 @@ date: 2018-01-04T17:30:00+09:00
 것이다.
 
 
-{:.boxed}
 > 이 글은 다음 묶음글의 일부이며, 이 내용과 연결된 앞/뒤 사건은 아래 링크를
 > 통해 확인할 수 있다.
-> 
-> * [Vyatta 네트워크 문제 추적 Part 1]
-> * [Vyatta 네트워크 문제 추적 Part 2 - LACP]
-> * _Vyatta 네트워크 문제 추적 Part 3 - Dump_
+
+* [Vyatta 네트워크 문제 추적 Part 1]
+* [Vyatta 네트워크 문제 추적 Part 2 - LACP]
+* _Vyatta 네트워크 문제 추적 Part 3 - Dump_
 
 
 
@@ -424,6 +420,6 @@ LAG가 끊기게 되고, 이것이 Slave로 있는 두 물리적 인터페이스
 * _Vyatta 네트워크 문제 추적 Part 3 - Dump_
 
 
-[Vyatta 네트워크 문제 추적 Part 1]:{% link _posts/sysadmin/2018-01-03-vyatta-network-problem-tracking.md %}
-[Vyatta 네트워크 문제 추적 Part 2 - LACP]:{% link _posts/sysadmin/2018-01-03-reset-lag-on-vyatta.md %}
-[Vyatta 네트워크 문제 추적 Part 3 - DUMP]:{% link _posts/sysadmin/2018-01-04-analyzing-huge-dump-with-tcpdump.md %}
+[Vyatta 네트워크 문제 추적 Part 1]:{{< relref "/blog/sysadmin/2018-01-03-vyatta-network-problem-tracking.md" >}}
+[Vyatta 네트워크 문제 추적 Part 2 - LACP]:{{< relref "/blog/sysadmin/2018-01-03-reset-lag-on-vyatta.md" >}}
+[Vyatta 네트워크 문제 추적 Part 3 - DUMP]:{{< relref "/blog/sysadmin/2018-01-04-analyzing-huge-dump-with-tcpdump.md" >}}

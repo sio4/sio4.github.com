@@ -13,8 +13,6 @@ CockroachDB는 Range라는 일종의 Sharding 기법을 도입하여 사용자�
 Node 장애 상황에서 Cockroach가 어떻게 반응하고, 또한 어디까지 가용성을
 보장해주는지 시험한 결과를 정리한다.
 
-
-{:.comment}
 > 묶음글을 쓸 때, 보통은 각각의 글을 어떤 주제로 할지, 그리고 전체 묶음글을
 > 몇 편으로 엮을지 미리 생각하곤 했지만 지난 번 Docker에 대한 글은 그 끝을
 > 예측하기 어려워 열린 상태로 목록을 채워나갔다. 그 관성으로, 이번 묶음글도
@@ -24,21 +22,17 @@ Node 장애 상황에서 Cockroach가 어떻게 반응하고, 또한 어디까�
 > ㅠ.ㅠ 아무튼, 부족하나마 시험을 끝냈고 그 과정을 정리한다.
 
 
-{:.boxed}
 > CockroachDB 맛보기 묶음글은 다음과 같습니다.
->
-> * [CockroachDB 안녕?]
-> * [CockroachDB 클러스터 구성하기]
-> * [CockroachDB Architecture]
-> * [CockroachDB 클러스터 설치 스크립트]
-> * _CockroachDB 클러스터 가용성 시험_
+
+* [CockroachDB 안녕?]
+* [CockroachDB 클러스터 구성하기]
+* [CockroachDB Architecture]
+* [CockroachDB 클러스터 설치 스크립트]
+* _CockroachDB 클러스터 가용성 시험_
 
 
 
 # DBMS의 가용성
-
-{:toc .half.pull-right}
-* TOC
 
 컴퓨터가 무엇인지 설명할 때, 나는 주로 "A-D 프랙탈"이라는 표현을 쓴다.
 A는 Algorithm에서 따왔고, D는 Data Structure, 자료구조에서 따왔다. 이게
@@ -1070,7 +1064,7 @@ Application 수준에서도 유사한 처리를 했겠지만...)
 ---
 
 [공식 문서]:https://www.cockroachlabs.com/docs/stable/architecture/overview.html
-[Docker Swarm의 고가용성]:{% link _posts/cloudcomputing/2018-03-15-high-availability-of-docker-swarm.md %}
+[Docker Swarm의 고가용성]:{{< relref "/blog/cloudcomputing/2018-03-15-high-availability-of-docker-swarm.md" >}}
 
 
 ### 함께 읽기
@@ -1083,8 +1077,8 @@ CockroachDB 맛보기 묶음글은 다음과 같습니다.
 * [CockroachDB 클러스터 설치 스크립트]
 * _CockroachDB 클러스터 가용성 시험_
 
-[CockroachDB 안녕?]:{% link _posts/cloudcomputing/2018-09-20-say-hello-to-cockroachdb.md %}
-[CockroachDB 클러스터 구성하기]:{% link _posts/cloudcomputing/2018-09-21-setup-cockroach-cluster.md %}
-[CockroachDB Architecture]:{% link _posts/cloudcomputing/2018-10-01-architecture-of-cockroachdb.md %}
-[CockroachDB 클러스터 설치 스크립트]:{% link _posts/cloudcomputing/2018-10-02-cockroach-cluster-setup-script.md %}
-[CockroachDB 클러스터 가용성 시험]:{% link _posts/cloudcomputing/2018-10-08-availablility-of-cockroach.md %}
+[CockroachDB 안녕?]:{{< relref "/blog/cloudcomputing/2018-09-20-say-hello-to-cockroachdb.md" >}}
+[CockroachDB 클러스터 구성하기]:{{< relref "/blog/cloudcomputing/2018-09-21-setup-cockroach-cluster.md" >}}
+[CockroachDB Architecture]:{{< relref "/blog/cloudcomputing/2018-10-01-architecture-of-cockroachdb.md" >}}
+[CockroachDB 클러스터 설치 스크립트]:{{< relref "/blog/cloudcomputing/2018-10-02-cockroach-cluster-setup-script.md" >}}
+[CockroachDB 클러스터 가용성 시험]:{{< relref "/blog/cloudcomputing/2018-10-08-availablility-of-cockroach.md" >}}

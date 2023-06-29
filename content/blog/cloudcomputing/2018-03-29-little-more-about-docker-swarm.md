@@ -15,9 +15,6 @@ date: 2018-03-15T23:55:00+0900
 
 ---
 
-* TOC
-{:toc}
-
 
 지난 몇 편의 글에서는 기본적인 Swarm Cluster를 구성하는 과정에 대한
 이야기를 시작으로, 그 위에 사용자의 Service를 올리는 과정과 Service
@@ -29,21 +26,20 @@ date: 2018-03-15T23:55:00+0900
 꺼내기 보다는 지난 이야기에서 미처 다루지 못한 조각들을 마져 정리하려
 한다.
 
-{:.boxed}
 > Docker의 기본적인 개념과 사용법을 다룬 "시작하기"편 묶음글은 아래와 같다.
-> 
-> * [Docker: Getting Started with Docker]
-> * [Docker: Installation and Test Drive]
-> * [Docker: 나의 첫 Docker Image]
-> * ['쓸만한' Docker Image 만들기 - Part 1]
-> * ['쓸만한' Docker Image 만들기 - Part 2]
-> * [Docker Cloud에서 자동빌드하기]
-> * [Docker Machine으로 Docker Node 뿌리기]
-> * [Docker Machine 다시 보기]
-> * [Getting Started with Docker Swarm]
-> * [Docker Swarm에 Service 올려보기]
-> * [Docker Swarm의 고가용성]
-> * _Docker Swarm 다시 보기_
+
+* [Docker: Getting Started with Docker]
+* [Docker: Installation and Test Drive]
+* [Docker: 나의 첫 Docker Image]
+* ['쓸만한' Docker Image 만들기 - Part 1]
+* ['쓸만한' Docker Image 만들기 - Part 2]
+* [Docker Cloud에서 자동빌드하기]
+* [Docker Machine으로 Docker Node 뿌리기]
+* [Docker Machine 다시 보기]
+* [Getting Started with Docker Swarm]
+* [Docker Swarm에 Service 올려보기]
+* [Docker Swarm의 고가용성]
+* _Docker Swarm 다시 보기_
 
 처음엔 간단하게 설치와 구성에 대해 기록하는 수준에서 생각했던 묶음글인데,
 과정의 나열에서 조금 넘어 서서 이런 저런 이야기를 적어나가다 보니 벌써
@@ -61,7 +57,7 @@ date: 2018-03-15T23:55:00+0900
 
 ![](/assets/images/common/label.jpg){:.twothird}
 
-"[Docker Machine 다시 보기 #라벨! 라벨! 라벨!]({% link _posts/cloudcomputing/2018-03-09-little-more-about-docker-machine.md %}#라벨-라벨-라벨)"에서
+"[Docker Machine 다시 보기 #라벨! 라벨! 라벨!]({{< relref "/blog/cloudcomputing/2018-03-09-little-more-about-docker-machine.md" >}}#라벨-라벨-라벨)"에서
 Engine을 구성할 때 `--engine-label` 옵션을 사용하면 특정 엔진에게
 **사용자가 식별 가능한 Tagging**을 할 수 있음을 설명했었다. 그리고
 그것을 활용하는 예로 `docker-machine ls` 명령 등을 내릴 때 Filter를
@@ -123,7 +119,7 @@ $
 
 Host에 접속하여 `dockerd` 프로세스를 보면, 명령행에 Label 정보가 나열되어
 있는 것을 볼 수 있었다. 그리고
-"[Docker Machine 다시 보기 #Mount]({% link _posts/cloudcomputing/2018-03-09-little-more-about-docker-machine.md %}#mount)"
+"[Docker Machine 다시 보기 #Mount]({{< relref "/blog/cloudcomputing/2018-03-09-little-more-about-docker-machine.md" >}}#mount)"
 부분의 끝부분에서 잠깐 설명했지만, 이 설정은 다음 파일에서 온다.
 
 {:.wrap}
@@ -379,7 +375,7 @@ $
 배치된 것을 알 수 있다. 그리고 특이한 점이 하나 더 있는데 뭘까?
 
 `NAME`, 이름이 수상하다. 
-["Docker Swarm에 Service 올려보기"의 Process 보기]({% link _posts/cloudcomputing/2018-03-14-run-a-service-on-docker-swarm.md %}#show-process)에서, 이미
+["Docker Swarm에 Service 올려보기"의 Process 보기]({{< relref "/blog/cloudcomputing/2018-03-14-run-a-service-on-docker-swarm.md" >}}#show-process)에서, 이미
 Task의 이름이 만들어지는 방식에 대해 알아봤었다. 그런데 여긴 좀 이상하게,
 "1에서 출발하여 Replica의 수 만큼 증가하는 자연수"로 되어있는 Slot 번호가
 아닌 이상한 문자열이 그 자리를 차고 앉아 있는 것을 볼 수 있다. 뭐지? 뭐지?
@@ -463,15 +459,15 @@ Docker Swarm을 활용한 재미난 기능들에 대해 간단히 알아봤다. 
 * [Docker Swarm의 고가용성]
 * _Docker Swarm 다시 보기_
 
-[Docker Swarm 다시 보기]:{% link _posts/cloudcomputing/2018-03-29-little-more-about-docker-swarm.md %}
-[Docker Swarm의 고가용성]:{% link _posts/cloudcomputing/2018-03-15-high-availability-of-docker-swarm.md %}
-[Docker Swarm에 Service 올려보기]:{% link _posts/cloudcomputing/2018-03-14-run-a-service-on-docker-swarm.md %}
-[Getting Started with Docker Swarm]:{% link _posts/cloudcomputing/2018-03-13-getting-started-with-docker-swarm.md %}
-[Docker Machine 다시 보기]:{% link _posts/cloudcomputing/2018-03-09-little-more-about-docker-machine.md %}
-[Docker Machine으로 Docker Node 뿌리기]:{% link _posts/cloudcomputing/2018-03-07-provision-docker-node-with-docker-machine.md %}
-[Docker Cloud에서 자동빌드하기]:{% link _posts/cloudcomputing/2018-02-21-automated-build-with-docker-cloud.md %}
-['쓸만한' Docker Image 만들기 - Part 2]:{% link _posts/cloudcomputing/2018-02-20-build-usable-docker-image-part2.md %}
-['쓸만한' Docker Image 만들기 - Part 1]:{% link _posts/cloudcomputing/2018-02-19-build-usable-docker-image-part1.md %}
-[Docker: 나의 첫 Docker Image]:{% link _posts/cloudcomputing/2018-02-14-build-my-first-docker-image.md %}
-[Docker: Installation and Test Drive]:{% link _posts/cloudcomputing/2018-02-08-docker-installation-and-test-drive.md %}
-[Docker: Getting Started with Docker]:{% link _posts/cloudcomputing/2018-02-08-getting-started-with-docker.md %}
+[Docker Swarm 다시 보기]:{{< relref "/blog/cloudcomputing/2018-03-29-little-more-about-docker-swarm.md" >}}
+[Docker Swarm의 고가용성]:{{< relref "/blog/cloudcomputing/2018-03-15-high-availability-of-docker-swarm.md" >}}
+[Docker Swarm에 Service 올려보기]:{{< relref "/blog/cloudcomputing/2018-03-14-run-a-service-on-docker-swarm.md" >}}
+[Getting Started with Docker Swarm]:{{< relref "/blog/cloudcomputing/2018-03-13-getting-started-with-docker-swarm.md" >}}
+[Docker Machine 다시 보기]:{{< relref "/blog/cloudcomputing/2018-03-09-little-more-about-docker-machine.md" >}}
+[Docker Machine으로 Docker Node 뿌리기]:{{< relref "/blog/cloudcomputing/2018-03-07-provision-docker-node-with-docker-machine.md" >}}
+[Docker Cloud에서 자동빌드하기]:{{< relref "/blog/cloudcomputing/2018-02-21-automated-build-with-docker-cloud.md" >}}
+['쓸만한' Docker Image 만들기 - Part 2]:{{< relref "/blog/cloudcomputing/2018-02-20-build-usable-docker-image-part2.md" >}}
+['쓸만한' Docker Image 만들기 - Part 1]:{{< relref "/blog/cloudcomputing/2018-02-19-build-usable-docker-image-part1.md" >}}
+[Docker: 나의 첫 Docker Image]:{{< relref "/blog/cloudcomputing/2018-02-14-build-my-first-docker-image.md" >}}
+[Docker: Installation and Test Drive]:{{< relref "/blog/cloudcomputing/2018-02-08-docker-installation-and-test-drive.md" >}}
+[Docker: Getting Started with Docker]:{{< relref "/blog/cloudcomputing/2018-02-08-getting-started-with-docker.md" >}}

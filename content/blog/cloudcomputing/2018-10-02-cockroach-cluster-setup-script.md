@@ -29,14 +29,13 @@ Node를 자동으로 설치하고 제어하는 과정에 대해 다뤘다. 이 �
 환경을 위한 자동 배치"에 대한 기본적인 개요를 짚어보려고 한다.
 
 
-{:.boxed}
 > CockroachDB 맛보기 묶음글은 다음과 같습니다. 
->
-> * [CockroachDB 안녕?]  
-> * [CockroachDB 클러스터 구성하기]
-> * [CockroachDB Architecture]
-> * _CockroachDB 클러스터 설치 스크립트_
-> * [CockroachDB 클러스터 가용성 시험]
+
+* [CockroachDB 안녕?]
+* [CockroachDB 클러스터 구성하기]
+* [CockroachDB Architecture]
+* _CockroachDB 클러스터 설치 스크립트_
+* [CockroachDB 클러스터 가용성 시험]
 
 
 # 클라우드 컴퓨팅과 구성 자동화
@@ -760,7 +759,7 @@ CockroachDB 맛보기 묶음글은 다음과 같습니다.
 * _CockroachDB 클러스터 설치 스크립트_
 * [CockroachDB 클러스터 가용성 시험]
 
-[CockroachDB 안녕?]:{% link _posts/cloudcomputing/2018-09-20-say-hello-to-cockroachdb.md %}
-[CockroachDB 클러스터 구성하기]:{% link _posts/cloudcomputing/2018-09-21-setup-cockroach-cluster.md %}
-[CockroachDB Architecture]:{% link _posts/cloudcomputing/2018-10-01-architecture-of-cockroachdb.md %}
+[CockroachDB 안녕?]:{{< relref "/blog/cloudcomputing/2018-09-20-say-hello-to-cockroachdb.md" >}}
+[CockroachDB 클러스터 구성하기]:{{< relref "/blog/cloudcomputing/2018-09-21-setup-cockroach-cluster.md" >}}
+[CockroachDB Architecture]:{{< relref "/blog/cloudcomputing/2018-10-01-architecture-of-cockroachdb.md" >}}
 

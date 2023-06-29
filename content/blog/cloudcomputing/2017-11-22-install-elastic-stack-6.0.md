@@ -25,13 +25,12 @@ Elastic Stack이라는 공식적인 명칭으로 사용하면서 더 활발하�
 * [Elastic NMS Part 5: NetFlow 수신하기]
 * [Elastic NMS Part 6: SNMP 수신하기]
 
-{:.boxed}
 > 이 글은 다음 묶음글을 위한 준비과정을 담은 글이다.
 > Elastic Stack을 이용한 이벤트 해석에 관심이 있다면 다음 글들도 함께!
-> 
-> * [모니터링은 경보가 아니라 해석]
-> * [Kibana Visual Builder로 이벤트 묶어 보기]
-> * [Kibana Heat Map으로 3차원으로 펼쳐 보기]
+
+* [모니터링은 경보가 아니라 해석]
+* [Kibana Visual Builder로 이벤트 묶어 보기]
+* [Kibana Heat Map으로 3차원으로 펼쳐 보기]
 
 
 # 기반환경
@@ -467,16 +466,16 @@ Elastic Stack을 이용한 이벤트 해석에 관심이 있다면 다음 글들
 * [Kibana Visual Builder로 이벤트 묶어 보기]
 * [Kibana Heat Map으로 3차원으로 펼쳐 보기]
 
-[모니터링은 경보가 아니라 해석]:{% link _posts/cloudcomputing/2017-11-23-monitoring-is-not-alert-but-analytics.md %}
-[Kibana Visual Builder로 이벤트 묶어 보기]:{% link _posts/cloudcomputing/2017-11-24-aggregate-events-with-visual-builder.md %}
-[Kibana Heat Map으로 3차원으로 펼쳐 보기]:{% link _posts/cloudcomputing/2017-11-24-3dimensional-view-with-heat-map.md %}
+[모니터링은 경보가 아니라 해석]:{{< relref "/blog/cloudcomputing/2017-11-23-monitoring-is-not-alert-but-analytics.md" >}}
+[Kibana Visual Builder로 이벤트 묶어 보기]:{{< relref "/blog/cloudcomputing/2017-11-24-aggregate-events-with-visual-builder.md" >}}
+[Kibana Heat Map으로 3차원으로 펼쳐 보기]:{{< relref "/blog/cloudcomputing/2017-11-24-3dimensional-view-with-heat-map.md" >}}
 
 
 
-[Elastic NMS Part 1: 엔진을 켜라!]:{% link _posts/cloudcomputing/2017-10-28-elastic-nms-part1-start-your-engine.md %}
-[Elastic NMS Part 2: Syslog 원격로깅]:{% link _posts/cloudcomputing/2017-10-30-elastic-nms-part2-syslog-remote-logging.md %}
-[Elastic NMS Part 3: Mapping과 Template]:{% link _posts/cloudcomputing/2017-10-30-elastic-nms-part3-mapping-and-template.md %}
-[Elastic NMS Part 4: Kibana로 Visualize하기]:{% link _posts/cloudcomputing/2017-10-30-elastic-nms-part4-visualize-with-kibana.md %}
-[Elastic NMS Part 5: NetFlow 수신하기]:{% link _posts/cloudcomputing/2017-10-31-elastic-nms-part5-netflow-monitoring.md %}
-[Elastic NMS Part 6: SNMP 수신하기]:{% link _posts/cloudcomputing/2017-10-31-elastic-nms-part6-snmp-monitoring.md %}
+[Elastic NMS Part 1: 엔진을 켜라!]:{{< relref "/blog/cloudcomputing/2017-10-28-elastic-nms-part1-start-your-engine.md" >}}
+[Elastic NMS Part 2: Syslog 원격로깅]:{{< relref "/blog/cloudcomputing/2017-10-30-elastic-nms-part2-syslog-remote-logging.md" >}}
+[Elastic NMS Part 3: Mapping과 Template]:{{< relref "/blog/cloudcomputing/2017-10-30-elastic-nms-part3-mapping-and-template.md" >}}
+[Elastic NMS Part 4: Kibana로 Visualize하기]:{{< relref "/blog/cloudcomputing/2017-10-30-elastic-nms-part4-visualize-with-kibana.md" >}}
+[Elastic NMS Part 5: NetFlow 수신하기]:{{< relref "/blog/cloudcomputing/2017-10-31-elastic-nms-part5-netflow-monitoring.md" >}}
+[Elastic NMS Part 6: SNMP 수신하기]:{{< relref "/blog/cloudcomputing/2017-10-31-elastic-nms-part6-snmp-monitoring.md" >}}
 

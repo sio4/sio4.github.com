@@ -21,21 +21,20 @@ Docker는 리눅스가 제공하는 자원 격리기술을 이용하는 것이�
 
 * <https://docs.docker.com/engine/installation/linux/docker-ce/ubuntu/>
 
-{:.boxed}
 > 이 묶음글은 아직 몇 회까지 쓸지 정하지 못했다. 조금 써보고,...
-> 
-> * [Docker: Getting Started with Docker]
-> * _Docker: Installation and Test Drive_
-> * [Docker: 나의 첫 Docker Image]
-> * ['쓸만한' Docker Image 만들기 - Part 1]
-> * ['쓸만한' Docker Image 만들기 - Part 2]
-> * [Docker Cloud에서 자동빌드하기]
-> * [Docker Machine으로 Docker Node 뿌리기]
-> * [Docker Machine 다시 보기]
-> * [Getting Started with Docker Swarm]
-> * [Docker Swarm에 Service 올려보기]
-> * [Docker Swarm의 고가용성]
-> * [Docker Swarm 다시 보기]
+
+* [Docker: Getting Started with Docker]
+* _Docker: Installation and Test Drive_
+* [Docker: 나의 첫 Docker Image]
+* ['쓸만한' Docker Image 만들기 - Part 1]
+* ['쓸만한' Docker Image 만들기 - Part 2]
+* [Docker Cloud에서 자동빌드하기]
+* [Docker Machine으로 Docker Node 뿌리기]
+* [Docker Machine 다시 보기]
+* [Getting Started with Docker Swarm]
+* [Docker Swarm에 Service 올려보기]
+* [Docker Swarm의 고가용성]
+* [Docker Swarm 다시 보기]
 
 
 
@@ -606,16 +605,16 @@ root@a642d5f9492c:/#
 * [Docker Swarm의 고가용성]
 * [Docker Swarm 다시 보기]
 
-[Docker Swarm 다시 보기]:{% link _posts/cloudcomputing/2018-03-29-little-more-about-docker-swarm.md %}
-[Docker Swarm의 고가용성]:{% link _posts/cloudcomputing/2018-03-15-high-availability-of-docker-swarm.md %}
-[Docker Swarm에 Service 올려보기]:{% link _posts/cloudcomputing/2018-03-14-run-a-service-on-docker-swarm.md %}
-[Getting Started with Docker Swarm]:{% link _posts/cloudcomputing/2018-03-13-getting-started-with-docker-swarm.md %}
-[Docker Machine 다시 보기]:{% link _posts/cloudcomputing/2018-03-09-little-more-about-docker-machine.md %}
-[Docker Machine으로 Docker Node 뿌리기]:{% link _posts/cloudcomputing/2018-03-07-provision-docker-node-with-docker-machine.md %}
-[Docker Cloud에서 자동빌드하기]:{% link _posts/cloudcomputing/2018-02-21-automated-build-with-docker-cloud.md %}
-['쓸만한' Docker Image 만들기 - Part 2]:{% link _posts/cloudcomputing/2018-02-20-build-usable-docker-image-part2.md %}
-['쓸만한' Docker Image 만들기 - Part 1]:{% link _posts/cloudcomputing/2018-02-19-build-usable-docker-image-part1.md %}
-[Docker: 나의 첫 Docker Image]:{% link _posts/cloudcomputing/2018-02-14-build-my-first-docker-image.md %}
-[Docker: Installation and Test Drive]:{% link _posts/cloudcomputing/2018-02-08-docker-installation-and-test-drive.md %}
-[Docker: Getting Started with Docker]:{% link _posts/cloudcomputing/2018-02-08-getting-started-with-docker.md %}
+[Docker Swarm 다시 보기]:{{< relref "/blog/cloudcomputing/2018-03-29-little-more-about-docker-swarm.md" >}}
+[Docker Swarm의 고가용성]:{{< relref "/blog/cloudcomputing/2018-03-15-high-availability-of-docker-swarm.md" >}}
+[Docker Swarm에 Service 올려보기]:{{< relref "/blog/cloudcomputing/2018-03-14-run-a-service-on-docker-swarm.md" >}}
+[Getting Started with Docker Swarm]:{{< relref "/blog/cloudcomputing/2018-03-13-getting-started-with-docker-swarm.md" >}}
+[Docker Machine 다시 보기]:{{< relref "/blog/cloudcomputing/2018-03-09-little-more-about-docker-machine.md" >}}
+[Docker Machine으로 Docker Node 뿌리기]:{{< relref "/blog/cloudcomputing/2018-03-07-provision-docker-node-with-docker-machine.md" >}}
+[Docker Cloud에서 자동빌드하기]:{{< relref "/blog/cloudcomputing/2018-02-21-automated-build-with-docker-cloud.md" >}}
+['쓸만한' Docker Image 만들기 - Part 2]:{{< relref "/blog/cloudcomputing/2018-02-20-build-usable-docker-image-part2.md" >}}
+['쓸만한' Docker Image 만들기 - Part 1]:{{< relref "/blog/cloudcomputing/2018-02-19-build-usable-docker-image-part1.md" >}}
+[Docker: 나의 첫 Docker Image]:{{< relref "/blog/cloudcomputing/2018-02-14-build-my-first-docker-image.md" >}}
+[Docker: Installation and Test Drive]:{{< relref "/blog/cloudcomputing/2018-02-08-docker-installation-and-test-drive.md" >}}
+[Docker: Getting Started with Docker]:{{< relref "/blog/cloudcomputing/2018-02-08-getting-started-with-docker.md" >}}
 

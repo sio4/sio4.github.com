@@ -15,14 +15,13 @@ date: 2018-10-01T14:30:00+0900
 대해, 지금까지 이해한 것을 정리한다. "지금까지"일 뿐이라서, 잘못된 점이
 있을 수 있다는 것을 미리 밝힌다.
 
-{:.boxed}
 > CockroachDB 맛보기 묶음글은 다음과 같습니다.
->
-> * [CockroachDB 안녕?]
-> * [CockroachDB 클러스터 구성하기]
-> * _CockroachDB Architecture_
-> * [CockroachDB 클러스터 설치 스크립트]
-> * [CockroachDB 클러스터 가용성 시험]
+
+* [CockroachDB 안녕?]
+* [CockroachDB 클러스터 구성하기]
+* _CockroachDB Architecture_
+* [CockroachDB 클러스터 설치 스크립트]
+* [CockroachDB 클러스터 가용성 시험]
 
 
 
@@ -782,7 +781,7 @@ CockroachDB Architecture를 간단히 훑어보았고, 이해를 높이기 위�
 
 
 [공식 문서]:https://www.cockroachlabs.com/docs/stable/architecture/overview.html
-[Docker Swarm의 고가용성]:{% link _posts/cloudcomputing/2018-03-15-high-availability-of-docker-swarm.md %}
+[Docker Swarm의 고가용성]:{{< relref "/blog/cloudcomputing/2018-03-15-high-availability-of-docker-swarm.md" >}}
 
 
 ### 함께 읽기
@@ -795,8 +794,8 @@ CockroachDB 맛보기 묶음글은 다음과 같습니다.
 * [CockroachDB 클러스터 설치 스크립트]
 * [CockroachDB 클러스터 가용성 시험]
 
-[CockroachDB 안녕?]:{% link _posts/cloudcomputing/2018-09-20-say-hello-to-cockroachdb.md %}
-[CockroachDB 클러스터 구성하기]:{% link _posts/cloudcomputing/2018-09-21-setup-cockroach-cluster.md %}
-[CockroachDB Architecture]:{% link _posts/cloudcomputing/2018-10-01-architecture-of-cockroachdb.md %}
-[CockroachDB 클러스터 설치 스크립트]:{% link _posts/cloudcomputing/2018-10-02-cockroach-cluster-setup-script.md %}
-[CockroachDB 클러스터 가용성 시험]:{% link _posts/cloudcomputing/2018-10-08-availablility-of-cockroach.md %}
+[CockroachDB 안녕?]:{{< relref "/blog/cloudcomputing/2018-09-20-say-hello-to-cockroachdb.md" >}}
+[CockroachDB 클러스터 구성하기]:{{< relref "/blog/cloudcomputing/2018-09-21-setup-cockroach-cluster.md" >}}
+[CockroachDB Architecture]:{{< relref "/blog/cloudcomputing/2018-10-01-architecture-of-cockroachdb.md" >}}
+[CockroachDB 클러스터 설치 스크립트]:{{< relref "/blog/cloudcomputing/2018-10-02-cockroach-cluster-setup-script.md" >}}
+[CockroachDB 클러스터 가용성 시험]:{{< relref "/blog/cloudcomputing/2018-10-08-availablility-of-cockroach.md" >}}

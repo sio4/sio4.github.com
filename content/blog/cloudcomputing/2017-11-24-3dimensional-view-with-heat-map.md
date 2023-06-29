@@ -24,14 +24,13 @@ date: 2017-11-24T18:10:00+0900
 
 뭔가... 리듬이 보이나?
 
-{:.boxed}
 > 이 묶음글은 아래와 같이 3+1 개의 글로 이루어져 있으니, 관련된 부분을
 > 함께 참고하면 좋을 것 같다.
-> 
-> * [모니터링은 경보가 아니라 해석]
-> * [Kibana Visual Builder로 이벤트 묶어 보기]
-> * _Kibana Heat Map으로 3차원으로 펼쳐 보기_
-> * 환경구성 과정은 "[Elastic Stack 6.0 설치하기]"에서
+
+* [모니터링은 경보가 아니라 해석]
+* [Kibana Visual Builder로 이벤트 묶어 보기]
+* _Kibana Heat Map으로 3차원으로 펼쳐 보기_
+* 환경구성 과정은 "[Elastic Stack 6.0 설치하기]"에서
 
 # 큰 그림
 
@@ -254,7 +253,7 @@ Dev Tools는, 위와 같이, 두 개의 패널로 구성되어 있는데, 왼쪽
 에 정리해 두었다.
 
 
-[모니터링은 경보가 아니라 해석]:{% link _posts/cloudcomputing/2017-11-23-monitoring-is-not-alert-but-analytics.md %}
-[Kibana Visual Builder로 이벤트 묶어 보기]:{% link _posts/cloudcomputing/2017-11-24-aggregate-events-with-visual-builder.md %}
+[모니터링은 경보가 아니라 해석]:{{< relref "/blog/cloudcomputing/2017-11-23-monitoring-is-not-alert-but-analytics.md" >}}
+[Kibana Visual Builder로 이벤트 묶어 보기]:{{< relref "/blog/cloudcomputing/2017-11-24-aggregate-events-with-visual-builder.md" >}}
 
-[Elastic Stack 6.0 설치하기]:{% link _posts/cloudcomputing/2017-11-22-install-elastic-stack-6.0.md %}
+[Elastic Stack 6.0 설치하기]:{{< relref "/blog/cloudcomputing/2017-11-22-install-elastic-stack-6.0.md" >}}

@@ -20,7 +20,7 @@ last_modified_at: 2017-10-07 23:50:00 +0900
 > 관심이 있으면 원문이면서
 > 개발이 진행됨에 따라 업데이트가 될 아래 문서를 읽기 바란다.
 > 
-> [Goul, Cloud Port Mirroring]({% link _projects/goul.md %})
+> [Goul, Cloud Port Mirroring]({{< relref "/projects/goul.md" >}})
 > <- **English version with original README**
 
 Goul(거울)은 네트워크 흐름 분석이나 보안 모니터링을 목적으로 네트워크

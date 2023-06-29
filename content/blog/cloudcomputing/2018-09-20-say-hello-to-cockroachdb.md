@@ -23,14 +23,13 @@ DBMS에 관련된 것이라기 보다는 어쩌면 시스템 자동화 등, [클
 {:.ribbon}
 > *그나저나 여행 다녀온 얘기는 언제 쓰나...*
 
-{:.boxed}
 > CockroachDB 맛보기 묶음글은 다음과 같습니다.
->
-> * _CockroachDB 안녕?_
-> * [CockroachDB 클러스터 구성하기]
-> * [CockroachDB Architecture]
-> * [CockroachDB 클러스터 설치 스크립트]
-> * [CockroachDB 클러스터 가용성 시험]
+
+* _CockroachDB 안녕?_
+* [CockroachDB 클러스터 구성하기]
+* [CockroachDB Architecture]
+* [CockroachDB 클러스터 설치 스크립트]
+* [CockroachDB 클러스터 가용성 시험]
 
 
 
@@ -412,8 +411,8 @@ CockroachDB 맛보기 묶음글은 다음과 같습니다.
 * [CockroachDB 클러스터 설치 스크립트]
 * [CockroachDB 클러스터 가용성 시험]
 
-[CockroachDB 안녕?]:{% link _posts/cloudcomputing/2018-09-20-say-hello-to-cockroachdb.md %}
-[CockroachDB 클러스터 구성하기]:{% link _posts/cloudcomputing/2018-09-21-setup-cockroach-cluster.md %}
-[CockroachDB Architecture]:{% link _posts/cloudcomputing/2018-10-01-architecture-of-cockroachdb.md %}
-[CockroachDB 클러스터 설치 스크립트]:{% link _posts/cloudcomputing/2018-10-02-cockroach-cluster-setup-script.md %}
-[CockroachDB 클러스터 가용성 시험]:{% link _posts/cloudcomputing/2018-10-08-availablility-of-cockroach.md %}
+[CockroachDB 안녕?]:{{< relref "/blog/cloudcomputing/2018-09-20-say-hello-to-cockroachdb.md" >}}
+[CockroachDB 클러스터 구성하기]:{{< relref "/blog/cloudcomputing/2018-09-21-setup-cockroach-cluster.md" >}}
+[CockroachDB Architecture]:{{< relref "/blog/cloudcomputing/2018-10-01-architecture-of-cockroachdb.md" >}}
+[CockroachDB 클러스터 설치 스크립트]:{{< relref "/blog/cloudcomputing/2018-10-02-cockroach-cluster-setup-script.md" >}}
+[CockroachDB 클러스터 가용성 시험]:{{< relref "/blog/cloudcomputing/2018-10-08-availablility-of-cockroach.md" >}}

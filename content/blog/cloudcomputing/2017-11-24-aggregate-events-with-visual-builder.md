@@ -17,14 +17,13 @@ last_modified_at: 2017-11-24T18:09:00+0900
 수집된 데이터를 엮어서 표현하기 위한 기법 중 하나를 정리하여 기록하려
 한다.
 
-{:.boxed}
 > 이 묶음글은 아래와 같이 3+1 개의 글로 이루어져 있으니, 관련된 부분을
 > 함께 참고하면 좋을 것 같다.
-> 
-> * [모니터링은 경보가 아니라 해석]
-> * _Kibana Visual Builder로 이벤트 묶어 보기_
-> * [Kibana Heat Map으로 3차원으로 펼쳐 보기]
-> * 환경구성 과정은 "[Elastic Stack 6.0 설치하기]"에서
+
+* [모니터링은 경보가 아니라 해석]
+* _Kibana Visual Builder로 이벤트 묶어 보기_
+* [Kibana Heat Map으로 3차원으로 펼쳐 보기]
+* 환경구성 과정은 "[Elastic Stack 6.0 설치하기]"에서
 
 # 큰 그림
 
@@ -341,7 +340,7 @@ WAS나 Application에서 OOME 등의 메모리 관련 로그를 함께 표시했
 에 정리해 두었다.
 
 
-[모니터링은 경보가 아니라 해석]:{% link _posts/cloudcomputing/2017-11-23-monitoring-is-not-alert-but-analytics.md %}
-[Kibana Heat Map으로 3차원으로 펼쳐 보기]:{% link _posts/cloudcomputing/2017-11-24-3dimensional-view-with-heat-map.md %}
+[모니터링은 경보가 아니라 해석]:{{< relref "/blog/cloudcomputing/2017-11-23-monitoring-is-not-alert-but-analytics.md" >}}
+[Kibana Heat Map으로 3차원으로 펼쳐 보기]:{{< relref "/blog/cloudcomputing/2017-11-24-3dimensional-view-with-heat-map.md" >}}
 
-[Elastic Stack 6.0 설치하기]:{% link _posts/cloudcomputing/2017-11-22-install-elastic-stack-6.0.md %}
+[Elastic Stack 6.0 설치하기]:{{< relref "/blog/cloudcomputing/2017-11-22-install-elastic-stack-6.0.md" >}}

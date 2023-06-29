@@ -13,10 +13,6 @@ date: 2018-01-03T17:08:00+09:00
 경우, 또는 원인을 안다 해도 근원적인 해결방법을 찾을 수 없을 때 우리가 할
 수 있는 최선은 우회경로(Work Around)를 찾아 문제를 피하는 것이다.
 
-
-* TOC
-{:toc .half.pull-right}
-
 지난 글 [Vyatta 네트워크 문제 추적 Part 1]에서 이 문제를 정확하게 파악하기
 위해 로그를 더 세밀하게 추적하고, 인터페이스 상태와 네트워크 연결 상태를
 함께 추적하여 선후 관계를 확인하고, 이와 함께 다음 단계의 분석을 위한 Dump
@@ -28,13 +24,12 @@ date: 2018-01-03T17:08:00+09:00
 서비스를 이어갈 수 있게 하는 방안에 대하여 정리한다.
 
 
-{:.boxed}
 > 이 글은 다음 묶음글의 일부이며, 이 내용과 연결된 앞/뒤 사건은 아래 링크를
 > 통해 확인할 수 있다.
-> 
-> * [Vyatta 네트워크 문제 추적 Part 1]
-> * _Vyatta 네트워크 문제 추적 Part 2 - LACP_
-> * [Vyatta 네트워크 문제 추적 Part 3 - Dump]
+
+* [Vyatta 네트워크 문제 추적 Part 1]
+* _Vyatta 네트워크 문제 추적 Part 2 - LACP_
+* [Vyatta 네트워크 문제 추적 Part 3 - Dump]
 
 
 # Link Down, 그리고 LACP
@@ -327,6 +322,6 @@ root@router:/opt/vyatta#
 * [Vyatta 네트워크 문제 추적 Part 3 - Dump]
 
 
-[Vyatta 네트워크 문제 추적 Part 1]:{% link _posts/sysadmin/2018-01-03-vyatta-network-problem-tracking.md %}
-[Vyatta 네트워크 문제 추적 Part 2 - LACP]:{% link _posts/sysadmin/2018-01-03-reset-lag-on-vyatta.md %}
-[Vyatta 네트워크 문제 추적 Part 3 - DUMP]:{% link _posts/sysadmin/2018-01-04-analyzing-huge-dump-with-tcpdump.md %}
+[Vyatta 네트워크 문제 추적 Part 1]:{{< relref "/blog/sysadmin/2018-01-03-vyatta-network-problem-tracking.md" >}}
+[Vyatta 네트워크 문제 추적 Part 2 - LACP]:{{< relref "/blog/sysadmin/2018-01-03-reset-lag-on-vyatta.md" >}}
+[Vyatta 네트워크 문제 추적 Part 3 - DUMP]:{{< relref "/blog/sysadmin/2018-01-04-analyzing-huge-dump-with-tcpdump.md" >}}

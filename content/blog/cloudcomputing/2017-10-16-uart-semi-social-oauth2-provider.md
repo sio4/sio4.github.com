@@ -519,5 +519,5 @@ UART는 인증통합의 필요성과 소셜인증의 편리함, 폐쇄그룹의 
 [Go Buffalo]:https://github.com/gochigo/buffalo
 [OSIN OAuth2 server library]:https://github.com/RangelReale/osin
 
-[OAuth2와 JWT, 웹기반 SSO 인증]:{% link _posts/cloudcomputing/2017-09-13-basic-of-oauth2-and-jwt.md %}
+[OAuth2와 JWT, 웹기반 SSO 인증]:{{< relref "/blog/cloudcomputing/2017-09-13-basic-of-oauth2-and-jwt.md" >}}
 
