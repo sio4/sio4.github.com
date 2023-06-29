@@ -981,18 +981,28 @@ footer .theme-by {
 	width: 100%;
 	clear: both;
 	padding: 20px 0;
+
+	.post-title {
+		font-size: 30px;
+		margin-top: 0;
+		padding: 4px 0;
+		border-bottom: 1px solid #c9c9c9;
+	}
+
+	img {
+		max-height: 360px;
+		max-width: 100%;
+		display: block;
+		margin: 0 auto;
+		width: auto;
+	}
+
 	.post-entry {
 		font-family: $font-norm;
 		.post-banner {
 			clear: both;
 			margin-top: 15px;
 			margin-bottom: 15px;
-			img {
-				max-height: 300px;
-				max-width: 100%;
-				display: block;
-				margin: 0 auto;
-			}
 		}
 	}
 	.post-tags {
@@ -1018,11 +1028,6 @@ footer .theme-by {
 .post-preview a:hover {
 	text-decoration: none;
 	color: #0085a1;
-}
-
-.post-preview .post-title {
-	font-size: 30px;
-	margin-top: 0;
 }
 
 .post-preview .post-subtitle {
