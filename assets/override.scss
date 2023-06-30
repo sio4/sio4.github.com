@@ -1,5 +1,3 @@
----
----
 //$font-head: 'Open Sans','NanumBarunGothic','Helvetica Neue',sans-serif;
 //$font-head: 'Open Sans','NotoSansCJKkr','Helvetica Neue',sans-serif;
 $font-head: 'Open Sans','NanumSquare','Helvetica Neue',sans-serif;
@@ -18,6 +16,7 @@ $color-link: #0075aa;
 $color-light: #cccccc;
 $color-orange: #ee5500;
 $color-accent: #ee5500;
+$color-comment: #a09090;
 
 $background-body: #f9f9f9;
 $background-box: #fbfbfb;
@@ -27,7 +26,8 @@ $background-footer: #000000;
 $background-marker: linear-gradient(transparent 30%, #ddf3ff 60%, #c0f9ff 80%);
 $background-point: #454545;
 
-$background-th: linear-gradient(#eeeeee 0%, #ffffff 40%, #ffffff 60%, #eeeeee 100%);
+//$background-th: linear-gradient(#eeeeee 0%, #ffffff 40%, #ffffff 60%, #eeeeee 100%);
+$background-th: #eeeeee;
 $background-td: #ffffff;
 $color-header: $color-light;
 $color-border: $color-light;
@@ -58,6 +58,8 @@ h1, h2, h3, h4, h5, h6 {
 	word-break: keep-all;
 }
 
+article.blog-page,
+article.blog-post {
 ul {
 	li {
 		list-style: square;
@@ -65,16 +67,21 @@ ul {
 	&.nodot > li {
 		list-style: none;
 	}
-	&.angle > li {
+	// hugo does not support classing. use it as a default mode
+	//&.angle > li {
+	li {
 		list-style: none;
 		&:before {
-			content: "\f105"; // angle-right
-			font-family: FontAwesome;
+			font-family: "Font Awesome 5 Free";
+			font-weight: 900; // important
+			content: "\f105"; // font-awesome angle right
 			display: inline-block;
-			margin-left: -1em;
-			width: 1em;
+			width: 1.5em;
+			margin-left: -25px;
+			float: left;
 		}
 	}
+}
 }
 
 strong {
@@ -97,12 +104,14 @@ a {
 }
 
 blockquote {
+	font-style: normal;
 	font-size: 1em;
-	background: url(images/blockquote.png) no-repeat scroll 3px 3px;
+	//background: url(/assets/images/blockquote.png) no-repeat scroll 3px 3px;
 	background-color: transparent;
 	margin: 1em 0;
 	padding: 10px 15px 10px 40px;
 	border-left: 4px solid transparent;
+
 	&.boxed {
 		margin: 1em 0px;
 		padding: 10px 20px;
@@ -116,11 +125,12 @@ blockquote {
 		border-left: 4px solid #000;
 		background: none;
 	}
-	&.comment {
+	// hugo does not support classing. use it as a default mode
+	//&.comment {
 		background: none;
-		color: $color-grey !important;
+		color: $color-comment !important;
 		&:before {
-			font-family: FontAwesome;
+			font-family: "Font Awesome 5 Free";
 			content: "\f075"; // font-awesome comment
 			display: inline-block;
 			width: 1.5em;
@@ -128,9 +138,9 @@ blockquote {
 			float: left;
 		}
 		* {
-			color: $color-grey !important;
+			color: $color-comment !important;
 		}
-	}
+	//}
 	&.definition {
 		dl {
 			dt {
@@ -160,10 +170,19 @@ pre {
 	& code {
 		font-family: $font-type;
 		white-space: pre;
-		.wrap & {
-			white-space: pre-wrap;
+		// hugo does not support classing. use it as a default mode
+		//.wrap & {
+			white-space: pre-wrap !important;
 			word-break: break-all;
-		}
+		//}
+	}
+}
+
+// no darkmode support for now
+@media (prefers-color-scheme: dark) {
+	code {
+		background-color: #f9f2f4;
+		color: #c7254e;
 	}
 }
 
@@ -174,22 +193,33 @@ table {
 	&.fit { width: 95%; margin: 1rem auto; }
 	&.filled { width: 100%; }
 	&.centered { margin: 1rem auto; max-width: 80%; min-width: 50%; }
-	&.styled {
+	margin: 1rem auto; max-width: 95%; min-width: 80%; // originally .centered
+	// hugo does not support classing. use it as a default mode
+	//&.styled {
 		thead {
 			tr {
 				background: $background-th;
 				border-top: 1px solid darken($color-border, 15%);
+				th {
+					border-width: 1px 0;
+					padding: 2px 4px;
+				}
 			}
 		}
 		tbody {
 			tr {
-				background: $background-td; border-top: 1px solid $color-border;
+				background: $background-td;
+				border-top: 1px dotted $color-border;
 				&:nth-child(even) { background: darken($background-td, 3%); }
 				&:first-child { border-top: 1px solid darken($color-border, 15%); }
 				&:last-child { border-bottom: 1px solid darken($color-border, 15%); }
+				td {
+					border-width: 1px 0;
+					padding: 2px 4px;
+				}
 			}
 		}
-	}
+	//}
 	th, td { padding: 1px 2px; }
 }
 
@@ -312,6 +342,7 @@ img {
 #blog-archives ul.posts li,
 .page-heading,
 .post-heading,
+.blog-heading,
 .post-preview {
 	.post-meta {
 		font-family: $font-meta;
@@ -320,6 +351,7 @@ img {
 	}
 }
 .page-heading,
+.blog-heading,
 .post-heading {
 	.post-social-shares {
 		margin-top: 0.5em;
@@ -354,6 +386,7 @@ img {
 }
 
 // --- post ------------------------------------------------------------------
+.blog-heading,
 .post-heading {
 	h1 {
 		text-shadow: 2px 2px 2px #aaaaaa;
@@ -392,11 +425,14 @@ article.blog-post {
 			/* text-decoration: underline */
 			color: $color-link;
 		}
+	}
 
+	figure {
 		img {
 			display: block;
 			margin: auto;
 			max-width: 95%;
+			// hugo does not support classing. use it as a default mode
 			&.dropshadow {
 				margin-top: 1rem;
 				margin-bottom: 1rem;
@@ -414,6 +450,13 @@ article.blog-post {
 				}
 			}
 		}
+
+		figcaption {
+			margin-top: 0.5em;
+			text-align: center !important;
+			font-style: italic;
+			font-size: 0.9em;
+		}
 	}
 
 	dl {
@@ -430,36 +473,37 @@ article.blog-post {
 				color: $color-accent;
 				text-shadow: 0 0 2px #aaaaaa;
 				&:before {
-					font-family: FontAwesome;
+					font-family: "Font Awesome 5 Free";
 					content: "\F0E7";
 					display: inline-block;
 					width: 1.5em;
 				}
 			}
 		}
-		&.help,
-		&.info,
-		&.warn,
-		&.keypoint {
+		// hugo does not support classing. use it as a default mode
+		//&.help,
+		//&.info,
+		//&.warn,
+		//&.keypoint {
 			padding: 4px 8px 4px 10px;
 			dt {
 				font-weight: normal;
 				border-bottom: 1px dotted $color-light;
 				&:before {
-					font-family: FontAwesome;
+					font-family: "Font Awesome 5 Free";
 					display: inline-block;
 					width: 1.5em;
 				}
 			}
-		}
-		&.keypoint {
+		//}
+		//&.keypoint {
 			dt {
 				color: $color-accent;
 				&:before {
-					content: "\f084"; // font-awesome key
+					content: "\f0eb"; // font-awesome key
 				}
 			}
-		}
+		//}
 		&.warn {
 			dt {
 				color: $color-accent;
@@ -532,14 +576,17 @@ article.blog-post {
 }
 
 // no parent on layout:post (under article.blog-post)
+.blog-tags,
 .post-tags {
 	clear: both;
 	text-align: right;
+	/*
 	&:before {
 		content: "\F02C";
-		font-family: FontAwesome;
+		font-family: "Font Awesome 5 Free";
 		margin-right: 4px;
 	}
+	*/
 	.tag-item {
 		font-size: 0.8em;
 		padding: 3px 4px;
@@ -579,7 +626,7 @@ div.posts-related {
 		}
 		&:before {
 			content: "\F054";
-			font-family: FontAwesome;
+			font-family: "Font Awesome 5 Free";
 			margin-right: 0px;
 		}
 		.item-link {
@@ -605,7 +652,7 @@ ul.post-related {
 		color: $color-grey;
 		&:before {
 			content: "\F054";
-			font-family: FontAwesome;
+			font-family: "Font Awesome 5 Free";
 			margin-right: 4px;
 		}
 		a {
@@ -640,10 +687,16 @@ ul.post-related {
 		padding: 5px 5px;
 	}
 }
+@media (prefers-color-scheme: dark) {
+	.pager li a {
+		background: inherit;
+	}
+}
 
 .blog-pager {
 	li a {
 		color: $color-link;
+		font-size: 1em;
 	}
 	.previous>a, .previous>span {
 		float: left;
@@ -667,11 +720,11 @@ ul.post-related {
 }
 
 .pager.blog-pager {
-	margin-top: 0;
+	margin-top: 40px;
 }
 @media only screen and (min-width: 768px) {
 	.pager.blog-pager {
-		margin-top: 10px;
+		//margin-top: 10px;
 	}
 }
 
@@ -983,18 +1036,28 @@ footer .theme-by {
 	width: 100%;
 	clear: both;
 	padding: 20px 0;
+
+	.post-title {
+		font-size: 30px;
+		margin-top: 0;
+		padding: 4px 0;
+		border-bottom: 1px solid #c9c9c9;
+	}
+
+	img {
+		max-height: 360px;
+		max-width: 100%;
+		display: block;
+		margin: 0 auto;
+		width: auto;
+	}
+
 	.post-entry {
 		font-family: $font-norm;
 		.post-banner {
 			clear: both;
 			margin-top: 15px;
 			margin-bottom: 15px;
-			img {
-				max-height: 300px;
-				max-width: 100%;
-				display: block;
-				margin: 0 auto;
-			}
 		}
 	}
 	.post-tags {
@@ -1020,11 +1083,6 @@ footer .theme-by {
 .post-preview a:hover {
 	text-decoration: none;
 	color: #0085a1;
-}
-
-.post-preview .post-title {
-	font-size: 30px;
-	margin-top: 0;
 }
 
 .post-preview .post-subtitle {
@@ -1076,15 +1134,15 @@ footer .theme-by {
 }
 
 .blog-tags a {
-	color: #008AFF;
+	color: $color-link;
 	text-decoration: none;
-	padding: 0 5px;
+	padding: 0 0px;
 }
 
 .blog-tags a:hover {
 	border-radius: 2px;
-	color: #008AFF;
-	background-color: #CCC;
+	color: $color-link;
+	background-color: $color-light;
 }
 
 .post-preview .blog-tags {
@@ -1159,12 +1217,14 @@ footer .theme-by {
 	font-size: 50px;
 }
 
+.intro-header .blog-heading h1,
 .intro-header .post-heading h1 {
 	margin-top: 0;
 	font-size: 35px;
 }
 
 .intro-header .page-heading .page-subheading,
+.intro-header .blog-heading .blog-subheading,
 .intro-header .post-heading .post-subheading {
 	font-size: 27px;
 	line-height: 1.1;
@@ -1223,6 +1283,7 @@ footer .theme-by {
 		font-size: 3em;
 	}
 
+	.intro-header .blog-heading h1,
 	.intro-header .post-heading h1 {
 		font-size: 2.5em;
 	}
@@ -1284,87 +1345,6 @@ footer .theme-by {
 	border-bottom-left-radius: 5px;
 }
 
-/*
-table {
-	padding: 0;
-}
-
-table tr {
-	border-top: 1px solid #cccccc;
-	background-color: #ffffff;
-	margin: 0;
-	padding: 0;
-}
-
-table tr:nth-child(2n) {
-	background-color: #f8f8f8;
-}
-
-table tr th {
-	font-weight: bold;
-	border: 1px solid #cccccc;
-	text-align: left;
-	margin: 0;
-	padding: 6px 13px;
-}
-
-table tr td {
-	border: 1px solid #cccccc;
-	text-align: left;
-	margin: 0;
-	padding: 6px 13px;
-}
-
-table tr td:first-child,
-table tr th:first-child {
-	margin-top: 0;
-}
-
-table tr td:last-child,
-table tr th:last-child {
-	margin-bottom: 0;
-}
-*/
-
-/* --- Code blocks --- */
-/*
-.highlight > pre,
-pre.highlight,
-td.code pre {
-	//background-image: none;
-	//background-repeat: repeat;
-	//background-size: 3em 3em;
-	//background-position: 0 10px;
-	box-shadow: 2px 2px 4px #888888;
-	border-radius: 0; // override bootstrap
-}
-
-code table,
-code table tbody,
-code table td,
-code table th,
-code table tr,
-td.gutter pre {
-	padding: 0;
-	border: none;
-	background-color: #fff;
-}
-
-.highlight > pre {
-	padding: 0;
-}
-
-td.code pre {
-	border-width: 0 0 0 2px;
-	border-style: solid;
-	border-color: #444;
-	border-radius: 0;
-}
-
-td.gutter {
-	padding-top: 3px;
-}
-*/
 
 /* --- Google Custom Search Engine Popup --- */
 #modalSearch table tr,

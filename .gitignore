@@ -7,3 +7,7 @@
 /.bundle
 
 __references.md
+
+# hugo specific
+.hugo_build.lock
+public/
