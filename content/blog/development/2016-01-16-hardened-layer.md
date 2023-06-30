@@ -1095,7 +1095,6 @@ export default Ember.Route.extend({
 `/app/templates/application.hbs`
 
 ```handlebars
-{% raw %}
 <h2 id="title">Hardened Layer</h2>
 
 <div id="category-list" class="ui menu" style="float:left; margin: 0 1em">
@@ -1110,7 +1109,6 @@ export default Ember.Route.extend({
 <div id="main-panel" class="ui panel">
 {{outlet}}
 </div>
-{% endraw %}
 ```
 
 이 화면은
@@ -1124,7 +1122,6 @@ export default Ember.Route.extend({
 `/app/templates/accounts.hbs`
 
 ```handlebars
-{% raw %}
 <ul>
 {{#each account in model}}
 <li>
@@ -1137,7 +1134,6 @@ export default Ember.Route.extend({
 </ul>
 
 {{outlet}}
-{% endraw %}
 ```
 
 Account 목록을 볼 때 사용될 위의 Template은 `#each` 구문에 의해 Loop를

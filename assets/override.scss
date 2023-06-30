@@ -58,6 +58,8 @@ h1, h2, h3, h4, h5, h6 {
 	word-break: keep-all;
 }
 
+article.blog-page,
+article.blog-post {
 ul {
 	li {
 		list-style: square;
@@ -65,17 +67,21 @@ ul {
 	&.nodot > li {
 		list-style: none;
 	}
-	&.angle > li {
+	// hugo does not support classing. use it as a default mode
+	//&.angle > li {
+	li {
 		list-style: none;
 		&:before {
 			font-family: "Font Awesome 5 Free";
-			content: "\f105"; // font-awesome angle-right
+			font-weight: 900; // important
+			content: "\f105"; // font-awesome angle right
 			display: inline-block;
 			width: 1.5em;
-			margin-left: -30px;
+			margin-left: -25px;
 			float: left;
 		}
 	}
+}
 }
 
 strong {

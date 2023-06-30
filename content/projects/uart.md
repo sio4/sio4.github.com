@@ -18,11 +18,6 @@ with well known Devise, OmniAuth and other open source components.)
 
 # It's UART
 
-[![Build Status](https://travis-ci.org/hyeoncheon/uart.svg?branch=master)](https://travis-ci.org/hyeoncheon/uart){:.inline}
-[![Go Report Card](https://goreportcard.com/badge/github.com/hyeoncheon/uart)](https://goreportcard.com/report/github.com/hyeoncheon/uart){:.inline}
-[![Code Climate](https://codeclimate.com/github/hyeoncheon/uart/badges/gpa.svg)](https://codeclimate.com/github/hyeoncheon/uart){:.inline}
-[![Coverage Status](https://coveralls.io/repos/github/hyeoncheon/uart/badge.svg?branch=master)](https://coveralls.io/github/hyeoncheon/uart?branch=master){:.inline}
-
 UART is written in Go Language and also is built upon many open source
 software modules including
 [OSIN OAuth2 server library](https://github.com/RangelReale/osin)

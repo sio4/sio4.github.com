@@ -6,15 +6,15 @@ image: /attachments/20150808-ghp-reloaded-1.png
 date: 2015-08-08 23:04:33+09:00
 ---
 몇 주 전
-"[블로그, Tistory로부터 Github Pages로 이주]({{< relref "/blog/productivity/2015-07-24-migration-from-tistory.md" >}}){:.reference}"라는
+"[블로그, Tistory로부터 Github Pages로 이주]({{< relref "/blog/productivity/2015-07-24-migration-from-tistory.md" >}})"라는
 글을 통해서, "**어떤 방식으로 Tistory로부터 Github Pages로 이사를
 했는지**"를 중심으로 기록을 남긴 바 있다. 이번에는 내 글들의 새
 터를 "**좀더 블로그답게 정비한**" 이야기이다.
 
 따지자면 5년 전에 적었던 
-"[Jekyll로 github에 블로깅하기]({{< relref "/blog/misc/2010-05-27-blogging-on-github-with-jekyll.md" >}}){:.reference}"의
+"[Jekyll로 github에 블로깅하기]({{< relref "/blog/misc/2010-05-27-blogging-on-github-with-jekyll.md" >}})"의
 2탄인 샘이고, 얼마 전, 좀 대충 적은 듯 한
-"[Setup Jekyll for Github Pages]({{< relref "/blog/misc/2015-07-23-setup-jekyll-for-github-page.md" >}}){:.reference}"와
+"[Setup Jekyll for Github Pages]({{< relref "/blog/misc/2015-07-23-setup-jekyll-for-github-page.md" >}})"와
 함께 읽으면 Github Pages를 이용한 블로깅을 새로 시작하는 사람들에게는
 그럭 저럭 읽어볼만한 "시작하기+@ Guide"가 될 수 있을 것이다.
 
@@ -33,13 +33,13 @@ Posting한 글에 대한 소셜 연동은 예전에 Addthis를 이용하여 이�
   설정이 편하다.
 
 그래서 새롭게 정돈을 하면서, 앞단 공유버튼을
-[Facebook](https://developers.facebook.com/docs/plugins/like-button){:.ext},
-[Twitter](https://dev.twitter.com/web/tweet-button){:.ext},
+[Facebook](https://developers.facebook.com/docs/plugins/like-button),
+[Twitter](https://dev.twitter.com/web/tweet-button),
 그리고
-[Google+](https://developers.google.com/+/web/share/){:.ext}가
+[Google+](https://developers.google.com/+/web/share/)가
 제공하는 공식 버튼으로 바꿨다.
-([Pocket](https://getpocket.com/publisher/button){:.ext}과
-[Delicious](https://delicious.com/tools){:.ext}를
+([Pocket](https://getpocket.com/publisher/button)과
+[Delicious](https://delicious.com/tools)를
 더 붙이고 싶은데, 공식 제공하는 버튼이 좀 후져서 뺐다. :-)
 
 ![.dropshadow](/attachments/20150808-ghp-reloaded-1.png)
@@ -61,7 +61,7 @@ Icon 구성 등이 편한 AddThis에게도 미련이 남아, 예전에 쓰던 Ad
 직접 넣는 것을 (문서의 완결성 차원에서) 선호하지만 경우에 따라
 Github의 코드를 그대로 따와야 할 때가 있다. 이 때 사용할 수 있는
 서비스가
-[Gist-It](http://gist-it.appspot.com/){:.ext}이다.
+[Gist-It](http://gist-it.appspot.com/)이다.
 이 서비스를 이용하면, 아래와 같이 나름 깔끔하게 Github에 위치한
 파일을 바로 끓어다 붙일 수 있다.
 
@@ -79,7 +79,7 @@ Github Pages에서 아쉬운 것 중 하나가, 보통의 블로그에서는 보
 (Github Pages에서는 `site.related_posts`를 사용하면, jekyll의
 기본값인 "Most Recent"를 반환하게 된다. `lsi` 옵션을 사용할 수
 없기 때문인데, 관련 내용은
-[여기](https://help.github.com/articles/using-jekyll-with-pages/#configuration-overrides){:.ext}를
+[여기](https://help.github.com/articles/using-jekyll-with-pages/#configuration-overrides)를
 참고)
 
 아래의 내용은, `site.related_posts` 대신에 Post의 Tag를 참고하여
@@ -93,7 +93,7 @@ Github Pages에서 아쉬운 것 중 하나가, 보통의 블로그에서는 보
 
 다음은 "**댓글**"인데, 정적 특성의 Github Pages는 동적인 댓글의
 수용이 아얘 불가능한 구조이다. 이 것을 해결해줄 수 있는 서비스가
-[Disqus](https://disqus.com/){:.ext}이다. (뭐, 사실 내 블로그는
+[Disqus](https://disqus.com/)이다. (뭐, 사실 내 블로그는
 댓글이 거의 없는... 뭐랄까 악플보다 무서운 무플의 사이트이긴
 하다. ㅋㅋㅋ)
 
@@ -109,7 +109,7 @@ Github Pages에서 아쉬운 것 중 하나가, 보통의 블로그에서는 보
 
 마지막은 **RSS Feed**에 대한 것인데, 이건 Github Pages가 지원하지
 않는다고 할 수는 없으나 좀 더 편리하게 사용하기 위한 것으로,
-[Feedburner](https://feedburner.google.com/){:.ext}를
+[Feedburner](https://feedburner.google.com/)를
 사용하여 제공하도록 설정하였다.
 
 ![.dropshadow](/attachments/20150808-ghp-reloaded-6.png)

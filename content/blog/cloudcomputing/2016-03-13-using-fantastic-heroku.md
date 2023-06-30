@@ -857,8 +857,7 @@ Facebook을 통하여 얻는 과정을 잡은 것이다.
 
 
 
-{:#domain-configuration}
-## Domain 설정하기
+## Domain 설정하기 {#domain-configuration}
 
 Heroku에 App을 올리게 되면, `app_name.herokuapp.com`과 같은 형식의
 Domain이 자동으로 설정되고 이 주소를 사용하여 바로 접속할 수 있다.
@@ -915,8 +914,7 @@ Service Address
 
 
 
-{:#closing}
-# 마무리
+# 마무리 {#closing}
 
 이상으로, Heroku에 App을 배포하는 과정에서 겪을 수 있는 문제를 중심으로
 배포 과정을 정리해 봤다. 다양한 시행착오를 경험했으니...
@@ -924,8 +922,7 @@ Service Address
 
 
 
-{:#appendix-pricing-and-plan}
-## 참고: 사용비용과 Plan
+## 참고: 사용비용과 Plan {#appendix-pricing-and-plan}
 
 좀 다른 얘기인데, 지금 올린 이 App은 Free Dynos를 사용하여 무료로
 서비스를 받는 것이다. 그래서 보면, 아래 그림에서 보는 바와 같이

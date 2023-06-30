@@ -102,8 +102,7 @@ $
 * 공식 API: <https://github.com/softlayer/softlayer-object-storage-ruby>
 * 변형 API: <https://github.com/hardenedlayer/softlayer-object-storage-ruby>
 
-{:#testing-softlayer-object-storage-api}
-## SoftLayer Object Storage의 시험
+## SoftLayer Object Storage의 시험 {#testing-softlayer-object-storage-api}
 
 설치된 패키지가 정상적으로 동작하는지 보기 위하여, 아래와 같은 시험코드를
 만들었는데, 이 코드는 앞선 글 [SoftLayer Object Storage와 임시 URL]에서

@@ -260,8 +260,7 @@ Test Case이며 무슨 오류가 발생했는지를 실행시간 등과 함께 �
 코드를 수정할 차례이다.
 
 
-{:#writing-codes}
-## 코드 작성
+## 코드 작성 {#writing-codes}
 
 이번 개선은 연결을 관장하는 `connection.rb` 파일과 개별 Object를 다루는
 `storage_object.rb` 파일에서 이루어졌다. 먼저, `connection.rb` 파일의
@@ -338,8 +337,7 @@ Accessor를 추가하였다.
 `temp_url_key` 값을 이용하여 Hash를 만들어내고, 이것을 이용하여 임시
 접근을 위한 URL을 생성하도록 구성되어 있다.
 
-{:#rspec-again}
-## 다시 RSpec
+## 다시 RSpec {#rspec-again}
 
 이제 다시 Test Case를 돌려보자.
 

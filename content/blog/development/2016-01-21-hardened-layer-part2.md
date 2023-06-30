@@ -273,7 +273,6 @@ $
 
 `app/templates/application.hbs`
 ```handlebars
-{% raw %}
 {{#ui-sidebar class="inverted vertical menu"}}
     {{link-to 'Home' 'index' class='item'}}
     {{link-to 'Dashboard' 'dashboard' class='item'}}
@@ -301,7 +300,6 @@ $
 <div class="ui grid pusher">
 {{outlet}}
 </div>
-{% endraw %}
 ```
 
 첫 단락은 Ember Addon을 이용하여 Component 방식으로 Sidebar를 구현한
@@ -591,13 +589,11 @@ Ember Component 형태로 `c3-chart`를 불러준다.
 `app/templates/dashboard.hbs`
 
 ```handlebars
-{% raw %}
 <div class="full-width">
 {{c3-chart data=data donut=donut}}
 
 {{outlet}}
 </div>
-{% endraw %}
 ```
 
 이 때, `data` 값을 지정하게 되는데, 이 부분은 다음과 같이 Ember의
