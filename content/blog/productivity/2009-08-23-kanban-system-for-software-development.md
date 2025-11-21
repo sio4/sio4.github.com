@@ -14,6 +14,7 @@ last_modified_at: 2011-03-04T13:42:58+09:00
 개발 요건(말)을 그 위에서 개발 진척도에 따라 이동시킴으로써 전반적인 개발
 진척도를 한 눈에 파악할 수 있도록 한 것. 또는 그 이상이라고 말할 수 있겠다.
 마치, 윷놀이 하듯 개발을 한다는 얘기다. :-)
+<!--more-->
 
 [Kanban bootstrap \| Lean Software Engineering](http://leansoftwareengineering.com/2007/10/27/kanban-bootstrap/)
 

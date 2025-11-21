@@ -10,6 +10,7 @@ date: 2015-08-08 23:04:33+09:00
 글을 통해서, "**어떤 방식으로 Tistory로부터 Github Pages로 이사를
 했는지**"를 중심으로 기록을 남긴 바 있다. 이번에는 내 글들의 새
 터를 "**좀더 블로그답게 정비한**" 이야기이다.
+<!--more-->
 
 따지자면 5년 전에 적었던 
 "[Jekyll로 github에 블로깅하기]({{< relref "/blog/misc/2010-05-27-blogging-on-github-with-jekyll.md" >}})"의

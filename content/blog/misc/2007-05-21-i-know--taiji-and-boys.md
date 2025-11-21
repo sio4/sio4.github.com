@@ -10,6 +10,7 @@ last_modified_at: 2008-03-09T01:53:28+09:00
   
 무엇보다도 저 거인들의 신생아 시절, 그 애쓰는 모습에 감흥이
 느껴지기도... :-)
+<!--more-->
 
 <div class="text-center">
 <iframe width="420" height="315" src="https://www.youtube.com/embed/y8em1w3KIFA" frameborder="0" allowfullscreen></iframe>

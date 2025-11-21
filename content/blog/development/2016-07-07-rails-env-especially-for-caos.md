@@ -11,7 +11,7 @@ Cloud Computing 영역의 서비스를 다각도로 활용하여 간단한 "Phot
 서비스를 구성해본 경험에 대하여 운을 뗐다.  이 글은 그 "CAOS 시리즈"의
 본편 첫 번째 이야기로, 기존에 내가 즐겨 해왔던 방식과는 조금 다르게
 Rails App의 골력을 만드는 과정을 기록하려고 한다.
-
+<!--more-->
 여는 글을 비롯하여 이 시리즈의 글들은 다음의 순서를 참고하길 바라며,
 
 * [CAOS, Cloud Album on Object Storage] -  *The Begining~!*

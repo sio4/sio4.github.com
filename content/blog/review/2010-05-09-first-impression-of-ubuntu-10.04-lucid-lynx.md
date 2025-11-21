@@ -14,6 +14,7 @@ last_modified_at: 2010-07-07T13:34:43+09:00
 만들고 있구나"하는 느낌이 있다고나 할까? 나 역시 "리눅스 배포본 제작"이라는
 일을 해봤기 때문에 그들의 결과물을 보면서 그들이 겪었을 고민을 떠올려 볼
 수도 있었다.
+<!--more-->
 ([그들의 철학](http://www.ubuntu.com/community/ubuntustory/philosophy "Philosiphy | Ubuntu"))
 
 ### Ubuntu 10.04 Lucid Lynx, 우분투 리눅스의 전환점?

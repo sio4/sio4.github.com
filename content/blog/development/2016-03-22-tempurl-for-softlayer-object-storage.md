@@ -3,14 +3,14 @@ title: SoftLayer Object Storage와 임시 URL
 tags: ["SoftLayer", "object-storage", "cloud-computing", "API", "Ruby", "swift", "Github"]
 categories: ["development"]
 image: /attachments/20160322-sl-objs-002.png
-date: 2016-03-22 12:12 +09:00
+date: 2016-03-22T12:12:00+09:00
 ---
 잠깐 짬을 내서, 지난 주말에 SoftLayer의 Object Storage를 활용하는 개발의
 시험을 해보려고 했다. 그런데 이 Object Storage 내에 저장된 비공개 자료를
 임시 URL을 사용하여 URL을 알려줄 특정인에 한정하여 공유하는 부분에서 딱!
 하고 막혀 버렸다. 이번 글은, 이 막힘을 푸는 과정을 두 가지 주제로 기록해
 보려고 한다.
-
+<!--more-->
 딱히 끊어서 기술하지는 않았지만, 다루려고 하는 주제는 다음과 같다.
 
 1. SoftLayer의 Object Storage를 활용하여 임시공유 만들기

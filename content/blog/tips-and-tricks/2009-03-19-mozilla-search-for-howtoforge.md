@@ -10,6 +10,7 @@ IE 역시 그런 기능이 있는 것으로 아는데, 파이어폭스 웹브라
 검색사이트를 추가할 수 있는 기능이 있다. 그리고
 "[Mycroft Project](http://mycroft.mozdev.org/)"라는 이름의 프로젝트에서
 다양한 검색 플러그인을 "검색"할 수 있다.
+<!--more-->
 
 대체로 원하는 검색사이트는 거의 있는 것 같은데,
 [howtoforge](http://www.howtoforge.com) 가 빠져있길래 하나 만들어 넣었다.

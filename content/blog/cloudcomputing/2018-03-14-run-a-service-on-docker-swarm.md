@@ -13,7 +13,7 @@ Service와 Task가 무엇인지, 그리고 필요에 따라 어떻게 Service를
 확장하고 다시 줄이는지, Image 교체 등 Service의 업데이트는 어떤 방식으로
 처리하게 되는지 알아보고, 이와 함께 Swarm Node에 대한 유지보수를 진행할
 때 Swarm은 그 위에 올라가 있는 서비스를 어떻게 다루는지 등에 대해 정리한다.
-
+<!--more-->
 ---
 
 Docker Swarm은 Docker Engine에 결합된 형태로 제공되는 Orchestration 도구로,

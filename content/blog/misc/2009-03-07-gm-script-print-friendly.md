@@ -11,6 +11,7 @@ last_modified_at: 2010-07-02T10:34:03+09:00
 또는 근래에는 매체별 CSS 적용으로 인하여 원천적으로 출력물을 이쁘게
 (그리고 원저작자가 의도한대로) 만들 수 있도록 한 곳도 꽤나 있다.
 그런데 많지 않다는 것이 문제지.
+<!--more-->
 
 - 형식: GreaseMonkey User Script
 - 파일: [printfriendly_wp.user.js](/attachments/printfriendly_wp.user.js)

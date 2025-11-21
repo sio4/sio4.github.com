@@ -9,7 +9,7 @@ date: 2016-09-05 23:56:00 +0900
 하나에만 집중해야 한다는 점이었다. 시작은 단지, SoftLayer Cloud와
 Object Storage를 활용한 시험적인 Application을 소개하는 것이었는데,
 시리즈에 담을 내용을 정하는 과정에서 욕심이 과했던 것 같다.
-
+<!--more-->
 아무튼, 그 과했던 부분, Rails Application을 Bundler 기반으로 시작하고
 또하나의 Cloud 서비스인 Mailgun을 통하여 메일을 발송하고, 이를 이용한
 OTP를 구현하는 등의 부수적인 이야기를 담은

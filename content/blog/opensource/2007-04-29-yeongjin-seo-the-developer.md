@@ -12,6 +12,7 @@ last_modified_at: 2008-03-09T02:21:50+09:00
 이 분의 느낌을 가지고 있다. 오래전, 그 때는 몰랐지만 내가 이 길에
 접어들기 시작하던 무렵에 그 이름을 처음 들었었다.  
 서영진. 오늘 우연히, 이런 인터뷰를 읽었다.  
+<!--more-->
   
 [한국 developerWorks : dW Interview : 서영진님](http://www.ibm.com/developerworks/kr/interview/2007_03.html)
 

@@ -7,6 +7,7 @@ date: 2007-05-09T10:23:11+09:00
 last_modified_at: 2008-03-09T02:09:17+09:00
 ---
 자유소프트웨어가 "공짜"라면 자유소프트웨어를 만드는 사람들은 뭘 먹고 살아요?
+<!--more-->
 
 [LWN: Novell Linux desktop architect goes to Google (DesktopLinux)](http://lwn.net/Articles/233473/)
 

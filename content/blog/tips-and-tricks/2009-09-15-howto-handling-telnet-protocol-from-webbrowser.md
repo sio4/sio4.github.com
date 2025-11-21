@@ -10,6 +10,7 @@ last_modified_at: 2009-09-28T08:50:38+09:00
 ---
 예전엔 기본이었던것 같은데, 이젠 설정을 따로 해야 하는 것이 되어버렸다.
 telnet://localhost 이런거 말이다. 그것도 꽤 복잡해졌다.
+<!--more-->
 
 ![](/attachments/2009-09-15-missing-handler.png)
 

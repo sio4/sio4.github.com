@@ -7,7 +7,7 @@ date: 2016-02-24 14:36:29 +0900
 일반적인 Web Application이 아닌 API Backend를 위한 Python Web Framework을
 선정하기 위하여, 인기있는 Framework 몇 개를 비교해보았다. 이 글은, 이
 비교 과정과 결과에 대한 기록이다.
-
+<!--more-->
 6년 쯤 전, 간단한 In-House 관리시스템을 몇 개 만들 기회가 있었는데,
 이미 고속 개발 도구로써 명성이 자자했지만 사용 경험이 없었던 Python
 기반의 [Django]와 Ruby 기반의 [Ruby on Rails]를 활용하여 하나씩

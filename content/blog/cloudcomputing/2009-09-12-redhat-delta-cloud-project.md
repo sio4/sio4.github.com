@@ -11,6 +11,8 @@ last_modified_at: 2011-03-04T13:52:02+09:00
 어쨌든 클라우트 컴퓨팅이라는 개념의 바닥에 깔린 근본적 취지는 오픈소스
 세계의 것과 잘 어울린다.
 
+<!--more-->
+
 다음 글 들은 ...그래서 "오픈소스+클라우드" 공식과 연관이 있다.
  
 [Dynamically Applied Integrated Systems: Open Source Cloud Interoperability](http://charmalloc.blogspot.com/2009/09/open-source-cloud-interoperability.html)

@@ -8,6 +8,7 @@ date: 2015-07-23 15:07:00+09:00
 너무 쉽다. Jekyll Local 환경 만들기
 
 <https://help.github.com/articles/using-jekyll-with-pages/>
+<!--more-->
 
 ## 미리 준비하기
 

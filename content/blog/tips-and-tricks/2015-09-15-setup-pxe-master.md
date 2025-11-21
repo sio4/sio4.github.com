@@ -7,6 +7,7 @@ date: 2015-09-15 09:27:20+09:00
 PXE는 Preboot Execution Environment를 줄인 용어로, 서버 등의 IT 장비가
 "본격적으로 부팅하기 전에 미리 실행되는 환경"이라고 풀이할 수 있다. 이
 글은, 이런 PXE 부팅을 위한 Master 환경을 구성하는 과정의 이야기이다.
+<!--more-->
 
 요즘 OpenStack을 이용한 Cloud Computing 환경을 구성하는 일을 진행하고
 있는데, 신규 Hardware에 OS Image를 설치하는 과정에서 PXE를 사용한다고

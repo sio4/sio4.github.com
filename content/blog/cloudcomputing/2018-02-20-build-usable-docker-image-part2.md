@@ -14,6 +14,8 @@ Alpine Linux를 활용하여 C Library를 포함한 "운영체계급" 기반 Ima
 Go 언어 개발환경을 위한 Docker Image를 만들고 그것을 Registry에 등록하는
 과정을 정리한다.
 
+<!--more-->
+
 
 > Docker에 대한 이 묶음글은 아직 몇 개를 쓸지 정하지 못했다. 써보고,...
 

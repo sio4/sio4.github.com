@@ -10,6 +10,7 @@ last_modified_at: 2010-07-02T13:53:48+09:00
 ---
 그 날이 6월 2일이었나 보다. :-) 그렇게 5개월이, 거의 반년이 지나가 버린
 후의 기록을 남긴다. 어~엄청 '후'의 '기'록이지만... 좀 웃기긴 하네.
+<!--more-->
 
 바캠프서울2 페이지 : [BarCamp/BarCampSeoul2](http://barcamp.org/BarCampSeoul2)
 

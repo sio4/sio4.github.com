@@ -8,7 +8,7 @@ date: Tue, 26 Jan 2016 14:11:55 +0900
 미루고 먼저 써 내려가고 있는 이 글은, Bundler가 Ruby 세계에 제공하는
 것과 유사한 기능을 Python 세계에 제공해주는 `virtualenv`와 `pyvenv`로
 줄여 부르는 Python Virtual Environments에 대한 이야기이다.
-
+<!--more-->
 [Bundler]는 Ruby 언어로 작성된 개별 프로젝트의 패키지 의존성을 Gemfile에
 기술하여 독립적으로 관리/보존함으로써, 개발자와 운영자에게 아래와 같은
 (구식 개발자가 느끼기에) 엄청난 혜택을 주는 도구이다.

@@ -13,6 +13,7 @@ date: 2017-10-11T22:00:00+09:00
 진행할 수 있는 플랫폼을 찾던 중 발견한 공개 소프트웨어 중 하나가 오늘
 소개하려 하는 [Graylog]이다. 이 글에서는, Graylog를 간단히 소개하고,
 그 설치 방법을 정리한다.
+<!--more-->
 
 ![](/attachments/graylog2/graylog-logo.png)
 

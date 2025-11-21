@@ -7,6 +7,7 @@ date: 2007-05-25T09:47:47+09:00
 last_modified_at: 2008-03-09T01:47:17+09:00
 ---
 전산 환경에 대한 재미있는 글이 나왔다.  
+<!--more-->
   
 [The top 10 dead (or dying) computer skills](http://www.computerworld.com/action/article.do?command=printArticleBasic&articleId=9020942)
 

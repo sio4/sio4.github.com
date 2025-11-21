@@ -10,6 +10,7 @@ GitHub에서 새로운 서비스를 시작하는데, 일자리 찾기란다. 프
 위한 소셜 네트워크 서비스의 진화... 결국 SN은 일자리와 연결되는...
 그런데, GitHub의 그것이 일반적인 인맥, Networking Service의 느낌과는
 다른 것이, 이건 좀... 올 누드가 아닌가? ... :-)
+<!--more-->
 
 [Looking for a Job? Let GitHub Help - GitHub](http://github.com/blog/553-looking-for-a-job-let-github-help)
 

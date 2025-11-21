@@ -15,6 +15,8 @@ UART는 내가 실무에서 관리했던 서비스들의 서비스 중심 모니
 이 글에서는 UART를 개발하게 된 배경과 용도, 그리고 기능에 대하여 간략하게
 소개한다.
 
+<!--more-->
+
 * Project Page: [UART, OAuth2/SSO Provider]
 * Source Repository: [UART on Github]
 

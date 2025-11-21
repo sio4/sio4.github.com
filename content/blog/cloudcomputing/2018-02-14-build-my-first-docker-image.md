@@ -16,6 +16,8 @@ Container와, 이것이 본으로 삼는, 저장소에서 잠을 자는 Image가
 이 글은, Container의 본이 되는 Image를 만들고 저장하는 방식에 대하여
 정리한다.
 
+<!--more-->
+
 
 
 ## Docker Image와 Registry

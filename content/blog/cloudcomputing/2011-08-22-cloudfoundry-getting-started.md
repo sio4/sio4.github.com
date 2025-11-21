@@ -12,6 +12,8 @@ CloudFoundry 맛보기. 이 정도로 사실, 맛을 볼 수는 없겠으나 일
 부족으로 Getting Started Guide를 따라해보는 수준으로 정리, 간만에 신세계
 구경도 하고 짧게 나마 포스팅도 한다.
 
+<!--more-->
+
 먼저, <http://www.cloudfoundry.com> 에서 계정 신청을 해야하는데, 몇일 전에
 CloudFoundry와 Ubuntu와의 뭔가 끈끈한 관계에 대한 글을 읽고 자극을 받아서
 한 번 신청해봤는데, 오늘 메일함을 보니 계정 생성 메일이 와있었다.

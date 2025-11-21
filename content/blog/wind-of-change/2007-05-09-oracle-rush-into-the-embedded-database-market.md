@@ -8,6 +8,7 @@ last_modified_at: 2010-07-02T13:28:46+09:00
 ---
 메이져리그 데이터베이스 전문업체인 오라클이 임베디드 소프트웨어 사업을
 강화한다는 기사가 나왔다.
+<!--more-->
 
 [ZDNet Korea...오라클, 임베디드 SW 사업 강화](http://www.zdnet.co.kr/news/spotnews/enterprise/etc/0,39040034,39157411,00.htm)
 

@@ -12,7 +12,7 @@ date: 2018-10-02T16:30:00+0900
 대해 정리하려고 한다. 내용은 CockroachDB Cluster의 구성에 초점을 맞추고
 있지만, 여기서 다루는 개념과 방법은 소프트웨어의 원격 설치, 자동화된
 배치를 준비함에 있어서 공통적으로 참고하거나 적용할 수 있을 것이다.
-
+<!--more-->
 
 ![](/assets/images/common/shell-on-the-beach.jpg "(c) Karunakar Rayker, https://www.flickr.com/photos/krayker/2117746551")
 

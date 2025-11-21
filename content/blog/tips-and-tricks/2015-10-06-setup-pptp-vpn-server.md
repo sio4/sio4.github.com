@@ -7,6 +7,7 @@ image: /attachments/20151006-pptp-vpn-005.png
 리눅스 서버를 이용하여 간단하게 VPN 환경을 구성할 수 있는 방법 중 하나가
 GRE Tunneling 방식의 PPTP를 이용한 VPN 구성이다. 이 글은 PPTP를 이용하여
 원격지의 망과 내 PC를 연결하는 방법에 대한 간단한 소개이다.
+<!--more-->
 
 **VPN은 Virtual Private Network의 줄인 말**인데, 요즘 가뜩이나 가상화에
 대한 용어가 많아서 "이것도 요즘 유행하는 그런 거야?" 하는 생각이 들 수도

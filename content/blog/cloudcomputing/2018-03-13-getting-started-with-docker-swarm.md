@@ -13,7 +13,7 @@ Docker Machine에 대해 살펴봤다. Docker Machine은 그 초점이 기계를
 도구라면, 오늘의 주제인 **Docker Swarm은 여러 대의 Docker Host 들을 엮어서
 마치 하나인 것처럼 다룰 수 있게 해주는 Clustering 도구, 또는 유식한 말로
 Orchestration 도구**이다.
-
+<!--more-->
 ![](/assets/logos/docker-swarm-detail.png)
 
 지나치게 빠른 속도로 변해가는 정보기술 분야가, 심지어 영어권을 중심으로

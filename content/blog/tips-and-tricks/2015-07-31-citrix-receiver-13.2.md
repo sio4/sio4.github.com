@@ -10,6 +10,7 @@ date: 2015-07-31 00:20:27+09:00
 회사 VDI 접속을 위한 Citrix Receiver도 다시 설치했다. 지난번에
 비해 많은 변화가 있었는데, Google Chrome App 버전도 있고 리눅스
 버전에도 꽤 변화가 있었나보다.  그 내용을 정리한다.
+<!--more-->
 ![](/attachments/2015-07-31-citrix-receiver.png)
 
 ## 세옹지마

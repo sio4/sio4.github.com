@@ -7,6 +7,7 @@ date: 2015-08-11 04:14:32+09:00
 ---
 나의 "생각저장소"를 이곳 [Github Pages](https://pages.github.com/)로 옮긴 이후, 몇 개의 더 글을 쓰면서 본격적으로 [Jekyll](http://jekyllrb.com/), [Markdown](http://daringfireball.net/projects/markdown/), 그리고 [Liquid](http://liquidmarkup.org/) 이용한 정적 블로깅을 조금 더 경험해 봤다.  
 그 후 쓰게 된 이 글은, Jekyll의 성능에 대한 이야기이다.
+<!--more-->
 
 ## 성능에 관심을 갖다
 

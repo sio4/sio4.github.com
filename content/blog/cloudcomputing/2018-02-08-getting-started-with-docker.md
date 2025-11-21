@@ -14,6 +14,8 @@ last_modified_at: 2018-03-09T13:16:00+0900
 대하여 대충 정리하고, 다음 글에서는 Ubuntu 환경에서 [Docker]를 설치하여 맛을
 보는 과정을 짧게 정리하려고 한다.
 
+<!--more-->
+
 ![](/assets/logos/docker-horizontal.800.png)
 
 지구의 Computing 환경은 가상화의 시대를 지나 그것을 기반으로 한 IaaS 중심의

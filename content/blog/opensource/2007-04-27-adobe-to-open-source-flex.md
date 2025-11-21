@@ -10,6 +10,7 @@ last_modified_at: 2008-03-09T02:25:13+09:00
 하나의 친구가 반갑기도 하고 점점 번저가는 이런 움직임이 놀랍기도 하고...
 
 [Flex:Open Source - Adobe Labs](http://labs.adobe.com/wiki/index.php/Flex:Open_Source)
+<!--more-->
 
 > Adobe is announcing plans to open source Flex under the Mozilla Public License (MPL). This includes not only the source to the ActionScript components from the Flex SDK, which have been available in source code form with the SDK since Flex 2 was released, but also includes the Java source code for the ActionScript and MXML compilers, the ActionScript debugger and the core ActionScript libraries from the SDK. The Flex SDK includes all of the components needed to create Flex applications that run in any browser - on Mac OS X, Windows, and Linux and on now on the desktop using “Apollo”.
 

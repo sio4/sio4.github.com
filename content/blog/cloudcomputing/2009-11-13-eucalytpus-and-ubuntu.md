@@ -12,6 +12,8 @@ last_modified_at: 2011-03-04T13:49:01+09:00
 유칼립투스는 제공하는 기능의 제한으로 인하여 사용을 보류하고 있지만, 분명
 의미있는 솔루션 중 하나. 지켜볼 것.
 
+<!--more-->
+
 [Maybe Ubuntu Enterprise Cloud Makes Cloud Computing Too Easy](http://devcentral.f5.com/weblogs/macvittie/archive/2009/11/03/maybe-ubuntu-enterprise-cloud-makes-cloud-computing-too-easy.aspx)
 
 > The latest version of Ubuntu Server (9.10) includes the Ubuntu Enterprise Cloud (UEC), which is actually powered by Eucalyptus. The ability to deploy a “cloud” on any server running Ubuntu is really quite amazing, especially given the compatibility of Eucalyptus with Amazon and the plethora of application images available for nearly immediate deployment. It supports both a public and private option, and a hybrid model, and comes replete with management tools designed to make building, deploying, and managing your own personal, private cloud a breeze.

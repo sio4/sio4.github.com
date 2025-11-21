@@ -7,6 +7,7 @@ date: 2007-05-07T14:18:06+09:00
 last_modified_at: 2008-03-09T02:14:21+09:00
 ---
 오라... 대세는 역시 오픈소스?
+<!--more-->
 
 [Comcast picks Zimbra for online e-mail \| CNET News.com](http://news.com.com/2100-1032_3-6181737.html?part=rss&tag=2547-1_3-0-20&subj=news)
 

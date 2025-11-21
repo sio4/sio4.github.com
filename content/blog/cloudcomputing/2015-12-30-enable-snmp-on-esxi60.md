@@ -12,6 +12,8 @@ date: Wed, 30 Dec 2015 13:20:15 +0900
 등의 과정만을 다루고 있다. (SNMP 동작 확인을 위한 정도의 Client의 간략한
 설정을 함께 포함하고 있다.)
 
+<!--more-->
+
 ## vSphere ESXi와 SNMP
 
 SNMP(Simple Network Management Protocol)은 그 이름에서 유추할 수 있듯이,

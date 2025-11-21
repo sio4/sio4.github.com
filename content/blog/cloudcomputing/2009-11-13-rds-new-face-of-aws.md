@@ -10,6 +10,8 @@ EC2, S3 등을 시작으로 계속해서 새로운 서비스를 발표하면서 
 산업을 선도해오고 있는 Amazon이 이번엔 Relational Database 를 역시
 "서비스로써" 선보였다. 깜짝 깜짝... 재미있고, 은근히 시샘도 나고... 그렇다.
 
+<!--more-->
+
 [Amazon Relational Database Service (Amazon RDS)](http://aws.amazon.com/rds/)
 
 > Amazon Relational Database Service (Amazon RDS) is a web service that makes it easy to set up, operate, and scale a relational database in the cloud. It provides cost-efficient and resizable capacity while managing time-consuming database administration tasks, freeing you up to focus on your applications and business.

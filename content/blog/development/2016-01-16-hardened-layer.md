@@ -8,7 +8,7 @@ date: Sat, 16 Jan 2016 02:55:00 +0900
 ---
 SoftLayer API에 대하여 파악하고 그 한계나 사용 가능성 등에 대하여 검증하기
 위한 목적으로 작은 프로젝트 하나를 진행해 봤다.  이름하여, Hardened Layer.
-
+<!--more-->
 내 목적에 맞춰 Custom Portal을 작성하면서, 그 쓸모에 따라 **SoftLayer를 좀
 더 보강한다는 의미로 "Hardened Layer"**라는 이름을 붙여봤지만 현재는 단순한
 자원 Browsing 기능을 중심으로 하고 있어서 전혀 Hardening을 한 것은 없다.

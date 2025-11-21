@@ -14,6 +14,8 @@ last_modified_at: 2018-03-09T13:16:00+0900
 그것을 Docker Registry에 등록하는 과정에 대하여 기록하려고 한다. 이 글에는
 그 과정 중, Alpine Linux를 기반으로 Docker Image를 만드는 과정을 담았다.
 
+<!--more-->
+
 > Docker에 대한 이 묶음글은 아직 몇 개를 쓸지 정하지 못했다. 써보고,...
 
 * [Docker: Getting Started with Docker]

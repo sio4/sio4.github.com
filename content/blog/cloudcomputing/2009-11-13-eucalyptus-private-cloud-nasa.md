@@ -8,6 +8,8 @@ last_modified_at: 2011-03-04T13:45:48+09:00
 ---
 Eucalyptus에 관한 이야기 몇 개 더.
 
+<!--more-->
+
 [BigDataMatters.com: Private Data Cloud: 'Do It Yourself' with Eucalyptus](http://bigdatamatters.com/bigdatamatters/2009/09/private-cloud-eucalyptus.html)
 
 > Eucalyptus enables the creation of Private Clouds that can interface with Amazon Web Services API, which they view as the de-facto standard. The Enterprise edition, first released in September 2009, is fully compatible with Amazon EC2 and S3, whereas the open-source version supports almost all functions of EC2 and a limited set of S3. Enterprises can create hybrid Clouds with data and virtual machine images that can be seamlessly accessed from Eucalyptus clouds and Amazon's Elastic Compute Cloud and Simple Storage Service.

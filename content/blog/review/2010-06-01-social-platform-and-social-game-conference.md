@@ -12,6 +12,7 @@ last_modified_at: 2011-03-04T13:42:28+09:00
 관심있었던 내용이기도 하여... 좀 먼 곳이었지만 달려가 보았다.
 ([blog post](http://2ndfinger.com/1073),
 [registration](http://www.onoffmix.com/e/2ndfinger/1538))
+<!--more-->
 
 320자리가 마련된 이날의 컨퍼런스는 일찌감치 사전 등록이 마감되었고 대기자 수가
 200여명이나 되었다. 행사 장소가 상당히 외진 곳인데다가 대형 컨퍼런스처럼 각종

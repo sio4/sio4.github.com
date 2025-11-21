@@ -11,7 +11,7 @@ Console App의 방향을 다시 명확하게 잡고, 이 과정에서 Semantic U
 적용하여 보다 보기 좋게 만드는 과정을 기록하였다. 또한, 시각적인 데이터
 표현에 대하여 고민하여, 내 비용이 주로 어느 자원에 의하여 나가고 있는지
 직관적으로 확인할 수 있도록 Billing 자료에 시각화를 적용해 보았다.
-
+<!--more-->
 Hardened Layer Console: Dashboard
 
 ![.dropshadow](/attachments/20160121-hl-v1-dashboard.png)

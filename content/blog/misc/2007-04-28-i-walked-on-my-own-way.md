@@ -7,6 +7,7 @@ date: 2007-04-28T19:52:26+09:00
 last_modified_at: 2008-04-27T19:08:44+09:00
 ---
 단지 기록. 시간 내어 읽어볼 것
+<!--more-->
 
 [나는 내 식대로 살아왔다](http://sebul.com.ne.kr/myway/0.html)   
 

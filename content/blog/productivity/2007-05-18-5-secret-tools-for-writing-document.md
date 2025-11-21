@@ -8,6 +8,7 @@ last_modified_at: 2010-07-02T15:48:28+09:00
 ---
 현재 안랩코코넛의 대표이사이시며 IBM, 안철수연구소 등에서 22년간 IT 산업에
 종사하셨다는 이정규님의 글.
+<!--more-->
 
 [ZDNet Korea...문서작성의 5가지 口訣](http://www.zdnet.co.kr/itbiz/column/opinion/0,39033676,39157651,00.htm)
 
