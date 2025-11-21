@@ -15,6 +15,7 @@ UART was developed to succeed my old SiSO project, the original SSO service
 for Hyeoncheon Project. (which was developed with Ruby on Rails framework
 with well known Devise, OmniAuth and other open source components.)
 
+<!--more-->
 
 # It's UART
 

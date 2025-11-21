@@ -329,6 +329,12 @@ div.barchart {
 	}
 }
 
+.panel-group .panel,
+.panel-group .panel .list-group-item
+{
+  background-color: $background-body;
+}
+
 
 // --- for printing ----------------------------------------------------------
 img {
@@ -689,7 +695,10 @@ ul.post-related {
 }
 @media (prefers-color-scheme: dark) {
 	.pager li a {
+    color: $color-link;
 		background: inherit;
+    margin-top: 5em;
+    padding: 1em 0;
 	}
 }
 

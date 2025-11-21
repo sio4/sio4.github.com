@@ -1,4 +1,4 @@
-baseURL: https://sauruso.com
+baseURL: https://sio4.github.io
 languageCode: ko-kr
 defaultContentLanguage: ko
 title: 소용환의 생각 저장소
@@ -56,21 +56,21 @@ params:
   comments: true
   rss: true
   #disclaimerText: "The opinions expressed herein are my own personal opinions and do not represent my employer’s view in any way."
-
-author:
-  name: Yonghwan SO
-  facebook: yonghwan.so
-  # twitter: scinix
-  github: sio4
-  linkedin: scinix
-  stackoverflow: users/1111002/sio4
-  # youtube: user/username
-  # paypal: username
-  # telegram: username
-  # 500px: username
-  # slack: username
-  # medium: username
-  # strava: userid
+  since: 2007
+  author:
+    name: Yonghwan SO
+    facebook: yonghwan.so
+    # twitter: scinix
+    github: sio4
+    linkedin: scinix
+    stackoverflow: users/1111002/sio4
+    # youtube: user/username
+    # paypal: username
+    # telegram: username
+    # 500px: username
+    # slack: username
+    # medium: username
+    # strava: userid
 
 menu:
   main:

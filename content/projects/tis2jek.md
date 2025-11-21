@@ -14,6 +14,8 @@ based blogging system like [Github Pages](https://pages.github.com/).
 
 * Github Project: <https://github.com/sio4/tistojek/>
 
+<!--more-->
+
 It takes Tistory's backup XML file as the one and only argument,
 then exports all posts and its attachments into directory named
 '`_in`' and '`attachments`'. Then you can review and edit posts
