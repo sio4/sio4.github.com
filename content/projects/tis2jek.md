@@ -2,7 +2,6 @@
 title: Tistojek or Tis2Jek
 subtitle: A Blog Converter from Tistory to Jekyll
 repository: https://github.com/sio4/tistojek
-lang: en-US
 comments: true
 social-share: true
 translate: true

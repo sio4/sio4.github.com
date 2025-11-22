@@ -60,7 +60,7 @@ h1, h2, h3, h4, h5, h6 {
 
 article.blog-page,
 article.blog-post {
-ul {
+ul:not(.share) {
 	li {
 		list-style: square;
 	}
@@ -683,7 +683,7 @@ ul.post-related {
 		text-transform: uppercase;
 		font-weight: $font-head-weight;
 		padding: 5px 5px;
-		border: 0; // override bootstrap
+		border: 1px solid transparent; // override bootstrap
 		border-radius: 0;
 		//letter-spacing: 1px;
 	}
@@ -693,12 +693,12 @@ ul.post-related {
 		padding: 5px 5px;
 	}
 }
+// FIXME: ignore dark mode for now
 @media (prefers-color-scheme: dark) {
 	.pager li a {
-    color: $color-link;
+		color: $color-link;
 		background: inherit;
-    margin-top: 5em;
-    padding: 1em 0;
+		margin-top: 5em;
 	}
 }
 
@@ -717,12 +717,14 @@ ul.post-related {
 	}
 }
 
+/*
 .pager li a:focus,
 .pager li a:hover {
 	color: #FFF;
 	background: #0085a1;
 	border: 1px solid #0085a1;
 }
+*/
 
 .pager {
 	margin: 10px 0;
