@@ -1,6 +1,6 @@
 ---
 title: 상업 회사의 오픈소스 기여도
-tags: open-source
+tags: ["open-source"]
 categories: ["opensource"]
 date: 2008-04-21T16:19:26+09:00
 last_modified_at: 2008-04-21T16:19:26+09:00

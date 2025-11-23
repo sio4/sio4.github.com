@@ -3,7 +3,7 @@ redirect_from:
 - /entry/Landscape-Canonical의-새로운-서비스-SaaS-SMS-as-a-Service/
 - /175/
 title: 'Landscape: Canonical의 새로운 "Monitoring as a Service"'
-tags: Canonical Ubuntu monitoring cloud-computing as-a-service
+tags: ["Canonical", "Ubuntu", "monitoring", "cloud-computing", "as-a-service"]
 categories: ["opensource"]
 date: 2008-12-03T01:08:32+09:00
 last_modified_at: 2011-03-04T13:46:36+09:00

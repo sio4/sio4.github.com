@@ -1,7 +1,7 @@
 ---
 title: "Calling All Logs! Graylog2 1편: 설치하기"
 subtitle: 모든 로그를 한 곳에서 관리하고 분석하세요
-tags: Graylog2 logging monitoring cloud-computing setup
+tags: ["Graylog2", "logging", "monitoring", "cloud-computing", "setup"]
 categories: ["sysadmin"]
 repository: https://github.com/hyeoncheon/goul
 image: /attachments/graylog2/graylog-home.png

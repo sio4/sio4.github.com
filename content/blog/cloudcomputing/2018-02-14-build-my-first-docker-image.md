@@ -1,7 +1,7 @@
 ---
 title: "Docker: 나의 첫 Docker Image"
 subtitle: Build and Push my own Docker Image
-tags: Docker Container cloud-computing
+tags: ["Docker", "Container", "cloud-computing"]
 categories: ["cloudcomputing"]
 image: /assets/logos/docker-horizontal.800.png
 banner: /assets/logos/docker-horizontal.800.png

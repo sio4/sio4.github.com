@@ -1,7 +1,7 @@
 ---
 title: GallOrg 1.0.0 released!
 subtitle: Gallery Organizer for Android
-tags: android Gallorg app photo
+tags: ["android", "Gallorg", "app", "photo"]
 date: 2010-10-06T13:12:26+09:00
 repository: https://github.com/sio4/GallOrg
 comments: true

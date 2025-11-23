@@ -1,7 +1,7 @@
 ---
 redirect_from: /blog/2015/07/31/citrix-receiver-13.2/
 title: Citrix Receiver 13.2 for Chrome/Firefox
-tags: Chrome Citrix VDI Firefox
+tags: ["Chrome", "Citrix", "VDI", "Firefox"]
 categories: ["tips-and-tricks"]
 image: /attachments/2015-07-31-icaclient-ff-w.png
 date: 2015-07-31 00:20:27+09:00

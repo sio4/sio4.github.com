@@ -3,7 +3,7 @@ redirect_from:
 - /entry/kanban-system-for-software-development/
 - /191/
 title: 간판 시스템을 소프트웨어 개발에
-tags: Kanban Toyota agile project
+tags: ["Kanban", "Toyota", "agile", "project"]
 categories: ["productivity"]
 date: 2009-08-23T02:37:00+09:00
 last_modified_at: 2011-03-04T13:42:58+09:00

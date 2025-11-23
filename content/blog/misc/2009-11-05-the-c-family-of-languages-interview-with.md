@@ -1,6 +1,6 @@
 ---
 title: "The C Family of Languages: Interview with..."
-tags: c-language
+tags: ["c-language"]
 categories: ["misc"]
 date: 2009-11-05T02:07:59+09:00
 last_modified_at: 2009-11-05T02:07:59+09:00

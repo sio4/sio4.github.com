@@ -1,7 +1,7 @@
 ---
 redirect_from: /entry/읽어볼-것-나는-내-식대로-살아왔다/
 title: '읽어볼 것: "나는 내 식대로 살아왔다"'
-tags: readings
+tags: ["readings"]
 categories: ["misc"]
 date: 2007-04-28T19:52:26+09:00
 last_modified_at: 2008-04-27T19:08:44+09:00

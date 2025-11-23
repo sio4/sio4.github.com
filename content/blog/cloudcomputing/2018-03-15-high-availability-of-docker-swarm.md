@@ -1,7 +1,7 @@
 ---
 title: Docker Swarm의 고가용성
 subtitle: 서비스 가용성을 보장하기 위한 Swarm 클러스터 구성 방법
-tags: Docker orchestration high-availability Container cloud-computing
+tags: ["Docker", "orchestration", "high-availability", "Container", "cloud-computing"]
 categories: ["cloudcomputing"]
 image: /attachments/docker/docker-swarm-ha.png
 banner: /attachments/docker/docker-swarm-ha.png

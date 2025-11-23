@@ -1,7 +1,7 @@
 ---
 redirect_from: /blog/2015/07/24/migration-from-tistory/
 title: 블로그, Tistory로부터 Github Pages로 이주
-tags: blogging Github emberjs semantic-ui Markdown
+tags: ["blogging", "Github", "emberjs", "semantic-ui", "Markdown"]
 categories: ["productivity"]
 image: /attachments/2015-07-24-migration-from-tistory.jpg
 date: 2015-07-24 12:23:21+09:00

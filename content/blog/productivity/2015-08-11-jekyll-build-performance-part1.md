@@ -1,6 +1,6 @@
 ---
 title: Jekyll Build Performance - Part I
-tags: Jekyll Liquid performance blogging Github-Pages
+tags: ["Jekyll", "Liquid", "performance", "blogging", "Github-Pages"]
 categories: ["productivity"]
 image: /attachments/20150811-jekyll-perf-1.png
 date: 2015-08-11 04:14:32+09:00

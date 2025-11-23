@@ -1,7 +1,7 @@
 ---
 redirect_from: /entry/oracle-rush-into-the-embedded-database-market/
 title: 오픈소스, 임베디드, 그리고 메이져리그
-tags: berkeley-db wind-of-change Oracle open-source embedded news
+tags: ["berkeley-db", "wind-of-change", "Oracle", "open-source", "embedded", "news"]
 categories: ["wind-of-change"]
 date: 2007-05-09T10:36:34+09:00
 last_modified_at: 2010-07-02T13:28:46+09:00

@@ -1,7 +1,7 @@
 ---
 title: "UART, Semi-Social OAuth2 Provider"
 subtitle: 현천 프로젝트를 위한 OAuth2 제공자 UART를 소개합니다
-tags: UART OAuth2 authentication single-sign-on cloud-computing golang
+tags: ["UART", "OAuth2", "authentication", "single-sign-on", "cloud-computing", "golang"]
 categories: ["cloudcomputing"]
 image: /attachments/uart/uart-uart-position.png
 banner: /attachments/uart/uart-uart-position.png

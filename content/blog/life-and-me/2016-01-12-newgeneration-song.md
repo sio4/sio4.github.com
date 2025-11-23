@@ -1,6 +1,6 @@
 ---
 title: 새세대 청춘송가
-tags: life memories democracy video music
+tags: ["life", "memories", "democracy", "video", "music"]
 categories: ["life-and-me"]
 date: Tue, 12 Jan 2016 10:36:09 +0900
 ---

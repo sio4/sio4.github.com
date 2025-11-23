@@ -1,7 +1,7 @@
 ---
 redirect_from: /entry/오픈소스-사람들/
 title: 자유소프트웨어를 만드는 사람들은 뭘 먹고 살아요?
-tags: developer open-source
+tags: ["developer", "open-source"]
 categories: ["opensource"]
 date: 2007-05-09T10:23:11+09:00
 last_modified_at: 2008-03-09T02:09:17+09:00

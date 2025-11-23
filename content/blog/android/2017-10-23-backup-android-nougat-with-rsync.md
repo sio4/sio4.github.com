@@ -1,7 +1,7 @@
 ---
 title: Android Nougat, Rsync Backup 하기
 subtitle: Rsync로 Wifi 넘어 Android 데이터 백업하기
-tags: android backup rsync galaxy-s Ubuntu memory-card
+tags: ["android", "backup", "rsync", "galaxy-s", "Ubuntu", "memory-card"]
 categories: ["android"]
 image: /attachments/android/sshelper-01-setup-short.png
 banner: /attachments/android/sshelper-01-setup-short.png

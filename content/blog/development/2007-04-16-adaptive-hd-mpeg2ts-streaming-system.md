@@ -1,7 +1,7 @@
 ---
 redirect_from: /entry/adaptive-high-definition-mpeg-2-ts-streaming-system-using-frame-based-prioritized-packetization-over-ieee-80211a-wlan/
 title: Adaptive HD MPEG-2 TS Streaming System
-tags: MPEG multimedia adaptive streaming
+tags: ["MPEG", "multimedia", "adaptive", "streaming"]
 categories: ["development"]
 date: 2007-04-16T14:47:00+09:00
 last_modified_at: 2010-06-30T17:18:26+09:00

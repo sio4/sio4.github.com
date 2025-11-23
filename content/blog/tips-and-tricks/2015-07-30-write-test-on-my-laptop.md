@@ -1,7 +1,7 @@
 ---
 redirect_from: /blog/2015/07/30/write-test-on-my-laptop/
 title: 처참한 디스크 쓰기 성능 시험
-tags: disk recovery performance test TestDisk Ubuntu
+tags: ["disk", "recovery", "performance", "test", "TestDisk", "Ubuntu"]
 categories: ["tips-and-tricks"]
 image: /attachments/2015-07-30-testdisk.png
 date: 2015-07-30 22:49:34+09:00

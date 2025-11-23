@@ -1,7 +1,7 @@
 ---
 redirect_from: /entry/인터넷뱅킹-보안-ActiveX/
 title: 인터넷뱅킹? 보안? ActiveX?
-tags: ActiveX security
+tags: ["ActiveX", "security"]
 categories: ["misc"]
 date: 2009-03-31T11:09:52+09:00
 last_modified_at: 2009-03-31T11:10:00+09:00

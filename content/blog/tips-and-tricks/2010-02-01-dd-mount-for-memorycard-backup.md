@@ -3,7 +3,7 @@ redirect_from:
 - /entry/memorycard-backup-dd-mount/
 - /234/
 title: 메모리카드 백업, dd, mount,...
-tags: disk recovery
+tags: ["disk", "recovery"]
 categories: ["tips-and-tricks"]
 date: 2010-02-01T15:46:39+09:00
 last_modified_at: 2010-07-02T09:43:05+09:00

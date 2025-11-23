@@ -1,7 +1,7 @@
 ---
 title: Vyatta 네트워크 문제 추적 Part 1
 subtitle: 로그, 상태, 패킷 자료를 바탕으로 네트워크 관련 문제 추적하기
-tags: Vyatta packet-analysis troubleshooting network
+tags: ["Vyatta", "packet-analysis", "troubleshooting", "network"]
 categories: ["sysadmin"]
 image: /attachments/vyatta-troubleshooting/vyatta-network-problem-tracking.png
 banner: /attachments/vyatta-troubleshooting/vyatta-network-problem-tracking.png

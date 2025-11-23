@@ -1,7 +1,7 @@
 ---
 redirect_from: /entry/new-cloud-core-of-nasa-nebula/
 title: NASA Nebula Cloud의 아키텍쳐 변경
-tags: cloud-computing Eucalyptus NASA OpenStack rules-of-action
+tags: ["cloud-computing", "Eucalyptus", "NASA", "OpenStack", "rules-of-action"]
 categories: ["cloudcomputing"]
 date: 2011-03-04T13:14:52+09:00
 last_modified_at: 2011-03-04T13:14:52+09:00

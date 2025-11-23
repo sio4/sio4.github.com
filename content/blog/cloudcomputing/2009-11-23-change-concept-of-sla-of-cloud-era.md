@@ -1,7 +1,7 @@
 ---
 redirect_from: /entry/%25ED%2581%25B4%25EB%259D%25BC%25EC%259A%25B0%25EB%2593%259C-%25EC%25BB%25B4%25ED%2593%25A8%25ED%258C%2585%25EC%259D%2598-SLA-%25EA%25B0%259C%25EB%2585%2590%25EC%259D%2598-%25EC%25A0%2584%25ED%2599%2598/
 title: 클라우드 컴퓨팅의 SLA, 개념의 전환
-tags: SLA cloud-computing
+tags: ["SLA", "cloud-computing"]
 categories: ["cloudcomputing"]
 date: 2009-11-23T14:05:06+09:00
 last_modified_at: 2010-07-09T18:13:27+09:00

@@ -1,7 +1,7 @@
 ---
 redirect_from: /entry/엘림넷-대-하이온넷-사건/
 title: 엘림넷 대 하이온넷 사건
-tags: open-source copyright
+tags: ["open-source", "copyright"]
 categories: ["opensource"]
 date: 2007-06-07T13:27:36+09:00
 last_modified_at: 2008-03-09T01:41:35+09:00

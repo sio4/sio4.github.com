@@ -1,6 +1,6 @@
 ---
 title: "Howto: PPTP VPN 서버 구성하기"
-tags: howto PPTP VPN setup Ubuntu
+tags: ["howto", "PPTP", "VPN", "setup", "Ubuntu"]
 categories: ["tips-and-tricks"]
 image: /attachments/20151006-pptp-vpn-005.png
 ---

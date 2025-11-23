@@ -1,7 +1,7 @@
 ---
 title: "Elastic NMS Part 5: NetFlow 수신하기"
 subtitle: Elastic Stack을 바탕으로 NMS 만들기
-tags: elastic-stack NetFlow monitoring cloud-computing analytics
+tags: ["elastic-stack", "NetFlow", "monitoring", "cloud-computing", "analytics"]
 categories: ["cloudcomputing"]
 image: /attachments/elastic-nms/elk-503-netflow-dashboard.png
 banner: /attachments/elastic-nms/elk-503-netflow-dashboard.png

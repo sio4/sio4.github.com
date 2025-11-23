@@ -1,6 +1,6 @@
 ---
 title: API Service를 위한 Python Web Frameworks 선정
-tags: Python framework API
+tags: ["Python", "framework", "API"]
 categories: ["development"]
 date: 2016-02-24 14:36:29 +0900
 ---
