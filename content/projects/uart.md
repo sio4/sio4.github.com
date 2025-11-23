@@ -3,7 +3,6 @@ title: UART, OAuth2/SSO Provider
 subtitle: Universal Authorizaion, Role and Team
 tags: ["UART", "OAuth2", "single-sign-on", "authentication", "golang"]
 repository: https://github.com/hyeoncheon/uart
-lang: en-US
 comments: true
 social-share: true
 translate: true

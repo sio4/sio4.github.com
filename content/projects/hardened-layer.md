@@ -2,7 +2,6 @@
 title: Hardened Layer
 subtitle: A Sample Project for SoftLayer API Test
 repository: https://github.com/c12g/hardened-layer-rails
-lang: en-US
 comments: true
 social-share: true
 translate: true

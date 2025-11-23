@@ -4,7 +4,7 @@ tags: ["SoftLayer", "object-storage", "cloud-computing", "API", "Ruby", "swift",
 categories: ["development"]
 image: /assets/logos/hardenedlayer.png
 banner: /assets/logos/hardenedlayer-banner.png
-date: 2016-03-31 13:00 +09:00
+date: 2016-03-31 13:00:00 +09:00
 ---
 한 10일 전에 SoftLayer의 Object Storage를 사용하면서 Temp URL을 사용하기
 위한 수정을 더한 Custom 버전에 대하여 기록했었다. 그런데 언제나 급하게

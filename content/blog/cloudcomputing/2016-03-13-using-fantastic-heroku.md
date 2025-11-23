@@ -4,7 +4,7 @@ tags: ["Heroku", "PaaS", "cloud-computing", "Git", "version-control", "ruby-on-r
 categories: ["cloudcomputing"]
 image: /assets/logos/heroku-light.jpg
 banner: /assets/logos/heroku-light.jpg
-date: 2016-03-13 14:55 +09:00
+date: 2016-03-13 14:55:00 +09:00
 ---
 첫인상이 중요한 것은 사람에게만 해당하는 것이 아닌 것 같다. "PaaS" 하면
 가장 먼저 생각나는 Heroku의 첫 인상이 내겐 그랬다.  이 글은, 간만에

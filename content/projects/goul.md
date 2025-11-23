@@ -4,7 +4,6 @@ subtitle: Mirror Your Cloud Network Traffic over the Internet
 tags: ["Goul", "cloud-computing", "network", "monitoring", "security", "golang"]
 repository: https://github.com/hyeoncheon/goul
 image: /attachments/goul/goul-flow-all-client.png
-lang: en-US
 comments: true
 social-share: true
 translate: true
