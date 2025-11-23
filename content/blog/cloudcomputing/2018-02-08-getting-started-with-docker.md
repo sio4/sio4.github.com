@@ -3,8 +3,8 @@ title: "Docker: Getting Started with Docker"
 subtitle: Docker 시작하기
 tags: ["Docker", "Container", "cloud-computing"]
 categories: ["cloudcomputing"]
-image: /assets/logos/docker-horizontal.800.png
-banner: /assets/logos/docker-horizontal.800.png
+image: /logos/docker-horizontal.800.png
+banner: /logos/docker-horizontal.800.png
 date: 2018-02-08T10:00:00+0900
 last_modified_at: 2018-03-09T13:16:00+0900
 ---
@@ -14,7 +14,7 @@ last_modified_at: 2018-03-09T13:16:00+0900
 대하여 대충 정리하고, 다음 글에서는 Ubuntu 환경에서 [Docker]를 설치하여 맛을
 보는 과정을 짧게 정리하려고 한다.
 
-![](/assets/logos/docker-horizontal.800.png)
+![](/logos/docker-horizontal.800.png)
 
 지구의 Computing 환경은 가상화의 시대를 지나 그것을 기반으로 한 IaaS 중심의
 Cloud Computing 시대로의 진화를 끝냈고, 또 하나의 Cloud Computing 접근 방식인

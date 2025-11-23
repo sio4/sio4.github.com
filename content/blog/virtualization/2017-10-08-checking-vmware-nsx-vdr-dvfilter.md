@@ -2,8 +2,8 @@
 title: "VMware NSX: VDR/DVFilter 정보확인"
 tags: ["NSX", "VMware", "virtualization", "network"]
 categories: ["virtualization"]
-image: /assets/logos/vmware-nsx-logo.png
-banner: /assets/logos/vmware-nsx-logo.png
+image: /logos/vmware-nsx-logo.png
+banner: /logos/vmware-nsx-logo.png
 date: 2017-10-08T16:40:00+09:00
 ---
 이 글은 VMware의 네트워크 가상화 기술인 NSX 6.2를 이용한 프로젝트에서
@@ -13,7 +13,7 @@ date: 2017-10-08T16:40:00+09:00
 수 있고, 간단하게 메모로 남겼던 것을 편집한 것이다 보니 이야기의 맥이
 없다. :-(
 
-![](/assets/logos/vmware-nsx-logo.png)
+![](/logos/vmware-nsx-logo.png)
 
 # 개요
 

@@ -2,8 +2,8 @@
 title: 판타스틱 PaaS 서비스, Heroku 사용하기
 tags: ["Heroku", "PaaS", "cloud-computing", "Git", "version-control", "ruby-on-rails"]
 categories: ["cloudcomputing"]
-image: /assets/logos/heroku-light.jpg
-banner: /assets/logos/heroku-light.jpg
+image: /logos/heroku-light.jpg
+banner: /logos/heroku-light.jpg
 date: 2016-03-13 14:55:00 +09:00
 ---
 첫인상이 중요한 것은 사람에게만 해당하는 것이 아닌 것 같다. "PaaS" 하면
@@ -11,7 +11,7 @@ date: 2016-03-13 14:55:00 +09:00
 Heroku에 신규 App을 등록/배포하면서, 그 과정을 정리한 것으로 Heroku를
 사용하기 위한 가장 기본적인 Workflow를 설명하고 있다.
 
-![](/assets/logos/heroku-light.jpg){:.fit.dropshadow}
+![](/logos/heroku-light.jpg){:.fit.dropshadow}
 
 2009년에 [Heroku]를 처음 접했던 느낌을 정확하게 기억하지는 못하겠지만,
 뭐랄까... "아! 이것이야말로 클라우드!?" 같은 생각을 했었던 것 같다.
@@ -969,4 +969,4 @@ Professional로 분류되어 있는 Standard의 가장 저렴한 Plan은 비용�
 
 끝!
 
-![](/assets/logos/heroku-mark.png){:.fit.dropshadow}
+![](/logos/heroku-mark.png){:.fit.dropshadow}

@@ -3,8 +3,8 @@ title: Docker Swarm 다시 보기
 subtitle: Docker의 Label과 관련된 몇 가지 재미있는 기능들
 tags: ["Docker", "orchestration", "Container", "cloud-computing"]
 categories: ["cloudcomputing"]
-image: /assets/images/common/label.jpg
-banner: /assets/images/common/label.jpg
+image: /images/common/label.jpg
+banner: /images/common/label.jpg
 date: 2018-03-15T23:55:00+0900
 ---
 지난 세 편의 Swarm에 대한 글에서 다루지 못했던 몇 가지 중요한 개념과
@@ -59,7 +59,7 @@ date: 2018-03-15T23:55:00+0900
 내가 "라벨"을 좋아한다는 말을 했던가? 했었다. 그리고 "라벨이 아니고
 레이블입니다..."라는 말도 사양한다는 말도 했던 것 같다. 
 
-![](/assets/images/common/label.jpg){:.twothird}
+![](/images/common/label.jpg){:.twothird}
 
 "[Docker Machine 다시 보기 #라벨! 라벨! 라벨!]({% link _posts/cloudcomputing/2018-03-09-little-more-about-docker-machine.md %}#라벨-라벨-라벨)"에서
 Engine을 구성할 때 `--engine-label` 옵션을 사용하면 특정 엔진에게

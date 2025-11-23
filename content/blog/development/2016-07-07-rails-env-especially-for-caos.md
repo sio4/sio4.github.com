@@ -1,7 +1,7 @@
 ---
 title: "CAOS #1 Rails 기반 환경 구성"
-image: /assets/logos/mailgun-status.png
-banner: /assets/logos/mailgun-banner.png
+image: /logos/mailgun-status.png
+banner: /logos/mailgun-banner.png
 tags: ["cloud-computing", "ruby-on-rails", "Mailgun", "my-projects"]
 categories: ["development"]
 date: 2016-07-07 02:51:00 +0900
@@ -337,7 +337,7 @@ Cookie 대신 Active Record를 사용하도록 하고, 세션 유지 시간을
 이런 고민을 하는 개발자나 회사를 위해, Rackspace가 제공하는 클라우드
 시대의 메일발송 서비스가 있는데, 그 이름이 Mailgun이다.
 
-![](/assets/logos/mailgun-home.png){:.fit.dropshadow}
+![](/logos/mailgun-home.png){:.fit.dropshadow}
 
 {:#mailgun-intro}
 ## Mailgun 시작하기
@@ -355,7 +355,7 @@ Mailgun은 표준 SMTP 방식과 전용 API를 사용하는 두 가지 사용 �
 정보 등이 자동으로 또는 사용자의 선택에 의해 만들어지며, 도메인에
 대한 Confirmation 과정을 거쳐 Active 상태가 되면 바로 사용할 수 있다.
 
-![](/assets/logos/mailgun-domain.png){:.fit.dropshadow}
+![](/logos/mailgun-domain.png){:.fit.dropshadow}
 
 구성이 되었으면 시험을 해보자. 아래 예시를 보면,
 
@@ -551,15 +551,15 @@ Completed 302 Found in 6487ms (ActiveRecord: 17.5ms)
 
 이렇게 발송된 메일은, 아래와 같이 발송 로그를 확인할 수도 있고,
 
-![](/assets/logos/mailgun-logs.png){:.fit.dropshadow}
+![](/logos/mailgun-logs.png){:.fit.dropshadow}
 
 발송 통계를 볼 수도 있으며,
 
-![](/assets/logos/mailgun-status.png){:.fit.dropshadow}
+![](/logos/mailgun-status.png){:.fit.dropshadow}
 
 오고 가는 메일의 규모 등을 확인할 수도 있다.
 
-![](/assets/logos/mailgun-tracking.png){:.fit.dropshadow}
+![](/logos/mailgun-tracking.png){:.fit.dropshadow}
 
 
 ---

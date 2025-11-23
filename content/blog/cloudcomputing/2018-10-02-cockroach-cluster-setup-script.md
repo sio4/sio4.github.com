@@ -3,8 +3,8 @@ title: CockroachDB 클러스터 설치 스크립트
 subtitle: ...라지만, 알고보면 쉘스크립트 작성 가이드
 tags: ["howto", "script", "DBMS", "cloud-computing"]
 categories: ["cloudcomputing"]
-image: /assets/images/common/shell-on-the-beach.jpg
-banner: /assets/images/common/shells-on-the-beach.jpg
+image: /images/common/shell-on-the-beach.jpg
+banner: /images/common/shells-on-the-beach.jpg
 date: 2018-10-02T16:30:00+0900
 ---
 이번 글에서는 (특히 클라우드 컴퓨팅 환경에서) 여러 서버에 CockroachDB를
@@ -15,7 +15,7 @@ date: 2018-10-02T16:30:00+0900
 
 
 {: title="(c) Karunakar Rayker, https://www.flickr.com/photos/krayker/2117746551"}
-![](/assets/images/common/shell-on-the-beach.jpg)
+![](/images/common/shell-on-the-beach.jpg)
 
 
 지난 세 편의 글을 통하여, 클라우드 컴퓨팅 환경의 장점에 힘입어 전지구적

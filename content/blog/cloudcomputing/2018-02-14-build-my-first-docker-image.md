@@ -3,8 +3,8 @@ title: "Docker: 나의 첫 Docker Image"
 subtitle: Build and Push my own Docker Image
 tags: ["Docker", "Container", "cloud-computing"]
 categories: ["cloudcomputing"]
-image: /assets/logos/docker-horizontal.800.png
-banner: /assets/logos/docker-horizontal.800.png
+image: /logos/docker-horizontal.800.png
+banner: /logos/docker-horizontal.800.png
 date: 2018-02-14T13:20:00+0900
 last_modified_at: 2018-03-09T13:16:00+0900
 ---

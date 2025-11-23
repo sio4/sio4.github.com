@@ -14,7 +14,7 @@ Docker Machine에 대해 살펴봤다. Docker Machine은 그 초점이 기계를
 마치 하나인 것처럼 다룰 수 있게 해주는 Clustering 도구, 또는 유식한 말로
 Orchestration 도구**이다.
 
-![](/assets/logos/docker-swarm-detail.png){:.centered.half}
+![](/logos/docker-swarm-detail.png){:.centered.half}
 
 지나치게 빠른 속도로 변해가는 정보기술 분야가, 심지어 영어권을 중심으로
 발전하다 보니 만나게 되는 문제 중 하나가 바로 영어로 된 용어 문제다.

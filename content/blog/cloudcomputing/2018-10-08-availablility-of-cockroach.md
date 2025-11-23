@@ -3,8 +3,8 @@ title: CockroachDB 클러스터 가용성 시험
 subtitle: CockroachDB는 가용성 확보를 위해 어떻게 동작하는지?
 tags: ["DBMS", "high-availability", "cloud-computing"]
 categories: ["cloudcomputing"]
-image: /assets/images/common/red-five-standing-by.jpg
-banner: /assets/images/common/red-five-standing-by.jpg
+image: /images/common/red-five-standing-by.jpg
+banner: /images/common/red-five-standing-by.jpg
 date: 2018-10-08T13:00:00+0900
 ---
 CockroachDB는 Range라는 일종의 Sharding 기법을 도입하여 사용자의 데이터를
@@ -332,7 +332,7 @@ Cockroach 가용성의 특징 #5 - Leaseholder 재배치
 
 > Red five standing by!
 
-![](/assets/images/common/red-five-standing-by.jpg){:.dropshadow}
+![](/images/common/red-five-standing-by.jpg){:.dropshadow}
 
 데쓰스타를 공격하기 위해 Red Team을 비롯해서 수 많은 전투기와 폭격기가
 출격했지만, 작전을 성공으로 이끈 건 루크 스카이워커의 포스를 이용한

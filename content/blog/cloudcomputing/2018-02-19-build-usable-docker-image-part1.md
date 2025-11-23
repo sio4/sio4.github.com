@@ -3,8 +3,8 @@ title: "'쓸만한' Docker Image 만들기 - Part 1"
 subtitle: Build an Usable Docker Image with Alpine Linux
 tags: ["Docker", "Container", "cloud-computing", "Alpine"]
 categories: ["cloudcomputing"]
-image: /assets/logos/alpinelinux.org.jpg
-banner: /assets/logos/alpinelinux.org.jpg
+image: /logos/alpinelinux.org.jpg
+banner: /logos/alpinelinux.org.jpg
 date: 2018-02-19T21:00:00+0900
 last_modified_at: 2018-03-09T13:16:00+0900
 ---
@@ -215,7 +215,7 @@ Utility 모음이다. 하나의 Binary 안에 일반적으로 많이 사용되�
 Alpine Linux 홈페이지에는 다음과 같이 설명되어 있다.
 (<https://alpinelinux.org>)
 
-![](/assets/logos/alpinelinux.org.jpg){:.dropshadow.bordered}
+![](/logos/alpinelinux.org.jpg){:.dropshadow.bordered}
 
 > ##### Small. Simple. Secure.
 > Alpine Linux is a security-oriented, lightweight Linux distribution based on musl libc and busybox.
