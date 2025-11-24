@@ -1,6 +1,81 @@
-baseURL: https://example.org/
-languageCode: en-us
-title: My New Hugo Site
-
-# theme configuration
+baseURL: https://sio4.github.io/
+languageCode: ko-kr
+defaultContentLanguage: ko
+title: 소용환의 생각 저장소
 theme: beautifulhugo
+description: >
+  소용환의 경험과 생각을 모아두는 개인의 구름 속 저장소입니다.
+  주로 소프트웨어 개발, 인프라 문제, 클라우드 컴퓨팅에 대한 이야기가 있습니다.
+
+params:
+  subtitle: Free Software, Cloud Computing, and Troubleshooting
+  favicon: /images/favicon.ico
+  logo: /images/sauru-20150806.jpg
+  bigimg:
+    - src: /images/road.jpg
+      desc: Highway 89, Page, AZ
+    - src: /images/han-river-01.jpg
+      desc: Han River, Seoul
+  comments: true
+  delayDisqus: false
+  rss: true
+  socialShare: true
+  showRelatedPosts: true
+  #useHLJS: true
+  since: 2007
+  readingTime: true
+  wordCount: true
+  hideAuthor: true
+  author:
+    name: Yonghwan SO
+    github: sio4
+    stackoverflow: users/1111002/sio4
+    linkedin: scinix
+    facebook: yonghwan.so
+  #disclaimerText: All the opinions here are my own
+
+services:
+  disqus:
+    shortname: sauru
+  googleanalytics:
+    id: G-V850MD4KB5
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true  # enables raw HTMLs
+    parser:
+      attribute:
+        block: true
+        title: true
+      wrapStandAloneImageWithinParagraph: false
+
+# the following two lines are super important to make the permalink the same
+# as before /blog/file-name-without-date-part
+frontmatter:
+  date: [:filename, :default]
+permalinks:
+  blog: /blog/:slug
+timeZone: Asia/Seoul # it is required when the datetime comes from the filename
+
+menus:
+  main:
+    - name: About
+      pageRef: /about
+      weight: 10
+    - name: Projects
+      pageRef: /projects
+      weight: 20
+    - name: Articles
+      pageRef: /
+      weight: 30
+    - name: Categories
+      pageRef: /categories
+      parent: Articles
+      weight: 31
+    - name: Tags
+      pageRef: /tags
+      parent: Articles
+      weight: 32
+    - name: Feeds
+      url: http://feeds.feedburner.com/sauru-so
