@@ -1,0 +1,2 @@
+tearoff: Logging initiated: Errors included; Debug suppressed
+tearoff: error: Calling gimp_image_raise_layer on border layer: error: 레이어를 더 위로 올릴 수 없습니다.
