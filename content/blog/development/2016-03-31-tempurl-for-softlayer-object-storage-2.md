@@ -10,24 +10,24 @@ date: 2016-03-31 13:00:00 +09:00
 위한 수정을 더한 Custom 버전에 대하여 기록했었다. 그런데 언제나 급하게
 간 길은 옳은 길이 아닐 수 있어서 왔던 길을 다시 걸어야 할 때가 있다.
 지금이 그 상황이다.
+<!--more-->
 
-![](/logos/hardenedlayer.png){:.fit.dropshadow}
+![](/logos/hardenedlayer.png)
+{.fit .dropshadow}
 
-{:#review}
-# 다시보기
+# 다시보기 {#review}
 
 간단한 예제 Application을 개발하면서 Object Storage API의 활용성을 검토하던
 중, 나름 중요하게 사용할 수 있는 기능 하나가 동작하지 않는 것을 발견하고
 그것에 대한 API 수정을 하는 과정을 [SoftLayer Object Storage와 임시 URL]에
 담아 두었다.
 
-[SoftLayer Object Storage와 임시 URL]:{% post_url development/2016-03-22-tempurl-for-softlayer-object-storage %}
+[SoftLayer Object Storage와 임시 URL]:{{< relref "/blog/development/2016-03-22-tempurl-for-softlayer-object-storage" >}}
 
 그 내용을 간단히 집고 넘어가면 다음과 같다.
 
 
-{:#temp_url_key-via-connection}
-## Connection 과정에서 TEMP\_URL\_KEY 획득
+## Connection 과정에서 TEMP\_URL\_KEY 획득 {#temp_url_key-via-connection}
 
 Temp URL은 Private하게 저장된 Object를 일반인이 제한된 기간 동안 인증없이
 접근하기 위하여 제공되는, 특별한 Hash를 적용한 URL이다. 이 Hash는 내부적
@@ -119,23 +119,21 @@ end
 
 
 
-{:#oops}
-# 으악!
+# 으악!  {#oops}
 
 RSpec 시험은 잘 통과했던 코드지만 실제로 활용하려고 보니 문제가 심각했다!
 
 
-{:#temp_url_key-without-object-instance}
-## Object를 부르지 않고 Temp URL 얻기
+## Object를 부르지 않고 Temp URL 얻기 {#temp_url_key-without-object-instance}
 
 문제의 시작은 내가 구현했던 방식에서 온다. 앞서 본 바와 같이 이 URL은
 Object에 종속적인 것이기 때문에 자연스럽게 `StorageObject` 클래스에
 구현을 했었다. 사람의 머리로, "Straightforward" 방식으로 구현한 것이다.
 
-{:.point}
 직관적 판단, 직선적 구현!
 : 코드를 읽기 편하게 하기 위해서는 직선적인 구현이 좋다.
 : 그러나, Loop와 연관된 구현을 할 때에도 그럴까?!
+{.point}
 
 
 그런데 다루려는 Object가 많아지다 보니, 수많은 Object를 모두 불러와서
@@ -192,8 +190,7 @@ end
 ```
 
 
-{:#caching-key-value}
-## KEY 값 보존하기
+## KEY 값 보존하기 {#caching-key-value}
 
 이제 Object 인스턴스를 생성하지 않고도, 다시말해서 Object에 대한 수많은 HTTP
 요청을 보내지 않고도 Temp URL의 생성이 가능해졌다. 그런데 여전히 느리다!
@@ -204,8 +201,7 @@ end
 한 줄 써내려 갈 때, 부분을 보고 가정을 하거나 짐작을 하는 것이 얼마나
 위험한 것인지, 그리고 사람의 논리와 구현의 논리는 어떻게 다른 것인지...
 
-{:#current-implementation}
-### 현재의 구현: 내가 뭘 한거지?
+### 현재의 구현: 내가 뭘 한거지?  {#current-implementation}
 
 시작은 아주 간단했다. 이미 존재하는 코드를 보니, 아래와 같이 작성이 되어
 있었고, 내용이 아주 간단하다. 기본적으로 `Connection` 클래스에는
@@ -302,11 +298,11 @@ end
 그 시간이 2초 이상 걸리지 않는다. (처음, 10여 개의 Object의 Temp URL을
 가져오기 위해서 7초 정도가 걸리던 것이, 이제는 보통 1초 안에 끝난다.)
 
-{:.point}
 인터넷 기반 개발, 느린 장치의 고려
 : 다루는 장치가 느리다면 Cache에 대한 고려는 필수이다.
 : 느린 Disk를 위해 Cache와 Buffer가 있듯이,
 : Network 기만 API 역시 Cache에 대한 고려가 필요하다.
+{.point}
 
 
 ### 다른 구현
@@ -362,6 +358,7 @@ end
 [HardenedLayer]:https://github.com/hardenedlayer
 [HardenedLayer/softlayer-object-storage-ruby]:https://github.com/hardenedlayer/softlayer-object-storage-ruby
 
-![](/logos/hardenedlayer.png){:.fit.dropshadow}
+![](/logos/hardenedlayer.png)
+{.fit .dropshadow}
 
 

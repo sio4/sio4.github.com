@@ -12,6 +12,7 @@ date: 2017-10-28T00:04:00+0900
 반영하기에는 조금 저수준에서 접근할 필요가 있겠다는 생각이 들었다. 그래서
 그 기반으로 사용할 후보로 검토했던 것이, 이미 많은 프로젝트에서 Backend로
 사용되고 있는, 유명한 데이터 분석도구 Elastic Stack 이었다.
+<!--more-->
 
 Elastic Stack을 검토했던 것도 Graylog2와 마찬가지로 1년 전의 일이었다. 이미
 Elastic Stack은 5.x 버전을 새로 발표한 상태이며, 새 버전은 꽤 많은 변화와
@@ -40,9 +41,6 @@ Elastic Stack은 5.x 버전을 새로 발표한 상태이며, 새 버전은 꽤 
 
 
 # Architecture
-
-* TOC
-{:toc .half.pull-right}
 
 Elastic Stack은 과거에 ELK Stack이라고 불리던 바로 그것이다. 이미 공식적으로
 이름을 붙인지 꽤 많은 시간이 지났지만, 많은 사람들이 과거의 별명을 계속해서
@@ -242,7 +240,8 @@ $
 
 올렸으니 바로 접속을 해보자.
 
-![SHOT](/attachments/elastic-nms/elk-kibana-01-initializing.jpg){:.bordered}
+![SHOT](/attachments/elastic-nms/elk-kibana-01-initializing.jpg)
+{.bordered}
 
 Kibana는 첫번째 사용자가 접속할 때, 위와 같이 Initialize 과정을 거친다.
 조금 당황스러운 것은, 이게, 기본적으로는 인증이라는 절차가 없다.
@@ -253,7 +252,8 @@ Kibana는 첫번째 사용자가 접속할 때, 위와 같이 Initialize 과정�
 아무튼, 초기화가 되면 다음과 같이, Index 정보가 없으니 만들라는 화면으로
 넘어간다.
 
-![SHOT](/attachments/elastic-nms/elk-kibana-02-no-index.jpg){:.bordered}
+![SHOT](/attachments/elastic-nms/elk-kibana-02-no-index.jpg)
+{.bordered}
 
 그러나 우리는 아직 Index를 가지고 있지 않다. Index는 일종의 Database, 또는
 Oracle의 Schema, 뭐 그런 비슷한 개념인데, 연관된 문서를 담는 큰 그릇이라
@@ -371,23 +371,27 @@ $
 것이다. 이번에는 앞선 화면에서 비활성 상태였던 "Create" 버튼이 녹색으로
 활성화되어 보인다!
 
-![SHOT](/attachments/elastic-nms/elk-101-configure-an-index.jpg){:.bordered}
+![SHOT](/attachments/elastic-nms/elk-101-configure-an-index.jpg)
+{.bordered}
 
 위의 화면에서 Create 버튼을 눌러 Index 정보를 생성해주면, 아래의 화면으로
 넘어가게 된다. 이 화면은, 사용자가 지정한 Index에 담겨있는 데이터의 형과
 형식, 분석여부와 색인여부를 표시하고 있다.
 
-![SHOT](/attachments/elastic-nms/elk-102-default-index.jpg){:.bordered}
+![SHOT](/attachments/elastic-nms/elk-102-default-index.jpg)
+{.bordered}
 
 이제 화면 상단의 Discover 메뉴를 선택하여 실제의 데이터를 본다. 아래와 같이
 이미 많은 데이터가 쌓여 있는 것을 볼 수 있다. (ES와 LS의 기동 로그겠지)
 
-![SHOT](/attachments/elastic-nms/elk-103-discover.jpg){:.bordered}
+![SHOT](/attachments/elastic-nms/elk-103-discover.jpg)
+{.bordered}
 
 둘러보는 김에 각 열의 왼쪽에 붙어있는 세모를 눌러 상세 정보를 표시해보면,
 아래 그림에서 보는 것과 같이 자세한 내용을 확인할 수 있다.
 
-![SHOT](/attachments/elastic-nms/elk-104-file-fields.jpg){:.bordered}
+![SHOT](/attachments/elastic-nms/elk-104-file-fields.jpg)
+{.bordered}
 
 좋았어! 일단 설치는 잘 된 것 같다!
 
@@ -401,11 +405,11 @@ $
 * [Elastic NMS Part 5: NetFlow 수신하기]
 * [Elastic NMS Part 6: SNMP 수신하기]
 
-[Elastic NMS Part 2: Syslog 원격로깅]:{% link _posts/cloudcomputing/2017-10-30-elastic-nms-part2-syslog-remote-logging.md %}
-[Elastic NMS Part 3: Mapping과 Template]:{% link _posts/cloudcomputing/2017-10-30-elastic-nms-part3-mapping-and-template.md %}
-[Elastic NMS Part 4: Kibana로 Visualize하기]:{% link _posts/cloudcomputing/2017-10-30-elastic-nms-part4-visualize-with-kibana.md %}
-[Elastic NMS Part 5: NetFlow 수신하기]:{% link _posts/cloudcomputing/2017-10-31-elastic-nms-part5-netflow-monitoring.md %}
-[Elastic NMS Part 6: SNMP 수신하기]:{% link _posts/cloudcomputing/2017-10-31-elastic-nms-part6-snmp-monitoring.md %}
+[Elastic NMS Part 2: Syslog 원격로깅]:{{< relref "/blog/cloudcomputing/2017-10-30-elastic-nms-part2-syslog-remote-logging.md" >}}
+[Elastic NMS Part 3: Mapping과 Template]:{{< relref "/blog/cloudcomputing/2017-10-30-elastic-nms-part3-mapping-and-template.md" >}}
+[Elastic NMS Part 4: Kibana로 Visualize하기]:{{< relref "/blog/cloudcomputing/2017-10-30-elastic-nms-part4-visualize-with-kibana.md" >}}
+[Elastic NMS Part 5: NetFlow 수신하기]:{{< relref "/blog/cloudcomputing/2017-10-31-elastic-nms-part5-netflow-monitoring.md" >}}
+[Elastic NMS Part 6: SNMP 수신하기]:{{< relref "/blog/cloudcomputing/2017-10-31-elastic-nms-part6-snmp-monitoring.md" >}}
 
 ### 함께 읽기
 
@@ -417,10 +421,10 @@ $
 * [Cloud App에서 PaperTrail 사용하기]
 
 
-[Calling All Logs! Graylog2 1편: 설치하기]:{% link _posts/sysadmin/2017-10-11-calling-all-logs-graylog2-installation.md %}
-[Calling All Logs! Graylog2 2편: 맛보기]:{% link _posts/sysadmin/2017-10-12-calling-all-logs-graylog2-overview.md %}
-[Calling All Logs! Graylog2 3편: 설정]:{% link _posts/sysadmin/2017-10-13-calling-all-logs-graylog2-settings.md %}
-[Calling All Logs! Graylog2 4편: 기록]:{% link _posts/sysadmin/2017-10-13-calling-all-logs-graylog2-memories.md %}
-[PaperTrail, Cloud에서는 Cloud 로그를!]:{% link _posts/cloudcomputing/2016-09-07-cloud-log-papertrail.md %}
-[Cloud App에서 PaperTrail 사용하기]:{% link _posts/cloudcomputing/2016-09-07-using-papertrail.md %}
+[Calling All Logs! Graylog2 1편: 설치하기]:{{< relref "/blog/sysadmin/2017-10-11-calling-all-logs-graylog2-installation.md" >}}
+[Calling All Logs! Graylog2 2편: 맛보기]:{{< relref "/blog/sysadmin/2017-10-12-calling-all-logs-graylog2-overview.md" >}}
+[Calling All Logs! Graylog2 3편: 설정]:{{< relref "/blog/sysadmin/2017-10-13-calling-all-logs-graylog2-settings.md" >}}
+[Calling All Logs! Graylog2 4편: 기록]:{{< relref "/blog/sysadmin/2017-10-13-calling-all-logs-graylog2-memories.md" >}}
+[PaperTrail, Cloud에서는 Cloud 로그를!]:{{< relref "/blog/cloudcomputing/2016-09-07-cloud-log-papertrail.md" >}}
+[Cloud App에서 PaperTrail 사용하기]:{{< relref "/blog/cloudcomputing/2016-09-07-using-papertrail.md" >}}
 

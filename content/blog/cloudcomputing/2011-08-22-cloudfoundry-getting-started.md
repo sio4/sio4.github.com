@@ -11,6 +11,7 @@ last_modified_at: 2011-08-22T17:06:06+09:00
 CloudFoundry 맛보기. 이 정도로 사실, 맛을 볼 수는 없겠으나 일단 시간과 능력의
 부족으로 Getting Started Guide를 따라해보는 수준으로 정리, 간만에 신세계
 구경도 하고 짧게 나마 포스팅도 한다.
+<!--more-->
 
 먼저, <http://www.cloudfoundry.com> 에서 계정 신청을 해야하는데, 몇일 전에
 CloudFoundry와 Ubuntu와의 뭔가 끈끈한 관계에 대한 글을 읽고 자극을 받아서
@@ -101,7 +102,8 @@ sio4@silver:~/app_name$
 크핫! 이제 http://app_name.cloudfoundry.com 에 접속해보면, 짜잔~ 한 줄 뜬다.
 :-( 어쨌든 정상 작동!
 
-![CF](/attachments/2011-08-22-cloudfoundry.png){:.fit.dropshadow}
+![CF](/attachments/2011-08-22-cloudfoundry.png)
+{.fit .dropshadow}
 
 이야~~ 멋지지 않아? "준비하시고~", "시~", "작!" 하면 딱 뜨는데...
 왜 클라우드를 안써? 아니, 왜 가상화만 생각해? 이게 궁극의 클라우드 아닌감?

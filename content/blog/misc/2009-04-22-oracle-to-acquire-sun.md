@@ -12,7 +12,7 @@ last_modified_at: 2009-04-22T21:36:11+09:00
 (이상하게 컴퓨터는 그 물리적 녀석보다 회사로 기억되는 경향이 있는 것
 같다.) 그런데 그 회사가 이제 유닉스 역사 속에서 사라질 모양이다.  
 
-> 오! 나의 썬, 안녕히~~~  
+> 오! 나의 썬, 안녕히~~  
   
 아련한 향수는 향수일 뿐. 그럼 이 (마치 혜성이 떨어진 것 같은) 역사적
 사건이 우리(?)에게 주는 자극은 어떤 것일까?  
@@ -58,9 +58,11 @@ Oracle DB의 리눅스버전을 발표했으며 OEL라는 리눅스 배포본도
 - OpenOffice야 사실 따질 여지가 없지만...  
 
 
-![](/attachments/2009-04-22-oracle-buys-sun-s.png){:.fit}
+![](/attachments/2009-04-22-oracle-buys-sun-s.png)
+{.fit}
 
-![](/attachments/2009-04-22-oracle-buys-sun-o.png){:.fit}
+![](/attachments/2009-04-22-oracle-buys-sun-o.png)
+{.fit}
 
 
 

@@ -47,5 +47,8 @@
     {{- $linksOutput := delimit $cleanLinks (i18n "translationsSeparator") -}}
     &nbsp;&bull;&nbsp;{{ i18n "translationsLabel" }}{{ $linksOutput | safeHTML }}
   {{- end }}
+  {{ range .Params.categories }}
+  &nbsp;|&nbsp;<i class="fas fa-folder"></i>&nbsp;{{ . }}
+  {{ end }}
 </span>
 

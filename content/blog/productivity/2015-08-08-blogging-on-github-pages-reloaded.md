@@ -6,15 +6,15 @@ image: /attachments/20150808-ghp-reloaded-1.png
 date: 2015-08-08 23:04:33+09:00
 ---
 몇 주 전
-"[블로그, Tistory로부터 Github Pages로 이주]({% post_url productivity/2015-07-24-migration-from-tistory %}){:.reference}"라는
+"[블로그, Tistory로부터 Github Pages로 이주]({{< relref "/blog/productivity/2015-07-24-migration-from-tistory" >}})"라는
 글을 통해서, "**어떤 방식으로 Tistory로부터 Github Pages로 이사를
 했는지**"를 중심으로 기록을 남긴 바 있다. 이번에는 내 글들의 새
 터를 "**좀더 블로그답게 정비한**" 이야기이다.
 
 따지자면 5년 전에 적었던 
-"[Jekyll로 github에 블로깅하기]({% post_url misc/2010-05-27-blogging-on-github-with-jekyll %}){:.reference}"의
+"[Jekyll로 github에 블로깅하기]({{< relref "/blog/misc/2010-05-27-blogging-on-github-with-jekyll" >}})"의
 2탄인 샘이고, 얼마 전, 좀 대충 적은 듯 한
-"[Setup Jekyll for Github Pages]({% post_url misc/2015-07-23-setup-jekyll-for-github-page %}){:.reference}"와
+"[Setup Jekyll for Github Pages]({{< relref "/blog/misc/2015-07-23-setup-jekyll-for-github-page" >}})"와
 함께 읽으면 Github Pages를 이용한 블로깅을 새로 시작하는 사람들에게는
 그럭 저럭 읽어볼만한 "시작하기+@ Guide"가 될 수 있을 것이다.
 
@@ -33,23 +33,25 @@ Posting한 글에 대한 소셜 연동은 예전에 Addthis를 이용하여 이�
   설정이 편하다.
 
 그래서 새롭게 정돈을 하면서, 앞단 공유버튼을
-[Facebook](https://developers.facebook.com/docs/plugins/like-button){:.ext},
-[Twitter](https://dev.twitter.com/web/tweet-button){:.ext},
+[Facebook](https://developers.facebook.com/docs/plugins/like-button),
+[Twitter](https://dev.twitter.com/web/tweet-button),
 그리고
-[Google+](https://developers.google.com/+/web/share/){:.ext}가
+[Google+](https://developers.google.com/+/web/share/)가
 제공하는 공식 버튼으로 바꿨다.
-([Pocket](https://getpocket.com/publisher/button){:.ext}과
-[Delicious](https://delicious.com/tools){:.ext}를
+([Pocket](https://getpocket.com/publisher/button)과
+[Delicious](https://delicious.com/tools)를
 더 붙이고 싶은데, 공식 제공하는 버튼이 좀 후져서 뺐다. :-)
 
-![](/attachments/20150808-ghp-reloaded-1.png){:.fit.dropshadow}
+![](/attachments/20150808-ghp-reloaded-1.png)
+{.fit .dropshadow}
 
 Icon 구성 등이 편한 AddThis에게도 미련이 남아, 예전에 쓰던 AddThis
 버튼은, Custom Image를 쓰던 부분을 FontAwesome 글꼴로 대신한 후, 각
 서비스가 제공하는 JSON API를 이용하여 공유된 Count를 받아 표시하도록
 수정하여, 아래와 같이 Post 하단에 유지하였다.
 
-![](/attachments/20150808-ghp-reloaded-3.png){:.fit.dropshadow}
+![](/attachments/20150808-ghp-reloaded-3.png)
+{.fit .dropshadow}
 
 위에서 볼 수 있듯이, Prev/Next 버튼을 Post 하단에 두고 있는데, 이
 부분은 Liquid Template의 `page.previous`, `page.next`를 이용하여
@@ -61,11 +63,12 @@ Icon 구성 등이 편한 AddThis에게도 미련이 남아, 예전에 쓰던 Ad
 직접 넣는 것을 (문서의 완결성 차원에서) 선호하지만 경우에 따라
 Github의 코드를 그대로 따와야 할 때가 있다. 이 때 사용할 수 있는
 서비스가
-[Gist-It](http://gist-it.appspot.com/){:.ext}이다.
+[Gist-It](http://gist-it.appspot.com/)이다.
 이 서비스를 이용하면, 아래와 같이 나름 깔끔하게 Github에 위치한
 파일을 바로 끓어다 붙일 수 있다.
 
-![](/attachments/20150808-ghp-reloaded-2.png){:.fit.dropshadow}
+![](/attachments/20150808-ghp-reloaded-2.png)
+{.fit .dropshadow}
 
 물론 이 내용은, Github Pages를 사용할 때 만나는 제한점을 피할 때
 필요한 방법이라기 보다는 Github에서 Hosting되는 Code를 참조하기
@@ -79,7 +82,7 @@ Github Pages에서 아쉬운 것 중 하나가, 보통의 블로그에서는 보
 (Github Pages에서는 `site.related_posts`를 사용하면, jekyll의
 기본값인 "Most Recent"를 반환하게 된다. `lsi` 옵션을 사용할 수
 없기 때문인데, 관련 내용은
-[여기](https://help.github.com/articles/using-jekyll-with-pages/#configuration-overrides){:.ext}를
+[여기](https://help.github.com/articles/using-jekyll-with-pages/#configuration-overrides)를
 참고)
 
 아래의 내용은, `site.related_posts` 대신에 Post의 Tag를 참고하여
@@ -89,11 +92,12 @@ Github Pages에서 아쉬운 것 중 하나가, 보통의 블로그에서는 보
 나오긴 한다.
 하지만, 단지 최근 문서를 관련 문서라고 보여주는 것 보다야...
 
-![](/attachments/20150808-ghp-reloaded-4.png){:.fit.dropshadow}
+![](/attachments/20150808-ghp-reloaded-4.png)
+{.fit .dropshadow}
 
 다음은 "**댓글**"인데, 정적 특성의 Github Pages는 동적인 댓글의
 수용이 아얘 불가능한 구조이다. 이 것을 해결해줄 수 있는 서비스가
-[Disqus](https://disqus.com/){:.ext}이다. (뭐, 사실 내 블로그는
+[Disqus](https://disqus.com/)이다. (뭐, 사실 내 블로그는
 댓글이 거의 없는... 뭐랄까 악플보다 무서운 무플의 사이트이긴
 하다. ㅋㅋㅋ)
 
@@ -102,17 +106,19 @@ Github Pages에서 아쉬운 것 중 하나가, 보통의 블로그에서는 보
 모습으로 토론 참여를 할 수 있고, 그 중심이 관점에 따라 참여자일
 수도, 사이트일 수도 있는 그런 서비스이다.
 
-![](/attachments/20150808-ghp-reloaded-5.png){:.fit.dropshadow}
+![](/attachments/20150808-ghp-reloaded-5.png)
+{.fit .dropshadow}
 
 이와 유사한 것을 요즘은 Facebook을 통해 하는 경우가 많은데, 이에
 대한 얘기는 다음에 기회가 되면...
 
 마지막은 **RSS Feed**에 대한 것인데, 이건 Github Pages가 지원하지
 않는다고 할 수는 없으나 좀 더 편리하게 사용하기 위한 것으로,
-[Feedburner](https://feedburner.google.com/){:.ext}를
+[Feedburner](https://feedburner.google.com/)를
 사용하여 제공하도록 설정하였다.
 
-![](/attachments/20150808-ghp-reloaded-6.png){:.fit.dropshadow}
+![](/attachments/20150808-ghp-reloaded-6.png)
+{.fit .dropshadow}
 
 
 ## 그리고 Github Pages 호환성 유지

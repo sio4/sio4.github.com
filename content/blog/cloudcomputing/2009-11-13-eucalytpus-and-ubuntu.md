@@ -11,6 +11,7 @@ last_modified_at: 2011-03-04T13:49:01+09:00
 보여주는 예이자, 오픈소스 기반 클라우드 컴퓨팅 사례의 적절한 형태 중 하나.
 유칼립투스는 제공하는 기능의 제한으로 인하여 사용을 보류하고 있지만, 분명
 의미있는 솔루션 중 하나. 지켜볼 것.
+<!--more-->
 
 [Maybe Ubuntu Enterprise Cloud Makes Cloud Computing Too Easy](http://devcentral.f5.com/weblogs/macvittie/archive/2009/11/03/maybe-ubuntu-enterprise-cloud-makes-cloud-computing-too-easy.aspx)
 

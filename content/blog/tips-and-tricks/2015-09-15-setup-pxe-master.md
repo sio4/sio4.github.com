@@ -7,6 +7,7 @@ date: 2015-09-15 09:27:20+09:00
 PXE는 Preboot Execution Environment를 줄인 용어로, 서버 등의 IT 장비가
 "본격적으로 부팅하기 전에 미리 실행되는 환경"이라고 풀이할 수 있다. 이
 글은, 이런 PXE 부팅을 위한 Master 환경을 구성하는 과정의 이야기이다.
+<!--more-->
 
 요즘 OpenStack을 이용한 Cloud Computing 환경을 구성하는 일을 진행하고
 있는데, 신규 Hardware에 OS Image를 설치하는 과정에서 PXE를 사용한다고
@@ -32,7 +33,6 @@ PXE란 Preboot Execution Environment의 약자라고 앞서 이야기하였다. 
 서버나 소형 가전(Embedded 장치) 역시 유사한 부팅 흐름을 갖게 되는데,
 그 과정은 다음과 같다.
 
-{:.fit.styled}
 | 단계             | 내용                                          |
 |------------------|-----------------------------------------------|
 | 1) Hardware 단계 | 내장 Firmware에 의해 Hardware Chip/Card가 초기화되는 단계 |
@@ -115,14 +115,15 @@ PXE는 어떤가? PXE는 이와 같은 관점에서, 다음과 같은 일을 수
 앞서 말한, PXE Boot loader가 해야하는 일을 뒤집으면 바로 PXE의 업무
 흐름이 된다. 다음 그림을 보면 쉽게 이해할 수 있을 것 같다.
 
-```
-Server-->PXE Master: 1) PXE 마스터 있어요? 나 11:22:33:11:22:22 인데...
-PXE Master->Server: 2) 나다. 넌 192.168.0.10 번 쓰고, pxelinux 파일로 부팅해
-Server->PXE Master:  3) 써 예써! 그럼 pxelinux 파일 주세요
-PXE Master->Server: 4) 받아랏!!!
-Server->>Server: 5) 메모리 적제, 제어 전환
-```
-{:.diagram.tac.fit}
+{{< mermaid >}}
+sequenceDiagram
+    Server->>PXE Master: 1) 여기 PXE 마스터 있나요? 나 11:22:33:11:22:22 인데...
+    PXE Master->>Server: 2) 나다. 넌 192.168.0.10 번 쓰고, pxelinux 줄게
+    Server->>PXE Master:  3) 넵! pxelinux 파일 주세요
+    PXE Master-->>+Server: 4) 받아랏!!!
+    Server->>-Server: 5) 메모리 적제, 제어 전환
+{{< /mermaid >}}
+
 
 먼저, PXE로 부팅하려는 Server은 아직 IP 주소도 가지고 있지 않고, 부팅을
 도와줄 Master가 근처에 있는지 조차 알지 못한다. 그래서 맨 첫 단계는 그저
@@ -146,7 +147,6 @@ PXE 마스터는 Broadcast된 연락을 받고, 상대방에게 앞으로 사용
 
 이 단위 과정에서 사용되는 기술과 내용을 다시 정리하면 다음과 같다.
 
-{:.fit.styled}
 | 단계     | 내용                                             |
 |----------|--------------------------------------------------|
 | 1,2 단계 | DHCP[^2]를 통한 IP 주소 설정 및 정보 획득        |

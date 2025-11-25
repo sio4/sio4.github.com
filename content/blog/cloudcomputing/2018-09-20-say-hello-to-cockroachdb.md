@@ -11,6 +11,7 @@ date: 2018-09-20T16:30:00+0900
 끌기 충분한 문장으로 자신을 설명하고 있는 CockroachDB라는 오픈소스 RDBMS를
 우연한 경위로 알게 되었다. 이 글은, 이 CockroachDB Cluster를 구성하고 나서
 그 겉을 둘러본 감상을 정리하려고 한다.
+<!--more-->
 
 
 사실, 데이터베이스는 내 전문분야도 아닐 뿐더러 관심이 많은 영역도 아니기
@@ -20,10 +21,9 @@ DBMS에 관련된 것이라기 보다는 어쩌면 시스템 자동화 등, [클
 [오픈소스] 등을 중심으로 완전히 재편되고 있는 근래의 IT 환경 변화에 대한
 기록으로써랄까...
 
-{:.ribbon}
 > *그나저나 여행 다녀온 얘기는 언제 쓰나...*
+{.comment}
 
-{:.boxed}
 > CockroachDB 맛보기 묶음글은 다음과 같습니다.
 >
 > * _CockroachDB 안녕?_
@@ -31,6 +31,7 @@ DBMS에 관련된 것이라기 보다는 어쩌면 시스템 자동화 등, [클
 > * [CockroachDB Architecture]
 > * [CockroachDB 클러스터 설치 스크립트]
 > * [CockroachDB 클러스터 가용성 시험]
+{.boxed}
 
 
 
@@ -131,10 +132,10 @@ Google Colossus, Gmail, Bigtable 등에 관여했던 인물들이라고 하는�
 기본적인 상태 모니터링을 할 수 있는 모니터링 콘솔을 Built-in으로 제공한다.
 아뿔싸... DBMS를 설치하고 겉모습을 얘기하게 될 줄이야...
 
-{:.point}
 대세는 모니터링
 : 어째서... 요즘 발표되는 이런 저런 소프트웨어들은 자체적으로 모니터링
   콘솔을 제공하는 경우가 참 많다. 최소한, 모니터링 API는 기본이 되었다.
+{.point}
 
 
 ### Cluster Overview
@@ -369,31 +370,38 @@ Metrics 다음은 Databases에 대한 정보를 표시하는 메뉴가 있다. �
 
 #### Runtime Dashboard
 
-![](/attachments/cockroachdb/cockroach-22-metrics-runtime.png){:.bordered.dropshadow}
+![](/attachments/cockroachdb/cockroach-22-metrics-runtime.png)
+{.bordered .dropshadow}
 
 #### SQL Dashboard
 
-![](/attachments/cockroachdb/cockroach-23-metrics-sql.png){:.bordered.dropshadow}
+![](/attachments/cockroachdb/cockroach-23-metrics-sql.png)
+{.bordered .dropshadow}
 
 #### Storage Dashboard
 
-![](/attachments/cockroachdb/cockroach-24-metrics-storage.png){:.bordered.dropshadow}
+![](/attachments/cockroachdb/cockroach-24-metrics-storage.png)
+{.bordered .dropshadow}
 
 #### Replication Dashboard
 
-![](/attachments/cockroachdb/cockroach-25-metrics-replication.png){:.bordered.dropshadow}
+![](/attachments/cockroachdb/cockroach-25-metrics-replication.png)
+{.bordered .dropshadow}
 
 #### Distributed Dashboard
 
-![](/attachments/cockroachdb/cockroach-26-metrics-distributed.png){:.bordered.dropshadow}
+![](/attachments/cockroachdb/cockroach-26-metrics-distributed.png)
+{.bordered .dropshadow}
 
 #### Queues Dashboard
 
-![](/attachments/cockroachdb/cockroach-27-metrics-queues.png){:.bordered.dropshadow}
+![](/attachments/cockroachdb/cockroach-27-metrics-queues.png)
+{.bordered .dropshadow}
 
 #### Slow Requests Dashboard
 
-![](/attachments/cockroachdb/cockroach-28-metrics-slow-requests.png){:.bordered.dropshadow}
+![](/attachments/cockroachdb/cockroach-28-metrics-slow-requests.png)
+{.bordered .dropshadow}
 
 
 ---
@@ -412,8 +420,8 @@ CockroachDB 맛보기 묶음글은 다음과 같습니다.
 * [CockroachDB 클러스터 설치 스크립트]
 * [CockroachDB 클러스터 가용성 시험]
 
-[CockroachDB 안녕?]:{% link _posts/cloudcomputing/2018-09-20-say-hello-to-cockroachdb.md %}
-[CockroachDB 클러스터 구성하기]:{% link _posts/cloudcomputing/2018-09-21-setup-cockroach-cluster.md %}
-[CockroachDB Architecture]:{% link _posts/cloudcomputing/2018-10-01-architecture-of-cockroachdb.md %}
-[CockroachDB 클러스터 설치 스크립트]:{% link _posts/cloudcomputing/2018-10-02-cockroach-cluster-setup-script.md %}
-[CockroachDB 클러스터 가용성 시험]:{% link _posts/cloudcomputing/2018-10-08-availablility-of-cockroach.md %}
+[CockroachDB 안녕?]:{{< relref "/blog/cloudcomputing/2018-09-20-say-hello-to-cockroachdb.md" >}}
+[CockroachDB 클러스터 구성하기]:{{< relref "/blog/cloudcomputing/2018-09-21-setup-cockroach-cluster.md" >}}
+[CockroachDB Architecture]:{{< relref "/blog/cloudcomputing/2018-10-01-architecture-of-cockroachdb.md" >}}
+[CockroachDB 클러스터 설치 스크립트]:{{< relref "/blog/cloudcomputing/2018-10-02-cockroach-cluster-setup-script.md" >}}
+[CockroachDB 클러스터 가용성 시험]:{{< relref "/blog/cloudcomputing/2018-10-08-availablility-of-cockroach.md" >}}

@@ -26,7 +26,8 @@ $background-footer: #f5f5f5;
 $background-marker: linear-gradient(transparent 30%, #ddf3ff 60%, #c0f9ff 80%);
 $background-point: #454545;
 
-$background-th: linear-gradient(#eeeeee 0%, #ffffff 40%, #ffffff 60%, #eeeeee 100%);
+$background-styled: linear-gradient(#eeeeee 0%, #ffffff 40%, #ffffff 60%, #eeeeee 100%);
+$background-th: #eeeeee;
 $background-td: #ffffff;
 $color-border: $color-light;
 
@@ -53,34 +54,42 @@ em {
 blockquote {
 	font-size: 1em;
   font-style: normal;
-  border-left-color: transparent;
-  padding-left: 40px; // instead of 20px
+	margin: 1em 0;
+	padding: 2px 25px;
+	border-left: 10px solid $color-light;
+  //padding-left: 40px; // instead of 20px
 
   &.comment {
+		border-left-color: transparent;
     &:before {
       font-family: "font awesome 5 free";
       content: "\f075";
       display: inline-block;
       width: 1.5em;
-      margin-left: -40px;
+      margin-left: -35px;
       float: left;
       //color: $color-cool;
     }
   }
+  &.point {
+		border-left-color: transparent;
+		color: $color-text;
+    &:before {
+      font-family: "font awesome 5 free";
+      content: "\f0a6"; // fa-hand-point-up
+      display: inline-block;
+      width: 1.5em;
+      margin-left: -35px;
+      float: left;
+      color: $color-accent;
+    }
+  }
 	&.boxed {
-		margin: 1em 0px;
 		padding: 10px 20px;
 		border: 1px solid #ccc;
 		border-radius: 8px;
 		background: none;
 	  box-shadow: 2px 2px 4px #888888;
-	}
-  /*
-	&.ribbon {
-		margin: 1em 0px;
-		padding: 2px 20px;
-		border-left: 4px solid #000;
-		background: none;
 	}
 	& *:first-child {
 		margin-top: 0 !important;
@@ -88,7 +97,6 @@ blockquote {
 	& *:last-child {
 		margin-bottom: 0 !important;
 	}
-  */
 }
 
 /*
@@ -96,6 +104,7 @@ div.highlight { // who's bug? double classed for div and pre.
 	background: transparent;
 }
 */
+.highlight pre,
 pre {
 	font-family: $font-type;
 	font-size: 0.8em;
@@ -103,10 +112,10 @@ pre {
 	box-shadow: 2px 2px 4px #888888;
 	& code {
 		//font-family: $font-type;
-		//white-space: pre;
-		.wrap & {
-			white-space: pre-wrap;
-			//word-break: break-all;
+		white-space: pre-wrap;
+		//word-break: break-all;
+		.nowrap & {
+		  white-space: pre;
 		}
 	}
 }
@@ -118,6 +127,62 @@ code {
 
 a {
 	color: $color-link;
+}
+
+table {
+	font-size: 0.9em;
+	margin: 1rem auto;
+	display: table !important;
+
+	thead tr, tbody tr {
+		th, td {
+			padding: 1px 1em;
+			border-width: 1px 0;
+		}
+	}
+
+	thead {
+		tr {
+			background: $background-th;
+			border-top: 1px solid darken($color-border, 15%);
+		}
+	}
+	tbody {
+		tr {
+			background: $background-td; border-top: 1px solid $color-border;
+			&:nth-child(even) { background: darken($background-td, 3%); }
+			&:first-child { border-top: 1px solid darken($color-border, 15%); }
+			&:last-child { border-bottom: 1px solid darken($color-border, 15%); }
+		}
+  }
+
+	&.fit { width: 95%; margin: 1rem auto; }
+	&.filled { width: 100%; }
+	&.centered { margin: 1rem auto; max-width: 80%; min-width: 50%; }
+	&.styled {
+    thead {
+		  tr {
+			  background: $background-styled;
+			  border-top: 1px solid darken($color-border, 15%);
+		  }
+    }
+    tbody {
+		  tr {
+			  background: $background-td; border-top: 1px solid $color-border;
+			  &:nth-child(even) { background: darken($background-td, 3%); }
+			  &:first-child { border-top: 1px solid darken($color-border, 15%); }
+			  &:last-child { border-bottom: 1px solid darken($color-border, 15%); }
+		  }
+    }
+	}
+	&.borderless {
+		thead tr, tbody tr {
+      background: transparent;
+    }
+		thead tr th, tbody tr td {
+			border-color: transparent;
+		}
+	}
 }
 
 /*
@@ -152,31 +217,6 @@ ul {
 }
 
 
-table {
-	font-size: 0.9em;
-	margin: 1rem auto;
-	display: table !important;
-	&.fit { width: 95%; margin: 1rem auto; }
-	&.filled { width: 100%; }
-	&.centered { margin: 1rem auto; max-width: 80%; min-width: 50%; }
-	&.styled {
-		thead {
-			tr {
-				background: $background-th;
-				border-top: 1px solid darken($color-border, 15%);
-			}
-		}
-		tbody {
-			tr {
-				background: $background-td; border-top: 1px solid $color-border;
-				&:nth-child(even) { background: darken($background-td, 3%); }
-				&:first-child { border-top: 1px solid darken($color-border, 15%); }
-				&:last-child { border-bottom: 1px solid darken($color-border, 15%); }
-			}
-		}
-	}
-	th, td { padding: 1px 2px; }
-}
 */
 
 // --- my widgets ------------------------------------------------------------
@@ -235,26 +275,17 @@ div.barchart {
 */
 
 // --- common modifier -------------------------------------------------------
-/*
+.onethird { max-width: 33% !important; display: block; }
+.twothird { max-width: 66% !important; display: block; }
+.half		 { max-width: 50% !important; display: block; }
+
 .bordered {
 	border: 1px solid $color-dark;
 }
 .centered {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
+  text-align: center !important;
 }
-.onethird { max-width: 33% !important; display: block; }
-.twothird { max-width: 66% !important; display: block; }
-.half		 { max-width: 50% !important; display: block; }
-.fit svg,
-.fit {
-	display: block;
-	margin-left: auto !important;
-	margin-right: auto !important;
-}
-.filled { width: 100%; }
-.inline { display: inline-block; }
+
 .mix-clear { clear: both; }
 .mix-margin {
 	margin: 0.5rem 2rem !important;
@@ -265,18 +296,40 @@ div.barchart {
 		margin-left: 0 !important;
 	}
 }
-.mix-large {
-	font-size: 1.2em;
+.mix-boxed {
+  border: 1px solid $color-light;
+  padding: 2px 8px;
+  &.mix-round {
+    border-radius: 8px;
+  }
 }
-.mix-xlarge {
-	font-size: 1.4em;
+.mix-large { font-size: 1.2em; }
+.mix-xlarge { font-size: 1.4em; }
+.mix-xxlarge { font-size: 1.6em; }
+.mix-xxxlarge { font-size: 1.8em; }
+
+.block-title {
+	font-size: 0.9em;
+	background: darken($background-body, 3%);
+	padding-left: 3em;
+	&:before {
+		content: "\f14a"; // square-check
+		font-family: FontAwesome;
+		display: inline-block;
+		margin-left: -2.5em;
+		width: 1.5em;
+	}
 }
-.mix-xxlarge {
-	font-size: 1.6em;
+
+/*
+.fit svg,
+.fit {
+	display: block;
+	margin-left: auto !important;
+	margin-right: auto !important;
 }
-.mix-xxxlarge {
-	font-size: 1.8em;
-}
+.filled { width: 100%; }
+.inline { display: inline-block; }
 */
 
 // ---------------------------------------------------------------------------
@@ -455,7 +508,7 @@ article.blog-post {
 				&:before {
 					font-family: FontAwesome;
 					display: inline-block;
-					width: 40px;
+					width: 35px;
 				}
 			}
 		}
@@ -510,7 +563,7 @@ article.blog-post {
 			margin-top: 1em;
 		}
 		dd {
-			padding-left: 40px;
+			padding-left: 35px;
 		}
 	}
 
@@ -524,13 +577,44 @@ article.blog-post {
     &.angle > li {
       list-style: none;
       &:before {
-        font-family: "FontAwesome";
-        content: "\f105"; // font-awesome angle right
-        margin-left: -30px;
-        float: left;
+        font-family: "FontAwesome"; content: "\f105"; // angle right
+        margin-left: -30px; float: left;
+      }
+    }
+    &.check > li {
+      list-style: none;
+      &:before {
+        font-family: "FontAwesome"; content: "\f00c"; // fa-check
+        margin-left: -30px; float: left;
+      }
+    }
+    &.square-check > li {
+      list-style: none;
+      &:before {
+        font-family: "FontAwesome"; content: "\f14a"; // fa-square-check
+        margin-left: -30px; float: left;
       }
     }
   }
+
+	.footnote-ref {
+		&:before {
+			content: '[' !important;
+		}
+		&:after {
+			content: ']' !important;
+		}
+	}
+	.footnotes {
+		font-size: 0.8em;
+		margin: 30px 0;
+		ol {
+			padding: 0 0 0 1em;
+			p {
+				margin-bottom: .5rem;
+			}
+		}
+	}
 }
 
 // --- post body > bottom tags -----------------------------------------------
@@ -563,7 +647,17 @@ article.blog-post {
 	padding-right: 0;
 }
 
-
+// --- list page
+.panel-group {
+  .panel {
+    background: $background-body;
+    a.list-group-item {
+      font-family: $font-norm;
+      font-weight: inherit;
+      background: $background-body;
+    }
+  }
+}
 
 // --- for printing ----------------------------------------------------------
 /*
@@ -574,22 +668,6 @@ img {
 
 // --- theme related: structure ----------------------------------------------
 /*
-.footnote {
-	&:before {
-		content: '[' !important;
-	}
-	&:after {
-		content: ']' !important;
-	}
-}
-.footnotes {
-	font-size: 0.9em;
-	margin: 30px 0;
-	border-top: 1px solid #ccc;
-	ol {
-		padding: 0 0 0 1em;
-	}
-}
 
 // no parent on layout:post (under article.blog-post)
 .post-signature {

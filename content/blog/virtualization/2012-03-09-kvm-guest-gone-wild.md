@@ -9,12 +9,13 @@ last_modified_at: 2012-03-09T13:57:05+09:00
 그냥 급하게 진행해버려서 로그를 다 놓쳤다. 아무튼, 내 kvm Guest가 미친듯이
 달렸다. 이게 처음 겪는 일은 아닌데, 지난 번 사고때는 그냥 "뭐냐~" 하면서
 재시작해버렸다. 그러나 이번엔 원인 규명을 위해 약간의 정보를 더 얻어봤다.
+<!--more-->
 
 ## 어떻게 달리나?
 
 증상은 이렇다. 먼저 미친 기관차에 `strace`를 걸었을 때,
 
-```console
+```console {.wrap}
 rt_sigaction(SIGALRM, NULL, {0x7f8c00851300, ~[KILL STOP RTMIN RT_1], SA_RESTORER, 0x7f8bffee9060}, 8) = 0
 write(8, "\1\0\0\0\0\0\0\0", 8) = 8
 read(17, 0x7fffe6b5b1b0, 128) = -1 EAGAIN (Resource temporarily unavailable)

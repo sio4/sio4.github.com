@@ -11,6 +11,7 @@ last_modified_at: 2017-10-20T01:36:38+09:00
 끼고 발생하는 문제점을 추적하는 과정에서 유용할 때가 있다. 이 글은
 리눅스 Bridge를 이용하여 시스템 바깥에서 네트워크 흐름을 분석했던
 경험을 기록한 것이다.
+<!--more-->
 
 [^1]: Bridge 본연의 기능은 Network 상의 두 L2 Segments를 하나로 엮어주고
     동시에 두 구간 간 불필요한 통신이 넘어와 혼잡이 발생하는 것을 막아주는
@@ -57,7 +58,8 @@ last_modified_at: 2017-10-20T01:36:38+09:00
 바깥에서 분석을 진행하는 방식이다. 그래서 아래 그림으로 표현한
 방식으로, 물리적인 구성의 변경이 바탕에 깔린다.
 
-![](/attachments/20150821-linux-bridge-1.png){:.fit}
+![](/attachments/20150821-linux-bridge-1.png)
+{.fit}
 
 원래의 구성은 위의 그림에서 "목표시스템 A"의 NIC0가 직접 Switch0의
 Port에 연결되어 있었다. 그 선로 사이를 지나가는
@@ -72,7 +74,8 @@ eth1은 목표시스템의 NIC0에 연결을 해준다. 그리고 분석시스�
 
 최종적으로, 실제 겉으로 보이는 모양은 아래와 같다.
 
-![](/attachments/20150821-linux-bridge-2.jpg){:.fit}
+![](/attachments/20150821-linux-bridge-2.jpg)
+{.fit}
 
 내 늙은 작업용 Netbook을 이용해서 구성했고 이 Netbook의 내장
 NIC가 하나이기 때문에 외장 USB 방식의 NIC를 추가로 구성했다.
@@ -266,7 +269,8 @@ superhero@vim-firewall:~$
 이런 정보를 바탕으로 "분석시스템"에서 tcpdump나 유사한 도구를 이용하여
 선로 사이를 오고 가는 모든 Packet을 살펴볼 수 있다.
 
-![](/attachments/20150821-linux-bridge-0.jpg){:.fit}
+![](/attachments/20150821-linux-bridge-0.jpg)
+{.fit}
 
 잘 안보이지만, 대략 이런 모양의 작업을 하게 된다.
 

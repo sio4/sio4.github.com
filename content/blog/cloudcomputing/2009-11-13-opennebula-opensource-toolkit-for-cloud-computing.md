@@ -9,6 +9,7 @@ last_modified_at: 2011-03-04T13:50:20+09:00
 "조금 복잡해 보인다"는 알량한 이유로 시험을 위해 설치만 한 후 방치해버린
 서버 가상화/클라우드 컴퓨팅 솔루션이 하나 있는데, 그 "알량한 이유"가 합당치
 않으므로... 다시 기억을 되새긴다. 물건일 것 같다. 언제든 꼭 확인하라.
+<!--more-->
 
 [.:: OpenNebula: The Open Source Toolkit for Cloud Computing ::.](http://www.opennebula.org/)
 

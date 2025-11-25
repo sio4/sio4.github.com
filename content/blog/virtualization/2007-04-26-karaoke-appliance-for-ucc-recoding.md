@@ -7,6 +7,7 @@ date: 2007-04-26T01:32:57+09:00
 last_modified_at: 2010-07-02T20:26:16+09:00
 ---
 허허... 이사람들. :-)
+<!--more-->
 
 [스마트 쇼핑저널 버즈](http://www.ebuzz.co.kr/content/buzz_view.html?uid=22197&ps_rss=1)
 

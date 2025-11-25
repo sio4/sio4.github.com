@@ -12,6 +12,7 @@ Docker는 Linux 위에서 동작하는 Container 관리 소프트웨어다. 지�
 [Docker: Getting Started with Docker]에서는 Container와 Docker의 개념을
 간단히 정리했고, 이번 글에서는 Ubuntu Linux 위에 Docker를 설치하고
 시운전을 해본 내용을 정리하려고 한다.
+<!--more-->
 
 Docker는 리눅스가 제공하는 자원 격리기술을 이용하는 것이기 때문에, 이미
 리눅스가 설치되어있는 상태라면 몇 단계의 간단한 명령 수행 만으로 쉽게
@@ -21,7 +22,6 @@ Docker는 리눅스가 제공하는 자원 격리기술을 이용하는 것이�
 
 * <https://docs.docker.com/engine/installation/linux/docker-ce/ubuntu/>
 
-{:.boxed}
 > 이 묶음글은 아직 몇 회까지 쓸지 정하지 못했다. 조금 써보고,...
 > 
 > * [Docker: Getting Started with Docker]
@@ -36,6 +36,7 @@ Docker는 리눅스가 제공하는 자원 격리기술을 이용하는 것이�
 > * [Docker Swarm에 Service 올려보기]
 > * [Docker Swarm의 고가용성]
 > * [Docker Swarm 다시 보기]
+{.boxed}
 
 
 
@@ -124,7 +125,6 @@ $
 
 맨 앞 부분은 설치가 끝나면 바로 실행이 된다는 말인데, 한 번 봐야지.
 
-{:.wrap}
 ```console
 $ ps axfwwww|grep docker
 22445 ?        Ssl    0:01 /usr/bin/dockerd -H fd://
@@ -161,7 +161,6 @@ Docker Container Daemon이 동작하고 있는 것을 확인할 수 있다.
 
 이제, `docker run hello-world` 명령을 `sudo`로 실행해보면,
 
-{:.wrap}
 ```console
 $ sudo docker run hello-world
 Unable to find image 'hello-world:latest' locally
@@ -210,9 +209,9 @@ Docker로 Container를 실행하게 되면, 그 Container가 사용할 이미지
 중앙의 공유된 공간, Registry로부터 이미지를 받아서 Local에 내려놓은 후
 이것을 기반으로 동작하게 되는 것이다.
 
-{:.point}
 Docker Registry
 : Docker Registry는 Docker Image를 저장하는 중앙 저장소
+{.point}
 
 
 그리고 또하나,  
@@ -312,9 +311,9 @@ Disk Image는 한 장의 그림이 아니라 계층화된 이미지이며, 최�
 
 ![](/attachments/docker/docker-layered-image.png)
 
-{:.point}
 Docker Image
 : Docker Image는 단계적으로 형성되어지는 Layered Image
+{.point}
 
 
 ### Interactive Execution
@@ -475,7 +474,6 @@ $
 관련이 있을 것 같다. (아래 `df`의 경우, 일반사용자로 실행하면 권한이 없기
 때문에 아래의 내용은 보이지 않는다.)
 
-{:.wrap}
 ```console
 # df -h |grep docker
 overlay                 11G  8.1G  2.3G  79% /var/lib/docker/overlay2/da0c4dad7df377f72bfde27c162286b2f928b80f2db90eccc5319ca723dd2efb/merged
@@ -490,7 +488,6 @@ shm                     64M     0   64M   0% /var/lib/docker/containers/a642d5f9
 
 암튼, 뭐가 들어있나...
 
-{:.wrap}
 ```console
 # ls /var/lib/docker/overlay2/da0c4dad7df377f72bfde27c162286b2f928b80f2db90eccc5319ca723dd2efb/merged
 bin   dev  home  lib64  mnt  proc  run   srv  tmp  var
@@ -501,7 +498,6 @@ boot  etc  lib   media  opt  root  sbin  sys  usr
 딱히 별건 없고, 앞서 Container 내부에서 봤던 `/`의 모습 같다. 확인을 위해,
 Container 안에서 파일을 하나 만들고,
 
-{:.wrap}
 ```console
 root@a642d5f9492c:/# touch i_am_here
 root@a642d5f9492c:/# ls
@@ -512,7 +508,6 @@ root@a642d5f9492c:/#
 
 다시 밖에서 확인해보니...
 
-{:.wrap}
 ```console
 # ls /var/lib/docker/overlay2/da0c4dad7df377f72bfde27c162286b2f928b80f2db90eccc5319ca723dd2efb/merged
 bin   dev  home       lib    media  opt   root  sbin  sys  usr
@@ -522,7 +517,6 @@ boot  etc  i_am_here  lib64  mnt    proc  run   srv   tmp  var
 
 역시, 파일이 생성된 것을 볼 수 있다. 이번에는 `shm`도!
 
-{:.wrap}
 ```console
 root@a642d5f9492c:/# ls /dev/shm/
 root@a642d5f9492c:/# touch /dev/shm/my_shm
@@ -533,7 +527,6 @@ root@a642d5f9492c:/#
 
 이렇게 Container 안에서 만든 파일을 다시 Host에서 확인해보면,
 
-{:.wrap}
 ```console
 # ls /var/lib/docker/containers/a642d5f9492cfc44a89a6bf7f6b0deacb100fd30ae218b3feab166ef4d80abb3/shm
 my_shm
@@ -542,7 +535,6 @@ my_shm
 
 이번엔 반대로 Host에서 파일을 만들고 나서,
 
-{:.wrap}
 ```console
 # touch /var/lib/docker/containers/a642d5f9492cfc44a89a6bf7f6b0deacb100fd30ae218b3feab166ef4d80abb3/shm/file_from_host
 # ls /var/lib/docker/containers/a642d5f9492cfc44a89a6bf7f6b0deacb100fd30ae218b3feab166ef4d80abb3/shm
@@ -552,7 +544,6 @@ file_from_host  my_shm
 
 반대로 Container에서 그것을 확인해본다.
 
-{:.wrap}
 ```console
 root@a642d5f9492c:/# ls /dev/shm
 file_from_host  my_shm
@@ -606,16 +597,16 @@ root@a642d5f9492c:/#
 * [Docker Swarm의 고가용성]
 * [Docker Swarm 다시 보기]
 
-[Docker Swarm 다시 보기]:{% link _posts/cloudcomputing/2018-03-29-little-more-about-docker-swarm.md %}
-[Docker Swarm의 고가용성]:{% link _posts/cloudcomputing/2018-03-15-high-availability-of-docker-swarm.md %}
-[Docker Swarm에 Service 올려보기]:{% link _posts/cloudcomputing/2018-03-14-run-a-service-on-docker-swarm.md %}
-[Getting Started with Docker Swarm]:{% link _posts/cloudcomputing/2018-03-13-getting-started-with-docker-swarm.md %}
-[Docker Machine 다시 보기]:{% link _posts/cloudcomputing/2018-03-09-little-more-about-docker-machine.md %}
-[Docker Machine으로 Docker Node 뿌리기]:{% link _posts/cloudcomputing/2018-03-07-provision-docker-node-with-docker-machine.md %}
-[Docker Cloud에서 자동빌드하기]:{% link _posts/cloudcomputing/2018-02-21-automated-build-with-docker-cloud.md %}
-['쓸만한' Docker Image 만들기 - Part 2]:{% link _posts/cloudcomputing/2018-02-20-build-usable-docker-image-part2.md %}
-['쓸만한' Docker Image 만들기 - Part 1]:{% link _posts/cloudcomputing/2018-02-19-build-usable-docker-image-part1.md %}
-[Docker: 나의 첫 Docker Image]:{% link _posts/cloudcomputing/2018-02-14-build-my-first-docker-image.md %}
-[Docker: Installation and Test Drive]:{% link _posts/cloudcomputing/2018-02-08-docker-installation-and-test-drive.md %}
-[Docker: Getting Started with Docker]:{% link _posts/cloudcomputing/2018-02-08-getting-started-with-docker.md %}
+[Docker Swarm 다시 보기]:{{< relref "/blog/cloudcomputing/2018-03-29-little-more-about-docker-swarm.md" >}}
+[Docker Swarm의 고가용성]:{{< relref "/blog/cloudcomputing/2018-03-15-high-availability-of-docker-swarm.md" >}}
+[Docker Swarm에 Service 올려보기]:{{< relref "/blog/cloudcomputing/2018-03-14-run-a-service-on-docker-swarm.md" >}}
+[Getting Started with Docker Swarm]:{{< relref "/blog/cloudcomputing/2018-03-13-getting-started-with-docker-swarm.md" >}}
+[Docker Machine 다시 보기]:{{< relref "/blog/cloudcomputing/2018-03-09-little-more-about-docker-machine.md" >}}
+[Docker Machine으로 Docker Node 뿌리기]:{{< relref "/blog/cloudcomputing/2018-03-07-provision-docker-node-with-docker-machine.md" >}}
+[Docker Cloud에서 자동빌드하기]:{{< relref "/blog/cloudcomputing/2018-02-21-automated-build-with-docker-cloud.md" >}}
+['쓸만한' Docker Image 만들기 - Part 2]:{{< relref "/blog/cloudcomputing/2018-02-20-build-usable-docker-image-part2.md" >}}
+['쓸만한' Docker Image 만들기 - Part 1]:{{< relref "/blog/cloudcomputing/2018-02-19-build-usable-docker-image-part1.md" >}}
+[Docker: 나의 첫 Docker Image]:{{< relref "/blog/cloudcomputing/2018-02-14-build-my-first-docker-image.md" >}}
+[Docker: Installation and Test Drive]:{{< relref "/blog/cloudcomputing/2018-02-08-docker-installation-and-test-drive.md" >}}
+[Docker: Getting Started with Docker]:{{< relref "/blog/cloudcomputing/2018-02-08-getting-started-with-docker.md" >}}
 

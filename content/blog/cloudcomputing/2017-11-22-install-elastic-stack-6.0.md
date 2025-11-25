@@ -14,6 +14,7 @@ Elastic Stack이라는 공식적인 명칭으로 사용하면서 더 활발하�
 하고 있는 것 같다. 이 글은, 지난번 소개했던
 "[Elastic NMS Part 1: 엔진을 켜라!]"의 업데이트 성격의 글로, Elastic Stack의
 현재 버전인 6.0 버전에 대한 설치과정을 정리한 것이다.
+<!--more-->
 
 이전 버전을 활용하여 SNMP, NetFlow 등을 지원하는 간이 NMS를 구성했던 이야기는
 아래 링크에서 찾을 수 있다.
@@ -25,19 +26,16 @@ Elastic Stack이라는 공식적인 명칭으로 사용하면서 더 활발하�
 * [Elastic NMS Part 5: NetFlow 수신하기]
 * [Elastic NMS Part 6: SNMP 수신하기]
 
-{:.boxed}
 > 이 글은 다음 묶음글을 위한 준비과정을 담은 글이다.
 > Elastic Stack을 이용한 이벤트 해석에 관심이 있다면 다음 글들도 함께!
 > 
 > * [모니터링은 경보가 아니라 해석]
 > * [Kibana Visual Builder로 이벤트 묶어 보기]
 > * [Kibana Heat Map으로 3차원으로 펼쳐 보기]
+{.boxed}
 
 
 # 기반환경
-
-* TOC
-{:toc .half.pull-right}
 
 역시, 이번에도 Ubuntu Linux를 기반으로 환경을 구성했으며, 데이터의 양과
 가용성 조건이 약하기 때문에 단일 서버에 모든 구성요소를 올리는 방식으로
@@ -89,7 +87,6 @@ Elastic Stack의 최신 버전을 사용하기 위해서 Elastic의 공식 저�
 APT 저장소를 구성하기 위해, 아래와 같이 Elastic에서 제공하는 GPG 키를 먼저
 등록해준다.
 
-{:.wrap}
 ```console
 $ wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
 OK
@@ -100,7 +97,6 @@ $
 수 있다. (설명을 간단하게 하기 위해 명령을 이용하여 파일을 생성하는 방식을
 사용하고 있지만, 편집기를 사용하여 해당 내용을 적어줘도 된다.)
 
-{:.wrap}
 ```console
 $ echo "deb https://artifacts.elastic.co/packages/6.x/apt stable main" | sudo tee -a /etc/apt/sources.list.d/elastic-6.x.list
 deb https://artifacts.elastic.co/packages/6.x/apt stable main
@@ -411,6 +407,7 @@ $
 그리고 브라우져에서 열어보면,
 
 ![](/attachments/elastic-stack/kibana-6.0-init.png)
+{.dropshadow}
 
 오... 뭔가 뜬다. (그러나 데이터가 아직 없으니 진수를 볼 수가 없다.)
 
@@ -440,6 +437,7 @@ $
 초기 기동 시 발생한 로그가 저만큼 가있다.)
 
 ![](/attachments/elastic-stack/kibana-6.0-discover.png)
+{.dropshadow}
 
 특별하지 않게 느낄 수도 있지만, 내 시각에서 이전 버전의 화면 구성에 비해
 발전했다고 느껴지는 부분 중 하나는 왼쪽으로 자리를 옮긴 브랜드와 주메뉴
@@ -467,16 +465,16 @@ Elastic Stack을 이용한 이벤트 해석에 관심이 있다면 다음 글들
 * [Kibana Visual Builder로 이벤트 묶어 보기]
 * [Kibana Heat Map으로 3차원으로 펼쳐 보기]
 
-[모니터링은 경보가 아니라 해석]:{% link _posts/cloudcomputing/2017-11-23-monitoring-is-not-alert-but-analytics.md %}
-[Kibana Visual Builder로 이벤트 묶어 보기]:{% link _posts/cloudcomputing/2017-11-24-aggregate-events-with-visual-builder.md %}
-[Kibana Heat Map으로 3차원으로 펼쳐 보기]:{% link _posts/cloudcomputing/2017-11-24-3dimensional-view-with-heat-map.md %}
+[모니터링은 경보가 아니라 해석]:{{< relref "/blog/cloudcomputing/2017-11-23-monitoring-is-not-alert-but-analytics.md" >}}
+[Kibana Visual Builder로 이벤트 묶어 보기]:{{< relref "/blog/cloudcomputing/2017-11-24-aggregate-events-with-visual-builder.md" >}}
+[Kibana Heat Map으로 3차원으로 펼쳐 보기]:{{< relref "/blog/cloudcomputing/2017-11-24-3dimensional-view-with-heat-map.md" >}}
 
 
 
-[Elastic NMS Part 1: 엔진을 켜라!]:{% link _posts/cloudcomputing/2017-10-28-elastic-nms-part1-start-your-engine.md %}
-[Elastic NMS Part 2: Syslog 원격로깅]:{% link _posts/cloudcomputing/2017-10-30-elastic-nms-part2-syslog-remote-logging.md %}
-[Elastic NMS Part 3: Mapping과 Template]:{% link _posts/cloudcomputing/2017-10-30-elastic-nms-part3-mapping-and-template.md %}
-[Elastic NMS Part 4: Kibana로 Visualize하기]:{% link _posts/cloudcomputing/2017-10-30-elastic-nms-part4-visualize-with-kibana.md %}
-[Elastic NMS Part 5: NetFlow 수신하기]:{% link _posts/cloudcomputing/2017-10-31-elastic-nms-part5-netflow-monitoring.md %}
-[Elastic NMS Part 6: SNMP 수신하기]:{% link _posts/cloudcomputing/2017-10-31-elastic-nms-part6-snmp-monitoring.md %}
+[Elastic NMS Part 1: 엔진을 켜라!]:{{< relref "/blog/cloudcomputing/2017-10-28-elastic-nms-part1-start-your-engine.md" >}}
+[Elastic NMS Part 2: Syslog 원격로깅]:{{< relref "/blog/cloudcomputing/2017-10-30-elastic-nms-part2-syslog-remote-logging.md" >}}
+[Elastic NMS Part 3: Mapping과 Template]:{{< relref "/blog/cloudcomputing/2017-10-30-elastic-nms-part3-mapping-and-template.md" >}}
+[Elastic NMS Part 4: Kibana로 Visualize하기]:{{< relref "/blog/cloudcomputing/2017-10-30-elastic-nms-part4-visualize-with-kibana.md" >}}
+[Elastic NMS Part 5: NetFlow 수신하기]:{{< relref "/blog/cloudcomputing/2017-10-31-elastic-nms-part5-netflow-monitoring.md" >}}
+[Elastic NMS Part 6: SNMP 수신하기]:{{< relref "/blog/cloudcomputing/2017-10-31-elastic-nms-part6-snmp-monitoring.md" >}}
 

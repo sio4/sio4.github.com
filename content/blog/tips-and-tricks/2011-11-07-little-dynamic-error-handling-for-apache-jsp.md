@@ -12,6 +12,7 @@ last_modified_at: 2011-11-07T02:45:42+09:00
 작성하기. 웹 관련 개발은 놓은 지가 오래인 데다가... JSP라고는 눈꼽만큼도
 해본 적이 없으면서, 그리고 근래에는 Cloud Computing, Android 얘기만
 하다가 참 어색하기까지 하네...
+<!--more-->
 
 요즘 보안관도 아니면서 보안과 관련된 업무를 조금 보다보니, 웹에
 불접적으로 접근하는 녀석을 어떻게 잡아낼지가 관심사 중 하나다. 그래서
@@ -51,7 +52,7 @@ ErrorDocument로 지정된 Handler의 URL만 냅다 돌려주는 황당한 상�
 
 단순하다. 익히 들어 알고 있는 다음의 설정이면 충분하다.
 
-```conf
+```apache
 ErrorDocument 404 /error_handler.jsp
 ```
 
@@ -71,7 +72,7 @@ Apache에서 아무리 환경변수를 설정해줘도, 아무리 다양한 방�
 
 `mod_jk.conf` 등과 같은 파일에서...
 
-```conf
+```apache
 JkEnvVar REDIRECT_URL ""
 JkEnvVar REDIRECT_REMOTE_HOST ""
 JkEnvVar REDIRECT_PATH ""

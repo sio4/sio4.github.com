@@ -13,13 +13,11 @@ date: 2017-10-23T22:50:00+0900
 이번엔 Nougat 기반의 갤럭시A5로 갈아타면서 꽤나 성가시게 됐다. 이 글에서는
 이 성가셨던 내용과 내가 `rsync`로 데이터를 백업하기 위해 고민했던 내용과
 결과를 기록한다.
+<!--more-->
 
 
 
 # 스마트폰 데이터의 백업
-
-* ToC
-{:toc .half.pull-right}
 
 통화만 되면 그만이던 그 시절에는 혹시 휴대전화가 고장나거나 잃어버렸을 때,
 그 속에 저장되어 있는 전화번호부까지 함께 잃어버려서 뜻하지 않게 사회로부터
@@ -436,7 +434,8 @@ Timestamp가 "지금"으로 바뀌어 버린다! 이건 정말 용납할 수 없
 USB 2.0 Card Reader를 하나 구해서... 진행할 수 밖에 없었다.
 응, 날짜를 구하기 위해서...
 
-![](/attachments/android/usb-card-reader.jpg){:.dropshadow}
+![](/attachments/android/usb-card-reader.jpg)
+{.dropshadow}
 
 
 

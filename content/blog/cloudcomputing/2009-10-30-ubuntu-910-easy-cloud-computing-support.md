@@ -10,6 +10,7 @@ last_modified_at: 2011-03-04T13:50:59+09:00
 Ubuntu Linux의 새 버전인 9.10에는 Eucalyptus 기반의 Cloud Computing 지원이
 포함되었을 뿐만 아니라 아예 Cloud Computing을 위한 설치모드를 지원한다.
 (다른 일정에 밀려 다음 주 초 정도에 시험이 가능할 것 같다.)
+<!--more-->
 
 어쨌든, Canonical/Ubuntu의 클라우드 컴퓨팅 전략은 남다른 면이 있다. 이미
 올 해 초에 Landscape라는 이름의 SaaS 형태의 시스템 관리 서비스를 내놓았고,

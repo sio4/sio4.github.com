@@ -13,6 +13,7 @@ date: 2018-01-03T12:25:00+09:00
 아무튼 (사건의 제목이 맞든 틀렸든) 어떤 프로젝트의 Vyatta 네트워킹에 문제가
 발생했고, 이 글은 이차 저차 내게 넘어온 이 "네트워크 관련 문제"를 정확하게
 파악하기 위한 추적 과정을 정리하는 글이다.
+<!--more-->
 
 어떤 문제가 우리 앞에 나타났을 때, 우리는 (어쩌면 당연한 반응일 수 있는데,)
 사건의 얼굴에서 그 답을 찾으려고 노력하게 된다. 그러나 생각보다 많은 경우에
@@ -21,20 +22,17 @@ date: 2018-01-03T12:25:00+09:00
 깊게 들여다 봐야 하는 이유가 바로 여기에 있다. (써놓고 보니 뭔가... 인생사
 또는 연애사에서도 통하는 얘기같다. :-)
 
-{:.boxed}
 > 이 글은 다음 묶음글의 일부이며, 이 내용과 연결된 앞/뒤 사건은 아래 링크를
 > 통해 확인할 수 있다.
 > 
 > * _Vyatta 네트워크 문제 추적 Part 1_
 > * [Vyatta 네트워크 문제 추적 Part 2 - LACP]
 > * [Vyatta 네트워크 문제 추적 Part 3 - Dump]
+{.boxed}
 
 
 
 # Log: "머리가 아파요"
-
-* TOC
-{:toc .half.pull-right}
 
 생각보다 많은 일들을, 생각보다는 쉽게 끝낸 2017년의 연말을 쪼/끔/ 한가하게
 보내려는 정말 작은 소망을 저버리고, 또 하나의 사건이 내게 넘어왔다. 넘어올
@@ -80,9 +78,9 @@ Keepalived_vrrp[75]: VRRP_Group(vgroup1): Sending SNMP notification
 엔지니어는 그들의 경험과 전문성, 그리고 직감을 활용하여 문제 해결의 방향을
 잡아야 하는 것이다.
 
-{:.point}
 로그는...
 : 아프다는 "현상"을 말하는 것이지, "문제 자체"를 말하는 것이 아니다.
+{.point}
 
 병원에 처음 갔을 때 의사가 문진을 하듯이, 시스템에게 더 많은 것을 말하도록
 해줘야 한다. 궁극적으로는 더 많은 내용을 출력하도록 로그 수준을 수정할 수도
@@ -159,7 +157,8 @@ rotate 되어 사라지는) 로그가 없도록 해줘야 할 필요가 있으�
 또한, 원격지에 남길 로그는 위와 같이 기본 `level`을 `info`로 올려서 조금 더
 상세한 내용을 남기도록 설정하였다.
 
-![](/attachments/vyatta-troubleshooting/vyatta-network-problem-tracking.png){:.bordered.dropshadow}
+![](/attachments/vyatta-troubleshooting/vyatta-network-problem-tracking.png)
+{.bordered .dropshadow}
 
 위의 그림은, 원격 로그수집의 결과를 나중에 설명할 Traffic Check 자료와 함께
 표출한 그림으로, 그래프 부분은 데이터 전송량을 나타내고 있으며 붉은 폭탄
@@ -177,10 +176,10 @@ rotate 되어 사라지는) 로그가 없도록 해줘야 할 필요가 있으�
 * Elastic Stack 6.0의 기능을 중심으로 다시 살펴봤던
   "[Kibana Visual Builder로 이벤트 묶어 보기]" 외 3 편
 
-[PaperTrail, Cloud에서는 Cloud 로그를!]:{% link _posts/cloudcomputing/2016-09-07-cloud-log-papertrail.md %}
-[Calling All Logs! Graylog2 1편: 설치하기]:{% link _posts/sysadmin/2017-10-11-calling-all-logs-graylog2-installation.md %}
-[Elastic NMS Part 2: Syslog 원격로깅]:{% link _posts/cloudcomputing/2017-10-30-elastic-nms-part2-syslog-remote-logging.md %}
-[Kibana Visual Builder로 이벤트 묶어 보기]:{% link _posts/cloudcomputing/2017-11-24-aggregate-events-with-visual-builder.md %}
+[PaperTrail, Cloud에서는 Cloud 로그를!]:{{< relref "/blog/cloudcomputing/2016-09-07-cloud-log-papertrail.md" >}}
+[Calling All Logs! Graylog2 1편: 설치하기]:{{< relref "/blog/sysadmin/2017-10-11-calling-all-logs-graylog2-installation.md" >}}
+[Elastic NMS Part 2: Syslog 원격로깅]:{{< relref "/blog/cloudcomputing/2017-10-30-elastic-nms-part2-syslog-remote-logging.md" >}}
+[Kibana Visual Builder로 이벤트 묶어 보기]:{{< relref "/blog/cloudcomputing/2017-11-24-aggregate-events-with-visual-builder.md" >}}
 
 
 대체로, 다음 두 가지 조건인 경우에는 로그를 살피는 것으로도 충분히 장애의
@@ -323,9 +322,9 @@ Ping의 Timeout과 관련된 것이니 무시할 수 있다.)
 알게 되었다.
 
 
-{:.point}
 원인 파악
 : 이렇게, 사실을 하나 하나 확인해가는 것이 바로 원인 파악의 과정이다.
+{.point}
 
 
 
@@ -439,10 +438,10 @@ Slave 인터페이스를 제거했다가 다시 추가하는 과정을 거치면
 부하의 문제였단 말인가? 장애 기본 자료를 봤을 때, 부하에 대한 얘기는 없었다.
 심지어, 그럴 만한 시스템도 아니다! 이상하다!
 
-{:.point}
 이상하면 치과 가라
 : 이상한 점이 있을 때 그냥 넘어가면 안된다. 불투명한 것을 없애는 과정이
   바로 문제 추적 과정이다.
+{.point}
 
 필수 과정은 아닐 수 있지만, 이상한 점이 있다면 청소를 해야 한다. 최소한,
 정말인지 확인은 해야 한다. 그래서 다음과 같이, 간이로 `sysstat`, `sar`를
@@ -480,6 +479,6 @@ Dump 분석 중심의 다음 이야기는 쉬었다 간다.
 * [Vyatta 네트워크 문제 추적 Part 3 - Dump]
 
 
-[Vyatta 네트워크 문제 추적 Part 1]:{% link _posts/sysadmin/2018-01-03-vyatta-network-problem-tracking.md %}
-[Vyatta 네트워크 문제 추적 Part 2 - LACP]:{% link _posts/sysadmin/2018-01-03-reset-lag-on-vyatta.md %}
-[Vyatta 네트워크 문제 추적 Part 3 - DUMP]:{% link _posts/sysadmin/2018-01-04-analyzing-huge-dump-with-tcpdump.md %}
+[Vyatta 네트워크 문제 추적 Part 1]:{{< relref "/blog/sysadmin/2018-01-03-vyatta-network-problem-tracking.md" >}}
+[Vyatta 네트워크 문제 추적 Part 2 - LACP]:{{< relref "/blog/sysadmin/2018-01-03-reset-lag-on-vyatta.md" >}}
+[Vyatta 네트워크 문제 추적 Part 3 - DUMP]:{{< relref "/blog/sysadmin/2018-01-04-analyzing-huge-dump-with-tcpdump.md" >}}

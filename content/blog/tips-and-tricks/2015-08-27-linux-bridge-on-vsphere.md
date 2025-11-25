@@ -6,12 +6,13 @@ categories: ["tips-and-tricks"]
 date: 2015-08-27 09:26:33+09:00
 last_modified_at: 2017-10-20 20:49:37+09:00
 ---
-"[Linux Bridge로 네트워크 문제 추적하기]({% post_url tips-and-tricks/2015-08-21-troubleshooting-w-linux-bridge %}){:.reference}"에서
+"[Linux Bridge로 네트워크 문제 추적하기]({{< relref "/blog/tips-and-tricks/2015-08-21-troubleshooting-w-linux-bridge" >}})"에서
 얘기했던 것과 같이, 리눅스의
 내장 Bridge 기능은 네트워크 통신과 연관된 문제를 뭐랄까... 대상의
 OS 또는 구성과 관계없이 객관적 위치에서 추적할 때 유용하게 사용할
 수 있다. 이번엔 VMware vSphere 가상환경 속에 위치한 VM을 대상으로
 한 네트워크 분석 방법이다.
+<!--more-->
 
 
 앞선 글에서는 분석대상이 물리서버인 환경에서 대상 서버와 스위치
@@ -26,7 +27,7 @@ vSphere 환경에서는 분석장비가 가상머신으로 바뀌는 점을 제�
 
 분석용 VM은 별다른 것이 없다. 일반적인 방식으로 VM 위에 리눅스를
 설치하고, 그 안에
-"[Linux Bridge로 네트워크 문제 추적하기]({% post_url tips-and-tricks/2015-08-21-troubleshooting-w-linux-bridge %}){:.reference}"에서
+"[Linux Bridge로 네트워크 문제 추적하기]({{< relref "/blog/tips-and-tricks/2015-08-21-troubleshooting-w-linux-bridge" >}})"에서
 설명한 방식으로 Bridge를 구성해주면 된다. 차이가 발생하는 부분은
 이 분석용 VM을 vSwitch와 분석대상 VM 사이에 넣는 방식이다.
 
@@ -36,7 +37,8 @@ vSphere/ESXi 내에서 VM 간 직접 연결을 할 수 있는 방법은 내가 �
 범위에서는 없는 것 같다. 그래서, 이 환경에서는 별도의 가상 스위치
 구성이 필요하다. 그림으로 그려보면 아래와 같다.
 
-![](/attachments/20150827-linux-bridge-0.png){:.fit}
+![](/attachments/20150827-linux-bridge-0.png)
+{.fit}
 
 이렇게 물리적 NIC에 연결된 서비스용 vSwitch0 아래에 분석용 장비인
 vBridge의 vNIC0를 붙여주고, 물리 NIC 연결 없이 VM 연결용으로 추가
@@ -47,7 +49,6 @@ VM #1의 vNIC2를 분리하여 vSwitch1 아래로 연결해준다.
 vBridge 안에서는 vNIC1으로 들어와 br0를 거쳐 vNIC0로 빠지는 구조가
 완성된다. (반대의 경우도 동일하다.)
 
-{:.fit.styled}
 | 구성        | 흐름 구조                                             |
 |:-----------:|:-----------------------------------------------------:|
 | 원래의 구성 | vSwitch0 > vNIC2                                      |

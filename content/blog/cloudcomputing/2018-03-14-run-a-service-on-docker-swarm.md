@@ -13,6 +13,7 @@ Service와 Task가 무엇인지, 그리고 필요에 따라 어떻게 Service를
 확장하고 다시 줄이는지, Image 교체 등 Service의 업데이트는 어떤 방식으로
 처리하게 되는지 알아보고, 이와 함께 Swarm Node에 대한 유지보수를 진행할
 때 Swarm은 그 위에 올라가 있는 서비스를 어떻게 다루는지 등에 대해 정리한다.
+<!--more-->
 
 ---
 
@@ -24,7 +25,6 @@ Docker Swarm은 Docker Engine에 결합된 형태로 제공되는 Orchestration 
 어지간한 작업을 모두 원격으로 수행할 수가 있어서 사용하기가 매우 편리하다.
  
 
-{:.boxed}
 > Docker에 대한 이 묶음글은 아직 몇 개를 쓸지 정하지 못했다. 써보고,...
 > 
 > * [Docker: Getting Started with Docker]
@@ -39,6 +39,7 @@ Docker Swarm은 Docker Engine에 결합된 형태로 제공되는 Orchestration 
 > * _Docker Swarm에 Service 올려보기_
 > * [Docker Swarm의 고가용성]
 > * [Docker Swarm 다시 보기]
+{.boxed}
 
 
 지금까지 걸어온 길과 앞으로 가려고 하는 길은 위의 묶음글을 참고하시고,
@@ -46,11 +47,7 @@ Docker Swarm은 Docker Engine에 결합된 형태로 제공되는 Orchestration 
 
 
 
-{:#test-drive-run-service}
-# 시운전: 서비스 올려보기
-
-* TOC
-{:toc .half.pull-right}
+# 시운전: 서비스 올려보기 {#test-drive-run-service}
 
 아... 시운전은 언제나 Hello World가 제 맛인데... 오늘은 Hello World를
 사용할 수가 없다. 왜냐, 서비스란 자고로 지속적으로 실행되어야 하는데,
@@ -62,7 +59,6 @@ Hello World는 한 번 메시지를 토하고 사라져버리기 때문에. 그�
 가용성 확인을 위해 비슷한 기능의 VM을 돌려본 적이 있으니 완전히 말이
 안 되는 예제는 아니라고... 우겨보자.)
 
-{:.boxed}
 > "서비스"와 "Service"가 혼용되어 헷갈리는데, 한글로 표기한 "서비스"는
 > 우리가 일반적으로 말하는 바로 그 뜻이다. 다른 표현으로 하면 "업무"나
 > "Application" 정도가 되겠다. 영문 "Service"로 표기한 것은 Swarm과
@@ -70,9 +66,9 @@ Hello World는 한 번 메시지를 토하고 사라져버리기 때문에. 그�
 > 사용되는 'S'와 비슷하다고 할 수 있다. 하나의 "서비스"는 다양한 작은
 > 기능으로 구성되는데, 이 각각의 기능이 단위 "Service"가 된다고 이해할
 > 수 있다.
+{.boxed}
 
-{:#create-ping-service}
-## Ping Service 만들기
+## Ping Service 만들기 {#create-ping-service}
 
 Docker 명령을 이용하여 `ping docker.com` 명령을 수행하는 Container를
 생성하려면 다음과 같이 명령해주면 된다.
@@ -86,7 +82,6 @@ $
 날리면 된다. 이 명령은, `alpine` Image를 이용하여 `docker.com`에 `ping`을
 날리는 Service를 생성하는 명령이다.
 
-{:.wrap}
 ```console
 $ docker service create alpine ping docker.com
 87m0t5wenl1543k5a8v2mw5c9
@@ -106,8 +101,7 @@ Worker에게 Task를 전송하는 과정이 추가된다. 일단 Worker가 Task�
 `run` 명령을 받았을 때와 동일한 Container 생성/기동 과정을 진행하게 된다.
 
 
-{:#check-creation-result}
-### Service 생성 결과 확인
+### Service 생성 결과 확인 {#check-creation-result}
 
 앞선 글에서 Swarm mode와 관련된 작업을 처리하는 `swarm` 명령과, Swarm 내의
 Node를 관리하기 위한 `node` 명령에 대해서 알아봤다. Swarm에서 Service를
@@ -127,8 +121,7 @@ $
 아... 그런데... `goofy_ptolemy`가 뭐냐... :-(  
 
 
-{:#remove-ping-service}
-### Ping Service 지우기
+### Ping Service 지우기 {#remove-ping-service}
 
 이제 막 시작했는데 부담스러울 게 없다. 한참 된 것이더라도 뭐 부담은 없다.
 종이컵과 동격인, Instance 시대가 아니냐. 지우자.
@@ -150,8 +143,7 @@ $
 없어졌다. 이제 좀 의미있는 이름을 줘서 다시 시작해보자.
 
 
-{:#recreat-ping-service}
-## 유명한 Ping Service 만들기
+## 유명한 Ping Service 만들기 {#recreat-ping-service}
 
 이름있는 Service를 만들기 위해서는 `--name` 옵션을 사용한다. 각종 옵션을
 찍고 넘어가면 좋겠는데, 많다. 너무 많아서 일단 이 옵션만 살펴본다.
@@ -182,7 +174,6 @@ $
 혹시나, 이 Container가 어떻게 돌고 있는지, `docker container` 명령으로도
 확인해봤다.
 
-{:.wrap}
 ```console
 $ docker container ls
 CONTAINER ID  IMAGE          COMMAND            CREATED        STATUS        PORTS  NAMES
@@ -196,7 +187,6 @@ $
 
 잠깐 정리해보면,
 
-{:.boxed.definition}
 > Service와 Service Name
 > : 사용자가 Swarm에게 업무를 할당하는 논리적 단위인 Service는 생성 시
 >   사용자가 지정할 수 있는 고유의 이름을 갖는다.
@@ -208,14 +198,14 @@ $
 >
 > Task ID
 > : Task가 실제로 Container로써 실행될 때, 해당 Task는 고유의 ID를 갖는다.
+{.boxed .definition}
 
 이렇다. 직관적으로 이해가 되지 않을 수 있으나, 앞으로 설명하게 될 Service의
 생명주기에 대해 이해하게 되면 자연스럽게 파악할 수 있는 내용이다.
 
 
 
-{:#check-the-service}
-## Service 살펴보기
+## Service 살펴보기 {#check-the-service}
 
 `service` 명령 세트는 앞서 살펴본 `create`, `rm`, `ls` 외에도 몇가지 명령을
 더 제공한다. 이 중, Service 생명주기와 관련된 몇 가지는 이따가 살펴볼 것이기
@@ -227,7 +217,6 @@ $
 첫번째 명령은 `inspect` 명령이다. 이제, `docker`, `docker-machine` 등 여기
 저기서 많이 봐서 새롭지도 않다.
 
-{:.wrap}
 ```console
 $ docker service inspect --pretty ping
 
@@ -261,13 +250,11 @@ $
 관리를 할 때 사용될 정책 설정값을 함께 보여준다.
 
 
-{:#show-log}
-### Log 보기
+### Log 보기 {#show-log}
 
 다음은, 각각의 Task, Container가 뿌리는 출력을 확인하기 위한 명령인 `logs`
 명령이다.
 
-{:.wrap}
 ```console
 $ docker service logs ping
 ping.1.lsypb1jj05ua@dev01    | PING docker.com (34.236.167.46): 56 data bytes
@@ -275,8 +262,7 @@ $
 ```
 
 
-{:#show-process}
-### Process 보기
+### Process 보기 {#show-process}
 
 전통적인 이름을 붙인 `ps` 명령은, 서비스에 딸린 Task들의 목록을 보여준다.
 각각은 Service 이름에 일련번호(Slot 번호)를 붙인 이름을 갖고, 어떤 노드
@@ -292,7 +278,6 @@ $
 이 내용은 `docker container ls` 또는 `docker ps` 명령으로 확인할 수 있는
 내용과 유사하다.
 
-{:.wrap}
 ```console
 $ docker ps
 CONTAINER ID   IMAGE          COMMAND            CREATED          STATUS         PORTS     NAMES
@@ -309,8 +294,7 @@ $
 
 
 
-{:#scaling}
-# 사용자가 늘었어요! Scaling!
+# 사용자가 늘었어요! Scaling!  {#scaling}
 
 `ping`을 날리는데 사용자가 늘었을리가 있나... 그냥 그렇게 가정을 해보자.
 Service의 생명주기 중에, 어떤 이유에서든 서비스의 실행 규모를 늘리고 싶은
@@ -318,8 +302,7 @@ Service의 생명주기 중에, 어떤 이유에서든 서비스의 실행 규�
 실행 중에 있는 서비스의 규모를 키울 수가 있다**.
 
 
-{:#scale-up-slightly}
-## 살짝 늘리기
+## 살짝 늘리기 {#scale-up-slightly}
 
 앞에서 봤듯이, 원래 이렇게 생겼었다.
 
@@ -349,8 +332,7 @@ $
 갖도록 복제본의 수를 조정하게 된다.
 
 
-{:#check-scaled-up}
-### 늘어난 것 보기
+### 늘어난 것 보기 {#check-scaled-up}
 
 어떻게 되었을까? 먼저, Service 목록에는 어떻게 표현되는지 확인해보면,
 
@@ -377,8 +359,7 @@ ID가 `yg8em...`이며 Slot 번호가 `2`인 새 Task가 막 실행된 것을 �
 있다.
 
 
-{:#scale-up-largely}
-## 왕창 늘리기
+## 왕창 늘리기 {#scale-up-largely}
 
 달리는 김에, 확 늘려보자!
 
@@ -424,8 +405,7 @@ $
 
 
 
-{:#return-to-normal-scale}
-## 다시 돌아가기
+## 다시 돌아가기 {#return-to-normal-scale}
 
 작업량이 줄어 이제 다시 Task의 숫자를 줄이고 싶다면, 역시 `scale` 명령을
 사용하면 된다.
@@ -462,7 +442,6 @@ $
 
 최종적으로는 아래와 같이,
 
-{:.wrap}
 ```console
 $ docker service ps ping
 ID            NAME    IMAGE          NODE   DESIRED STATE CURRENT STATE
@@ -482,8 +461,7 @@ Task이다.)
 
 
 
-{:#the-maintenance-menace}
-# "The Maintenance Menace!"
+# "The Maintenance Menace!" {#the-maintenance-menace}
 
 지금까지는 잘 만들어놓은 서비스로, 사용량의 변화에 맞춰가며, 성공적으로
 Ping! 서비스를 운영하고 있었다. 그러나 이제, 운영자에게 있어서 제 1 번
@@ -498,13 +476,11 @@ Image로 변경할 일이 생겼다. 이 가정은 논리적으로 Rollback에 �
 
 
 
-{:#rolling-update-for-service-maintenance}
-## 서비스 유지보수를 위한 Rolling Update
+## 서비스 유지보수를 위한 Rolling Update {#rolling-update-for-service-maintenance}
 
 서비스 유지보수를 위한 Rolling Update를 시험하기 위해, 시험에 사용될
 Service를 새로 만들어봤다.
 
-{:.wrap}
 ```console
 $ docker service create --name ping --replicas 4 --update-delay 10s alpine ping docker.com
 j8aohe3hif1jgq506trybuf4a
@@ -525,7 +501,6 @@ $
 
 이렇게 설정한 값은, `service inspect` 명령을 사용하여 확인할 수 있다.
 
-{:.wrap}
 ```console
 $ docker service inspect --pretty ping
 
@@ -693,9 +668,9 @@ $
 이렇게 의미가 달라지게 되면, 그 두 작업에 대한 정책이 달라질 수 있다는
 점을 짐작할 수 있다.
 
-{:.point}
 Update와 Rollback
 : 의미의 차이 x 정책의 차이 + 구현의 차이
+{.point}
 
 물론, 기능의 구현 관점에서 추가 옵션 없이 기억하고 있던 기존 상태로
 전환하도록 설계한다는 차이도 있으나 오히려 이것은 차지하는 비중이 더
@@ -847,7 +822,6 @@ $
 
 일단, 아래와 같이, 네 개의 복제본을 갖는 Service를 만들어보자.
 
-{:.wrap}
 ```console
 $ docker service create --name ping --replicas 4 alpine ping docker.com
 medasdd1i4dj488pbcjmo2w4l
@@ -910,7 +884,6 @@ $
 상태가 변한 것을 확인할 수 있다. 그리고 이 때, Service 상태를 보면
 아래와 같다.
 
-{:.wrap}
 ```console
 $ docker service ps ping
 ID           NAME       IMAGE         NODE  DESIRED STATE CURRENT STATE
@@ -967,8 +940,8 @@ Task에 대한 할당 또는 재할당은 Task의 새로운 할당, 장애 발�
 [Docker Swarm의 고가용성]이 될 가능성이 크다!
 
 
-{:.mix-xlarge}
 > Happy Docking!!!
+{.comment .mix-xlarge}
 
 
 
@@ -994,16 +967,16 @@ Task에 대한 할당 또는 재할당은 Task의 새로운 할당, 장애 발�
 * [Docker Swarm의 고가용성]
 * [Docker Swarm 다시 보기]
 
-[Docker Swarm 다시 보기]:{% link _posts/cloudcomputing/2018-03-29-little-more-about-docker-swarm.md %}
-[Docker Swarm의 고가용성]:{% link _posts/cloudcomputing/2018-03-15-high-availability-of-docker-swarm.md %}
-[Docker Swarm에 Service 올려보기]:{% link _posts/cloudcomputing/2018-03-14-run-a-service-on-docker-swarm.md %}
-[Getting Started with Docker Swarm]:{% link _posts/cloudcomputing/2018-03-13-getting-started-with-docker-swarm.md %}
-[Docker Machine 다시 보기]:{% link _posts/cloudcomputing/2018-03-09-little-more-about-docker-machine.md %}
-[Docker Machine으로 Docker Node 뿌리기]:{% link _posts/cloudcomputing/2018-03-07-provision-docker-node-with-docker-machine.md %}
-[Docker Cloud에서 자동빌드하기]:{% link _posts/cloudcomputing/2018-02-21-automated-build-with-docker-cloud.md %}
-['쓸만한' Docker Image 만들기 - Part 2]:{% link _posts/cloudcomputing/2018-02-20-build-usable-docker-image-part2.md %}
-['쓸만한' Docker Image 만들기 - Part 1]:{% link _posts/cloudcomputing/2018-02-19-build-usable-docker-image-part1.md %}
-[Docker: 나의 첫 Docker Image]:{% link _posts/cloudcomputing/2018-02-14-build-my-first-docker-image.md %}
-[Docker: Installation and Test Drive]:{% link _posts/cloudcomputing/2018-02-08-docker-installation-and-test-drive.md %}
-[Docker: Getting Started with Docker]:{% link _posts/cloudcomputing/2018-02-08-getting-started-with-docker.md %}
+[Docker Swarm 다시 보기]:{{< relref "/blog/cloudcomputing/2018-03-29-little-more-about-docker-swarm.md" >}}
+[Docker Swarm의 고가용성]:{{< relref "/blog/cloudcomputing/2018-03-15-high-availability-of-docker-swarm.md" >}}
+[Docker Swarm에 Service 올려보기]:{{< relref "/blog/cloudcomputing/2018-03-14-run-a-service-on-docker-swarm.md" >}}
+[Getting Started with Docker Swarm]:{{< relref "/blog/cloudcomputing/2018-03-13-getting-started-with-docker-swarm.md" >}}
+[Docker Machine 다시 보기]:{{< relref "/blog/cloudcomputing/2018-03-09-little-more-about-docker-machine.md" >}}
+[Docker Machine으로 Docker Node 뿌리기]:{{< relref "/blog/cloudcomputing/2018-03-07-provision-docker-node-with-docker-machine.md" >}}
+[Docker Cloud에서 자동빌드하기]:{{< relref "/blog/cloudcomputing/2018-02-21-automated-build-with-docker-cloud.md" >}}
+['쓸만한' Docker Image 만들기 - Part 2]:{{< relref "/blog/cloudcomputing/2018-02-20-build-usable-docker-image-part2.md" >}}
+['쓸만한' Docker Image 만들기 - Part 1]:{{< relref "/blog/cloudcomputing/2018-02-19-build-usable-docker-image-part1.md" >}}
+[Docker: 나의 첫 Docker Image]:{{< relref "/blog/cloudcomputing/2018-02-14-build-my-first-docker-image.md" >}}
+[Docker: Installation and Test Drive]:{{< relref "/blog/cloudcomputing/2018-02-08-docker-installation-and-test-drive.md" >}}
+[Docker: Getting Started with Docker]:{{< relref "/blog/cloudcomputing/2018-02-08-getting-started-with-docker.md" >}}
 

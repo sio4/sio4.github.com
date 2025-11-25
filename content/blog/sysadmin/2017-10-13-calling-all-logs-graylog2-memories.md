@@ -12,6 +12,7 @@ Tenant 지원이라든지 일부 기능이 나의 요구사항과 맞지 않아�
 채택하지 않았지만, 전반적인 Concept이나 살짝씩 읽어지는 그 뒤에 깔린
 철학적인 부분이 기억에 남아, 세 편의 설명글과 함께, 당시의 설정을
 여기에 남긴다.
+<!--more-->
 
 ![](/attachments/graylog2/graylog-logo.png)
 
@@ -19,21 +20,18 @@ Tenant 지원이라든지 일부 기능이 나의 요구사항과 맞지 않아�
 글로 이루어져 있다. 내용이 독립적이어서 순서에 큰 관계가 없으니 원하는
 글부터 읽어도 된다. (마지막편은 읽을 것이 없어요)
 
-{:.angle}
 * [Calling All Logs! Graylog2 1편: 설치하기]
 * [Calling All Logs! Graylog2 2편: 맛보기]
 * [Calling All Logs! Graylog2 3편: 추가설정]
 * _Calling All Logs! Graylog2 4편: 기록_
+{.angle}
 
-{:.boxed}
 > 오픈소스 로그분석 시스템인 [Graylog]에 대한 문서는 [Graylog Docs]에서
 > 찾을 수 있으며, [Graylog Github]에서 그 소스를 받아볼 수 있다.
+{.boxed}
 
 
 ## 설정의 기록
-
-* toc
-{:toc .pull-right}
 
 정말이다 읽은 거리는 없다. 단지, 이 곳에서 두 개의 파일을 원본으로 링크하고,
 어차피 텍스트인 그 파일들을 나중에라도 읽어보기 쉽게 넣어두었을 뿐이다.
@@ -48,8 +46,7 @@ Tenant 지원이라든지 일부 기능이 나의 요구사항과 맞지 않아�
 버릇으로 인하여, 이 스크립트를 작성했으며, 딱 한 번 사용했다. (첫 번째
 설치는 수동으로 한 스텝 한 스텝 진행했고, 한 번 갈아엎으면서 썼었을...)
 
-{:wrap}
-```shell
+```shell {.wrap}
 #!/bin/bash
 
 set -xe
@@ -200,8 +197,7 @@ sudo ufw disable && sudo ufw enable
 배포하는 용도로도 사용할 수 있다.
 
 
-{:.wrap}
-```json
+```json {.wrap}
 {
    "inputs" : [
       {
@@ -879,17 +875,17 @@ sudo ufw disable && sudo ufw enable
 
 #### 최종회 - 끝 -
 
-{:.angle}
 * [Calling All Logs! Graylog2 1편: 설치하기]
 * [Calling All Logs! Graylog2 2편: 맛보기]
 * [Calling All Logs! Graylog2 3편: 추가설정]
 * _Calling All Logs! Graylog2 4편: 기록_
+{.angle}
 
 
-[Calling All Logs! Graylog2 1편: 설치하기]:{% link _posts/sysadmin/2017-10-11-calling-all-logs-graylog2-installation.md %}
-[Calling All Logs! Graylog2 2편: 맛보기]:{% link _posts/sysadmin/2017-10-12-calling-all-logs-graylog2-overview.md %}
-[Calling All Logs! Graylog2 3편: 추가설정]:{% link _posts/sysadmin/2017-10-13-calling-all-logs-graylog2-settings.md %}
-[Calling All Logs! Graylog2 4편: 기록]:{% link _posts/sysadmin/2017-10-13-calling-all-logs-graylog2-memories.md %}
+[Calling All Logs! Graylog2 1편: 설치하기]:{{< relref "/blog/sysadmin/2017-10-11-calling-all-logs-graylog2-installation.md" >}}
+[Calling All Logs! Graylog2 2편: 맛보기]:{{< relref "/blog/sysadmin/2017-10-12-calling-all-logs-graylog2-overview.md" >}}
+[Calling All Logs! Graylog2 3편: 추가설정]:{{< relref "/blog/sysadmin/2017-10-13-calling-all-logs-graylog2-settings.md" >}}
+[Calling All Logs! Graylog2 4편: 기록]:{{< relref "/blog/sysadmin/2017-10-13-calling-all-logs-graylog2-memories.md" >}}
 
 [Graylog]:https://www.graylog.org/
 [Graylog Docs]:http://docs.graylog.org/

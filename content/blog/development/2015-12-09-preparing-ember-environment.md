@@ -9,8 +9,10 @@ date: 2015-12-09 11:16:25+09:00
 npm 환경을 간단하게 구성하는 과정을 정리한 글이며, 궁극적으로 npm을 이용하여
 Ember-CLI 환경을 구성하고 Ember.js 프로젝트를 진행할 수 있는 환경을 완성하는
 과정의 기록이다.
+<!--more-->
 
-![](/attachments/20151209-embercli-npm-nodejs.png){:.fit.dropshadow}
+![](/attachments/20151209-embercli-npm-nodejs.png)
+{.half .dropshadow}
 
 ## 시대의 변화와 나의 목표
 
@@ -89,7 +91,6 @@ Node.js Version Manager를 줄인 이름으로, Ember.js, Ember-CLI, 또는 Node
 Node.js 환경을 구성하는 방식은 여러가지가 있는데, 간략하게 보았을 때, 각각
 다음과 같은 특성을 갖고 있다.
 
-{:.fit.styled}
 | 방식 | 버전 | 장점 |
 |:-----|:-----|:-----|
 | OS 표준 패키지 사용 | OS 제공자가 정한 버전 | 설치가 간단하고 익숙함 |
@@ -193,7 +194,7 @@ export NVM_DIR="/home/sio4/.nvm"
 이제 `node.js`를 설치할 차례이다. 다음과 같이, 원하는 버전을 인수로 주고
 `install` 부명령을 사용하게 되면 해당 버전의 `node.js`를 설치할 수 있다.
 
-```console
+```console {.wrap}
 $ nvm install v4.0.0
 Downloading https://nodejs.org/dist/v4.0.0/node-v4.0.0-linux-x64.tar.xz...
 ######################################################################## 100.0%
@@ -243,7 +244,7 @@ $
 수행하여 패키지를 설치하게 되면, **현재경로 아래**에 `node_modules` 라는
 이름의 경로가 생성되고 이 안에 `ember-cli`가 설치된다.
 
-```console
+```console {.wrap}
 $ npm install ember-cli
 npm WARN deprecated lodash-node@2.4.1: This package is no longer maintained. See its readme for upgrade details.
 npm WARN deprecated lodash@2.4.2: lodash@<3.0.0 is no longer maintained. Upgrade to lodash@^3.0.0
@@ -401,7 +402,7 @@ $
 
 또하나 확인할 부분은, 설치 중 출력의 맨 윗부분에 있는 다음 줄이다.
 
-```console
+```console {.wrap}
 /home/sio4/.nvm/versions/node/v4.0.0/bin/ember -> /home/sio4/.nvm/versions/node/v4.0.0/lib/node_modules/ember-cli/bin/ember
 ```
 
@@ -545,7 +546,8 @@ Babel (6)                                     | 527ms (87 ms)
 
 이제 Web Browser를 이용하여 위의 `http://localhost:4200/`로 접속해보자.
 
-![](/attachments/20151209-ember-browser.png){:.fit.dropshadow}
+![](/attachments/20151209-ember-browser.png)
+{.fit .dropshadow}
 
 > 떳다!
 
@@ -569,7 +571,7 @@ Babel (6)                                     | 527ms (87 ms)
 아닌 중앙에 설치된 패키지의 link로 채워지게 된다. (동일한 패키지를 여러
 프로젝트에서 사용한다면 이런 방식으로 용량을 아낄 수 있다.)
 
-```console
+```console {.wrap}
 $ mkdir project-a
 $ cd project-a
 $ npm link ember-cli
@@ -725,7 +727,7 @@ Ubuntu는 Debian을 기반으로 하는 배포본인데, Debian 자체가 워낙
 다음과 같은 명령을 통하여 `node`라는 명령을 내렸을 때 Node.js가 실행되도록
 해줄 수 있다.
 
-```console
+```console {.wrap}
 $ sudo update-alternatives --install /usr/bin/node node /usr/bin/nodejs 99
 update-alternatives: using /usr/bin/nodejs to provide /usr/bin/node (node) in auto mode
 $ 

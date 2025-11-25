@@ -10,14 +10,14 @@ date: 2016-03-22 12:12:00 +09:00
 임시 URL을 사용하여 URL을 알려줄 특정인에 한정하여 공유하는 부분에서 딱!
 하고 막혀 버렸다. 이번 글은, 이 막힘을 푸는 과정을 두 가지 주제로 기록해
 보려고 한다.
+<!--more-->
 
 딱히 끊어서 기술하지는 않았지만, 다루려고 하는 주제는 다음과 같다.
 
 1. SoftLayer의 Object Storage를 활용하여 임시공유 만들기
 1. Github에서 공개소프트웨어에 기여하는 방식
 
-{:#the-beginning}
-# 사건의 발단
+# 사건의 발단 {#the-beginning}
 
 곧 자세히 말할 기회가 있을 것 같은데 개요만 말하자면, 간단하게 생활코딩(?)
 격의 App을 하나 짜려고 했던 것이 일의 시작이다. 이렇게 길어질 줄 알았다면
@@ -28,9 +28,9 @@ date: 2016-03-22 12:12:00 +09:00
 파일을 사용기한의 제한이 있는 임시 URL을 사용하여 특정인에게만 공유하는
 기능을 활용하려고 했다.(있는 기능이다.) 그런데...
 
-{:.point}
 API가 없다!
 : 뭐야! 모든 기능의 API가 모든 언어에 동일하게 지원된다며!!!
+{.point}
 
 직접적인 API로 풀지 못한다면 주변의 것들을 조합해보려고 다양하게 자료를
 찾아봤더니, 대부분의 자료는 Swift 또는 Swift CLI를 활용하여 SoftLayer의
@@ -42,29 +42,30 @@ Object Storage를 사용하는 방법에 대한 글이었다. (SoftLayer가 Open
 
 ---
 
-{:#using-temp-url}
-### 참고: 임시 URL의 사용(사용자 포탈)
+### 참고: 임시 URL의 사용(사용자 포탈) {#using-temp-url}
 
 사용자 포탈에서는 아래와 같이 공유하고자 하는 파일을 선택하여 "조치"를
 해주면 임시 URL을 생성할 수 있다.
 
-![](/attachments/20160322-sl-objs-002.png){:.fit.dropshadow}
+![](/attachments/20160322-sl-objs-002.png)
+{.fit .dropshadow}
 
 임시 공유의 유효기간을 설정하고 확인을 눌러주면,
 
-![](/attachments/20160322-sl-objs-003.png){:.fit.dropshadow}
+![](/attachments/20160322-sl-objs-003.png)
+{.fit .dropshadow}
 
 아래와 같이 파일에 접근할 수 있는 URL이 만들어진다.
 
-![](/attachments/20160322-sl-objs-004.png){:.fit.dropshadow}
+![](/attachments/20160322-sl-objs-004.png)
+{.fit .dropshadow}
 
 내가 원하는 것은, 이 URL에 들어가는 암호화된 부분(공유 URL이 정상적인
 것인지 판별하기 위한 부분)을 API를 통하여 계산해 내는 것이다.
 
 
 
-{:#solution}
-# 찾은 해답
+# 찾은 해답 {#solution}
 
 다양하게 검색을 해봐도 자료를 찾을 수 없는 상황에서 고객포탈에서 지원을
 요청했더니, 돌아오는 답이 StackOverflow에 글을 올리라고 한다. (그것이
@@ -87,8 +88,7 @@ SoftLayer Object Storage의 공식 Ruby API Repository인
 
 
 
-{:#code-contribution}
-# 코드 기여
+# 코드 기여 {#code-contribution}
 
 SoftLayer의 API는 Github를 통하여 소스를 공개하고 있어서, 원한다면
 사용자가 코드를 직접 보고, 고치고, 기여할 수 있는 환경을 제공하고
@@ -100,8 +100,7 @@ SoftLayer의 API는 Github를 통하여 소스를 공개하고 있어서, 원한
 하여 [내 복사본][My Fork]을 만들었다.
 
 
-{:#preparing-development-env}
-## 클론하여 개발환경 꾸미기
+## 클론하여 개발환경 꾸미기 {#preparing-development-env}
 
 일단 Fork가 되었다면 다음과 같이 내 개발 Laptop에 저장소의 작업사본을
 복제할 수 있다. 아래와 같이, 복제와 Bundle된 gem의 설치를 진행한다.
@@ -150,7 +149,7 @@ RSpec은 Ruby 개발 과정에서 단위 테스트를 돕는 도구로, 정의�
 
 일단 돌려보자.
 
-```console
+```console {.wrap}
 $ bundle exec rspec
 /home/sio4/git/team.c12g/softlayer-object-storage-ruby/spec/spec_helper.rb:6:in `require': cannot load such file -- /home/sio4/git/team.c12g/softlayer-object-storage-ruby/spec/sl-storage.creds.rb (LoadError)
 	from /home/sio4/git/team.c12g/softlayer-object-storage-ruby/spec/spec_helper.rb:6:in `<top (required)>'
@@ -175,8 +174,8 @@ $
 약간의 실망을 뒤로 하고, 코드를 열어보니 다음과 같은 설정이 필요함을
 알게 되었다.
 
-{:.block-title}
 `/spec/sl-storage.creds.rb`
+{.block-title}
 
 ```ruby
 CREDS = {
@@ -190,7 +189,7 @@ CREDS = {
 
 다시 돌여보자.
 
-```console
+```console {.wrap}
 $ bundle exec rspec
 ..FFFFFFF
 An error occurred in an `after(:context)` hook.
@@ -205,8 +204,8 @@ $
 발생했다. 이 Test Case에 의미를 두고 작업하는 것은 불가능할 것 같고, 일단
 나를 위한 RSpec을 하나 작성하는 것으로 개발을 시작한다.
 
-{:.block-title}
 `/spec/tempurl_spec.rb`
+{.block-title}
 
 ```ruby
 require File.dirname(__FILE__) + '/spec_helper'
@@ -237,7 +236,7 @@ end
 RSpec만 만들었을 뿐, 아무런 코드 수정도 하지 않은 현재 상태에서 Test를
 진행하면, 아래와 같이 실패 메시지를 확인할 수 있다.
 
-```console
+```console {.wrap}
 $ bundle exec rspec spec/tempurl_spec.rb 
 F
 
@@ -268,8 +267,7 @@ Test Case이며 무슨 오류가 발생했는지를 실행시간 등과 함께 �
 코드를 수정할 차례이다.
 
 
-{:#writing-codes}
-## 코드 작성
+## 코드 작성 {#writing-codes}
 
 이번 개선은 연결을 관장하는 `connection.rb` 파일과 개별 Object를 다루는
 `storage_object.rb` 파일에서 이루어졌다. 먼저, `connection.rb` 파일의
@@ -346,8 +344,7 @@ Accessor를 추가하였다.
 `temp_url_key` 값을 이용하여 Hash를 만들어내고, 이것을 이용하여 임시
 접근을 위한 URL을 생성하도록 구성되어 있다.
 
-{:#rspec-again}
-## 다시 RSpec
+## 다시 RSpec {#rspec-again}
 
 이제 다시 Test Case를 돌려보자.
 
@@ -370,27 +367,29 @@ $
 
 ---
 
-{:#i-am-sorry-softlayer}
-# 아쉬움
+# 아쉬움 {#i-am-sorry-softlayer}
 
 여담인데, 이번 과정을 거치면서 참 아쉬운 것이, SoftLayer의 고객지원에
 대한 경험이다. 공식적인 채널을 통한 질문을 커뮤니티로 돌리는 것도 조금
 안타까운 부분이지만, 말 그대로 General Question이라고 분류를 한다면
 이해할 수도 있는 부분이긴 하다.
 
-![](/attachments/20160322-sl-objs-001.png){:.fit.dropshadow}
+![](/attachments/20160322-sl-objs-001.png)
+{.fit .dropshadow}
 
 그렇지만 74 followers, 175 questions의 빈약한 [Tag, SoftLayer]에 대하여,
 SO에서의 모든 활동이 이 하나의 Tag에 집중되어있는, 전문적인 답변을 하는
 인력을 고용하고 있다면 사실상 Official한 지원이라고 볼 수도 있을 것
 같은데...
 
-![](/attachments/20160322-sl-objs-006.png){:.fit.dropshadow}
+![](/attachments/20160322-sl-objs-006.png)
+{.fit .dropshadow}
 
 너무 쉽게 찾을 수 있는 틀에 밖힌 답변은 그렇다고 치더라도 커뮤니티에서
 내는 목소리의 수준이 이렇다니...
 
-![](/attachments/20160322-sl-objs-005.png){:.fit.dropshadow}
+![](/attachments/20160322-sl-objs-005.png)
+{.fit .dropshadow}
 
 참 답답하네... ㅎㅎ
 

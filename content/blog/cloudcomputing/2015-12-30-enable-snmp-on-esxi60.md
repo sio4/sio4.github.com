@@ -11,6 +11,7 @@ date: Wed, 30 Dec 2015 13:20:15 +0900
 공통으로 수행되어야 하는 ESXi Host에서 SNMP 서비스를 설정하고 활성화하는
 등의 과정만을 다루고 있다. (SNMP 동작 확인을 위한 정도의 Client의 간략한
 설정을 함께 포함하고 있다.)
+<!--more-->
 
 ## vSphere ESXi와 SNMP
 
@@ -19,7 +20,8 @@ SNMP(Simple Network Management Protocol)은 그 이름에서 유추할 수 있�
 여기서 "장치"라 함은 Router, Switch 등의 네트워크 장치를 포함하며,
 "관리"는 사용량 등의 모니터링은 물론, 간단한 설정 변경 등도 포함하고 있다.
 
-![](/attachments/20151230-snmp-000.png){:.fit}
+![](/attachments/20151230-snmp-000.png)
+{.fit}
 
 SNMP는 위에서 언급한 바와 같이 "네트워크 장치"의 모니터링을 위한 사실상의
 표준 역할을 하고 있으나, 그 활용 범위가 꼭 Switch, Router 등의 네트워크
@@ -429,7 +431,6 @@ OID를 Root(`.`)로 했을 때, 약 300개의 데이터를 더 가져왔음을 �
 
 명령 상세에 앞서 결과를 먼저 보면, 다음 표와 같다.
 
-{:.fit.styled}
 | MIB			| v1	| v3	| Full-         | Full+		|
 |:----------------------|------:|------:|--------------:|--------------:|
 | DISMAN-EXPRESSION-MIB | 1	| 1	| 1		| 1		|

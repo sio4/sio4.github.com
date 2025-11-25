@@ -8,7 +8,8 @@ last_modified_at: 2008-03-10T02:07:05+09:00
 ---
 맙소사! 아니, 오! 마이 썬!
 
-![My SUN](/attachments/2008-01-18-mysun.png){:.fit}
+![My SUN](/attachments/2008-01-18-mysun.png)
+{.fit}
 
 깜짝 소식이네. 요즘 바쁘다는 핑계로 게을리 하고 있는 RSS 소식 읽기 중에
 간만에 깜짝 놀랄 소식을 접하고 말았다. 생각도 못했었다.

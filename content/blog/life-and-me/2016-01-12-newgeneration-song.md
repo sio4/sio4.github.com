@@ -5,6 +5,7 @@ categories: ["life-and-me"]
 date: Tue, 12 Jan 2016 10:36:09 +0900
 ---
 "내가 철들어 간다는 것이 제한몸의 평안을 위해 세상을 적당히 길드는 거라면 내결코 철들지 않겠다" 쉽지는 않지만...
+<!--more-->
 
 <iframe class="fit" width="420" height="315" src="https://www.youtube.com/embed/-1CQIUrwSJA" frameborder="0" allowfullscreen></iframe>
 

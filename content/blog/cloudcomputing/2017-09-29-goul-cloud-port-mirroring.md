@@ -13,6 +13,7 @@ last_modified_at: 2017-10-07 23:50:00 +0900
 네트워크 포트 미러링 솔루션을 찾다가, 도저히 기능이나 비용 면에서
 마땅한 것이 없어서, 요즘 공부하고 있는 Golang을 사용해서 하나 만들었다.  
 이 글은, 일단 이 프로젝트를 소개하는 글(README)이다.
+<!--more-->
 
 > 아니다, 이 글은 원래 작성했던 미국식도 영국식도 아닌 용환식 영문 버전의
 > 국문 번역판이면서,
@@ -20,7 +21,7 @@ last_modified_at: 2017-10-07 23:50:00 +0900
 > 관심이 있으면 원문이면서
 > 개발이 진행됨에 따라 업데이트가 될 아래 문서를 읽기 바란다.
 > 
-> [Goul, Cloud Port Mirroring]({% link _projects/goul.md %})
+> [Goul, Cloud Port Mirroring]({{< relref "/projects/goul.md" >}})
 > <- **English version with original README**
 
 Goul(거울)은 네트워크 흐름 분석이나 보안 모니터링을 목적으로 네트워크
@@ -46,10 +47,10 @@ Goul은 현재 [Go language]를 이용하여, [gopacket]과 그 아래 깔린 [p
 [gopacket]:https://github.com/google/gopacket
 [pcap]:http://www.tcpdump.org/pcap.html
 
-{:.point}
 잠깐만~!
 : Go가 나를 살렸다! Go, goroutine, channel, 각종 buffer들, 그리고 gopacket!
   이들이 없었다면 아직도 죽도록 디버깅하며 개발 중이었을 것이다!
+{.point}
 
 잠깐 집고 넘어갈 부분이, 사실 이 프로젝트는 원래 C로 작성하려고 기획을
 했었다. Pcap은 고려대상이었지만 상황에 따라서 Raw 데이터를 그냥 사용할

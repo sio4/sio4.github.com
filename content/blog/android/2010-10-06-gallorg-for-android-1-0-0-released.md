@@ -10,6 +10,7 @@ last_modified_at: 2010-10-20T16:14:26+09:00
 않아서 사진을 분류하여 보관하기가 쉽지 않다. Astro Filemanager, ES Filemanager
 등의 파일관리자를 사용하면 해결되는 문제이기는 하지만 직관적이지 않을 뿐만
 아니라 단순히 사진 관리만을 원한다면 목적 대비 부담스러울 수 있는 녀석들이다.
+<!--more-->
 
 그래서, 나의 첫번째 안드로이드 앱이자 안드로이드 기본 갤러리에 융합된 형태의
 앨범관리도구(Gallery Organizer)인 GallOrg 1.0.0을 릴리즈한다. ㅋ
@@ -33,10 +34,10 @@ last_modified_at: 2010-10-20T16:14:26+09:00
 
 모양은 이렇다.
 
-{:.centered}
 | "공유" 기능 활용 | 기본 폴더 = "오늘" | 다른 앨범 선택 |
 |:----:|:----:|:----:|
-| ![](/attachments/2010-10-06-gallorg-share.png){:width="150px"} | ![](/attachments/2010-10-06-gallorg-default.png){:width="150px"} | ![](/attachments/2010-10-06-gallorg-recent.png){:width="150px"} |
+| ![](/attachments/2010-10-06-gallorg-share.png) | ![](/attachments/2010-10-06-gallorg-default.png) | ![](/attachments/2010-10-06-gallorg-recent.png) |
+{.centered .borderless}
 
 앞으로 약간의 기능 개선이 있을 예정이지만 일단 공개한다.
 

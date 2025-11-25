@@ -12,12 +12,9 @@ date: 2018-03-15T23:55:00+0900
 일단 다 줄이고, 재미있는 짜투리 소재 두 가지, Docker의 Label 지원과
 이를 Swarm에서 이용하는 것과 Global Mode Service에 대하여 간단히
 정리하였다.
+<!--more-->
 
 ---
-
-* TOC
-{:toc}
-
 
 지난 몇 편의 글에서는 기본적인 Swarm Cluster를 구성하는 과정에 대한
 이야기를 시작으로, 그 위에 사용자의 Service를 올리는 과정과 Service
@@ -29,7 +26,6 @@ date: 2018-03-15T23:55:00+0900
 꺼내기 보다는 지난 이야기에서 미처 다루지 못한 조각들을 마져 정리하려
 한다.
 
-{:.boxed}
 > Docker의 기본적인 개념과 사용법을 다룬 "시작하기"편 묶음글은 아래와 같다.
 > 
 > * [Docker: Getting Started with Docker]
@@ -44,6 +40,7 @@ date: 2018-03-15T23:55:00+0900
 > * [Docker Swarm에 Service 올려보기]
 > * [Docker Swarm의 고가용성]
 > * _Docker Swarm 다시 보기_
+{.boxed}
 
 처음엔 간단하게 설치와 구성에 대해 기록하는 수준에서 생각했던 묶음글인데,
 과정의 나열에서 조금 넘어 서서 이런 저런 이야기를 적어나가다 보니 벌써
@@ -59,9 +56,10 @@ date: 2018-03-15T23:55:00+0900
 내가 "라벨"을 좋아한다는 말을 했던가? 했었다. 그리고 "라벨이 아니고
 레이블입니다..."라는 말도 사양한다는 말도 했던 것 같다. 
 
-![](/images/common/label.jpg){:.twothird}
+![](/images/common/label.jpg)
+{.twothird}
 
-"[Docker Machine 다시 보기 #라벨! 라벨! 라벨!]({% link _posts/cloudcomputing/2018-03-09-little-more-about-docker-machine.md %}#라벨-라벨-라벨)"에서
+"[Docker Machine 다시 보기 #라벨! 라벨! 라벨!]({{< relref "/blog/cloudcomputing/2018-03-09-little-more-about-docker-machine.md" >}}#라벨-라벨-라벨)"에서
 Engine을 구성할 때 `--engine-label` 옵션을 사용하면 특정 엔진에게
 **사용자가 식별 가능한 Tagging**을 할 수 있음을 설명했었다. 그리고
 그것을 활용하는 예로 `docker-machine ls` 명령 등을 내릴 때 Filter를
@@ -104,17 +102,16 @@ Swarm Cluster의 Node가 된 상태가 아닌가? (앞서 말했지만, 라벨�
 식별 가능한 Tagging"일 뿐이다. 시스템의 상태에 대한 "사실"을 반영하는
 것이 아니니 속지 말자.)
 
-{:.mix-large}
-> 헉! 마치, *주석이 거짓말을 하고 있는 코드*를 보는 그 설명할 수 없는
+> 헉! 마치, "주석이 거짓말을 하고 있는 코드"를 보는 그 설명할 수 없는
 > 끕끕한 기분이다. 얼른 떼어내자.
 > 
 > ... 어라?
+{.comment}
 
 어떻게 떼지? 이런... 명령을 찾을 수가 없다. 그럼 기억을 더듬어보자...
 
 아! 생각났다. (좀 어설펐나?)
 
-{:.wrap}
 ```console
 $ docker-machine ssh dev01 ps ax |grep dockerd
  1216 ?        Ssl  231:12 /usr/bin/dockerd -H tcp://0.0.0.0:2376 -H unix:///var/run/docker.sock --storage-driver overlay2 --tlsverify --tlscacert /etc/docker/ca.pem --tlscert /etc/docker/server.pem --tlskey /etc/docker/server-key.pem --label mode=standalone --label cluster=dev --label provider=softlayer
@@ -123,10 +120,9 @@ $
 
 Host에 접속하여 `dockerd` 프로세스를 보면, 명령행에 Label 정보가 나열되어
 있는 것을 볼 수 있었다. 그리고
-"[Docker Machine 다시 보기 #Mount]({% link _posts/cloudcomputing/2018-03-09-little-more-about-docker-machine.md %}#mount)"
+"[Docker Machine 다시 보기 #Mount]({{< relref "/blog/cloudcomputing/2018-03-09-little-more-about-docker-machine.md" >}}#mount)"
 부분의 끝부분에서 잠깐 설명했지만, 이 설정은 다음 파일에서 온다.
 
-{:.wrap}
 ```console
 $ docker-machine ssh dev01 cat /etc/systemd/system/docker.service.d/10-machine.conf
 [Service]
@@ -154,7 +150,6 @@ Engine을 대신해서, 이제 Node에 꼬리표를 달자. 우리는 지금 Doc
 
 먼저 현재의 Node 정보를 보면,
 
-{:.wrap}
 ```console
 $ docker node inspect dev01 --pretty 
 ID:			z9dj9cobdat235ou65kl0ztr3
@@ -166,7 +161,6 @@ Joined at:             	2018-03-12 06:37:37.783528309 +0000 utc
 요렇게 생겼다. 이제, `docker node update` 명령을 사용하여 새로운 꼬리표를
 달아보자.
 
-{:.wrap}
 ```console
 $ docker node update --label-add manager --label-add power=2x2 dev01 
 dev01
@@ -175,7 +169,6 @@ $
 
 결과는,
 
-{:.wrap}
 ```console
 $ docker node inspect --pretty self
 ID:			z9dj9cobdat235ou65kl0ztr3
@@ -197,7 +190,6 @@ Engine에 연연하지 말라더니 왜 그토록 라벨 타령을 하냐면, �
 
 아래의 예를 보자.
 
-{:.wrap}
 ```console
 $ docker service create --name ping --replicas 4 --constraint 'node.labels.power==2x2' alpine ping docker.com
 vrw0lj3h0qk6nf6wlj2fxsgg0
@@ -214,7 +206,6 @@ $
 Service를 생성하였다. 그리고 그 옵션의 인수로 준 것은 바로 앞서 지정한
 꼬리표 중의 하나이다. 결과는 어떻게 되었을까?
 
-{:.wrap}
 ```console
 $ docker service ps ping
 ID            NAME    IMAGE          NODE   DESIRED STATE CURRENT STATE
@@ -235,10 +226,10 @@ Label 외에도 `node.id`, `node.hostname`, `node.role`, `node.labels`,
 특정할 필요가 있을 때에는 유용할 수 있겠다.)
 
 
-{:.point}
 Placement Constraints
 : 어떤 Service를 실행할 때, 조건을 만족하는 특정 Node에서만 실행되도록
 배치 위치를 제한하고 모아주는 기능
+{.point}
 
 
 ### 아니, 그러니까 왜?
@@ -273,10 +264,10 @@ Service를 각 지역에 골고루 배치시키게 되면 서비스 응답속도
 효과도 기대할 수 있다. 이렇게, **Service가 특정 조건에 대하여 골고루
 배치될 수 있도록 조정**해주는 기능 역시 Swarm은 제공하고 있다.
 
-{:.point}
 Placement Preferences
 : 어떤 Service를 특정 조건에 만족하는 Node들에게 고르게 분포시키도록
 배치 위치를 조정하고 펼쳐주는 기능 
+{.point}
 
 
 아... 이 얘기는 그 하나만으로도 큰 주제가 되므로 여기서 일단 접는다.
@@ -319,7 +310,6 @@ Node를 의미하지는 않는다. 또한, Preferences의 경우에도 "가능�
 
 일단, 현재 상태는 이렇다.
 
-{:.wrap}
 ```console
 $ docker service ls
 ID            NAME  MODE        REPLICAS  IMAGE        PORTS
@@ -330,7 +320,6 @@ $
 여기서 아래와 같이, `docker service create` 명령을 사용해서 서비스를
 하나 더 만들어보자.
 
-{:.wrap}
 ```console
 $ docker service create --name mon --mode global alpine:3.7 ping 127.0.0.1
 qa8h079smnybfynbbbzt48hjt
@@ -345,7 +334,6 @@ $
 여기서도 새로운 옵션이 하나 등장하는데, `--mode`라는 옵션이다. 그리고
 다시 Service 목록을 살펴보면,
 
-{:.wrap}
 ```console
 $ docker service ls
 ID            NAME  MODE        REPLICAS  IMAGE        PORTS
@@ -364,7 +352,6 @@ default 값이기 때문에 `--mode` 옵션을 주지 않고 생성했었다.) �
 앞선 `docker service create` 명령에서 `--replicas` 옵션을 주지도 않았는데
 스스로 판단해서 세 개의 Task를 만들어냈다. 어디에?
 
-{:.wrap}
 ```console
 $ docker service ps mon
 ID            NAME                           IMAGE       NODE   DESIRED STATE
@@ -379,12 +366,11 @@ $
 배치된 것을 알 수 있다. 그리고 특이한 점이 하나 더 있는데 뭘까?
 
 `NAME`, 이름이 수상하다. 
-["Docker Swarm에 Service 올려보기"의 Process 보기]({% link _posts/cloudcomputing/2018-03-14-run-a-service-on-docker-swarm.md %}#show-process)에서, 이미
+["Docker Swarm에 Service 올려보기"의 Process 보기]({{< relref "/blog/cloudcomputing/2018-03-14-run-a-service-on-docker-swarm.md" >}}#show-process)에서, 이미
 Task의 이름이 만들어지는 방식에 대해 알아봤었다. 그런데 여긴 좀 이상하게,
 "1에서 출발하여 Replica의 수 만큼 증가하는 자연수"로 되어있는 Slot 번호가
 아닌 이상한 문자열이 그 자리를 차고 앉아 있는 것을 볼 수 있다. 뭐지? 뭐지?
 
-{:.wrap}
 ```console
 $ docker node ls
 ID                          HOSTNAME  STATUS  AVAILABILITY  MANAGER STATUS
@@ -407,7 +393,6 @@ Global Mode Service의 개념이기 때문에, 여기서는 Replica 수에 따�
 실행*"된다는 조건이다. Task의 갯수는 사람이 정하는 것이 아니고 Node의
 수가 정한다. 그래서,
 
-{:.wrap}
 ```console
 $ docker service scale mon=6
 mon: scale can only be used with replicated mode
@@ -434,8 +419,8 @@ Docker Swarm을 활용한 재미난 기능들에 대해 간단히 알아봤다. 
 
 
 
-{:.mix-xlarge}
 > Happy Docking!!!
+{.comment .mix-xlarge}
 
 
 
@@ -463,15 +448,15 @@ Docker Swarm을 활용한 재미난 기능들에 대해 간단히 알아봤다. 
 * [Docker Swarm의 고가용성]
 * _Docker Swarm 다시 보기_
 
-[Docker Swarm 다시 보기]:{% link _posts/cloudcomputing/2018-03-29-little-more-about-docker-swarm.md %}
-[Docker Swarm의 고가용성]:{% link _posts/cloudcomputing/2018-03-15-high-availability-of-docker-swarm.md %}
-[Docker Swarm에 Service 올려보기]:{% link _posts/cloudcomputing/2018-03-14-run-a-service-on-docker-swarm.md %}
-[Getting Started with Docker Swarm]:{% link _posts/cloudcomputing/2018-03-13-getting-started-with-docker-swarm.md %}
-[Docker Machine 다시 보기]:{% link _posts/cloudcomputing/2018-03-09-little-more-about-docker-machine.md %}
-[Docker Machine으로 Docker Node 뿌리기]:{% link _posts/cloudcomputing/2018-03-07-provision-docker-node-with-docker-machine.md %}
-[Docker Cloud에서 자동빌드하기]:{% link _posts/cloudcomputing/2018-02-21-automated-build-with-docker-cloud.md %}
-['쓸만한' Docker Image 만들기 - Part 2]:{% link _posts/cloudcomputing/2018-02-20-build-usable-docker-image-part2.md %}
-['쓸만한' Docker Image 만들기 - Part 1]:{% link _posts/cloudcomputing/2018-02-19-build-usable-docker-image-part1.md %}
-[Docker: 나의 첫 Docker Image]:{% link _posts/cloudcomputing/2018-02-14-build-my-first-docker-image.md %}
-[Docker: Installation and Test Drive]:{% link _posts/cloudcomputing/2018-02-08-docker-installation-and-test-drive.md %}
-[Docker: Getting Started with Docker]:{% link _posts/cloudcomputing/2018-02-08-getting-started-with-docker.md %}
+[Docker Swarm 다시 보기]:{{< relref "/blog/cloudcomputing/2018-03-29-little-more-about-docker-swarm.md" >}}
+[Docker Swarm의 고가용성]:{{< relref "/blog/cloudcomputing/2018-03-15-high-availability-of-docker-swarm.md" >}}
+[Docker Swarm에 Service 올려보기]:{{< relref "/blog/cloudcomputing/2018-03-14-run-a-service-on-docker-swarm.md" >}}
+[Getting Started with Docker Swarm]:{{< relref "/blog/cloudcomputing/2018-03-13-getting-started-with-docker-swarm.md" >}}
+[Docker Machine 다시 보기]:{{< relref "/blog/cloudcomputing/2018-03-09-little-more-about-docker-machine.md" >}}
+[Docker Machine으로 Docker Node 뿌리기]:{{< relref "/blog/cloudcomputing/2018-03-07-provision-docker-node-with-docker-machine.md" >}}
+[Docker Cloud에서 자동빌드하기]:{{< relref "/blog/cloudcomputing/2018-02-21-automated-build-with-docker-cloud.md" >}}
+['쓸만한' Docker Image 만들기 - Part 2]:{{< relref "/blog/cloudcomputing/2018-02-20-build-usable-docker-image-part2.md" >}}
+['쓸만한' Docker Image 만들기 - Part 1]:{{< relref "/blog/cloudcomputing/2018-02-19-build-usable-docker-image-part1.md" >}}
+[Docker: 나의 첫 Docker Image]:{{< relref "/blog/cloudcomputing/2018-02-14-build-my-first-docker-image.md" >}}
+[Docker: Installation and Test Drive]:{{< relref "/blog/cloudcomputing/2018-02-08-docker-installation-and-test-drive.md" >}}
+[Docker: Getting Started with Docker]:{{< relref "/blog/cloudcomputing/2018-02-08-getting-started-with-docker.md" >}}

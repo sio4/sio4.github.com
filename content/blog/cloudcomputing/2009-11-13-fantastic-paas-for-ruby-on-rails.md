@@ -8,6 +8,7 @@ last_modified_at: 2011-03-04T13:43:24+09:00
 ---
 Ruby on Rails 개발자를 겨냥한 상용 PaaS(Platform as a Service)
 서비스이다. 대충 봐도 멋지네! 다음에 찬찬히 들여다보자.
+<!--more-->
 
 [Heroku \| Heroku Documentation](http://docs.heroku.com/)
 

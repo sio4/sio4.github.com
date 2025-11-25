@@ -13,6 +13,7 @@ last_modified_at: 2018-03-09T13:16:00+0900
 이끌고 있는 대표주자인 [Docker]가 그것인데, 이번 글에서는 [Docker]의 개념에
 대하여 대충 정리하고, 다음 글에서는 Ubuntu 환경에서 [Docker]를 설치하여 맛을
 보는 과정을 짧게 정리하려고 한다.
+<!--more-->
 
 ![](/logos/docker-horizontal.800.png)
 
@@ -27,7 +28,6 @@ PaaS는 _"나는 내 일을 할테니 너는 '내' 떡을 썰어라"_ 라는 개
 (뭐, 관점이 하나 뿐이겠냐마는...)
 
 
-{:.boxed}
 > 이 묶음글은 아직 몇 회까지 쓸지 정하지 못했다. 조금 써보고,...
 > 
 > * _Docker: Getting Started with Docker_
@@ -42,6 +42,7 @@ PaaS는 _"나는 내 일을 할테니 너는 '내' 떡을 썰어라"_ 라는 개
 > * [Docker Swarm에 Service 올려보기]
 > * [Docker Swarm의 고가용성]
 > * [Docker Swarm 다시 보기]
+{.boxed}
 
 
 
@@ -97,7 +98,8 @@ Software의 실행을 위해서는 기반 OS와 Library를 포함하여 이 Soft
 각각이 요구하는 조건을 모두 만족시켜야 하며, 경우에 따라서는 그 조건들
 사이에서 충돌이 발생할 수 있다.
 
-![](/attachments/docker/without-confirm.png){:.half.pull-right}
+![](/attachments/docker/without-confirm.png)
+{.half .pull-right}
 
 극단적인 예를 들어, Software A와 B가 동일한 Library를 사용하지만 서로
 다른 버전을 필요로 한다면 두 Software가 같은 시스템 위에서 동작하게 만드는
@@ -252,18 +254,18 @@ Jail 관리와 배포 자동화를 위한 환경을 수제품으로 만들어 Pr
 * [Docker Swarm의 고가용성]
 * [Docker Swarm 다시 보기]
 
-[Docker Swarm 다시 보기]:{% link _posts/cloudcomputing/2018-03-29-little-more-about-docker-swarm.md %}
-[Docker Swarm의 고가용성]:{% link _posts/cloudcomputing/2018-03-15-high-availability-of-docker-swarm.md %}
-[Docker Swarm에 Service 올려보기]:{% link _posts/cloudcomputing/2018-03-14-run-a-service-on-docker-swarm.md %}
-[Getting Started with Docker Swarm]:{% link _posts/cloudcomputing/2018-03-13-getting-started-with-docker-swarm.md %}
-[Docker Machine 다시 보기]:{% link _posts/cloudcomputing/2018-03-09-little-more-about-docker-machine.md %}
-[Docker Machine으로 Docker Node 뿌리기]:{% link _posts/cloudcomputing/2018-03-07-provision-docker-node-with-docker-machine.md %}
-[Docker Cloud에서 자동빌드하기]:{% link _posts/cloudcomputing/2018-02-21-automated-build-with-docker-cloud.md %}
-['쓸만한' Docker Image 만들기 - Part 2]:{% link _posts/cloudcomputing/2018-02-20-build-usable-docker-image-part2.md %}
-['쓸만한' Docker Image 만들기 - Part 1]:{% link _posts/cloudcomputing/2018-02-19-build-usable-docker-image-part1.md %}
-[Docker: 나의 첫 Docker Image]:{% link _posts/cloudcomputing/2018-02-14-build-my-first-docker-image.md %}
-[Docker: Installation and Test Drive]:{% link _posts/cloudcomputing/2018-02-08-docker-installation-and-test-drive.md %}
-[Docker: Getting Started with Docker]:{% link _posts/cloudcomputing/2018-02-08-getting-started-with-docker.md %}
+[Docker Swarm 다시 보기]:{{< relref "/blog/cloudcomputing/2018-03-29-little-more-about-docker-swarm.md" >}}
+[Docker Swarm의 고가용성]:{{< relref "/blog/cloudcomputing/2018-03-15-high-availability-of-docker-swarm.md" >}}
+[Docker Swarm에 Service 올려보기]:{{< relref "/blog/cloudcomputing/2018-03-14-run-a-service-on-docker-swarm.md" >}}
+[Getting Started with Docker Swarm]:{{< relref "/blog/cloudcomputing/2018-03-13-getting-started-with-docker-swarm.md" >}}
+[Docker Machine 다시 보기]:{{< relref "/blog/cloudcomputing/2018-03-09-little-more-about-docker-machine.md" >}}
+[Docker Machine으로 Docker Node 뿌리기]:{{< relref "/blog/cloudcomputing/2018-03-07-provision-docker-node-with-docker-machine.md" >}}
+[Docker Cloud에서 자동빌드하기]:{{< relref "/blog/cloudcomputing/2018-02-21-automated-build-with-docker-cloud.md" >}}
+['쓸만한' Docker Image 만들기 - Part 2]:{{< relref "/blog/cloudcomputing/2018-02-20-build-usable-docker-image-part2.md" >}}
+['쓸만한' Docker Image 만들기 - Part 1]:{{< relref "/blog/cloudcomputing/2018-02-19-build-usable-docker-image-part1.md" >}}
+[Docker: 나의 첫 Docker Image]:{{< relref "/blog/cloudcomputing/2018-02-14-build-my-first-docker-image.md" >}}
+[Docker: Installation and Test Drive]:{{< relref "/blog/cloudcomputing/2018-02-08-docker-installation-and-test-drive.md" >}}
+[Docker: Getting Started with Docker]:{{< relref "/blog/cloudcomputing/2018-02-08-getting-started-with-docker.md" >}}
 
 
 [^5]: 지금 시점에서 이 동네의 변화를 살펴보니, 이제 Docker는 더 이상 Open

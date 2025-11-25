@@ -13,6 +13,7 @@ Elastic Stack은 사용자가 원하는 다양한 유형의 자료를 저장하�
 의미, 즉 자료형에 대한 고려가 필요하며, 개별 자료를 어떻게 다룰 것인지에
 대한 정의가 필요하다.  이 글은, Elasticsearch가 자료를 다루는 방식과
 자료형을 사용자가 정의하는 방법에 대하여 정리한다.
+<!--more-->
 
 이번 묶음글은 아래와 같은 순으로 진행할 예정이다. 깊이있게 다루는 것은 아니며,
 Elastic Stack을 시작하는 입장에서 관심있는 부분을 참고하면 될 것 같다.
@@ -38,9 +39,6 @@ Elastic Stack을 시작하는 입장에서 관심있는 부분을 참고하면 �
 
 # Mapping과 Template
 
-* TOC
-{:toc .half.pull-right}
-
 Elasticsearch가 인덱스에 자료를 저장할 때, **그것을 어떻게 다룰 것이며,
 어떤 자료형으로 처리할 것인지 등을 정의하는 것을 Mapping**이라고 한다.
 이러한 Mapping 정의와 인덱스 설정 등을 담아 두었다가 **인덱스가 생성될
@@ -50,11 +48,13 @@ Elasticsearch가 인덱스에 자료를 저장할 때, **그것을 어떻게 다
 자료를 받도록 설정했을 때에는 모든 자료가 아래와 같이 단순히 숫자 또는
 텍스트로 인식되었었다.
 
-![SHOT](/attachments/elastic-nms/elk-212-grok-parsed.jpg){:.bordered}
+![SHOT](/attachments/elastic-nms/elk-212-grok-parsed.jpg)
+{.bordered}
 
 그리고 Template을 통해 Mapping 구성을 해주고 나니,
 
-![SHOT](/attachments/elastic-nms/elk-302-mapped-parsed.jpg){:.bordered}
+![SHOT](/attachments/elastic-nms/elk-302-mapped-parsed.jpg)
+{.bordered}
 
 이렇게 Elasticsearch가 각각의 필드에 대하여 의미있는 형식으로 인식하게
 되었다. 이렇게 각 필드를 인식하는 방법이 달라지면, Elasticsearch가 각
@@ -331,7 +331,8 @@ Syslog와 NetFilter 방화벽에 대한 로그를 위한 Template은 아래와 �
 
 그 결과는 아래와 같이, 인덱스의 필드 목록에서 확인할 수 있다.
 
-![SHOT](/attachments/elastic-nms/elk-301-mapped-index.jpg){:.bordered}
+![SHOT](/attachments/elastic-nms/elk-301-mapped-index.jpg)
+{.bordered}
 
 
 
@@ -483,13 +484,13 @@ Poller를 이용하여 SNMP 자료를 모으도록 구성을 했었는데, 이�
 * [Elastic NMS Part 5: NetFlow 수신하기]
 * [Elastic NMS Part 6: SNMP 수신하기]
 
-[Elastic NMS Part 1: 엔진을 켜라!]:{% link _posts/cloudcomputing/2017-10-28-elastic-nms-part1-start-your-engine.md %}
-[Elastic NMS Part 2: Syslog 원격로깅]:{% link _posts/cloudcomputing/2017-10-30-elastic-nms-part2-syslog-remote-logging.md %}
-[Elastic NMS Part 4: Kibana로 Visualize하기]:{% link _posts/cloudcomputing/2017-10-30-elastic-nms-part4-visualize-with-kibana.md %}
-[Elastic NMS Part 5: NetFlow 수신하기]:{% link _posts/cloudcomputing/2017-10-31-elastic-nms-part5-netflow-monitoring.md %}
-[Elastic NMS Part 6: SNMP 수신하기]:{% link _posts/cloudcomputing/2017-10-31-elastic-nms-part6-snmp-monitoring.md %}
+[Elastic NMS Part 1: 엔진을 켜라!]:{{< relref "/blog/cloudcomputing/2017-10-28-elastic-nms-part1-start-your-engine.md" >}}
+[Elastic NMS Part 2: Syslog 원격로깅]:{{< relref "/blog/cloudcomputing/2017-10-30-elastic-nms-part2-syslog-remote-logging.md" >}}
+[Elastic NMS Part 4: Kibana로 Visualize하기]:{{< relref "/blog/cloudcomputing/2017-10-30-elastic-nms-part4-visualize-with-kibana.md" >}}
+[Elastic NMS Part 5: NetFlow 수신하기]:{{< relref "/blog/cloudcomputing/2017-10-31-elastic-nms-part5-netflow-monitoring.md" >}}
+[Elastic NMS Part 6: SNMP 수신하기]:{{< relref "/blog/cloudcomputing/2017-10-31-elastic-nms-part6-snmp-monitoring.md" >}}
 
-[Elastic NMS Part 2: Syslog 원격로깅#Template 설정하기]:{% link _posts/cloudcomputing/2017-10-30-elastic-nms-part2-syslog-remote-logging.md %}#template-설정하기
+[Elastic NMS Part 2: Syslog 원격로깅#Template 설정하기]:{{< relref "/blog/cloudcomputing/2017-10-30-elastic-nms-part2-syslog-remote-logging.md" >}}#template-설정하기
 
 ### 함께 읽기
 
@@ -501,10 +502,10 @@ Poller를 이용하여 SNMP 자료를 모으도록 구성을 했었는데, 이�
 * [Cloud App에서 PaperTrail 사용하기]
 
 
-[Calling All Logs! Graylog2 1편: 설치하기]:{% link _posts/sysadmin/2017-10-11-calling-all-logs-graylog2-installation.md %}
-[Calling All Logs! Graylog2 2편: 맛보기]:{% link _posts/sysadmin/2017-10-12-calling-all-logs-graylog2-overview.md %}
-[Calling All Logs! Graylog2 3편: 설정]:{% link _posts/sysadmin/2017-10-13-calling-all-logs-graylog2-settings.md %}
-[Calling All Logs! Graylog2 4편: 기록]:{% link _posts/sysadmin/2017-10-13-calling-all-logs-graylog2-memories.md %}
-[PaperTrail, Cloud에서는 Cloud 로그를!]:{% link _posts/cloudcomputing/2016-09-07-cloud-log-papertrail.md %}
-[Cloud App에서 PaperTrail 사용하기]:{% link _posts/cloudcomputing/2016-09-07-using-papertrail.md %}
+[Calling All Logs! Graylog2 1편: 설치하기]:{{< relref "/blog/sysadmin/2017-10-11-calling-all-logs-graylog2-installation.md" >}}
+[Calling All Logs! Graylog2 2편: 맛보기]:{{< relref "/blog/sysadmin/2017-10-12-calling-all-logs-graylog2-overview.md" >}}
+[Calling All Logs! Graylog2 3편: 설정]:{{< relref "/blog/sysadmin/2017-10-13-calling-all-logs-graylog2-settings.md" >}}
+[Calling All Logs! Graylog2 4편: 기록]:{{< relref "/blog/sysadmin/2017-10-13-calling-all-logs-graylog2-memories.md" >}}
+[PaperTrail, Cloud에서는 Cloud 로그를!]:{{< relref "/blog/cloudcomputing/2016-09-07-cloud-log-papertrail.md" >}}
+[Cloud App에서 PaperTrail 사용하기]:{{< relref "/blog/cloudcomputing/2016-09-07-using-papertrail.md" >}}
 

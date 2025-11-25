@@ -12,13 +12,14 @@ Docker의 기본 Orchestration 도구인 Swarm의 기본적인 구성에 대하�
 관리하는 방식에 대해 정리한 "[Docker Swarm에 Service 올려보기]"에 이어,
 이번 글에서는 이러한 기능을 안정적으로 제공할 수 있도록 고가용성 환경을
 꾸미는 방법에 대해 정리하였다.
+<!--more-->
 
-![](/attachments/docker/docker-swarm-ha.png){:.centered.half}
+![](/attachments/docker/docker-swarm-ha.png)
+{.centered .half}
 
 아... 그림을 조금씩 손봐서 각각의 영역에 맞게 표현해보고 있는데... 어찌
 어설프다. 아무튼,
 
-{:.boxed}
 > Docker에 대한 이 묶음글은 아직 몇 개를 쓸지 정하지 못했다. 써보고,...
 > 
 > * [Docker: Getting Started with Docker]
@@ -33,14 +34,11 @@ Docker의 기본 Orchestration 도구인 Swarm의 기본적인 구성에 대하�
 > * [Docker Swarm에 Service 올려보기]
 > * _Docker Swarm의 고가용성_
 > * [Docker Swarm 다시 보기]
+{.boxed}
 
 
 
-{:#high-availability-of-swarm}
-# Docker Swarm의 고가용성
-
-* TOC
-{:toc .half.pull-right}
+# Docker Swarm의 고가용성 {#high-availability-of-swarm}
 
 Swarm 뿐만 아니라 모든 클러스터 환경에서, 두 가지 관점의 가용성을 고려할
 필요가 있다. 첫번째는, 클러스터를 이루는 요소 중 일부에 장애가 발생한 경우,
@@ -58,8 +56,7 @@ Manager Pool을 구성하여 Manager 중 일부가 죽더라도 기능이 정상
 
 
 
-{:#principal-of-ha-cluster}
-## HA 클러스터의 기본 원리
+## HA 클러스터의 기본 원리 {#principal-of-ha-cluster}
 
 세상에는 많은 종류의 클러스터라 불리는 것들이 있다. 그 중에는, 같은 일
 또는 일련의 일을 병렬로 처리하기 위한 병렬처리 클러스터 또는 부하분산
@@ -67,8 +64,7 @@ Manager Pool을 구성하여 Manager 중 일부가 죽더라도 기능이 정상
 HA(High Availability) 클러스터가 있다.
 
 
-{:#ha-cluster}
-### 가용성 클러스터
+### 가용성 클러스터 {#ha-cluster}
 
 가용성 클러스터의 핵심 원리는, 클러스터 구성원 중 일부가 기능을 상실하여
 가용하지 않은 상태가 되더라도, 그 위에서 동작하고 있는 일은 정상적으로,
@@ -92,8 +88,7 @@ HA(High Availability) 클러스터가 있다.
   그리고 순간적으로 이루어져야 장애 시간을 줄일 수 있다.
 
 
-{:#swarm-cluster}
-### Swarm 클러스터
+### Swarm 클러스터 {#swarm-cluster}
 
 Swarm의 경우, Worker 관점에서 보면 하나의 Service를 여러 개의 Task로
 쪼개어 일의 양을 조절할 수 있도록 해주는 부하분산 클러스터의 성격이
@@ -123,8 +118,7 @@ Swarm의 경우, Worker 관점에서 보면 하나의 Service를 여러 개의 T
 설명을 볼 수 있다.
 
 
-{:#components-of-swarm-cluster}
-## Swarm 클러스터 구성요소
+## Swarm 클러스터 구성요소 {#components-of-swarm-cluster}
 
 Swarm 클러스터는 매우 단순한 구조를 갖는다. 이 클러스터 안에는 두 종류의
 Node가 존재하는데, 하나는 Swarm의 관리 기능을 수행하는 Manager Node고
@@ -152,8 +146,7 @@ Node 관리와 Service 관리 등의 영역은 지난 두 편의 글에서 정�
 이 글은 클러스터 부분에 초점을 두고 시험을 통하여 정리를 하고자 한다.
 
 
-{:#planning-swarm-cluster}
-## Swarm 클러스터 구성 계획
+## Swarm 클러스터 구성 계획 {#planning-swarm-cluster}
 
 Swarm 클러스터의 실제 구성은 매우 단순하다. Swarm의 매력 중 하나가 이
 단순함이다. 이미 Swarm을 구성하면서 초기화, Node 추가 등의 기능을
@@ -164,7 +157,6 @@ Swarm 클러스터의 실제 구성은 매우 단순하다. Swarm의 매력 중 
 3 대 이상의 Node를 Manager로 지정하기만 하면, 말 그대로 추가적인 어떠한
 작업도 없이 지정하기만 하면, Swarm 클러스터는 완성된다.
 
-{:.boxed}
 > 일반적으로, 클러스터가 두 대 또는 짝수의 시스템으로 구성된 경우, 그 중
 > 하나 또는 반이 Offline이 되었을 때 클러스터가 정상적으로 동작하기가
 > 어렵다. 왜냐하면, 남아있는 시스템의 입장에서 그 상황이 자신만 살아남은
@@ -177,6 +169,7 @@ Swarm 클러스터의 실제 구성은 매우 단순하다. Swarm의 매력 중 
 > Swarm 클러스터의 경우, Manager를 홀수로 유지하도록 설계되어 있으며,
 > 별도의 Quorum 장치를 사용할 수는 없는 것 같다. (Worker 연결성을
 > Quorum으로 활용할 수는 없었을까?) 
+{.boxed}
 
 
 
@@ -187,9 +180,8 @@ Swarm 클러스터의 실제 구성은 매우 단순하다. Swarm의 매력 중 
 독립적인 기계 위에 구성하는 것이다.
 
 ![](/attachments/docker/swarm-cluster-large.png)
-
-{:.caption.centered}
 독립적인 Manager Pool을 구성한 예
+{.caption .centered}
 
 이 경우, Manager가 관리업무에만 헌신하게 되면 반대로 모든 업무 부하는
 Worker에 집중되며 만약 갑작스런 업무 부하로 인해 Process가 자원할당을
@@ -215,9 +207,8 @@ Drain 상태로 바꾸면 된다.
 구분할 필요가 없을 수 있다.
 
 ![](/attachments/docker/swarm-cluster-small.png)
-
-{:.caption.centered}
 Manager와 Worker가 혼합된 구성의 예
+{.caption .centered}
 
 이런 경우라면, 전체 Node를 Worker로 사용하면서 그 중 몇 대만 Manager로
 사용할 수 있다. 또한, 언제든지 추가 Node를 구성하거나 Manager Node를
@@ -250,15 +241,13 @@ $
 ```
 
 
-{:#first-test-one-more-manager}
-# 1차 시험: 지배인 하나만 더!
+# 1차 시험: 지배인 하나만 더!  {#first-test-one-more-manager}
 
 일단, Manager를 하나만 더 늘려서 정말 두 개로는 가용성 보장이 안 되는지
 시험해봤다. (왜 논리적으로 봐도 안 되는 것을 구태여 시험까지???)
 
 
-{:#promote-worker-as-manager}
-## 기존 Worker의 승급
+## 기존 Worker의 승급 {#promote-worker-as-manager}
 
 "정말 안 되는지" 시험한다고는 하지만, 이 1차 시험에서 중요한 부분은 바로
 **Worker 신분으로 Swarm에 가입해 일하고 있던 Node를 Manager로 승진시키는
@@ -271,6 +260,7 @@ Worker 신분의 Node에게 Manager가 수행해야 할 명령을 내렸더니 �
 
 > 나는 지배인이 아니에요. 일꾼은 패거리 작업을 할 수 없어요. 지배인에게
 > 말하거나 저를 지배인으로 승진시켜주세요
+{.comment}
 
 라고 말했었다. 소원을 들어주자.
 
@@ -387,8 +377,7 @@ $
 ```
 
 
-{:#fault-test-leader-down-1}
-## 장애 시험: Leader Down
+## 장애 시험: Leader Down {#fault-test-leader-down-1}
 
 시험을 위해, Service를 하나 만들어보자. 두 대의 Node가 Manager 겸 Worker로
 동작하는 중이니, 편의 상 두 개의 복제본을 갖는 Service를 만들었다.
@@ -415,8 +404,7 @@ $
 살렸다 하는 H/A 시험을 상~당히 좋아한다. 뭔가 성격이 좀 이상해...)
 
 
-{:#fault-test-leader-down-1-leader-down}
-### Leader Down
+### Leader Down {#fault-test-leader-down-1-leader-down}
 
 기왕 Node를 죽인다면 Leader를 먼저! 보통, 계층구조가 확실한 인간 세상의
 경우, Leader를 죽이면 조직이 흐트러진다! 고래떼는 어떠냐?!
@@ -432,7 +420,6 @@ $
 "*원격으로 다 할 수 있다*" 아니더냐, 그리고 간단하게 다시 Manager에게 갈
 명령을 내려봤다.
 
-{:.wrap}
 ```console
 $ docker node ls
 error during connect: Get https://198.51.100.222:2376/v1.35/nodes: dial tcp 198.51.100.222:2376: getsockopt: no route to host
@@ -446,7 +433,6 @@ $
 그럼, 아직 살아있는 또하나의 Manager인 `dev02`를 바라보고, 다시 동일한
 명령을 날려보자.
 
-{:.wrap}
 ```console
 $ docker-machine use dev02
 Active machine: dev02
@@ -473,13 +459,11 @@ Manager도 자신의 결백함을 증명할 길이 없어서 Manager의 역할�
 못한다.
 
 
-{:#fault-test-leader-down-1-recovery}
-## Recovery
+## Recovery {#fault-test-leader-down-1-recovery}
 
 정족수에 미치지 못해 클러스터가 정상적으로 동작하지 않는 상황에서, 문제가
 발생했던 Manager를 다시 살려내 봤다.
 
-{:.wrap}
 ```console
 $ docker-machine start dev01
 Starting "dev01"...
@@ -515,8 +499,7 @@ $
 
 
 
-{:#fault-test-leader-down-1-manager-down}
-## 장애 시험: Manager Down
+## 장애 시험: Manager Down {#fault-test-leader-down-1-manager-down}
 
 라고 의심하는 사람도 있을 수 있다. 해보자. 이번에는 Leader 지위에 있지 않은
 일반 Manager를 죽여보려고 한다. 누가 일반 Manager지?
@@ -534,7 +517,6 @@ Manager다. 어쩔 수 없이 이 Node를 다시 죽였다!
 
 그럼 상태를 볼까?
 
-{:.wrap}
 ```console
 $ docker node ls
 Error response from daemon: rpc error: code = Unknown desc = The swarm does not have a leader. It's possible that too few managers are online. Make sure more than half of the managers are online.
@@ -543,7 +525,6 @@ $
 
 이번에도 똑같은 이유로 Swarm은 동작하지 않았다. 그리고,
 
-{:.wrap}
 ```console
 $ docker ps 
 CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
@@ -598,15 +579,13 @@ $
 
 
 
-{:#second-test-three-of-managers}
-# 2차 시험: 지배인 셋!
+# 2차 시험: 지배인 셋!  {#second-test-three-of-managers}
 
 이번에는, Swarm 가용성 환경의 지침에 따라, 3개 이상의 Manager를 갖춘 환경을
 만들어서 시험을 진행하려고 한다. (처음부터 그랬으면 글이 짧아지지 않겠냐?)
 
 
-{:#hire-new-manager}
-## 새로운 Manager의 채용
+## 새로운 Manager의 채용 {#hire-new-manager}
 
 이번에는 조금 다른 방식으로 Manager를 추가하려고 한다. 먼저, 아래와 같이,
 `docker-machine`을 이용해서 Docker Host 하나를 더 만들었으며, 그 결과는
@@ -635,7 +614,6 @@ $
 이제, 새로 만든 Host를 Swarm에 등록할건데, 아예 처음부터 Worker가 아닌
 Manager로 채용하려고 한다.
 
-{:.wrap}
 ```console
 $ docker-machine use dev03
 Active machine: dev03
@@ -677,8 +655,7 @@ $
 ```
 
 
-{:#fault-test-leader-down-2}
-## 장애 시험: Leader Down
+## 장애 시험: Leader Down {#fault-test-leader-down-2}
 
 바로 진행하자!
 
@@ -723,8 +700,7 @@ Slot에 새로운 Task `eyodsn9n3hl0`가 만들어져 `dev01` 위에서 돌고 �
 조금 특이한 것은, 그 Task의 현재 상태가 아직 `Running`이라는 점인데...
 
 
-{:#fault-test-leader-down-2-recovery}
-## Recovery
+## Recovery {#fault-test-leader-down-2-recovery}
 
 아무튼, 죽은 Node를 되살려보자.
 
@@ -746,7 +722,6 @@ $
 
 죽었던 Node가 다시 살아난 상황에서 Task 상황을 다시 보면,
 
-{:.wrap}
 ```console
 $ docker service ps ping
 ID           NAME       IMAGE         NODE  DESIRED STATE CURRENT STATE          ERROR
@@ -767,9 +742,9 @@ $
 있었다. 만약, 해당 Task, Service가 공유 리소스에 대한 배타적 접근이
 필요한 경우였다면 어떻게 됐을까?
 
-{:.point}
 배타적 자원 접근이 필요한 서비스와 Swarm
 : Swarm은 배타적 자원 접근에 대한 타당한 처리를 지원하지 않는 것 같다!
+{.point}
 
 사실, 난 개인적으로 그런 업무, 예를 들어 Shared Storage에 기반한 DBMS
 같은 업무를 Container로 구동하는 것이 적합하다고 생각하지는 않는다.
@@ -778,8 +753,7 @@ $
 
 
 
-{:#fault-test-leader-down-2-relocation}
-## Relocation
+## Relocation {#fault-test-leader-down-2-relocation}
 
 맨 처음 시험했을 때도 그랬지만, Worker가 복구된다고 해서 원래 그 Worker에서
 실행 중이던 Task를 억지로 돌려 놓지는 않는다. Live Migration도 아닌데 그럼
@@ -857,8 +831,8 @@ $
 깔끔하다!
 
 
-{:.mix-xlarge}
 > Happy Docking!!!
+{.comment .mix-xlarge}
 
 
 [Raft Consensus Algorithm]:http://thesecretlivesofdata.com/raft/
@@ -884,17 +858,17 @@ $
 * _Docker Swarm의 고가용성_
 * [Docker Swarm 다시 보기]
 
-[Docker Swarm 다시 보기]:{% link _posts/cloudcomputing/2018-03-29-little-more-about-docker-swarm.md %}
-[Docker Swarm의 고가용성]:{% link _posts/cloudcomputing/2018-03-15-high-availability-of-docker-swarm.md %}
-[Docker Swarm에 Service 올려보기]:{% link _posts/cloudcomputing/2018-03-14-run-a-service-on-docker-swarm.md %}
-[Getting Started with Docker Swarm]:{% link _posts/cloudcomputing/2018-03-13-getting-started-with-docker-swarm.md %}
-[Docker Machine 다시 보기]:{% link _posts/cloudcomputing/2018-03-09-little-more-about-docker-machine.md %}
-[Docker Machine으로 Docker Node 뿌리기]:{% link _posts/cloudcomputing/2018-03-07-provision-docker-node-with-docker-machine.md %}
-[Docker Cloud에서 자동빌드하기]:{% link _posts/cloudcomputing/2018-02-21-automated-build-with-docker-cloud.md %}
-['쓸만한' Docker Image 만들기 - Part 2]:{% link _posts/cloudcomputing/2018-02-20-build-usable-docker-image-part2.md %}
-['쓸만한' Docker Image 만들기 - Part 1]:{% link _posts/cloudcomputing/2018-02-19-build-usable-docker-image-part1.md %}
-[Docker: 나의 첫 Docker Image]:{% link _posts/cloudcomputing/2018-02-14-build-my-first-docker-image.md %}
-[Docker: Installation and Test Drive]:{% link _posts/cloudcomputing/2018-02-08-docker-installation-and-test-drive.md %}
-[Docker: Getting Started with Docker]:{% link _posts/cloudcomputing/2018-02-08-getting-started-with-docker.md %}
+[Docker Swarm 다시 보기]:{{< relref "/blog/cloudcomputing/2018-03-29-little-more-about-docker-swarm.md" >}}
+[Docker Swarm의 고가용성]:{{< relref "/blog/cloudcomputing/2018-03-15-high-availability-of-docker-swarm.md" >}}
+[Docker Swarm에 Service 올려보기]:{{< relref "/blog/cloudcomputing/2018-03-14-run-a-service-on-docker-swarm.md" >}}
+[Getting Started with Docker Swarm]:{{< relref "/blog/cloudcomputing/2018-03-13-getting-started-with-docker-swarm.md" >}}
+[Docker Machine 다시 보기]:{{< relref "/blog/cloudcomputing/2018-03-09-little-more-about-docker-machine.md" >}}
+[Docker Machine으로 Docker Node 뿌리기]:{{< relref "/blog/cloudcomputing/2018-03-07-provision-docker-node-with-docker-machine.md" >}}
+[Docker Cloud에서 자동빌드하기]:{{< relref "/blog/cloudcomputing/2018-02-21-automated-build-with-docker-cloud.md" >}}
+['쓸만한' Docker Image 만들기 - Part 2]:{{< relref "/blog/cloudcomputing/2018-02-20-build-usable-docker-image-part2.md" >}}
+['쓸만한' Docker Image 만들기 - Part 1]:{{< relref "/blog/cloudcomputing/2018-02-19-build-usable-docker-image-part1.md" >}}
+[Docker: 나의 첫 Docker Image]:{{< relref "/blog/cloudcomputing/2018-02-14-build-my-first-docker-image.md" >}}
+[Docker: Installation and Test Drive]:{{< relref "/blog/cloudcomputing/2018-02-08-docker-installation-and-test-drive.md" >}}
+[Docker: Getting Started with Docker]:{{< relref "/blog/cloudcomputing/2018-02-08-getting-started-with-docker.md" >}}
 
 

@@ -12,6 +12,7 @@ last_modified_at: 2011-12-27T12:36:17+09:00
 위해 partition 시작 위치 찾고 어쩌고... 그랬었던 기억인데, 이 물건이
 그런 문제를 참 쉽게 풀어준다. 어디서 얼마나 호환되는지 시험은 안해봤지만,
 간단한 시험에는 성공. 괜찮네.
+<!--more-->
 
 > Kpartx can be used to set up device mappings for the partitions of any  
 > partitioned block device. It is part of the Linux multipath-tools.

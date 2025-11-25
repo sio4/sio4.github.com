@@ -5,8 +5,9 @@ categories: ["productivity"]
 image: /attachments/20150811-jekyll-perf-1.png
 date: 2015-08-11 04:14:32+09:00
 ---
-나의 "생각저장소"를 이곳 [Github Pages](https://pages.github.com/){:.ext}로 옮긴 이후, 몇 개의 더 글을 쓰면서 본격적으로 [Jekyll](http://jekyllrb.com/){:.ext}, [Markdown](http://daringfireball.net/projects/markdown/){:.ext}, 그리고 [Liquid](http://liquidmarkup.org/){:.ext} 이용한 정적 블로깅을 조금 더 경험해 봤다.  
+나의 "생각저장소"를 이곳 [Github Pages](https://pages.github.com/)로 옮긴 이후, 몇 개의 더 글을 쓰면서 본격적으로 [Jekyll](http://jekyllrb.com/), [Markdown](http://daringfireball.net/projects/markdown/), 그리고 [Liquid](http://liquidmarkup.org/) 이용한 정적 블로깅을 조금 더 경험해 봤다.  
 그 후 쓰게 된 이 글은, Jekyll의 성능에 대한 이야기이다.
+<!--more-->
 
 ## 성능에 관심을 갖다
 
@@ -16,15 +17,16 @@ date: 2015-08-11 04:14:32+09:00
 한 것.
 
 그리고 얼마 전,
-"[블로그, Tistory로부터 Github Pages로 이주]({% post_url productivity/2015-07-24-migration-from-tistory %}){:.reference}"에
+"[블로그, Tistory로부터 Github Pages로 이주]({{< relref "/blog/productivity/2015-07-24-migration-from-tistory" >}})"에
 정리했던 것과 같이 내 블로그의 모든 글들을 이 쪽으로 완전히 이사하였고,
 다시
-"[Jekyll로 Github Pages에 블로깅하기, Re!oaded]({% post_url productivity/2015-08-08-blogging-on-github-pages-reloaded %}){:.reference}"에서
+"[Jekyll로 Github Pages에 블로깅하기, Re!oaded]({{< relref "/blog/productivity/2015-08-08-blogging-on-github-pages-reloaded" >}})"에서
 소개한 블로그 답게 살 붙이는 작업을 몇 일 동한 틈틈히 진행하면서 글도
 몇 개 더 써봤는데... 그러고 나니, **Jekyll의 Build 속도 문제**가 슬슬
 거슬리기 시작했다.
 
 > Jekyll의 Build 속도 문제가 슬슬 거슬리기 시작했다.
+{.point}
 
 ### 성능의 이해
 
@@ -54,6 +56,7 @@ Liquid 문법을 혼합하여 작성해놓으면, 그 이후에 Markdown으로 �
 들었다.
 
 > 글을 쓸 때마다 수십초? 이건 좀 아닌데...?
+{.comment}
 
 그래서 재봤다. 어디서, 얼마나 걸리나?
 
@@ -67,11 +70,11 @@ _대략_ 측정한 결과이다.
 
 HTML의 Meta Tag를 포함하여 전체 페이지 배치를 다루는 Layout 이다.
 
-{:.styled.fit}
 | 기능         | 측정값 | 차이 |
 |:------------:|:------:|:----:|
 | 없음         |   3.4  |  0.0 |
 | 메타생성     |   3.7  |  0.3 |
+{.styled .centered}
 
 다른 Layout을 포함하여 모든 기능요소를 끄고 137개의 글을 처리하는데
 걸린 시간은 3.4초였으며, `HEAD` 부분에 위치할 `TITLE`, `META` 등의
@@ -81,13 +84,13 @@ HTML의 Meta Tag를 포함하여 전체 페이지 배치를 다루는 Layout 이
 
 페이지 오른쪽에 표시되는 일종의 Site Navigation을 담당하는 부분이다.
 
-{:.styled.fit}
 | 기능          | 측정값 | 차이 |
 |:-------------:|:------:|:----:|
 | 정적파일 포함 |   3.8  |  0.1 |
 | 카테고리 생성 |   6.3  |  2.5 |
 | 프로젝트 생성 |   6.8  |  0.5 |
 | 최신목록 생성 |   8.2  |  1.4 |
+{.styled .centered}
 
 Site Layout을 원래대로 한 후에 Sidebar를 구성하는 자동화 요소를
 추가하면서 측정한 결과인데, 카테고리 목록 자동생성 및 최신목록
@@ -100,36 +103,36 @@ Site Layout을 원래대로 한 후에 Sidebar를 구성하는 자동화 요소�
 
 참고로, 카테고리 자동생성을 위하여 내가 사용한 코드는 아래와 같다.
 
-```liquid
-{% raw %}
-{% assign categories = site.categories |sort %}
+```html
+{% raw" >}}
+{% assign categories = site.categories |sort" >}}
 <ul class="categories">
-{% for category in categories %}
-  {% assign cat_name = category |first %}
-  {% if cat_name == 'blog' %}
-    {% continue %}
-  {% endif %}
-  {% assign cat_size = category |last |size %}
+{% for category in categories" >}}
+  {% assign cat_name = category |first" >}}
+  {% if cat_name == 'blog'" >}}
+    {% continue" >}}
+  {% endif" >}}
+  {% assign cat_size = category |last |size" >}}
 
-  {% comment %}
-    {% assign posts = category |last %}
-    {% for pp in posts %}
+  {% comment" >}}
+    {% assign posts = category |last" >}}
+    {% for pp in posts" >}}
       ({{ pp.title }})
-    {% endfor %}
-  {% endcomment %}
+    {% endfor" >}}
+  {% endcomment" >}}
 
-  {% assign post = category |last |first %}
-  {% assign cat_display = post.display %}
-  {% if cat_display == null %}
-    {% assign cat_display = cat_name %}
-  {% endif %}
+  {% assign post = category |last |first" >}}
+  {% assign cat_display = post.display" >}}
+  {% if cat_display == null" >}}
+    {% assign cat_display = cat_name" >}}
+  {% endif" >}}
   <li><a href="/categories/{{ cat_name }}.html"
          title="Postings on {{ cat_name }}">{{ cat_display }}</a>
     <span class="meta">» {{ cat_size }}</span>
   </li>
-  {% endfor %}
+  {% endfor" >}}
 </ul>
-{% endraw %}
+{% endraw" >}}
 ```
 
 #### Post
@@ -137,7 +140,6 @@ Site Layout을 원래대로 한 후에 Sidebar를 구성하는 자동화 요소�
 실제 글의 내용을 담고, 그 글과 관련된 Meta성 데이터(Tag 등) 및 관련
 글의 목록, 다음/이전 글로 이동하기 위한 링크 등을 자동화한 Layout이다.
 
-{:.styled.fit}
 | 기능          | 측정값 | 차이 |
 |:-------------:|:------:|:----:|
 | 정적파일 포함 |   8.3  |  0.1 |
@@ -145,6 +147,7 @@ Site Layout을 원래대로 한 후에 Sidebar를 구성하는 자동화 요소�
 | 테그 표시     |   8.4  |  0.1 |
 | 앞/뒤 연결    |   8.6  |  0.2 |
 | 관련목록 생성 |  12.7  |  4.1 |
+{.styled .centered}
 
 이 부분에서 매우 많은 시간이 소요되는 부분이 발견되었는데, 현재 글의
 Tag를 기반으로 하여 동일한 Tag를 갖는 모든 글들의 목록을 (중복하여)
@@ -155,46 +158,42 @@ Tag를 기반으로 하여 동일한 Tag를 갖는 모든 글들의 목록을 (�
 않기 때문에, 다음의 급조된 이중 `for loop` 코드를 이용하여 Tag 기반
 관련목록을 만들고 있다.
 
-```liquid
-{% raw %}
+```html
+{% raw" >}}
 <ul class="posts">
-{% for t in page.tags %}
-  {% for p in site.tags.[t] %}
-    {% if page.path != p.path %}
+{% for t in page.tags" >}}
+  {% for p in site.tags.[t]" >}}
+    {% if page.path != p.path" >}}
       <li><span class="meta">{{ p.date |date: '%F' }}</span><a
         href="{{ p.url }}">{{ p.title }}</a>
         <span class="meta">&raquo; {{t}}</span>
       </li>
-    {% endif %}
-  {% endfor %}
-{% endfor %}
+    {% endif" >}}
+  {% endfor" >}}
+{% endfor" >}}
 </ul>
-{% endraw %}
+{% endraw" >}}
 ```
 
 ### 정리
 
 위의 시간 구성을 통합하여 다시 정리하면 아래 표와 같다.
 
-{:.styled.fit}
 | 기능 |  측정값  | 차이 | 기본 | +관련글 | +프로젝트 | +최신글 | +프로젝트 |
 |:----:|:--------:|:----:|:----:|:-------:|:---------:|:-------:|:---------:|
-| 없음          |  3.4 | 0.0 | <i class="icon check"></i> | <i class="icon check"></i> | <i class="icon check"></i> | <i class="icon check"></i> | <i class="icon check"></i> |
-| 메타생성      |  3.7 | 0.3 | <i class="icon check"></i> | <i class="icon check"></i> | <i class="icon check"></i> | <i class="icon check"></i> | <i class="icon check"></i> |
-|---------------|------|-----|------|------|------|------|------|
-| 정적파일 포함 |  3.8 | 0.1 | <i class="icon check"></i> | <i class="icon check"></i> | <i class="icon check"></i> | <i class="icon check"></i> | <i class="icon check"></i> |
-| 카테고리 생성 |  6.3 | 2.5 |      |      |      |      | <i class="icon check"></i> |
-| 프로젝트 생성 |  6.8 | 0.5 |      |      | <i class="icon check"></i> | <i class="icon check"></i> | <i class="icon check"></i> |
-| 최신목록 생성 |  8.2 | 1.4 |      |      |      | <i class="icon check"></i> | <i class="icon check"></i> |
-|---------------|------|-----|------|------|------|------|------|
-| 정적파일 포함 |  8.3 | 0.1 | <i class="icon check"></i> | <i class="icon check"></i> | <i class="icon check"></i> | <i class="icon check"></i> | <i class="icon check"></i> |
-| 작성날짜 표시 |  8.3 | 0.0 | <i class="icon check"></i> | <i class="icon check"></i> | <i class="icon check"></i> | <i class="icon check"></i> | <i class="icon check"></i> |
-| 테그 표시     |  8.4 | 0.1 | <i class="icon check"></i> | <i class="icon check"></i> | <i class="icon check"></i> | <i class="icon check"></i> | <i class="icon check"></i> |
-| 앞/뒤 연결    |  8.6 | 0.2 | <i class="icon check"></i> | <i class="icon check"></i> | <i class="icon check"></i> | <i class="icon check"></i> | <i class="icon check"></i> |
-| 관련목록 생성 | 12.7 | 4.1 |      | <i class="icon check"></i> | <i class="icon check"></i> | <i class="icon check"></i> | <i class="icon check"></i> |
-|---------------|------|-----|------|------|------|------|------|
+| 없음          |  3.4 | 0.0 | <i class="fas fa-check"></i> | <i class="fas fa-check"></i> | <i class="fas fa-check"></i> | <i class="fas fa-check"></i> | <i class="fas fa-check"></i> |
+| 메타생성      |  3.7 | 0.3 | <i class="fas fa-check"></i> | <i class="fas fa-check"></i> | <i class="fas fa-check"></i> | <i class="fas fa-check"></i> | <i class="fas fa-check"></i> |
+| 정적파일 포함 |  3.8 | 0.1 | <i class="fas fa-check"></i> | <i class="fas fa-check"></i> | <i class="fas fa-check"></i> | <i class="fas fa-check"></i> | <i class="fas fa-check"></i> |
+| 카테고리 생성 |  6.3 | 2.5 |      |      |      |      | <i class="fas fa-check"></i> |
+| 프로젝트 생성 |  6.8 | 0.5 |      |      | <i class="fas fa-check"></i> | <i class="fas fa-check"></i> | <i class="fas fa-check"></i> |
+| 최신목록 생성 |  8.2 | 1.4 |      |      |      | <i class="fas fa-check"></i> | <i class="fas fa-check"></i> |
+| 정적파일 포함 |  8.3 | 0.1 | <i class="fas fa-check"></i> | <i class="fas fa-check"></i> | <i class="fas fa-check"></i> | <i class="fas fa-check"></i> | <i class="fas fa-check"></i> |
+| 작성날짜 표시 |  8.3 | 0.0 | <i class="fas fa-check"></i> | <i class="fas fa-check"></i> | <i class="fas fa-check"></i> | <i class="fas fa-check"></i> | <i class="fas fa-check"></i> |
+| 테그 표시     |  8.4 | 0.1 | <i class="fas fa-check"></i> | <i class="fas fa-check"></i> | <i class="fas fa-check"></i> | <i class="fas fa-check"></i> | <i class="fas fa-check"></i> |
+| 앞/뒤 연결    |  8.6 | 0.2 | <i class="fas fa-check"></i> | <i class="fas fa-check"></i> | <i class="fas fa-check"></i> | <i class="fas fa-check"></i> | <i class="fas fa-check"></i> |
+| 관련목록 생성 | 12.7 | 4.1 |      | <i class="fas fa-check"></i> | <i class="fas fa-check"></i> | <i class="fas fa-check"></i> | <i class="fas fa-check"></i> |
 |               |      |     | _4.2_ | **8.3** | **8.8** | 10.2 | 12.7 |
-|---------------|------|-----|------|------|------|------|------|
+{.styled .fit}
 
 현재, 전체 기능을 살린 상태에서 137개의 글에 대한 HTML을 생성하는데
 총 12.7초가 걸리고 있다.(심지어, 어떨 때에는 20초씩 걸리기도 한다.)

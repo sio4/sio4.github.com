@@ -13,6 +13,7 @@ Docker를 개인 목적이 아닌 어느 정도 규모가 있는 서비스를 �
 등에 대한 약간의 인프라 관점의 접근이 필요하다. 이번 글에서는 클라우드를
 포함한 원격지에 Docker Node를 손쉽게 구성하는 방법, Docker Machine에 대해
 정리하려고 한다.
+<!--more-->
 
 
 지난 몇 편의 묶음글을 통해 Docker와 Container가 무엇인지, Docker를 어떻게
@@ -24,7 +25,6 @@ Docker 프로젝트의 식구 중 하나인 Docker Machine을 활용하는 방�
 정리한다.** 
 
 
-{:.boxed}
 > Docker에 대한 이 묶음글은 아직 몇 개를 쓸지 정하지 못했다. 써보고,...
 > 
 > * [Docker: Getting Started with Docker]
@@ -39,16 +39,13 @@ Docker 프로젝트의 식구 중 하나인 Docker Machine을 활용하는 방�
 > * [Docker Swarm에 Service 올려보기]
 > * [Docker Swarm의 고가용성]
 > * [Docker Swarm 다시 보기]
+{.boxed}
 
 
 물론, 어떤 영역이든, 하나의 결과를 위해 단 하나의 방법만 사용할 수 있는
 것은 아니다. 어쨌든 Docker Machine은, Docker 생태계를 이루는 다양한
 프로젝트 중에서 가장 기본이 되면서 Docker 프로젝트의 공식 프로젝트라는
 점에서 눈여겨 볼 필요가 있을 것 같다. 글은 다음과 같은 순서로 진행된다.
-
-
-* TOC
-{:toc}
 
 
 
@@ -80,9 +77,9 @@ Docker 프로젝트의 식구 중 하나인 Docker Machine을 활용하는 방�
 **아직 존재하지도 않는 기계를 새로 만들어서 Engine까지 한 방에** 설치해주는
 멋진 도구다!
 
-{:.point}
 Docker Machine
 : Not In My BackYard, But on the Cloud!
+{.point}
 
 크고 무겁고 지저분한 Container는 내 뒷마당 말고 구름 위로.
 어라? 전엔 Container가 작고 가볍다고 했었던가?  
@@ -98,7 +95,6 @@ Docker Machine
 (왜 나는 딱 한 번 실행할 작업을 스크립트로 만들고 있는 것인가...)
 
 
-{:.wrap}
 ```bash
 #!/bin/bash
 
@@ -154,7 +150,6 @@ Docker Machine은 Docker Engine 처럼 시스템 권한으로 동작하는 서�
 아무튼, 위의 스크립트를 돌려 Docker Machine을 설치하였고, 원하는 위치에
 정상적으로 설치되었는지 확인해 보았다.
 
-{:.wrap}
 ```console
 $ ./docker-machine.sh 
 $ which docker-machine 
@@ -172,7 +167,6 @@ $
 
 Bash Auto Completion도 잘 되는지 보자. 먼저 파일이 잘 들어왔는지 보고,
 
-{:.wrap}
 ```console
 $ ls ~/.bash_completion.d
 docker-machine-prompt.bash  docker-machine-wrapper.bash  docker-machine.bash
@@ -184,7 +178,6 @@ $
 읽어오도록 설정되어 있으므로 Login을 다시 할 필요는 없고 Shell만 다시
 열면 된다.)
 
-{:.wrap}
 ```console
 $ docker-machine <TAB>
 active            ip                restart           stop
@@ -235,7 +228,6 @@ VirtualBox 등의 설치형 가상환경에 이르는 다양한 환경을 지원
 먼저, 아래와 같이 `docker-machine create` 명령을 이용하면 VM을 생성하고
 그 위에 Docker Engine을 구성하는 과정을 자동으로 처리해준다.
 
-{:.wrap}
 ```console
 $ docker-machine create --driver softlayer --softlayer-user tony.stark --softlayer-api-key <my_api_key> --softlayer-hostname worker01 --softlayer-domain example.com --softlayer-cpu 2 --softlayer-memory 2 --softlayer-network-max-speed 1000 --softlayer-region seo01 --softlayer-hourly-billing worker01
 Creating CA: /home/sio4/.docker/machine/certs/ca.pem
@@ -287,7 +279,6 @@ VirtualBox 등의 설명은 `create` 명령을 `-h`로 실행했을 때 보여�
 
 #### 수정, 2018-03-08
 
-{:.boxed.wrap}
 > 글을 쓴 후에, 천천히 다시 들여다보고 있는데, 그 과정에서 다음과 같은
 > 내용을 발견했다.
 >
@@ -351,6 +342,7 @@ VirtualBox 등의 설명은 `create` 명령을 `-h`로 실행했을 때 보여�
 >
 > 이렇게, Auto Completion도 잘 된다. (Tab을 누르기 전에, `--`를 먼저
 > 입력하는 것이 키다.)
+{.boxed}
 
 
 
@@ -383,7 +375,6 @@ $
 클라우드 서비스의 관리콘솔에 접속해서 만들어진 VM이 잘 떠있는지 확인했고,
 접속정보를 확인하여 SSH로 접속해봤다.
 
-{:.wrap}
 ```console
 $ ssh root@198.51.100.214
 root@198.51.100.214's password: 
@@ -409,7 +400,6 @@ root@worker01:~#
 주입한 SSH Key를 사용해서, 계정과 암호를 사용하지 않고도 쉽게 접근할 수
 있다.
 
-{:.wrap}
 ```console
 $ docker-machine ssh worker01
 Welcome to Ubuntu 16.04.3 LTS (GNU/Linux 4.4.0-112-generic x86_64)
@@ -475,7 +465,6 @@ root@worker01:~#
 확인하고 내부적인 동작여부를 간접적으로 확인해보자.
 
 
-{:.wrap}
 ```console
 root@worker01:~# docker version
 Client:
@@ -572,7 +561,6 @@ $
 
 그래서, Docker Machine은 그것을 돕기 위한 기능을 내장하고 있다.
 
-{:.wrap}
 ```console
 $ docker-machine env worker01
 export DOCKER_TLS_VERIFY="1"
@@ -588,7 +576,6 @@ $
 Docker의 환경변수를 위와 같이 출력해준다. 그리고, 맨 아래에는 친절히
 이걸 어떻게 쓰면 편한지도 안내하고 있다. 해보자. 물론, Hello World first.
 
-{:.wrap}
 ```console
 $ eval "$(docker-machine env worker01)"
 $ docker run hello-world
@@ -629,7 +616,6 @@ $
 어라? 그런데 똑같으니까 오히려... "이거 Local에서 실행되는 거 아냐?" 의심이
 생기네? 그럼 이번엔,
 
-{:.wrap}
 ```console
 $ docker run -it scinix/golang
 WARNING: Error loading config file: /home/sio4/.docker/config.json - open /home/sio4/.docker/config.json: permission denied
@@ -668,7 +654,6 @@ root@worker01:~#
 오호라! Container 프로세스가 정상적으로 떠있는 것을 볼 수 있다. 역시
 조금 더 세련되게, `docker` 명령을 써보자.
 
-{:.wrap}
 ```console
 root@worker01:~# docker image ls
 REPOSITORY       TAG             IMAGE ID          CREATED           SIZE
@@ -815,16 +800,16 @@ Host로 만들고 싶지는 않았기 때문...
 * [Docker Swarm의 고가용성]
 * [Docker Swarm 다시 보기]
 
-[Docker Swarm 다시 보기]:{% link _posts/cloudcomputing/2018-03-29-little-more-about-docker-swarm.md %}
-[Docker Swarm의 고가용성]:{% link _posts/cloudcomputing/2018-03-15-high-availability-of-docker-swarm.md %}
-[Docker Swarm에 Service 올려보기]:{% link _posts/cloudcomputing/2018-03-14-run-a-service-on-docker-swarm.md %}
-[Getting Started with Docker Swarm]:{% link _posts/cloudcomputing/2018-03-13-getting-started-with-docker-swarm.md %}
-[Docker Machine 다시 보기]:{% link _posts/cloudcomputing/2018-03-09-little-more-about-docker-machine.md %}
-[Docker Machine으로 Docker Node 뿌리기]:{% link _posts/cloudcomputing/2018-03-07-provision-docker-node-with-docker-machine.md %}
-[Docker Cloud에서 자동빌드하기]:{% link _posts/cloudcomputing/2018-02-21-automated-build-with-docker-cloud.md %}
-['쓸만한' Docker Image 만들기 - Part 2]:{% link _posts/cloudcomputing/2018-02-20-build-usable-docker-image-part2.md %}
-['쓸만한' Docker Image 만들기 - Part 1]:{% link _posts/cloudcomputing/2018-02-19-build-usable-docker-image-part1.md %}
-[Docker: 나의 첫 Docker Image]:{% link _posts/cloudcomputing/2018-02-14-build-my-first-docker-image.md %}
-[Docker: Installation and Test Drive]:{% link _posts/cloudcomputing/2018-02-08-docker-installation-and-test-drive.md %}
-[Docker: Getting Started with Docker]:{% link _posts/cloudcomputing/2018-02-08-getting-started-with-docker.md %}
+[Docker Swarm 다시 보기]:{{< relref "/blog/cloudcomputing/2018-03-29-little-more-about-docker-swarm.md" >}}
+[Docker Swarm의 고가용성]:{{< relref "/blog/cloudcomputing/2018-03-15-high-availability-of-docker-swarm.md" >}}
+[Docker Swarm에 Service 올려보기]:{{< relref "/blog/cloudcomputing/2018-03-14-run-a-service-on-docker-swarm.md" >}}
+[Getting Started with Docker Swarm]:{{< relref "/blog/cloudcomputing/2018-03-13-getting-started-with-docker-swarm.md" >}}
+[Docker Machine 다시 보기]:{{< relref "/blog/cloudcomputing/2018-03-09-little-more-about-docker-machine.md" >}}
+[Docker Machine으로 Docker Node 뿌리기]:{{< relref "/blog/cloudcomputing/2018-03-07-provision-docker-node-with-docker-machine.md" >}}
+[Docker Cloud에서 자동빌드하기]:{{< relref "/blog/cloudcomputing/2018-02-21-automated-build-with-docker-cloud.md" >}}
+['쓸만한' Docker Image 만들기 - Part 2]:{{< relref "/blog/cloudcomputing/2018-02-20-build-usable-docker-image-part2.md" >}}
+['쓸만한' Docker Image 만들기 - Part 1]:{{< relref "/blog/cloudcomputing/2018-02-19-build-usable-docker-image-part1.md" >}}
+[Docker: 나의 첫 Docker Image]:{{< relref "/blog/cloudcomputing/2018-02-14-build-my-first-docker-image.md" >}}
+[Docker: Installation and Test Drive]:{{< relref "/blog/cloudcomputing/2018-02-08-docker-installation-and-test-drive.md" >}}
+[Docker: Getting Started with Docker]:{{< relref "/blog/cloudcomputing/2018-02-08-getting-started-with-docker.md" >}}
 

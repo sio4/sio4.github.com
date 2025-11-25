@@ -13,8 +13,10 @@ Docker Machine에 대해 살펴봤다. Docker Machine은 그 초점이 기계를
 도구라면, 오늘의 주제인 **Docker Swarm은 여러 대의 Docker Host 들을 엮어서
 마치 하나인 것처럼 다룰 수 있게 해주는 Clustering 도구, 또는 유식한 말로
 Orchestration 도구**이다.
+<!--more-->
 
-![](/logos/docker-swarm-detail.png){:.centered.half}
+![](/logos/docker-swarm-detail.png)
+{.centered .half}
 
 지나치게 빠른 속도로 변해가는 정보기술 분야가, 심지어 영어권을 중심으로
 발전하다 보니 만나게 되는 문제 중 하나가 바로 영어로 된 용어 문제다.
@@ -44,7 +46,6 @@ Software에게, 이것을 마치 관악기, 현악기, 타악기 등이 어우�
 돕는(Orchestration) 소프트웨어인 Docker Swarm에 대해 정리하려고 한다.
 
 
-{:.boxed}
 > Docker에 대한 이 묶음글은 아직 몇 개를 쓸지 정하지 못했다. 써보고,...
 > 
 > * [Docker: Getting Started with Docker]
@@ -59,12 +60,10 @@ Software에게, 이것을 마치 관악기, 현악기, 타악기 등이 어우�
 > * [Docker Swarm에 Service 올려보기]
 > * [Docker Swarm의 고가용성]
 > * [Docker Swarm 다시 보기]
+{.boxed}
 
 
 # Docker Swarm
-
-* TOC
-{:toc .half.pull-right}
 
 Docker Swarm은 2014년에 시작된 Docker Orchestration 도구를 가르키기도 하며,
 동시에 버전 1.12 부터 Docker Engine에 결합되어 제공되는 [Swarmkit] 기능을
@@ -83,8 +82,7 @@ Docker Engine이 Swarm mode로 실행되게 되면, Swarm의 통제 하에서 �
 방법에 대하여 위의 목차와 같은 순서로 정리한다.
 
 
-{:#feature-of-docker-swarm}
-## Docker Swarm의 기능
+## Docker Swarm의 기능 {#feature-of-docker-swarm}
 
 앞서 잠깐 언급한 것처럼, Docker Swarm은 여러 Host 들을 엮어서 마치 거대한
 단일 Host처럼 다룰 수 있도록 해주는 **사용자 인터페이스**, Cluster에 속한
@@ -93,9 +91,9 @@ Host 중 일부에서 장애가 발생하더라도 서비스의 연속성을 최
 논리적 단위로 포장하여 그 생명주기 및 요소 간 상호 관계 등을 정의하고
 관리하는 **Orchestrator로써의 역할**을 함께 제공한다.
 
-{:.point}
 Docker Swarm
 : Virtual Docker Host + Host Clustering + Service Orchestration
+{.point}
 
 공식 문서에서 발췌하 주요 기능 키워드는 다음과 같다. 
 
@@ -111,13 +109,11 @@ Docker Swarm
 * Rolling updates
 
 
-{:#terms-of-docker-and-swarm}
-## Docker Swarm의 용어와 동작
+## Docker Swarm의 용어와 동작 {#terms-of-docker-and-swarm}
 
 진도가 나갈 수록, 용어의 혼선이 예상된다. 여기서 일부 용어에 대한 정리를
 하고 넘어간다.
 
-{:.boxed.definition}
 > Container
 > : 사용자가 실행하고자 하는 프로그램의 독립적 실행을 보장하기 위한
   격리된 실행 공간/환경
@@ -143,6 +139,7 @@ Docker Swarm
 > Worker Node 또는 Worker
 > : Swarm Node 중에서 Container를 실행하여 실제 일을 처리하는 Node.
 > 일부러 제외하지 않으면 모든 Node는 기본적으로 Worker가 됨
+{.boxed .definition}
 
 ### Docker Swarm의 기본 흐름
 
@@ -159,14 +156,12 @@ Node에서 생성, 삭제, 장애의 생명주기를 마치게 된다.
 
 
 
-{:#setup-swarm-cluster}
-# Swarm Cluster 구성하기
+# Swarm Cluster 구성하기 {#setup-swarm-cluster}
 
 일단 만들어보자. (설명보다 해보는 게 쉬운 Docker. 그래서 예쁘다.)
 
 
-{:#initialize-swarm-cluster}
-## Swarm Cluster 초기화하기
+## Swarm Cluster 초기화하기 {#initialize-swarm-cluster}
 
 Swarm Cluster의 구성은 매우 간단하다. 별도의 DBMS나 도구를 준비할 필요도
 없고, 뭔가 복잡한 사전 구성이 필요하지도 않다. 단 하나, 이미 구성되어
@@ -199,7 +194,6 @@ $
 Engine이 어떤 상태인지 확인해보면, 아래와 같이 Swarm mode가 비활성 상태임을
 확인할 수 있다.
 
-{:.wrap}
 ```console
 $ docker info
 <...>
@@ -217,14 +211,13 @@ Swarm mode 자체와 관련된 부명령은 `swarm` 명령이다. `swarm` 명령
 몇 개의 부명령을 갖는데, 그 중 `init` 명령은 Cluster를 초기화하기 위해
 사용하는 명령이다. 이 명령은 다음과 같은 형식으로 실행하게 된다.
 
-```
+```console
 docker swarm init --advertise-addr IP_ADDRESS
 ```
 
 하고 나니 조금 복잡해 보이기도 하는데, 아래와 같이 Bash의 명령어 치환을
 활용하면 딱히 IP를 확인하지 않더라도 초기화 명령을 수행할 수 있다.
 
-{:.wrap}
 ```console
 $ docker swarm init --advertise-addr $(docker-machine ip `docker-machine active`)
 Swarm initialized: current node (z9dj9cobdat235ou65kl0ztr3) is now a manager.
@@ -246,7 +239,6 @@ Host가 어떤 Swarm Cluster에도 포함되지 않은 상태라면, 위와 같�
 
 이제, 초기화를 끝낸 Engine의 정보가 변했는지 확인해보자.
 
-{:.wrap}
 ```console
 $ docker info
 <...>
@@ -286,7 +278,6 @@ Swarm mode에서 Node를 관리하고 Service를 관리할 때에는 다른 명�
 `node` 명령을 사용해서 새로 만든 Cluster의 관리 영역 안으로 들어온 Node를
 확인해보자. (물론, 아직 외롭게 혼자겠지만)
 
-{:.wrap}
 ```console
 $ docker node ls
 ID                            HOSTNAME  STATUS  AVAILABILITY  MANAGER STATUS
@@ -298,13 +289,11 @@ $
 
 
 
-{:#add-new-node-to-swarm-cluster}
-## 새 Node 추가하기
+## 새 Node 추가하기 {#add-new-node-to-swarm-cluster}
 
 같은 방식으로, `docker-machine use`를 사용해서 앞으로 내릴 `docker` 명령을
 받을 Host를 결정한다.
 
-{:.wrap}
 ```console
 $ docker-machine use dev02
 Active machine: dev02
@@ -324,7 +313,6 @@ $
 아! Docker가 친절해서 참 맘에 든다는 얘기를 했던가? 만약 Cluster 초기화 후
 시간이 지나 Token을 잊었다면...
 
-{:.wrap}
 ```console
 $ docker swarm join-token worker
 To add a worker to this swarm, run the following command:
@@ -337,7 +325,6 @@ $
 이렇게, 다시 한 번 명령과 인수를 포함한 합류 명령행을 확인할 수 있다. 또는,
 스크립트로 만들기 위해 값만 받고 싶다면,
 
-{:.wrap}
 ```console
 $ docker swarm join-token manager -q
 SWMTKN-1-0zq5k1zwxqo8hills9d3ezxu2dzxwuy3t2dcz4vdc1kj01saiy-6aj42alvbpqb0y9zzxgy127ko
@@ -351,7 +338,6 @@ $
 
 그럼, 합류 명령을 내려보자.
 
-{:.wrap}
 ```console
 $ docker swarm join --token SWMTKN-1-0zq5k1zwxqo8hills9d3ezxu2dzxwuy3t2dcz4vdc1kj01saiy-5pp2qrc60ia8j0qvw1hzgh6ck 198.51.100.222:2377
 This node joined a swarm as a worker.
@@ -365,7 +351,6 @@ $
 Worker의 신분을 가지고 있다. 그래서 이 상태에서 앞선 예에서 처럼 Manager가
 처리해야 할 명령을 내리게 되면, 가령 아래와 같이,
 
-{:.wrap}
 ```console
 $ docker node ls
 Error response from daemon: This node is not a swarm manager. Worker nodes can't be used to view or modify cluster state. Please run this command on a manager node or promote the current node to a manager.
@@ -377,7 +362,6 @@ $
 없어요. 지배인에게 말하거나 저를 지배인으로 승진시켜주세요" 라고 말하고
 있다. 오호라... 승진이란 게 있단 말이지... 아무튼,
 
-{:.wrap}
 ```console
 $ docker node ls
 Error response from daemon: This node is not a swarm manager. Use "docker swarm init" or "docker swarm join" to connect this node to swarm and try again.
@@ -394,7 +378,6 @@ $
 
 새 Node는 어떤 설정을 갖는지 보자.
 
-{:.wrap}
 ```console
 $ docker info
 <...>
@@ -414,7 +397,6 @@ Manager가 어디에 있는지는 알고 있고... 라고 한다.
 이제, 다시 Manager Node에게 `docker node ls` 명령을 내려, 그 쪽에서도 새
 Node에 대해 잘 알고 있는지 확인해보자.
 
-{:.wrap}
 ```console
 $ docker-machine use dev01
 Active machine: dev01
@@ -432,7 +414,6 @@ $
 어떻게 될까? 내 고유의 표현으로, 다시 실행하더라도 안전한, "Re Run Safe" 한
 명령인지 확인하고 싶다.
 
-{:.wrap}
 ```console
 $ docker-machine use dev02
 Active machine: dev02
@@ -478,8 +459,8 @@ Swarm standalone을 설치/관리하는 방식을 사용할 때에 사용되는 
   [Docker Swarm의 고가용성] 편에 정리해보려고 한다.
 
 
-{:.mix-xlarge}
 > Happy Docking!!!
+{.comment .mix-xlarge}
 
 
 
@@ -488,7 +469,6 @@ Swarm standalone을 설치/관리하는 방식을 사용할 때에 사용되는 
 * [Swarm mode overview]
 * [Swarm mode key concepts]
 * [Getting started with swarm mode]
-
 * [Docker Swarm standalone] : Github Repository of Legacy
 * [Swarmkit] : Github Repository of Swarmkit
 
@@ -518,16 +498,16 @@ Swarm standalone을 설치/관리하는 방식을 사용할 때에 사용되는 
 * [Docker Swarm의 고가용성]
 * [Docker Swarm 다시 보기]
 
-[Docker Swarm 다시 보기]:{% link _posts/cloudcomputing/2018-03-29-little-more-about-docker-swarm.md %}
-[Docker Swarm의 고가용성]:{% link _posts/cloudcomputing/2018-03-15-high-availability-of-docker-swarm.md %}
-[Docker Swarm에 Service 올려보기]:{% link _posts/cloudcomputing/2018-03-14-run-a-service-on-docker-swarm.md %}
-[Getting Started with Docker Swarm]:{% link _posts/cloudcomputing/2018-03-13-getting-started-with-docker-swarm.md %}
-[Docker Machine 다시 보기]:{% link _posts/cloudcomputing/2018-03-09-little-more-about-docker-machine.md %}
-[Docker Machine으로 Docker Node 뿌리기]:{% link _posts/cloudcomputing/2018-03-07-provision-docker-node-with-docker-machine.md %}
-[Docker Cloud에서 자동빌드하기]:{% link _posts/cloudcomputing/2018-02-21-automated-build-with-docker-cloud.md %}
-['쓸만한' Docker Image 만들기 - Part 2]:{% link _posts/cloudcomputing/2018-02-20-build-usable-docker-image-part2.md %}
-['쓸만한' Docker Image 만들기 - Part 1]:{% link _posts/cloudcomputing/2018-02-19-build-usable-docker-image-part1.md %}
-[Docker: 나의 첫 Docker Image]:{% link _posts/cloudcomputing/2018-02-14-build-my-first-docker-image.md %}
-[Docker: Installation and Test Drive]:{% link _posts/cloudcomputing/2018-02-08-docker-installation-and-test-drive.md %}
-[Docker: Getting Started with Docker]:{% link _posts/cloudcomputing/2018-02-08-getting-started-with-docker.md %}
+[Docker Swarm 다시 보기]:{{< relref "/blog/cloudcomputing/2018-03-29-little-more-about-docker-swarm.md" >}}
+[Docker Swarm의 고가용성]:{{< relref "/blog/cloudcomputing/2018-03-15-high-availability-of-docker-swarm.md" >}}
+[Docker Swarm에 Service 올려보기]:{{< relref "/blog/cloudcomputing/2018-03-14-run-a-service-on-docker-swarm.md" >}}
+[Getting Started with Docker Swarm]:{{< relref "/blog/cloudcomputing/2018-03-13-getting-started-with-docker-swarm.md" >}}
+[Docker Machine 다시 보기]:{{< relref "/blog/cloudcomputing/2018-03-09-little-more-about-docker-machine.md" >}}
+[Docker Machine으로 Docker Node 뿌리기]:{{< relref "/blog/cloudcomputing/2018-03-07-provision-docker-node-with-docker-machine.md" >}}
+[Docker Cloud에서 자동빌드하기]:{{< relref "/blog/cloudcomputing/2018-02-21-automated-build-with-docker-cloud.md" >}}
+['쓸만한' Docker Image 만들기 - Part 2]:{{< relref "/blog/cloudcomputing/2018-02-20-build-usable-docker-image-part2.md" >}}
+['쓸만한' Docker Image 만들기 - Part 1]:{{< relref "/blog/cloudcomputing/2018-02-19-build-usable-docker-image-part1.md" >}}
+[Docker: 나의 첫 Docker Image]:{{< relref "/blog/cloudcomputing/2018-02-14-build-my-first-docker-image.md" >}}
+[Docker: Installation and Test Drive]:{{< relref "/blog/cloudcomputing/2018-02-08-docker-installation-and-test-drive.md" >}}
+[Docker: Getting Started with Docker]:{{< relref "/blog/cloudcomputing/2018-02-08-getting-started-with-docker.md" >}}
 

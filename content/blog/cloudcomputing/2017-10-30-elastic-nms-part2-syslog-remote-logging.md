@@ -12,6 +12,7 @@ date: 2017-10-30T12:40:00+0900
 환경의 기능을 검토할 차례인데, 내가 Elastic Stack을 활용하는 목적이 NMS, 특히
 로그중앙화(Log Aggregation) 환경을 만드는 것이므로 로그를 수집하고 기본적인
 파싱을 하는 과정을 먼저 진행했다.
+<!--more-->
 
 이번 묶음글은 아래와 같은 순으로 진행할 예정이다. 깊이있게 다루는 것은 아니며,
 Elastic Stack을 시작하는 입장에서 관심있는 부분을 참고하면 될 것 같다.
@@ -35,9 +36,6 @@ Elastic Stack을 시작하는 입장에서 관심있는 부분을 참고하면 �
 
 
 # 원격시스템으로부터 로그 입력
-
-* TOC
-{:toc .half.pull-right}
 
 Unix, Linux를 비롯한 대부분의 서버들과 네트워크 장비들의 로그처리 시스템은
 syslog를 표준으로 사용하거나 자체적인 로그관리 방법을 표준으로 하는 경우는
@@ -152,13 +150,15 @@ filter {
 **syslog 전송 규약에 의해 데이터를 수집**하는 것이기 때문에 `facility`,
 `priority`, `severity` 등의 상세한 정보까지 정확하게 뽑아낼 수 있다.
 
-![SHOT](/attachments/elastic-nms/elk-201-discover.jpg){:.bordered}
+![SHOT](/attachments/elastic-nms/elk-201-discover.jpg)
+{.bordered}
 
 위의 그림은 기록된 syslog 데이터 한 줄을 Discovery 화면에서 본 것이다.
 왼쪽부터 기록된 날짜, 타입 정보, 그리고 메시지 본문이 표시되는데, 맨 왼쪽
 세모표를 누르면 아래와 같이 이 레코드에 대한 상세 정보를 확인할 수 있다.
 
-![SHOT](/attachments/elastic-nms/elk-202-details.jpg){:.bordered}
+![SHOT](/attachments/elastic-nms/elk-202-details.jpg)
+{.bordered}
 
 위의 상세 정보를 보면 내부적으로 사용하는 `_`로 시작하는 메타 정보와 메시지
 본문 외에도, 앞서 말했던 `facility`, `priority`, `severity` 등의 syslog 
@@ -255,7 +255,8 @@ Stack은... 뭐랄까 최종 사용자용이 아닌 "엔진"에 가깝다. 심�
 설정을 시험해볼 수 있다. Graylog2 만큼의 맞춤형 깔끔함은 기대하긴 힘들지만
 기능은 빠지지 않는다.
 
-![](/attachments/elastic-nms/grokdebug.heroku.com.png){:.bordered}
+![](/attachments/elastic-nms/grokdebug.heroku.com.png)
+{.bordered}
 
 ### Grok 조금 더 보기
 
@@ -385,7 +386,8 @@ GeoIP 정보를 추가하기 위해,  두 번째, 세 번째의 `if` 블록을 �
 대략적인 8과 47은 대략적인 경도와 위도를 나타낸다. (스위스 수도 격인
 베른의 좌표가 북위 47, 동경 7.5 쯤 된다.)
 
-![SHOT](/attachments/elastic-nms/elk-212-grok-parsed.jpg){:.bordered}
+![SHOT](/attachments/elastic-nms/elk-212-grok-parsed.jpg)
+{.bordered}
 
 그런데 화면 맨 왼쪽의 회색 부분의 기호를 자세히 보면, 좌표를 숫자로
 인식하고 IP는 텍스트로 인식하고 있다.(`#` 기호와 `t` 기호) 이래서는
@@ -397,7 +399,8 @@ Template의 작성이 필요할 수 있다. 이 얘기는 다음 이야기,
 아무튼, Template과 Mapping 처리를 잘 해주면 각 필드의 자료형을 우리가
 원하는 형태로 맞춰줄 수 있다.
 
-![SHOT](/attachments/elastic-nms/elk-302-mapped-parsed.jpg){:.bordered}
+![SHOT](/attachments/elastic-nms/elk-302-mapped-parsed.jpg)
+{.bordered}
 
 이제 이렇게, 정상적으로 IP와 위치정보 자료형으로 아이콘이 바뀌었다.
 
@@ -493,11 +496,11 @@ Template에 대한 자세한 얘기는 다음 편에 이어서...
 * [Elastic NMS Part 5: NetFlow 수신하기]
 * [Elastic NMS Part 6: SNMP 수신하기]
 
-[Elastic NMS Part 1: 엔진을 켜라!]:{% link _posts/cloudcomputing/2017-10-28-elastic-nms-part1-start-your-engine.md %}
-[Elastic NMS Part 3: Mapping과 Template]:{% link _posts/cloudcomputing/2017-10-30-elastic-nms-part3-mapping-and-template.md %}
-[Elastic NMS Part 4: Kibana로 Visualize하기]:{% link _posts/cloudcomputing/2017-10-30-elastic-nms-part4-visualize-with-kibana.md %}
-[Elastic NMS Part 5: NetFlow 수신하기]:{% link _posts/cloudcomputing/2017-10-31-elastic-nms-part5-netflow-monitoring.md %}
-[Elastic NMS Part 6: SNMP 수신하기]:{% link _posts/cloudcomputing/2017-10-31-elastic-nms-part6-snmp-monitoring.md %}
+[Elastic NMS Part 1: 엔진을 켜라!]:{{< relref "/blog/cloudcomputing/2017-10-28-elastic-nms-part1-start-your-engine.md" >}}
+[Elastic NMS Part 3: Mapping과 Template]:{{< relref "/blog/cloudcomputing/2017-10-30-elastic-nms-part3-mapping-and-template.md" >}}
+[Elastic NMS Part 4: Kibana로 Visualize하기]:{{< relref "/blog/cloudcomputing/2017-10-30-elastic-nms-part4-visualize-with-kibana.md" >}}
+[Elastic NMS Part 5: NetFlow 수신하기]:{{< relref "/blog/cloudcomputing/2017-10-31-elastic-nms-part5-netflow-monitoring.md" >}}
+[Elastic NMS Part 6: SNMP 수신하기]:{{< relref "/blog/cloudcomputing/2017-10-31-elastic-nms-part6-snmp-monitoring.md" >}}
 
 ### 함께 읽기
 
@@ -509,12 +512,12 @@ Template에 대한 자세한 얘기는 다음 편에 이어서...
 * [Cloud App에서 PaperTrail 사용하기]
 
 
-[Calling All Logs! Graylog2 1편: 설치하기]:{% link _posts/sysadmin/2017-10-11-calling-all-logs-graylog2-installation.md %}
-[Calling All Logs! Graylog2 2편: 맛보기]:{% link _posts/sysadmin/2017-10-12-calling-all-logs-graylog2-overview.md %}
-[Calling All Logs! Graylog2 3편: 설정]:{% link _posts/sysadmin/2017-10-13-calling-all-logs-graylog2-settings.md %}
-[Calling All Logs! Graylog2 4편: 기록]:{% link _posts/sysadmin/2017-10-13-calling-all-logs-graylog2-memories.md %}
-[PaperTrail, Cloud에서는 Cloud 로그를!]:{% link _posts/cloudcomputing/2016-09-07-cloud-log-papertrail.md %}
-[Cloud App에서 PaperTrail 사용하기]:{% link _posts/cloudcomputing/2016-09-07-using-papertrail.md %}
+[Calling All Logs! Graylog2 1편: 설치하기]:{{< relref "/blog/sysadmin/2017-10-11-calling-all-logs-graylog2-installation.md" >}}
+[Calling All Logs! Graylog2 2편: 맛보기]:{{< relref "/blog/sysadmin/2017-10-12-calling-all-logs-graylog2-overview.md" >}}
+[Calling All Logs! Graylog2 3편: 설정]:{{< relref "/blog/sysadmin/2017-10-13-calling-all-logs-graylog2-settings.md" >}}
+[Calling All Logs! Graylog2 4편: 기록]:{{< relref "/blog/sysadmin/2017-10-13-calling-all-logs-graylog2-memories.md" >}}
+[PaperTrail, Cloud에서는 Cloud 로그를!]:{{< relref "/blog/cloudcomputing/2016-09-07-cloud-log-papertrail.md" >}}
+[Cloud App에서 PaperTrail 사용하기]:{{< relref "/blog/cloudcomputing/2016-09-07-using-papertrail.md" >}}
 
-[Calling All Logs! Graylog2 2편: 맛보기#입력구성 - 로그 받기]:{% link _posts/sysadmin/2017-10-12-calling-all-logs-graylog2-overview.md %}#입력구성---로그-받기
-[Calling All Logs! Graylog2 2편: 맛보기#편리한 Extractor 설정]:{% link _posts/sysadmin/2017-10-12-calling-all-logs-graylog2-overview.md %}#편리한-extractor-설정
+[Calling All Logs! Graylog2 2편: 맛보기#입력구성 - 로그 받기]:{{< relref "/blog/sysadmin/2017-10-12-calling-all-logs-graylog2-overview.md" >}}#입력구성---로그-받기
+[Calling All Logs! Graylog2 2편: 맛보기#편리한 Extractor 설정]:{{< relref "/blog/sysadmin/2017-10-12-calling-all-logs-graylog2-overview.md" >}}#편리한-extractor-설정

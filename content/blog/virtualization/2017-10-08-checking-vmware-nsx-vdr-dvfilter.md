@@ -12,13 +12,11 @@ date: 2017-10-08T16:40:00+09:00
 벌써 2년이 지난 기록이라서 현재의 상황에 맞지 않는 내용이 포함되었을
 수 있고, 간단하게 메모로 남겼던 것을 편집한 것이다 보니 이야기의 맥이
 없다. :-(
+<!--more-->
 
 ![](/logos/vmware-nsx-logo.png)
 
 # 개요
-
-* TOC
-{:toc .half.pull-right}
 
 Private Cloud 플랫폼을 준비하던 2015년의 가을과 겨울을 VMware의 NSX 6.2,
 그리고 OpenStack+Open vSwitch와 함께 보냈었다. 이 과정에서 중요하게 봤던
@@ -640,7 +638,7 @@ vSwitch의 특정 포트로 한정된다든지, 양방향 Traffic을 한 번에 
 의 앞단(`--capture PreDVFilter`)에서 즉, Filter를 거치기 직전의, Filter가
 적용되지 않은 Packet을 잡아볼 수 있다.
 
-```console
+```console {.wrap}
 [root@ESXi-04:~] pktcap-uw --capture PreDVFilter --dvfilter nic-36445-eth0-vmware-sfw.2 -o aw2_pre.pcap
 ```
 

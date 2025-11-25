@@ -17,6 +17,7 @@ last_modified_at: 2010-07-02T21:20:07+09:00
 tistory 접속 자체가 잘 안되었던 것을 감안하면, Firefox의 문제일지도...
 어쨌든 한 번 쓴 글을 다시 쓰려니 글 쓸 생각은 잘 안나고 짜증은 잘 난다.
 (에라 그만둘까 싶지만서도...)
+<!--more-->
 
 ## 넷북, NC10과 Xen
 
@@ -25,7 +26,7 @@ tistory 접속 자체가 잘 안되었던 것을 감안하면, Firefox의 문제
 
 NC10은 삼성전자의 첫번째 넷북인데, [Intel의 Atom N270 프로세서](http://en.wikipedia.org/wiki/List_of_Intel_Atom_microprocessors#Atom_N2xx_series_.28single-core.29)를 사용하고 있다. CPU 사양을 잠깐 살펴보면,
 
-```console
+```console {.wrap}
 sio4@vios:~$ cat /proc/cpuinfo
 processor : 0
 vendor_id : GenuineIntel

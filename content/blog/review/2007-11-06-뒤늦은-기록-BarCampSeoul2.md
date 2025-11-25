@@ -32,7 +32,7 @@ last_modified_at: 2010-07-02T13:53:48+09:00
 대기자가 더 있을 뿐이었다. 그러고는 혹시나 하고 그 바로 전날 밤에 목록을
 다시 확인해본 결과! 어라? 이 일을 어째? 무슨 발표를 하지?
 
-1) 미리 알고도 2) 등록도 못했다가 3) 준비도 못한 채 4) 갑자기 그렇게
+(1) 미리 알고도 (2) 등록도 못했다가 (3) 준비도 못한 채 (4) 갑자기 그렇게
 또는 다행스럽게 참가할 수 있게 되었고 그래서 급하게 떠올린 주제가 그
 당시 관심이 몰려있던 소프트웨어 어플라이언스와 가상화, 그리고 당시의
 업무 분야였던 멀티미디어를 엮은 이야기, 바로 그것이다.
@@ -45,8 +45,9 @@ last_modified_at: 2010-07-02T13:53:48+09:00
 
 나의 부실한 발표자료 : [소프트웨어 어플라이언스, 가상화, 멀티미디어](http://www.slideshare.net/sio4/barcampseoul2-software-appliance-virtualization-and-multimedia)
 
-{:.centered}
+<p style="text-align: center">
 <iframe src="//www.slideshare.net/slideshow/embed_code/key/bE43h1JzHX65wv" width="340" height="290" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/sio4/barcampseoul2-software-appliance-virtualization-and-multimedia" title="BarcampSeoul2: Software Appliance, Virtualization, and Multimedia" target="_blank">BarcampSeoul2: Software Appliance, Virtualization, and Multimedia</a> </strong> from <strong><a href="//www.slideshare.net/sio4" target="_blank">Yonghwan SO</a></strong> </div>
+</p>
 
 어쨌든 그랬다.
 
@@ -56,7 +57,8 @@ last_modified_at: 2010-07-02T13:53:48+09:00
 서먹 서먹한 가운데 다행히 옛 직장 동료를 만나 그나마 그날의 첫 입술을
 땔 수 있었다. (함께 만난 정진호님의 사진첩에서 한 장)
 
-![](/attachments/2007-11-06-barcampseoul2.jpg){:.fit}
+![](/attachments/2007-11-06-barcampseoul2.jpg)
+{.fit}
 원본: <http://farm1.static.flickr.com/240/525999340_7c1c417e22.jpg>
 
 이렇게 이쁜 문을 통과하여,... 여차 저차 한 자리 차지하고 나름대로

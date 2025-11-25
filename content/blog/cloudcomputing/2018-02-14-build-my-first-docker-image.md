@@ -15,6 +15,7 @@ Kernel Image가 메모리에 올라오면 컴퓨터가 살아난다. 이렇게, 
 Container와, 이것이 본으로 삼는, 저장소에서 잠을 자는 Image가 그것이다.
 이 글은, Container의 본이 되는 Image를 만들고 저장하는 방식에 대하여
 정리한다.
+<!--more-->
 
 
 
@@ -46,7 +47,6 @@ Image를 만들 필요가 있는데, 이 글은 내 목적에 맞는 Image를 �
 공식 Registry의 내 계정 아래에 등록하는 과정과 그 주변 이야기를 정리한다.
 
 
-{:.boxed}
 > 이 묶음글은 아직 몇 회까지 쓸지 정하지 못했다. 조금 써보고,...
 > 
 > * [Docker: Getting Started with Docker]
@@ -61,6 +61,7 @@ Image를 만들 필요가 있는데, 이 글은 내 목적에 맞는 Image를 �
 > * [Docker Swarm에 Service 올려보기]
 > * [Docker Swarm의 고가용성]
 > * [Docker Swarm 다시 보기]
+{.boxed}
 
 
 # 내 Docker Image 만들기
@@ -107,7 +108,6 @@ hello: hello.c
 아... Hello World에 무슨 `-Wall` 이냐... ㅠ.ㅠ 아무튼, `make` 명령으로
 이 코드를 컴파일한 후, 정상적으로 정적 컴파일이 되었는지 확인한다.
 
-{:.wrap}
 ```console
 $ make
 gcc -static -Wall hello.c -o hello
@@ -193,7 +193,6 @@ $
 
 오... 돌아간다. 추가로, 만들어진 이미지 정보를 보면 아래와 같다.
 
-{:.wrap}
 ```console
 $ sudo docker image ls
 REPOSITORY              TAG                     IMAGE ID            CREATED             SIZE
@@ -245,16 +244,16 @@ Registry 등록 과정은 다음 글에 정리하도록 하겠다.
 * [Docker Swarm의 고가용성]
 * [Docker Swarm 다시 보기]
 
-[Docker Swarm 다시 보기]:{% link _posts/cloudcomputing/2018-03-29-little-more-about-docker-swarm.md %}
-[Docker Swarm의 고가용성]:{% link _posts/cloudcomputing/2018-03-15-high-availability-of-docker-swarm.md %}
-[Docker Swarm에 Service 올려보기]:{% link _posts/cloudcomputing/2018-03-14-run-a-service-on-docker-swarm.md %}
-[Getting Started with Docker Swarm]:{% link _posts/cloudcomputing/2018-03-13-getting-started-with-docker-swarm.md %}
-[Docker Machine 다시 보기]:{% link _posts/cloudcomputing/2018-03-09-little-more-about-docker-machine.md %}
-[Docker Machine으로 Docker Node 뿌리기]:{% link _posts/cloudcomputing/2018-03-07-provision-docker-node-with-docker-machine.md %}
-[Docker Cloud에서 자동빌드하기]:{% link _posts/cloudcomputing/2018-02-21-automated-build-with-docker-cloud.md %}
-['쓸만한' Docker Image 만들기 - Part 2]:{% link _posts/cloudcomputing/2018-02-20-build-usable-docker-image-part2.md %}
-['쓸만한' Docker Image 만들기 - Part 1]:{% link _posts/cloudcomputing/2018-02-19-build-usable-docker-image-part1.md %}
-[Docker: 나의 첫 Docker Image]:{% link _posts/cloudcomputing/2018-02-14-build-my-first-docker-image.md %}
-[Docker: Installation and Test Drive]:{% link _posts/cloudcomputing/2018-02-08-docker-installation-and-test-drive.md %}
-[Docker: Getting Started with Docker]:{% link _posts/cloudcomputing/2018-02-08-getting-started-with-docker.md %}
+[Docker Swarm 다시 보기]:{{< relref "/blog/cloudcomputing/2018-03-29-little-more-about-docker-swarm.md" >}}
+[Docker Swarm의 고가용성]:{{< relref "/blog/cloudcomputing/2018-03-15-high-availability-of-docker-swarm.md" >}}
+[Docker Swarm에 Service 올려보기]:{{< relref "/blog/cloudcomputing/2018-03-14-run-a-service-on-docker-swarm.md" >}}
+[Getting Started with Docker Swarm]:{{< relref "/blog/cloudcomputing/2018-03-13-getting-started-with-docker-swarm.md" >}}
+[Docker Machine 다시 보기]:{{< relref "/blog/cloudcomputing/2018-03-09-little-more-about-docker-machine.md" >}}
+[Docker Machine으로 Docker Node 뿌리기]:{{< relref "/blog/cloudcomputing/2018-03-07-provision-docker-node-with-docker-machine.md" >}}
+[Docker Cloud에서 자동빌드하기]:{{< relref "/blog/cloudcomputing/2018-02-21-automated-build-with-docker-cloud.md" >}}
+['쓸만한' Docker Image 만들기 - Part 2]:{{< relref "/blog/cloudcomputing/2018-02-20-build-usable-docker-image-part2.md" >}}
+['쓸만한' Docker Image 만들기 - Part 1]:{{< relref "/blog/cloudcomputing/2018-02-19-build-usable-docker-image-part1.md" >}}
+[Docker: 나의 첫 Docker Image]:{{< relref "/blog/cloudcomputing/2018-02-14-build-my-first-docker-image.md" >}}
+[Docker: Installation and Test Drive]:{{< relref "/blog/cloudcomputing/2018-02-08-docker-installation-and-test-drive.md" >}}
+[Docker: Getting Started with Docker]:{{< relref "/blog/cloudcomputing/2018-02-08-getting-started-with-docker.md" >}}
 

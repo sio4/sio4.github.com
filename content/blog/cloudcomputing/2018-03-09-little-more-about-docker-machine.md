@@ -12,16 +12,15 @@ Docker Engine을 탑재한 Dockerized Host, Docker Node를 손쉽게 펼쳤다�
 모았다가 하는 용도로 Docker Machine을 적절히 활용할 수 있을지 확인하기 위해
 빠른 걸음으로 Docker Machine의 기능을 살펴봤었다.  기왕 보기 시작한 김에,
 조금 더 자세히 문서와 CLI 도구의 세부 기능을 들여다 보았다.
+<!--more-->
 
 (Docker Machine의 개요를 담은 "**[Docker Machine으로 Docker Node 뿌리기]**"
 를 먼저 참고하시면 좋습니다.)
 
-![](/attachments/docker/docker-machine.jpg){:.fit}
-
-{:.caption.tight.centered}
+![](/attachments/docker/docker-machine.jpg)
 Dock!ron Man vs. War Machine!
+{.caption .centered}
 
-{:.boxed}
 > Docker에 대한 이 묶음글은 아직 몇 개를 쓸지 정하지 못했다. 써보고,...
 > 
 > * [Docker: Getting Started with Docker]
@@ -36,6 +35,7 @@ Dock!ron Man vs. War Machine!
 > * [Docker Swarm에 Service 올려보기]
 > * [Docker Swarm의 고가용성]
 > * [Docker Swarm 다시 보기]
+{.boxed}
 
 
 
@@ -52,10 +52,6 @@ Machine을 활용할 수 있는 범위는 어디까지일까?**
 이 궁금증을 풀기 위해, Docker Machine [공식 문서]를 천천히 다시 읽어봤고,
 `docker-machine` 명령의 모든 부명령을 한 번씩 실행해 봤다.
 
-
-
-* TOC
-{:toc}
 
 
 # 내가 원하는 버전, 환경으로 맞추고 싶다요!
@@ -80,7 +76,6 @@ Machine을 활용할 수 있는 범위는 어디까지일까?**
 `docker-machine`이 제공하는 부명령 중, Host 운영체계의 관리에 사용할만한
 것들을 뽑아보면, 다음과 같다.
 
-{:.styled.fit}
 | 부명령           | 설명                                                    |
 |:-----------------|:--------------------------------------------------------|
 | mount            | Mount or unmount a directory from a machine with SSHFS. |
@@ -145,7 +140,6 @@ Mount Point를 차례대로 인수로 주면 끝. 위와 같이, 원격지의 �
 
 이번엔 다른 경로를 연결해보자.
 
-{:.wrap}
 ```console
 $ docker-machine mount worker01:/var/lib/docker worker01
 $
@@ -208,7 +202,6 @@ $
 
 아무튼, 조금 더 보자.
 
-{:.wrap}
 ```console
 $ docker-machine mount worker01:/etc worker01
 $ docker-machine mount worker02:/etc worker02
@@ -235,7 +228,6 @@ $
 
 `/etc`를 열은 김에, Docker 서비스에 대한 `systemd` 설정도 열어봤다.
 
-{:.wrap}
 ```console
 $ cat worker01/systemd/system/docker.service.d/10-machine.conf
 [Service]
@@ -321,7 +313,6 @@ $
 이런 분류는 Official한 것이 아니고, 내가 그냥 편의 상 하는 거임.)
 
 
-{:.styled.fit}
 | 부명령           | 설명                                                    |
 |:-----------------|:--------------------------------------------------------|
 | inspect          | Inspect information about a machine                     |
@@ -369,10 +360,9 @@ $
 비롯한 다양한 정보를 보여준다. (전체 내용은 맨 아래에...
 
 ![](/attachments/docker/docker-machine-10-keys.png)
-
-{:.caption.tight.centered}
 참고: Docker Machine에 의해 자동 생성된 ssh key는 SoftLayer 관리콘솔에도
 함께 등록된다. (이후, Provisioning 시 참조됨)
+{.caption .centered}
 
 
 ### Provision, Regenerate Certs, and Upgrade
@@ -496,7 +486,6 @@ $
 
 새로 설치하자. 앞선 실수(?)를 보완하여 아예 배포 방식을 바꿔보면 된다.
 
-{:.wrap}
 ```console
 $ docker-machine create \
 	--engine-label mode=standalone --engine-label cluster=dev \
@@ -542,10 +531,8 @@ $
 옵션을 기존과 같이 넣어줬고, 이름도 잘 줬다.
 
 ![](/attachments/docker/docker-machine-01-create.png)
-
-{:.caption.tight.centered}
-Virtual Server Instance가 생성되는 과정을 SoftLayer 관리콘솔에서 확인한
-모습
+Virtual Server Instance가 생성되는 과정을 SoftLayer 관리콘솔에서 확인한 모습
+{.caption .centered}
 
 
 ### 유용한 옵션들
@@ -626,7 +613,6 @@ $
 
 먼저, VM을 관리하기 위한 명령으로는 아래와 같은 것들이 있다.
 
-{:.styled.fit}
 | 부명령           | 설명                                                    |
 |:-----------------|:--------------------------------------------------------|
 | create           | Create a machine                                        |
@@ -724,9 +710,8 @@ $
 지워버리게 된다.
 
 ![](/attachments/docker/docker-machine-02-remove.png)
-
-{:.caption.tight.centered}
 기계를 지운 후, 관리콘솔에서 Cancellation 요청이 접수된 것을 확인할 수 있음
+{.caption .centered}
 
 
 ### Start, Stop, Kill and Restart
@@ -754,9 +739,8 @@ $
 만약 꺼지지 않는다면 강제로 죽이기 위한 명령.
 
 ![](/attachments/docker/docker-machine-03-kill.png)
-
-{:.caption.tight.centered}
 전원 강제 차단에 의해, 연결이 끊어지고 네트워크 모니터링 경보가 발생한 상태
+{.caption .centered}
 
 그리고,
 
@@ -771,7 +755,6 @@ $
 
 꺼져있는 기계를 켜려면,
 
-{:.wrap}
 ```console
 $ docker-machine start worker02
 Starting "worker02"...
@@ -818,7 +801,6 @@ $
 
 엥? 그런데!
 
-{:.wrap}
 ```console
 $ docker-machine start dev01 dev02 worker02
 Starting "dev01"...
@@ -844,14 +826,12 @@ Production에서 쓰려면 `softlayer` Driver에 대하여 Provider의 API 특�
 단계를 벋어난 것 같은데 왜 같이 죽었을까?)
 
 ![](/attachments/docker/docker-machine-04-restarted.png)
-
-{:.caption.tight.centered}
 VSI가 되살아나는 모습을 SoftLayer 관리콘솔에서 확인한 모습: 경보는 아직
 남아있고 연결은 되지 않았으나, 전원이 켜져 있음
+{.caption .centered}
 
 마지막으로, `restart` 명령은 이렇게,
 
-{:.wrap}
 ```console
 $ docker-machine restart worker02
 Restarting "worker02"...
@@ -878,7 +858,6 @@ $
 앞서 `status` 명령과 같이 VM의 가동 상태를 보는 것도 있지만, 그 외의
 논리적인 정보를 확인할 수 있는 부명령으로는 아래와 같은 것들이 있다.
 
-{:.styled.fit}
 | 부명령 | 설명                                                                |
 |:-------|:--------------------------------------------------------------------|
 | active | Print which machine is active                                       |
@@ -1141,19 +1120,19 @@ Code Level로 조금 더 살펴봐야 할 것 같다.
 * [Docker Swarm의 고가용성]
 * [Docker Swarm 다시 보기]
 
-[Docker Swarm 다시 보기]:{% link _posts/cloudcomputing/2018-03-29-little-more-about-docker-swarm.md %}
-[Docker Swarm의 고가용성]:{% link _posts/cloudcomputing/2018-03-15-high-availability-of-docker-swarm.md %}
-[Docker Swarm에 Service 올려보기]:{% link _posts/cloudcomputing/2018-03-14-run-a-service-on-docker-swarm.md %}
-[Getting Started with Docker Swarm]:{% link _posts/cloudcomputing/2018-03-13-getting-started-with-docker-swarm.md %}
-[Docker Machine 다시 보기]:{% link _posts/cloudcomputing/2018-03-09-little-more-about-docker-machine.md %}
-[Docker Machine으로 Docker Node 뿌리기]:{% link _posts/cloudcomputing/2018-03-07-provision-docker-node-with-docker-machine.md %}
-[Docker Cloud에서 자동빌드하기]:{% link _posts/cloudcomputing/2018-02-21-automated-build-with-docker-cloud.md %}
-['쓸만한' Docker Image 만들기 - Part 2]:{% link _posts/cloudcomputing/2018-02-20-build-usable-docker-image-part2.md %}
-['쓸만한' Docker Image 만들기 - Part 1]:{% link _posts/cloudcomputing/2018-02-19-build-usable-docker-image-part1.md %}
-[Docker: 나의 첫 Docker Image]:{% link _posts/cloudcomputing/2018-02-14-build-my-first-docker-image.md %}
-[Docker: Installation and Test Drive]:{% link _posts/cloudcomputing/2018-02-08-docker-installation-and-test-drive.md %}
-[Docker: Getting Started with Docker]:{% link _posts/cloudcomputing/2018-02-08-getting-started-with-docker.md %}
+[Docker Swarm 다시 보기]:{{< relref "/blog/cloudcomputing/2018-03-29-little-more-about-docker-swarm.md" >}}
+[Docker Swarm의 고가용성]:{{< relref "/blog/cloudcomputing/2018-03-15-high-availability-of-docker-swarm.md" >}}
+[Docker Swarm에 Service 올려보기]:{{< relref "/blog/cloudcomputing/2018-03-14-run-a-service-on-docker-swarm.md" >}}
+[Getting Started with Docker Swarm]:{{< relref "/blog/cloudcomputing/2018-03-13-getting-started-with-docker-swarm.md" >}}
+[Docker Machine 다시 보기]:{{< relref "/blog/cloudcomputing/2018-03-09-little-more-about-docker-machine.md" >}}
+[Docker Machine으로 Docker Node 뿌리기]:{{< relref "/blog/cloudcomputing/2018-03-07-provision-docker-node-with-docker-machine.md" >}}
+[Docker Cloud에서 자동빌드하기]:{{< relref "/blog/cloudcomputing/2018-02-21-automated-build-with-docker-cloud.md" >}}
+['쓸만한' Docker Image 만들기 - Part 2]:{{< relref "/blog/cloudcomputing/2018-02-20-build-usable-docker-image-part2.md" >}}
+['쓸만한' Docker Image 만들기 - Part 1]:{{< relref "/blog/cloudcomputing/2018-02-19-build-usable-docker-image-part1.md" >}}
+[Docker: 나의 첫 Docker Image]:{{< relref "/blog/cloudcomputing/2018-02-14-build-my-first-docker-image.md" >}}
+[Docker: Installation and Test Drive]:{{< relref "/blog/cloudcomputing/2018-02-08-docker-installation-and-test-drive.md" >}}
+[Docker: Getting Started with Docker]:{{< relref "/blog/cloudcomputing/2018-02-08-getting-started-with-docker.md" >}}
 
 
-[Android Nougat, Rsync Backup 하기]:{% link _posts/android/2017-10-23-backup-android-nougat-with-rsync.md %}
+[Android Nougat, Rsync Backup 하기]:{{< relref "/blog/android/2017-10-23-backup-android-nougat-with-rsync.md" >}}
 

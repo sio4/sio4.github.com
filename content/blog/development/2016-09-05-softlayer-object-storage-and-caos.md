@@ -9,6 +9,7 @@ date: 2016-09-05 23:56:00 +0900
 하나에만 집중해야 한다는 점이었다. 시작은 단지, SoftLayer Cloud와
 Object Storage를 활용한 시험적인 Application을 소개하는 것이었는데,
 시리즈에 담을 내용을 정하는 과정에서 욕심이 과했던 것 같다.
+<!--more-->
 
 아무튼, 그 과했던 부분, Rails Application을 Bundler 기반으로 시작하고
 또하나의 Cloud 서비스인 Mailgun을 통하여 메일을 발송하고, 이를 이용한
@@ -28,19 +29,18 @@ SoftLayer의 Object Storage를 다루는 것에 대하여 기록하려고 한다
 * [SoftLayer Object Storage와 임시 URL]
 * [SoftLayer Object Storage와 임시 URL #2] 
 
-[SoftLayer Object Storage와 임시 URL]:{% post_url development/2016-03-22-tempurl-for-softlayer-object-storage %}
-[SoftLayer Object Storage와 임시 URL #2]:{% post_url development/2016-03-31-tempurl-for-softlayer-object-storage-2 %}
+[SoftLayer Object Storage와 임시 URL]:{{< relref "/blog/development/2016-03-22-tempurl-for-softlayer-object-storage" >}}
+[SoftLayer Object Storage와 임시 URL #2]:{{< relref "/blog/development/2016-03-31-tempurl-for-softlayer-object-storage-2" >}}
 
-[CAOS, Cloud Album on Object Storage]:{% post_url development/2016-04-28-cloud-album-on-object-storage %}
-[CAOS #1 Rails 기반 환경 구성]:{% post_url development/2016-07-07-rails-env-especially-for-caos %}
-[CAOS #3 Rails Application의 성능 분석]:{% post_url development/2016-09-06-rails-application-performance %}
+[CAOS, Cloud Album on Object Storage]:{{< relref "/blog/development/2016-04-28-cloud-album-on-object-storage" >}}
+[CAOS #1 Rails 기반 환경 구성]:{{< relref "/blog/development/2016-07-07-rails-env-especially-for-caos" >}}
+[CAOS #3 Rails Application의 성능 분석]:{{< relref "/blog/development/2016-09-06-rails-application-performance" >}}
 
 
 ---
 
 
-{:#preparing-object-storage}
-# Object Storage
+# Object Storage {#preparing-object-storage}
 
 이제는 새로울 것도 없는 **Object Storage**란 Cloud 시대를 대표하는 변화
 중의 하나이다. 흔히들 Cloud Computing을, "*구름 위에 모든 것을 던져버리고
@@ -53,8 +53,6 @@ Amazon Web Service의 S3, OpenStack의 Swift로 대표되는 Object Storage는
 쓰는, 그리고 그것이 Cloud 내에서 안전하게 다루어지는 것은 서비스 제공자
 몫으로 하는 방식의 데이터 저장 방식이다.
 
-* TOC
-{:toc .half.pull-right}
 
 과거에는, 네트워크 상에 데이터를 저장하고 공유하기 위하여 NAS나 SAN 같은
 데이터 저장 방식을 써왔다. 이들은 사용자에게 각각 File System 또는 Block
@@ -75,14 +73,13 @@ Application 개발의 예를 기록한다.
 
 
 
-{:#install-softlayer-api}
-## SoftLayer API의 설치
+## SoftLayer API의 설치 {#install-softlayer-api}
 
 SoftLayer Ruby API는 공식적으로 Gem 저장소를 통하여 제공이 되고 있다.
 그러나 Object Storage API는 그렇지가 않으며, 다음과 같이 Github에서
 바로 내려받아 설치하여야 한다.
 
-```console
+```console {.wrap}
 $ echo "gem 'softlayer_api'" >> Gemfile
 $ echo "gem 'softlayer-object-storage', :git => 'https://github.com/hardenedlayer/softlayer-object-storage-ruby'" >> Gemfile
 $ bundle install
@@ -99,7 +96,6 @@ Bundle complete! 14 Gemfile dependencies, 57 gems now installed.
 Bundled gems are installed into ./vendor/bundle.
 $ 
 ```
-{:.wrap}
 
 참고로, 이 글에서는 공식 저장소를 사용하지 않고 Fork한 나의 저장소를
 사용하고 있다. (일부, 내 필요에 의해 추가한 기능이 제공된다.)
@@ -107,8 +103,7 @@ $
 * 공식 API: <https://github.com/softlayer/softlayer-object-storage-ruby>
 * 변형 API: <https://github.com/hardenedlayer/softlayer-object-storage-ruby>
 
-{:#testing-softlayer-object-storage-api}
-## SoftLayer Object Storage의 시험
+## SoftLayer Object Storage의 시험 {#testing-softlayer-object-storage-api}
 
 설치된 패키지가 정상적으로 동작하는지 보기 위하여, 아래와 같은 시험코드를
 만들었는데, 이 코드는 앞선 글 [SoftLayer Object Storage와 임시 URL]에서
@@ -138,8 +133,7 @@ end
 
 시험은 다음과 같이, `bundle exec rake test` 명령을 사용하여 진행한다.
 
-{:.wrap}
-```console
+```console {.wrap}
 $ bundle exec rake test test/backend/storage_object_test.rb
 Running via Spring preloader in process 28381
 Run options: --seed 43918
@@ -162,8 +156,7 @@ URL을 가져오는 작업이 정상적으로 실행되었다. (Link된 앞선 �
 부분이다.)
 
 
-{:#setup-album-scaffold}
-## Album 만들기
+## Album 만들기 {#setup-album-scaffold}
 
 이제 실제 작업에 들어갈 차례이다. 아래와 같이, Album으로 사용될 모델을
 Scaffolding 방식을 사용하여 만들어준다.
@@ -247,15 +240,15 @@ $
 +require 'softlayer/object_storage'
 ```
 
-{:#generate-preview}
-## 미리보기 만들기
+## 미리보기 만들기 {#generate-preview}
 
 앨범 Application이라면 Album 보기에서 미리보기를 제공하지 않을 수 없다.
 아래의 화면은 이번 작업의 최종 결과로, 사진을 적당한 크기로 줄이고
 사진에 담긴 Exif 값을 이용하여 똑바로 보이도록 회전하여 미리보기 파일로
 저장한 후 보여주고 있다.
 
-![](/attachments/20160428-caos/caos-200-album-list.png){:.fit.dropshadow}
+![](/attachments/20160428-caos/caos-200-album-list.png)
+{.fit .dropshadow}
 
 다음과 같은 과정을 통하여 Album 페이지에 보여줄 미리보기를 만든다.
 
@@ -266,7 +259,7 @@ $
 수 있도록 해주는 Gem은 `rmagick`가 가장 유명하다. 그러나, 여기서는 보다
 빠른 이미지 전환을 위하여 `mini_magick`를 사용하였다.
 
-```console
+```console {.wrap}
 $ echo "gem 'mini_magick'" >> Gemfile
 $ bundle install
 <...>
@@ -276,7 +269,6 @@ Bundle complete! 20 Gemfile dependencies, 64 gems now installed.
 Bundled gems are installed into ./vendor/bundle.
 $ 
 ```
-{:.wrap}
 
 이 주제에 흥미가 있다면 아래의 코드를 참고해 보는 것도 좋을 것 같다.
 
@@ -401,17 +393,15 @@ rity.
 
 위의 코드가 동작하는 로그를 보면, 아래와 같이 새로 미리보기를 만들거나...
 
-```
+``` {.wrap}
 ### DEBUG: Generate Thumb from https://hkg02.objectstorage.softlayer.net:443/v1/AUTH_00aa00aa-00aa-00aa-00aa-00aa00aa00aa/caos/CM2016/iaas-marketshare.jpg?temp_url_sig=e000020f07040500090c090e06090a001030d0d0&temp_url_expires=1459097817...
 ```
-{:.wrap}
 
 또는 이미 존재하는 미리보기 파일을 다시 사용하게 된다.
 
-```
+``` {.wrap}
 ### DEBUG: File exists: tmp/thumbs/a208008e00104b0a004509e0b40800a2-CM2016%2FCM2016.JPG. using it!
 ```
-{:.wrap}
 
 ## Etag의 활용!
 
@@ -434,11 +424,11 @@ rity.
 것인데, 실제로 Swift에서는 Object의 `MD5SUM` 값을 이용하여 `Etag`를
 생성한다.
 
-{:.point}
 정확하게 Cache해라!
 : Object Storage를 사용하여 Application을 작성할 때, 전송량과 불필요한
   API Call을 줄이기 위해서는 적절한 정보를 이용하여 판별이 가능하도록
   Caching하는 것이 필요하다!
+{.point}
 
 아래와 같은 변경으로 이제, API Call을 하지 않도고 Cache의 변경 여부를
 확인할 수 있게 되었다.
@@ -580,8 +570,7 @@ Select의 구현 등, 재미있는 부분이 더 있었던 것 같은데, 그냥
 
 Connection:
 
-{:.wrap}
-```
+```console {.wrap}
 $ curl -i -H "X-Auth-User: IBMOS000000-1:user" -H "X-Auth-Key: 00aa00aa00aa00aa00aa00aa00aa00aa00aa00aa00aa00aa00aa00aa00aa00aa" https://hkg02.objectstorage.softlayer.net/auth/v1.0
 HTTP/1.1 200 OK
 Content-Length: 1348
@@ -599,8 +588,7 @@ $
 
 Containers:
 
-{:.wrap}
-```
+```console {.wrap}
 $ curl -i -H "X-Auth-Token: AUTH_tk00bb00bb00bb00bb00bb00bb00bb00bb" https://hkg02.objectstorage.softlayer.net/v1/AUTH_00aa00aa-00aa-00aa-00aa-00aa00aa00aa
 HTTP/1.1 200 OK
 Content-Length: 5
@@ -625,7 +613,7 @@ $
 
 Objects:
 
-```
+```console {.wrap}
 $ curl -i -H "X-Auth-Token: AUTH_tk00bb00bb00bb00bb00bb00bb00bb00bb" https://hkg02.objectstorage.softlayer.net/v1/AUTH_00aa00aa-00aa-00aa-00aa-00aa00aa00aa/caos
 HTTP/1.1 200 OK
 Content-Length: 2808
@@ -650,8 +638,7 @@ $
 
 Objects JSON:
 
-{:.wrap}
-```
+```console {.wrap}
 $ curl -i -H "X-Auth-Token: AUTH_tk00bb00bb00bb00bb00bb00bb00bb00bb" https://hkg02.objectstorage.softlayer.net/v1/AUTH_00aa00aa-00aa-00aa-00aa-00aa00aa00aa/caos -H "Accept: application/json"
 HTTP/1.1 200 OK
 Content-Length: 40725

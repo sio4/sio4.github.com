@@ -11,6 +11,7 @@ date: 2018-01-04T17:30:00+09:00
 효과적인 방법이 있을까? 이 글의 소재가 되는 (제목이 아직은 잘못 붙여진)
 "**Vyatta Network Interface Down Issue**" 역시, 결과적으로는 통신 내용을
 확인하는 Packet Dump 분석을 통해 증상이나마, 증상이나마 확인할 수 있었다.
+<!--more-->
 
 다시 반복해서, 증상이나마 확인할 수 있었는데, 이 상황이 어쩌면 내가 오픈
 소스 소프트웨어를 아낄 수 밖에 없는 이유이다. 무슨 말인가 하면, 이 문제가
@@ -20,9 +21,6 @@ date: 2018-01-04T17:30:00+09:00
 부족할지 모르지만 최소한 코드를 들여다 볼 수는 있을텐데 말이다.
 
 잡설이 길었는데, 본론으로 들어간다.
-
-* TOC
-{:toc}
 
 이 묶음글의 첫 번째 이야기인 [Vyatta 네트워크 문제 추적 Part 1]에서는 관련된
 로그를 더 자세히 남기게 하고, 시간의 흐름에 따라 변하는 상태정보를 모으면서
@@ -36,13 +34,13 @@ date: 2018-01-04T17:30:00+09:00
 것이다.
 
 
-{:.boxed}
 > 이 글은 다음 묶음글의 일부이며, 이 내용과 연결된 앞/뒤 사건은 아래 링크를
 > 통해 확인할 수 있다.
 > 
 > * [Vyatta 네트워크 문제 추적 Part 1]
 > * [Vyatta 네트워크 문제 추적 Part 2 - LACP]
 > * _Vyatta 네트워크 문제 추적 Part 3 - Dump_
+{.boxed}
 
 
 
@@ -81,8 +79,7 @@ GB에 달하는 크기로 증가한다. 이 문제의 분석을 맡은 이후, �
 처리할 수가 있다**. 또한, 수행하는 작업도 상대적으로 매우 단순하기 때문에
 휠씬 빨리 일을 처리할 수 있다.
 
-{:.wrap}
-```console
+```console {.wrap}
 $ tcpdump -n -r bond0.2017-12-04_13:54:21.pcap -w not9090.pcap 'not (vlan and ip and port 9090)'
 $ tcpdump -n -r not9090.pcap -w not9090-not10200.pcap 'not (vlan and host 10.200.224.80)'
 $ tcpdump -n -r not9090-not10200.pcap -w not9090-not10200-not10200.pcap 'not (host 10.200.224.80)'
@@ -102,8 +99,7 @@ VLAN Traffic을 제외한 나머지"가 내 관심권이라는 것을 표현하�
 
 또 다른 사건의 기록으로 부터는, 다음과 같은 필터를 적용하기도 하였다.
 
-{:.wrap}
-```console
+```console {.wrap}
 $ tcpdump -n -r dp0bond0.2017-12-05_08:47:53.pcap  'not icmp and not vrrp and not (vlan and ip and port (33389 or 1434))'
 $ 
 ```
@@ -116,8 +112,7 @@ $
 남기고 양을 줄여보자는 것이며, 따라서 이렇게 걸러낸 것들을 다시 적당히
 잘라내어 합쳐줄 필요가 있다.
 
-{:.wrap}
-```console
+```console {.wrap}
 $ tcpdump -n -r dp0bond0.2017-12-05_08:47:53.pcap -w icmp-only.pcap 'icmp'
 $ 
 ```
@@ -314,7 +309,8 @@ No.     Time                       DT-D        VLAN Source                Destin
 결국 재협상은 이루어지지 않고 Switch는 Default/Timeout 상태로 빠진다.
 (주황색 부분)
 
-![](/attachments/vyatta-troubleshooting/breaking-lacp.png){:.bordered.dropshadow}
+![](/attachments/vyatta-troubleshooting/breaking-lacp.png)
+{.bordered .dropshadow}
 
 
 
@@ -342,7 +338,8 @@ No.     Time                       DT-D        VLAN Source                Destin
 
 ## 가설
 
-![](/attachments/vyatta-troubleshooting/lacp-expire-timing.png){:.bordered.dropshadow}
+![](/attachments/vyatta-troubleshooting/lacp-expire-timing.png)
+{.bordered .dropshadow}
 
 위의 그림을 보면, 관측시간 08:56:00 에 `lo`의 Traffic이 급증하는 것을 볼
 수 있다. Router 통신에 영향이 없을, Loopback인 `lo`의 Traffic 이 증가하는
@@ -424,6 +421,6 @@ LAG가 끊기게 되고, 이것이 Slave로 있는 두 물리적 인터페이스
 * _Vyatta 네트워크 문제 추적 Part 3 - Dump_
 
 
-[Vyatta 네트워크 문제 추적 Part 1]:{% link _posts/sysadmin/2018-01-03-vyatta-network-problem-tracking.md %}
-[Vyatta 네트워크 문제 추적 Part 2 - LACP]:{% link _posts/sysadmin/2018-01-03-reset-lag-on-vyatta.md %}
-[Vyatta 네트워크 문제 추적 Part 3 - DUMP]:{% link _posts/sysadmin/2018-01-04-analyzing-huge-dump-with-tcpdump.md %}
+[Vyatta 네트워크 문제 추적 Part 1]:{{< relref "/blog/sysadmin/2018-01-03-vyatta-network-problem-tracking.md" >}}
+[Vyatta 네트워크 문제 추적 Part 2 - LACP]:{{< relref "/blog/sysadmin/2018-01-03-reset-lag-on-vyatta.md" >}}
+[Vyatta 네트워크 문제 추적 Part 3 - DUMP]:{{< relref "/blog/sysadmin/2018-01-04-analyzing-huge-dump-with-tcpdump.md" >}}

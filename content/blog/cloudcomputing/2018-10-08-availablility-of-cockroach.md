@@ -12,9 +12,8 @@ CockroachDB는 Range라는 일종의 Sharding 기법을 도입하여 사용자�
 보장하고 있다. 이 글에서는 네 개의 Node로 구성된 클러스트를 예로 하여
 Node 장애 상황에서 Cockroach가 어떻게 반응하고, 또한 어디까지 가용성을
 보장해주는지 시험한 결과를 정리한다.
+<!--more-->
 
-
-{:.comment}
 > 묶음글을 쓸 때, 보통은 각각의 글을 어떤 주제로 할지, 그리고 전체 묶음글을
 > 몇 편으로 엮을지 미리 생각하곤 했지만 지난 번 Docker에 대한 글은 그 끝을
 > 예측하기 어려워 열린 상태로 목록을 채워나갔다. 그 관성으로, 이번 묶음글도
@@ -22,9 +21,9 @@ Node 장애 상황에서 Cockroach가 어떻게 반응하고, 또한 어디까�
 > 목록을 "미리" 확정했었다. 그런데...  
 > 어제 거의 하루 종일 가용성 시험을 하면서, "내가 왜 이걸 목록에 넣었을까..."
 > ㅠ.ㅠ 아무튼, 부족하나마 시험을 끝냈고 그 과정을 정리한다.
+{.comment}
 
 
-{:.boxed}
 > CockroachDB 맛보기 묶음글은 다음과 같습니다.
 >
 > * [CockroachDB 안녕?]
@@ -32,13 +31,11 @@ Node 장애 상황에서 Cockroach가 어떻게 반응하고, 또한 어디까�
 > * [CockroachDB Architecture]
 > * [CockroachDB 클러스터 설치 스크립트]
 > * _CockroachDB 클러스터 가용성 시험_
+{.boxed}
 
 
 
 # DBMS의 가용성
-
-{:toc .half.pull-right}
-* TOC
 
 컴퓨터가 무엇인지 설명할 때, 나는 주로 "A-D 프랙탈"이라는 표현을 쓴다.
 A는 Algorithm에서 따왔고, D는 Data Structure, 자료구조에서 따왔다. 이게
@@ -92,8 +89,7 @@ Node 중 두 대가 사용할 수 없는 상태가 된다면 남은 한 대가 (
 생략했으며, 생략된 부분은 잘 된다고 보면 된다.)
 
 
-{:.wrap}
-```console
+```console {.wrap}
 ^CNote: a second interrupt will skip graceful shutdown and terminate forcefully initiating graceful shutdown of server
 ^C*
 * ERROR: received signal 'interrupt' during shutdown, initiating hard shutdown - node may take longer to restart & clients may need to wait for leases to expire
@@ -111,19 +107,22 @@ $
 예상되는 반응은, 서비스 가용성을 보장하기 위해 즉각적으로 데이터에 대한
 복제를 시작하는 것이다.
 
-![](/attachments/cockroachdb/ha/crdb-one-node-down-01-node-suspected.png){:.dropshadow.boxed}
+![](/attachments/cockroachdb/ha/crdb-one-node-down-01-node-suspected.png)
+{.dropshadow .boxed}
 
 일단, 노란 불이 켜졌다. 한 대의 Node가 수상하다고 한다. 그리고 90 전체
 117개의 Range 중, 90개의 Range가 복제 대상으로 지정됐다. 그런데... 나중에
 다시 보겠지만, 이 시점에 복제는 일어나지 않았다. 조급하게 화면을 주시하던
 중, 한 5 분이 지나니,
 
-![](/attachments/cockroachdb/ha/crdb-one-node-down-02-node-dead.png){:.dropshadow.boxed}
+![](/attachments/cockroachdb/ha/crdb-one-node-down-02-node-dead.png)
+{.dropshadow .boxed}
 
 이렇게, 수상한 Node를 죽은 것으로 간주했고, 복제 대상의 수가 13개 줄었다.
 으잉?
 
-![](/attachments/cockroachdb/ha/crdb-one-node-down-03-balanced.png){:.dropshadow.boxed}
+![](/attachments/cockroachdb/ha/crdb-one-node-down-03-balanced.png)
+{.dropshadow .boxed}
 
 그리고 결국엔 한 대가 죽고 세 대가 남은 상황에서 복제 대상 Range의 수가
 0이 되었다. 복제가 다 끝나고, 안전한 상태가 되었다는 의미이다.
@@ -131,9 +130,9 @@ $
 이 Overview의 뒤에서는 무슨 일이 있었을까? Cockroach는 위와 같은 Node
 장애 상황에서 무슨 행동을 했을까?
 
-{:.comment}
 > 아... 문서를 먼저 뒤져보고 뭘 알고 시험을 해야 하는데, 귀찮아서...
 > 건방지게 "가설과 검증" 방식으로 일종의 Blackbox 시험을 했다. ㅠ.ㅠ
+{.comment}
 
 
 ### 느린 사망 선고
@@ -142,7 +141,8 @@ $
 였다.  아래 그래프에서 특이점이 등장한 시점은 약 05:58:10 정도. 아마 이 때,
 Node를 죽인 모양이다. (시간을 재면서 할 걸...)
 
-![](/attachments/cockroachdb/ha/crdb-one-node-down-11-ranges.png){:.dropshadow.boxed}
+![](/attachments/cockroachdb/ha/crdb-one-node-down-11-ranges.png)
+{.dropshadow .boxed}
 
 뒤에 깔려있는 진한 파란색 선은 전체 Range의 수량이고, 잠깐 내려왔다가 다시
 올라가는 빨간 선은 Leaseholder의 수량이다. 이 때, Node가 죽으면서 그 Node가
@@ -173,25 +173,26 @@ Node 사이의 Heartbeat에 대한 누락 허용치가 같은 망에 구성된 N
 5분이라는 긴 대기 시간은, **중단을 허용하지 않는 서비스를 운영하고 있다는
 가정 하에 내 시각에는 매우 적절한 설계**라고 생각한다.
 
-{:.keypoint}
 Cockroach 가용성의 특징 #1 - 느린 사망 선고
 : CockroachDB는 느린 사망 선고 방식을 채택함으로써 전지구적 클러스터의
   각 Node를 잇는 네트워크의 품질 저하, 또는 Rolling Upgrade 같은 상황에서
   불필요한 데이터 복제가 일어나는 것을 막는다.
+{.keypoint}
 
 오... 전혀 예상하지 못했던 멋진 모습이다!
 
-{:.comment}
 > 응, 이거 소설이다.  시험 결과는 사실에 근거하고 있으나, 그런 결과가
 > 나오는 이유에 대한 부분은 전적으로 나의 희망사항을 바탕으로 한
 > 가정이다.
+{.comment}
 
 어쨌든 5분이 지나면서 복제 대상이 줄고 있다는 것은 복제가 일어났음을
 뜻한다. 아래 그래프는 각 Store 별 Replica의 수를 나타내는데, 현재의
 구성은 Node 당 한 개의 Store를 갖도록 구성했으므로 이 수가 바로 Node
 별 Replica의 수와 동일하다.
 
-![](/attachments/cockroachdb/ha/crdb-one-node-down-12-replicas.png){:.dropshadow.boxed}
+![](/attachments/cockroachdb/ha/crdb-one-node-down-12-replicas.png)
+{.dropshadow .boxed}
 
 이렇게, 옅은 파란색 선이 끊긴 상태에서, 그 높이와 같은 양의 Replica가
 나머지 세 Node에 분산되어 늘어나고 있고, 약 3분이 지난 시점에는 모든
@@ -200,12 +201,14 @@ Cockroach 가용성의 특징 #1 - 느린 사망 선고
 이 때, 자세히 보면 알겠지만, 사건 전에는 각 선의 높이가 서로 달랐다.
 아래 그림처럼,
 
-![](/attachments/cockroachdb/ha/crdb-one-node-down-95-replica-bef.png){:.dropshadow.boxed}
+![](/attachments/cockroachdb/ha/crdb-one-node-down-95-replica-bef.png)
+{.dropshadow .boxed}
 
 사건 발생 직전에는 각각 84, 90, 87, 90 등 서로 다른 수의 Replica를
 보유하고 있었는데, 사망 선고 이후 재분배가 끝난 시점에는 아래와 같이,
 
-![](/attachments/cockroachdb/ha/crdb-one-node-down-96-replica-aft.png){:.dropshadow.boxed}
+![](/attachments/cockroachdb/ha/crdb-one-node-down-96-replica-aft.png)
+{.dropshadow .boxed}
 
 모든 Node가 동일하게 117이라는 숫자를 보이고 있다. 117이 뭐더라? 아!
 아까 전체 Range의 수가 117이었지. 결국, 모든 Node가 모든 Range를 다
@@ -215,11 +218,11 @@ Cockroach 가용성의 특징 #1 - 느린 사망 선고
 (연한 파랑 선의 90이라는 숫자는 무시. 이건 해당 Node가 마지막으로 남긴
 값이 표시되고 있을 뿐이다.)
 
-{:.keypoint}
 Cockroach 가용성의 특징 #2 - 세 개의 Replica
 : 각 Range를 세 개의 서로 다른 Node에 복제하여 저장함으로써, 그 중
   하나의 Node에 장애가 발생하더라도 살아남은 두 대(Major)가 합심하여
   데이터에 이상이 없음을 보증한다.
+{.keypoint}
 
 그럼 이렇게, 5분을 기다리는 동안 정말 아무 일도 일어나지 않은 것일까?
 그건 아니다. 왜냐하면 일은 해야 하니까.
@@ -230,11 +233,13 @@ Cockroach 가용성의 특징 #2 - 세 개의 Replica
 비교하게 좋게, 앞서 봤던 "복제해야 할 Range의 수"가 표시된 그래프를
 다시 가져왔다.
 
-![](/attachments/cockroachdb/ha/crdb-one-node-down-11-ranges.png){:.dropshadow.boxed}
+![](/attachments/cockroachdb/ha/crdb-one-node-down-11-ranges.png)
+{.dropshadow .boxed}
 
 그리고 다음은 각 Store(Node) 별 Leaseholders의 수를 나타내는 그래프다.
 
-![](/attachments/cockroachdb/ha/crdb-one-node-down-13-leaseholders.png){:.dropshadow.boxed}
+![](/attachments/cockroachdb/ha/crdb-one-node-down-13-leaseholders.png)
+{.dropshadow .boxed}
 
 딱 보이듯이, 05:58:10이 막 지난 시점에, 이미 Leaseholder는 살아남은 세
 Node에 분배가 끝났음을 알 수 있다. "[CockroachDB Architecture]"에서
@@ -244,16 +249,16 @@ Node가 Suspected 상태가 되었을 때, **곧바로 다른 Node에 있는 Rep
 해당 Range의 Leaseholder 자리를 채가기 때문에 이 5분의 기다려주는
 시간에도 서비스는 정상적으로 처리**될 수 있다.
 
-{:.keypoint}
 Cockroach 가용성의 특징 #3 - 빠른 Lease 재배치
 : 통신이 두절된 Node가 발견되면, 재빨리 Leaseholder를 재배치하여
   데이터 복제의 유보와는 별개로 서비스가 가능한 상태로 만든다.
+{.keypoint}
 
-{:.comment}
 > 아... 시간이 05:58로 표기되니 내가 밤을 샜거나 새벽형 인간이 것 같지만
 > 전혀 아니다. 난 아침잠형 인간. 출근만 아니라면 최대한 늦게 일어난다.
 > 저 시간은 실제로 14:58 쯤 되는데, 이 Cockroach의 모니터링 UI는 시간을
 > UTC로 표기하네... 설정이 있는지 나중에 봐야겠다.
+{.comment}
 
 
 
@@ -262,14 +267,15 @@ Cockroach 가용성의 특징 #3 - 빠른 Lease 재배치
 별다른 이상한 점 없이, Node 유실에 따른 Cluster의 동작에 대해 확인했다.
 이제, 다시 Node가 돌아올 때에 Cockroach가 반응하는 모습을 보자.
 
-{:.comment}
 > 아... 구태여 "포스의 균형" 운운할 얘기는 아닌데... 아무튼,
+{.comment}
 
 Node가 돌아온 것은 이미 정상적인 서비스를 하던 Cluster에게 "사건"은 아니다.
 그래서 아래 그래프처럼, 전체 클러스터의 Range, Leaseholder 등은 요동치지
 않고 평화를 유지한다.
 
-![](/attachments/cockroachdb/ha/crdb-one-node-rejoin-11-range.png){:.dropshadow.boxed}
+![](/attachments/cockroachdb/ha/crdb-one-node-rejoin-11-range.png)
+{.dropshadow .boxed}
 
 그러나 내부적으로는, 일꾼이 하나 더 생긴 것(또는 돌아온 것)을 반가워하며
 "잘 놀고 왔어? 여기 일" 하면서 일을 넘긴다. 위에서 데이터 자체의 복제와
@@ -278,7 +284,8 @@ Leaseholder라는 임무를 봤듯이, 두 가지 "일"이 넘어가게 되는�
 
 ### 데이터 재배치
 
-![](/attachments/cockroachdb/ha/crdb-one-node-rejoin-12-replicas.png){:.dropshadow.boxed}
+![](/attachments/cockroachdb/ha/crdb-one-node-rejoin-12-replicas.png)
+{.dropshadow .boxed}
 
 위 그래프의 연한 파란색 선을 보면 시작 부분부터 90의 높이를 가지고 있는
 것을 볼 수 있다. 이는, 앞서 봤듯이 이 Node가 죽을 때 90 개의 Replica를
@@ -300,10 +307,10 @@ Replica도 있을 것이고, 또는 그 사이에 갱신이 되어 이제는 무
 Replica가 돌아온 Node에 있는 경우, 저렇게 값이 떨어지는 현상이 발생할
 것이다.
 
-{:.keypoint}
 Cockroach 가용성의 특징 #4 - 적절히 속아내기
 : 장애 복구 시, 돌아온 Node가 보유한 Replica도 활용하여 최소한의
   비용으로 데이터 재배치를 진행한다.
+{.keypoint}
 
 ### 부하 재배치
 
@@ -313,15 +320,16 @@ Node는 자신이 보유한 Range에 대해서는 언제는 Leaseholder가 될 �
 조건을 갖추는데, 앞선 Replica 재배치가 끝난 Range는 그 상태에 따라
 Leaseholder 선출을 거듭할 것이다. 결과적으로,
 
-![](/attachments/cockroachdb/ha/crdb-one-node-rejoin-13-leaseholders.png){:.dropshadow.boxed}
+![](/attachments/cockroachdb/ha/crdb-one-node-rejoin-13-leaseholders.png)
+{.dropshadow .boxed}
 
 위의 그래프와 같이, 0에서 시작하여 Replica 재배치와 보조를 맞추면서
 돌아온 Node에게도 임무를 늘려 주고 있는 것을 확인할 수 있다.
 
-{:.keypoint}
 Cockroach 가용성의 특징 #5 - Leaseholder 재배치
 : 안정적인 재배치가 완료된 Range에 대해, Leaseholder 또한 다시 배치되어
   Range I/O에 대한 부하도 자동으로 균형을 잡아준다.
+{.keypoint}
 
 첫번째 시험은 재미있게 잘 끝났다. 다음은 네 개 중 두 개의 Node가 죽은
 상황을 만들어보자!
@@ -331,8 +339,10 @@ Cockroach 가용성의 특징 #5 - Leaseholder 재배치
 # Test #2 - Two Nodes Down!
 
 > Red five standing by!
+{.comment}
 
-![](/images/common/red-five-standing-by.jpg){:.dropshadow}
+![](/images/common/red-five-standing-by.jpg)
+{.dropshadow}
 
 데쓰스타를 공격하기 위해 Red Team을 비롯해서 수 많은 전투기와 폭격기가
 출격했지만, 작전을 성공으로 이끈 건 루크 스카이워커의 포스를 이용한
@@ -360,12 +370,14 @@ $
 
 이제 두 Node만 살아있는 상태에서 클러스터의 상태를 봤다.
 
-![](/attachments/cockroachdb/ha/crdb-two-node-down-01-node-suspected.png){:.dropshadow.boxed}
+![](/attachments/cockroachdb/ha/crdb-two-node-down-01-node-suspected.png)
+{.dropshadow .boxed}
 
 음, 첫 번째 Node가 죽었을 때와 마찬가지로 이번에 죽은 Node도 Suspected
 상태가 되었다. (그런데 왜 전체 Range 수가 올라가지?)
 
-![](/attachments/cockroachdb/ha/crdb-two-node-down-02-node-dead.png){:.dropshadow.boxed}
+![](/attachments/cockroachdb/ha/crdb-two-node-down-02-node-dead.png)
+{.dropshadow .boxed}
 
 그리고 역시 5분을 넘기게 되면, 위와 같이 사망 선고가 내려진다. (이제
 다시 전체 Range 수가 정상으로 돌아왔다.)
@@ -376,7 +388,8 @@ $
 
 ### 복제 불가
 
-![](/attachments/cockroachdb/ha/crdb-two-node-down-11-range.png){:.dropshadow.boxed}
+![](/attachments/cockroachdb/ha/crdb-two-node-down-11-range.png)
+{.dropshadow .boxed}
 
 끝끝내 복제는 일어나지 않았다.  위의 그래프를 보면, 08:05 정도에 복제
 대상이 40 정도 발생한 것을 보면 이 때 첫 번째 Node가 죽었다는 것과,
@@ -396,34 +409,38 @@ Leaseholder의 수가 튀는지이다. (통계 구간 내 Leaseholder의 합계 
 
 아무튼, 이 상태에서 아래 그래프와 같이, 더이상 Replica는 증가하지 않는다.
 
-![](/attachments/cockroachdb/ha/crdb-two-node-down-12-replicas.png){:.dropshadow.boxed}
+![](/attachments/cockroachdb/ha/crdb-two-node-down-12-replicas.png)
+{.dropshadow .boxed}
 
 하지만 Leaseholder는 조금 다른 문제이므로, 어쨌든 남아있는 Node 중
 다시 선출을 하였다는 것을 아래 그래프에서 볼 수 있다. (어라? 정말?
 여기서 시험이 살짝 꼬이기 시작한다. 이 얘기는 나중에 하고, 아무튼,)
 
-![](/attachments/cockroachdb/ha/crdb-two-node-down-13-leaseholders.png){:.dropshadow.boxed}
+![](/attachments/cockroachdb/ha/crdb-two-node-down-13-leaseholders.png)
+{.dropshadow .boxed}
 
 이때, 정확히 어떤 실패인지는 모르겠지만 뭔가에 대한 실패의 기록이
 지속적으로 발생하고, (아마 Node 간 Heartbeat의 문제 아닌가 싶다.)
 
-![](/attachments/cockroachdb/ha/crdb-two-node-down-21-failures.png){:.dropshadow.boxed}
+![](/attachments/cockroachdb/ha/crdb-two-node-down-21-failures.png)
+{.dropshadow .boxed}
 
 복제 대기열도 복제 수행이 불가능한 수량으로 꽉 찼다.
 
-![](/attachments/cockroachdb/ha/crdb-two-node-down-22-repl-queue.png){:.dropshadow.boxed}
+![](/attachments/cockroachdb/ha/crdb-two-node-down-22-repl-queue.png)
+{.dropshadow .boxed}
 
 첫 번째 시험과 같이, 복제가 정상적으로 이루어지게 되면, 아래와 같이
 노란색 Pending Action 그래프나 Replica를 지웠거나 만든 그래프가
 나타나게 되는 것과는 다른 결과다.
 
-![](/attachments/cockroachdb/ha/crdb-one-node-down-21-repl-queue.png){:.dropshadow.boxed}
+![](/attachments/cockroachdb/ha/crdb-one-node-down-21-repl-queue.png)
+{.dropshadow .boxed}
 
 "음, 이제 Split Brain 상황이니 동작을 멈추겠지?" 라고 생각하며
 CLI를 꺼내 들었다.
 
-{:.wrap}
-```console
+```console {.wrap}
 $ ./cockroach ... sql -e 'select count(*) from compute_resource'
 +--------+
 | count  |
@@ -438,6 +455,7 @@ $
 
 > 짝수 구성에서 Node 반이 날아갔는데 돌아가?  
 > 세 Node 구성에서 둘 죽은 거랑 결과가 같아야 하는 거 아냐?
+{.comment}
 
 
 
@@ -452,10 +470,10 @@ $
 없다고 생각했었다. 가만, 그러고보니 두 번째 Node가 죽었을 때
 Leaseholder 선출이 정상적으로 됐네?
 
-{:.warn}
 해결되지 않은 의문 #1
 : 개별 Range의 Raft Leader 선출은 어떻게 진행되나? 정족수를 채우지
   못한 Range도 Leader 선출 및 Leaseholder 설정이 가능한가?
+{.warn}
 
 어쩌면, 위의 시험은 순차적으로 Node를 죽였기 때문에, 이미 세 Node
 상태가 되었을 때 Replica 재배치가 끝난 상태라서 가능한 것일 수도
@@ -476,8 +494,8 @@ Leaseholder 선출이 정상적으로 됐네?
 
 ## 몇 가지 가설
 
-{:.comment}
 > 여기서부터 하라는 공부는 안 하고 굳은 땅에 삽질을 시작했다.
+{.comment}
 
 
 ### 가설 #1 - 하... "Graceful" 하게 죽인 게 문제였네...
@@ -486,6 +504,7 @@ Leaseholder 선출이 정상적으로 됐네?
 > 써서 살며시 내려놨더니, 지들끼리 "우리 Split Brain 아니야~" 말을
 > 맞췄네. 맞췄어!  
 > 그럼 그냥 콱! 죽여봐야지!
+{.comment}
 
 그래서 `kill -9`로 콱 죽여봤다. 그런데 결과는 동일하더라. ㅠ.ㅠ
 
@@ -493,9 +512,9 @@ Leaseholder 선출이 정상적으로 됐네?
 ### 가설 #2 - 한 번에 죽였어야지!
 
 > 한 번에 죽여야 지들끼리 말을 못하지...  
+{.comment}
 
-{:.wrap}
-```console
+```console {.wrap}
 $ ./cockroach ... sql -e 'select count(*) from compute_resource'
 +--------+
 | count  |
@@ -510,6 +529,7 @@ $
 이게 함정이었는데, 여기서 생각을 조금 더 했어야 했다.
 
 > 아... 혹시 이게 Raft가 동작하는 레벨이 Range니까... 그렇다면?
+{.comment}
 
 좀 돌아오긴 했지만, 어쨌든 힌트는 찾았다.
 
@@ -517,6 +537,7 @@ $
 ### 가설 #3 - 골고루 펴놓고 한 번에!
 
 > Replica가 충분히 분산됐을 때 한 번에 죽여야 하네... 그거네...
+{.comment}
 
 아직 핵심을 짚지는 못했지만, 어쨌든 많이 다가왔다.
 그래서, 다음과 같은 마지막 시험을 진행했다.
@@ -545,13 +566,15 @@ Replica로 복제하여 여러 Node에 분산 저장하는 일을 관장하고, 
 일단, 모든 Node를 살려서 전체적으로 Replica의 배치가 잘 되도록 유도하고,
 두 Node를 동시에 죽여봤다.
 
-![](/attachments/cockroachdb/ha/crdb-two-node-at-once-01-node-suspected-1.png){:.dropshadow.boxed}
+![](/attachments/cockroachdb/ha/crdb-two-node-at-once-01-node-suspected-1.png)
+{.dropshadow .boxed}
 
 먼저 죽은 두 Node가 Suspected 상태에 빠졌고 Under-Replicated 상태인
 Range가 39개 생겨났다. 그런데, 그 옆에 29라는, 지금까지는 보지 못했던
 다른 값이 하나 더 있다. 이 값들은 시간이 흐르면서 살짝 변하더니,
 
-![](/attachments/cockroachdb/ha/crdb-two-node-at-once-03-node-dead.png){:.dropshadow.boxed}
+![](/attachments/cockroachdb/ha/crdb-two-node-at-once-03-node-dead.png)
+{.dropshadow .boxed}
 
 최종적으로 Node의 사망 선고가 내려지면서 위와 같은 값이 되었다.
 
@@ -563,11 +586,13 @@ Range가 39개 생겨났다. 그런데, 그 옆에 29라는, 지금까지는 보
 
 그리고 이 상황에서, 100%는 아닌데 가끔은 다음과 같은 상황도 발생했다.
 
-![](/attachments/cockroachdb/ha/crdb-two-node-at-once-05-connection.png){:.dropshadow.boxed}
+![](/attachments/cockroachdb/ha/crdb-two-node-at-once-05-connection.png)
+{.dropshadow .boxed}
 
 관리화면에 접속하지 못하거나,
 
-![](/attachments/cockroachdb/ha/crdb-two-node-at-once-06-loading.png){:.dropshadow.boxed}
+![](/attachments/cockroachdb/ha/crdb-two-node-at-once-06-loading.png)
+{.dropshadow .boxed}
 
 값을 읽어오지 못하는 상황. 이건 DBMS가 정상적으로 동작하지 못한다는
 증거다! 라고... 생각하며, CLI를 다시 꺼냈다.
@@ -580,7 +605,7 @@ Range가 39개 생겨났다. 그런데, 그 옆에 29라는, 지금까지는 보
 Replica 배치 상태를 확인했다. 아래와 같이, 1번, 2번, 3번, 4번 노드에
 빠짐없이 배치가 되어있고, Leaseholder도 그러했다.
 
-```console
+```console {.wrap}
 $ ./cockroach ... sql -e 'show experimental_ranges from table compute_resource'
 +----------------+----------------+----------+----------+--------------+
 |   Start Key    |    End Key     | Range ID | Replicas | Lease Holder |
@@ -602,7 +627,7 @@ $
 Leaseholder의 배치만 바뀌었다. 특히, 122번 Range는 살아남은 Replica가
 하나 밖에 없는 상태가 되었다.
 
-```console
+```console {.wrap}
 $ ./cockroach ... sql -e 'show experimental_ranges from table compute_resource'
 +----------------+----------------+----------+----------+--------------+
 |   Start Key    |    End Key     | Range ID | Replicas | Lease Holder |
@@ -621,8 +646,7 @@ $
 
 "아하! 이번엔 좀 명확하다." 하며, 가볍게 명령을 날렸다.
 
-{:.wrap}
-```console
+```console {.wrap}
 $ ./cockroach ... sql -e 'select count(*) from compute_resource'
 +--------+
 | count  |
@@ -644,8 +668,7 @@ $
 황당한 얘기지만, 어떤 DBMS에게는 사실일지도... 아무튼, 좀 더 확실히
 Table에 접근한다는 증거를 뽑아보자.
 
-{:.wrap}
-```console
+```console {.wrap}
 $ ./cockroach ... sql -e 'select name from compute_resource' |wc -l
 509542
 $ 
@@ -658,8 +681,7 @@ $
 화면은 생략하지만, 어쨌든 겁나 많은, 36000 건의 데이터가 쑥~ 쑥~ 잘
 들어간다!
 
-{:.wrap}
-```console
+```console {.wrap}
 $ ./cockroach ... sql -e 'select count(*) from compute_resource'
 +--------+
 | count  |
@@ -673,7 +695,7 @@ $
 심지어는, 있지도 않은 Node 2번에 Replica 할당까지 해가며 Range도 하나
 더 만들어졌다...
 
-```console
+```console {.wrap}
 $ ./cockroach ... sql -e 'show experimental_ranges from table compute_resource'
 +----------------+----------------+----------+----------+--------------+
 |   Start Key    |    End Key     | Range ID | Replicas | Lease Holder |
@@ -697,21 +719,21 @@ $
 
 ## Range와 Replica의 고려 - Take #2
 
-{:.comment}
 > 이쯤 했을 때, 아니 사실은 아까부터, 그만 하고 집에 갔으면 좋겠다는
 > 생각과 함께, 이제는 어떤 웹앱을 만들겠다고 이 DBMS를 설치했는지도
 > 잊어버린 이 바보스러움을 규탄하기 시작했다.
 > 그러나 벌린 일을 그냥 주어담을 수도 없고...
+{.comment}
 
 새로운 가설과 시험방법을 써보기로 했다. 가설은, 혹시 `SELECT`가 되는
 건 이게 READONLY 작업이기 때문인 것이 아닐까? 데이터에 변경을 가하지
 않으므로 Replica가 하나 뿐이더라도 큰 문제가 없는...
 
-{:.warn}
 해결되지 않은 의문 #2
 : READONLY라고 해서 Replica 하나만 가진 Range가 답을 해버린다면,
   혹시 이게 Majority를 갖는 Replica 들과의 Network 단절 상황일 때
   이 홀로 남은 Replica에게 답을 받은 Client는 그것을 믿어도 될까?
+{.warn}
 
 그럼 왜 `INSERT`는 된걸까? 그건 혹시, 앞선 시험의 상태에서 살아있는
 Node가 1번과 3번이었고, 하필, `INSERT`를 받을 최외각 Range의 Replica가
@@ -735,7 +757,7 @@ Node가 1번과 3번이었고, 하필, `INSERT`를 받을 최외각 Range의 Rep
 걸쳐 있는 상태를 얻었다. (사실, 마지막 Range에 대한 부분은 내가 어떤
 Node를 죽이느냐에 따라 조절할 수 있는데, 2번, 4번이 죽이기 편해서...)
 
-```console
+```console {.wrap}
 $ ./cockroach ... sql -e 'show experimental_ranges from table compute_resource'
 +----------------+----------------+----------+----------+--------------+
 |   Start Key    |    End Key     | Range ID | Replicas | Lease Holder |
@@ -755,7 +777,7 @@ $
 
 그리고, 두 Node를 죽인 후, 아래와 같은 상태가 되었다.
 
-```console
+```console {.wrap}
 $ ./cockroach ... sql -e 'show experimental_ranges from table compute_resource'
 +----------------+----------------+----------+----------+--------------+
 |   Start Key    |    End Key     | Range ID | Replicas | Lease Holder |
@@ -795,8 +817,7 @@ Range는 살아남은 Replica가 자기 자신 뿐인 상태에서 새롭게 Lea
 레코드를 찾아서 `UPDATE`를 해봤다.
 
 
-{:.wrap}
-```console
+```console {.wrap}
 $ ./cockroach ... sql -e 'select id,name from compute_resource where id < 387723163815575553' |tail -1
 387723163798962177	test 19860
 $ ./cockroach ... sql -e "update compute_resource set name='update 1' where id = 387723163798962177"
@@ -810,17 +831,16 @@ $
 Range 단위의 정족수를 채우고 있는 Range는 `UPDATE`가 잘 되는 것이
 맞다라고 일단 생각해보자.
 
-{:.keypoint}
 Cockroach 가용성의 특징 #6 - Range 별 가용성
 : CockroachDB는 Node 단위가 아닌 Range 단위로 가용성을 관리하게 되며,
   동일 Cluster 또는 동일한 Table 내에 가용하지 않은 Range가 있더라도,
   가용한 Range에 대해서는 READ는 물론 WRITE 작업도 정상적으로 처리된다.
+{.keypoint}
 
 그럼 아닌 경우도 봐야하니, 정족수를 채우지 못하고 있는 221번 Range의
 마지막 레코드를 찾아서 동일한 변경을 해보자.
 
-{:.wrap}
-```console
+```console {.wrap}
 $ ./cockroach ... sql -e 'select id,name from compute_resource' |tail -1
 388599867835973635	test 36000
 $ ./cockroach ... sql -e "update compute_resource set name='update in range 221' where id = 388599867835973635"
@@ -834,11 +854,11 @@ $
 없다. 그런데 TIMEOUT이나 오류가 나야 Application을 짤 것이 아닌가?
 이게 뭐지? 또다른 의문...
 
-{:.warn}
 해결되지 않은 의문 #3
 : 질의에 응답할 수 없는 상황이면 답을 하지 않는 것이 옳은가? 그럼
   Application은 알아서 Timeout을 잡고 또는 Connection에 대한 Timeout을
   설정하여 답이 없으면 오류메시지 없이 로직을 잡아야 하는가?
+{.warn}
 
 그리고 또 한 가지 이상한 점은, (앞선 시험에서도 비슷한 경우를 만난 적이
 있는데) 이렇게 `UPDATE` 등을 날려서 한 번 응답을 받지 못하면 그 다음
@@ -853,8 +873,7 @@ $
 
 잘 동작하던 109번 Range에 다시 `UPDATE`를 날려보자.
 
-{:.wrap}
-```console
+```console {.wrap}
 $ ./cockroach ... sql -e 'select id,name from compute_resource where id < 387723163815575553' |tail -1
 387723163798962177	update 1
 $ ./cockroach ... sql -e "update compute_resource set name='update in range 109 again' where id = 387723163798962177"
@@ -866,7 +885,7 @@ $
 
 역시 이번에도 성공이다. 그런데...
 
-```console
+```console {.wrap}
 $ ./cockroach ... sql -e "select count(*) from compute_resource"
 ^C
 $ 
@@ -881,8 +900,7 @@ $
 그리고 여전히, 동일한 `count(*)`를 얼지 않은 Range에 대해서만 던지면
 정상적으로 잘 읽어진다.
 
-{:.wrap}
-```console
+```console {.wrap}
 $ ./cockroach ... sql -e "select count(*) from compute_resource where id > 386608513179123716 and id < 387723163815575553"
 +-------+
 | count |
@@ -902,8 +920,7 @@ $
 죽였던 Node들을 다시 살리고, 혹시나 다시, 아까 `UPDATE` 했던 레코드가
 잘 보존되어 있는지 읽어봤다.
 
-{:.wrap}
-```console
+```console {.wrap}
 $ ./cockroach ... sql -e 'select id,name from compute_resource where id < 387723163815575553' |tail -1
 387723163798962177	update in range 109 again
 $ 
@@ -913,8 +930,7 @@ Node를 모두 살리고, 복구가 완료된 시점에도 업데이트 상태�
 
 그런데! 그런데 이건 뭐냐?
 
-{:.wrap}
-```console
+```console {.wrap}
 $ ./cockroach ... sql -e 'select id,name from compute_resource' |tail -1
 388599867835973635	update in range 221
 $ 
@@ -946,6 +962,7 @@ $
 * "빠른 Leaseholder 재배치"를 통해 서비스의 가용성은 항상 최선의 상태를
   유지하며, 복구 시에도 다시 Leaseholder를 배치하여 전체 Cluster의 I/O
   부하의 균형을 유지한다.
+{.angle}
 
 실제의 상황에서 Node 두 개가 동시에 죽는 경우는 확율적으로 높지 않은
 현상이다. 또는, 반대로 말하면 이런 상황이 쉽게 발생하지 않도록 환경을
@@ -1070,7 +1087,7 @@ Application 수준에서도 유사한 처리를 했겠지만...)
 ---
 
 [공식 문서]:https://www.cockroachlabs.com/docs/stable/architecture/overview.html
-[Docker Swarm의 고가용성]:{% link _posts/cloudcomputing/2018-03-15-high-availability-of-docker-swarm.md %}
+[Docker Swarm의 고가용성]:{{< relref "/blog/cloudcomputing/2018-03-15-high-availability-of-docker-swarm.md" >}}
 
 
 ### 함께 읽기
@@ -1083,8 +1100,8 @@ CockroachDB 맛보기 묶음글은 다음과 같습니다.
 * [CockroachDB 클러스터 설치 스크립트]
 * _CockroachDB 클러스터 가용성 시험_
 
-[CockroachDB 안녕?]:{% link _posts/cloudcomputing/2018-09-20-say-hello-to-cockroachdb.md %}
-[CockroachDB 클러스터 구성하기]:{% link _posts/cloudcomputing/2018-09-21-setup-cockroach-cluster.md %}
-[CockroachDB Architecture]:{% link _posts/cloudcomputing/2018-10-01-architecture-of-cockroachdb.md %}
-[CockroachDB 클러스터 설치 스크립트]:{% link _posts/cloudcomputing/2018-10-02-cockroach-cluster-setup-script.md %}
-[CockroachDB 클러스터 가용성 시험]:{% link _posts/cloudcomputing/2018-10-08-availablility-of-cockroach.md %}
+[CockroachDB 안녕?]:{{< relref "/blog/cloudcomputing/2018-09-20-say-hello-to-cockroachdb.md" >}}
+[CockroachDB 클러스터 구성하기]:{{< relref "/blog/cloudcomputing/2018-09-21-setup-cockroach-cluster.md" >}}
+[CockroachDB Architecture]:{{< relref "/blog/cloudcomputing/2018-10-01-architecture-of-cockroachdb.md" >}}
+[CockroachDB 클러스터 설치 스크립트]:{{< relref "/blog/cloudcomputing/2018-10-02-cockroach-cluster-setup-script.md" >}}
+[CockroachDB 클러스터 가용성 시험]:{{< relref "/blog/cloudcomputing/2018-10-08-availablility-of-cockroach.md" >}}

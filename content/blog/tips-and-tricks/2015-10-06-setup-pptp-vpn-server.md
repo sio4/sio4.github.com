@@ -7,6 +7,7 @@ image: /attachments/20151006-pptp-vpn-005.png
 리눅스 서버를 이용하여 간단하게 VPN 환경을 구성할 수 있는 방법 중 하나가
 GRE Tunneling 방식의 PPTP를 이용한 VPN 구성이다. 이 글은 PPTP를 이용하여
 원격지의 망과 내 PC를 연결하는 방법에 대한 간단한 소개이다.
+<!--more-->
 
 **VPN은 Virtual Private Network의 줄인 말**인데, 요즘 가뜩이나 가상화에
 대한 용어가 많아서 "이것도 요즘 유행하는 그런 거야?" 하는 생각이 들 수도
@@ -90,7 +91,6 @@ IP 주소의 대역으로 지정이 된다. VPN 서버를 통하여 접속하는
 우리의 예에서는 VPN 서버에서 사용하는 IP 대역과 같은 192.168.13.0/24 안의
 주소 중에서 값을 골라 사용하였다. 참고로, 해당 망의 구성은 다음과 같다.
 
-{:.fit.styled}
 | 주소            | 내용                     |
 |:---------------:|:------------------------:|
 | 192.168.13.0/24 | 목표 환경의 네트워크     |
@@ -156,19 +156,22 @@ Ubuntu Desktop 환경을 중심으로 설명한다. 내용면에서, 윈도나 �
 먼저, 우측 상단에 위치한 네트워크 설정 부분의 "**연결편집**" 메뉴나
 "**가상 사설망 설정**" 메뉴를 이용하면 아래와 같은 대화상자를 볼 수 있다.
 
-![](/attachments/20151006-pptp-vpn-001.png){:.fit.dropshadow}
+![](/attachments/20151006-pptp-vpn-001.png)
+{.fit .dropshadow}
 
 여기서 "**추가**" 단추를 눌러주면, 아래와 같이 어떤 연결을 만들지 결정하는
 대화상자가 나타나게 된다. 물론, 해당 Client 설정을 지원하는 패키지가 미리
 설치되어 있어야 하지만, 아래와 같이 "**포인트투포인트 터널링 프로토콜**"을
 선택해준다.
 
-![](/attachments/20151006-pptp-vpn-002.png){:.fit.dropshadow}
+![](/attachments/20151006-pptp-vpn-002.png)
+{.fit .dropshadow}
 
 이제 "**만들기**" 단추를 눌러주면 아래와 같이, 본격적인 설정이 가능한
 대화상자가 나타나게 된다.
 
-![](/attachments/20151006-pptp-vpn-003.png){:.fit.dropshadow}
+![](/attachments/20151006-pptp-vpn-003.png)
+{.fit .dropshadow}
 
 위의 대화상자에서 "**연결 이름**"은 그냥 사용자가 인지하기 위한 이름이니
 적당히 원하는 이름을 넣어주면 되는데, 보통은 망의 이름을 쓰게 된다.
@@ -187,20 +190,23 @@ Ubuntu Desktop 환경을 중심으로 설명한다. 내용면에서, 윈도나 �
 입력해야 하는 부분이지만, 추가 설명은 필요없을 것 같다. :-) 다음은
 "**IPv4 설정**" 탭을 열어본다.
 
-![](/attachments/20151006-pptp-vpn-004.png){:.fit.dropshadow}
+![](/attachments/20151006-pptp-vpn-004.png)
+{.fit .dropshadow}
 
 이 탭의, 위의 그림과 같이 연결되는 가상망에 대한 **PC쪽 종단의 IP주소 등을
 어떻게 설정할지를 결정하는 부분**이다. DHCP 설정과 유사한 모습을 갖는데,
 여기서는 IP주소만 자동으로 가져오는 방식으로 설정하였다. (이미 PC에 있는
 DNS, Domain 등의 정보는 기존 것으로 유지한다는 의미이다.)
 
-![](/attachments/20151006-pptp-vpn-005.png){:.fit.dropshadow}
+![](/attachments/20151006-pptp-vpn-005.png)
+{.fit .dropshadow}
 
 이렇게 설정을 마치고 다시 네트워크 메뉴에서 저장된 설정을 선택하게 되면,
 우상단 네트워크 연결 표시 부분이 애니메이션으로 깜박거리다가, 위와 같은
 Popup이 뜨면서 연결이 마무리되면 모든 것이 성공적으로 된 것이다.
 
 > 얼쑤!
+{.comment}
 
 라고 외치고 싶었지만, 한 번에 끝나지 않았다! 한 번에 끝나면 재미없다.
 
@@ -284,13 +290,15 @@ Sep 19 03:26:02 station pptpd[9724]: CTRL: Client 10.45.60.5 control connection 
 다시 열어보자. 그 중에서, "**가상 사설망**" 탭의 "**고급**" 단추가 눈에
 띈다. 단추를 눌러 대화상자를 열어보니 아래와 같다.
 
-![](/attachments/20151006-pptp-vpn-e11.png){:.fit.dropshadow}
+![](/attachments/20151006-pptp-vpn-e11.png)
+{.fit .dropshadow}
 
 다양한 "**인증**" 방법이 나오고, 그 아래 "**보안 및 압축**"이라는 부분이
 눈에 띈다! "**포인트투포인트 암호화(MPPE) 사용**"이라니! 바로 위의 로그가
 말하는 그것. 이것을 아래와 같이 선택해준다.
 
-![](/attachments/20151006-pptp-vpn-e12.png){:.fit.dropshadow}
+![](/attachments/20151006-pptp-vpn-e12.png)
+{.fit .dropshadow}
 
 설정을 마치고 다시 접속을 해보면, 이번에는 정상적으로 연결된 것을 확인할
 수 있다!
@@ -458,7 +466,8 @@ $
 옵션을 제공하고 있다. 아래 그림은 VPN 설정의 "**IPv4설정**"에 위치한
 "**라우팅**" 단추를 눌렀을 때 만나게 되는 대화상자인데,
 
-![](/attachments/20151006-pptp-vpn-101.png){:.fit.dropshadow}
+![](/attachments/20151006-pptp-vpn-101.png)
+{.fit .dropshadow}
 
 보는 바와 같이
 

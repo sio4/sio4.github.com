@@ -12,10 +12,12 @@ date: 2018-10-02T16:30:00+0900
 대해 정리하려고 한다. 내용은 CockroachDB Cluster의 구성에 초점을 맞추고
 있지만, 여기서 다루는 개념과 방법은 소프트웨어의 원격 설치, 자동화된
 배치를 준비함에 있어서 공통적으로 참고하거나 적용할 수 있을 것이다.
+<!--more-->
 
 
-{: title="(c) Karunakar Rayker, https://www.flickr.com/photos/krayker/2117746551"}
-![](/images/common/shell-on-the-beach.jpg)
+![(c) Karunakar Rayker, https://www.flickr.com/photos/krayker/2117746551](/images/common/shell-on-the-beach.jpg)
+(c) Karunakar Rayker, https://www.flickr.com/photos/krayker/2117746551
+{.caption .centered}
 
 
 지난 세 편의 글을 통하여, 클라우드 컴퓨팅 환경의 장점에 힘입어 전지구적
@@ -29,7 +31,6 @@ Node를 자동으로 설치하고 제어하는 과정에 대해 다뤘다. 이 �
 환경을 위한 자동 배치"에 대한 기본적인 개요를 짚어보려고 한다.
 
 
-{:.boxed}
 > CockroachDB 맛보기 묶음글은 다음과 같습니다. 
 >
 > * [CockroachDB 안녕?]  
@@ -37,13 +38,10 @@ Node를 자동으로 설치하고 제어하는 과정에 대해 다뤘다. 이 �
 > * [CockroachDB Architecture]
 > * _CockroachDB 클러스터 설치 스크립트_
 > * [CockroachDB 클러스터 가용성 시험]
+{.boxed}
 
 
 # 클라우드 컴퓨팅과 구성 자동화
-
-{:toc .half.pull-right}
-* TOC
-
 
 클라우드 컴퓨팅 환경이 우리에게 주는 이익, 또는 특징 중 가장 두드러진 것을
 몇 가지 고르라고 한다면, 나는 "자원의 일회용화[^1]"와 "구성 자동화[^2]"를
@@ -117,7 +115,6 @@ Node를 자동으로 설치하고 제어하는 과정에 대해 다뤘다. 이 �
 
 실제로 관리서버에서 스크립트를 구동했을 때 출력되는 내용은 다음과 같다.
 
-{:.wrap}
 ```console
 $ ./50.setup-cockroach-cluster.sh 
 cockroach-v2.0.5.linux-amd64/cockroach
@@ -159,7 +156,6 @@ install cockroach on store-2 (store-2.int.seo01.mgmt, 198.0.2.158)
 어라? 그런데 10월 1일, 어제 새 버전이 나왔다. 그럼 올려야지. 그래서 동일한
 스크립트를 다시 돌렸고, 아래 화면은 그 과정에서 출력된 내용이다.
 
-{:.wrap}
 ```console
 $ ./50.setup-cockroach-cluster.sh 
 cockroach-v2.0.6.linux-amd64/cockroach
@@ -222,9 +218,9 @@ install cockroach on store-2 (store-2.int.seo01.mgmt, 198.0.2.158)
 고려해야 하며, 과연 어디서 어떤 부분을 실행하는 것이 효과적인지도
 생각할 필요가 있다. 그리고...
 
-{:.comment}
 > 아... 아니다. 쓰다 보니 한도 끝도 없이 길어져서, 그냥 다 줄이고 바로
 > 스크립트를 보는 것이 낫겠다. 왜케 말이 많은 것인가..!
+{.comment}
 
 ## 설정, 그리고 옵션
 
@@ -236,7 +232,6 @@ install cockroach on store-2 (store-2.int.seo01.mgmt, 198.0.2.158)
 같은 값들, 예를 들어 설치 위치나 소유자, 소프트웨어 버전 등의 값은 딱
 한 번 쓰이더라도 변수로 만들어 놓는 것이 좋다.
 
-{:.wrap}
 ```shell
 #!/bin/bash
 #
@@ -286,7 +281,6 @@ bin="$root/cockroach"
 
 다음의 경우를 보자.
 
-{:.wrap}
 ```shell
 #!/bin/bash
 
@@ -306,7 +300,6 @@ rm -rf $HOME/important_things
 이런 문제를 피하는 일반적인 방법은 두 가지가 있는데, 그 중 하나는 조건
 제어를 사용하는 것이다.
 
-{:.wrap}
 ```shell
 #!/bin/bash
 
@@ -330,7 +323,6 @@ $ make && make install && make clean
 귀찮은 일일 뿐더러, 스크립트의 가독성도 현저히 떨어진다. 그래서 아래와
 같이,
 
-{:.wrap}
 ```shell
 #!/bin/bash
 
@@ -351,7 +343,6 @@ rm -rf $HOME/important_things
 다시 스크립트로 돌아가보자. 이제 공식 보관소로부터 릴리즈된 패키지를
 받아서 자신이 실행되는 기계에 CockroachDB를 설치하는 과정이 나온다.
 
-{:.wrap}
 ```shell
 # -- get cockroach package and install locally
 sudo rm -rf /opt/$arch_name
@@ -405,7 +396,6 @@ ln -s /opt/$arch_name/cockroach $root/cockroach
 이제, 로컬 설치가 끝났다. 다음은 클러스터 구성에 필요한 이런 저런
 파일들을 만들어줄 차례다.
 
-{:.wrap}
 ```shell
 # -- create certifications
 mkdir -p keys
@@ -444,7 +434,6 @@ cp -a $root/certs/ca.crt certs
 마지막으로 아래와 같이, 모든 Node에서 공통으로 사용할 `ufw`, 우분투 방화벽
 설정을 만들어준다. (그나저나 우분투... 참 유니크하게 이름 잘 만들었다.)
 
-{:.wrap}
 ```shell
 cat > cockroach.ufw <<EOF
 [CockroachDB]
@@ -482,7 +471,6 @@ DBMS가 Cockroach다. 전지구적으로 흩어진 기계들이 인터넷으로 
 아래와 같은 스크립트를 사용해서 Cockroach가 이해할 수 있는 형식의 목록을
 만들어준다.
 
-{:.wrap}
 ```shell
 # -- generate join list
 clist=""
@@ -510,7 +498,6 @@ done
 
 먼저, 아래와 같은 방식으로, 개별 Node의 인증서를 만든다.
 
-{:.wrap}
 ```shell
 # -- install cockroach to nodes...
 for node in $nodes; do
@@ -535,7 +522,6 @@ for node in $nodes; do
 위해서 이렇게, Node 별로 각각의 설정을 만들어줬다. 만약, 이 값을 다른
 방식으로 지정할 수 있는 깔끔한 방법이 있다면 대체 가능할 것 같다.
 
-{:.wrap}
 ```shell
 	cat > cockroach.service <<EOF
 [Unit]
@@ -567,7 +553,6 @@ EOF
 될 각각의 서버에 아래와 같이 `scp`를 사용하여 파일을 올려주고,
 마지막으로 `ssh` 명령을 이용하여 스크립트를 실행한다.
 
-{:.wrap}
 ```shell
 	# -- install...
 	scp -p -r \
@@ -603,14 +588,13 @@ done
 
 이제 다 됐다. 아래와 같이, 임시를 만들었던 파일을 지워버리고 실행 끝!
 
-{:.wrap}
 ```shell
 # -- clean up
 rm -rf certs cockroach.service cockroach.ufw
 ```
 
-{:.comment}
 > 뭐, 거창하게 시작했는데 별거 없네? 응?
+{.comment}
 
 
 # CockroachDB 클러스터, 후처리 스크립트
@@ -631,7 +615,6 @@ rm -rf certs cockroach.service cockroach.ufw
 과정이 있었다. 여기서는 공식 보관소에서 받지 않고 올려진 파일을 이용할
 뿐, 완전히 동일한 과정을 거쳐 구조를 잡게 된다.
 
-{:.wrap}
 ```shell
 #!/bin/bash
 #
@@ -667,7 +650,6 @@ bin="$root/cockroach"
 동일한 부분으로, 단지 올려진 파일을 이용하여 설치를 처리하고 있다는 점이
 다른 부분이다.
 
-{:.wrap}
 ```shell
 # -- install cockroach package and setup structure
 echo "install $arch_name..."
@@ -694,7 +676,6 @@ ln -s /opt/$arch_name/cockroach $root/cockroach
 보존하는 방식을 택했다. (이런 결정은, 각 소프트웨어나 구성 원칙에 따라
 다양한 접근이 가능하다.)
 
-{:.wrap}
 ```shell
 for f in certs/*; do
 	if [ -e "$root/$f" ]; then
@@ -717,7 +698,6 @@ rm -rf certs
 이제 패키지 자체의 설치는 다 끝났다. 마지막으로, 시스템 환경을 조금
 손봐야 하는데, 먼저 방화벽을 설정하였다.
 
-{:.wrap}
 ```shell
 echo "install system files..."
 sudo mv -f cockroach.ufw /etc/ufw/applications.d/cockroach
@@ -734,7 +714,6 @@ sudo ufw allow from any to any app CockroachDB
 
 그리고 최종적으로,
 
-{:.wrap}
 ```shell
 mv -f cockroach.service $root/
 sudo systemctl enable $root/cockroach.service
@@ -760,7 +739,7 @@ CockroachDB 맛보기 묶음글은 다음과 같습니다.
 * _CockroachDB 클러스터 설치 스크립트_
 * [CockroachDB 클러스터 가용성 시험]
 
-[CockroachDB 안녕?]:{% link _posts/cloudcomputing/2018-09-20-say-hello-to-cockroachdb.md %}
-[CockroachDB 클러스터 구성하기]:{% link _posts/cloudcomputing/2018-09-21-setup-cockroach-cluster.md %}
-[CockroachDB Architecture]:{% link _posts/cloudcomputing/2018-10-01-architecture-of-cockroachdb.md %}
+[CockroachDB 안녕?]:{{< relref "/blog/cloudcomputing/2018-09-20-say-hello-to-cockroachdb.md" >}}
+[CockroachDB 클러스터 구성하기]:{{< relref "/blog/cloudcomputing/2018-09-21-setup-cockroach-cluster.md" >}}
+[CockroachDB Architecture]:{{< relref "/blog/cloudcomputing/2018-10-01-architecture-of-cockroachdb.md" >}}
 

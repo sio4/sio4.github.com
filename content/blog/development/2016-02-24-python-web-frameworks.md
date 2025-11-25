@@ -7,6 +7,7 @@ date: 2016-02-24 14:36:29 +0900
 일반적인 Web Application이 아닌 API Backend를 위한 Python Web Framework을
 선정하기 위하여, 인기있는 Framework 몇 개를 비교해보았다. 이 글은, 이
 비교 과정과 결과에 대한 기록이다.
+<!--more-->
 
 6년 쯤 전, 간단한 In-House 관리시스템을 몇 개 만들 기회가 있었는데,
 이미 고속 개발 도구로써 명성이 자자했지만 사용 경험이 없었던 Python
@@ -57,10 +58,9 @@ Community에 의해 정리된 자료를 시작점으로 하여 관심이 가는 
 선별하였고, 이 자료를 기반으로 각 Framework의 홈페이지와 인터넷의
 글들을 참고하여 다음과 같은 후보를 선정하였다.
 
-{:.block-title}
 Project Information
+{.block-title}
 
-{:.fit.styled}
 | Framework | Type        | Version | Python  | Footprint  |
 |:----------|:-----------:|:-------:|:-------:|-----------:|
 |Django     | Full Stack  | 1.9.1   | 3.x     | 40 MB      |
@@ -115,10 +115,9 @@ Github는 가장 인기 있는 Social Development, Social Repository Site로,
 
 자세한 수치는 아래 표를 참고하기 바란다.
 
-{:.block-title}
 Stack Overflow & Github Statistics
+{.block-title}
 
-{:.fit.styled}
 | Framework  |Followers|Questions |Commits|Contributors|Stars     |Forks     |
 |:-----------|--------:|---------:|------:|-----------:|---------:|---------:|
 |[Django]    |17,800   |111,400   |22,020 |1,071       |17,698    |7,194     |
@@ -359,8 +358,8 @@ Pyramid의 경우에는 Scaffolding을 위한 도구를 제공하고 있어서 �
 것 같다. 그러나, Homepage에 기술되어 있는 바와 같이, 다음과 같은 간단한
 코드 하나로도 서비스 기동은 가능했다.
 
-{:.block-title}
 예제 코드 - `hello.py`
+{.block-title}
 
 ```python
 from wsgiref.simple_server import make_server
@@ -387,8 +386,8 @@ if __name__ == '__main__':
 번거롭게 느껴지고 귀찮은 일이 많아 보인다. 아마도, 함께 제공되는 도구들의
 도움을 받아야 뭔가 구조화된 개발이 가능할 것 같다.
 
-{:.block-title}
 실행
+{.block-title}
 
 ```console
 $ python hello.py
@@ -409,8 +408,8 @@ Pyramid의 경우, 이렇게 간단한 시험으로 평가하는 것은 좀 무�
 Flask의 경우는 명령행 도구를 제공하고 있지 않으며 개발 문서를 살펴보지도
 않았다. 단지, 홈페이지의 예제를 가지고 시험해본 결과는 아래와 같다.
 
-{:.block-title}
 예제 코드 - `hello.py`
+{.block-title}
 
 ```python
 from flask import Flask
@@ -426,8 +425,8 @@ if __name__ == "__main__":
 
 Root에 대한 Route 하나만 갖는 이 App을 실행해보면 아래와 같다.
 
-{:.block-title}
 실행
+{.block-title}
 
 ```console
 $ python hello.py 
@@ -448,8 +447,8 @@ $
 bottle 역시 도구를 제공하지 않는 Framework 중 하나이다. 아래와 같이
 단순한 시험을 해봤다.
 
-{:.block-title}
 예제 코드 - `hello.py`
+{.block-title}
 
 ```python
 from bottle import route, run, template
@@ -466,8 +465,8 @@ run(host='localhost', port=8080)
 동일 Function에 Route를 하나 더 추가해보았다. (그리고 다섯 번째 줄의
 `index` 함수에 대하여 인수의 기본값을 주었다.)
 
-{:.block-title}
 실행
+{.block-title}
 
 ```console
 $ python hello.py 
@@ -496,8 +495,8 @@ pecan은 간단한 수준의 유틸리티가 제공되는 Framework이다. 프�
 과정을 문서에 따라 간단히 실행해보았으며, 다음과 같은 실행 후에 마치,
 Rails의 시험 페이지와 유사한 화면을 만날 수 있었다.
 
-{:.block-title}
 프로젝트 구성
+{.block-title}
 
 ```console
 $ pecan create hello
@@ -569,8 +568,8 @@ $
 
 falcon의 경우는 다음과 같이 홈페이지의 시험코드를 이용한 시험을 해보았다.
 
-{:.block-title}
 예제 코드 - `hello.py`
+{.block-title}
 
 ```python
 import falcon
@@ -595,8 +594,8 @@ Method 별로 `GET`, `POST` 등을 처리할 수 있도록 처리하고 있는 �
 
 `gunicorn`을 설치하여 기동해본 결과는 다음과 같다.
 
-{:.block-title}
 실행
+{.block-title}
 
 ```console
 $ pip install gunicorn
@@ -625,7 +624,7 @@ $
 다음 기회에는, 이 중 조금 더 관심이 가는 pecan, Flask, falcon, bottle
 등에 대하여 순서대로, 간택되는 녀석이 있을 때까지, 살펴볼까 한다.
 
-> 끝!
+끝!
 
 
 
@@ -635,10 +634,9 @@ $
 
 ## 홈페이지와 Repository
 
-{:.block-title}
 Links
+{.block-title}
 
-{:.fit.styled}
 | Homepage     | Github Repository     | Stackoverflow Tag               |
 |:-------------|:----------------------|:--------------------------------|
 | [Django]     | [Django - github]     | [stackoverflow/django]          |
@@ -855,9 +853,9 @@ $
 
 
 
-[Hardened Layer, SoftLayer Custom Portal - Part 1]:{% post_url development/2016-01-16-hardened-layer %}
-[Hardened Layer, SoftLayer Custom Portal - Part 2]:{% post_url development/2016-01-21-hardened-layer-part2 %}
-[Python Virtual Environments]:{% post_url development/2016-01-26-python-virtualenv-and-venv %}
+[Hardened Layer, SoftLayer Custom Portal - Part 1]:{{< relref "/blog/development/2016-01-16-hardened-layer" >}}
+[Hardened Layer, SoftLayer Custom Portal - Part 2]:{{< relref "/blog/development/2016-01-21-hardened-layer-part2" >}}
+[Python Virtual Environments]:{{< relref "/blog/development/2016-01-26-python-virtualenv-and-venv" >}}
 
 [Stack Overflow]:https://stackoverflow.com
 [Github]:https://github.com

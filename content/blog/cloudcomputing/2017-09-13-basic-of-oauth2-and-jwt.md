@@ -13,6 +13,7 @@ last_modified_at: 2017-10-07 23:50:00 +0900
 쉬운 내용이 아니지만 일반적으로 접할 수 있는 Protocol 자체에 대한 관점보다는
 사용하는 입장과 왜 이렇게 쓰는지를 이해하기에 조금이라도 수월한 글이 되었으면
 좋겠다)
+<!--more-->
 
 아무튼, 거의 일년만의 포스팅인데 느낌은 10년 만인 것 같다. 이제 가을이 오고
 그동안의 바빴던 일들도 대충 정리가 되어 숨통이 트여가고 있으니, 그간 남겨놓은
@@ -72,7 +73,8 @@ SOA가 정립되는 과정에서도 그래왔음)을 하게 되면, 각각의 �
 이런 API 통신의 인증과 인가 관리를 위해 가장 먼저 등장한, 그리고 가장 널리
 보편적으로 쓰이는 기술이 바로 (네안데르탈) **API Key** 이다.
 
-![](/attachments/20170913-oauth2/legacy-apikey.png){:.fit.dropshadow}
+![](/attachments/20170913-oauth2/legacy-apikey.png)
+{.fit .dropshadow}
 
 그림에서 보는 바와 같이, Application(Client)라고 써있는 박스가 업무를
 담당하는 App 인데, 이 App이 사용자 인증정보를 알고 싶으면
@@ -129,12 +131,12 @@ Application의 약속을 넘어 사용자(관리자 말고 사용자)가 적당�
 있다.) 만약, 사용자가 아직 Grant한 상태가 아니라면 사용자에게 Grant를
 요청하게 된다. (흐름 1.1)
 
-{:.point}
 Grant는 사용자의 의지
 : Grant는 인가와는 조금 다르다. 인가는 서비스 제공자의 입장에서 사용자의
   권한을 보는 것이지만, Grant는 사용자가 자신의 인증 정보(이름, 메일주소,
   전화번호 등 개인정보가 포함되어 있을 수 있다)를 자신이 사용하려는 App에게
   제공할지 말지를 경정하는 과정이다. (인가와 관련된 얘기는 다음에)
+{.point}
 
 이렇게 사용자가 Grant 요청을 받게 되면, 이 순간에 한하여 사용자 개입이
 일어난다. "**업무서버가 내 인증정보를 읽을 수 있도록 허용해**"라는 의미로
@@ -145,7 +147,8 @@ Grant는 사용자의 의지
 된다. 그런데 주의해서 볼 부분은, 1.3과 1.5 사이의 흐름 1.4인데, 이 *인가
 코드를 자신의 저장소에 저장*해두게 된다.
 
-![](/attachments/20170913-oauth2/oauth2-generic.png){:.fit.dropshadow}
+![](/attachments/20170913-oauth2/oauth2-generic.png)
+{.fit .dropshadow}
 
 이렇게 Authorize Code를 받은 업무서버는 이 코드를 이용하여 사용자의 인증
 정보에 접근할 수가 있다...가 아니라, 이 코드는 보안을 위해 매우 짧은 기간
@@ -211,7 +214,8 @@ OAuth2의 어떤 부분이 개선된 것인지만 설명한다.)
 Token을 받으면 다시 "이 신분증이 맞나요?" 하며 확인 과정을 거칠 필요가
 없다는 점이다.
 
-![](/attachments/20170913-oauth2/oauth2-jwt.png){:.fit.dropshadow}
+![](/attachments/20170913-oauth2/oauth2-jwt.png)
+{.fit .dropshadow}
 
 이렇게, 서버에 직접 연결하여 인증을 확인하지 않아도 되게 되면 장점이 많다.
 만약, Access Token 검사를 위해 인증서버 저장소에 접근해야 한다면, 그 부하도
@@ -230,7 +234,8 @@ Token을 받으면 다시 "이 신분증이 맞나요?" 하며 확인 과정을 
 이렇게, App의 위치가 사용자 쪽으로 이동해도 앞선 흐름이 전혀 깨지지 않고
 큰 문제 없이 동작한다는 것을 직관적으로 느낄 수 있다.
 
-![](/attachments/20170913-oauth2/oauth2-mobile.png){:.fit.dropshadow}
+![](/attachments/20170913-oauth2/oauth2-mobile.png)
+{.fit .dropshadow}
 
 
 **Cloud Computing 시대를 살면서, 이 OAuth2는 제공자와 사용자 모두에게 매우

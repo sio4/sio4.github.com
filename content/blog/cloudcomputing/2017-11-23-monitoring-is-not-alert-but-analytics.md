@@ -13,6 +13,7 @@ last_modified_at: 2017-11-24T18:08:00+0900
 모니터링은 문제가 발생한 것을 확인하는 모니터링이 아니라 지속적으로
 **대상의 꼴을 파악하고 그것이 말하는 바를 읽어내기 위한 분석시스템**으로
 바라보기 때문이다.
+<!--more-->
 
 서비스를 운영하고 있고, 장애가 발생했다. 그리고 순식간에 그것을 감지한
 모니터링 시스템으로부터 경보를 받았다. 그래서, 뭐가 달라졌는가? 장애가
@@ -25,7 +26,6 @@ last_modified_at: 2017-11-24T18:08:00+0900
 빠르게 인지하고 알려주는 것이 아닌 장애 원인을 해석해내고 더 나아가
 징후를 감지할 수 있어야 의미가 있을 것이다.
 
-{:.boxed}
 > 이 묶음글은 아래와 같이 3+1 개의 글로 이루어져 있으니, 관련된 부분을
 > 함께 참고하면 좋을 것 같다.
 > 
@@ -33,6 +33,7 @@ last_modified_at: 2017-11-24T18:08:00+0900
 > * [Kibana Visual Builder로 이벤트 묶어 보기]
 > * [Kibana Heat Map으로 3차원으로 펼쳐 보기]
 > * 환경구성 과정은 "[Elastic Stack 6.0 설치하기]"에서
+{.boxed}
 
 
 
@@ -91,14 +92,15 @@ last_modified_at: 2017-11-24T18:08:00+0900
 
 위의 이야기는 그냥 허공에 두고, 먼저...
 
-{:.point}
 Elastic Stack으로
 : 여러 시스템 이벤트를 종합하여 살펴볼 수 있는 플랫폼을 하나 만들어
   보려고 한다.
+{.point}
 
 지난 몇일 동안 꾸며본 프로토타입은 아래 모양과 같다.
 
-![](/attachments/silrok/silrok-dashboard-current.png){:.bordered}
+![](/attachments/silrok/silrok-dashboard-current.png)
+{.dropshadow}
 
 
 ### 함께 읽기
@@ -116,7 +118,7 @@ Elastic Stack으로
 에 정리해 두었다.
 
 
-[Kibana Visual Builder로 이벤트 묶어 보기]:{% link _posts/cloudcomputing/2017-11-24-aggregate-events-with-visual-builder.md %}
-[Kibana Heat Map으로 3차원으로 펼쳐 보기]:{% link _posts/cloudcomputing/2017-11-24-3dimensional-view-with-heat-map.md %}
+[Kibana Visual Builder로 이벤트 묶어 보기]:{{< relref "/blog/cloudcomputing/2017-11-24-aggregate-events-with-visual-builder.md" >}}
+[Kibana Heat Map으로 3차원으로 펼쳐 보기]:{{< relref "/blog/cloudcomputing/2017-11-24-3dimensional-view-with-heat-map.md" >}}
 
-[Elastic Stack 6.0 설치하기]:{% link _posts/cloudcomputing/2017-11-22-install-elastic-stack-6.0.md %}
+[Elastic Stack 6.0 설치하기]:{{< relref "/blog/cloudcomputing/2017-11-22-install-elastic-stack-6.0.md" >}}

@@ -12,12 +12,14 @@ last_modified_at: 2011-03-04T13:50:02+09:00
 대용량 자료 분석 전문업체인 [그린 플럼](http://www.greenplum.com/)을
 인수한다고 한다. 이미 주류로 돌아서고 있는 클라우드 컴퓨팅이라는 패러다임의
 변화에 공격적으로 대응하는 모습.
+<!--more-->
 
 [IDG - World Best Tech Portal](http://www.idg.co.kr/newscenter/common/newCommonView.do?newsId=62057&parentCategoryCode=0100&categoryCode=0000&searchBase=DATE&listCount=10&pageNum=1&viewBase=ITC)
 
 > EMC가 데이터 분석 전문업체 그린플럼을 인수한다. 인수 조건은 공개되지 않았으며, EMC는 그린플럼의 데이터 웨어하우징 기술을 이용해 새로운 사업부를 구성할 계획인 것으로 알려졌다.
 
-![](/attachments/2010-07-08-greenplum.png){:.fit}
+![](/attachments/2010-07-08-greenplum.png)
+{.fit}
 
 그린플럼은 MPP, Massively Parallel Processing을 지원하는 Data Warehousing,
 DBMS 솔루션 등을 중심으로 기업 환경을 위한 대규모 자료 분석 플랫폼을

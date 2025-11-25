@@ -12,6 +12,7 @@ date: 2017-10-31T01:30:00+0900
 이야기. NMS라고 하면서 SNMP와 NetFlow를 빼면 좀 섭하지... 했다가, 귀찮지만
 닫았던 묶음글을 다시 열어서 마지막으로 이번 이야기, NetFlow와 SNMP 모니터링
 하기를 더 넣는다. 이번엔 SNMP로 정말 끝!
+<!--more-->
 
 이번 묶음글은 아래와 같은 순으로 진행할 예정이다. 깊이있게 다루는 것은 아니며,
 Elastic Stack을 시작하는 입장에서 관심있는 부분을 참고하면 될 것 같다.
@@ -37,9 +38,6 @@ Elastic Stack을 시작하는 입장에서 관심있는 부분을 참고하면 �
 
 # NetFlow와 SNMP
 
-* TOC
-{:toc .half.pull-right}
-
 네트워크 모니터링을 얘기할 때, SNMP와 NetFlow는 따로 얘기할 필요가 없을
 정도로 잘 알려진 관리용 프로토콜이다. 이 시험환경에서는 각 포트, 그러니까
 네트워크 연결 단위의 성능측정을 위해 SNMP를 활용하여 Count 데이터를 모아
@@ -52,7 +50,8 @@ Elastic Stack을 시작하는 입장에서 관심있는 부분을 참고하면 �
 
 앞서 설명했던 NetFlow와 유사한 방식으로 SNMP의 기본 설정을 만들었다.
 
-`/etc/logstash/conf.d/30-snmp.conf`{:.filename}
+`/etc/logstash/conf.d/30-snmp.conf`
+{.block-title}
 
 ```ruby
 input {
@@ -94,7 +93,7 @@ SNMP는 원래 "수동적으로 긁어가는 기계에서 자료를 주는 방�
 길어지므로 이 글에서는 생략한다.)
 
 아무튼, 간략하게 Ruby로 SNMP Poller를 하나 만들었고, 그것이 위와 같이
-설정한 Logstash의 ``7450` 포트에 `json` 포맷의 텍스트를 밀어넣어 주도록
+설정한 Logstash의 `7450` 포트에 `json` 포맷의 텍스트를 밀어넣어 주도록
 구성을 했다. (이 Poller 얘기는 다음에 시간이 되면 하기로...)
 
 
@@ -141,7 +140,7 @@ SNMP는 원래 "수동적으로 긁어가는 기계에서 자료를 주는 방�
 
 이걸 디버깅해보면 대충 아래와 같은 값을 얻게 된다.
 
-```
+```ruby
 {
          "device" => "203.0.113.90",
       "timestamp" => "2016-09-13T22:36:30+09:00",
@@ -167,11 +166,13 @@ SNMP는 원래 "수동적으로 긁어가는 기계에서 자료를 주는 방�
 
 이제 Discover로 보면,
 
-![SHOT](/attachments/elastic-nms/elk-712-snmp-discover.png){:.fit.bordered}
+![SHOT](/attachments/elastic-nms/elk-712-snmp-discover.png)
+{.fit .bordered}
 
 그리고 자세히 보면 아래와 같이 값과 자료형을 확인할 수 있다.
 
-![SHOT](/attachments/elastic-nms/elk-713-snmp-details.png){:.fit.bordered}
+![SHOT](/attachments/elastic-nms/elk-713-snmp-details.png)
+{.fit .bordered}
 
 
 
@@ -262,7 +263,8 @@ NetFlow에서 설정한 내용과 유사한 구조인데, 간략히 덧붙이면
 
 Visualize해서 Dashboard에 그려보면 대충 이런 모양을 얻을 수 있다.
 
-![SHOT](/attachments/elastic-nms/elk-full-dashboard.png){:.fit.bordered}
+![SHOT](/attachments/elastic-nms/elk-full-dashboard.png)
+{.fit .bordered}
 
 
 아무튼, 나름 쓸만하다.
@@ -277,11 +279,11 @@ Visualize해서 Dashboard에 그려보면 대충 이런 모양을 얻을 수 있
 * [Elastic NMS Part 5: NetFlow 수신하기]
 * _Elastic NMS Part 6: SNMP 수신하기_
 
-[Elastic NMS Part 1: 엔진을 켜라!]:{% link _posts/cloudcomputing/2017-10-28-elastic-nms-part1-start-your-engine.md %}
-[Elastic NMS Part 2: Syslog 원격로깅]:{% link _posts/cloudcomputing/2017-10-30-elastic-nms-part2-syslog-remote-logging.md %}
-[Elastic NMS Part 3: Mapping과 Template]:{% link _posts/cloudcomputing/2017-10-30-elastic-nms-part3-mapping-and-template.md %}
-[Elastic NMS Part 4: Kibana로 Visualize하기]:{% link _posts/cloudcomputing/2017-10-30-elastic-nms-part4-visualize-with-kibana.md %}
-[Elastic NMS Part 5: NetFlow 수신하기]:{% link _posts/cloudcomputing/2017-10-31-elastic-nms-part5-netflow-monitoring.md %}
+[Elastic NMS Part 1: 엔진을 켜라!]:{{< relref "/blog/cloudcomputing/2017-10-28-elastic-nms-part1-start-your-engine.md" >}}
+[Elastic NMS Part 2: Syslog 원격로깅]:{{< relref "/blog/cloudcomputing/2017-10-30-elastic-nms-part2-syslog-remote-logging.md" >}}
+[Elastic NMS Part 3: Mapping과 Template]:{{< relref "/blog/cloudcomputing/2017-10-30-elastic-nms-part3-mapping-and-template.md" >}}
+[Elastic NMS Part 4: Kibana로 Visualize하기]:{{< relref "/blog/cloudcomputing/2017-10-30-elastic-nms-part4-visualize-with-kibana.md" >}}
+[Elastic NMS Part 5: NetFlow 수신하기]:{{< relref "/blog/cloudcomputing/2017-10-31-elastic-nms-part5-netflow-monitoring.md" >}}
 
 
 ### 함께 읽기
@@ -294,10 +296,10 @@ Visualize해서 Dashboard에 그려보면 대충 이런 모양을 얻을 수 있
 * [Cloud App에서 PaperTrail 사용하기]
 
 
-[Calling All Logs! Graylog2 1편: 설치하기]:{% link _posts/sysadmin/2017-10-11-calling-all-logs-graylog2-installation.md %}
-[Calling All Logs! Graylog2 2편: 맛보기]:{% link _posts/sysadmin/2017-10-12-calling-all-logs-graylog2-overview.md %}
-[Calling All Logs! Graylog2 3편: 설정]:{% link _posts/sysadmin/2017-10-13-calling-all-logs-graylog2-settings.md %}
-[Calling All Logs! Graylog2 4편: 기록]:{% link _posts/sysadmin/2017-10-13-calling-all-logs-graylog2-memories.md %}
-[PaperTrail, Cloud에서는 Cloud 로그를!]:{% link _posts/cloudcomputing/2016-09-07-cloud-log-papertrail.md %}
-[Cloud App에서 PaperTrail 사용하기]:{% link _posts/cloudcomputing/2016-09-07-using-papertrail.md %}
+[Calling All Logs! Graylog2 1편: 설치하기]:{{< relref "/blog/sysadmin/2017-10-11-calling-all-logs-graylog2-installation.md" >}}
+[Calling All Logs! Graylog2 2편: 맛보기]:{{< relref "/blog/sysadmin/2017-10-12-calling-all-logs-graylog2-overview.md" >}}
+[Calling All Logs! Graylog2 3편: 설정]:{{< relref "/blog/sysadmin/2017-10-13-calling-all-logs-graylog2-settings.md" >}}
+[Calling All Logs! Graylog2 4편: 기록]:{{< relref "/blog/sysadmin/2017-10-13-calling-all-logs-graylog2-memories.md" >}}
+[PaperTrail, Cloud에서는 Cloud 로그를!]:{{< relref "/blog/cloudcomputing/2016-09-07-cloud-log-papertrail.md" >}}
+[Cloud App에서 PaperTrail 사용하기]:{{< relref "/blog/cloudcomputing/2016-09-07-using-papertrail.md" >}}
 

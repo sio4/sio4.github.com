@@ -14,8 +14,8 @@ date: 2018-10-01T14:30:00+0900
 가는 이 CockroachDB도 징그럽게 생겼을까? 이 글은 CockroachDB의 생김에
 대해, 지금까지 이해한 것을 정리한다. "지금까지"일 뿐이라서, 잘못된 점이
 있을 수 있다는 것을 미리 밝힌다.
+<!--more-->
 
-{:.boxed}
 > CockroachDB 맛보기 묶음글은 다음과 같습니다.
 >
 > * [CockroachDB 안녕?]
@@ -23,6 +23,7 @@ date: 2018-10-01T14:30:00+0900
 > * _CockroachDB Architecture_
 > * [CockroachDB 클러스터 설치 스크립트]
 > * [CockroachDB 클러스터 가용성 시험]
+{.boxed}
 
 
 
@@ -35,9 +36,6 @@ date: 2018-10-01T14:30:00+0900
 
 
 ## 21세기의 IT
-
-{:toc .half.pull-right}
-* TOC
 
 21세기가 언제부터더라? 2000년? 2001년? 모르겠다. 좀 거창하게 제목줄을
 써봤는데... IT의 역사나 그 변화 속도를 놓고 보면 여기에 "세기"를 가져다
@@ -75,7 +73,6 @@ NoSQL 등, 근래에 각광받고 있는 데이터 저장소 기술은 전지구
 
 핵심적인 부분을 정리하자면,
 
-{:.fit.styled}
 |                    | RDBMS                   | NoSQL                        |
 |--------------------|-------------------------|------------------------------|
 | 트랜잭션의 지원    | 당연한 거 아님?         | 계산 영역에서 때워?          |
@@ -199,11 +196,11 @@ CockroachDB의 저장소 구조는 Node 간 공유하는 부분이 없으며 각
 Distribution 계층에 의한 분산처리를 통해 논리적으로 하나처럼 동작하는
 거대한 하나의 논리적 저장소를 확장 가능한 형태로 제공하게 된다.
 
-{:.keypoint}
 용어 정리: Cluster, Node, Store
 : Cluster - 하나의 DBMS처럼 보이는 Node들의 집단  
   Node - `cockroach` 프로세스를 구동하며 Store를 소유하는 개별 기계  
   Store - 데이터가 저장되기 위한 물리적 공간으로, Node 종속적
+{.info}
 
 이렇게 구성된 Cluster는, 하나의 DBMS 처럼 동작하면서 하부의 각 Node에
 분산되어 저장되는 데이터의 무결성을 보장하기 위해 "_Transaction_"을
@@ -270,21 +267,21 @@ A2는 특정 시점에 그 Range에 대한 Lease를 같게 된다. 이렇게 Lea
 있는 Replica를 "_Leaseholder_"라고 부르는데, **Leaseholder는 해당 Range에
 대한 모든 읽기 및 쓰기 요청을 처리**하게 된다.
 
-{:.keypoint}
 용어 정리: Range, Replica, Range Lease와 Leaseholder
 : Range - CockroachDB가 내부적으로 KV 데이터를 저장하는 묶음 단위  
   Replica - 최소 3 Node에 걸처 복제되어 저장되는 Range의 복사본  
   Range Lease - 특정 Range에 대한 모든 읽고 쓰는 요청을 받기 위한 권한 토큰  
   Leaseholder - Range Lease를 갖고 있는 Replica  
+{.info}
 
 Range Lease 관리를 위해 CockroachDB는 Raft Concensus Algorithm을
 사용하는데, 이 부분은 가용성 시험에 대한 글에서 다시 다루려고 한다.
 
-{:.info}
 잠깐, 이 Raft. 어디서 봤는데?
 : 그렇다. Docker에 관함 묶음글 중, "[Docker Swarm의 고가용성]"을 보면,
   Docker Swarm이 사용하는 유사한 구조의 대칭형 Cluster 방식에서 바로
   이 Raft Algorithm이 사용되고 있다.
+{.info}
 
 
 
@@ -299,12 +296,12 @@ Range Lease 관리를 위해 CockroachDB는 Raft Concensus Algorithm을
 표현한 것인데, 각 Node의 입장에서는 각각 다섯 개의 Range를 담고 있는
 형태다.
 
-{:.info}
 참고
 : 위의 예에서는 Cluster가 딱 세 개의 Node로 구성되었기 때문에, 3 개의
   복제본을 가질 경우, 모든 Node는 동일한 수의 Range를 갖게 된다.
   Node의 수가 네 개 이상이라면 각 Node가 갖는 Range의 수는 Node 별로
   달라질 수 있다.
+{.info}
 
 이것을 Range의 입장에서 보면, 빨간색, 녹색, 파란색 등으로 표현된 총 다섯
 개의 Range는 세 Node에 걸쳐 복제되어 동일한 데이터가 Cluster 안에 세 벌의
@@ -513,7 +510,8 @@ Range는 64MiB 이하로 관리되며 그 크기 때문에 쪼갰나?
 
 모니터링 콘솔에서 관련된 정보를 찾아보자!
 
-![](/attachments/cockroachdb/arch/crdb-arch-10-databases.png){:.dropshadow.bordered}
+![](/attachments/cockroachdb/arch/crdb-arch-10-databases.png)
+{.dropshadow .bordered}
 
 어허... 이건 더 미궁일세... 첫 번째 시험에서 사용했던 14개의 INTEGER, STRING,
 TEXT 등의 데이터 유형을 혼합한 Table은 다섯 개의 Range로 쪼개졌지만, 그래봐야
@@ -525,10 +523,10 @@ Store로 지정한 디렉터리에 들어가서 살펴봤지만 단서를 찾지
 쪼갠다" 뭐 이런 규칙이 있을 것 같은데... 일단 넘어가야겠다.
 
 
-{:.keypoint}
 정리 #1 - Range 나누기
 : Table에 데이터가 충분히 쌓이면 Cockroach는 자동화된 방식으로 Range를
   나누어 관리한다. 언제 어떻게 쪼개는지는 아직 미궁!
+{.keypoint}
 
 
 
@@ -547,7 +545,8 @@ Range에 대한 의문점은 나중에 기회가 되면 다시 보기로 하고,
 Client가 CockroachDB와 접하는 면은 SQL 계층이다. 모든 질의는 SQL 계층에서
 KV Operation으로 변환된다는 이야기를 이미 했다. 어디, 보자.
 
-![](/attachments/cockroachdb/arch/crdb-arch-21-sql-query.png){:.dropshadow.bordered}
+![](/attachments/cockroachdb/arch/crdb-arch-21-sql-query.png)
+{.dropshadow .bordered}
 
 오... 이 그림은, 모니터링 화면의 Overview에서 따온 것인데, Overview 화면은
 이 두 그래프를 맨 위에 배치해두었다. 당연히 중요한 것이기 때문인데...
@@ -568,7 +567,8 @@ KV Operation으로 변환된다는 이야기를 이미 했다. 어디, 보자.
 하나, 경향을 보기에 편하지는 않았다. 그래서, 90%의 질의에 대한 Latency를
 표시한 그래프를 추가로 살펴봤다.
 
-![](/attachments/cockroachdb/arch/crdb-arch-22-sql-latency.png){:.dropshadow.bordered}
+![](/attachments/cockroachdb/arch/crdb-arch-22-sql-latency.png)
+{.dropshadow .bordered}
 
 음, 이 그래프가 Node 간 차이를 살펴보기에는 조금 더 적합한 것 같다.
 눈에 띄는 부분이 두 가지 있는데, 먼저 2번 Node에 접속한 경우, 바꿔
@@ -609,10 +609,10 @@ Leaseholder를 통해 처리하는 설계이기 때문이며, 위의 결과는 �
 "[Distribution 계층과 Transaction 계층](#distribution-계층과-transaction-계층)"
 에서 다시 확인)
 
-{:.keypoint}
 정리 #2 - 대칭형 노드
 : 내 데이터가 어디에 있든, 내가 어느 Node에 접속하든, Cockroach는 나의
   요청을 받아주고 처리해준다.
+{.keypoint}
 
 
 ### Leaseholder의 수고
@@ -626,7 +626,8 @@ individually for each node."라고 되어있다. 그런데 여기서 "query requ
 속도가 빨라진다. 그리고 나머지는 산을 그리는데... 응답 지연이 0.3초나
 있다고? 그리고 이들은 실제 작업에 따른 경향성이 없다! 이건 좀 알아볼 문제.
 
-![](/attachments/cockroachdb/arch/crdb-arch-23-sql-execution-latency.png){:.dropshadow.bordered}
+![](/attachments/cockroachdb/arch/crdb-arch-23-sql-execution-latency.png)
+{.dropshadow .bordered}
 
 ## 결과 #3: 다섯 계층의 상호작용
 
@@ -647,7 +648,8 @@ individually for each node."라고 되어있다. 그런데 여기서 "query requ
 Command에 대한 Commit 지연을 표시하는 그래프다. 이를 통해, 네 번의 `INSERT`
 작업에 대하여 각 Node의 Storage 계층이 어떻게 반응하는지 확인할 수 있었다.
 
-![](/attachments/cockroachdb/arch/crdb-arch-31-storage-commit-latency.png){:.dropshadow.bordered}
+![](/attachments/cockroachdb/arch/crdb-arch-31-storage-commit-latency.png)
+{.dropshadow .bordered}
 
 결과에서 볼 수 있듯, 네 번의 요청이 발생할 때마다, 각각 진한 파랑, 노랑,
 연한 파랑으로 표시된 1번, 2번 그리고 3번 Node의 Storage 계층은 눌린 선을
@@ -656,11 +658,11 @@ Command에 대한 Commit 지연을 표시하는 그래프다. 이를 통해, 네
 Replica를 가진 Node들은 최초의 요청이 어느 Node에게 내려졌든 동일하게
 반응하고 있음을 볼 수 있다.
 
-{:.keypoint}
 정리 #3 - 데이터의 분산 저장
 : Storage 계층은 `INSERT` 작업과 동시에 세 개의 Node에서 반응하고 있고,
   이는 Range 저장과 Replication이 동시에 일어나고 있음을 반영하여
   보여주고 있는 것이다.
+{.keypoint}
 
 
 ### Replication 계층
@@ -674,7 +676,8 @@ Replication 계층에서는 아래와 같이, 전체 Range 및 Lease의 수량�
 지표와 Store 당 Replica의 분포 상황, Leaseholder의 분포 등에 대한 지표
 등을 제공하는데,
 
-![](/attachments/cockroachdb/arch/crdb-arch-41-replication-ranges.png){:.dropshadow.bordered}
+![](/attachments/cockroachdb/arch/crdb-arch-41-replication-ranges.png)
+{.dropshadow .bordered}
 
 시험 과정 동안 Range의 수는 일정하게 유지되는 반면, Leaseholder의 수가
 작은 값이나마 요동치는 것을 볼 수 있었다. 그 외에도, Leaders, Leaders
@@ -684,7 +687,8 @@ without Lease 등의 지표가 보이는데, 이건 Raft에 의해 Lease가 이�
 더 많은 지표가 있지만 생략하고, Replication 계층에서는 다음의 지표가
 시험의 패턴과 맞물려 움직이는 것을 발견할 수 있었다.
 
-![](/attachments/cockroachdb/arch/crdb-arch-44-replication-quiescence.png){:.dropshadow.bordered}
+![](/attachments/cockroachdb/arch/crdb-arch-44-replication-quiescence.png)
+{.dropshadow .bordered}
 
 "Replica Quiescense"라는 이름의 지표인데,... 아... 이게 무슨 뜻인지...
 문자 그대로 해석하면 "복제본 중지"라고 할 수 있을 것 같은데, `INSERT`가
@@ -707,7 +711,8 @@ Range를 찾아가며 필요한 Leaseholder에게 I/O 요청을 뿌려주게 된
 Distribution 계층은 gRPC를 사용하게 되는데, 이번 시험 중에는 어떤 일이
 일어났을까?
 
-![](/attachments/cockroachdb/arch/crdb-arch-51-distribution-rpcs.png){:.dropshadow.bordered}
+![](/attachments/cockroachdb/arch/crdb-arch-51-distribution-rpcs.png)
+{.dropshadow .bordered}
 
 오! 이거 뭔가 있어보이는 그래프를 발견했다.
 
@@ -728,7 +733,8 @@ Node에 접속했을 때 처리속도가 빨라지는 결과가 왜 발생하는
 
 또, Transaction 계층에서는,
 
-![](/attachments/cockroachdb/arch/crdb-arch-52-distribution-kv-transactions.png){:.dropshadow.bordered}
+![](/attachments/cockroachdb/arch/crdb-arch-52-distribution-kv-transactions.png)
+{.dropshadow .bordered}
 
 이렇게 SQL 계층과 같은 모양의 값을 보여주는 "Fast-path Committed" 그래프를
 볼 수 있었다. (그런데 여기에도 "Fast-path"가 없는 지표가 따로 있으니...
@@ -736,18 +742,19 @@ Node에 접속했을 때 처리속도가 빨라지는 결과가 왜 발생하는
 
 이 때, Transaction의 수행시간을 표현하는 그래프를 보면,
 
-![](/attachments/cockroachdb/arch/crdb-arch-53-distribution-kv-tx-duration.png){:.dropshadow.bordered}
+![](/attachments/cockroachdb/arch/crdb-arch-53-distribution-kv-tx-duration.png)
+{.dropshadow .bordered}
 
 다른 Latency 그래프와 유사하게 "바쁠 때 눌린" 모양의 그래프를 확인할 수
 있었다. Transaction 처리를 요청받은 Node가 직접 수행한다는 것을 나타내듯,
 각 요청 시점 별로 해당 요청을 받은 Node의 그래프가 눌려 있는 것을 볼 수
 있었다.
 
-{:.keypoint}
 정리 #4 - 직접 처리와 원격 요청
 : SQL 계층부터 Transaction 계층까지는 요청을 받은 Node가 직접 기능을
   수행하지만, 분산된 Range를 이해하고 있는 Distribution 계층에 이르면
   각 Range를 담당할 Leaseholder에게 KV 요청이 분산되어 처리된다.
+{.keypoint}
 
 
 ## 정리
@@ -782,7 +789,7 @@ CockroachDB Architecture를 간단히 훑어보았고, 이해를 높이기 위�
 
 
 [공식 문서]:https://www.cockroachlabs.com/docs/stable/architecture/overview.html
-[Docker Swarm의 고가용성]:{% link _posts/cloudcomputing/2018-03-15-high-availability-of-docker-swarm.md %}
+[Docker Swarm의 고가용성]:{{< relref "/blog/cloudcomputing/2018-03-15-high-availability-of-docker-swarm.md" >}}
 
 
 ### 함께 읽기
@@ -795,8 +802,8 @@ CockroachDB 맛보기 묶음글은 다음과 같습니다.
 * [CockroachDB 클러스터 설치 스크립트]
 * [CockroachDB 클러스터 가용성 시험]
 
-[CockroachDB 안녕?]:{% link _posts/cloudcomputing/2018-09-20-say-hello-to-cockroachdb.md %}
-[CockroachDB 클러스터 구성하기]:{% link _posts/cloudcomputing/2018-09-21-setup-cockroach-cluster.md %}
-[CockroachDB Architecture]:{% link _posts/cloudcomputing/2018-10-01-architecture-of-cockroachdb.md %}
-[CockroachDB 클러스터 설치 스크립트]:{% link _posts/cloudcomputing/2018-10-02-cockroach-cluster-setup-script.md %}
-[CockroachDB 클러스터 가용성 시험]:{% link _posts/cloudcomputing/2018-10-08-availablility-of-cockroach.md %}
+[CockroachDB 안녕?]:{{< relref "/blog/cloudcomputing/2018-09-20-say-hello-to-cockroachdb.md" >}}
+[CockroachDB 클러스터 구성하기]:{{< relref "/blog/cloudcomputing/2018-09-21-setup-cockroach-cluster.md" >}}
+[CockroachDB Architecture]:{{< relref "/blog/cloudcomputing/2018-10-01-architecture-of-cockroachdb.md" >}}
+[CockroachDB 클러스터 설치 스크립트]:{{< relref "/blog/cloudcomputing/2018-10-02-cockroach-cluster-setup-script.md" >}}
+[CockroachDB 클러스터 가용성 시험]:{{< relref "/blog/cloudcomputing/2018-10-08-availablility-of-cockroach.md" >}}

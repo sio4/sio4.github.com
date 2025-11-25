@@ -10,6 +10,7 @@ last_modified_at: 2011-03-04T13:50:46+09:00
 플렛폼이다. 상용 서포트 회사도 있고... Lab에서 얼마간 시험을 해봤는데,
 단일 머신 환경이라서 썩 재미있는 실험을 하지는 못했다.
 어쨌든 괜찮았던 기억.
+<!--more-->
 
 [Enomaly: Elastic / Cloud Computing Platform: Home](http://www.enomaly.com/)  
 

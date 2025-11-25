@@ -7,6 +7,7 @@ date: 2008-04-29T02:36:57+09:00
 last_modified_at: 2010-07-04T21:44:26+09:00
 ---
 (요즘 참여하는 프로젝트에 얽힌) 세 가지 이야기.
+<!--more-->
 
 ## 먼저 ssh 빨리 접속하기 (접속지연 줄이기)
 
@@ -17,9 +18,9 @@ last_modified_at: 2010-07-04T21:44:26+09:00
 위치한 배치 명령만 차례로 던져가며 작업하는 상황이라 반복되는 암호 입력
 지연이 좀 거슬린다.
 
-'-v' 옵션을 사용하여 확인해보니, "Unspecified GSS failure. ..." 뭐 이런
+`-v` 옵션을 사용하여 확인해보니, `Unspecified GSS failure. ...` 뭐 이런
 이야기가 나온다. (나오고 좀 멈춰 있는다.) 오호라... 관련 설정을
-~/.ssh/config에 해주는 것으로 일단 상황 종료.
+`~/.ssh/config`에 해주는 것으로 일단 상황 종료.
 
 뭐? 그런 상황이면 "서로 믿고 사는 사회" 만들면 되지 왜 매번 암호를
 입력하냐고? 글쎄... 이상하게 그게 더 맘 편하다.
@@ -36,9 +37,9 @@ GSSAPIAuthentication no
 
 ## pseudo-tty 살리기
 
-단순히 "ssh user@remote.host" 형태의 명령으로 원격지에 로그인 하는 경우라면,
+단순히 `ssh user@remote.host` 형태의 명령으로 원격지에 로그인 하는 경우라면,
 명령을 수행하는 창, 화면, tty를 이어받아 원격 쉘이 실행된다. 그런데,
-"ssh user@remote.host top" 이라고 명령해보면,
+`ssh user@remote.host top` 이라고 명령해보면,
 
 ```console
 $ ssh user@remote.host top

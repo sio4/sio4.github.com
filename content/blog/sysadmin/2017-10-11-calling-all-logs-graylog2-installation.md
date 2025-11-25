@@ -13,6 +13,7 @@ date: 2017-10-11T22:00:00+09:00
 진행할 수 있는 플랫폼을 찾던 중 발견한 공개 소프트웨어 중 하나가 오늘
 소개하려 하는 [Graylog]이다. 이 글에서는, Graylog를 간단히 소개하고,
 그 설치 방법을 정리한다.
+<!--more-->
 
 ![](/attachments/graylog2/graylog-logo.png)
 
@@ -20,22 +21,19 @@ date: 2017-10-11T22:00:00+09:00
 글로 이루어져 있다. 내용이 독립적이어서 순서에 큰 관계가 없으니 원하는
 글부터 읽어도 된다. (마지막편은 읽을 것이 없어요)
 
-{:.angle}
 * _Calling All Logs! Graylog2 1편: 설치하기_
 * [Calling All Logs! Graylog2 2편: 맛보기]
 * [Calling All Logs! Graylog2 3편: 추가설정]
 * [Calling All Logs! Graylog2 4편: 기록]
+{.angle}
 
-{:.boxed}
 > 오픈소스 로그분석 시스템인 [Graylog]에 대한 문서는 [Graylog Docs]에서
 > 찾을 수 있으며, [Graylog Github]에서 그 소스를 받아볼 수 있다.
+{.boxed}
 
 
 
 # 로그 중앙화
-
-* toc
-{:toc .pull-right}
 
 컴퓨터 소프트웨어 또는 프로그래머와 사용자 간의 **가장 원초적인 대화
 방식이 바로 로그**이다.  프로그램은, 자신이 하고싶은 말이 있을 때 그
@@ -85,13 +83,13 @@ date: 2017-10-11T22:00:00+09:00
 공개 소프트웨어**이다.
 
 
-{:.point}
 왜 로그를 중앙화해야 하는가?
 : 모든 서비스 구성요소의 로그를 모아 한 눈에 확인하여 문제의 인과관계와
   원인을 찾아내고, 또한 긴급 오류를 자동 탐지하여 사용자의 개입을 유도,
   서비스의 지속성을 보장하기 위함이다.
   또한 서버의 의미가 퇴색된 클라우드 환경에서는, 추상적 구성요소의
   로그까지 수용하기 위해 그 필요성이 더욱 커지고 있다.
+{.point}
 
 로그 중앙화를 통해 우리가 얻을 수 있는 이점을 요약하면 다음과 같다.
 
@@ -130,7 +128,8 @@ date: 2017-10-11T22:00:00+09:00
 
 보자.  내가 따낸 그림은 좀 후져서, 인터넷에서 한 장 가져왔다.
 
-![](/attachments/graylog2/graylog-sample.png){:.dropshadow}
+![](/attachments/graylog2/graylog-sample.png)
+{.dropshadow}
 
 최종적으로 우리가 보게 될 화면은 이런 것이다. (화면 이외의 기능은 조금
 있다가...)
@@ -140,7 +139,8 @@ date: 2017-10-11T22:00:00+09:00
 원본 로그 데이터를 분석하고 체계화하거나, 세부적인 로그를 찾아볼 수 있는
 **검색화면**도 함께 제공된다.
 
-![](/attachments/graylog2/graylog-110-search.png){:.dropshadow}
+![](/attachments/graylog2/graylog-110-search.png)
+{.dropshadow}
 
 이 외의 부가 기능은 [Calling All Logs! Graylog2 2편: 맛보기]에서 다시
 살펴볼 예정이다.
@@ -157,7 +157,8 @@ date: 2017-10-11T22:00:00+09:00
 개별 요소의 설치에 앞서, 전체적인 구조를 볼 필요가 있을 것 같다. 다음
 그림은 Graylog의 개념적 구성요소와 상관관계를 설명하고 있다.
 
-![](/attachments/graylog2/graylog-arch-concept.png){:.dropshadow}
+![](/attachments/graylog2/graylog-arch-concept.png)
+{.dropshadow}
 
 맨 위의 구름은 로그수집 대상이 되는 기계, 애플리케에션 등을 나타내며,
 부하분산기를 거쳐 여러 대의 Cluster로 구성된 Graylog 서버에 메시지가
@@ -177,7 +178,8 @@ SPoF가 없는 구성이 되므로 비교적 높은 가용성을 얻을 수 있�
 독립적인 서버군으로 묶어 Cluster를 만들어 놓았고(왼쪽) 다른 한 쪽에는
 Graylog와 MongoDB를 탑재한 서버를 구성해 놓았다.
 
-![](/attachments/graylog2/graylog-arch-large.png){:.dropshadow}
+![](/attachments/graylog2/graylog-arch-large.png)
+{.dropshadow}
 
 이 문서에서는 (맛보기니까...) Cluster 구성은 생략하고, 각각에 대한
 단일 구성을 하나의 서버에 몽땅 얹은 구성으로 시험환경을 구성하였다.
@@ -206,7 +208,7 @@ $
 뭐, Ubuntu에서 MongoDB와 ElasticSearch 설치하는 거야 어렵지 않다.  먼저,
 다음과 같이 배포본에서 제공하는 MongoDB를 설치해주고,
 
-```shell_session
+```console
 $ sudo apt-get install mongodb-server
 <...>
 $ 
@@ -217,8 +219,7 @@ Elastic 저장소로부터 Elasticsearch를 설치한다.
 작성 과정에서 최신 버전에 대한 업데이트는 생략하였으므로, 이 부분은
 따로 확인해야 한다.)
 
-{:.wrap}
-```console
+```console {.wrap}
 $ wget -qO - https://packages.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
 OK
 $ echo "deb https://packages.elastic.co/elasticsearch/2.x/debian stable main" | sudo tee -a /etc/apt/sources.list.d/elasticsearch-2.x.list
@@ -231,8 +232,7 @@ $
 MongoDB는 설치만 하면 바로 사용이 가능하며, Elasticsearch는 기본적으로
 자동시작을 하지 않는다. 먼저, 아래와 같이 `cluster.name`의 설정을 한 후,
 
-{:.wrap}
-```console
+```console {.wrap}
 $ sudo cat /etc/elasticsearch/elasticsearch.yml |grep -v ^#
 $ sudo sed -i 's/.*cluster.name: .*/cluster.name: graylog/' /etc/elasticsearch/elasticsearch.yml
 $ sudo cat /etc/elasticsearch/elasticsearch.yml |grep -v ^#
@@ -242,7 +242,7 @@ $
 
 다음과 같이 서비스 구성과 시작을 해준다.
 
-```console
+```console {.wrap}
 $ sudo systemctl daemon-reload 
 $ sudo systemctl enable elasticsearch.service 
 Synchronizing state of elasticsearch.service with SysV init with /lib/systemd/systemd-sysv-install...
@@ -258,7 +258,7 @@ $
 데이터가 많아졌을 때, 얼마나 많은 메모리를 쓰게 될지, 성능이 어떻게 될지
 써 가면서 확인해야 할 것 같다.
 
-```console
+```console {.wrap}
 $ sudo systemctl status elasticsearch.service 
 ● elasticsearch.service - Elasticsearch
    Loaded: loaded (/usr/lib/systemd/system/elasticsearch.service; enabled; vendo
@@ -293,7 +293,7 @@ $
 
 다음과 같은 방식으로, Graylog의 저장소를 시스템에 등록하고 설치를 진행한다.
 
-```console
+```console {.wrap}
 $ wget https://packages.graylog2.org/repo/packages/graylog-2.0-repository_latest.deb
 $ sudo dpkg -i graylog-2.0-repository_latest.deb
 Selecting previously unselected package graylog-2.0-repository.
@@ -307,7 +307,7 @@ $
 
 저장소 업데이트 이후에 `graylog-server` 패키지를 통해 설치해준다.
 
-```console
+```console {.wrap}
 $ sudo apt-get install graylog-server
 <...>
 The following NEW packages will be installed:
@@ -342,8 +342,7 @@ $
 
 다음과 같이, 구동에 앞서 암호를 설정해주어야 한다.
 
-{:.wrap}
-```console
+```console {.wrap}
 $ cat /etc/graylog/server/server.conf |grep '^\(root_password\|password\)'
 password_secret =
 root_password_sha2 =
@@ -374,7 +373,7 @@ $
 
 동일하게, 다음과 같이 서비스 등록 및 시작을 해준다.
 
-```console
+```console {.wrap}
 $ sudo systemctl daemon-reload
 $ sudo systemctl enable graylog-server.service
 Synchronizing state of graylog-server.service with SysV init with /lib/systemd/systemd-sysv-install...
@@ -386,7 +385,7 @@ $
 
 기동에 약간의 시간이 걸리는데, 최종적으로 다음과 같은 상태가 된다.
 
-```console
+```console {.wrap}
 $ sudo systemctl status graylog-server.service
 ● graylog-server.service - Graylog server
    Loaded: loaded (/usr/lib/systemd/system/graylog-server.service; enabled; vend
@@ -408,7 +407,7 @@ $
 막혀 있는데...
 
 
-```console
+```console {.wrap}
 $ grep web_listen_uri /etc/graylog/server/server.conf
 #web_listen_uri = http://127.0.0.1:9000/
 $ sudo sed -i 's,#web_listen_uri.*,web_listen_uri = http://10.10.10.9:80/,' /etc/graylog/server/server.conf
@@ -519,7 +518,8 @@ $
 
 이제 해당 서버에 웹브라우져로 접속해본다.
 
-![](/attachments/graylog2/graylog-101-login.png){:.dropshadow}
+![](/attachments/graylog2/graylog-101-login.png)
+{.dropshadow}
 
 음, 이 고전적이며 뭔가 무게가 잡힌 로그인 페이지를 봤다면 설치가 잘 되었을
 가능성이 90% 정도? (혹시 뒤쪽에서 뭔가 꼬이지 않았다면 :-)
@@ -528,17 +528,17 @@ $
 
 #### 다음 이야기...
 
-{:.angle}
 * _Calling All Logs! Graylog2 1편: 설치하기_
 * [Calling All Logs! Graylog2 2편: 맛보기]
 * [Calling All Logs! Graylog2 3편: 추가설정]
 * [Calling All Logs! Graylog2 4편: 기록]
+{.angle}
 
 
-[Calling All Logs! Graylog2 1편: 설치하기]:{% link _posts/sysadmin/2017-10-11-calling-all-logs-graylog2-installation.md %}
-[Calling All Logs! Graylog2 2편: 맛보기]:{% link _posts/sysadmin/2017-10-12-calling-all-logs-graylog2-overview.md %}
-[Calling All Logs! Graylog2 3편: 추가설정]:{% link _posts/sysadmin/2017-10-13-calling-all-logs-graylog2-settings.md %}
-[Calling All Logs! Graylog2 4편: 기록]:{% link _posts/sysadmin/2017-10-13-calling-all-logs-graylog2-memories.md %}
+[Calling All Logs! Graylog2 1편: 설치하기]:{{< relref "/blog/sysadmin/2017-10-11-calling-all-logs-graylog2-installation.md" >}}
+[Calling All Logs! Graylog2 2편: 맛보기]:{{< relref "/blog/sysadmin/2017-10-12-calling-all-logs-graylog2-overview.md" >}}
+[Calling All Logs! Graylog2 3편: 추가설정]:{{< relref "/blog/sysadmin/2017-10-13-calling-all-logs-graylog2-settings.md" >}}
+[Calling All Logs! Graylog2 4편: 기록]:{{< relref "/blog/sysadmin/2017-10-13-calling-all-logs-graylog2-memories.md" >}}
 
 
 [Graylog]:https://www.graylog.org/

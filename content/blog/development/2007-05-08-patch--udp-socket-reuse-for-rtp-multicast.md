@@ -7,6 +7,7 @@ date: 2007-05-08T16:39:21+09:00
 last_modified_at: 2008-03-09T02:11:01+09:00
 ---
 조금 된 패치인데, 기록을 위하여.
+<!--more-->
 
 <http://lists.mplayerhq.hu/pipermail/mplayer-dev-eng/2007-March/049970.html>
 

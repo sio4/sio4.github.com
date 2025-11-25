@@ -9,6 +9,7 @@ date: 2016-04-28 02:10:00 +0900
 뜻하지 않던 파일 공유도 할 겸, SoftLayer의 Object Storage에 대한 API
 시험도 할 겸 간단하게 Web Application을 하나 만들어봤다. 이름하여
 **CAOS**. **Cloud Album on Object Storage**를 줄여 만든 이름이다.
+<!--more-->
 
 뭐, 간단하게 짜투리시간 모아서 이틀만 투자하려고 했는데 생각만큼 시간도
 나지 않았고, 진행하면서 만나게 된 크고 작은 문제가 도와주기도 하여 1박
@@ -35,18 +36,17 @@ date: 2016-04-28 02:10:00 +0900
 있다.
 
 
-[SoftLayer Object Storage와 임시 URL]:{% post_url development/2016-03-22-tempurl-for-softlayer-object-storage %}
-[SoftLayer Object Storage와 임시 URL #2]:{% post_url development/2016-03-31-tempurl-for-softlayer-object-storage-2 %}
-[CAOS #1 Rails 기반 환경 구성]:{% post_url development/2016-07-07-rails-env-especially-for-caos %}
-[CAOS #2 SoftLayer Object Storage 다루기]:{% post_url development/2016-09-05-softlayer-object-storage-and-caos %}
-[CAOS #3 Rails Application의 성능 분석]:{% post_url development/2016-09-06-rails-application-performance %}
+[SoftLayer Object Storage와 임시 URL]:{{< relref "/blog/development/2016-03-22-tempurl-for-softlayer-object-storage" >}}
+[SoftLayer Object Storage와 임시 URL #2]:{{< relref "/blog/development/2016-03-31-tempurl-for-softlayer-object-storage-2" >}}
+[CAOS #1 Rails 기반 환경 구성]:{{< relref "/blog/development/2016-07-07-rails-env-especially-for-caos" >}}
+[CAOS #2 SoftLayer Object Storage 다루기]:{{< relref "/blog/development/2016-09-05-softlayer-object-storage-and-caos" >}}
+[CAOS #3 Rails Application의 성능 분석]:{{< relref "/blog/development/2016-09-06-rails-application-performance" >}}
 
 
 
 
 
 # 어떤 것을 만들려고 하는가
-{:.no_toc}
 
 이번에 작성한 Application은 클라우드(Object Storage) 위에 저장되어있는
 사진을 열람하고 내려받을 수 있도록 해주는 Application인데, 다음과 같은
@@ -63,7 +63,7 @@ date: 2016-04-28 02:10:00 +0900
 * 선택(Model: Selection)
   * 사용자는 앨범에서 관심있는 사진을 골라서 가상으로 저장 (선택)
   * 선택은 독립적인 View로 관리됨
-
+---
 * 업무 흐름
   * 로그인한 사용자는 "새 앨범" 메뉴를 통하여 앨범 구성을 할 수 있다.
   * 구성된 앨범은 모든 사용자에게 공개된다.
@@ -111,60 +111,71 @@ date: 2016-04-28 02:10:00 +0900
 사이트에 방문하면 처음 우리를 반기는 것은 반가움이 넘치는 인사와
 메일주소로 당신을 밝히라는 창.
 
-![](/attachments/20160428-caos/caos-001-home.png){:.fit.dropshadow}
+![](/attachments/20160428-caos/caos-001-home.png)
+{.fit .dropshadow}
 
 메일 주소를 넣어주면 비로소 로그인 화면으로 넘어간다. 아래와 같이
 일회용 암호(One-Time-Password)를 넣으라고 하는데,
 
-![](/attachments/20160428-caos/caos-002-login.png){:.fit.dropshadow}
+![](/attachments/20160428-caos/caos-002-login.png)
+{.fit .dropshadow}
 
 이 일회용 암호는 앞서 입력한 메일주소를 향해서 이미 발송이 된 상태.
 MUA를 열어보면 아래와 같이 메일이 와 있다. 이제 저 자동생성된 암호를
 넣고 로그인을 하면 된다.
 
-![](/attachments/20160428-caos/caos-900-otp.png){:.fit.dropshadow}
+![](/attachments/20160428-caos/caos-900-otp.png)
+{.fit .dropshadow}
 
 인사성이 바른 CAOS는, 다시 인사를 한다. 지금은 앨범이 없는 상태라서
 별 내용이 없다.
 
-![](/attachments/20160428-caos/caos-003-welcome.png){:.fit.dropshadow}
+![](/attachments/20160428-caos/caos-003-welcome.png)
+{.fit .dropshadow}
 
 새 앨범을 만들기 위해, 상단 메뉴의 "새 앨범"을 클릭해주면 아래와 같은
 입력창이 나타나고, 적절히 내용을 채워주면 앨범이 생성된다.
 
-![](/attachments/20160428-caos/caos-004-new-album-1.png){:.fit.dropshadow}
+![](/attachments/20160428-caos/caos-004-new-album-1.png)
+{.fit .dropshadow}
 
 앨범이 생성되고 나면 바로 해당 앨범 페이지로 진입을 하는데,
 아래 그림처럼, 아직 Thumbnail이 만들어지지 않은 부분은 공백으로
 표시가 된다.
 
-![](/attachments/20160428-caos/caos-100-new-album-2.png){:.fit.dropshadow}
+![](/attachments/20160428-caos/caos-100-new-album-2.png)
+{.fit .dropshadow}
 
 다시 첫화면으로 이동하면 이제는 앨범이 하나 만들어져 있음을 알 수
 있다.
 
-![](/attachments/20160428-caos/caos-110-albums.png){:.fit.dropshadow}
+![](/attachments/20160428-caos/caos-110-albums.png)
+{.fit .dropshadow}
 
 다시 앨범을 클릭하여 앨범 페이지로 진입하면, 이제는 보이지 않던
 Thumbnail도 만들어져 있는 것을 볼 수 있다. (물론, 이 과정은 시간이
 소요되는 과정으로, 맨 처음 볼 때에는 많이 느리게... 만들어진다.)
 
-![](/attachments/20160428-caos/caos-200-album-list.png){:.fit.dropshadow}
+![](/attachments/20160428-caos/caos-200-album-list.png)
+{.fit .dropshadow}
 
 앨범을 구경하다가, 맘에 드는 사진이 있다면 사진 하단의 Checkbox를
 선택해주는 과정을 반복하여 주고, 마지막에 맨 아래의 "선택으로 저장"
 버튼을 눌러주면 선택된 사진의 묶음이 만들어진다.
 
-![](/attachments/20160428-caos/caos-201-sel-1.png){:.fit.dropshadow}
+![](/attachments/20160428-caos/caos-201-sel-1.png)
+{.fit .dropshadow}
 
 이렇게, 원하는 사진만 따로 볼 수 있도록 되는 것이다.
 
-![](/attachments/20160428-caos/caos-202-sel-2.png){:.fit.dropshadow}
+![](/attachments/20160428-caos/caos-202-sel-2.png)
+{.fit .dropshadow}
 
 다시 첫화면에 가보면, 이번에는 앨범과 함께 선택도 나타나는 것을 볼
 수 있다.
 
-![](/attachments/20160428-caos/caos-203-home.png){:.fit.dropshadow}
+![](/attachments/20160428-caos/caos-203-home.png)
+{.fit .dropshadow}
 
 
 

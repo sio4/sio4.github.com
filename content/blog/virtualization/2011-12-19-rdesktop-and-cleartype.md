@@ -12,6 +12,7 @@ last_modified_at: 2011-12-19T14:43:20+09:00
 그냥 그렇게 표현했다. 오늘은 POC를 한다고 VMware View Client를 설치하라고...
 주문이 들어왔는데... POC 사이트에 접속을 했건만, 이건 무슨 90년대식 깨진
 글꼴? 그래서 잠깐 이것 저것 시도를 해봤다.
+<!--more-->
 
 ## 첫 시도, VMware View Open Client
 

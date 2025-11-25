@@ -7,6 +7,7 @@ date: Mon, 28 Dec 2015 12:34:51 +0900
 ---
 지난 10월에 진행하던 BMT 중에 네트워크 성능 측정, 또는 사용량 확인을 위해
 진행했던 MRTG 설치과정을 기록한다.
+<!--more-->
 
 중간에 다른 일에 치중하는 바람에 기록이 완전하지 않다. 나중에 기회가 되면
 다시 다듬기로 하고, 일단 기록으로 남긴다.
@@ -277,7 +278,9 @@ $
 (아, 이게 일정한 시간간격을 두고 데이터를 수집하는 것이기 때문에, 조금 시간이
 지나야 그래프가 정상적으로 나올 것이다.)
 
-![](/attachments/20151228-mrtg-001.png){:.fit.dropshadow}
+![](/attachments/20151228-mrtg-001.png)
+{.fit .dropshadow}
 
-![](/attachments/20151228-mrtg-002.png){:.fit.dropshadow}
+![](/attachments/20151228-mrtg-002.png)
+{.fit .dropshadow}
 

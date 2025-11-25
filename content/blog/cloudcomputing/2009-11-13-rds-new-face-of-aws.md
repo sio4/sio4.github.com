@@ -9,6 +9,7 @@ last_modified_at: 2011-03-04T13:50:34+09:00
 EC2, S3 등을 시작으로 계속해서 새로운 서비스를 발표하면서 클라우드 컴퓨팅
 산업을 선도해오고 있는 Amazon이 이번엔 Relational Database 를 역시
 "서비스로써" 선보였다. 깜짝 깜짝... 재미있고, 은근히 시샘도 나고... 그렇다.
+<!--more-->
 
 [Amazon Relational Database Service (Amazon RDS)](http://aws.amazon.com/rds/)
 

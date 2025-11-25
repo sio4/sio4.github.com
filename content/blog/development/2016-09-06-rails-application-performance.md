@@ -11,12 +11,14 @@ date: 2016-09-06 03:00:00 +0900
 따라서 전체 소프트웨어의 실행 시간은 이 단위 Routine이 소모하는 시간의
 합이며, 그 중에는 분명히 절대적/상대적으로 "혼자 바쁜" 또는 "혼자 느린"
 누군가가 있게 마련이다. 어느 집합이든 통하는 얘기다.
+<!--more-->
 
 바로 이 전체를 느리게 만드는데 큰 공을 세운 지점을 찾아내어 개선의 주요
 Point로 삼을 수 있도록 돕는 행위를 소프트웨어 공학에서는 Profiling이라고
 부른다.
 
-![](/attachments/20160428-caos/caos-performance.png){:.fit.dropshadow}
+![](/attachments/20160428-caos/caos-performance.png)
+{.fit .dropshadow}
 
 C 프로그래머로 살던 시절에는, 업무 영역의 특징도 있거니와 Profiling
 자체에 대한 개인적인 호기심도 있어서 꽤 재미나게 Profiling을 하곤
@@ -37,12 +39,12 @@ Rails의 Profiling에 대한 이야기이다.
 * [SoftLayer Object Storage와 임시 URL]
 * [SoftLayer Object Storage와 임시 URL #2] 
 
-[SoftLayer Object Storage와 임시 URL]:{% post_url development/2016-03-22-tempurl-for-softlayer-object-storage %}
-[SoftLayer Object Storage와 임시 URL #2]:{% post_url development/2016-03-31-tempurl-for-softlayer-object-storage-2 %}
+[SoftLayer Object Storage와 임시 URL]:{{< relref "/blog/development/2016-03-22-tempurl-for-softlayer-object-storage" >}}
+[SoftLayer Object Storage와 임시 URL #2]:{{< relref "/blog/development/2016-03-31-tempurl-for-softlayer-object-storage-2" >}}
 
-[CAOS, Cloud Album on Object Storage]:{% post_url development/2016-04-28-cloud-album-on-object-storage %}
-[CAOS #1 Rails 기반 환경 구성]:{% post_url development/2016-07-07-rails-env-especially-for-caos %}
-[CAOS #2 SoftLayer Object Storage 다루기]:{% post_url development/2016-09-05-softlayer-object-storage-and-caos %}
+[CAOS, Cloud Album on Object Storage]:{{< relref "/blog/development/2016-04-28-cloud-album-on-object-storage" >}}
+[CAOS #1 Rails 기반 환경 구성]:{{< relref "/blog/development/2016-07-07-rails-env-especially-for-caos" >}}
+[CAOS #2 SoftLayer Object Storage 다루기]:{{< relref "/blog/development/2016-09-05-softlayer-object-storage-and-caos" >}}
 
 아! 사실 이 글은, 본 시리즈보다 부수적인 기록 중 하나인
 [SoftLayer Object Storage와 임시 URL #2]와
@@ -52,19 +54,14 @@ Rails의 Profiling에 대한 이야기이다.
 ---
 
 
-{:#so-slow}
-# 느려! 너무 느려!
-
-* TOC
-{:toc .half.pull-right}
+# 느려! 너무 느려!  {#so-slow}
 
 SoftLayer를 처음 접하면서부터 안타깝게 느끼는 부분 중 하나가 API의
 부실함이다 보니, 이 성능문제를 처음 만났을 때에는 "역시 부실하군!"
 하고 넘어갈 판이었다. 그런데 내 성격이 또 그렇지는 못하지? 정확하게
 판단을 해야 덮을 수가 있으니 일이 점점 커져간다!
 
-{:#install-softlayer-api}
-## Timing!
+## Timing! {#install-softlayer-api}
 
 별도의 도구 없이, 간편하게 약식 Profiling을 하고자 할 때, 많이 쓰이는
 방식은 바로 Timing Print이다. 자신의 코드 상의 각 지점에 시간을 재는
@@ -74,7 +71,7 @@ SoftLayer를 처음 접하면서부터 안타깝게 느끼는 부분 중 하나�
 부분은 각각 전체 프로그램의 진행 시간과 단위 부분의 시간을 표시하도록
 기능을 추가해본 것이다.
 
-```
+```shell
 ### Timing:  0.000000s/ 0.000000s for just before connection...
 ### Timing:  0.610005s/ 0.610005s for connected! container...
 
@@ -113,7 +110,7 @@ SoftLayer를 처음 접하면서부터 안타깝게 느끼는 부분 중 하나�
 ruby-prof를 Rails Application 분석을 위해 사용하기 위해서는 다음과
 같이 먼저 Gem을 등록해준다.
 
-```
+```console
 $ echo "gem 'ruby-prof'" >> Gemfile
 $ bundle install
 <...>
@@ -155,7 +152,7 @@ printer.print(STDOUT, {})
 
 결과의 예는 다음과 같다.
 
-```
+```shell
 ### Timing:  0.910453s/ 0.910453s for got connection and container!
 ### Timing:  1.523795s/ 0.613342s for ok, done!
 Measure Mode: wall_time
@@ -210,7 +207,7 @@ Rails App 분석을 위한 방식인데,
 결과는 다음과 같은 파일로 만들어진다.
 
 
-```
+```console
 $ ls -l tmp/profile
 <...>
 -rw-rw-r-- 1 sio4 sio4   56819  3월 30 13:01 albums-1-call_stack.html
@@ -223,7 +220,8 @@ $
 
 그 결과를 보면 아래처럼 Callee Map 비슷한 것을 만들어준다. :-)
 
-![](/attachments/20160428-caos/caos-pf-21-callstack-1.png){:.fit.dropshadow}
+![](/attachments/20160428-caos/caos-pf-21-callstack-1.png)
+{.fit .dropshadow}
 
 위 그림은 성능문제가 있는 상태에서 Call을 분석한 것인데, 단일 요청에
 대한 처리량 중에서 `#show`의 비중이 99.37에 달하며 `Hash#each`에 의한
@@ -233,7 +231,8 @@ $
 
 반면에, 개선된 상태인 아래 그림을 보면,
 
-![](/attachments/20160428-caos/caos-pf-23-callstack-2.png){:.fit.dropshadow}
+![](/attachments/20160428-caos/caos-pf-23-callstack-2.png)
+{.fit .dropshadow}
 
 `#show`의 비중이 약 72%로 줄었을 뿐만 아니라, `#set_container`나
 `#objects_detail` 등의 비중이 오히려 `Hash#each`보다 높은 것을 볼
@@ -246,8 +245,10 @@ $
 맨 위의 루틴의 내부 Callee들을 소요시간 순으로 정렬하여 보여주고 있으며,
 그 내용은 위의 Map과 같다.
 
-![](/attachments/20160428-caos/caos-pf-22-graph-1.png){:.fit.dropshadow}
-![](/attachments/20160428-caos/caos-pf-24-graph-2.png){:.fit.dropshadow}
+![](/attachments/20160428-caos/caos-pf-22-graph-1.png)
+{.fit .dropshadow}
+![](/attachments/20160428-caos/caos-pf-24-graph-2.png)
+{.fit .dropshadow}
 
 
 # 그래서 뭐가 변했다고?

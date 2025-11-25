@@ -10,6 +10,7 @@ last_modified_at: 2011-03-04T13:44:04+09:00
 사용자에게 제공하는 이득 중에서 가장 핵심적인 것이 사용자의 IT를 유연하게
 만들어주는 것이다. 이 유연성은 아직 "신개념"이라 할 수 있는 클라우드 컴퓨팅을
 기업 사용자를 대상으로 적용함에 있어서 풀기 힘든 문제 중 하나이기도 하다.
+<!--more-->
 
 대부분의 안정화된 기업 전산 환경은 이미 어느 정도 예측 가능하며 지속적으로
 발생하는 IT 수요와 부하를 가늠할 수 있기 때문에 클라우드 컴퓨팅이 가져다준다는
@@ -39,7 +40,8 @@ EC2 등의 퍼블릭 클라우드 서비스와 [OpenNebula](http://opennebula.or
 
 > Start an instance on an internal cloud, then with the same code start another on EC2 or Rackspace. Deltacloud protects your apps from cloud API changes and incompatibilities, so you can concentrate on managing cloud instances the way you want.
 
-![](/attachments/2010-07-12-deltacloud.png){:.fit}
+![](/attachments/2010-07-12-deltacloud.png)
+{.fit}
 
 내내야 첫 페이지의 설명인데, 조금 더 상세한 설명은...
 

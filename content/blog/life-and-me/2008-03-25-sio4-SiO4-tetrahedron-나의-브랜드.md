@@ -2,7 +2,7 @@
 redirect_from:
 - /entry/sio4-tetrahedron-my-digital-brand/
 - /151/
-title: sio4, SiO4 Tetrahedron, 나의 브랜드.
+title: sio4, SiO4 Tetrahedron, 나의 브랜드
 tags: ["brand", "geology"]
 categories: ["life-and-me"]
 date: 2008-03-25T00:55:07+09:00
@@ -13,6 +13,7 @@ last_modified_at: 2010-07-02T15:07:01+09:00
 Si 한개와 만나 쬐그만 Si를 중심에 두고 사면체 모양으로 뭉친 것이 바로,
 Silicate Tetrahedron, **규산염 광물의 기본 틀인 SiO4** 입니다. 저의
 오랜 본질(Identity)이죠.
+<!--more-->
 
 [^1]: 오시알페카나크마(O,Si,Al,Fe,Ca,Na,K,Ma)이런거 기억나시나?  
 

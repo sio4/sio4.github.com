@@ -8,9 +8,10 @@ date: Sat, 16 Jan 2016 02:55:00 +0900
 ---
 SoftLayer API에 대하여 파악하고 그 한계나 사용 가능성 등에 대하여 검증하기
 위한 목적으로 작은 프로젝트 하나를 진행해 봤다.  이름하여, Hardened Layer.
+<!--more-->
 
 내 목적에 맞춰 Custom Portal을 작성하면서, 그 쓸모에 따라 **SoftLayer를 좀
-더 보강한다는 의미로 "Hardened Layer"**라는 이름을 붙여봤지만 현재는 단순한
+더 보강한다**는 의미로 "Hardened Layer"라는 이름을 붙여봤지만 현재는 단순한
 자원 Browsing 기능을 중심으로 하고 있어서 전혀 Hardening을 한 것은 없다.
 다만, **기반 Data를 더 잘 이해하고 다룰 수 있게 된다면 그것이 Hardening의
 시작**이 될 것이라는 정도로 의미를 둔다. :-)
@@ -22,25 +23,20 @@ Prototype 개발 목표는 다음과 같다.
 * SoftLayer API에서 제공하는 Dataset의 특성을 파악한다.
 * SoftLayer API를 사용한 개발의 방향성을 찾아낸다.
 
-{:.block-title}
 Hardened Layer: Console - Virtual Servers
+{.block-title}
 
-![](/attachments/20160116-hl-v1-servers.png){:.fit.downshadow}
+![](/attachments/20160116-hl-v1-servers.png)
+{.fit .dropshadow}
 
 ## Hardened Layer 시리즈
-{:.no_toc}
 
 * Hardened Layer, SoftLayer Custom Portal - Part 1
 * [Hardened Layer, SoftLayer Custom Portal - Part 2][HardenedLayer-Part2]
 
-[HardenedLayer-Part2]:{% post_url development/2016-01-21-hardened-layer-part2 %}
+[HardenedLayer-Part2]:{{< relref "/blog/development/2016-01-21-hardened-layer-part2" >}}
 
 
-## 목차
-{:.no_toc}
-
-* ToC
-{:toc}
 
 # 설계
 
@@ -70,22 +66,23 @@ API App이 담당하는 기능은 SoftLayer API의 Response를 내 용도나 기
 
 API App을 중심으로, 두 Module이 동작하는 방식은 아래와 같다.
 
-```
-Hardened Console->Hardened Layer: 계정정보 요청
-Hardened Layer-->SoftLayer: 계정정보 요청 (SL API)
-SoftLayer-->SoftLayer: 내부 작업
-SoftLayer-->Hardened Layer: 계정정보 반환 (SL API)
-Hardened Layer-->SoftLayer: 이미지 정보 요청 (SL API)
-SoftLayer-->SoftLayer: 내부 작업
-SoftLayer-->Hardened Layer: 이미지 정보 반환 (SL API)
-Hardened Layer-->SoftLayer: VM 정보 요청 (SL API)
-SoftLayer-->SoftLayer: 내부 작업
-SoftLayer-->Hardened Layer: VM 정보 반환 (SL API)
-Hardened Layer-->Hardened Layer: 정보 조합 (계정+이미지+VM)
-Hardened Layer->Hardened Console: 조합된 정보 반환
-Hardened Console->Hardened Console: Model화, View 제공
-```
-{:.diagram.tac.fit}
+
+{{< mermaid >}}
+sequenceDiagram
+    participant Hardened Console
+    participant Hardened Layer
+    participant SoftLayer
+    Hardened Console->>+Hardened Layer: 계정정보 요청
+    Hardened Layer->>+SoftLayer: 계정정보 요청 (SL API)
+    SoftLayer-->>-Hardened Layer: 계정정보 반환 (SL API)
+    Hardened Layer->>+SoftLayer: 이미지 정보 요청 (SL API)
+    SoftLayer-->>-Hardened Layer: 이미지 정보 반환 (SL API)
+    Hardened Layer->>+SoftLayer: VM 정보 요청 (SL API)
+    SoftLayer-->>-Hardened Layer: VM 정보 반환 (SL API)
+    Note over Hardened Layer: 정보 병합 (계정+이미지+VM)
+    Hardened Layer-->>-Hardened Console: 병합된 정보 반환
+    Note over Hardened Console: Model화, View 제공
+{{< /mermaid >}}
 
 ## API App 설계 기준
 
@@ -356,8 +353,8 @@ API Endpoint가 상속하게 될 Class로, `login`을 `before_action`으로 설�
 모든 Endpoint Request가 `login` 과정을 먼저 거친 후에 각 Handler의 기능이
 동작하도록 설정했다.
 
-{:.block-title}
 `/app/controllers/api/api_controller.rb`
+{.block-title}
 
 ```ruby
 class Api::ApiController < ActionController::Base
@@ -405,8 +402,9 @@ end
 각각이 제공하는 서버 목록과 이미지 템플릿 목록을 얻어와서 우리의 API 패턴에
 맞게 반환할 데이터를 완성하도록 구성하였다.
 
-{:.block-title}
 `/app/controllers/api/v1/accounts_controller.rb`
+{.block-title}
+
 ```ruby
 class Api::V1::AccountsController < Api::ApiController
 
@@ -423,8 +421,8 @@ end
 이렇게 구성된 데이터는, `@accounts`에 담겼다가, 아래와 같이 JSON Builder에
 의하여 Formatting된 후에 Client에게 전달되게 된다.
 
-{:.block-title}
 `/app/views/api/v1/accounts/index.json.jbuilder`
+{.block-title}
 
 ```ruby
 json.array!(@accounts) do |account|
@@ -559,8 +557,8 @@ JSON 자체는 유연함에서 나오는 힘이 있기 때문에 강제적인 �
 앞선 절에서 설명한 Contoller 등을 아래와 같이 바꿔 보았다. (부수적으로,
 연계 정보의 종류가 더 추가되었다.)
 
-{:.block-title}
 `/app/controllers/api/v1/accounts_controller.rb`
+{.block-title}
 
 ```ruby
 class Api::V1::AccountsController < Api::ApiController
@@ -583,8 +581,8 @@ end
 이렇게, 먼저 최종적으로 JSON을 Build하는 과정에서 사라지게 될 `@data`라는
 변수를 넣어 Hash의 Nested 구조를 더 깊게 조정하였고,
 
-{:.block-title}
 `/app/views/api/v1/accounts/index.json.jbuilder`
+{.block-title}
 
 ```ruby
 json.extract! @data, :accounts
@@ -647,7 +645,8 @@ UI를 직접적으로 고려하는 부분은 전혀 없으며 단지 API의 응�
 어쩌면 상당 부분은 개발 생산성과 개발구조의 변화와 맥을 함께하기 때문일
 수도 있을 것이라고 생각한다.
 
-![](/attachments/20160116-backend-as-an-api.png){:.half.centered.dropshadow}
+![](/attachments/20160116-backend-as-an-api.png)
+{.half .centered.dropshadow}
 
 > "Backend as an API" 는 단지 좋은 Architecture일 뿐만 아니라 개발팀 구조에도
 > 좋다.
@@ -663,7 +662,7 @@ UI를 직접적으로 고려하는 부분은 전혀 없으며 단지 API의 응�
 
 Frontend는 Ember.js를 이용하여 작성했다. NVM을 이용한 Ember.js 개발의 손쉬운
 환경구성에 대한 상세 내용은 얼마 전에 작성했던
-[Ember CLI 환경 구성하기]({% post_url development/2015-12-09-preparing-ember-environment %})
+[Ember CLI 환경 구성하기]({{< relref "/blog/development/2015-12-09-preparing-ember-environment" >}})
 에서 참고하기 바란다.
 
 여기서는 다음과 같은 환경이 사용되었다.
@@ -819,8 +818,8 @@ Object를 받을 수 있는 기본적인 속성과 방법을 갖추고 있다. �
 우리의 Backend가 어디에 있는지를 알려주기 위하여 아래와 같이 `host`와
 `namespace` 설정을 Override 해준다.
 
-{:.block-title}
 `/app/adapters/softlayer.js`
+{.block-title}
 
 ```javascript
 import DS from 'ember-data';
@@ -872,8 +871,8 @@ Cross-Domain 보안과 관련된 부분으로, API가 동작하고 있는 localh
 Override를 하지 않은 채, `RESTSerializer`를 상속하는 자동생성된 상태를
 그대로 유지한다.
 
-{:.block-title}
 `/app/serializers/softlayer.js`
+{.block-title}
 
 ```javascript
 import DS from 'ember-data';
@@ -894,8 +893,8 @@ Serializer가 보다 Data 자체에 치중해 있다면 Adapter는 전송에 대
 Endpoint URL 등의 표준화가 정상적이라면 Adapter는 Resource 별로 달라질
 부분이 거의 없다.
 
-{:.block-title}
 `/app/adapters/account.js`
+{.block-title}
 
 ```javascript
 import SoftLayerAdapter from './softlayer';
@@ -953,8 +952,8 @@ JSON 데이터는 사실, 정규화된 방식으로 Parsing하는 것이 쉽지 
 Object 안에 담겨있는 Server, Image Template 등을 개별 Object로 뽑아낼 수
 있게 돕고 있다.
 
-{:.block-title}
 `/app/serializers/account.js`
+{.block-title}
 
 ```javascript
 import SoftLayerSerializer from './softlayer';
@@ -979,8 +978,8 @@ Model에 대한 Relationship은 `app/models` 아래에 위치한 파일들에서
 수 있다. 다음 내용과 같이, Account Model의 자체 속성과 연결관계에 있는
 다른 Model 간의 관계를 정의할 수 있다.
 
-{:.block-title}
 `/app/models/account.js`
+{.block-title}
 
 ```javascript
 import DS from 'ember-data'; 
@@ -1027,8 +1026,8 @@ Ember에서는 **각 URL을 어떤 데이터셋, 화면, Controller와 연계하
 `model`을 정의해주면 된다. (아주 기본적인 상황인데, `store`에서 `account`인
 모든 것을 찾아서 넘겨주게 설정한 것이다.)
 
-{:.block-title}
 `/app/routes/accounts.js`
+{.block-title}
 
 ```javascript
 import Ember from 'ember';
@@ -1043,8 +1042,8 @@ export default Ember.Route.extend({
 Server에 대한 Route는 아래와 같은데, 위의 내용과 좀 다른 형태를 띄고 있다.
 아래처럼 난데없이 모든 Account를 찾더니, 모든 Server를 넘긴다.
 
-{:.block-title}
 `/app/routes/servers.js`
+{.block-title}
 
 ```javascript
 import Ember from 'ember';
@@ -1110,11 +1109,11 @@ export default Ember.Route.extend({
 
 먼저, Application 틀을 구성하는 `application.hbs`이다.
 
-{:.block-title}
 `/app/templates/application.hbs`
+{.block-title}
 
 ```handlebars
-{% raw %}
+{% raw" >}}
 <h2 id="title">Hardened Layer</h2>
 
 <div id="category-list" class="ui menu" style="float:left; margin: 0 1em">
@@ -1129,7 +1128,7 @@ export default Ember.Route.extend({
 <div id="main-panel" class="ui panel">
 {{outlet}}
 </div>
-{% endraw %}
+{% endraw" >}}
 ```
 
 이 화면은
@@ -1140,11 +1139,11 @@ export default Ember.Route.extend({
 
 등으로 구성되어 있다.
 
-{:.block-title}
 `/app/templates/accounts.hbs`
+{.block-title}
 
 ```handlebars
-{% raw %}
+{% raw" >}}
 <ul>
 {{#each account in model}}
 <li>
@@ -1157,7 +1156,7 @@ export default Ember.Route.extend({
 </ul>
 
 {{outlet}}
-{% endraw %}
+{% endraw" >}}
 ```
 
 Account 목록을 볼 때 사용될 위의 Template은 `#each` 구문에 의해 Loop를
@@ -1178,9 +1177,11 @@ Account 정보를 기점으로 어떤 연계정보가 더 존재하는지 쫓아
 
 이들을 추가한 상태에서 실제로 동작하는 화면 몇개를 보면 다음과 같다.
 
-![](/attachments/20160116-hl-ui-servers.png){:.fit.dropshadow}
+![](/attachments/20160116-hl-ui-servers.png)
+{.fit .dropshadow}
 
-![](/attachments/20160116-hl-ui-images.png){:.fit.dropshadow}
+![](/attachments/20160116-hl-ui-images.png)
+{.fit .dropshadow}
 
 
 # 지나간 시도들
@@ -1208,8 +1209,9 @@ Sideloaded Object를 지원하도록 해보려는 시도를 해보았다.
 
 이 과정에서 사용된 `AccountsController`와 `JSON Builder`는 다음과 같다.
 
-{:.block-title}
 AccountsController
+{.block-title}
+
 ```ruby
 class Api::V1::AccountsController < Api::ApiController
   def index
@@ -1229,8 +1231,9 @@ class Api::V1::AccountsController < Api::ApiController
 end
 ```
 
-{:.block-title}
 JSON Builder
+{.block-title}
+
 ```ruby
 json.extract! @data, :accounts, :servers
 ```
@@ -1240,8 +1243,9 @@ json.extract! @data, :accounts, :servers
 
 이 Controller와 JSON Builder에 의한 결과는 아래와 같다.
 
-{:.block-title}
 JSON output
+{.block-title}
+
 ```json
 {
    "accounts" : [
@@ -1371,10 +1375,8 @@ Prototyping에 대한 초기 개발 내용을 정리하여 보았다.
 
 * Semantic UI 및 보조도구를 활용하여 Console을 좀 보기 좋게 만들기
 * Billing 자료를 따로 시각화하여 분석에 도움이 되는 정보로 만들기
-
 * 단위 서비스/업무 차원의 모니터링 통합을 할 수 있는 방안 찾기
 * 자동화를 위한 Engine App 개발하기
-
 * 그리고 Python으로 API 언어 전환하기
 
 이번 글은, 실제로 Prototype을 개발했던 기간보다 더 긴 시간을 이 글의
