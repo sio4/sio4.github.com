@@ -15,10 +15,11 @@ Goul(거울; Mirror in English) is a tool for virtual network port mirroring
 over the Internet for network traffic analyze and/or security monitoring.
 May useful especially for cloud computing environment.
 
-[![Build Status](https://travis-ci.org/hyeoncheon/goul.svg?branch=master)](https://travis-ci.org/hyeoncheon/goul){:.inline}
-[![Go Report Card](https://goreportcard.com/badge/github.com/hyeoncheon/goul)](https://goreportcard.com/report/github.com/hyeoncheon/goul){:.inline}
-[![Code Climate](https://codeclimate.com/github/hyeoncheon/goul/badges/gpa.svg)](https://codeclimate.com/github/hyeoncheon/goul){:.inline}
-[![Coverage Status](https://coveralls.io/repos/github/hyeoncheon/goul/badge.svg?branch=master)](https://coveralls.io/github/hyeoncheon/goul?branch=master){:.inline}
+[![Build Status](https://travis-ci.org/hyeoncheon/goul.svg?branch=master)](https://travis-ci.org/hyeoncheon/goul)
+[![Go Report Card](https://goreportcard.com/badge/github.com/hyeoncheon/goul)](https://goreportcard.com/report/github.com/hyeoncheon/goul)
+[![Code Climate](https://codeclimate.com/github/hyeoncheon/goul/badges/gpa.svg)](https://codeclimate.com/github/hyeoncheon/goul)
+[![Coverage Status](https://coveralls.io/repos/github/hyeoncheon/goul/badge.svg?branch=master)](https://coveralls.io/github/hyeoncheon/goul?branch=master)
+{.inline-badges .centered}
 
 On legacy infrastructure, with many physical switches, we can use a
 [port mirroring] ([SPAN; Switched Port Analyzer] in Cisco's term) on the
@@ -48,7 +49,7 @@ library but not yet stable enough.
 * Pipelining with buffering for filtering, compression, deduplication, and more.
 * Use TCP/IP for transmission over the Internet.
 * Support adaptive mode to reduce the impact of production traffic. (Plan)
-
+{.angle}
 
 
 ## Architecture

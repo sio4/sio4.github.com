@@ -15,6 +15,7 @@ XML-RPC API, I think.)
 
 * Emger.js Console: <https://github.com/c12g/hardened-layer-ui>
 * Rails API Backend: <https://github.com/c12g/hardened-layer-rails>
+<!--more-->
 
 ## Install and Configuration
 

@@ -321,6 +321,12 @@ div.barchart {
 	}
 }
 
+.inline-badges {
+	a {
+		display: inline-block;
+	}
+}
+
 /*
 .fit svg,
 .fit {
@@ -393,7 +399,10 @@ footer {
       border-bottom: 1px solid $color-light;
     }
 		.post-subtitle { }
-		.img-title { }
+		.img-title {
+			max-height: 360px;
+			width: auto;
+    }
 	}
 	.post-meta {
 		font-family: $font-meta;

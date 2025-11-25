@@ -13,14 +13,16 @@ UART is an Universal Authorizaion, Role and Team management service software.
 UART was developed to succeed my old SiSO project, the original SSO service
 for Hyeoncheon Project. (which was developed with Ruby on Rails framework
 with well known Devise, OmniAuth and other open source components.)
+<!--more-->
 
 
 # It's UART
 
-[![Build Status](https://travis-ci.org/hyeoncheon/uart.svg?branch=master)](https://travis-ci.org/hyeoncheon/uart){:.inline}
-[![Go Report Card](https://goreportcard.com/badge/github.com/hyeoncheon/uart)](https://goreportcard.com/report/github.com/hyeoncheon/uart){:.inline}
-[![Code Climate](https://codeclimate.com/github/hyeoncheon/uart/badges/gpa.svg)](https://codeclimate.com/github/hyeoncheon/uart){:.inline}
-[![Coverage Status](https://coveralls.io/repos/github/hyeoncheon/uart/badge.svg?branch=master)](https://coveralls.io/github/hyeoncheon/uart?branch=master){:.inline}
+[![Build Status](https://travis-ci.org/hyeoncheon/uart.svg?branch=master)](https://travis-ci.org/hyeoncheon/uart)
+[![Go Report Card](https://goreportcard.com/badge/github.com/hyeoncheon/uart)](https://goreportcard.com/report/github.com/hyeoncheon/uart)
+[![Code Climate](https://codeclimate.com/github/hyeoncheon/uart/badges/gpa.svg)](https://codeclimate.com/github/hyeoncheon/uart)
+[![Coverage Status](https://coveralls.io/repos/github/hyeoncheon/uart/badge.svg?branch=master)](https://coveralls.io/github/hyeoncheon/uart?branch=master)
+{.inline-badges}
 
 UART is written in Go Language and also is built upon many open source
 software modules including

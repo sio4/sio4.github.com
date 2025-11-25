@@ -26,15 +26,15 @@ IT 엔지니어 입니다.  좋게 표현한다면 **IT 멀티플레이어**라�
 
 #### 글 속의 나
 
-{:.angle}
-* [자유소프트웨어, 근원적 본질]({% link _posts/rules-of-action/2010-03-11-fundamental-nature-of-free-software.md %})
+* [자유소프트웨어, 근원적 본질]({{< relref "/blog/rules-of-action/2010-03-11-fundamental-nature-of-free-software.md" >}})
   -- "왜 자유소프트웨어가 중요한지"에 대한 소용환의 생각
+{.angle}
 
 
 #### 다른 곳의 나
 
-{:.angle}
 * [Github 속의 소용환](https://github.com/sio4)
 * [Facebook 속의 소용환](https://facebook.com/yonghwan.so)
 * [StackOverflow Profile](https://stackoverflow.com/users/1111002/sio4)
 * (잘 안 쓰지만) [Linkedin 속의 소용환](https://linkedin.com/in/scinix)
+{.angle}
