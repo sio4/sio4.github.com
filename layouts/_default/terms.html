@@ -26,7 +26,7 @@
                 <a href="{{ $data.Plural | absLangURL }}/{{ $value.Name | urlize }}/" class="list-group-item view-all">
                 View all</a>
                 <div class="list-group">
-                  {{ range $item := $value.WeightedPages }}
+                  {{ range $item := $value.Pages.ByDate.Reverse }}
                     <a href="{{$item.Permalink}}" class="list-group-item">{{ $item.Title }}</a>
                   {{ end }}
                 </div>

@@ -9,7 +9,7 @@
         {{ end }}
 
         <div class="posts-list">
-          {{ $pag := .Paginate (where site.RegularPages "Type" "in" site.Params.mainSections) }}
+          {{ $pag := .Paginate (where site.RegularPages.ByDate.Reverse "Type" "in" site.Params.mainSections) }}
           {{ range $pag.Pages }}
             {{ partial "post_preview" . }}
           {{ end }}
