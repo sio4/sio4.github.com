@@ -71,7 +71,7 @@ SoftLayer를 처음 접하면서부터 안타깝게 느끼는 부분 중 하나�
 부분은 각각 전체 프로그램의 진행 시간과 단위 부분의 시간을 표시하도록
 기능을 추가해본 것이다.
 
-```shell
+```text
 ### Timing:  0.000000s/ 0.000000s for just before connection...
 ### Timing:  0.610005s/ 0.610005s for connected! container...
 
@@ -152,7 +152,7 @@ printer.print(STDOUT, {})
 
 결과의 예는 다음과 같다.
 
-```shell
+```text
 ### Timing:  0.910453s/ 0.910453s for got connection and container!
 ### Timing:  1.523795s/ 0.613342s for ok, done!
 Measure Mode: wall_time

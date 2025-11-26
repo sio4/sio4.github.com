@@ -188,7 +188,7 @@ Scripted Field를 새로 작성하거나 이미 작성된 내용을 보고 수�
 먼저, Script를 작성할 언어나 출력될 값 등을 정하게 되고, 맨 아래 Script
 부분에 적절한 Script를 작성해 넣으면 완성이 된다.
 
-```java
+```ruby
 ZonedDateTime.ofInstant(
 	Instant.ofEpochMilli(
 		doc["@timestamp"].value.getMillis()
@@ -199,7 +199,7 @@ ZonedDateTime.ofInstant(
 
 뭔가 복잡한데... 원래는 아래와 같이 작성했었다.
 
-```java
+```ruby
 doc["@timestamp"].value.dayOfWeek
 ```
 
@@ -218,7 +218,7 @@ UTC를 기준으로 만들어질 뿐만 아니라 더 이상 시간 데이터가
 
 같은 방식으로, 시간대 정보는 다음의 함수로 구한다.
 
-```java
+```ruby
 ZonedDateTime.ofInstant(
 	Instant.ofEpochMilli(
 		doc["@timestamp"].value.getMillis()

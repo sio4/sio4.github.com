@@ -113,7 +113,7 @@ transport_email_use_ssl = false
 Plugin을 설치하여야 사용할 수 있다. 배포되는 파일을 받아서, 패키지 설치 명령을
 통해 설치해주면 간단하게 설정이 완료된다.
 
-```console {.wrap}
+```console
 $ wget https://github.com/Graylog2/graylog-plugin-slack/releases/download/2.2.1/graylog-plugin-slack-2.2.1.deb 
 $ sudo dpkg -i graylog-plugin-slack-2.2.1.deb 
 $ 
@@ -126,7 +126,7 @@ GeoIP는 IP 정보를 지리적 위치와 Mapping하는 서비스 또는 그 데
 의미한다. 아래와 같이, GeoIP Database 중, 무료로 제공되고 있는 City 정보를
 받아서 적당한 위치에 넣는다.
 
-```console {.wrap}
+```console
 $ sudo mkdir /var/local/graylog
 $ wget -nv http://geolite.maxmind.com/download/geoip/database/GeoLite2-City.mmdb.gz -O - |zcat |sudo tee /var/local/graylog/GeoLite2-City.mmdb >/dev/null
 2016-08-12 13:26:33 URL:http://geolite.maxmind.com/download/geoip/database/GeoLite2-City.mmdb.gz [35671748/35671748] -> "-" [1]

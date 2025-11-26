@@ -462,14 +462,14 @@ $
 그런데 얼마 후, App에서 다음과 같은 Deprecation Warnning이 계속 발생하는
 문제가 발생했는데 추적해본 결과, 이 Addon에서 발생한다는 것을 알게 되었다.
 
-```console {.wrap}
+```console
 DEPRECATION: Using Ember.Handlebars.makeBoundHelper is deprecated. Please refactor to using `Ember.Helper.helper`. [deprecation id: ember-htmlbars.handlebars-make-bound-helper]
 ```
 
 그래서 이 Addon을 제거하고, 앞서 말한 바와 같이 동일 기능을 제공하는
 `ember-moment`로 방향을 바꾸었다.
 
-```console {.wrap}
+```console
 $ npm uninstall ember-cli-dates --save-dev
 npm WARN uninstall not installed in /home/sio4/tmp/x/hardened-layer-ui/node_modules: "ember-cli-dates"
 $ bower uninstall ember-cli-moment-shim -D

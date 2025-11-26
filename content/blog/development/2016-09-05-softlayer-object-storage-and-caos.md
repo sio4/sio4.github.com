@@ -79,7 +79,7 @@ SoftLayer Ruby API는 공식적으로 Gem 저장소를 통하여 제공이 되�
 그러나 Object Storage API는 그렇지가 않으며, 다음과 같이 Github에서
 바로 내려받아 설치하여야 한다.
 
-```console {.wrap}
+```console
 $ echo "gem 'softlayer_api'" >> Gemfile
 $ echo "gem 'softlayer-object-storage', :git => 'https://github.com/hardenedlayer/softlayer-object-storage-ruby'" >> Gemfile
 $ bundle install
@@ -133,7 +133,7 @@ end
 
 시험은 다음과 같이, `bundle exec rake test` 명령을 사용하여 진행한다.
 
-```console {.wrap}
+```console
 $ bundle exec rake test test/backend/storage_object_test.rb
 Running via Spring preloader in process 28381
 Run options: --seed 43918
@@ -259,7 +259,7 @@ $
 수 있도록 해주는 Gem은 `rmagick`가 가장 유명하다. 그러나, 여기서는 보다
 빠른 이미지 전환을 위하여 `mini_magick`를 사용하였다.
 
-```console {.wrap}
+```console
 $ echo "gem 'mini_magick'" >> Gemfile
 $ bundle install
 <...>
@@ -393,13 +393,13 @@ rity.
 
 위의 코드가 동작하는 로그를 보면, 아래와 같이 새로 미리보기를 만들거나...
 
-``` {.wrap}
+```txt
 ### DEBUG: Generate Thumb from https://hkg02.objectstorage.softlayer.net:443/v1/AUTH_00aa00aa-00aa-00aa-00aa-00aa00aa00aa/caos/CM2016/iaas-marketshare.jpg?temp_url_sig=e000020f07040500090c090e06090a001030d0d0&temp_url_expires=1459097817...
 ```
 
 또는 이미 존재하는 미리보기 파일을 다시 사용하게 된다.
 
-``` {.wrap}
+```text
 ### DEBUG: File exists: tmp/thumbs/a208008e00104b0a004509e0b40800a2-CM2016%2FCM2016.JPG. using it!
 ```
 
@@ -570,7 +570,7 @@ Select의 구현 등, 재미있는 부분이 더 있었던 것 같은데, 그냥
 
 Connection:
 
-```console {.wrap}
+```console
 $ curl -i -H "X-Auth-User: IBMOS000000-1:user" -H "X-Auth-Key: 00aa00aa00aa00aa00aa00aa00aa00aa00aa00aa00aa00aa00aa00aa00aa00aa" https://hkg02.objectstorage.softlayer.net/auth/v1.0
 HTTP/1.1 200 OK
 Content-Length: 1348
@@ -588,7 +588,7 @@ $
 
 Containers:
 
-```console {.wrap}
+```console
 $ curl -i -H "X-Auth-Token: AUTH_tk00bb00bb00bb00bb00bb00bb00bb00bb" https://hkg02.objectstorage.softlayer.net/v1/AUTH_00aa00aa-00aa-00aa-00aa-00aa00aa00aa
 HTTP/1.1 200 OK
 Content-Length: 5
@@ -613,7 +613,7 @@ $
 
 Objects:
 
-```console {.wrap}
+```console
 $ curl -i -H "X-Auth-Token: AUTH_tk00bb00bb00bb00bb00bb00bb00bb00bb" https://hkg02.objectstorage.softlayer.net/v1/AUTH_00aa00aa-00aa-00aa-00aa-00aa00aa00aa/caos
 HTTP/1.1 200 OK
 Content-Length: 2808
@@ -638,7 +638,7 @@ $
 
 Objects JSON:
 
-```console {.wrap}
+```console
 $ curl -i -H "X-Auth-Token: AUTH_tk00bb00bb00bb00bb00bb00bb00bb00bb" https://hkg02.objectstorage.softlayer.net/v1/AUTH_00aa00aa-00aa-00aa-00aa-00aa00aa00aa/caos -H "Accept: application/json"
 HTTP/1.1 200 OK
 Content-Length: 40725

@@ -79,7 +79,7 @@ GB에 달하는 크기로 증가한다. 이 문제의 분석을 맡은 이후, �
 처리할 수가 있다**. 또한, 수행하는 작업도 상대적으로 매우 단순하기 때문에
 휠씬 빨리 일을 처리할 수 있다.
 
-```console {.wrap}
+```console
 $ tcpdump -n -r bond0.2017-12-04_13:54:21.pcap -w not9090.pcap 'not (vlan and ip and port 9090)'
 $ tcpdump -n -r not9090.pcap -w not9090-not10200.pcap 'not (vlan and host 10.200.224.80)'
 $ tcpdump -n -r not9090-not10200.pcap -w not9090-not10200-not10200.pcap 'not (host 10.200.224.80)'
@@ -99,7 +99,7 @@ VLAN Traffic을 제외한 나머지"가 내 관심권이라는 것을 표현하�
 
 또 다른 사건의 기록으로 부터는, 다음과 같은 필터를 적용하기도 하였다.
 
-```console {.wrap}
+```console
 $ tcpdump -n -r dp0bond0.2017-12-05_08:47:53.pcap  'not icmp and not vrrp and not (vlan and ip and port (33389 or 1434))'
 $ 
 ```
@@ -112,7 +112,7 @@ $
 남기고 양을 줄여보자는 것이며, 따라서 이렇게 걸러낸 것들을 다시 적당히
 잘라내어 합쳐줄 필요가 있다.
 
-```console {.wrap}
+```console
 $ tcpdump -n -r dp0bond0.2017-12-05_08:47:53.pcap -w icmp-only.pcap 'icmp'
 $ 
 ```

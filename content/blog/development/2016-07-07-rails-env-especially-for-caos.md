@@ -223,7 +223,7 @@ ActiveRecord의 Field를 만들 수 있게 된다. 아래와 같이, 사용자 �
 (주의할 점은, 이 `digest`를 사용하는 Field의 이름은 `password`로
 고정되어 있다.)
 
-```console {.wrap}
+```console
 $ bundle exec rails g scaffold user mail:uniq name comment:text password:digest password_at:datetime perms:text --no-javascripts --no-stylesheets
 <...>
 $ bundle exec rails g scaffold session user:references login_at:datetime logout_at:datetime --no-javascripts --no-stylesheets
@@ -488,7 +488,7 @@ $
 이제, 해당 기능이 동작할 때, 아래와 같이 메일 발송의 로그가 찍히는 것을
 확인할 수 있다.
 
-```console {.wrap}
+```console
 Started POST "/users" for 127.0.0.1 at 2016-03-23 23:24:25 +0900
 Processing by UsersController#create as HTML
   Parameters: {"utf8"=>"✓", "authenticity_token"=>"Erihuf9pGrLX8iNTYXbXPjx1B1QmoJ9y0Nqzrx1v5mlVXNLHqhSFp0/LAbmGPZ3yxKLQE1B2vLvlSgI5oSqsQQ==", "user"=>{"mail"=>"scinix@gmail.com"}, "commit"=>"등록"}

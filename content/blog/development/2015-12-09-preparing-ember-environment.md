@@ -194,7 +194,7 @@ export NVM_DIR="/home/sio4/.nvm"
 이제 `node.js`를 설치할 차례이다. 다음과 같이, 원하는 버전을 인수로 주고
 `install` 부명령을 사용하게 되면 해당 버전의 `node.js`를 설치할 수 있다.
 
-```console {.wrap}
+```console
 $ nvm install v4.0.0
 Downloading https://nodejs.org/dist/v4.0.0/node-v4.0.0-linux-x64.tar.xz...
 ######################################################################## 100.0%
@@ -244,7 +244,7 @@ $
 수행하여 패키지를 설치하게 되면, **현재경로 아래**에 `node_modules` 라는
 이름의 경로가 생성되고 이 안에 `ember-cli`가 설치된다.
 
-```console {.wrap}
+```console
 $ npm install ember-cli
 npm WARN deprecated lodash-node@2.4.1: This package is no longer maintained. See its readme for upgrade details.
 npm WARN deprecated lodash@2.4.2: lodash@<3.0.0 is no longer maintained. Upgrade to lodash@^3.0.0
@@ -402,7 +402,7 @@ $
 
 또하나 확인할 부분은, 설치 중 출력의 맨 윗부분에 있는 다음 줄이다.
 
-```console {.wrap}
+```console
 /home/sio4/.nvm/versions/node/v4.0.0/bin/ember -> /home/sio4/.nvm/versions/node/v4.0.0/lib/node_modules/ember-cli/bin/ember
 ```
 
@@ -571,7 +571,7 @@ Babel (6)                                     | 527ms (87 ms)
 아닌 중앙에 설치된 패키지의 link로 채워지게 된다. (동일한 패키지를 여러
 프로젝트에서 사용한다면 이런 방식으로 용량을 아낄 수 있다.)
 
-```console {.wrap}
+```console
 $ mkdir project-a
 $ cd project-a
 $ npm link ember-cli
@@ -727,7 +727,7 @@ Ubuntu는 Debian을 기반으로 하는 배포본인데, Debian 자체가 워낙
 다음과 같은 명령을 통하여 `node`라는 명령을 내렸을 때 Node.js가 실행되도록
 해줄 수 있다.
 
-```console {.wrap}
+```console
 $ sudo update-alternatives --install /usr/bin/node node /usr/bin/nodejs 99
 update-alternatives: using /usr/bin/nodejs to provide /usr/bin/node (node) in auto mode
 $ 

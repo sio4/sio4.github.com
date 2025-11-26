@@ -15,7 +15,7 @@ last_modified_at: 2012-03-09T13:57:05+09:00
 
 증상은 이렇다. 먼저 미친 기관차에 `strace`를 걸었을 때,
 
-```console {.wrap}
+```console
 rt_sigaction(SIGALRM, NULL, {0x7f8c00851300, ~[KILL STOP RTMIN RT_1], SA_RESTORER, 0x7f8bffee9060}, 8) = 0
 write(8, "\1\0\0\0\0\0\0\0", 8) = 8
 read(17, 0x7fffe6b5b1b0, 128) = -1 EAGAIN (Resource temporarily unavailable)

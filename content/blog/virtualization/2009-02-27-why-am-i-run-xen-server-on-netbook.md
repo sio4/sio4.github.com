@@ -26,7 +26,7 @@ tistory 접속 자체가 잘 안되었던 것을 감안하면, Firefox의 문제
 
 NC10은 삼성전자의 첫번째 넷북인데, [Intel의 Atom N270 프로세서](http://en.wikipedia.org/wiki/List_of_Intel_Atom_microprocessors#Atom_N2xx_series_.28single-core.29)를 사용하고 있다. CPU 사양을 잠깐 살펴보면,
 
-```console {.wrap}
+```console
 sio4@vios:~$ cat /proc/cpuinfo
 processor : 0
 vendor_id : GenuineIntel

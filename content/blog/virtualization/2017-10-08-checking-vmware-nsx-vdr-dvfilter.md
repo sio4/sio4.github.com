@@ -638,7 +638,7 @@ vSwitch의 특정 포트로 한정된다든지, 양방향 Traffic을 한 번에 
 의 앞단(`--capture PreDVFilter`)에서 즉, Filter를 거치기 직전의, Filter가
 적용되지 않은 Packet을 잡아볼 수 있다.
 
-```console {.wrap}
+```console
 [root@ESXi-04:~] pktcap-uw --capture PreDVFilter --dvfilter nic-36445-eth0-vmware-sfw.2 -o aw2_pre.pcap
 ```
 

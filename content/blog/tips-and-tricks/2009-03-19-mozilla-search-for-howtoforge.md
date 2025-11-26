@@ -21,7 +21,7 @@ IE 역시 그런 기능이 있는 것으로 아는데, 파이어폭스 웹브라
 브라우져에 등록할 수 있도록 하기 위해서는 아래와 같은 형식의 내용을
 웹페이지에 삽입해 두면 된다.
 
-```html {.wrap}
+```html
 <link rel="search" type="application/opensearchdescription+xml" title="My Blog" href="opensearch.xml">
 ```
 

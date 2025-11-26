@@ -89,7 +89,7 @@ Node 중 두 대가 사용할 수 없는 상태가 된다면 남은 한 대가 (
 생략했으며, 생략된 부분은 잘 된다고 보면 된다.)
 
 
-```console {.wrap}
+```console
 ^CNote: a second interrupt will skip graceful shutdown and terminate forcefully initiating graceful shutdown of server
 ^C*
 * ERROR: received signal 'interrupt' during shutdown, initiating hard shutdown - node may take longer to restart & clients may need to wait for leases to expire
@@ -440,7 +440,7 @@ Leaseholder의 수가 튀는지이다. (통계 구간 내 Leaseholder의 합계 
 "음, 이제 Split Brain 상황이니 동작을 멈추겠지?" 라고 생각하며
 CLI를 꺼내 들었다.
 
-```console {.wrap}
+```console
 $ ./cockroach ... sql -e 'select count(*) from compute_resource'
 +--------+
 | count  |
@@ -514,7 +514,7 @@ Leaseholder 선출이 정상적으로 됐네?
 > 한 번에 죽여야 지들끼리 말을 못하지...  
 {.comment}
 
-```console {.wrap}
+```console
 $ ./cockroach ... sql -e 'select count(*) from compute_resource'
 +--------+
 | count  |
@@ -605,7 +605,7 @@ Range가 39개 생겨났다. 그런데, 그 옆에 29라는, 지금까지는 보
 Replica 배치 상태를 확인했다. 아래와 같이, 1번, 2번, 3번, 4번 노드에
 빠짐없이 배치가 되어있고, Leaseholder도 그러했다.
 
-```console {.wrap}
+```console
 $ ./cockroach ... sql -e 'show experimental_ranges from table compute_resource'
 +----------------+----------------+----------+----------+--------------+
 |   Start Key    |    End Key     | Range ID | Replicas | Lease Holder |
@@ -627,7 +627,7 @@ $
 Leaseholder의 배치만 바뀌었다. 특히, 122번 Range는 살아남은 Replica가
 하나 밖에 없는 상태가 되었다.
 
-```console {.wrap}
+```console
 $ ./cockroach ... sql -e 'show experimental_ranges from table compute_resource'
 +----------------+----------------+----------+----------+--------------+
 |   Start Key    |    End Key     | Range ID | Replicas | Lease Holder |
@@ -646,7 +646,7 @@ $
 
 "아하! 이번엔 좀 명확하다." 하며, 가볍게 명령을 날렸다.
 
-```console {.wrap}
+```console
 $ ./cockroach ... sql -e 'select count(*) from compute_resource'
 +--------+
 | count  |
@@ -668,7 +668,7 @@ $
 황당한 얘기지만, 어떤 DBMS에게는 사실일지도... 아무튼, 좀 더 확실히
 Table에 접근한다는 증거를 뽑아보자.
 
-```console {.wrap}
+```console
 $ ./cockroach ... sql -e 'select name from compute_resource' |wc -l
 509542
 $ 
@@ -681,7 +681,7 @@ $
 화면은 생략하지만, 어쨌든 겁나 많은, 36000 건의 데이터가 쑥~ 쑥~ 잘
 들어간다!
 
-```console {.wrap}
+```console
 $ ./cockroach ... sql -e 'select count(*) from compute_resource'
 +--------+
 | count  |
@@ -695,7 +695,7 @@ $
 심지어는, 있지도 않은 Node 2번에 Replica 할당까지 해가며 Range도 하나
 더 만들어졌다...
 
-```console {.wrap}
+```console
 $ ./cockroach ... sql -e 'show experimental_ranges from table compute_resource'
 +----------------+----------------+----------+----------+--------------+
 |   Start Key    |    End Key     | Range ID | Replicas | Lease Holder |
@@ -757,7 +757,7 @@ Node가 1번과 3번이었고, 하필, `INSERT`를 받을 최외각 Range의 Rep
 걸쳐 있는 상태를 얻었다. (사실, 마지막 Range에 대한 부분은 내가 어떤
 Node를 죽이느냐에 따라 조절할 수 있는데, 2번, 4번이 죽이기 편해서...)
 
-```console {.wrap}
+```console
 $ ./cockroach ... sql -e 'show experimental_ranges from table compute_resource'
 +----------------+----------------+----------+----------+--------------+
 |   Start Key    |    End Key     | Range ID | Replicas | Lease Holder |
@@ -777,7 +777,7 @@ $
 
 그리고, 두 Node를 죽인 후, 아래와 같은 상태가 되었다.
 
-```console {.wrap}
+```console
 $ ./cockroach ... sql -e 'show experimental_ranges from table compute_resource'
 +----------------+----------------+----------+----------+--------------+
 |   Start Key    |    End Key     | Range ID | Replicas | Lease Holder |
@@ -817,7 +817,7 @@ Range는 살아남은 Replica가 자기 자신 뿐인 상태에서 새롭게 Lea
 레코드를 찾아서 `UPDATE`를 해봤다.
 
 
-```console {.wrap}
+```console
 $ ./cockroach ... sql -e 'select id,name from compute_resource where id < 387723163815575553' |tail -1
 387723163798962177	test 19860
 $ ./cockroach ... sql -e "update compute_resource set name='update 1' where id = 387723163798962177"
@@ -840,7 +840,7 @@ Cockroach 가용성의 특징 #6 - Range 별 가용성
 그럼 아닌 경우도 봐야하니, 정족수를 채우지 못하고 있는 221번 Range의
 마지막 레코드를 찾아서 동일한 변경을 해보자.
 
-```console {.wrap}
+```console
 $ ./cockroach ... sql -e 'select id,name from compute_resource' |tail -1
 388599867835973635	test 36000
 $ ./cockroach ... sql -e "update compute_resource set name='update in range 221' where id = 388599867835973635"
@@ -873,7 +873,7 @@ $
 
 잘 동작하던 109번 Range에 다시 `UPDATE`를 날려보자.
 
-```console {.wrap}
+```console
 $ ./cockroach ... sql -e 'select id,name from compute_resource where id < 387723163815575553' |tail -1
 387723163798962177	update 1
 $ ./cockroach ... sql -e "update compute_resource set name='update in range 109 again' where id = 387723163798962177"
@@ -885,7 +885,7 @@ $
 
 역시 이번에도 성공이다. 그런데...
 
-```console {.wrap}
+```console
 $ ./cockroach ... sql -e "select count(*) from compute_resource"
 ^C
 $ 
@@ -900,7 +900,7 @@ $
 그리고 여전히, 동일한 `count(*)`를 얼지 않은 Range에 대해서만 던지면
 정상적으로 잘 읽어진다.
 
-```console {.wrap}
+```console
 $ ./cockroach ... sql -e "select count(*) from compute_resource where id > 386608513179123716 and id < 387723163815575553"
 +-------+
 | count |
@@ -920,7 +920,7 @@ $
 죽였던 Node들을 다시 살리고, 혹시나 다시, 아까 `UPDATE` 했던 레코드가
 잘 보존되어 있는지 읽어봤다.
 
-```console {.wrap}
+```console
 $ ./cockroach ... sql -e 'select id,name from compute_resource where id < 387723163815575553' |tail -1
 387723163798962177	update in range 109 again
 $ 
@@ -930,7 +930,7 @@ Node를 모두 살리고, 복구가 완료된 시점에도 업데이트 상태�
 
 그런데! 그런데 이건 뭐냐?
 
-```console {.wrap}
+```console
 $ ./cockroach ... sql -e 'select id,name from compute_resource' |tail -1
 388599867835973635	update in range 221
 $ 

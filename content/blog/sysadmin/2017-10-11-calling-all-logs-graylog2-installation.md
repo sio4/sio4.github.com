@@ -219,7 +219,7 @@ Elastic 저장소로부터 Elasticsearch를 설치한다.
 작성 과정에서 최신 버전에 대한 업데이트는 생략하였으므로, 이 부분은
 따로 확인해야 한다.)
 
-```console {.wrap}
+```console
 $ wget -qO - https://packages.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
 OK
 $ echo "deb https://packages.elastic.co/elasticsearch/2.x/debian stable main" | sudo tee -a /etc/apt/sources.list.d/elasticsearch-2.x.list
@@ -232,7 +232,7 @@ $
 MongoDB는 설치만 하면 바로 사용이 가능하며, Elasticsearch는 기본적으로
 자동시작을 하지 않는다. 먼저, 아래와 같이 `cluster.name`의 설정을 한 후,
 
-```console {.wrap}
+```console
 $ sudo cat /etc/elasticsearch/elasticsearch.yml |grep -v ^#
 $ sudo sed -i 's/.*cluster.name: .*/cluster.name: graylog/' /etc/elasticsearch/elasticsearch.yml
 $ sudo cat /etc/elasticsearch/elasticsearch.yml |grep -v ^#
@@ -242,7 +242,7 @@ $
 
 다음과 같이 서비스 구성과 시작을 해준다.
 
-```console {.wrap}
+```console
 $ sudo systemctl daemon-reload 
 $ sudo systemctl enable elasticsearch.service 
 Synchronizing state of elasticsearch.service with SysV init with /lib/systemd/systemd-sysv-install...
@@ -258,7 +258,7 @@ $
 데이터가 많아졌을 때, 얼마나 많은 메모리를 쓰게 될지, 성능이 어떻게 될지
 써 가면서 확인해야 할 것 같다.
 
-```console {.wrap}
+```console
 $ sudo systemctl status elasticsearch.service 
 ● elasticsearch.service - Elasticsearch
    Loaded: loaded (/usr/lib/systemd/system/elasticsearch.service; enabled; vendo
@@ -293,7 +293,7 @@ $
 
 다음과 같은 방식으로, Graylog의 저장소를 시스템에 등록하고 설치를 진행한다.
 
-```console {.wrap}
+```console
 $ wget https://packages.graylog2.org/repo/packages/graylog-2.0-repository_latest.deb
 $ sudo dpkg -i graylog-2.0-repository_latest.deb
 Selecting previously unselected package graylog-2.0-repository.
@@ -307,7 +307,7 @@ $
 
 저장소 업데이트 이후에 `graylog-server` 패키지를 통해 설치해준다.
 
-```console {.wrap}
+```console
 $ sudo apt-get install graylog-server
 <...>
 The following NEW packages will be installed:
@@ -342,7 +342,7 @@ $
 
 다음과 같이, 구동에 앞서 암호를 설정해주어야 한다.
 
-```console {.wrap}
+```console
 $ cat /etc/graylog/server/server.conf |grep '^\(root_password\|password\)'
 password_secret =
 root_password_sha2 =
@@ -373,7 +373,7 @@ $
 
 동일하게, 다음과 같이 서비스 등록 및 시작을 해준다.
 
-```console {.wrap}
+```console
 $ sudo systemctl daemon-reload
 $ sudo systemctl enable graylog-server.service
 Synchronizing state of graylog-server.service with SysV init with /lib/systemd/systemd-sysv-install...
@@ -385,7 +385,7 @@ $
 
 기동에 약간의 시간이 걸리는데, 최종적으로 다음과 같은 상태가 된다.
 
-```console {.wrap}
+```console
 $ sudo systemctl status graylog-server.service
 ● graylog-server.service - Graylog server
    Loaded: loaded (/usr/lib/systemd/system/graylog-server.service; enabled; vend
@@ -407,7 +407,7 @@ $
 막혀 있는데...
 
 
-```console {.wrap}
+```console
 $ grep web_listen_uri /etc/graylog/server/server.conf
 #web_listen_uri = http://127.0.0.1:9000/
 $ sudo sed -i 's,#web_listen_uri.*,web_listen_uri = http://10.10.10.9:80/,' /etc/graylog/server/server.conf
