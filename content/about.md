@@ -1,6 +1,7 @@
 ---
 layout: page
 title: About Yonghwan SO
+subtitle: 옛날엔 홈페이지마다 방명록이라는 게 있었는데 말이죠...
 comments: true
 ---
 

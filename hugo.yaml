@@ -7,6 +7,9 @@ description: >
   소용환의 경험과 생각을 모아두는 개인의 구름 속 저장소입니다.
   주로 소프트웨어 개발, 인프라 문제, 클라우드 컴퓨팅에 대한 이야기가 있습니다.
 
+pygmentsCodeFences: true
+pygmentsUseClasses: true
+
 params:
   subtitle: Free Software, Cloud Computing, and Troubleshooting
   favicon: /images/favicon.ico
