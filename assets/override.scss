@@ -673,33 +673,79 @@ img {
 }
 */
 
+// ---------------------------------------------------------------------------
 // --- for mobile ------------------------------------------------------------
-/*
 @media only screen and (max-width: 767px) {
-	body {
-		font-size: 15px;
-	}
-	.intro-header .page-heading h1,
-	.intro-header .post-heading h1,
-	h1 { font-size: 34px; }
-	h2 { font-size: 28px; }
-	h3 { font-size: 22px; }
-	h4 { font-size: 18px; }
-	h5 { font-size: 15px; }
-	p {
-		word-break: normal;
-	}
-	.container {
-		padding-right: 0.5em;
-		padding-left: 0.5em;
-		article.blog-page p,
-		article.blog-post p {
-			line-height: 1.6;
+body {
+	font-size: 15px;
+}
+
+// --- navbar --------------------------
+.navbar-custom {
+	.navbar-toggle {
+		border-color: transparent;
+		&:focus, &:hover {
+			background-color: transparent;
 		}
 	}
 }
 
+// --- post header ---------------------
+.intro-header {
+	&.big-img { // homepage
+		.page-heading {
+			h1 { font-size: 2.4em; }
+		}
+	}
+
+	.categories-heading, .tags-heading,
+	.projects-heading, .page-heading, .blog-heading, .post-heading { // common
+		.projects-subheading, .page-subheading,
+		.blog-subheading, .post-subheading {
+			font-size: 1.2em;
+		}
+	}
+
+	.categories-heading, .tags-heading,
+	.projects-heading, .page-heading {
+		h1 { font-size: 2.0em; }
+	}
+
+	.blog-heading, .post-heading { // articles
+		h1 { font-size: 1.6em; }
+	}
+}
+
+// --- post preview --------------------
+.post-preview {
+	a {
+		.post-title { font-size: 1.6em; }
+		.post-subtitle { font-size: 1.2em; }
+	}
+}
+
+// --- post body -----------------------
+article.blog-page,
+article.blog-post {
+	h1 { font-size: 1.8em; }
+	h2 { font-size: 1.6em; }
+	h3 { font-size: 1.4em; }
+	h4 { font-size: 1.2em; }
+	h5 { font-size: 1.0em; }
+
+	p {
+		line-height: 1.6;
+		word-break: normal; // can break within a word
+	}
+}
+
+// --- footer --------------------------
+footer { font-size: 0.8em; }
+
+} // --- end of mobile -------------------------------------------------------
+
 // --- for printing ----------------------------------------------------------
+/*
 @media print {
 	body {
 		font-size: 16pt;
