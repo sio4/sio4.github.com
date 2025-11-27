@@ -11,6 +11,7 @@ pygmentsCodeFences: true
 pygmentsUseClasses: true
 
 params:
+  homeTitle: 소용환의 생각 저장소
   subtitle: Free Software, Cloud Computing, and Troubleshooting
   favicon: /images/favicon.ico
   logo: /images/sauru-20150806.jpg
