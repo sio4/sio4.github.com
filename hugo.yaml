@@ -53,6 +53,9 @@ markup:
         title: true
       wrapStandAloneImageWithinParagraph: false
 
+pagination:
+  pagerSize: 20
+
 # the following two lines are super important to make the permalink the same
 # as before /blog/file-name-without-date-part
 frontmatter:
