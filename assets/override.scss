@@ -339,12 +339,14 @@ div.barchart {
 // --- post header -----------------------------------------------------------
 .intro-header {
 	&.big-img { // homepage
+		color: $color-header;
 		.page-heading {
 			h1 {
 				font-size: 3.0em;
 				text-shadow: 2px 2px 2px $color-dark;
 			}
 			hr.small {
+				color: darken($color-header, 15%);
 				box-shadow: 1px 1px 2px $color-dark;
 			}
 		}

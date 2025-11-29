@@ -37,5 +37,5 @@ IT 엔지니어 입니다.  좋게 표현한다면 **IT 멀티플레이어**라�
 * [Github 속의 소용환](https://github.com/sio4)
 * [Facebook 속의 소용환](https://facebook.com/yonghwan.so)
 * [StackOverflow Profile](https://stackoverflow.com/users/1111002/sio4)
-* (잘 안 쓰지만) [Linkedin 속의 소용환](https://linkedin.com/in/scinix)
+* [Linkedin 속의 소용환](https://linkedin.com/in/scinix)
 {.angle}

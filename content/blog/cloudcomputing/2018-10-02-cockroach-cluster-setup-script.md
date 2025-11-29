@@ -232,7 +232,7 @@ install cockroach on store-2 (store-2.int.seo01.mgmt, 198.0.2.158)
 같은 값들, 예를 들어 설치 위치나 소유자, 소프트웨어 버전 등의 값은 딱
 한 번 쓰이더라도 변수로 만들어 놓는 것이 좋다.
 
-```shell
+```shell {linenos=inline hl_lines="6"}
 #!/bin/bash
 #
 # setup script for cockroach cluster

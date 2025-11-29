@@ -9,6 +9,7 @@ description: >
 
 pygmentsCodeFences: true
 pygmentsUseClasses: true
+pygmentsCodefencesGuessSyntax: true
 
 params:
   homeTitle: 소용환의 생각 저장소
@@ -67,7 +68,7 @@ timeZone: Asia/Seoul # it is required when the datetime comes from the filename
 
 menus:
   main:
-    - name: About
+    - name: Who am I
       pageRef: /about
       weight: 10
     - name: Projects
