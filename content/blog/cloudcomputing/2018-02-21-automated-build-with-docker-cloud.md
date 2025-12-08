@@ -3,10 +3,10 @@ title: "Docker Cloud에서 자동빌드하기"
 subtitle: Setting Automated Build on Docker Cloud
 tags: ["Docker", "Container", "Github", "cloud-computing"]
 categories: ["cloudcomputing"]
-image: /attachments/docker/docker-cloud.automated-build.png
+images: [/attachments/docker/docker-cloud.automated-build.png]
 banner: /attachments/docker/docker-cloud.automated-build.png
 date: 2018-02-21T17:30:00+0900
-last_modified_at: 2018-03-09T13:16:00+0900
+lastmod: 2018-03-09T13:16:00+0900
 ---
 "['쓸만한' Docker Image 만들기 - Part 2]"에서 Docker Cloud에 Image를 올리는
 과정에 대해서 정리하면서, Docker Hub, Docker Cloud 등의 화면을 잠깐 봤다.

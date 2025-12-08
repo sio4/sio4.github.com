@@ -1,8 +1,6 @@
-baseURL: https://sio4.github.io/
-languageCode: ko-kr
-defaultContentLanguage: ko
+baseURL: https://sio4.github.io
 title: 소용환의 생각 저장소
-theme: beautifulhugo
+theme: beautiful
 description: >
   소용환의 경험과 생각을 모아두는 개인의 구름 속 저장소입니다.
   주로 소프트웨어 개발, 인프라 문제, 클라우드 컴퓨팅에 대한 이야기가 있습니다.
@@ -14,6 +12,8 @@ pygmentsCodefencesGuessSyntax: true
 params:
   homeTitle: 소용환의 생각 저장소
   subtitle: Free Software, Cloud Computing, and Troubleshooting
+  signature: |
+    "And in the end, the love you take is equal to the love you make." -- the Beatles
   favicon: /images/favicon.ico
   logo: /images/sauru-20150806.jpg
   bigimg:
@@ -33,11 +33,26 @@ params:
   hideAuthor: true
   author:
     name: Yonghwan SO
+    url: https://sio4.github.io/about/
     github: sio4
     stackoverflow: users/1111002/sio4
     linkedin: scinix
     facebook: yonghwan.so
   #disclaimerText: All the opinions here are my own
+
+defaultContentLanguage: ko
+
+languages:
+  ko:
+    languageCode: ko-KR
+    languageName: Korean
+    weight: 1
+    title: 소용환의 생각 저장소
+  en:
+    languageCode: en-US
+    languageName: English
+    weight: 2
+    title: Yonghwan's Garage
 
 services:
   disqus:

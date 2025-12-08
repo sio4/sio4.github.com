@@ -1,6 +1,6 @@
 ---
 title: "Howto: PXE 부팅 설정 (HP DL Series)"
-image: /attachments/20150917-pxe-6-e51.jpg
+images: [/attachments/20150917-pxe-6-e51.jpg]
 tags: ["howto", "PXE", "hardware"]
 categories: ["tips-and-tricks"]
 date: 2015-09-17 11:23:00+09:00

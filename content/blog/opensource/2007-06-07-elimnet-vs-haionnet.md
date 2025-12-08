@@ -4,7 +4,7 @@ title: 엘림넷 대 하이온넷 사건
 tags: ["open-source", "copyright"]
 categories: ["opensource"]
 date: 2007-06-07T13:27:36+09:00
-last_modified_at: 2008-03-09T01:41:35+09:00
+lastmod: 2008-03-09T01:41:35+09:00
 ---
 오래된 사건인데, 이번에 개인적인 관심으로 다시 한 번 찾아보게 되었다.
 오픈소스, 특히 GPL 라이센스와 관련되어 국내에서 화재가 된 첫번째 사건이

@@ -1,10 +1,10 @@
 ---
 title: "T&T: Linux Bridge로 네트워크 문제 추적하기 - vSphere 편"
-image: /attachments/20150827-linux-bridge-0.png
+images: [/attachments/20150827-linux-bridge-0.png]
 tags: ["Linux", "network", "troubleshooting", "VMware", "ARP"]
 categories: ["tips-and-tricks"]
 date: 2015-08-27 09:26:33+09:00
-last_modified_at: 2017-10-20 20:49:37+09:00
+lastmod: 2017-10-20 20:49:37+09:00
 ---
 "[Linux Bridge로 네트워크 문제 추적하기]({{< relref "/blog/tips-and-tricks/2015-08-21-troubleshooting-w-linux-bridge" >}})"에서
 얘기했던 것과 같이, 리눅스의

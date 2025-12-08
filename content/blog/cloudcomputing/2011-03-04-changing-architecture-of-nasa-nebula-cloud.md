@@ -4,7 +4,7 @@ title: NASA Nebula Cloud의 아키텍쳐 변경
 tags: ["cloud-computing", "Eucalyptus", "NASA", "OpenStack", "rules-of-action"]
 categories: ["cloudcomputing"]
 date: 2011-03-04T13:14:52+09:00
-last_modified_at: 2011-03-04T13:14:52+09:00
+lastmod: 2011-03-04T13:14:52+09:00
 ---
 NASA Nebula Cloud의 아키텍쳐에 관한 뒤늦은 소식.
 <!--more-->

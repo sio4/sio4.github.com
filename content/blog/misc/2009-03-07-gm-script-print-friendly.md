@@ -4,7 +4,7 @@ title: "GM Script: Print Friendly WebPage."
 tags: ["Firefox", "GreaseMonkey"]
 categories: ["misc"]
 date: 2009-03-07T22:11:23+09:00
-last_modified_at: 2010-07-02T10:34:03+09:00
+lastmod: 2010-07-02T10:34:03+09:00
 ---
 이쁘게 잘 만들어진 웹페이지도 출력하려고 보면 지저분하거나 쓸모없게
 출력되는 경우가 많다. 물론, 예전부터 print용 페이지를 별도로 제공하거나

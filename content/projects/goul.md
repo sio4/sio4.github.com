@@ -3,12 +3,12 @@ title: Goul, Cloud Port Mirroring
 subtitle: Mirror Your Cloud Network Traffic over the Internet
 tags: ["Goul", "cloud-computing", "network", "monitoring", "security", "golang"]
 repository: https://github.com/hyeoncheon/goul
-image: /attachments/goul/goul-flow-all-client.png
+images: [/attachments/goul/goul-flow-all-client.png]
 comments: true
 social-share: true
 translate: true
 date: 2017-09-29T17:12:00+09:00
-last_modified_at: 2017-10-07 23:50:00 +0900
+lastmod: 2017-10-07 23:50:00 +0900
 ---
 
 Goul(거울; Mirror in English) is a tool for virtual network port mirroring
@@ -19,7 +19,7 @@ May useful especially for cloud computing environment.
 [![Go Report Card](https://goreportcard.com/badge/github.com/hyeoncheon/goul)](https://goreportcard.com/report/github.com/hyeoncheon/goul)
 [![Code Climate](https://codeclimate.com/github/hyeoncheon/goul/badges/gpa.svg)](https://codeclimate.com/github/hyeoncheon/goul)
 [![Coverage Status](https://coveralls.io/repos/github/hyeoncheon/goul/badge.svg?branch=master)](https://coveralls.io/github/hyeoncheon/goul?branch=master)
-{.inline-badges .centered}
+{.inline-badges .text-center}
 
 On legacy infrastructure, with many physical switches, we can use a
 [port mirroring] ([SPAN; Switched Port Analyzer] in Cisco's term) on the
@@ -424,7 +424,7 @@ CONFIGURED PORT. IT CAN BREAK YOUR ENTIRE NETWORK.
 
 ## Author
 
-Yonghwan SO <https://github.com/sio4>, <https://sauruso.com>
+Yonghwan SO <https://github.com/sio4>, <https://sio4.github.io/about/>
 
 
 ## Copyright (GNU General Public License v3.0)

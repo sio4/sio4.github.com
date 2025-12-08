@@ -4,7 +4,7 @@ title: 유튜브를 거실에서 볼 수 있는게 취미라고라?!
 tags: ["IPTV", "Youtube", "multimedia", "convergence", "rules-of-action"]
 categories: ["wind-of-change"]
 date: 2007-06-01T13:23:22+09:00
-last_modified_at: 2011-03-04T13:30:19+09:00
+lastmod: 2011-03-04T13:30:19+09:00
 ---
 유튜브를 거실에서 볼 수 있게 된단다.
 <!--more-->

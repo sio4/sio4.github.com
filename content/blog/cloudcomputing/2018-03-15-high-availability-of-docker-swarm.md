@@ -3,7 +3,7 @@ title: Docker Swarm의 고가용성
 subtitle: 서비스 가용성을 보장하기 위한 Swarm 클러스터 구성 방법
 tags: ["Docker", "orchestration", "high-availability", "Container", "cloud-computing"]
 categories: ["cloudcomputing"]
-image: /attachments/docker/docker-swarm-ha.png
+images: [/attachments/docker/docker-swarm-ha.png]
 banner: /attachments/docker/docker-swarm-ha.png
 date: 2018-03-15T23:55:00+0900
 ---
@@ -15,7 +15,7 @@ Docker의 기본 Orchestration 도구인 Swarm의 기본적인 구성에 대하�
 <!--more-->
 
 ![](/attachments/docker/docker-swarm-ha.png)
-{.centered .half}
+{.text-center .half}
 
 아... 그림을 조금씩 손봐서 각각의 영역에 맞게 표현해보고 있는데... 어찌
 어설프다. 아무튼,
@@ -181,7 +181,7 @@ Swarm 클러스터의 실제 구성은 매우 단순하다. Swarm의 매력 중 
 
 ![](/attachments/docker/swarm-cluster-large.png)
 독립적인 Manager Pool을 구성한 예
-{.caption .centered}
+{.caption .text-center}
 
 이 경우, Manager가 관리업무에만 헌신하게 되면 반대로 모든 업무 부하는
 Worker에 집중되며 만약 갑작스런 업무 부하로 인해 Process가 자원할당을
@@ -208,7 +208,7 @@ Drain 상태로 바꾸면 된다.
 
 ![](/attachments/docker/swarm-cluster-small.png)
 Manager와 Worker가 혼합된 구성의 예
-{.caption .centered}
+{.caption .text-center}
 
 이런 경우라면, 전체 Node를 Worker로 사용하면서 그 중 몇 대만 Manager로
 사용할 수 있다. 또한, 언제든지 추가 Node를 구성하거나 Manager Node를

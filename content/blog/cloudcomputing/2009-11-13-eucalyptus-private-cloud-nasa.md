@@ -4,7 +4,7 @@ title: Eucalyptus, Private Cloud, NASA,...
 tags: ["Eucalyptus", "NASA", "cloud-computing"]
 categories: ["cloudcomputing"]
 date: 2009-11-13T08:45:30+09:00
-last_modified_at: 2011-03-04T13:45:48+09:00
+lastmod: 2011-03-04T13:45:48+09:00
 ---
 Eucalyptus에 관한 이야기 몇 개 더.
 <!--more-->

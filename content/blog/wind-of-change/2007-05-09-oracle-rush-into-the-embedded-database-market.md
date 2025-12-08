@@ -4,7 +4,7 @@ title: 오픈소스, 임베디드, 그리고 메이져리그
 tags: ["berkeley-db", "wind-of-change", "Oracle", "open-source", "embedded", "news"]
 categories: ["wind-of-change"]
 date: 2007-05-09T10:36:34+09:00
-last_modified_at: 2010-07-02T13:28:46+09:00
+lastmod: 2010-07-02T13:28:46+09:00
 ---
 메이져리그 데이터베이스 전문업체인 오라클이 임베디드 소프트웨어 사업을
 강화한다는 기사가 나왔다.

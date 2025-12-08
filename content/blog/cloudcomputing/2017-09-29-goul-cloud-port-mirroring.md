@@ -4,10 +4,10 @@ subtitle: Mirror Your Cloud Network Traffic over the Internet
 tags: ["goul", "network", "cloud-computing", "monitoring", "security", "golang"]
 categories: ["cloudcomputing"]
 repository: https://github.com/hyeoncheon/goul
-image: /attachments/goul/goul-flow-all-client.png
+images: [/attachments/goul/goul-flow-all-client.png]
 banner: /attachments/goul/goul-flow-all-client.png
 date: 2017-09-29T17:12:00+09:00
-last_modified_at: 2017-10-07 23:50:00 +0900
+lastmod: 2017-10-07 23:50:00 +0900
 ---
 네트워크를 다루기가 상대적으로 어려운 클라우드컴퓨팅 환경을 겨냥한
 네트워크 포트 미러링 솔루션을 찾다가, 도저히 기능이나 비용 면에서

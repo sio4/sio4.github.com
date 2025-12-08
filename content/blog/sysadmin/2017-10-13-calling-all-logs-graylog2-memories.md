@@ -4,7 +4,7 @@ subtitle: 모든 로그를 한 곳에서 관리하고 분석하세요
 tags: ["Graylog2", "logging", "monitoring", "cloud-computing"]
 categories: ["sysadmin"]
 repository: https://github.com/hyeoncheon/goul
-image: /attachments/graylog2/graylog-logo.png
+images: [/attachments/graylog2/graylog-logo.png]
 date: 2017-10-13T10:30:00+09:00
 ---
 [Graylog]는 짧은 시간 동안 시험을 했지만 꽤 만족스러웠던 시스템이었다.

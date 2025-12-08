@@ -3,9 +3,9 @@ title: 모니터링은 경보가 아니라 해석
 subtitle: Elastic Stack을 활용해서 서비스 이벤트 해석하기
 tags: ["monitoring", "analytics", "elastic-stack", "cloud-computing"]
 categories: ["cloudcomputing"]
-image: /attachments/silrok/silrok-dashboard-current.png
+images: [/attachments/silrok/silrok-dashboard-current.png]
 date: 2017-11-23T17:15:00+0900
-last_modified_at: 2017-11-24T18:08:00+0900
+lastmod: 2017-11-24T18:08:00+0900
 ---
 사실, 나를 아는 사람들은 믿지 않을 수도 있지만, 나는 조금 강하게 말해서
 운영관점의 모니터링에 대하여 매우 회의적이다. 거의 무용론자에 가깝다.

@@ -1,0 +1,14 @@
+{
+  "@context": "http://schema.org",
+  "@type": "Person",
+  "name": "Yonghwan SO",
+  "description": "",
+  "image": "https://sio4.github.io/images/sauru-20150806.jpg",
+  "url": "https://sio4.github.io/about/",
+  "sameAs": [
+    "https://github.com/sio4",
+    "https://stackoverflow.com/users/1111002/sio4",
+    "https://www.facebook.com/yonghwan.so",
+    "https://linkedin.com/in/scinix"
+  ]
+}

@@ -2,7 +2,7 @@
 title: Jekyll로 Github Pages에 블로깅하기, Re!oaded
 tags: ["Jekyll", "Github", "Github-Pages", "blogging", "Disqus", "social-network"]
 categories: ["productivity"]
-image: /attachments/20150808-ghp-reloaded-1.png
+images: [/attachments/20150808-ghp-reloaded-1.png]
 date: 2015-08-08 23:04:33+09:00
 ---
 몇 주 전

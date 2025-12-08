@@ -3,7 +3,7 @@ title: Elasticsearch 다시 Indexing하기
 subtitle: 왜 혼자 바뀌고 그래!
 tags: ["elastic-stack", "tips"]
 categories: ["cloudcomputing"]
-image: /attachments/es-misc/reindex-2.png
+images: [/attachments/es-misc/reindex-2.png]
 date: 2018-09-17T15:40:00+0900
 ---
 내가 하고싶어서 한 것이 아니다. 그냥 가만히 두고 싶은 시스템인데... 어쩌다

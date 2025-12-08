@@ -3,6 +3,7 @@ layout: page
 title: About Yonghwan SO
 subtitle: 옛날엔 홈페이지마다 방명록이라는 게 있었는데 말이죠...
 comments: true
+suppressMeta: true
 ---
 
 안녕하세요, 소용환의 생각저장소에 들려주시고 이렇게 "About"까지 봐주시는

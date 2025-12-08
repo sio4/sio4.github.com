@@ -3,10 +3,10 @@ title: "Docker: 나의 첫 Docker Image"
 subtitle: Build and Push my own Docker Image
 tags: ["Docker", "Container", "cloud-computing"]
 categories: ["cloudcomputing"]
-image: /logos/docker-horizontal.800.png
+images: [/logos/docker-horizontal.800.png]
 banner: /logos/docker-horizontal.800.png
 date: 2018-02-14T13:20:00+0900
-last_modified_at: 2018-03-09T13:16:00+0900
+lastmod: 2018-03-09T13:16:00+0900
 ---
 프로그램이 메모리에 올라와 제어를 넘겨 받으면 프로세스가 되고, Disk 위의
 Kernel Image가 메모리에 올라오면 컴퓨터가 살아난다. 이렇게, 컴퓨터 세상은

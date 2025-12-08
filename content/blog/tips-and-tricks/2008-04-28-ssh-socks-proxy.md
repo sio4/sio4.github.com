@@ -3,7 +3,7 @@ title: SSH SOCKS Proxy, 그리고 보안
 tags: ["security", "network", "SSH"]
 categories: ["tips-and-tricks"]
 date: 2008-04-28T00:08:59+09:00
-last_modified_at: 2008-04-28T00:08:59+09:00
+lastmod: 2008-04-28T00:08:59+09:00
 ---
 다음달부터 본격적으로, 새 회사에서의 첫 프로젝트에 객원 맴버로써
 참여하게 되었다. 그런데 바로 떨어진 당면 문제가, 고객사의 네트워크

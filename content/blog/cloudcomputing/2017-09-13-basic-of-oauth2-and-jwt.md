@@ -2,10 +2,10 @@
 title:  OAuth2와 JWT, 웹기반 SSO 인증
 tags: ["cloud-computing", "UART", "authentication", "OAuth2", "JWT", "single-sign-on", "API"]
 categories: ["cloudcomputing"]
-image: /attachments/20170913-oauth2/oauth2-generic.png
+images: [/attachments/20170913-oauth2/oauth2-generic.png]
 banner: /attachments/20170913-oauth2/oauth2-generic.png
 date: 2017-09-13 03:00:00 +0900
-last_modified_at: 2017-10-07 23:50:00 +0900
+lastmod: 2017-10-07 23:50:00 +0900
 ---
 인터넷 기반 서비스, 특히 Cloud Computing 환경에서 개발되는 Application이라면
 웹이든 모바일이든 꼭 사용하게 되고야 마는 OAuth2와 JWT, 그것을 바탕으로 하는

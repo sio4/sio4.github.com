@@ -3,7 +3,7 @@ title: "The C Family of Languages: Interview with..."
 tags: ["c-language"]
 categories: ["misc"]
 date: 2009-11-05T02:07:59+09:00
-last_modified_at: 2009-11-05T02:07:59+09:00
+lastmod: 2009-11-05T02:07:59+09:00
 ---
 [Interview with Dennis Ritchie, Bjarne Stroustrup, James Gosling](http://www.gotw.ca/publications/c_family_interview.htm)
 

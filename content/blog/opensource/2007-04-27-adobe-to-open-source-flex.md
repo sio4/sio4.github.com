@@ -4,7 +4,7 @@ title: '"Adobe to Open Source Flex"'
 tags: ["Adobe", "open-source", "java"]
 categories: ["opensource"]
 date: 2007-04-27T00:37:29+09:00
-last_modified_at: 2008-03-09T02:25:13+09:00
+lastmod: 2008-03-09T02:25:13+09:00
 ---
 일전에 이미 ActionScript를 모질라재단에 기증(?)했었지 않나? 아무튼, 또
 하나의 친구가 반갑기도 하고 점점 번저가는 이런 움직임이 놀랍기도 하고...

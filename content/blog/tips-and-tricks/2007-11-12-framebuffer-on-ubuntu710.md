@@ -4,7 +4,7 @@ title: Ubuntu 7.10 에서 프레임버퍼 콘솔 사용하기
 tags: ["hardware", "Ubuntu"]
 categories: ["tips-and-tricks"]
 date: 2007-11-12T15:54:53+09:00
-last_modified_at: 2010-07-02T10:54:04+09:00
+lastmod: 2010-07-02T10:54:04+09:00
 ---
 요즘은 "우분투(Ubuntu)"라는 이름의 배포본을 사용하고 있는데 그럭저럭
 맘에 든다. (라이브 CD로부터 ) 설치할 때 아무것도 묻지 않고 그냥 판박이를

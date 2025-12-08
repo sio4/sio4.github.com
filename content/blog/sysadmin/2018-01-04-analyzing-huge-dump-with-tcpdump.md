@@ -3,7 +3,7 @@ title: Vyatta 네트워크 문제 추적 Part 3 - DUMP
 subtitle: tcpdump를 이용한 거대 Dump의 효율적인 분석방법
 tags: ["Vyatta", "packet-analysis", "troubleshooting", "tcpdump", "network"]
 categories: ["sysadmin"]
-image: /attachments/vyatta-troubleshooting/breaking-lacp.png
+images: [/attachments/vyatta-troubleshooting/breaking-lacp.png]
 banner: /attachments/vyatta-troubleshooting/breaking-lacp.png
 date: 2018-01-04T17:30:00+09:00
 ---

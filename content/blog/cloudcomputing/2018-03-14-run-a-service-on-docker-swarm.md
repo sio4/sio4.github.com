@@ -3,7 +3,7 @@ title: Docker Swarm에 Service 올려보기
 subtitle: Docker Swarm 방식으로 서비스 생명주기 관리하기
 tags: ["Docker", "Container", "orchestration", "high-availability", "cloud-computing"]
 categories: ["cloudcomputing"]
-image: /attachments/docker/docker-swarm-service.png
+images: [/attachments/docker/docker-swarm-service.png]
 banner: /attachments/docker/docker-swarm-service.png
 date: 2018-03-14T18:40:00+0900
 ---

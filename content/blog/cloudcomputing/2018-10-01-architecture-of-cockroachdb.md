@@ -3,7 +3,7 @@ title: CockroachDB Architecture
 subtitle: CockroachDB의 구조 설계에 대한 짧은 이해
 tags: ["DBMS", "cloud-computing", "Architecture"]
 categories: ["cloudcomputing"]
-image: /attachments/cockroachdb/arch/crdb-execution-flow.png
+images: [/attachments/cockroachdb/arch/crdb-execution-flow.png]
 banner: /attachments/cockroachdb/arch/crdb-execution-flow.png
 date: 2018-10-01T14:30:00+0900
 ---

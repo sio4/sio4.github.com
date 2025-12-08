@@ -3,10 +3,10 @@ title: "'쓸만한' Docker Image 만들기 - Part 2"
 subtitle: Build and Push a Docker Image For Go Development
 tags: ["Docker", "Container", "golang", "cloud-computing"]
 categories: ["cloudcomputing"]
-image: /attachments/docker/docker-cloud-banner.png
+images: [/attachments/docker/docker-cloud-banner.png]
 banner: /attachments/docker/go-alpine-docker.png
 date: 2018-02-20T23:00:00+0900
-last_modified_at: 2018-03-09T13:16:00+0900
+lastmod: 2018-03-09T13:16:00+0900
 ---
 "Hello World 급" Image 작성을 맛봤던 "[Docker: 나의 첫 Docker Image]", 그리고
 Alpine Linux를 활용하여 C Library를 포함한 "운영체계급" 기반 Image를 만들었던

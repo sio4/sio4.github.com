@@ -3,10 +3,10 @@ title: "Docker Machine 다시 보기"
 subtitle: A Little More About Docker Machine
 tags: ["Docker", "Container", "SoftLayer", "cloud-computing"]
 categories: ["cloudcomputing"]
-image: /attachments/docker/docker-machine-more.jpg
+images: [/attachments/docker/docker-machine-more.jpg]
 banner: /attachments/docker/docker-machine-more.jpg
 date: 2018-03-09T21:44:00+0900
-last_modified_at: 2018-03-17T00:30:00+0900
+lastmod: 2018-03-17T00:30:00+0900
 ---
 Docker Engine을 탑재한 Dockerized Host, Docker Node를 손쉽게 펼쳤다가, 다시
 모았다가 하는 용도로 Docker Machine을 적절히 활용할 수 있을지 확인하기 위해
@@ -19,7 +19,7 @@ Docker Engine을 탑재한 Dockerized Host, Docker Node를 손쉽게 펼쳤다�
 
 ![](/attachments/docker/docker-machine.jpg)
 Dock!ron Man vs. War Machine!
-{.caption .centered}
+{.caption .text-center}
 
 > Docker에 대한 이 묶음글은 아직 몇 개를 쓸지 정하지 못했다. 써보고,...
 > 
@@ -362,7 +362,7 @@ $
 ![](/attachments/docker/docker-machine-10-keys.png)
 참고: Docker Machine에 의해 자동 생성된 ssh key는 SoftLayer 관리콘솔에도
 함께 등록된다. (이후, Provisioning 시 참조됨)
-{.caption .centered}
+{.caption .text-center}
 
 
 ### Provision, Regenerate Certs, and Upgrade
@@ -532,7 +532,7 @@ $
 
 ![](/attachments/docker/docker-machine-01-create.png)
 Virtual Server Instance가 생성되는 과정을 SoftLayer 관리콘솔에서 확인한 모습
-{.caption .centered}
+{.caption .text-center}
 
 
 ### 유용한 옵션들
@@ -711,7 +711,7 @@ $
 
 ![](/attachments/docker/docker-machine-02-remove.png)
 기계를 지운 후, 관리콘솔에서 Cancellation 요청이 접수된 것을 확인할 수 있음
-{.caption .centered}
+{.caption .text-center}
 
 
 ### Start, Stop, Kill and Restart
@@ -740,7 +740,7 @@ $
 
 ![](/attachments/docker/docker-machine-03-kill.png)
 전원 강제 차단에 의해, 연결이 끊어지고 네트워크 모니터링 경보가 발생한 상태
-{.caption .centered}
+{.caption .text-center}
 
 그리고,
 
@@ -828,7 +828,7 @@ Production에서 쓰려면 `softlayer` Driver에 대하여 Provider의 API 특�
 ![](/attachments/docker/docker-machine-04-restarted.png)
 VSI가 되살아나는 모습을 SoftLayer 관리콘솔에서 확인한 모습: 경보는 아직
 남아있고 연결은 되지 않았으나, 전원이 켜져 있음
-{.caption .centered}
+{.caption .text-center}
 
 마지막으로, `restart` 명령은 이렇게,
 

@@ -3,10 +3,10 @@ title: Elastic Stack 6.0 설치하기
 subtitle: Elastic Stack을 활용해서 서비스 이벤트 해석하기
 tags: ["elastic-stack", "analytics", "cloud-computing", "howto"]
 categories: ["cloudcomputing"]
-image: /attachments/elastic-stack/kibana-6.0-discover.png
+images: [/attachments/elastic-stack/kibana-6.0-discover.png]
 banner: /attachments/elastic-stack/kibana-6.0-init.png
 date: 2017-11-22T19:15:00+0900
-last_modified_at: 2017-11-24T18:07:00+0900
+lastmod: 2017-11-24T18:07:00+0900
 ---
 서로 독립적인 버전체계를 사용하면서 개별 제품의 연합군 같은 느낌이 더 강했던
 ELK Stack, 즉 Elasticsearch, Logstash, Kibana는 이제 버전체계를 통일하고

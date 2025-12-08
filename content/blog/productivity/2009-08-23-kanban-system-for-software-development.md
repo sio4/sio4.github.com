@@ -6,7 +6,7 @@ title: 간판 시스템을 소프트웨어 개발에
 tags: ["Kanban", "Toyota", "agile", "project"]
 categories: ["productivity"]
 date: 2009-08-23T02:37:00+09:00
-last_modified_at: 2011-03-04T13:42:58+09:00
+lastmod: 2011-03-04T13:42:58+09:00
 ---
 간판 시스템(kanban; 일본식 발음, 도요타에서 유래했다나? )은 말하자면 일종의
 "상황판"같은 것이다. 소프트웨어 개발의 관점에서 말하자면, 넓은 판에 개발의

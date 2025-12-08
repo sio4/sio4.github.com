@@ -3,10 +3,10 @@ title: Kibana Visual Builder로 이벤트 묶어 보기
 subtitle: Elastic Stack을 활용해서 서비스 이벤트 해석하기
 tags: ["monitoring", "analytics", "elastic-stack", "cloud-computing"]
 categories: ["cloudcomputing"]
-image: /attachments/silrok/silrok-visualbuilder-pl-annotations.png
+images: [/attachments/silrok/silrok-visualbuilder-pl-annotations.png]
 banner: /attachments/silrok/silrok-visualbuilder-pl-annotations.png
 date: 2017-11-24T14:05:00+0900
-last_modified_at: 2017-11-24T18:09:00+0900
+lastmod: 2017-11-24T18:09:00+0900
 ---
 앞선 글 "[모니터링은 경보가 아니라 해석]"에서, 기존 모니터링 환경의 한계
 중 하나로 "기능 단위의 고립"과 "서비스 관점의 통찰 부재"를 들었다. 개별

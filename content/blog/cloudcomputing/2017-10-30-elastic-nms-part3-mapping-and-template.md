@@ -3,7 +3,7 @@ title: "Elastic NMS Part 3: Mapping과 Template"
 subtitle: Elastic Stack을 바탕으로 NMS 만들기
 tags: ["elastic-stack", "logging", "monitoring", "cloud-computing", "analytics"]
 categories: ["cloudcomputing"]
-image: /attachments/elastic-nms/elastic-architecture.png
+images: [/attachments/elastic-nms/elastic-architecture.png]
 date: 2017-10-30T13:45:00+0900
 ---
 Elastic Stack은 사용자가 원하는 다양한 유형의 자료를 저장하고, 검색하고,

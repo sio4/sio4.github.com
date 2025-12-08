@@ -4,7 +4,7 @@ title: '"Sun Microsystems to Acquire innotek"'
 tags: ["news", "sun-microsystems", "VirtualBox", "wind-of-change", "open-source"]
 categories: ["opensource"]
 date: 2008-02-16T16:03:57+09:00
-last_modified_at: 2008-03-09T02:38:58+09:00
+lastmod: 2008-03-09T02:38:58+09:00
 ---
 얼마전, 오픈소스 데이터베이스 벤더인 MySQL AB를 흡수하여 날 놀라게 했던
 Sun Microsystems가 다시 오픈소스 가상화 솔루션 벤더인 Innotek을 인수했다.

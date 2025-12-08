@@ -3,7 +3,7 @@ title: 옥션 회원정보 유출
 tags: ["personal-information", "disclosure"]
 categories: ["misc"]
 date: 2008-04-21T15:23:49+09:00
-last_modified_at: 2008-04-21T15:23:49+09:00
+lastmod: 2008-04-21T15:23:49+09:00
 ---
 "옥션 회원정보 유출 사고"
 

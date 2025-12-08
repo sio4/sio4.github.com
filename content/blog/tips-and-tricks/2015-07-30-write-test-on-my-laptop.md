@@ -3,7 +3,7 @@ redirect_from: /blog/2015/07/30/write-test-on-my-laptop/
 title: 처참한 디스크 쓰기 성능 시험
 tags: ["disk", "recovery", "performance", "test", "TestDisk", "Ubuntu"]
 categories: ["tips-and-tricks"]
-image: /attachments/2015-07-30-testdisk.png
+images: [/attachments/2015-07-30-testdisk.png]
 date: 2015-07-30 22:49:34+09:00
 ---
 뭐, 낯 뜨거운 일이지만 IT를 생업으로 하고 있고, 십년이 넘도록 친구나

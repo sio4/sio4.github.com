@@ -4,7 +4,7 @@ title: 클라우드 답기 위하여... Deltacloud - Many Clouds, One API
 tags: ["DeltaCloud", "RedHat", "API", "ruby-on-rails", "hybrid-cloud", "cloud-computing"]
 categories: ["cloudcomputing"]
 date: 2010-07-12T10:32:13+09:00
-last_modified_at: 2011-03-04T13:44:04+09:00
+lastmod: 2011-03-04T13:44:04+09:00
 ---
 궁극적으로, [클라우드 컴퓨팅](http://en.wikipedia.org/wiki/Cloud_computing)이
 사용자에게 제공하는 이득 중에서 가장 핵심적인 것이 사용자의 IT를 유연하게

@@ -3,7 +3,7 @@ title: Getting Started with Docker Swarm
 subtitle: 나무토막 모아서 뗏목 만들기
 tags: ["Docker", "Container", "orchestration", "high-availability", "cloud-computing"]
 categories: ["cloudcomputing"]
-image: /attachments/docker/docker-swarm-cluster.png
+images: [/attachments/docker/docker-swarm-cluster.png]
 banner: /attachments/docker/docker-swarm-cluster.png
 date: 2018-03-13T21:30:00+0900
 ---
@@ -16,7 +16,7 @@ Orchestration 도구**이다.
 <!--more-->
 
 ![](/logos/docker-swarm-detail.png)
-{.centered .half}
+{.text-center .half}
 
 지나치게 빠른 속도로 변해가는 정보기술 분야가, 심지어 영어권을 중심으로
 발전하다 보니 만나게 되는 문제 중 하나가 바로 영어로 된 용어 문제다.

@@ -4,7 +4,7 @@ title: 남에게 일을 주었다. 언제 검수해야 하는가?
 tags: ["project", "rules-of-action"]
 categories: ["development"]
 date: 2007-11-21T22:34:21+09:00
-last_modified_at: 2010-07-02T19:05:35+09:00
+lastmod: 2010-07-02T19:05:35+09:00
 ---
 한참 전에 글을 시작했다가 덮어두고, 이제야 다시 써본다.
 

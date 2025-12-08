@@ -4,7 +4,7 @@ title: 환상적! Ruby on Rails를 위한 PaaS 서비스!
 tags: ["development", "Git", "Heroku", "ruby-on-rails"]
 categories: ["cloudcomputing"]
 date: 2009-11-13T08:43:00+09:00
-last_modified_at: 2011-03-04T13:43:24+09:00
+lastmod: 2011-03-04T13:43:24+09:00
 ---
 Ruby on Rails 개발자를 겨냥한 상용 PaaS(Platform as a Service)
 서비스이다. 대충 봐도 멋지네! 다음에 찬찬히 들여다보자.

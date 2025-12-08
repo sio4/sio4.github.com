@@ -6,7 +6,7 @@ title: Apache+JSP 환경에서 쫌 동적인 ErrorDocument
 tags: ["error-handling", "monitoring", "development", "service"]
 categories: ["tips-and-tricks"]
 date: 2011-11-07T02:41:38+09:00
-last_modified_at: 2011-11-07T02:45:42+09:00
+lastmod: 2011-11-07T02:45:42+09:00
 ---
 이번 글은 좀 색다른 주제다. Apache+JSP 환경에서 동적인 ErrorDocument
 작성하기. 웹 관련 개발은 놓은 지가 오래인 데다가... JSP라고는 눈꼽만큼도

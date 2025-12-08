@@ -3,7 +3,7 @@ title: "Elastic NMS Part 4: Kibana로 Visualize하기"
 subtitle: Elastic Stack을 바탕으로 NMS 만들기
 tags: ["elastic-stack", "logging", "monitoring", "cloud-computing", "analytics"]
 categories: ["cloudcomputing"]
-image: /attachments/elastic-nms/elk-403-tile-map.jpg
+images: [/attachments/elastic-nms/elk-403-tile-map.jpg]
 banner: /attachments/elastic-nms/elk-403-tile-map.jpg
 date: 2017-10-30T18:10:00+0900
 ---

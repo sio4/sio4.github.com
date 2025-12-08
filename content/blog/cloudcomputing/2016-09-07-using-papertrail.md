@@ -2,7 +2,7 @@
 title: Cloud App에서 PaperTrail 사용하기
 tags: ["logging", "monitoring", "cloud-computing"]
 categories: ["cloudcomputing"]
-image: /attachments/papertrail/ptrail-101-concept.jpg
+images: [/attachments/papertrail/ptrail-101-concept.jpg]
 banner: /attachments/papertrail/ptrail-101-concept.jpg
 date: 2016-09-07 15:00:00 +0900
 ---
@@ -22,7 +22,7 @@ Papertrail이라는 서비스의 개요를 살펴봤다.  서비스 모델을 �
 작업을 할 수 있는 길을 제공하는 서비스이다.
 
 ![](/attachments/papertrail/ptrail-101-concept.jpg)
-{.r34 .centered .bordered}
+{.r34 .text-center .bordered}
 
 이번 글은, Cloud 위에 구성된 CAOS 앱에 이 서비스를 붙이는 과정을
 기록하려고 한다. 실제로 Papertrail을 살펴보고 사용한 이유는, 앞선
@@ -59,7 +59,7 @@ Syslog에 필요한 설정을 추가하는 방식과 Application의 비표준 �
 Log Destinations에서 설정을 할 수 있도록 하고 있다.
 
 ![](/attachments/papertrail/ptrail-405-destinations.png)
-{.fit .centered .bordered}
+{.fit .text-center .bordered}
 
 Destination은 `hostname:port` 형태로 제공되는데, Destination 당 서버와
 Port를 달리하여 여러 Destination을 구성할 수 있다.
@@ -168,7 +168,7 @@ superhero@caos:~$
 로그를 찾아볼 수 있다. 그리고 경보의 발생은, 이러한 검색을 바탕으로 한다.
 
 ![](/attachments/papertrail/ptrail-210-filtered.png)
-{.fit .centered .bordered}
+{.fit .text-center .bordered}
 
 ## 경보! 상황발생!
 
@@ -179,7 +179,7 @@ Slack에 메시지를 보내는 URL을 정의하고 있다. (이 부분은 좀 �
 필요하지만, 우리의 주제는 아니니까 생략)
 
 ![](/attachments/papertrail/ptrail-321-alert-edit.png)
-{.fit .centered .bordered}
+{.fit .text-center .bordered}
 
 이번에는 Application 개발자가 명시적으로 경보를 발생시킬 수 있도록
 사전에 정의된 경보를 만들어봤다. 단순히, `ALERT`라는 문자열이 보이면
@@ -187,7 +187,7 @@ Slack에 메시지를 보내는 URL을 정의하고 있다. (이 부분은 좀 �
 이렇게 두 가지 검색에 대한 경보가 Slack 앱에 수신된 모습이다.
 
 ![](/attachments/papertrail/ptrail-slack-alert.png)
-{.half .centered .bordered}
+{.half .text-center .bordered}
 
 이렇게 되면, 개발자는 자신이 경보를 받고 싶은 로그를 생성할 때,
 의도적으로 ALERT이라는 문자열을 추가하여 경보를 받도록 프로그래밍을

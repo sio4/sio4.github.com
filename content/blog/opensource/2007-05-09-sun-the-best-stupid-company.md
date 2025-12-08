@@ -4,7 +4,7 @@ title: '"썬: 오픈소스로 사업을 하는 가장 멍청한 기업" 인가?'
 tags: ["sun-microsystems", "open-source"]
 categories: ["opensource"]
 date: 2007-05-09T16:57:54+09:00
-last_modified_at: 2008-03-09T02:07:16+09:00
+lastmod: 2008-03-09T02:07:16+09:00
 ---
 이런 의견도 있다.  
   

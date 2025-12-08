@@ -2,7 +2,7 @@
 title: SoftLayer Object Storage와 임시 URL
 tags: ["SoftLayer", "object-storage", "cloud-computing", "API", "Ruby", "swift", "Github"]
 categories: ["development"]
-image: /attachments/20160322-sl-objs-002.png
+images: [/attachments/20160322-sl-objs-002.png]
 date: 2016-03-22 12:12:00 +09:00
 ---
 잠깐 짬을 내서, 지난 주말에 SoftLayer의 Object Storage를 활용하는 개발의

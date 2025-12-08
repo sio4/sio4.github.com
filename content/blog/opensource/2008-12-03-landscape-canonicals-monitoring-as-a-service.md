@@ -6,7 +6,7 @@ title: 'Landscape: Canonical의 새로운 "Monitoring as a Service"'
 tags: ["Canonical", "Ubuntu", "monitoring", "cloud-computing", "as-a-service"]
 categories: ["opensource"]
 date: 2008-12-03T01:08:32+09:00
-last_modified_at: 2011-03-04T13:46:36+09:00
+lastmod: 2011-03-04T13:46:36+09:00
 ---
 휴~ 이러니 내가 캐노니칼/우분투를 좋아하지 않을 수 없단 말이지.
 

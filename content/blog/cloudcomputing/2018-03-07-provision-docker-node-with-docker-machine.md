@@ -3,10 +3,10 @@ title: "Docker Machine으로 Docker Node 뿌리기"
 subtitle: Docker is Not In My BackYard, But on the Cloud!
 tags: ["Docker", "Container", "SoftLayer", "cloud-computing"]
 categories: ["cloudcomputing"]
-image: /attachments/docker/docker-machine.jpg
+images: [/attachments/docker/docker-machine.jpg]
 banner: /attachments/docker/docker-machine.jpg
 date: 2018-03-07T22:16:00+0900
-last_modified_at: 2018-03-09T13:16:00+0900
+lastmod: 2018-03-09T13:16:00+0900
 ---
 Docker를 개인 목적이 아닌 어느 정도 규모가 있는 서비스를 위해 사용하려고
 한다면, Container가 구동될 복수의 Host Node를 어떻게 쉽게 관리할 것인지

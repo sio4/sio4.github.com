@@ -6,7 +6,7 @@ title: sio4, SiO4 Tetrahedron, 나의 브랜드
 tags: ["brand", "geology"]
 categories: ["life-and-me"]
 date: 2008-03-25T00:55:07+09:00
-last_modified_at: 2010-07-02T15:07:01+09:00
+lastmod: 2010-07-02T15:07:01+09:00
 ---
 우리가 밟고 있는 이 땅, 지각을 이루는 수많은 물질들 중에서 가장 많은
 것이 산소(O)와 규소(Si)입니다.[^1] 이 흔해빠진, 발에 치이는 O 네개가

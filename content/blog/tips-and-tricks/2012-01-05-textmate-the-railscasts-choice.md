@@ -4,7 +4,7 @@ title: TextMate, RailsCast의 선택? :-)
 tags: ["open-source", "utility"]
 categories: ["tips-and-tricks"]
 date: 2012-01-05T19:20:19+09:00
-last_modified_at: 2012-01-05T19:21:56+09:00
+lastmod: 2012-01-05T19:21:56+09:00
 ---
 이 세상이... TextMate라는 편집기가 있었다. 나만 몰랐나? 엄청 좋아보인다.
 <!--more-->

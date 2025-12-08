@@ -3,7 +3,7 @@ title: "Understanding Full Virtualization, Paravirtualization, and..."
 tags: ["virtualization", "VMware", "white-paper"]
 categories: ["virtualization"]
 date: 2007-11-19T16:07:37+09:00
-last_modified_at: 2007-11-19T16:07:37+09:00
+lastmod: 2007-11-19T16:07:37+09:00
 ---
 VMware가 처음 세상에 "가상화" 소프트웨어을 발표한 것이 약 10년 전의
 일이다. 그 시작과 거의 때를 같이 하여, 난 IT 일을 하기 시작하였고,

@@ -4,7 +4,7 @@ title: VirtualBox, Ubuntu, 그리고 USB
 tags: ["Ubuntu", "hardware", "VirtualBox"]
 categories: ["misc"]
 date: 2009-03-09T22:47:19+09:00
-last_modified_at: 2010-07-02T23:00:54+09:00
+lastmod: 2010-07-02T23:00:54+09:00
 ---
 버추얼박스, 우분투, 그리고 USB 지원. 그동안 VMWare Workstation에 대한
 대안[^1]으로 VirtualBox를 사용한 지가 한 3년 쯤 되는 것 같다. 시작은

@@ -4,7 +4,7 @@ title: Eucalyptus, Open Source CloudComputing Platform
 tags: ["Eucalyptus", "open-source", "cloud-computing"]
 categories: ["cloudcomputing"]
 date: 2009-11-13T08:42:26+09:00
-last_modified_at: 2011-03-04T13:49:16+09:00
+lastmod: 2011-03-04T13:49:16+09:00
 ---
 가상화/클라우드컴퓨팅 프로젝트 중에서 근래에 가장 관심이 가는 곳이 바로
 오픈소스 클라우드 컴퓨팅 플렛폼인 Eucalyptus이다. 대학 연구에서 시작하여

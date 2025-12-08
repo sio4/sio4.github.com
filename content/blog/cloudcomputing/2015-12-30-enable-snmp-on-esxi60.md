@@ -2,7 +2,7 @@
 title: vSphere ESXi의 SNMP 서비스 활성화하기
 tags: ["SNMP", "Net-SNMP", "VMware", "ESXi"]
 categories: ["cloudcomputing"]
-image: /attachments/20151230-snmp-000.png
+images: [/attachments/20151230-snmp-000.png]
 date: Wed, 30 Dec 2015 13:20:15 +0900
 ---
 이 글은 VMware vSphere ESXi Host의 원격 모니터링을 위하여 SNMP 서비스를

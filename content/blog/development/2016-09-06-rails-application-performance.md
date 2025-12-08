@@ -2,7 +2,7 @@
 title: "CAOS #3 Rails Application의 성능 분석"
 tags: ["profiling", "performance", "ruby-on-rails", "Ruby"]
 categories: ["development"]
-image: /attachments/20160428-caos/caos-performance.png
+images: [/attachments/20160428-caos/caos-performance.png]
 banner: /attachments/20160428-caos/caos-performance.png
 date: 2016-09-06 03:00:00 +0900
 ---

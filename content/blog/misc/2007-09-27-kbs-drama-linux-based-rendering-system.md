@@ -4,7 +4,7 @@ title: KBS 드라마, 리눅스 기반 렌더링「효과만점」
 tags: ["Linux", "rendering", "animation", "memories"]
 categories: ["misc"]
 date: 2007-09-27T09:54:03+09:00
-last_modified_at: 2007-09-27T09:54:03+09:00
+lastmod: 2007-09-27T09:54:03+09:00
 ---
 렌더맨은 미국의 유명한 애니메이션 스튜디오인 Pixar에서 만들어서
 자신들의 애니메이션 제작에 사용하면서 동시에 판매를 하고 있는

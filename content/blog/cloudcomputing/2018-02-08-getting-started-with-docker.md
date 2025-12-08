@@ -3,10 +3,10 @@ title: "Docker: Getting Started with Docker"
 subtitle: Docker 시작하기
 tags: ["Docker", "Container", "cloud-computing"]
 categories: ["cloudcomputing"]
-image: /logos/docker-horizontal.800.png
+images: [/logos/docker-horizontal.800.png]
 banner: /logos/docker-horizontal.800.png
 date: 2018-02-08T10:00:00+0900
-last_modified_at: 2018-03-09T13:16:00+0900
+lastmod: 2018-03-09T13:16:00+0900
 ---
 예상하지 못했던 여유가 생겨서, 미루고 또 미뤘던 주제를 하나 정리하려고 한다.
 이미 많은 사람들에게 친숙한 기술용어가 되어버린 Container, 그리고 그 시대를

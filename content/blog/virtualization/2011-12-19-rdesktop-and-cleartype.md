@@ -6,7 +6,7 @@ title: "VDI: rdesktop과 ClearType"
 tags: ["virtualization", "VDI", "remote-terminal"]
 categories: ["virtualization"]
 date: 2011-12-19T14:42:24+09:00
-last_modified_at: 2011-12-19T14:43:20+09:00
+lastmod: 2011-12-19T14:43:20+09:00
 ---
 요즘 회사에서는 업무 환경에 VDI를 구축하겠다고 난리다. 뭐 난리는 아니겠지만
 그냥 그렇게 표현했다. 오늘은 POC를 한다고 VMware View Client를 설치하라고...

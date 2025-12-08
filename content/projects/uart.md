@@ -7,7 +7,7 @@ comments: true
 social-share: true
 translate: true
 date: 2017-09-29T01:28:00+09:00
-last_modified_at: 2017-10-07 23:50:00 +0900
+lastmod: 2017-10-07 23:50:00 +0900
 ---
 UART is an Universal Authorizaion, Role and Team management service software.  
 UART was developed to succeed my old SiSO project, the original SSO service

@@ -4,7 +4,7 @@ title: 왜 screen을 사용하지 않는가?
 tags: ["Linux", "operation", "tips", "open-source", "utility"]
 categories: ["tips-and-tricks"]
 date: 2007-05-11T10:45:29+09:00
-last_modified_at: 2008-03-09T02:01:23+09:00
+lastmod: 2008-03-09T02:01:23+09:00
 ---
 기술자들이여, 왜 screen을 사용하지 않는가? 싸잡아서 "기술자들이여" 라고
 말한 부분은 좀 문제가 있다. 공격적인, 과격해보이는 과장이랄까? 그런데 정말,

@@ -2,7 +2,7 @@
 title: "VMware NSX: VDR/DVFilter 정보확인"
 tags: ["NSX", "VMware", "virtualization", "network"]
 categories: ["virtualization"]
-image: /logos/vmware-nsx-logo.png
+images: [/logos/vmware-nsx-logo.png]
 banner: /logos/vmware-nsx-logo.png
 date: 2017-10-08T16:40:00+09:00
 ---

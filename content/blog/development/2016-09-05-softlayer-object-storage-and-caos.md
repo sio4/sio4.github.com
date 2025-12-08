@@ -2,7 +2,7 @@
 title: "CAOS #2 SoftLayer Object Storage 다루기"
 tags: ["object-storage", "SoftLayer", "cloud-computing", "my-projects", "photo"]
 categories: ["development"]
-image: /attachments/20160428-caos/caos-200-album-list.png
+images: [/attachments/20160428-caos/caos-200-album-list.png]
 date: 2016-09-05 23:56:00 +0900
 ---
 이번 시리즈를 통해서 배운 것이 하나 있다면, 글을 쓰려거든 딱 그 주제

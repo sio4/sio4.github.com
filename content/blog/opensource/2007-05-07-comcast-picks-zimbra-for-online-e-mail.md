@@ -4,7 +4,7 @@ title: '"Comcast picks Zimbra for online e-mail"'
 tags: ["Zimbra", "virtualization", "user-oriented", "software-appliance", "open-source"]
 categories: ["opensource"]
 date: 2007-05-07T14:18:06+09:00
-last_modified_at: 2008-03-09T02:14:21+09:00
+lastmod: 2008-03-09T02:14:21+09:00
 ---
 오라... 대세는 역시 오픈소스?
 

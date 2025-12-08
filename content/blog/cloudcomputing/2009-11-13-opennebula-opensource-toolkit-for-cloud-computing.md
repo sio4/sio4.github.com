@@ -4,7 +4,7 @@ title: "OpenNebula: 클라우드 컴퓨팅을 위한 오픈소스 도구"
 tags: ["OpenNebula", "virtualization", "open-source", "cloud-computing"]
 categories: ["cloudcomputing"]
 date: 2009-11-13T08:45:42+09:00
-last_modified_at: 2011-03-04T13:50:20+09:00
+lastmod: 2011-03-04T13:50:20+09:00
 ---
 "조금 복잡해 보인다"는 알량한 이유로 시험을 위해 설치만 한 후 방치해버린
 서버 가상화/클라우드 컴퓨팅 솔루션이 하나 있는데, 그 "알량한 이유"가 합당치

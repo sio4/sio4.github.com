@@ -3,7 +3,7 @@ title: 소프트웨어 어플라이언스,
 tags: ["software-appliance", "virtualization", "Linux"]
 categories: ["virtualization"]
 date: 2008-04-21T16:03:53+09:00
-last_modified_at: 2008-04-21T16:03:53+09:00
+lastmod: 2008-04-21T16:03:53+09:00
 ---
 확실히, 이젠 소프트웨어 어플라이언스가 대세다. 다만, 그 시장성을 어떻게
 키울 수 있을지가 아직 숙제라면 숙제.

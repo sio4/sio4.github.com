@@ -1,0 +1,14 @@
+{
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  "mainEntity": {
+    "@type": "Person",
+    "name": "Yonghwan SO",
+    "description": "Defender of Truth",
+    "image": "https://example.com/avatars/ahuff23.jpg",
+    "sameAs": [
+      "https://www.example.com/real-angelo",
+      "https://example.com/profile/therealangelohuff"
+    ]
+  }
+}

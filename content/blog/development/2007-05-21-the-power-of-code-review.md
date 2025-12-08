@@ -4,7 +4,7 @@ title: '"The Power of Code Review"'
 tags: ["version-control", "development", "collaboration", "code-review"]
 categories: ["development"]
 date: 2007-05-21T14:15:45+09:00
-last_modified_at: 2010-07-02T18:59:11+09:00
+lastmod: 2010-07-02T18:59:11+09:00
 ---
 코드리뷰에 대한 좋은 글이 있어서 인용한다. 그런데, 한 문장도 빼놓기가
 아까운게... 잔뜩 인용해버렸다. :-)
