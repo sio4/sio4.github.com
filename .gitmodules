@@ -1,4 +1,3 @@
-[submodule "themes/beautifulhugo"]
-	path = themes/beautifulhugo
-	url = https://github.com/sio4/beautifulhugo
-	branch = prod
+[submodule "themes/beautiful"]
+	path = themes/beautiful
+	url = https://github.com/sio4/beautiful
