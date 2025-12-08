@@ -325,8 +325,8 @@ $
 이제, 새 버전에 맞는 새로운 Index 세트를 갖게 되었다.
 
 
-이 글은 [Elastic Stack](/tags/elastic-stack/) 묶음글의 외전입니다~!
-{.mix-boxed .mix-round}
+> 이 글은 [Elastic Stack](/tags/elastic-stack/) 묶음글의 외전입니다~!
+{.boxed}
 
 
 

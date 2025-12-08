@@ -1,8 +1,6 @@
-
+.*
 
 # hugo temorary files
 public/
-.hugo_build.lock
-
-# scss related, but the name is too bad
 resources/
+.hugo_build.lock

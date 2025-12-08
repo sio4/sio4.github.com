@@ -187,7 +187,7 @@ Slack에 메시지를 보내는 URL을 정의하고 있다. (이 부분은 좀 �
 이렇게 두 가지 검색에 대한 경보가 Slack 앱에 수신된 모습이다.
 
 ![](/attachments/papertrail/ptrail-slack-alert.png)
-{.half .text-center .bordered}
+{.w-50 .text-center .bordered}
 
 이렇게 되면, 개발자는 자신이 경보를 받고 싶은 로그를 생성할 때,
 의도적으로 ALERT이라는 문자열을 추가하여 경보를 받도록 프로그래밍을

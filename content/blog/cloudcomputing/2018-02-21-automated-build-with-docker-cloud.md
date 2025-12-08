@@ -42,7 +42,7 @@ Image를 자동으로 만들어내도록 설정하는 과정**에 대해서 설�
 # Docker Cloud
 
 ![](/attachments/docker/docker-cloud.00.side-menu.png)
-{.dropshadow .pull-right .inline .bordered}
+{.dropshadow .float-end .bordered .ms-4}
 
 기존의 [Docker Hub]가 Docker Repository 및 Registry 서비스를 제공했었다면,
 [Docker Cloud]는 이것을 조금 더 확장하여 간소하게나마 서비스 배포 프로세스
@@ -59,10 +59,7 @@ Image를 저장하는 공간인 Repository는 BUILD 아래에, 그리고 Contain
 정리했는데, 이 때 Image가 올라간 Repository가 바로 이 BUILD 범주 안의
 Repository이다. 이 글에서 다루려 하는 Image 빌드 자동화 기능은 바로 이
 부분에서 제공하는 기능이다.
-
-
----
-{.mix-clear}
+{.clearfix}
 
 
 # Docker Cloud, Automated Build
@@ -163,7 +160,7 @@ Repository의 Builds 메뉴에 가면, 아래와 같은 환영 메시지를 볼 
 
 그런데, 내 경우는 설정한 저장소가 아래와 같은 디렉터리 계층구조를 갖는다.
 
-```console
+```console {.dropshadow}
 $ tree 
 .
 ├── README.md
@@ -320,7 +317,7 @@ Build된 것으로 표시되어 있고, 마지막으로 맨 아래 "ReadMe" 부�
 > 아무튼, Docker Cloud! 이거 쓸만하다?
 
 
-> #### 공식문서
+> ##### 공식문서
 > * [Docker Cloud > Manage builds and images > Automated builds](https://docs.docker.com/docker-cloud/builds/automated-build/)
 > * [Docker Hub > Automated builds](https://docs.docker.com/docker-hub/builds/)
 > * [Docker Hub > Webhooks for automated builds](https://docs.docker.com/docker-hub/webhooks/)

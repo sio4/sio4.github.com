@@ -1,4 +1,0 @@
-{{- $options := dict "transpiler" "libsass" "targetPath" "css/override.css" -}}
-{{ with resources.Get "override.scss" | toCSS $options | minify | fingerprint }}
-  <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
-{{ end -}}

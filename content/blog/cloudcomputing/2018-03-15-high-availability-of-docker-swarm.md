@@ -15,7 +15,7 @@ Docker의 기본 Orchestration 도구인 Swarm의 기본적인 구성에 대하�
 <!--more-->
 
 ![](/attachments/docker/docker-swarm-ha.png)
-{.text-center .half}
+{.text-center .w-50}
 
 아... 그림을 조금씩 손봐서 각각의 영역에 맞게 표현해보고 있는데... 어찌
 어설프다. 아무튼,
@@ -206,7 +206,7 @@ Drain 상태로 바꾸면 된다.
 운영할 경우, 그리고 부하에 대한 예측이 가능한 경우라면 구태여 Manager를
 구분할 필요가 없을 수 있다.
 
-![](/attachments/docker/swarm-cluster-small.png)
+![Manager와 Worker가 혼합된 구성의 예](/attachments/docker/swarm-cluster-small.png "Manager와 Worker가 혼합된 구성의 예")
 Manager와 Worker가 혼합된 구성의 예
 {.caption .text-center}
 
@@ -832,7 +832,7 @@ $
 
 
 > Happy Docking!!!
-{.comment .mix-xlarge}
+{.comment .fs-4}
 
 
 [Raft Consensus Algorithm]:http://thesecretlivesofdata.com/raft/

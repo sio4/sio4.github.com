@@ -16,7 +16,7 @@ Orchestration 도구**이다.
 <!--more-->
 
 ![](/logos/docker-swarm-detail.png)
-{.text-center .half}
+{.text-center .w-50}
 
 지나치게 빠른 속도로 변해가는 정보기술 분야가, 심지어 영어권을 중심으로
 발전하다 보니 만나게 되는 문제 중 하나가 바로 영어로 된 용어 문제다.
@@ -460,7 +460,7 @@ Swarm standalone을 설치/관리하는 방식을 사용할 때에 사용되는 
 
 
 > Happy Docking!!!
-{.comment .mix-xlarge}
+{.comment .fs-4}
 
 
 

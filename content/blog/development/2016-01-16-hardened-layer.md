@@ -646,7 +646,7 @@ UI를 직접적으로 고려하는 부분은 전혀 없으며 단지 API의 응�
 수도 있을 것이라고 생각한다.
 
 ![](/attachments/20160116-backend-as-an-api.png)
-{.half .text-center .dropshadow}
+{.w-50 .text-center .dropshadow}
 
 > "Backend as an API" 는 단지 좋은 Architecture일 뿐만 아니라 개발팀 구조에도
 > 좋다.

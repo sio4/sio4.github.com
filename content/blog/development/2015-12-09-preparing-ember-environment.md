@@ -12,7 +12,7 @@ Ember-CLI 환경을 구성하고 Ember.js 프로젝트를 진행할 수 있는 �
 <!--more-->
 
 ![](/attachments/20151209-embercli-npm-nodejs.png)
-{.half .dropshadow}
+{.w-50 .dropshadow}
 
 ## 시대의 변화와 나의 목표
 

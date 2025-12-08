@@ -57,7 +57,7 @@ date: 2018-03-15T23:55:00+0900
 레이블입니다..."라는 말도 사양한다는 말도 했던 것 같다. 
 
 ![](/images/common/label.jpg)
-{.twothird}
+{.w-75}
 
 "[Docker Machine 다시 보기 #라벨! 라벨! 라벨!]({{< relref "/blog/cloudcomputing/2018-03-09-little-more-about-docker-machine.md" >}}#라벨-라벨-라벨)"에서
 Engine을 구성할 때 `--engine-label` 옵션을 사용하면 특정 엔진에게
@@ -420,7 +420,7 @@ Docker Swarm을 활용한 재미난 기능들에 대해 간단히 알아봤다. 
 
 
 > Happy Docking!!!
-{.comment .mix-xlarge}
+{.comment .fs-4}
 
 
 

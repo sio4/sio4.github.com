@@ -941,7 +941,7 @@ Task에 대한 할당 또는 재할당은 Task의 새로운 할당, 장애 발�
 
 
 > Happy Docking!!!
-{.comment .mix-xlarge}
+{.comment .fs-4}
 
 
 
