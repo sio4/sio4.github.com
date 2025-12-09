@@ -176,10 +176,10 @@ rotate 되어 사라지는) 로그가 없도록 해줘야 할 필요가 있으�
 * Elastic Stack 6.0의 기능을 중심으로 다시 살펴봤던
   "[Kibana Visual Builder로 이벤트 묶어 보기]" 외 3 편
 
-[PaperTrail, Cloud에서는 Cloud 로그를!]:{{< relref "/blog/cloudcomputing/2016-09-07-cloud-log-papertrail.md" >}}
+[PaperTrail, Cloud에서는 Cloud 로그를!]:{{< relref "/blog/cloud-computing/2016-09-07-cloud-log-papertrail.md" >}}
 [Calling All Logs! Graylog2 1편: 설치하기]:{{< relref "/blog/sysadmin/2017-10-11-calling-all-logs-graylog2-installation.md" >}}
-[Elastic NMS Part 2: Syslog 원격로깅]:{{< relref "/blog/cloudcomputing/2017-10-30-elastic-nms-part2-syslog-remote-logging.md" >}}
-[Kibana Visual Builder로 이벤트 묶어 보기]:{{< relref "/blog/cloudcomputing/2017-11-24-aggregate-events-with-visual-builder.md" >}}
+[Elastic NMS Part 2: Syslog 원격로깅]:{{< relref "/blog/cloud-computing/2017-10-30-elastic-nms-part2-syslog-remote-logging.md" >}}
+[Kibana Visual Builder로 이벤트 묶어 보기]:{{< relref "/blog/cloud-computing/2017-11-24-aggregate-events-with-visual-builder.md" >}}
 
 
 대체로, 다음 두 가지 조건인 경우에는 로그를 살피는 것으로도 충분히 장애의
