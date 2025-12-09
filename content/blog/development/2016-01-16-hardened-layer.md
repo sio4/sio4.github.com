@@ -67,7 +67,15 @@ API App이 담당하는 기능은 SoftLayer API의 Response를 내 용도나 기
 API App을 중심으로, 두 Module이 동작하는 방식은 아래와 같다.
 
 
-{{< mermaid >}}
+```mermaid
+---
+config:
+  sequence:
+    width: 250
+    height: 40
+    showSequenceNumbers: true,
+    mirrorActors: false
+---
 sequenceDiagram
     participant Hardened Console
     participant Hardened Layer
@@ -82,7 +90,8 @@ sequenceDiagram
     Note over Hardened Layer: 정보 병합 (계정+이미지+VM)
     Hardened Layer-->>-Hardened Console: 병합된 정보 반환
     Note over Hardened Console: Model화, View 제공
-{{< /mermaid >}}
+```
+
 
 ## API App 설계 기준
 

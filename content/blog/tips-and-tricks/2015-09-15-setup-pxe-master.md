@@ -115,15 +115,22 @@ PXE는 어떤가? PXE는 이와 같은 관점에서, 다음과 같은 일을 수
 앞서 말한, PXE Boot loader가 해야하는 일을 뒤집으면 바로 PXE의 업무
 흐름이 된다. 다음 그림을 보면 쉽게 이해할 수 있을 것 같다.
 
-{{< mermaid >}}
+```mermaid
+---
+config:
+  sequence:
+    width: 250
+    height: 40
+    showSequenceNumbers: true,
+    mirrorActors: false
+---
 sequenceDiagram
-    Server->>PXE Master: 1) 여기 PXE 마스터 있나요? 나 11:22:33:11:22:22 인데...
-    PXE Master->>Server: 2) 나다. 넌 192.168.0.10 번 쓰고, pxelinux 줄게
-    Server->>PXE Master:  3) 넵! pxelinux 파일 주세요
-    PXE Master-->>+Server: 4) 받아랏!!!
-    Server->>-Server: 5) 메모리 적제, 제어 전환
-{{< /mermaid >}}
-
+    Server->>PXE Master: 여기 PXE 마스터 있나요? 나 11:22:33:11:22:22 인데...
+    PXE Master->>Server: 나다. 넌 192.168.0.10 번 쓰고, pxelinux 줄게
+    Server->>PXE Master:  넵! pxelinux 파일 주세요
+    PXE Master-->>+Server: 받아랏!!!
+    Server->>-Server: 메모리 적제, 제어 전환
+```
 
 먼저, PXE로 부팅하려는 Server은 아직 IP 주소도 가지고 있지 않고, 부팅을
 도와줄 Master가 근처에 있는지 조차 알지 못한다. 그래서 맨 첫 단계는 그저

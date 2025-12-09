@@ -73,6 +73,8 @@ markup:
 pagination:
   pagerSize: 20
 
+enableGitInfo: true
+
 # the following two lines are super important to make the permalink the same
 # as before /blog/file-name-without-date-part
 frontmatter:
