@@ -16,3 +16,8 @@ linkcheck:
 install-muffet:
 	go install github.com/raviqqe/muffet/v2@latest
 
+relref:
+	hugo list all \
+		|cut -d, -f1,3 \
+		|sed 's;^content/\([^,]*\),\(.*\);[\2]:{{< relref "/\1" >}};' \
+		> relref.md
