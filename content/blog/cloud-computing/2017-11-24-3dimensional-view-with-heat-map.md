@@ -1,6 +1,7 @@
 ---
 title: Kibana Heat Map으로 3차원으로 펼쳐 보기
 subtitle: Elastic Stack을 활용해서 서비스 이벤트 해석하기
+series: 모니터링은 해석
 tags: ["monitoring", "analytics", "elastic-stack", "cloud-computing"]
 categories: ["cloud-computing"]
 images: [/attachments/silrok/silrok-heatmap-00-hourly.png]
@@ -254,19 +255,6 @@ Dev Tools는, 위와 같이, 두 개의 패널로 구성되어 있는데, 왼쪽
 
 
 
-### 함께 읽기
-
-이 3+1 묶음글은 아래와 같다.
-
-* [모니터링은 경보가 아니라 해석]
-* [Kibana Visual Builder로 이벤트 묶어 보기]
-* _Kibana Heat Map으로 3차원으로 펼쳐 보기_
-
-그리고 그 환경의 준비는
-
-* [Elastic Stack 6.0 설치하기]
-
-에 정리해 두었다.
 
 
 [모니터링은 경보가 아니라 해석]:{{< relref "/blog/cloud-computing/2017-11-23-monitoring-is-not-alert-but-analytics.md" >}}

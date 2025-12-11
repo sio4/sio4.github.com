@@ -1,6 +1,7 @@
 ---
 title: Getting Started with Docker Swarm
 subtitle: 나무토막 모아서 뗏목 만들기
+series: Docker 시작하기
 tags: ["Docker", "Container", "orchestration", "high-availability", "cloud-computing"]
 categories: ["cloud-computing"]
 images: [/attachments/docker/docker-swarm-cluster.png]
@@ -481,22 +482,6 @@ Swarm standalone을 설치/관리하는 방식을 사용할 때에 사용되는 
 [Swarm mode key concepts]:https://docs.docker.com/engine/swarm/key-concepts/
 
 
-### 함께 읽기
-
-이 묶음글은 아직 몇 회까지 쓸지 정하지 못했다.
-
-* [Docker: Getting Started with Docker]
-* [Docker: Installation and Test Drive]
-* [Docker: 나의 첫 Docker Image]
-* ['쓸만한' Docker Image 만들기 - Part 1]
-* ['쓸만한' Docker Image 만들기 - Part 2]
-* [Docker Cloud에서 자동빌드하기]
-* [Docker Machine으로 Docker Node 뿌리기]
-* [Docker Machine 다시 보기]
-* _Getting Started with Docker Swarm_
-* [Docker Swarm에 Service 올려보기]
-* [Docker Swarm의 고가용성]
-* [Docker Swarm 다시 보기]
 
 [Docker Swarm 다시 보기]:{{< relref "/blog/cloud-computing/2018-03-29-little-more-about-docker-swarm.md" >}}
 [Docker Swarm의 고가용성]:{{< relref "/blog/cloud-computing/2018-03-15-high-availability-of-docker-swarm.md" >}}

@@ -1,6 +1,7 @@
 ---
 title: Vyatta 네트워크 문제 추적 Part 2 - LACP
 subtitle: Vyatta의 LACP 단절 문제에 대한 Work Around
+series: Vyatta Overrun
 tags: ["Vyatta", "LACP", "troubleshooting", "network"]
 categories: ["sysadmin"]
 images: [/attachments/vyatta-troubleshooting/vyatta-lacp-reset.png]
@@ -315,14 +316,6 @@ root@router:/opt/vyatta#
 엄청난 크기의 Dump 분석에 대한 이야기는 다음 이 시간에...
 
 
-### 함께 읽기
-
-이 글은 다음 묶음글의 일부이며, 이 내용과 연결된 앞/뒤 사건은 아래 링크를
-통해 확인할 수 있다.
-
-* [Vyatta 네트워크 문제 추적 Part 1]
-* _Vyatta 네트워크 문제 추적 Part 2 - LACP_
-* [Vyatta 네트워크 문제 추적 Part 3 - Dump]
 
 
 [Vyatta 네트워크 문제 추적 Part 1]:{{< relref "/blog/sysadmin/2018-01-03-vyatta-network-problem-tracking.md" >}}

@@ -1,6 +1,7 @@
 ---
 title: "Docker Cloud에서 자동빌드하기"
 subtitle: Setting Automated Build on Docker Cloud
+series: Docker 시작하기
 tags: ["Docker", "Container", "Github", "cloud-computing"]
 categories: ["cloud-computing"]
 images: [/attachments/docker/docker-cloud.automated-build.png]
@@ -329,22 +330,6 @@ Build된 것으로 표시되어 있고, 마지막으로 맨 아래 "ReadMe" 부�
 [Docker Cloud]:https://cloud.docker.com/
 
 
-### 함께 읽기
-
-이 묶음글은 아직 몇 회까지 쓸지 정하지 못했다.
-
-* [Docker: Getting Started with Docker]
-* [Docker: Installation and Test Drive]
-* [Docker: 나의 첫 Docker Image]
-* ['쓸만한' Docker Image 만들기 - Part 1]
-* ['쓸만한' Docker Image 만들기 - Part 2]
-* _Docker Cloud에서 자동빌드하기_
-* [Docker Machine으로 Docker Node 뿌리기]
-* [Docker Machine 다시 보기]
-* [Getting Started with Docker Swarm]
-* [Docker Swarm에 Service 올려보기]
-* [Docker Swarm의 고가용성]
-* [Docker Swarm 다시 보기]
 
 [Docker Swarm 다시 보기]:{{< relref "/blog/cloud-computing/2018-03-29-little-more-about-docker-swarm.md" >}}
 [Docker Swarm의 고가용성]:{{< relref "/blog/cloud-computing/2018-03-15-high-availability-of-docker-swarm.md" >}}

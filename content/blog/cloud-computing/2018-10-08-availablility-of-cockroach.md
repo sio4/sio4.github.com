@@ -1,6 +1,7 @@
 ---
 title: CockroachDB 클러스터 가용성 시험
 subtitle: CockroachDB는 가용성 확보를 위해 어떻게 동작하는지?
+series: CockroachDB 맛보기
 tags: ["DBMS", "high-availability", "cloud-computing"]
 categories: [cloud-computing]
 images: [/images/common/red-five-standing-by.jpg]
@@ -24,13 +25,7 @@ Node 장애 상황에서 Cockroach가 어떻게 반응하고, 또한 어디까�
 {.comment}
 
 
-> CockroachDB 맛보기 묶음글은 다음과 같습니다.
->
-> * [CockroachDB 안녕?]
-> * [CockroachDB 클러스터 구성하기]
-> * [CockroachDB Architecture]
-> * [CockroachDB 클러스터 설치 스크립트]
-> * _CockroachDB 클러스터 가용성 시험_
+> {{< series >}}
 {.boxed}
 
 
@@ -1084,21 +1079,9 @@ Application 수준에서도 유사한 처리를 했겠지만...)
 
 
 
----
 
 [공식 문서]:https://www.cockroachlabs.com/docs/stable/architecture/overview.html
 [Docker Swarm의 고가용성]:{{< relref "/blog/cloud-computing/2018-03-15-high-availability-of-docker-swarm.md" >}}
-
-
-### 함께 읽기
-
-CockroachDB 맛보기 묶음글은 다음과 같습니다.
-
-* [CockroachDB 안녕?]
-* [CockroachDB 클러스터 구성하기]
-* [CockroachDB Architecture]
-* [CockroachDB 클러스터 설치 스크립트]
-* _CockroachDB 클러스터 가용성 시험_
 
 [CockroachDB 안녕?]:{{< relref "/blog/cloud-computing/2018-09-20-say-hello-to-cockroachdb.md" >}}
 [CockroachDB 클러스터 구성하기]:{{< relref "/blog/cloud-computing/2018-09-21-setup-cockroach-cluster.md" >}}

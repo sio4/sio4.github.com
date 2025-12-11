@@ -1,6 +1,7 @@
 ---
 title: "Docker: Getting Started with Docker"
 subtitle: Docker 시작하기
+series: Docker 시작하기
 tags: ["Docker", "Container", "cloud-computing"]
 categories: ["cloud-computing"]
 images: [/logos/docker-horizontal.800.png]
@@ -237,22 +238,6 @@ Jail 관리와 배포 자동화를 위한 환경을 수제품으로 만들어 Pr
 
 
 
-### 함께 읽기
-
-이 묶음글은 아직 몇 회까지 쓸지 정하지 못했다.
-
-* _Docker: Getting Started with Docker_
-* [Docker: Installation and Test Drive]
-* [Docker: 나의 첫 Docker Image]
-* ['쓸만한' Docker Image 만들기 - Part 1]
-* ['쓸만한' Docker Image 만들기 - Part 2]
-* [Docker Cloud에서 자동빌드하기]
-* [Docker Machine으로 Docker Node 뿌리기]
-* [Docker Machine 다시 보기]
-* [Getting Started with Docker Swarm]
-* [Docker Swarm에 Service 올려보기]
-* [Docker Swarm의 고가용성]
-* [Docker Swarm 다시 보기]
 
 [Docker Swarm 다시 보기]:{{< relref "/blog/cloud-computing/2018-03-29-little-more-about-docker-swarm.md" >}}
 [Docker Swarm의 고가용성]:{{< relref "/blog/cloud-computing/2018-03-15-high-availability-of-docker-swarm.md" >}}

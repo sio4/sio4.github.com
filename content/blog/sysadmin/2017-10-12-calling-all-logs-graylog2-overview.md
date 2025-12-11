@@ -1,9 +1,9 @@
 ---
 title: "Calling All Logs! Graylog2 2편: 맛보기"
 subtitle: 모든 로그를 한 곳에서 관리하고 분석하세요
+series: Calling All Logs
 tags: ["Graylog2", "logging", "monitoring", "cloud-computing"]
 categories: ["sysadmin"]
-repository: https://github.com/hyeoncheon/goul
 images: [/attachments/graylog2/graylog-sample.png]
 banner: /attachments/graylog2/graylog-sample.png
 date: 2017-10-12T14:00:00+09:00
@@ -412,13 +412,6 @@ ElasticSearch를 비롯한, 근래의 비정형 데이터처리 기술과도 연
 
 
 
-#### 다음 이야기...
-
-* [Calling All Logs! Graylog2 1편: 설치하기]
-* _Calling All Logs! Graylog2 2편: 맛보기_
-* [Calling All Logs! Graylog2 3편: 추가설정]
-* [Calling All Logs! Graylog2 4편: 기록]
-{.angle}
 
 
 [Calling All Logs! Graylog2 1편: 설치하기]:{{< relref "/blog/sysadmin/2017-10-11-calling-all-logs-graylog2-installation.md" >}}

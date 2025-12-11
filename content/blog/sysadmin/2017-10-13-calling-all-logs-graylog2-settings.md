@@ -1,6 +1,7 @@
 ---
 title: "Calling All Logs! Graylog2 3편: 설정"
 subtitle: 모든 로그를 한 곳에서 관리하고 분석하세요
+series: Calling All Logs
 tags: ["Graylog2", "logging", "monitoring", "cloud-computing"]
 categories: ["sysadmin"]
 images: [/attachments/graylog2/graylog-logo.png]
@@ -265,13 +266,6 @@ Appliance화 하는 것이 꽤나 쉽게 가능할 것 같다.
 음, 역시 다시 봐도 훌륭하다.
 
 
-#### 다음 이야기...
-
-* [Calling All Logs! Graylog2 1편: 설치하기]
-* [Calling All Logs! Graylog2 2편: 맛보기]
-* _Calling All Logs! Graylog2 3편: 추가설정_
-* [Calling All Logs! Graylog2 4편: 기록]
-{.angle}
 
 
 [Calling All Logs! Graylog2 1편: 설치하기]:{{< relref "/blog/sysadmin/2017-10-11-calling-all-logs-graylog2-installation.md" >}}

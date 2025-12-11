@@ -1,6 +1,7 @@
 ---
 title: "Elastic NMS Part 3: Mapping과 Template"
 subtitle: Elastic Stack을 바탕으로 NMS 만들기
+series: Elastic NMS
 tags: ["elastic-stack", "logging", "monitoring", "cloud-computing", "analytics"]
 categories: ["cloud-computing"]
 images: [/attachments/elastic-nms/elastic-architecture.png]
@@ -18,23 +19,16 @@ Elastic Stack은 사용자가 원하는 다양한 유형의 자료를 저장하�
 이번 묶음글은 아래와 같은 순으로 진행할 예정이다. 깊이있게 다루는 것은 아니며,
 Elastic Stack을 시작하는 입장에서 관심있는 부분을 참고하면 될 것 같다.
 
-* [Elastic NMS Part 1: 엔진을 켜라!]
-* [Elastic NMS Part 2: Syslog 원격로깅]
-* _Elastic NMS Part 3: Mapping과 Template_
-* [Elastic NMS Part 4: Kibana로 Visualize하기]
-* [Elastic NMS Part 5: NetFlow 수신하기]
-* [Elastic NMS Part 6: SNMP 수신하기]
+> {{< series >}}
+{.boxed}
 
 이 묶음글과 직접적인 관련은 없지만, 혹시 로그중앙화를 위한 간편한 솔루션을
 찾는다면 이보다 앞서 검토했던 Graylog2에 대해 정리했던 글이 더욱 도움이 될
 수도 있다. Graylog2는 로그중앙화와 검색, 경보발생 등이 가능한 매우 쉽고 잘
 만들어진 도구다.
 
-* [Calling All Logs! Graylog2 1편: 설치하기]
-* [Calling All Logs! Graylog2 2편: 맛보기]
-* [Calling All Logs! Graylog2 3편: 설정]
-* [Calling All Logs! Graylog2 4편: 기록]
-
+> {{< series "Calling All Logs" >}}
+{.boxed}
 
 
 # Mapping과 Template
@@ -475,14 +469,6 @@ Poller를 이용하여 SNMP 자료를 모으도록 구성을 했었는데, 이�
 
 
 
-### 이 묶음의 다른 글들
-
-* [Elastic NMS Part 1: 엔진을 켜라!]
-* [Elastic NMS Part 2: Syslog 원격로깅]
-* _Elastic NMS Part 3: Mapping과 Template_
-* [Elastic NMS Part 4: Kibana로 Visualize하기]
-* [Elastic NMS Part 5: NetFlow 수신하기]
-* [Elastic NMS Part 6: SNMP 수신하기]
 
 [Elastic NMS Part 1: 엔진을 켜라!]:{{< relref "/blog/cloud-computing/2017-10-28-elastic-nms-part1-start-your-engine.md" >}}
 [Elastic NMS Part 2: Syslog 원격로깅]:{{< relref "/blog/cloud-computing/2017-10-30-elastic-nms-part2-syslog-remote-logging.md" >}}
@@ -492,15 +478,9 @@ Poller를 이용하여 SNMP 자료를 모으도록 구성을 했었는데, 이�
 
 [Elastic NMS Part 2: Syslog 원격로깅#Template 설정하기]:{{< relref "/blog/cloud-computing/2017-10-30-elastic-nms-part2-syslog-remote-logging.md" >}}#template-설정하기
 
-### 함께 읽기
+### 자매 시리즈
 
-* [Calling All Logs! Graylog2 1편: 설치하기]
-* [Calling All Logs! Graylog2 2편: 맛보기]
-* [Calling All Logs! Graylog2 3편: 설정]
-* [Calling All Logs! Graylog2 4편: 기록]
-* [PaperTrail, Cloud에서는 Cloud 로그를!]
-* [Cloud App에서 PaperTrail 사용하기]
-
+{{< series "Calling All Logs" >}}
 
 [Calling All Logs! Graylog2 1편: 설치하기]:{{< relref "/blog/sysadmin/2017-10-11-calling-all-logs-graylog2-installation.md" >}}
 [Calling All Logs! Graylog2 2편: 맛보기]:{{< relref "/blog/sysadmin/2017-10-12-calling-all-logs-graylog2-overview.md" >}}

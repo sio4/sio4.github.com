@@ -1,5 +1,6 @@
 ---
 title: "PaperTrail, Cloud에서는 Cloud 로그를!"
+series: CAOS
 tags: ["logging", "monitoring", "cloud-computing"]
 categories: ["cloud-computing"]
 images: [/attachments/papertrail/ptrail-101-concept.jpg]
@@ -65,6 +66,8 @@ Elastic Computing(특정 사업자를 지칭하려는 것은 아니다.) 환경�
 사용하는 방식을 통해 클라우드컴퓨팅 시대의 로그관리에 대해 고민하고,
 또한 대표적인 서비스 중 하나를 Benchmarking하는 것에 초점을 두고 있다.
 
+> {{< series >}}
+{.boxed}
 
 
 ## 서비스 등록

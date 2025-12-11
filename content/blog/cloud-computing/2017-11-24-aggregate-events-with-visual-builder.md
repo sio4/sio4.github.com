@@ -1,6 +1,7 @@
 ---
 title: Kibana Visual Builder로 이벤트 묶어 보기
 subtitle: Elastic Stack을 활용해서 서비스 이벤트 해석하기
+series: 모니터링은 해석
 tags: ["monitoring", "analytics", "elastic-stack", "cloud-computing"]
 categories: ["cloud-computing"]
 images: [/attachments/silrok/silrok-visualbuilder-pl-annotations.png]
@@ -342,19 +343,6 @@ WAS나 Application에서 OOME 등의 메모리 관련 로그를 함께 표시했
 숨차서, 다음 얘기는 다음 날에...
 
 
-### 함께 읽기
-
-이 프로젝트의 첫번째 묶음글은 아래와 같이 진행될 예정이다.
-
-* [모니터링은 경보가 아니라 해석]
-* _Kibana Visual Builder로 이벤트 묶어 보기_
-* [Kibana Heat Map으로 3차원으로 펼쳐 보기]
-
-그리고 그 환경의 준비는
-
-* [Elastic Stack 6.0 설치하기]
-
-에 정리해 두었다.
 
 
 [모니터링은 경보가 아니라 해석]:{{< relref "/blog/cloud-computing/2017-11-23-monitoring-is-not-alert-but-analytics.md" >}}

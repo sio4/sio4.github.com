@@ -1,9 +1,9 @@
 ---
 title: "Calling All Logs! Graylog2 4편: 기록"
 subtitle: 모든 로그를 한 곳에서 관리하고 분석하세요
+series: Calling All Logs
 tags: ["Graylog2", "logging", "monitoring", "cloud-computing"]
 categories: ["sysadmin"]
-repository: https://github.com/hyeoncheon/goul
 images: [/attachments/graylog2/graylog-logo.png]
 date: 2017-10-13T10:30:00+09:00
 ---
@@ -873,13 +873,6 @@ sudo ufw disable && sudo ufw enable
 ```
 
 
-#### 최종회 - 끝 -
-
-* [Calling All Logs! Graylog2 1편: 설치하기]
-* [Calling All Logs! Graylog2 2편: 맛보기]
-* [Calling All Logs! Graylog2 3편: 추가설정]
-* _Calling All Logs! Graylog2 4편: 기록_
-{.angle}
 
 
 [Calling All Logs! Graylog2 1편: 설치하기]:{{< relref "/blog/sysadmin/2017-10-11-calling-all-logs-graylog2-installation.md" >}}

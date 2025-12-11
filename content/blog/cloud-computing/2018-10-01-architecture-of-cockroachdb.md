@@ -1,6 +1,7 @@
 ---
 title: CockroachDB Architecture
 subtitle: CockroachDB의 구조 설계에 대한 짧은 이해
+series: CockroachDB 맛보기
 tags: ["DBMS", "cloud-computing", "Architecture"]
 categories: ["cloud-computing"]
 images: [/attachments/cockroachdb/arch/crdb-execution-flow.png]
@@ -16,13 +17,7 @@ date: 2018-10-01T14:30:00+0900
 있을 수 있다는 것을 미리 밝힌다.
 <!--more-->
 
-> CockroachDB 맛보기 묶음글은 다음과 같습니다.
->
-> * [CockroachDB 안녕?]
-> * [CockroachDB 클러스터 구성하기]
-> * _CockroachDB Architecture_
-> * [CockroachDB 클러스터 설치 스크립트]
-> * [CockroachDB 클러스터 가용성 시험]
+> {{< series >}}
 {.boxed}
 
 
@@ -791,16 +786,6 @@ CockroachDB Architecture를 간단히 훑어보았고, 이해를 높이기 위�
 [공식 문서]:https://www.cockroachlabs.com/docs/stable/architecture/overview.html
 [Docker Swarm의 고가용성]:{{< relref "/blog/cloud-computing/2018-03-15-high-availability-of-docker-swarm.md" >}}
 
-
-### 함께 읽기
-
-CockroachDB 맛보기 묶음글은 다음과 같습니다.
-
-* [CockroachDB 안녕?]
-* [CockroachDB 클러스터 구성하기]
-* _CockroachDB Architecture_
-* [CockroachDB 클러스터 설치 스크립트]
-* [CockroachDB 클러스터 가용성 시험]
 
 [CockroachDB 안녕?]:{{< relref "/blog/cloud-computing/2018-09-20-say-hello-to-cockroachdb.md" >}}
 [CockroachDB 클러스터 구성하기]:{{< relref "/blog/cloud-computing/2018-09-21-setup-cockroach-cluster.md" >}}

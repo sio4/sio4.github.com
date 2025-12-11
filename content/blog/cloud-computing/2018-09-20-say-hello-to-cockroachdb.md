@@ -1,6 +1,7 @@
 ---
 title: CockroachDB 안녕?
 subtitle: 바퀴벌레, 글로벌 서비스를 위한 SQL 데이터베이스
+series: CockroachDB 맛보기
 tags: ["DBMS", "cloud-computing", "open-source"]
 categories: ["cloud-computing"]
 images: [/attachments/cockroachdb/cockroach-symbol.jpg]
@@ -24,13 +25,7 @@ DBMS에 관련된 것이라기 보다는 어쩌면 시스템 자동화 등, [클
 > *그나저나 여행 다녀온 얘기는 언제 쓰나...*
 {.comment}
 
-> CockroachDB 맛보기 묶음글은 다음과 같습니다.
->
-> * _CockroachDB 안녕?_
-> * [CockroachDB 클러스터 구성하기]
-> * [CockroachDB Architecture]
-> * [CockroachDB 클러스터 설치 스크립트]
-> * [CockroachDB 클러스터 가용성 시험]
+> {{< series >}}
 {.boxed}
 
 
@@ -404,21 +399,10 @@ Metrics 다음은 Databases에 대한 정보를 표시하는 메뉴가 있다. �
 {.bordered .dropshadow}
 
 
----
 
 [DBMS]:/tags/dbms
 [클라우드 컴퓨팅]:/tags/cloud-computing
 [오픈소스]:/tags/open-source
-
-### 함께 읽기
-
-CockroachDB 맛보기 묶음글은 다음과 같습니다.
-
-* _CockroachDB 안녕?_
-* [CockroachDB 클러스터 구성하기]
-* [CockroachDB Architecture]
-* [CockroachDB 클러스터 설치 스크립트]
-* [CockroachDB 클러스터 가용성 시험]
 
 [CockroachDB 안녕?]:{{< relref "/blog/cloud-computing/2018-09-20-say-hello-to-cockroachdb.md" >}}
 [CockroachDB 클러스터 구성하기]:{{< relref "/blog/cloud-computing/2018-09-21-setup-cockroach-cluster.md" >}}

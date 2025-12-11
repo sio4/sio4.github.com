@@ -1,5 +1,6 @@
 ---
 title: SoftLayer Object Storage와 임시 URL
+series: CAOS
 tags: ["SoftLayer", "object-storage", "cloud-computing", "API", "Ruby", "swift", "Github"]
 categories: ["development"]
 images: [/attachments/20160322-sl-objs-002.png]

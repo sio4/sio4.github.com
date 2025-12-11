@@ -1,5 +1,6 @@
 ---
 title: SoftLayer Object Storage와 임시 URL - Part 2
+series: CAOS
 tags: ["SoftLayer", "object-storage", "cloud-computing", "API", "Ruby", "swift", "Github", "RSpec"]
 categories: ["development"]
 images: [/logos/hardenedlayer.png]

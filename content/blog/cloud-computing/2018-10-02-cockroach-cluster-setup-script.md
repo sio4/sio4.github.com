@@ -1,6 +1,7 @@
 ---
 title: CockroachDB 클러스터 설치 스크립트
 subtitle: ...라지만, 알고보면 쉘스크립트 작성 가이드
+series: CockroachDB 맛보기
 tags: ["howto", "script", "DBMS", "cloud-computing"]
 categories: ["cloud-computing"]
 images: [/images/common/shell-on-the-beach.jpg]
@@ -31,13 +32,7 @@ Node를 자동으로 설치하고 제어하는 과정에 대해 다뤘다. 이 �
 환경을 위한 자동 배치"에 대한 기본적인 개요를 짚어보려고 한다.
 
 
-> CockroachDB 맛보기 묶음글은 다음과 같습니다. 
->
-> * [CockroachDB 안녕?]  
-> * [CockroachDB 클러스터 구성하기]
-> * [CockroachDB Architecture]
-> * _CockroachDB 클러스터 설치 스크립트_
-> * [CockroachDB 클러스터 가용성 시험]
+> {{< series >}}
 {.boxed}
 
 
@@ -728,16 +723,6 @@ sudo systemctl enable $root/cockroach.service
 간단히 쓸까... 관련된 주제를 끄집어다 붙여 세세하게 쓸까... 고민하다가,
 그냥 이 정도 수준에서 정리한다. (대충 써도 기네... 길어...)
 
-
-### 함께 읽기
-
-CockroachDB 맛보기 묶음글은 다음과 같습니다.
-
-* [CockroachDB 안녕?]
-* [CockroachDB 클러스터 구성하기]
-* [CockroachDB Architecture]
-* _CockroachDB 클러스터 설치 스크립트_
-* [CockroachDB 클러스터 가용성 시험]
 
 [CockroachDB 안녕?]:{{< relref "/blog/cloud-computing/2018-09-20-say-hello-to-cockroachdb.md" >}}
 [CockroachDB 클러스터 구성하기]:{{< relref "/blog/cloud-computing/2018-09-21-setup-cockroach-cluster.md" >}}

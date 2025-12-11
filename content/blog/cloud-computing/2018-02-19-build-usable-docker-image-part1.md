@@ -1,6 +1,7 @@
 ---
 title: "'쓸만한' Docker Image 만들기 - Part 1"
 subtitle: Build an Usable Docker Image with Alpine Linux
+series: Docker 시작하기
 tags: ["Docker", "Container", "cloud-computing", "Alpine"]
 categories: ["cloud-computing"]
 images: [/logos/alpinelinux.org.jpg]
@@ -394,25 +395,6 @@ Ubuntu의 112MB 크기에 비하면 여전히 1/10의 작은 크기 만으로 �
 
 
 
----
-
-
-### 함께 읽기
-
-이 묶음글은 아직 몇 회까지 쓸지 정하지 못했다.
-
-* [Docker: Getting Started with Docker]
-* [Docker: Installation and Test Drive]
-* [Docker: 나의 첫 Docker Image]
-* _'쓸만한' Docker Image 만들기 - Part 1_
-* ['쓸만한' Docker Image 만들기 - Part 2]
-* [Docker Cloud에서 자동빌드하기]
-* [Docker Machine으로 Docker Node 뿌리기]
-* [Docker Machine 다시 보기]
-* [Getting Started with Docker Swarm]
-* [Docker Swarm에 Service 올려보기]
-* [Docker Swarm의 고가용성]
-* [Docker Swarm 다시 보기]
 
 [Docker Swarm 다시 보기]:{{< relref "/blog/cloud-computing/2018-03-29-little-more-about-docker-swarm.md" >}}
 [Docker Swarm의 고가용성]:{{< relref "/blog/cloud-computing/2018-03-15-high-availability-of-docker-swarm.md" >}}

@@ -1,5 +1,6 @@
 ---
 title: Cloud App에서 PaperTrail 사용하기
+series: CAOS
 tags: ["logging", "monitoring", "cloud-computing"]
 categories: ["cloud-computing"]
 images: [/attachments/papertrail/ptrail-101-concept.jpg]
@@ -29,12 +30,8 @@ Papertrail이라는 서비스의 개요를 살펴봤다.  서비스 모델을 �
 연재의 (들어나지 않는) 주제인 "Cloud 환경을 고려한 서비스 개발"에서
 고려할 사항 중 하나로써 로그 중앙화를 소개하기 위한 것이었다.
 
-### Cloud Application 시리즈
-
-* [CAOS, Cloud Album on Object Storage]
-* [CAOS #1 Rails 기반 환경 구성]
-* [CAOS #2 SoftLayer Object Storage 다루기]
-* [CAOS #3 Rails Application의 성능 분석]
+> {{< series >}}
+{.boxed}
 
 [PaperTrail, Cloud에서는 Cloud 로그를!]:{{< relref "/blog/cloud-computing/2016-09-07-cloud-log-papertrail" >}}
 [CAOS, Cloud Album on Object Storage]:{{< relref "/blog/development/2016-04-28-cloud-album-on-object-storage" >}}

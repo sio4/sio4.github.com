@@ -1,6 +1,7 @@
 ---
 title: "Docker: 나의 첫 Docker Image"
 subtitle: Build and Push my own Docker Image
+series: Docker 시작하기
 tags: ["Docker", "Container", "cloud-computing"]
 categories: ["cloud-computing"]
 images: [/logos/docker-horizontal.800.png]
@@ -227,22 +228,6 @@ Registry 등록 과정은 다음 글에 정리하도록 하겠다.
 
 
 
-### 함께 읽기
-
-이 묶음글은 아직 몇 회까지 쓸지 정하지 못했다.
-
-* [Docker: Getting Started with Docker]
-* [Docker: Installation and Test Drive]
-* _Docker: 나의 첫 Docker Image_
-* ['쓸만한' Docker Image 만들기 - Part 1]
-* ['쓸만한' Docker Image 만들기 - Part 2]
-* [Docker Cloud에서 자동빌드하기]
-* [Docker Machine으로 Docker Node 뿌리기]
-* [Docker Machine 다시 보기]
-* [Getting Started with Docker Swarm]
-* [Docker Swarm에 Service 올려보기]
-* [Docker Swarm의 고가용성]
-* [Docker Swarm 다시 보기]
 
 [Docker Swarm 다시 보기]:{{< relref "/blog/cloud-computing/2018-03-29-little-more-about-docker-swarm.md" >}}
 [Docker Swarm의 고가용성]:{{< relref "/blog/cloud-computing/2018-03-15-high-availability-of-docker-swarm.md" >}}

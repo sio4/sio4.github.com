@@ -1,6 +1,7 @@
 ---
 title: "Docker Machine으로 Docker Node 뿌리기"
 subtitle: Docker is Not In My BackYard, But on the Cloud!
+series: Docker 시작하기
 tags: ["Docker", "Container", "SoftLayer", "cloud-computing"]
 categories: ["cloud-computing"]
 images: [/attachments/docker/docker-machine.jpg]
@@ -783,22 +784,6 @@ Host로 만들고 싶지는 않았기 때문...
 
 
 
-### 함께 읽기
-
-이 묶음글은 아직 몇 회까지 쓸지 정하지 못했다.
-
-* [Docker: Getting Started with Docker]
-* [Docker: Installation and Test Drive]
-* [Docker: 나의 첫 Docker Image]
-* ['쓸만한' Docker Image 만들기 - Part 1]
-* ['쓸만한' Docker Image 만들기 - Part 2]
-* [Docker Cloud에서 자동빌드하기]
-* _Docker Machine으로 Docker Node 뿌리기_
-* [Docker Machine 다시 보기]
-* [Getting Started with Docker Swarm]
-* [Docker Swarm에 Service 올려보기]
-* [Docker Swarm의 고가용성]
-* [Docker Swarm 다시 보기]
 
 [Docker Swarm 다시 보기]:{{< relref "/blog/cloud-computing/2018-03-29-little-more-about-docker-swarm.md" >}}
 [Docker Swarm의 고가용성]:{{< relref "/blog/cloud-computing/2018-03-15-high-availability-of-docker-swarm.md" >}}

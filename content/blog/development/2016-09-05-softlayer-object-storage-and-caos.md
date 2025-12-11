@@ -1,5 +1,6 @@
 ---
 title: "CAOS #2 SoftLayer Object Storage 다루기"
+series: CAOS
 tags: ["object-storage", "SoftLayer", "cloud-computing", "my-projects", "photo"]
 categories: ["development"]
 images: [/attachments/20160428-caos/caos-200-album-list.png]

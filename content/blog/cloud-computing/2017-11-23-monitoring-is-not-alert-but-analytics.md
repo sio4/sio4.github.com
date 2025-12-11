@@ -1,6 +1,7 @@
 ---
 title: 모니터링은 경보가 아니라 해석
 subtitle: Elastic Stack을 활용해서 서비스 이벤트 해석하기
+series: 모니터링은 해석
 tags: ["monitoring", "analytics", "elastic-stack", "cloud-computing"]
 categories: ["cloud-computing"]
 images: [/attachments/silrok/silrok-dashboard-current.png]
@@ -103,19 +104,6 @@ Elastic Stack으로
 {.dropshadow}
 
 
-### 함께 읽기
-
-이 프로젝트의 첫번째 묶음글은 아래와 같이 진행될 예정이다.
-
-* _모니터링은 경보가 아니라 해석_
-* [Kibana Visual Builder로 이벤트 묶어 보기]
-* [Kibana Heat Map으로 3차원으로 펼쳐 보기]
-
-그리고 그 환경의 준비는
-
-* [Elastic Stack 6.0 설치하기]
-
-에 정리해 두었다.
 
 
 [Kibana Visual Builder로 이벤트 묶어 보기]:{{< relref "/blog/cloud-computing/2017-11-24-aggregate-events-with-visual-builder.md" >}}

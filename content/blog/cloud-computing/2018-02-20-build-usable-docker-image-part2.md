@@ -1,6 +1,7 @@
 ---
 title: "'쓸만한' Docker Image 만들기 - Part 2"
 subtitle: Build and Push a Docker Image For Go Development
+series: Docker 시작하기
 tags: ["Docker", "Container", "golang", "cloud-computing"]
 categories: ["cloud-computing"]
 images: [/attachments/docker/docker-cloud-banner.png]
@@ -866,7 +867,6 @@ Local에 저장되었음을 확인할 수 있다.
 패키지에 따라 조금씩 다른 기법이 들어가기는 하겠지만, 대부분의 Docker
 Image는 이와 유사한 틀 내에서 움직이리라 생각한다.
 
----
 
 [Official Docker Image for Golang]:https://hub.docker.com/_/golang/
 
@@ -877,24 +877,6 @@ Image는 이와 유사한 틀 내에서 움직이리라 생각한다.
 [Docker Store]:https://store.docker.com/
 [Docker Cloud]:https://cloud.docker.com/
 
-
-
-### 함께 읽기
-
-이 묶음글은 아직 몇 회까지 쓸지 정하지 못했다.
-
-* [Docker: Getting Started with Docker]
-* [Docker: Installation and Test Drive]
-* [Docker: 나의 첫 Docker Image]
-* ['쓸만한' Docker Image 만들기 - Part 1]
-* _'쓸만한' Docker Image 만들기 - Part 2_
-* [Docker Cloud에서 자동빌드하기]
-* [Docker Machine으로 Docker Node 뿌리기]
-* [Docker Machine 다시 보기]
-* [Getting Started with Docker Swarm]
-* [Docker Swarm에 Service 올려보기]
-* [Docker Swarm의 고가용성]
-* [Docker Swarm 다시 보기]
 
 [Docker Swarm 다시 보기]:{{< relref "/blog/cloud-computing/2018-03-29-little-more-about-docker-swarm.md" >}}
 [Docker Swarm의 고가용성]:{{< relref "/blog/cloud-computing/2018-03-15-high-availability-of-docker-swarm.md" >}}

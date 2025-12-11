@@ -1,6 +1,7 @@
 ---
 title: Elastic Stack 6.0 설치하기
 subtitle: Elastic Stack을 활용해서 서비스 이벤트 해석하기
+series: 모니터링은 해석
 tags: ["elastic-stack", "analytics", "cloud-computing", "howto"]
 categories: ["cloud-computing"]
 images: [/attachments/elastic-stack/kibana-6.0-discover.png]
@@ -456,14 +457,6 @@ $
 *-- TO BE CONTINUED*
 
 
-### 함께 읽기
-
-이 글은 다음 묶음글을 위한 준비과정을 담은 글이다.
-Elastic Stack을 이용한 이벤트 해석에 관심이 있다면 다음 글들도 함께!
-
-* [모니터링은 경보가 아니라 해석]
-* [Kibana Visual Builder로 이벤트 묶어 보기]
-* [Kibana Heat Map으로 3차원으로 펼쳐 보기]
 
 [모니터링은 경보가 아니라 해석]:{{< relref "/blog/cloud-computing/2017-11-23-monitoring-is-not-alert-but-analytics.md" >}}
 [Kibana Visual Builder로 이벤트 묶어 보기]:{{< relref "/blog/cloud-computing/2017-11-24-aggregate-events-with-visual-builder.md" >}}

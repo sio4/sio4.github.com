@@ -1,11 +1,12 @@
 ---
 title: Docker Swarm의 고가용성
 subtitle: 서비스 가용성을 보장하기 위한 Swarm 클러스터 구성 방법
+series: Docker 시작하기
 tags: ["Docker", "orchestration", "high-availability", "Container", "cloud-computing"]
 categories: ["cloud-computing"]
 images: [/attachments/docker/docker-swarm-ha.png]
 banner: /attachments/docker/docker-swarm-ha.png
-date: 2018-03-15T23:55:00+0900
+date: 2018-03-15T23:54:00+0900
 ---
 Docker의 기본 Orchestration 도구인 Swarm의 기본적인 구성에 대하여 설명한
 "[Getting Started with Docker Swarm]", 그리고 그 위에 Service를 올리고
@@ -840,23 +841,6 @@ $
 [Administer and maintain a swarm of Docker Engines]:https://docs.docker.com/engine/swarm/admin_guide/
 [How swarm mode works]:https://docs.docker.com/engine/swarm/how-swarm-mode-works/
 
-
-### 함께 읽기
-
-이 묶음글은 아직 몇 회까지 쓸지 정하지 못했다.
-
-* [Docker: Getting Started with Docker]
-* [Docker: Installation and Test Drive]
-* [Docker: 나의 첫 Docker Image]
-* ['쓸만한' Docker Image 만들기 - Part 1]
-* ['쓸만한' Docker Image 만들기 - Part 2]
-* [Docker Cloud에서 자동빌드하기]
-* [Docker Machine으로 Docker Node 뿌리기]
-* [Docker Machine 다시 보기]
-* [Getting Started with Docker Swarm]
-* [Docker Swarm에 Service 올려보기]
-* _Docker Swarm의 고가용성_
-* [Docker Swarm 다시 보기]
 
 [Docker Swarm 다시 보기]:{{< relref "/blog/cloud-computing/2018-03-29-little-more-about-docker-swarm.md" >}}
 [Docker Swarm의 고가용성]:{{< relref "/blog/cloud-computing/2018-03-15-high-availability-of-docker-swarm.md" >}}

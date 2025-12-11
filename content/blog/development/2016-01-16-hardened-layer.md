@@ -1,5 +1,6 @@
 ---
 title: Hardened Layer, SoftLayer Custom Portal - Part 1
+series: Hardened Layer
 images: [/attachments/20160116-hl-v1-servers.png]
 banner: /attachments/20160116-hl-v1-servers.png
 tags: ["hardened-layer", "SoftLayer", "cloud-computing", "emberjs", "ruby-on-rails", "API"]
@@ -29,10 +30,8 @@ Hardened Layer: Console - Virtual Servers
 ![](/attachments/20160116-hl-v1-servers.png)
 {.fit .dropshadow}
 
-## Hardened Layer 시리즈
-
-* Hardened Layer, SoftLayer Custom Portal - Part 1
-* [Hardened Layer, SoftLayer Custom Portal - Part 2][HardenedLayer-Part2]
+> {{< series >}}
+{.boxed .mt-4}
 
 [HardenedLayer-Part2]:{{< relref "/blog/development/2016-01-21-hardened-layer-part2" >}}
 

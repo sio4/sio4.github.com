@@ -1,6 +1,7 @@
 ---
 title: Vyatta 네트워크 문제 추적 Part 3 - DUMP
 subtitle: tcpdump를 이용한 거대 Dump의 효율적인 분석방법
+series: Vyatta Overrun
 tags: ["Vyatta", "packet-analysis", "troubleshooting", "tcpdump", "network"]
 categories: ["sysadmin"]
 images: [/attachments/vyatta-troubleshooting/breaking-lacp.png]
@@ -411,14 +412,6 @@ LAG가 끊기게 되고, 이것이 Slave로 있는 두 물리적 인터페이스
 바꾼다.
 
 
-### 함께 읽기
-
-이 글은 다음 묶음글의 일부이며, 이 내용과 연결된 앞/뒤 사건은 아래 링크를
-통해 확인할 수 있다.
-
-* [Vyatta 네트워크 문제 추적 Part 1]
-* [Vyatta 네트워크 문제 추적 Part 2 - LACP]
-* _Vyatta 네트워크 문제 추적 Part 3 - Dump_
 
 
 [Vyatta 네트워크 문제 추적 Part 1]:{{< relref "/blog/sysadmin/2018-01-03-vyatta-network-problem-tracking.md" >}}

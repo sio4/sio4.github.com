@@ -1,6 +1,7 @@
 ---
 title: Vyatta 네트워크 문제 추적 Part 1
 subtitle: 로그, 상태, 패킷 자료를 바탕으로 네트워크 관련 문제 추적하기
+series: Vyatta Overrun
 tags: ["Vyatta", "packet-analysis", "troubleshooting", "network"]
 categories: ["sysadmin"]
 images: [/attachments/vyatta-troubleshooting/vyatta-network-problem-tracking.png]
@@ -469,14 +470,6 @@ LANG=C stdbuf -i0 -o0 sar -n DEV 60 \
 Dump 분석 중심의 다음 이야기는 쉬었다 간다.
 
 
-### 함께 읽기
-
-이 글은 다음 묶음글의 일부이며, 이 내용과 연결된 앞/뒤 사건은 아래 링크를
-통해 확인할 수 있다.
-
-* _Vyatta 네트워크 문제 추적 Part 1_
-* [Vyatta 네트워크 문제 추적 Part 2 - LACP]
-* [Vyatta 네트워크 문제 추적 Part 3 - Dump]
 
 
 [Vyatta 네트워크 문제 추적 Part 1]:{{< relref "/blog/sysadmin/2018-01-03-vyatta-network-problem-tracking.md" >}}

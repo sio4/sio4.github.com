@@ -1,6 +1,7 @@
 ---
 title: CockroachDB 클러스터 구성하기
 subtitle: '"바퀴벌레 연맹" 구성을 위한 배치/관리 반자동화하기'
+series: CockroachDB 맛보기
 tags: ["DBMS", "cloud-computing", "open-source"]
 categories: ["cloud-computing"]
 images: [/attachments/cockroachdb/cockroach-symbol.jpg]
@@ -15,13 +16,7 @@ date: 2018-09-21T17:20:00+0900
 <!--more-->
 
 
-> CockroachDB 맛보기 묶음글은 다음과 같습니다.
->
-> * [CockroachDB 안녕?]
-> * _CockroachDB 클러스터 구성하기_
-> * [CockroachDB Architecture]
-> * [CockroachDB 클러스터 설치 스크립트]
-> * [CockroachDB 클러스터 가용성 시험]
+> {{< series >}}
 {.boxed}
 
 
@@ -898,17 +893,6 @@ $
 
 다음 글에서는, 원격 배치 및 관리에 사용된 스크립트에 대해 다시 집어보겠다.
 
----
-
-### 함께 읽기
-
-CockroachDB 맛보기 묶음글은 다음과 같습니다.
-
-* [CockroachDB 안녕?]
-* _CockroachDB 클러스터 구성하기_
-* [CockroachDB Architecture]
-* [CockroachDB 클러스터 설치 스크립트]
-* [CockroachDB 클러스터 가용성 시험]
 
 [CockroachDB 안녕?]:{{< relref "/blog/cloud-computing/2018-09-20-say-hello-to-cockroachdb.md" >}}
 [CockroachDB 클러스터 구성하기]:{{< relref "/blog/cloud-computing/2018-09-21-setup-cockroach-cluster.md" >}}

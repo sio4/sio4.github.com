@@ -1,5 +1,6 @@
 ---
 title: Hardened Layer, SoftLayer Custom Portal - Part 2
+series: Hardened Layer
 images: [/attachments/20160121-hl-v1-dashboard.png]
 banner: /attachments/20160121-hl-v1-dashboard.png
 tags: ["hardened-layer", "SoftLayer", "cloud-computing", "emberjs", "semantic-ui", "d3js"]
@@ -30,10 +31,8 @@ App을 조금씩 다듬어서, 사용자 관점에서 Console을 보다 사용�
 바꿔보고, 이 Console을 통하여 사용자가 시각적인 Insight를 얻을 수 있도록
 하는 과정에 대하여 다루려고 한다.
 
-## Hardened Layer 시리즈
-
-* [Hardened Layer, SoftLayer Custom Portal - Part 1][HardenedLayer-Part1]
-* Hardened Layer, SoftLayer Custom Portal - Part 2
+> {{< series >}}
+{.boxed}
 
 [HardenedLayer-Part1]:{{< relref "/blog/development/2016-01-16-hardened-layer" >}}
 
