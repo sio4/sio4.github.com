@@ -24,10 +24,7 @@ Prototype 개발 목표는 다음과 같다.
 * SoftLayer API에서 제공하는 Dataset의 특성을 파악한다.
 * SoftLayer API를 사용한 개발의 방향성을 찾아낸다.
 
-Hardened Layer: Console - Virtual Servers
-{.block-title}
-
-![](/attachments/20160116-hl-v1-servers.png)
+![Hardened Layer: Console - Virtual Servers](/attachments/20160116-hl-v1-servers.png)
 {.fit .dropshadow}
 
 > {{< series >}}

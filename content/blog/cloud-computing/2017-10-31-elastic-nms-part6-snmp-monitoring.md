@@ -160,12 +160,12 @@ SNMP는 원래 "수동적으로 긁어가는 기계에서 자료를 주는 방�
 
 이제 Discover로 보면,
 
-![SHOT](/attachments/elastic-nms/elk-712-snmp-discover.png)
+![SNMP Discover](/attachments/elastic-nms/elk-712-snmp-discover.png)
 {.fit .bordered}
 
 그리고 자세히 보면 아래와 같이 값과 자료형을 확인할 수 있다.
 
-![SHOT](/attachments/elastic-nms/elk-713-snmp-details.png)
+![SNMP Details](/attachments/elastic-nms/elk-713-snmp-details.png)
 {.fit .bordered}
 
 
@@ -257,7 +257,7 @@ NetFlow에서 설정한 내용과 유사한 구조인데, 간략히 덧붙이면
 
 Visualize해서 Dashboard에 그려보면 대충 이런 모양을 얻을 수 있다.
 
-![SHOT](/attachments/elastic-nms/elk-full-dashboard.png)
+![Dashboard](/attachments/elastic-nms/elk-full-dashboard.png)
 {.fit .bordered}
 
 

@@ -59,7 +59,7 @@ Community에 의해 정리된 자료를 시작점으로 하여 관심이 가는 
 글들을 참고하여 다음과 같은 후보를 선정하였다.
 
 Project Information
-{.block-title}
+{.text-center}
 
 | Framework | Type        | Version | Python  | Footprint  |
 |:----------|:-----------:|:-------:|:-------:|-----------:|
@@ -116,7 +116,7 @@ Github는 가장 인기 있는 Social Development, Social Repository Site로,
 자세한 수치는 아래 표를 참고하기 바란다.
 
 Stack Overflow & Github Statistics
-{.block-title}
+{.text-center}
 
 | Framework  |Followers|Questions |Commits|Contributors|Stars     |Forks     |
 |:-----------|--------:|---------:|------:|-----------:|---------:|---------:|
@@ -633,9 +633,6 @@ $
 # 참고
 
 ## 홈페이지와 Repository
-
-Links
-{.block-title}
 
 | Homepage     | Github Repository     | Stackoverflow Tag               |
 |:-------------|:----------------------|:--------------------------------|

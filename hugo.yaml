@@ -18,6 +18,8 @@ params:
   since: 2007
   readingTime: true
   wordCount: true
+  timeFormat: 2006년 1월 2일 15:04
+  googleTranslate: false
   author:
     name: Yonghwan SO
     url: https://sio4.github.io/about/

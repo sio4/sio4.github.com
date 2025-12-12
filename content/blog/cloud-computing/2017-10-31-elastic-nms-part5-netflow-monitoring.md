@@ -229,7 +229,7 @@ $
 (앞서 한 번 본 적이 있는 녀석이긴 하다.) 이제, 위의 설정에 의해 아래와
 같이 정리된 결과를 얻을 수 있다.
 
-![SHOT](/attachments/elastic-nms/elk-501-netflow-index.jpg)
+![Netflow Index](/attachments/elastic-nms/elk-501-netflow-index.jpg)
 {.fit .bordered}
 
 
@@ -287,7 +287,7 @@ filter {
 
 이제, 이렇게... 의도한 바에 맞는 데이터가 쌓이는 것을 확인할 수 있다.
 
-![SHOT](/attachments/elastic-nms/elk-502-netflow-translated.jpg)
+![NetFlow Translated](/attachments/elastic-nms/elk-502-netflow-translated.jpg)
 {.fit .bordered}
 
 시험삼아서 파일을 하나 땡겨보자.
@@ -391,7 +391,7 @@ filter {
 이제 좀 깔끔해졌다.
 
 
-![SHOT](/attachments/elastic-nms/elk-503-netflow-dashboard.png)
+![Netflow Dashboard](/attachments/elastic-nms/elk-503-netflow-dashboard.png)
 {.fit .bordered}
 
 

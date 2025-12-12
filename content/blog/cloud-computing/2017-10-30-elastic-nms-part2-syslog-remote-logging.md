@@ -145,14 +145,14 @@ filter {
 **syslog 전송 규약에 의해 데이터를 수집**하는 것이기 때문에 `facility`,
 `priority`, `severity` 등의 상세한 정보까지 정확하게 뽑아낼 수 있다.
 
-![SHOT](/attachments/elastic-nms/elk-201-discover.jpg)
+![Discover](/attachments/elastic-nms/elk-201-discover.jpg)
 {.bordered}
 
 위의 그림은 기록된 syslog 데이터 한 줄을 Discovery 화면에서 본 것이다.
 왼쪽부터 기록된 날짜, 타입 정보, 그리고 메시지 본문이 표시되는데, 맨 왼쪽
 세모표를 누르면 아래와 같이 이 레코드에 대한 상세 정보를 확인할 수 있다.
 
-![SHOT](/attachments/elastic-nms/elk-202-details.jpg)
+![Details](/attachments/elastic-nms/elk-202-details.jpg)
 {.bordered}
 
 위의 상세 정보를 보면 내부적으로 사용하는 `_`로 시작하는 메타 정보와 메시지
@@ -381,7 +381,7 @@ GeoIP 정보를 추가하기 위해,  두 번째, 세 번째의 `if` 블록을 �
 대략적인 8과 47은 대략적인 경도와 위도를 나타낸다. (스위스 수도 격인
 베른의 좌표가 북위 47, 동경 7.5 쯤 된다.)
 
-![SHOT](/attachments/elastic-nms/elk-212-grok-parsed.jpg)
+![](/attachments/elastic-nms/elk-212-grok-parsed.jpg)
 {.bordered}
 
 그런데 화면 맨 왼쪽의 회색 부분의 기호를 자세히 보면, 좌표를 숫자로
@@ -394,7 +394,7 @@ Template의 작성이 필요할 수 있다. 이 얘기는 다음 이야기,
 아무튼, Template과 Mapping 처리를 잘 해주면 각 필드의 자료형을 우리가
 원하는 형태로 맞춰줄 수 있다.
 
-![SHOT](/attachments/elastic-nms/elk-302-mapped-parsed.jpg)
+![](/attachments/elastic-nms/elk-302-mapped-parsed.jpg)
 {.bordered}
 
 이제 이렇게, 정상적으로 IP와 위치정보 자료형으로 아이콘이 바뀌었다.

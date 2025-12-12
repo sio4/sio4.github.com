@@ -102,7 +102,7 @@ sio4@silver:~/app_name$
 크핫! 이제 http://app_name.cloudfoundry.com 에 접속해보면, 짜잔~ 한 줄 뜬다.
 :-( 어쨌든 정상 작동!
 
-![CF](/attachments/2011-08-22-cloudfoundry.png)
+![Cloud Foundry - Testdrive](/attachments/2011-08-22-cloudfoundry.png)
 {.fit .dropshadow}
 
 이야~~ 멋지지 않아? "준비하시고~", "시~", "작!" 하면 딱 뜨는데...

@@ -14,10 +14,7 @@ Console App의 방향을 다시 명확하게 잡고, 이 과정에서 Semantic U
 직관적으로 확인할 수 있도록 Billing 자료에 시각화를 적용해 보았다.
 <!--more-->
 
-Hardened Layer Console: Dashboard
-{.block-title}
-
-![](/attachments/20160121-hl-v1-dashboard.png)
+![Hardened Layer Console: Dashboard](/attachments/20160121-hl-v1-dashboard.png)
 {.fit .dropshadow}
 
 앞선 [글][HardenedLayer-Part1]에서는 **Ruby on Rails를 이용하여 API App**을
@@ -481,10 +478,7 @@ $
 아래 화면은, 이상 설명한 Semantic UI를 이용한 Titlebar와 Sidebar,
 그리고 EsTable을 이용한 자료 Table 등이 적용된 최종 UI이다.
 
-Hardened Layer Console: Servers
-{.block-title}
-
-![](/attachments/20160116-hl-v1-servers.png)
+![Hardened Layer Console: Servers](/attachments/20160116-hl-v1-servers.png)
 {.fit .dropshadow}
 
 화면 위쪽의 검은 줄은 Semantic UI의 `menu`이며, Menu 왼쪽의 버튼을
@@ -637,10 +631,7 @@ export default Ember.Controller.extend({
 Deploy된 각 자원의 비용 분포를 시각적으로 표시하여, 각 자원 별로
 전체 비용에 대한 비율을 표시해준다.
 
-Hardened Layer Console: Dashboard
-{.block-title}
-
-![](/attachments/20160121-hl-v1-dashboard.png)
+![Hardened Layer Console: Dashboard](/attachments/20160121-hl-v1-dashboard.png)
 {.fit .dropshadow}
 
 
