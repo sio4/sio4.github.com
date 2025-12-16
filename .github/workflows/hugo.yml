@@ -24,6 +24,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       HUGO_VERSION: 0.152.2
+      PAGEFIND_VERSION: 1.4.0
     steps:
       - name: Install Hugo CLI
         run: |
@@ -31,6 +32,11 @@ jobs:
           && sudo dpkg -i ${{ runner.temp }}/hugo.deb
       - name: Install Dart Sass
         run: sudo snap install dart-sass
+      - name: Install Pagefind CLI
+        run: |
+          wget --no-verbose -O ${{ runner.temp }}/pagefind.tgz https://github.com/Pagefind/pagefind/releases/download/v${PAGEFIND_VERSION}/pagefind_extended-v${PAGEFIND_VERSION}-x86_64-unknown-linux-musl.tar.gz \
+          && tar xvf ${{ runner.temp }}/pagefind.tgz \
+          && mv pagefind_extended ${{ runner.temp }}/pagefind
       - name: Checkout
         uses: actions/checkout@v4
         with:
@@ -48,6 +54,9 @@ jobs:
           hugo \
             --minify \
             --baseURL "${{ steps.pages.outputs.base_url }}/"
+      - name: Index the Site
+        run: |
+          ${{ runner.temp }}/pagefind --site public --force-language ko
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v4
         with:

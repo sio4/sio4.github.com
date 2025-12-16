@@ -20,6 +20,8 @@ params:
   wordCount: true
   timeFormat: 2006년 1월 2일 15:04
   googleTranslate: false
+  usePagefind: true
+  notFoundTo: /search/
   author:
     name: Yonghwan SO
     url: https://sio4.github.io/about/
@@ -93,4 +95,8 @@ menus:
       parent: Articles
       weight: 32
     - name: Feeds
+      weight: 80
       url: http://feeds.feedburner.com/sauru-so
+    - name: <i class="fa-solid fa-magnifying-glass"></i>
+      weight: 90
+      pageRef: /search
