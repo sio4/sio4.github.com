@@ -22,6 +22,7 @@ params:
   googleTranslate: false
   usePagefind: true
   notFoundTo: /search/
+  #favicon: /favicon.ico
   author:
     name: Yonghwan SO
     url: https://sio4.github.io/about/

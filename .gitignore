@@ -1,4 +1,5 @@
-.*
+.*.swp
+relref.md
 
 # hugo temorary files
 public/

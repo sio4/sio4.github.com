@@ -2,7 +2,9 @@
 default:
 	# rules:
 	#	check
-	#		linkcheck
+	#	linkcheck	check broken link
+	#	relref		generate relref.md
+	#	all-urls	print all external urls
 
 check: linkcheck
 
@@ -17,7 +19,12 @@ install-muffet:
 	go install github.com/raviqqe/muffet/v2@latest
 
 relref:
-	hugo list all \
-		|cut -d, -f1,3 \
-		|sed 's;^content/\([^,]*\),\(.*\);[\2]:{{< relref "/\1" >}};' \
-		> relref.md
+	HUGO_OUTPUTS_HOME=markdown hugo build
+	mv public/index.md relref.md
+
+all-urls:
+	hugo list published \
+		|sed 's/".*",20/,20/' \
+		|cut -d, -f8 \
+		|grep -v ^permalink \
+		|sed 's/^/[ ] /' \
