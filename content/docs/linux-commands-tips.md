@@ -3,6 +3,7 @@ type: page
 title: Linux 활용 팁
 subtitle: 가끔 써서 자주 까먹는 유용한 명령들
 categories: ["misc"]
+draft: true
 date: 2017-10-31T22:00:00+0900
 last_modified_at: 2017-10-31T22:00:00+0900
 ---

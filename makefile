@@ -27,4 +27,12 @@ all-urls:
 		|sed 's/".*",20/,20/' \
 		|cut -d, -f8 \
 		|grep -v ^permalink \
-		|sed 's/^/[ ] /' \
+		|sed 's/^/[ ] /'
+
+all-tags:
+	@grep -h ^tags content/blog/*/*.md content/*/*.md content/*.md \
+		|sed 's/.*\[//; s/\]//; s/, /\n/g; s/"//g' \
+		|grep -v '^$$' \
+		|sort -f \
+		|uniq -c \
+		|sort

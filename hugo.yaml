@@ -18,11 +18,12 @@ params:
   since: 2007
   readingTime: true
   wordCount: true
-  timeFormat: 2006년 1월 2일 15:04
+  timeFormat: 2006년 1월 2일
   googleTranslate: false
   usePagefind: true
   notFoundTo: /search/
   #favicon: /favicon.ico
+  hideTagLessThan: 1
   author:
     name: Yonghwan SO
     url: https://sio4.github.io/about/
