@@ -2,6 +2,7 @@
 title: "Elastic NMS Part 1: 엔진을 켜라!"
 subtitle: Elastic Stack을 바탕으로 NMS 만들기
 series: Elastic NMS
+sisters: ["Calling All Logs"]
 tags: ["elastic-stack", "logging", "monitoring", "cloud-computing", "analytics"]
 categories: ["cloud-computing"]
 images: [/attachments/elastic-nms/elastic-architecture.png]
@@ -396,10 +397,6 @@ $
 [Elastic NMS Part 4: Kibana로 Visualize하기]:{{< relref "/blog/cloud-computing/2017-10-30-elastic-nms-part4-visualize-with-kibana.md" >}}
 [Elastic NMS Part 5: NetFlow 수신하기]:{{< relref "/blog/cloud-computing/2017-10-31-elastic-nms-part5-netflow-monitoring.md" >}}
 [Elastic NMS Part 6: SNMP 수신하기]:{{< relref "/blog/cloud-computing/2017-10-31-elastic-nms-part6-snmp-monitoring.md" >}}
-
-### 비슷한 맥락의 시리즈
-
-{{< series "Calling All Logs" >}}
 
 
 

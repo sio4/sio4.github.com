@@ -34,5 +34,4 @@ all-tags:
 		|sed 's/.*\[//; s/\]//; s/, /\n/g; s/"//g' \
 		|grep -v '^$$' \
 		|sort -f \
-		|uniq -c \
-		|sort
+		|uniq -c

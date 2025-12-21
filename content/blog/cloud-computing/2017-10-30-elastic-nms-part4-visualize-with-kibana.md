@@ -2,6 +2,7 @@
 title: "Elastic NMS Part 4: Kibana로 Visualize하기"
 subtitle: Elastic Stack을 바탕으로 NMS 만들기
 series: Elastic NMS
+sisters: ["Calling All Logs"]
 tags: ["elastic-stack", "logging", "monitoring", "cloud-computing", "analytics"]
 categories: ["cloud-computing"]
 images: [/attachments/elastic-nms/elk-403-tile-map.jpg]
@@ -245,9 +246,7 @@ Port에 대한 접속을 시도하고 있는지를 시각화하는 예를 들어
 [Elastic NMS Part 5: NetFlow 수신하기]:{{< relref "/blog/cloud-computing/2017-10-31-elastic-nms-part5-netflow-monitoring.md" >}}
 [Elastic NMS Part 6: SNMP 수신하기]:{{< relref "/blog/cloud-computing/2017-10-31-elastic-nms-part6-snmp-monitoring.md" >}}
 
-### 자매 시리즈
 
-{{< series "Calling All Logs" >}}
 
 [Calling All Logs! Graylog2 1편: 설치하기]:{{< relref "/blog/sysadmin/2017-10-11-calling-all-logs-graylog2-installation.md" >}}
 [Calling All Logs! Graylog2 2편: 맛보기]:{{< relref "/blog/sysadmin/2017-10-12-calling-all-logs-graylog2-overview.md" >}}

@@ -2,6 +2,7 @@
 title: "Elastic NMS Part 3: Mapping과 Template"
 subtitle: Elastic Stack을 바탕으로 NMS 만들기
 series: Elastic NMS
+sisters: ["Calling All Logs"]
 tags: ["elastic-stack", "logging", "monitoring", "cloud-computing", "analytics"]
 categories: ["cloud-computing"]
 images: [/attachments/elastic-nms/elastic-architecture.png]
@@ -478,9 +479,7 @@ Poller를 이용하여 SNMP 자료를 모으도록 구성을 했었는데, 이�
 
 [Elastic NMS Part 2: Syslog 원격로깅#Template 설정하기]:{{< relref "/blog/cloud-computing/2017-10-30-elastic-nms-part2-syslog-remote-logging.md" >}}#template-설정하기
 
-### 자매 시리즈
 
-{{< series "Calling All Logs" >}}
 
 [Calling All Logs! Graylog2 1편: 설치하기]:{{< relref "/blog/sysadmin/2017-10-11-calling-all-logs-graylog2-installation.md" >}}
 [Calling All Logs! Graylog2 2편: 맛보기]:{{< relref "/blog/sysadmin/2017-10-12-calling-all-logs-graylog2-overview.md" >}}

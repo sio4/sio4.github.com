@@ -6,10 +6,10 @@ categories: ["misc"]
 date: 2017-10-31T18:34:00+0900
 lastmod: 2025-12-20T23:26:50+09:00
 ---
-Android 폰, 또는 DSLR에서 쓰기 위해 구입했던 SD Card에 대하여 진행한,
+Android 폰, 또는 DSLR 등에서 쓰기 위해 구입했던 SD Card에 대하여 진행한,
 `dd`를 사용한 간이 읽기/쓰기 속도 시험. 워낙 메뉴얼 보기를 돌같이 하다
 보니 처음에는 (오히려 복잡한) 무식한 방법을 썼었고, 오늘 새 microSD를
-추가하는 김에 좀 다음었다. 다듬는 김에 문서도 좀 업데이트.
+추가하는 김에 좀 다듬었다. 다듬는 김에 문서도 좀 업데이트.
 <!--more-->
 
 결론은,
@@ -18,20 +18,20 @@ Android 폰, 또는 DSLR에서 쓰기 위해 구입했던 SD Card에 대하여 �
 > * SD Card Reader는 USB 3.0을 ~살 필요가 없다~ 이제는 살만 하다.
 
 
-## Result
+## 결과 {#result}
 
-|Product                                         |READ   |WRITE  | Tested at  |
-|------------------------------------------------|------:|------:|-----------:|
-| SanDisk Extreme 256GB microSDXC I C10 U3 V30 A2| 86.26 | 67.71 | 2025-12-19 |
-| KODAK 64GB microSDXC I C10 U3 V30 A1 (AliExpr) | 78.44 | 21.92 | 2025-11-10 |
-| SanDisk Extreme PRO 256GB SDXC I C10 U3 V30    | 83.52 | 84.56 | 2018-12-12 |
-| SanDisk Ultra 200GB microSDXC I C10 U1 A1      | 82.62 | 31.30 | 2018-12-11 |
-| SanDisk Ultra Plus 128GB microSDXC I U1 V10 A1 | 75.90 | 32.97 |            |
-| SanDisk Extream 64GB SDXC I U3                 | 54.00 | 34.73 |            |
-| SanDisk 64GB SDXC I U1                         | 67.54 | 35.62 |            |
-| Samsung 64GB SDXC I C10 U1                     | 44.46 | 13.21 |            |
-| Samsung 32GB SDHC C10 U1                       | 51.47 | 34.13 |            |
-| SanDisk 32GB SDHC Class 4 (D1)                 | 20.57 |  6.20 |            |
+|Product                                        |READ    |WRITE  |Tested at   |
+|-----------------------------------------------|-------:|------:|-----------:|
+|SanDisk Extreme 256GB microSDXC I V30 A2 U3 C10|  86.26 | 67.71 | 2025-12-19 |
+|KODAK 64GB microSDXC I V30 A1 U3 C10           |  78.44 | 21.92 | 2025-11-10 |
+|SanDisk Extreme PRO 256GB SDXC I V30 U3 C10    |  83.52 | 84.56 | 2018-12-12 |
+|SanDisk Ultra 200GB microSDXC I A1 U1 C10      |  82.62 | 31.30 | 2018-12-11 |
+|SanDisk Ultra Plus 128GB microSDXC I V10 A1 U1 |  75.90 | 32.97 |            |
+|SanDisk Extreme 64GB microSDXC I U3 C10        |  54.00 | 34.73 |            |
+|SanDisk 64GB SDXC I U1 (?)                     |  67.54 | 35.62 |            |
+|Samsung 64GB SDXC I U1 C10 (?)                 |  44.46 | 13.21 |            |
+|Samsung 32GB SDHC I U1 C10 (?)                 |  51.47 | 34.13 |            |
+|SanDisk 32GB SDHC Class 4 (D1)                 |  20.57 |  6.20 |            |
 {.fit}
 
 기록을 위한 문서니까 결과를 맨 앞에 넣었다. 시험 조건을 최대속도를 낼 수 있는
@@ -40,54 +40,78 @@ Android 폰, 또는 DSLR에서 쓰기 위해 구입했던 SD Card에 대하여 �
 
 ### SPEC
 
-| Product                                               | READ     | WRITE    |
+|Product                                                | READ     | WRITE    |
 |-------------------------------------------------------|---------:|---------:|
-| SanDisk Extreme 256GB microSDXC I C10 U3 V30 A2       | 190 MB/s | 130 MB/s |
-| KODAK 64GB microSDXC I C10 U3 V30 A1 (AliExpress)     | 100 MB/s |  70 MB/s |
-| SanDisk Extreme PRO 265GB SDXC I C10 U3 V30           | 200 MB/s | 140 MB/s |
-| SanDisk Ultra 200GB microSDXC I C10 U1 A1             | 120 MB/s |   - MB/s |
-| SanDisk Ultra Plus 128GB microSDXC I U1 V10 A1        | 100 MB/s |   - MB/s |
+|SanDisk Extreme 256GB microSDXC I V30 A2 U3 C10        | 190 MB/s | 130 MB/s |
+|SanDisk Extreme PRO 256GB microSDXC I V30 A2 U3*       | 200 MB/s | 140 MB/s |
+|KODAK 64GB microSDXC I V30 A1 U3 C10                   | 100 MB/s |  70 MB/s |
+|Samsung EVO Plus 256GB microSDXC I V30 A2 U3*          | 100 MB/s |  90 MB/s |
+|SanDisk Extreme PRO 256GB SDXC I V30 U3 C10            | 200 MB/s | 140 MB/s |
+|SanDisk Ultra 200GB microSDXC I A1 U1 C10              | 120 MB/s |   - MB/s |
+|SanDisk Ultra Plus 128GB microSDXC I V10 A1 U1         | 100 MB/s |   - MB/s |
+|SanDisk Extreme 64GB microSDXC I U3                    |  90 MB/s |  40 MB/s |
+|SanDisk Extreme 64GB microSDXC I U1                    |  45 MB/s |   - MB/s |
 {.fit}
 
 SPEC만 보면 아우~ 두 배는 빨라야 하는데...
 
-### Details
+### 구매이력 {#purchase}
 
-| READ SPEED                     | 1st  | 2nd  | 3rd  | 4th  | 5th  | average |
-|--------------------------------|-----:|-----:|-----:|-----:|-----:|--------:|
-| SanDisk Extreme 256GB V30 U3 A2| 84.9 | 86.6 | 86.0 | 87.0 | 86.8 |   86.26 |
-| KODAK SDXC U3 C10 V30 A1 SDR104| 78.0 | 78.9 | 78.3 | 78.3 | 78.7 |   78.44 |
-| SanDisk Extreme PRO V30 U3 C10 | 82.6 | 83.9 | 83.5 | 83.4 | 84.2 |   83.52 |
-| SanDisk Ultra 200GB 2018 Spain | 82.6 | 81.3 | 83.3 | 82.5 | 82.9 |   82.62 |
-| SanDisk Ultra Plus 128GB       | 76.0 | 76.1 | 76.0 | 75.5 | 75.9 |   75.90 |
-| SanDisk Extream 64GB SDXC I U3 | 54.0 | 54.0 | 54.0 | 54.0 | 54.0 |   54.00 |
-| SanDisk 64GB SDXC I U1         | 67.4 | 67.6 | 67.6 | 67.6 | 67.5 |   67.54 |
-| Samsung 64GB SDXC I C10 U1     | 44.9 | 44.8 | 44.3 | 44.3 | 44.1 |   44.46 |
-| Samsung 32GB SDHC C10 U1       | 51.3 | 51.6 | 51.5 | -    | -    |   51.47 |
-| SanDisk 32GB SDHC Class 4 (D1) | 20.6 | 20.6 | 20.5 | -    | -    |   20.57 |
+|Product                                           | Date      |From |Price   |
+|--------------------------------------------------|-----------|-----|-------:|
+|SanDisk Extreme 256GB microSDXC I V30 A2 U3 C10   | 2025-12-18| CPNG|  48,850|
+|SanDisk Extreme PRO 256GB microSDXC I V30 A2 U3*  | 2025-01-11| CPNG|  34,090|
+|KODAK 64GB microSDXC I V30 A1 U3 C10              | 2023-10-04| Ali |   2,705|
+|Samsung EVO Plus 256GB microSDXC I V30 A2 U3*     | 2023-01-17| CPNG|  29,510|
+|SanDisk Extreme PRO 256GB SDXC I V30 U3 C10       | 2018-07-10| 11st| 129,590|
+|SanDisk Ultra 200GB microSDXC I A1 U1 C10         | 2018-07-00|     |        |
+|SanDisk Ultra Plus 128GB microSDXC I V10 A1 U1    |           |     |        |
+|SanDisk Extreme 64GB microSDXC I U3               |           |     |        |
+|SanDisk Extreme 64GB microSDXC I U1 (?)           | 2013-12-26| 11st|  90,830|
+|Samsung PRO 64GB microSDXC C10 (?)                | 2013-06-24| 11st|  61,160|
+|Samsung Plus 32GB SDHC I C10 (?)                  | 2013-06-14| 11st|  26,150|
+|Sandisk Ultra 64G microSDXC C10 30M (-)           | 2013-03-28| 11st|  57,070|
 {.fit}
 
-| WRITE SPEED                    | 1st  | 2nd  | 3rd  | 4th  | 5th  | average |
-|--------------------------------|-----:|-----:|-----:|-----:|-----:|--------:|
-| SanDisk Extream 256GB V30 U3 A2| 65.7 | 68.1 | 67.0 | 68.7 | 69.0 |   67.71 |
-| KODAK SDXC U3 C10 V30 A1 SDR104| 22.5 | 21.8 | 20.9 | 22.4 | 22.0 |   21.92 |
-| SanDisk Extreme PRO V30 U3 C10 | 89.6 | 90.4 | 63.0 | 89.6 | 90.2 |   84.56 |
-| SanDisk Ultra 200GB 2018 Spain | 28.1 | 32.7 | 31.9 | 31.8 | 32.0 |   31.30 |
-| SanDisk Ultra Plus 128GB       | 34.4 | 30.0 | 31.1 | 36.1 | 33.3 |   32.97 |
-| SanDisk Extream 64GB SDXC I U3 | 34.4 | 35.0 | 30.8 | 35.9 | 37.6 |   34.73 |
-| SanDisk 64GB SDXC I U1         | 35.6 | 36.2 | 31.6 | 39.0 | 35.7 |   35.62 |
-| Samsung 64GB SDXC I C10 U1     | (5.7)|  8.3 | 10.9 | 16.8 | 16.9 |   13.21 |
-| Samsung 32GB SDHC C10 U1       | 42.9 | 45.4 | 23.1 | 19.3 | 40.0 |   34.13 |
-| SanDisk 32GB SDHC Class 4 (D1) |  7.0 |  5.8 |  5.6 |  6.1 |  6.5 |    6.20 |
+일부는 구매이력과 시험이력이 불분명하다. :-(
+
+### 상세 {#details}
+
+|READ SPEED                              | 1st | 2nd | 3rd | 4th | 5th | AVG  |
+|----------------------------------------|----:|----:|----:|----:|----:|-----:|
+|SanDisk Extreme 256GB microSDXC I V30 A2| 84.9| 86.6| 86.0| 87.0| 86.8| 86.26|
+|KODAK 64GB microSDXC I V30 A1 U3 C10    | 78.0| 78.9| 78.3| 78.3| 78.7| 78.44|
+|SanDisk Extreme PRO 256GB SDXC I V30 U3 | 82.6| 83.9| 83.5| 83.4| 84.2| 83.52|
+|SanDisk Ultra 200GB microSDXC I A1 U1   | 82.6| 81.3| 83.3| 82.5| 82.9| 82.62|
+|SanDisk Ultra Plus 128GB microSDXC I V10| 76.0| 76.1| 76.0| 75.5| 75.9| 75.90|
+|SanDisk Extreme 64GB microSDXC I U3     | 54.0| 54.0| 54.0| 54.0| 54.0| 54.00|
+|SanDisk 64GB SDXC I U1 (?)              | 67.4| 67.6| 67.6| 67.6| 67.5| 67.54|
+|Samsung 64GB SDXC I U1 C10 (?)          | 44.9| 44.8| 44.3| 44.3| 44.1| 44.46|
+|Samsung 32GB SDHC I U1 C10 (?)          | 51.3| 51.6| 51.5| -   | -   | 51.47|
+|SanDisk 32GB SDHC Class 4 (D1)          | 20.6| 20.6| 20.5| -   | -   | 20.57|
+{.fit}
+
+|WRITE SPEED                             | 1st | 2nd | 3rd | 4th | 5th | AVG  |
+|----------------------------------------|----:|----:|----:|----:|----:|-----:|
+|SanDisk Extreme 256GB microSDXC I V30 A2| 65.7| 68.1| 67.0| 68.7| 69.0| 67.71|
+|KODAK 64GB microSDXC I V30 A1 U3 C10    | 22.5| 21.8| 20.9| 22.4| 22.0| 21.92|
+|SanDisk Extreme PRO 256GB SDXC I V30 U3 | 89.6| 90.4| 63.0| 89.6| 90.2| 84.56|
+|SanDisk Ultra 200GB microSDXC I A1 U1   | 28.1| 32.7| 31.9| 31.8| 32.0| 31.30|
+|SanDisk Ultra Plus 128GB microSDXC I V10| 34.4| 30.0| 31.1| 36.1| 33.3| 32.97|
+|SanDisk Extreme 64GB microSDXC I U3     | 34.4| 35.0| 30.8| 35.9| 37.6| 34.73|
+|SanDisk 64GB SDXC I U1 (?)              | 35.6| 36.2| 31.6| 39.0| 35.7| 35.62|
+|Samsung 64GB SDXC I U1 C10 (?)          |(5.7)|  8.3| 10.9| 16.8| 16.9| 13.21|
+|Samsung 32GB SDHC I U1 C10 (?)          | 42.9| 45.4| 23.1| 19.3| 40.0| 34.13|
+|SanDisk 32GB SDHC Class 4 (D1)          |  7.0|  5.8|  5.6|  6.1|  6.5|  6.20|
 {.fit}
 
 
 
-## Method
+## 시험방법 {#method}
 
 읽기 및 쓰기 성능시험에 사용한 명령어는 다음과 같다.
 
-#### Read
+#### 읽기시험 {#read}
 
 ```console
 $ for i in 1 2 3 4 5; do LANG=C sudo dd if=/dev/mmcblk0 of=/dev/null bs=4M count=256 iflag=direct 2>&1 |tail -1; done
@@ -127,11 +151,11 @@ $ for i in 1 2 3 4 5; do sync; echo 3 |sudo tee /proc/sys/vm/drop_caches >/dev/n
 $ 
 ```
 
-이 결과는 "SanDisk Ultra Plus 128GB microSDXC I C10 U1 V10 A1" 모델에 대해
+이 결과는 "SanDisk Ultra Plus 128GB microSDXC I V10 A1 U1" 모델에 대해
 예전에 시험했던 결과다.  (이번에 용도변경을 위해 시험해보니 제대로 동작하지
 않는다. 좀 더 확인해보고 폐기처분해야 할 듯. 비싸게 샀는데... ㅠ.ㅠ)
 
-#### Write
+#### 쓰기시험 {#write}
 
 
 ```console

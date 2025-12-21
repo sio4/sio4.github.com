@@ -2,6 +2,7 @@
 title: "Elastic NMS Part 2: Syslog 원격로깅"
 subtitle: Elastic Stack을 바탕으로 NMS 만들기
 series: Elastic NMS
+sisters: ["Calling All Logs"]
 tags: ["elastic-stack", "logging", "monitoring", "cloud-computing", "analytics"]
 categories: ["cloud-computing"]
 images: [/attachments/elastic-nms/elk-100-kibana.jpg]
@@ -488,9 +489,6 @@ Template에 대한 자세한 얘기는 다음 편에 이어서...
 [Elastic NMS Part 5: NetFlow 수신하기]:{{< relref "/blog/cloud-computing/2017-10-31-elastic-nms-part5-netflow-monitoring.md" >}}
 [Elastic NMS Part 6: SNMP 수신하기]:{{< relref "/blog/cloud-computing/2017-10-31-elastic-nms-part6-snmp-monitoring.md" >}}
 
-### 자매 시리즈
-
-{{< series "Calling All Logs" >}}
 
 
 [Calling All Logs! Graylog2 1편: 설치하기]:{{< relref "/blog/sysadmin/2017-10-11-calling-all-logs-graylog2-installation.md" >}}
