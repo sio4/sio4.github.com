@@ -64,6 +64,7 @@ markup:
         title: true
       wrapStandAloneImageWithinParagraph: false
 
+summaryLength: 40
 pagination:
   pagerSize: 20
 
