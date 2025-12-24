@@ -23,7 +23,7 @@ relref:
 	mv public/index.md relref.md
 
 all-urls:
-	hugo list published \
+	@hugo list published \
 		|sed 's/".*",20/,20/' \
 		|cut -d, -f8 \
 		|grep -v ^permalink \
