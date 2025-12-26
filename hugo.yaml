@@ -24,6 +24,9 @@ params:
   notFoundTo: /search/
   #favicon: /favicon.ico
   hideTagLessThan: 1
+  endingComments:
+    - 묶음글, 함께 읽기 잊지 마세요!
+    - 잘못된 부분의 제보나 의견/요청 댓글 환영합니다!
   author:
     name: Yonghwan SO
     url: https://sio4.github.io/about/

@@ -146,14 +146,14 @@ filter {
 **syslog 전송 규약에 의해 데이터를 수집**하는 것이기 때문에 `facility`,
 `priority`, `severity` 등의 상세한 정보까지 정확하게 뽑아낼 수 있다.
 
-![Discover](/attachments/elastic-nms/elk-201-discover.jpg)
+![Discover](/attachments/elastic-nms/elk-201-discover.jpg "Discover")
 {.bordered}
 
 위의 그림은 기록된 syslog 데이터 한 줄을 Discovery 화면에서 본 것이다.
 왼쪽부터 기록된 날짜, 타입 정보, 그리고 메시지 본문이 표시되는데, 맨 왼쪽
 세모표를 누르면 아래와 같이 이 레코드에 대한 상세 정보를 확인할 수 있다.
 
-![Details](/attachments/elastic-nms/elk-202-details.jpg)
+![Details](/attachments/elastic-nms/elk-202-details.jpg "Details")
 {.bordered}
 
 위의 상세 정보를 보면 내부적으로 사용하는 `_`로 시작하는 메타 정보와 메시지

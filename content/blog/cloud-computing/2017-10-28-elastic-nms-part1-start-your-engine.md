@@ -67,7 +67,7 @@ Logstash는 구성 형태에 따라 (로그를 퍼다가 다음 위치로 쏴주
 DBA들이 쓰는 Toad 같은 녀석이랄까? 원초적인 수준, 또는 최대의 자유도로
 Elasticsearch를 쓰는 기본 분석도구 정도로 이해할 수 있다.
 
-![Elastic Architecture](/attachments/elastic-nms/elastic-architecture.png)
+![Elastic Architecture](/attachments/elastic-nms/elastic-architecture.png "Elastic Architecture")
 
 단순하게 Elastic Stack을 표현한 그림인데, 이 시험에서는 Cluster 구성 없이
 단일 기계에 세 개의 구성요소를 모두 올린 형태로 진행했다.
@@ -236,7 +236,7 @@ $
 
 올렸으니 바로 접속을 해보자.
 
-![Kibana Intro](/attachments/elastic-nms/elk-kibana-01-initializing.jpg)
+![Kibana Intro](/attachments/elastic-nms/elk-kibana-01-initializing.jpg "Kibana Intro")
 {.bordered}
 
 Kibana는 첫번째 사용자가 접속할 때, 위와 같이 Initialize 과정을 거친다.
@@ -248,7 +248,7 @@ Kibana는 첫번째 사용자가 접속할 때, 위와 같이 Initialize 과정�
 아무튼, 초기화가 되면 다음과 같이, Index 정보가 없으니 만들라는 화면으로
 넘어간다.
 
-![Kibana - No Index](/attachments/elastic-nms/elk-kibana-02-no-index.jpg)
+![Kibana - No Index](/attachments/elastic-nms/elk-kibana-02-no-index.jpg "Kibana - No Index")
 {.bordered}
 
 그러나 우리는 아직 Index를 가지고 있지 않다. Index는 일종의 Database, 또는

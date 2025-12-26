@@ -123,7 +123,7 @@ Adapter가 놓인다. 그 사이를 Processing Router가 채우는데, 여기에
 여러 Pipe들이 딸려있다. 이 구조를 관리하기 위해 Controller가 그 위에
 놓이는 구성으로 되어있는데, 다음 그림을 보면 더 이해가 빠를 것 같다:
 
-![Goul Client Block](/attachments/goul/goul-block-client-color.png)
+![Goul Client Block](/attachments/goul/goul-block-client-color.png "Goul Client Block")
 
 Goul은 서버모드와 클라이언트 모드로 구동이 가능하다. 위의 그림은 클라이언트
 모드로 구동되었을 경우의 Goul을 표현하고 있다.
@@ -136,7 +136,7 @@ Router와 연결되어 놓여있고(녹색 상자), 그 아래에 세 개의 Pip
 이 직선적 파이프라인 배치를 바탕으로, Device Adapter는 파이프라인의
 소스로 동작하게 되며, Network Adapter는 파이프라인의 싱크가 된다.
 
-![Goul Server Block](/attachments/goul/goul-block-server-color.png)
+![Goul Server Block](/attachments/goul/goul-block-server-color.png "Goul Server Block")
 
 서버모드를 표현한 위의 그림은... 뭐가 다르지? Goul은 하나의 프로그램이
 옵션에 의해 서버모드와 클라이언트 모드가 전환되는 구조로, 기본 구조를
@@ -177,7 +177,7 @@ Pipeline의 반대편 끝은 Write Adapter의 입력으로 연결되는데, 얘�
 
 그림으로 보면 다음과 같다:
 
-![Data Flow of Client](/attachments/goul/goul-flow-data-client.png)
+![Data Flow of Client](/attachments/goul/goul-flow-data-client.png "Data Flow of Client")
 
 
 ### 서버 모드
@@ -196,7 +196,7 @@ Goul이 서버모드로 시작되면, 얘는 클라이언트 접속을 기다리
 
 그림으로 보면 아래와 같다:
 
-![Data Flow of Server](/attachments/goul/goul-flow-data-server.png)
+![Data Flow of Server](/attachments/goul/goul-flow-data-server.png "Data Flow of Server")
 
 간단하지!
 
@@ -211,7 +211,7 @@ Goul이 서버모드로 시작되면, 얘는 클라이언트 접속을 기다리
 표현한 것이고 Goul이 클라이언트 모드로 동작하고 있으며, 왼쪽은 우리집
 DC에 네트워크 분석기와 Goul 서버가 위치한 모양으로 되어있다.
 
-![Direct Configuration](/attachments/goul/goul-architecture-direct.png)
+![Direct Configuration](/attachments/goul/goul-architecture-direct.png "Direct Configuration")
 
 클라우드 네트워크에서 발생한 패킷을 저 NIC에서 읽을 수 있어야 하는데
 어떤 경우에는 Promiscuos 모드를 켜주거나 수집기 자체가 Router 등으로
@@ -225,7 +225,7 @@ DC에 네트워크 분석기와 Goul 서버가 위치한 모양으로 되어있�
 여러 네트워크에 대하여 공용으로 사용될 것이다. 이 경우에는 아래와 같이,
 집중 Switch를 넣어 해결하게 된다.
 
-![Aggregated Configuration](/attachments/goul/goul-architecture-switch.png)
+![Aggregated Configuration](/attachments/goul/goul-architecture-switch.png "Aggregated Configuration")
 
 이 물리 Switch가 정상적으로 설정되어 위쪽의 포트에서 발생한 패킷을
 아래쪽으로 전송해주기만 한다면, 위와 동일하게 분석기에서 해당 흐름을

@@ -180,7 +180,7 @@ Swarm 클러스터의 실제 구성은 매우 단순하다. Swarm의 매력 중 
 구성하는 것이 가능하다. 예를 들어, 30 여 대의 Worker와 3~5 대의 Manager를
 독립적인 기계 위에 구성하는 것이다.
 
-![독립적인 Manager Pool을 구성한 예](/attachments/docker/swarm-cluster-large.png)
+![독립적인 Manager Pool을 구성한 예](/attachments/docker/swarm-cluster-large.png "독립적인 Manager Pool을 구성한 예")
 
 이 경우, Manager가 관리업무에만 헌신하게 되면 반대로 모든 업무 부하는
 Worker에 집중되며 만약 갑작스런 업무 부하로 인해 Process가 자원할당을

@@ -48,7 +48,7 @@ date: 2025-12-22T23:47:18+09:00
 > 쩌~기 저 QR Code 보여?
 {.comment}
 
-![뜯는곳](/attachments/tear-off-edge.jpg)
+![뜯는곳](/attachments/tear-off-edge.jpg "뜯는곳")
 
 속았지? 사진 속 오른쪽 위에 보이는 저 QR Code는 절취선 바깥에 위치하는데,
 저걸 "스마트폰의 눈"으로 딱! 찍어보면 애써 찢어낸 곳에 담겨있는 주소지 등

@@ -17,7 +17,7 @@ date: 2018-10-02T16:30:00+0900
 
 
 ![(c) Karunakar Rayker, https://www.flickr.com/photos/krayker/2117746551](/images/common/shell-on-the-beach.jpg)
-(c) Karunakar Rayker, https://www.flickr.com/photos/krayker/2117746551
+(c) Karunakar Rayker, CC BY 20, https://www.flickr.com/photos/krayker/2117746551
 {.caption .text-center}
 
 
