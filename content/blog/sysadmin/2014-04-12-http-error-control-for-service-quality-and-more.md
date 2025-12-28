@@ -72,7 +72,7 @@ date: 2014-04-12T14:54:00+09:00
 
 ## 오류가 감지되고 사용자에게 전달되는 과정
 
-Web Applicaiton Server가 있는 환경에서 이와 관련된 오류를 서버가 감지하고 그
+Web Application Server가 있는 환경에서 이와 관련된 오류를 서버가 감지하고 그
 정보를 사용자에게 전달하는 과정을 간단히 보면,
 
 1. HTTP 서버는 WAS와 연결이 되지 않을 때 "503 서비스 불가"를 전달.
@@ -239,7 +239,7 @@ Data Plan... 걱정이 필요하지만...) 물론, 제 3의 웹서비스를 이�
 
 ### SOSM과 연계
 
-SOSM은 나의 용어다. Service Oriented System Monitring. 시스템을 원초적
+SOSM은 나의 용어다. Service Oriented System Monitoring. 시스템을 원초적
 본능으로 CPU, Memory, Disk, Network,... 이렇게 감시하지 말고, 서비스를
 중심으로 감시하고자 하는 생각인데, 이것을 연계하여 장애 발생 시 Hook으로든,
 평상시 Ping으로든, 서비스 건강 검진을 함께 해주면 장애 예방과 발견에 아주

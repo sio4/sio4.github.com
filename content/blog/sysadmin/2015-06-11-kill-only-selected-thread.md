@@ -108,7 +108,7 @@ Thread를 고른다. (화면 보면서 감탄도 좀 하고, 스샷도 찍는 �
 
 ![](/attachments/kill-only-selected-thread/mia-cpu--009.png)
 
-첫 번째 목표물을 향해 쐈더니, 위와 같이 "tring to kill thread ..." 하는
+첫 번째 목표물을 향해 쐈더니, 위와 같이 "trying to kill thread ..." 하는
 메시지가 나왔다. 그리고,
 
 ![](/attachments/kill-only-selected-thread/mia-cpu--010.png)
