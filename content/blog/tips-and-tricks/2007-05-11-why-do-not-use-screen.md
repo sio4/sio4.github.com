@@ -1,7 +1,7 @@
 ---
 redirect_from: /entry/왜-screen을-사용하지-않는가/
 title: 왜 screen을 사용하지 않는가?
-tags: ["Linux", "sysop", "tips-and-tricks", "utility"]
+tags: ["Linux", "system operation", "tips-and-tricks", "utility"]
 categories: ["tips-and-tricks"]
 date: 2007-05-11T10:45:29+09:00
 lastmod: 2008-03-09T02:01:23+09:00

@@ -103,7 +103,7 @@ $
 복제를 시작하는 것이다.
 
 ![](/attachments/cockroachdb/ha/crdb-one-node-down-01-node-suspected.png)
-{.dropshadow .boxed}
+{.dropshadow .bordered}
 
 일단, 노란 불이 켜졌다. 한 대의 Node가 수상하다고 한다. 그리고 90 전체
 117개의 Range 중, 90개의 Range가 복제 대상으로 지정됐다. 그런데... 나중에
@@ -111,13 +111,13 @@ $
 중, 한 5 분이 지나니,
 
 ![](/attachments/cockroachdb/ha/crdb-one-node-down-02-node-dead.png)
-{.dropshadow .boxed}
+{.dropshadow .bordered}
 
 이렇게, 수상한 Node를 죽은 것으로 간주했고, 복제 대상의 수가 13개 줄었다.
 으잉?
 
 ![](/attachments/cockroachdb/ha/crdb-one-node-down-03-balanced.png)
-{.dropshadow .boxed}
+{.dropshadow .bordered}
 
 그리고 결국엔 한 대가 죽고 세 대가 남은 상황에서 복제 대상 Range의 수가
 0이 되었다. 복제가 다 끝나고, 안전한 상태가 되었다는 의미이다.
@@ -137,7 +137,7 @@ $
 Node를 죽인 모양이다. (시간을 재면서 할 걸...)
 
 ![](/attachments/cockroachdb/ha/crdb-one-node-down-11-ranges.png)
-{.dropshadow .boxed}
+{.dropshadow .bordered}
 
 뒤에 깔려있는 진한 파란색 선은 전체 Range의 수량이고, 잠깐 내려왔다가 다시
 올라가는 빨간 선은 Leaseholder의 수량이다. 이 때, Node가 죽으면서 그 Node가
@@ -187,7 +187,7 @@ Cockroach 가용성의 특징 #1 - 느린 사망 선고
 별 Replica의 수와 동일하다.
 
 ![](/attachments/cockroachdb/ha/crdb-one-node-down-12-replicas.png)
-{.dropshadow .boxed}
+{.dropshadow .bordered}
 
 이렇게, 옅은 파란색 선이 끊긴 상태에서, 그 높이와 같은 양의 Replica가
 나머지 세 Node에 분산되어 늘어나고 있고, 약 3분이 지난 시점에는 모든
@@ -197,13 +197,13 @@ Cockroach 가용성의 특징 #1 - 느린 사망 선고
 아래 그림처럼,
 
 ![](/attachments/cockroachdb/ha/crdb-one-node-down-95-replica-bef.png)
-{.dropshadow .boxed}
+{.dropshadow .bordered}
 
 사건 발생 직전에는 각각 84, 90, 87, 90 등 서로 다른 수의 Replica를
 보유하고 있었는데, 사망 선고 이후 재분배가 끝난 시점에는 아래와 같이,
 
 ![](/attachments/cockroachdb/ha/crdb-one-node-down-96-replica-aft.png)
-{.dropshadow .boxed}
+{.dropshadow .bordered}
 
 모든 Node가 동일하게 117이라는 숫자를 보이고 있다. 117이 뭐더라? 아!
 아까 전체 Range의 수가 117이었지. 결국, 모든 Node가 모든 Range를 다
@@ -229,12 +229,12 @@ Cockroach 가용성의 특징 #2 - 세 개의 Replica
 다시 가져왔다.
 
 ![](/attachments/cockroachdb/ha/crdb-one-node-down-11-ranges.png)
-{.dropshadow .boxed}
+{.dropshadow .bordered}
 
 그리고 다음은 각 Store(Node) 별 Leaseholders의 수를 나타내는 그래프다.
 
 ![](/attachments/cockroachdb/ha/crdb-one-node-down-13-leaseholders.png)
-{.dropshadow .boxed}
+{.dropshadow .bordered}
 
 딱 보이듯이, 05:58:10이 막 지난 시점에, 이미 Leaseholder는 살아남은 세
 Node에 분배가 끝났음을 알 수 있다. "[CockroachDB Architecture]"에서
@@ -270,7 +270,7 @@ Node가 돌아온 것은 이미 정상적인 서비스를 하던 Cluster에게 "
 않고 평화를 유지한다.
 
 ![](/attachments/cockroachdb/ha/crdb-one-node-rejoin-11-range.png)
-{.dropshadow .boxed}
+{.dropshadow .bordered}
 
 그러나 내부적으로는, 일꾼이 하나 더 생긴 것(또는 돌아온 것)을 반가워하며
 "잘 놀고 왔어? 여기 일" 하면서 일을 넘긴다. 위에서 데이터 자체의 복제와
@@ -280,7 +280,7 @@ Leaseholder라는 임무를 봤듯이, 두 가지 "일"이 넘어가게 되는�
 ### 데이터 재배치
 
 ![](/attachments/cockroachdb/ha/crdb-one-node-rejoin-12-replicas.png)
-{.dropshadow .boxed}
+{.dropshadow .bordered}
 
 위 그래프의 연한 파란색 선을 보면 시작 부분부터 90의 높이를 가지고 있는
 것을 볼 수 있다. 이는, 앞서 봤듯이 이 Node가 죽을 때 90 개의 Replica를
@@ -316,7 +316,7 @@ Node는 자신이 보유한 Range에 대해서는 언제는 Leaseholder가 될 �
 Leaseholder 선출을 거듭할 것이다. 결과적으로,
 
 ![](/attachments/cockroachdb/ha/crdb-one-node-rejoin-13-leaseholders.png)
-{.dropshadow .boxed}
+{.dropshadow .bordered}
 
 위의 그래프와 같이, 0에서 시작하여 Replica 재배치와 보조를 맞추면서
 돌아온 Node에게도 임무를 늘려 주고 있는 것을 확인할 수 있다.
@@ -366,13 +366,13 @@ $
 이제 두 Node만 살아있는 상태에서 클러스터의 상태를 봤다.
 
 ![](/attachments/cockroachdb/ha/crdb-two-node-down-01-node-suspected.png)
-{.dropshadow .boxed}
+{.dropshadow .bordered}
 
 음, 첫 번째 Node가 죽었을 때와 마찬가지로 이번에 죽은 Node도 Suspected
 상태가 되었다. (그런데 왜 전체 Range 수가 올라가지?)
 
 ![](/attachments/cockroachdb/ha/crdb-two-node-down-02-node-dead.png)
-{.dropshadow .boxed}
+{.dropshadow .bordered}
 
 그리고 역시 5분을 넘기게 되면, 위와 같이 사망 선고가 내려진다. (이제
 다시 전체 Range 수가 정상으로 돌아왔다.)
@@ -384,7 +384,7 @@ $
 ### 복제 불가
 
 ![](/attachments/cockroachdb/ha/crdb-two-node-down-11-range.png)
-{.dropshadow .boxed}
+{.dropshadow .bordered}
 
 끝끝내 복제는 일어나지 않았다.  위의 그래프를 보면, 08:05 정도에 복제
 대상이 40 정도 발생한 것을 보면 이 때 첫 번째 Node가 죽었다는 것과,
@@ -405,32 +405,32 @@ Leaseholder의 수가 튀는지이다. (통계 구간 내 Leaseholder의 합계 
 아무튼, 이 상태에서 아래 그래프와 같이, 더이상 Replica는 증가하지 않는다.
 
 ![](/attachments/cockroachdb/ha/crdb-two-node-down-12-replicas.png)
-{.dropshadow .boxed}
+{.dropshadow .bordered}
 
 하지만 Leaseholder는 조금 다른 문제이므로, 어쨌든 남아있는 Node 중
 다시 선출을 하였다는 것을 아래 그래프에서 볼 수 있다. (어라? 정말?
 여기서 시험이 살짝 꼬이기 시작한다. 이 얘기는 나중에 하고, 아무튼,)
 
 ![](/attachments/cockroachdb/ha/crdb-two-node-down-13-leaseholders.png)
-{.dropshadow .boxed}
+{.dropshadow .bordered}
 
 이때, 정확히 어떤 실패인지는 모르겠지만 뭔가에 대한 실패의 기록이
 지속적으로 발생하고, (아마 Node 간 Heartbeat의 문제 아닌가 싶다.)
 
 ![](/attachments/cockroachdb/ha/crdb-two-node-down-21-failures.png)
-{.dropshadow .boxed}
+{.dropshadow .bordered}
 
 복제 대기열도 복제 수행이 불가능한 수량으로 꽉 찼다.
 
 ![](/attachments/cockroachdb/ha/crdb-two-node-down-22-repl-queue.png)
-{.dropshadow .boxed}
+{.dropshadow .bordered}
 
 첫 번째 시험과 같이, 복제가 정상적으로 이루어지게 되면, 아래와 같이
 노란색 Pending Action 그래프나 Replica를 지웠거나 만든 그래프가
 나타나게 되는 것과는 다른 결과다.
 
 ![](/attachments/cockroachdb/ha/crdb-one-node-down-21-repl-queue.png)
-{.dropshadow .boxed}
+{.dropshadow .bordered}
 
 "음, 이제 Split Brain 상황이니 동작을 멈추겠지?" 라고 생각하며
 CLI를 꺼내 들었다.
@@ -562,14 +562,14 @@ Replica로 복제하여 여러 Node에 분산 저장하는 일을 관장하고, 
 두 Node를 동시에 죽여봤다.
 
 ![](/attachments/cockroachdb/ha/crdb-two-node-at-once-01-node-suspected-1.png)
-{.dropshadow .boxed}
+{.dropshadow .bordered}
 
 먼저 죽은 두 Node가 Suspected 상태에 빠졌고 Under-Replicated 상태인
 Range가 39개 생겨났다. 그런데, 그 옆에 29라는, 지금까지는 보지 못했던
 다른 값이 하나 더 있다. 이 값들은 시간이 흐르면서 살짝 변하더니,
 
 ![](/attachments/cockroachdb/ha/crdb-two-node-at-once-03-node-dead.png)
-{.dropshadow .boxed}
+{.dropshadow .bordered}
 
 최종적으로 Node의 사망 선고가 내려지면서 위와 같은 값이 되었다.
 
@@ -582,12 +582,12 @@ Range가 39개 생겨났다. 그런데, 그 옆에 29라는, 지금까지는 보
 그리고 이 상황에서, 100%는 아닌데 가끔은 다음과 같은 상황도 발생했다.
 
 ![](/attachments/cockroachdb/ha/crdb-two-node-at-once-05-connection.png)
-{.dropshadow .boxed}
+{.dropshadow .bordered}
 
 관리화면에 접속하지 못하거나,
 
 ![](/attachments/cockroachdb/ha/crdb-two-node-at-once-06-loading.png)
-{.dropshadow .boxed}
+{.dropshadow .bordered}
 
 값을 읽어오지 못하는 상황. 이건 DBMS가 정상적으로 동작하지 못한다는
 증거다! 라고... 생각하며, CLI를 다시 꺼냈다.
