@@ -2,7 +2,7 @@
 title: "Docker: Installation and Test Drive"
 subtitle: Utuntu 위에 Docker 설치하고 맛보기
 series: Docker 시작하기
-tags: ["Docker", "Container", "cloud-computing"]
+tags: ["Docker", "Container", "cloud computing"]
 categories: ["cloud-computing"]
 images: [/attachments/docker/docker-hello-world.png]
 banner: /attachments/docker/docker-hello-world-banner.png

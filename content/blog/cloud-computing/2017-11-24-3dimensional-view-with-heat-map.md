@@ -2,7 +2,7 @@
 title: Kibana Heat Map으로 3차원으로 펼쳐 보기
 subtitle: Elastic Stack을 활용해서 서비스 이벤트 해석하기
 series: 모니터링은 해석
-tags: ["monitoring", "analytics", "elastic-stack", "cloud-computing"]
+tags: ["monitoring", "analytics", "Elastic Stack", "cloud computing"]
 categories: ["cloud-computing"]
 images: [/attachments/silrok/silrok-heatmap-00-hourly.png]
 banner: /attachments/silrok/silrok-heatmap-00-weekly.png

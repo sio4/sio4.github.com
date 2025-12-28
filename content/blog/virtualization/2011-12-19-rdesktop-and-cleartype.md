@@ -3,7 +3,7 @@ redirect_from:
 - /entry/rdesktop-and-cleartype/
 - /254/
 title: "VDI: rdesktop과 ClearType"
-tags: ["virtualization", "VDI", "remote-terminal"]
+tags: ["virtualization", "VDI", "remote terminal"]
 categories: ["virtualization"]
 date: 2011-12-19T14:42:24+09:00
 lastmod: 2011-12-19T14:43:20+09:00

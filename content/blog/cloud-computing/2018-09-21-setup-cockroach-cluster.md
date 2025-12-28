@@ -2,7 +2,7 @@
 title: CockroachDB 클러스터 구성하기
 subtitle: '"바퀴벌레 연맹" 구성을 위한 배치/관리 반자동화하기'
 series: CockroachDB 맛보기
-tags: ["DBMS", "cloud-computing", "open-source"]
+tags: ["DBMS", "cloud computing", "open source"]
 categories: ["cloud-computing"]
 images: [/attachments/cockroachdb/cockroach-symbol.jpg]
 banner: /attachments/cockroachdb/cockroach-logo.jpg

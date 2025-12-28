@@ -3,7 +3,7 @@ title: "Elastic NMS Part 1: 엔진을 켜라!"
 subtitle: Elastic Stack을 바탕으로 NMS 만들기
 series: Elastic NMS
 sisters: ["Calling All Logs"]
-tags: ["elastic-stack", "logging", "monitoring", "cloud-computing", "analytics"]
+tags: ["Elastic Stack", "logging", "monitoring", "cloud computing", "analytics"]
 categories: ["cloud-computing"]
 images: [/attachments/elastic-nms/elastic-architecture.png]
 banner: /attachments/elastic-nms/elastic-architecture.png

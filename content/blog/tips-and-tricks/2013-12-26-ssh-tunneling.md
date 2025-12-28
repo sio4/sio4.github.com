@@ -1,7 +1,7 @@
 ---
 title: SSH Tunneling
 subtitle: 엄청나게 편리한, 그러나 보안 구멍이 될 수 있는!
-tags: [ssh, security, tips-and-tricks]
+tags: [ssh, security, tips and tricks]
 categories: ["tips-and-tricks"]
 banner: /attachments/ssh-tunnel.png
 date: 2013-12-26T12:10:00+09:00

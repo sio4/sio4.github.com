@@ -3,7 +3,7 @@ title: "Elastic NMS Part 6: SNMP 수신하기"
 subtitle: Elastic Stack을 바탕으로 NMS 만들기
 series: Elastic NMS
 sisters: ["Calling All Logs"]
-tags: ["elastic-stack", "SNMP", "monitoring", "cloud-computing", "analytics"]
+tags: ["Elastic Stack", "SNMP", "monitoring", "cloud computing", "analytics"]
 categories: ["cloud-computing"]
 images: [/attachments/elastic-nms/elk-full-dashboard.png]
 banner: /attachments/elastic-nms/elk-600-banner.png

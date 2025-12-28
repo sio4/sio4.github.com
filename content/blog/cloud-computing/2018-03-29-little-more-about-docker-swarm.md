@@ -2,7 +2,7 @@
 title: Docker Swarm 다시 보기
 subtitle: Docker의 Label과 관련된 몇 가지 재미있는 기능들
 series: Docker 시작하기
-tags: ["Docker", "orchestration", "Container", "cloud-computing"]
+tags: ["Docker", "orchestration", "Container", "cloud computing"]
 categories: ["cloud-computing"]
 images: [/images/common/label.jpg]
 banner: /images/common/label.jpg

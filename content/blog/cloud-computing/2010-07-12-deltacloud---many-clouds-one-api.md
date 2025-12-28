@@ -1,7 +1,7 @@
 ---
 redirect_from: /entry/be-cloudy-deltacloud-many-clouds-one-api/
 title: 클라우드 답기 위하여... Deltacloud - Many Clouds, One API
-tags: ["DeltaCloud", "RedHat", "API", "ruby-on-rails", "hybrid-cloud", "cloud-computing"]
+tags: ["DeltaCloud", "RedHat", "API", "Ruby on Rails", "hybrid cloud", "cloud computing"]
 categories: ["cloud-computing"]
 date: 2010-07-12T10:32:13+09:00
 lastmod: 2011-03-04T13:44:04+09:00

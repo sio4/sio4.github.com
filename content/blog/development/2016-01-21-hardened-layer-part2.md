@@ -3,7 +3,7 @@ title: Hardened Layer, SoftLayer Custom Portal - Part 2
 series: Hardened Layer
 images: [/attachments/20160121-hl-v1-dashboard.png]
 banner: /attachments/20160121-hl-v1-dashboard.png
-tags: ["hardened-layer", "SoftLayer", "cloud-computing", "emberjs", "semantic-ui", "d3js"]
+tags: ["hardened layer", "SoftLayer", "cloud computing", "EmberJS", "Semantic UI", "d3js"]
 categories: ["development"]
 date: Thu, 21 Jan 2016 01:35:31 +0900
 ---

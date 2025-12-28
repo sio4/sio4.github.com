@@ -1,7 +1,7 @@
 ---
 title: SD Card 성능 시험
 subtitle: 빠른 SD 카드를 갖고 싶다!
-tags: [performance, IO, SD card, microSD, microSDXC, memory-card, dd]
+tags: [performance, IO, SD card, microSD, microSDXC, memory card, dd]
 categories: ["misc"]
 date: 2017-10-31T18:34:00+0900
 lastmod: 2025-12-20T23:26:50+09:00

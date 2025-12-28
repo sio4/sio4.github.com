@@ -2,7 +2,7 @@
 title: "Docker Machine 다시 보기"
 subtitle: A Little More About Docker Machine
 series: Docker 시작하기
-tags: ["Docker", "Container", "SoftLayer", "cloud-computing"]
+tags: ["Docker", "Container", "SoftLayer", "cloud computing"]
 categories: ["cloud-computing"]
 images: [/attachments/docker/docker-machine-more.jpg]
 banner: /attachments/docker/docker-machine-more.jpg

@@ -3,7 +3,7 @@ title: "Elastic NMS Part 5: NetFlow 수신하기"
 subtitle: Elastic Stack을 바탕으로 NMS 만들기
 series: Elastic NMS
 sisters: ["Calling All Logs"]
-tags: ["elastic-stack", "NetFlow", "monitoring", "cloud-computing", "analytics"]
+tags: ["Elastic Stack", "NetFlow", "monitoring", "cloud computing", "analytics"]
 categories: ["cloud-computing"]
 images: [/attachments/elastic-nms/elk-503-netflow-dashboard.png]
 banner: /attachments/elastic-nms/elk-503-netflow-dashboard.png

@@ -2,7 +2,7 @@
 title: "'쓸만한' Docker Image 만들기 - Part 2"
 subtitle: Build and Push a Docker Image For Go Development
 series: Docker 시작하기
-tags: ["Docker", "Container", "golang", "cloud-computing"]
+tags: ["Docker", "Container", "golang", "cloud computing"]
 categories: ["cloud-computing"]
 images: [/attachments/docker/docker-cloud-banner.png]
 banner: /attachments/docker/go-alpine-docker.png

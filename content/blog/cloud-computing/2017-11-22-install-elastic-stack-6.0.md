@@ -2,7 +2,7 @@
 title: Elastic Stack 6.0 설치하기
 subtitle: Elastic Stack을 활용해서 서비스 이벤트 해석하기
 series: 모니터링은 해석
-tags: ["elastic-stack", "analytics", "cloud-computing", "howto"]
+tags: ["Elastic Stack", "analytics", "cloud computing", "howto"]
 categories: ["cloud-computing"]
 images: [/attachments/elastic-stack/kibana-6.0-discover.png]
 banner: /attachments/elastic-stack/kibana-6.0-init.png

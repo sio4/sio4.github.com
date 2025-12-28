@@ -2,7 +2,7 @@
 title: Getting Started with Docker Swarm
 subtitle: 나무토막 모아서 뗏목 만들기
 series: Docker 시작하기
-tags: ["Docker", "Container", "orchestration", "high-availability", "cloud-computing"]
+tags: ["Docker", "Container", "orchestration", "high availability", "cloud computing"]
 categories: ["cloud-computing"]
 images: [/attachments/docker/docker-swarm-cluster.png]
 banner: /attachments/docker/docker-swarm-cluster.png

@@ -1,7 +1,7 @@
 ---
 title: Ember CLI 환경 구성하기
 images: [/attachments/20151209-embercli-npm-nodejs.png]
-tags: ["emberjs", "nodejs", ""]
+tags: ["EmberJS", "nodejs", ""]
 categories: ["development"]
 date: 2015-12-09 11:16:25+09:00
 ---

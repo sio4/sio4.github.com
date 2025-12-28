@@ -2,7 +2,7 @@
 title: "Calling All Logs! Graylog2 4편: 기록"
 subtitle: 모든 로그를 한 곳에서 관리하고 분석하세요
 series: Calling All Logs
-tags: ["Graylog2", "logging", "monitoring", "cloud-computing"]
+tags: ["Graylog2", "logging", "monitoring", "cloud computing"]
 categories: ["system-administration"]
 images: [/attachments/graylog2/graylog-logo.png]
 date: 2017-10-13T10:30:00+09:00

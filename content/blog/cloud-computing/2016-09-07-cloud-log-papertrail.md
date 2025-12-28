@@ -1,7 +1,7 @@
 ---
 title: "PaperTrail, Cloud에서는 Cloud 로그를!"
 series: CAOS
-tags: ["logging", "monitoring", "cloud-computing"]
+tags: ["logging", "monitoring", "cloud computing"]
 categories: ["cloud-computing"]
 images: [/attachments/papertrail/ptrail-101-concept.jpg]
 date: 2016-09-07 00:51:00 +0900

@@ -3,7 +3,7 @@ title: "CAOS #1 Rails 기반 환경 구성"
 series: CAOS
 images: [/logos/mailgun-status.png]
 banner: /logos/mailgun-banner.png
-tags: ["cloud-computing", "ruby-on-rails", "Mailgun", "my-projects"]
+tags: ["cloud computing", "Ruby on Rails", "Mailgun", "my projects"]
 categories: ["development"]
 date: 2016-07-07 02:51:00 +0900
 ---

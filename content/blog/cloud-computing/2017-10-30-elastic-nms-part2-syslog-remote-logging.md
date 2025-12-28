@@ -3,7 +3,7 @@ title: "Elastic NMS Part 2: Syslog 원격로깅"
 subtitle: Elastic Stack을 바탕으로 NMS 만들기
 series: Elastic NMS
 sisters: ["Calling All Logs"]
-tags: ["elastic-stack", "logging", "monitoring", "cloud-computing", "analytics"]
+tags: ["Elastic Stack", "logging", "monitoring", "cloud computing", "analytics"]
 categories: ["cloud-computing"]
 images: [/attachments/elastic-nms/elk-100-kibana.jpg]
 banner: /attachments/elastic-nms/elk-100-kibana.jpg

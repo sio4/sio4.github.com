@@ -2,7 +2,7 @@
 title: CockroachDB 클러스터 설치 스크립트
 subtitle: ...라지만, 알고보면 쉘스크립트 작성 가이드
 series: CockroachDB 맛보기
-tags: ["howto", "script", "DBMS", "cloud-computing"]
+tags: ["howto", "script", "DBMS", "cloud computing"]
 categories: ["cloud-computing"]
 images: [/images/common/shell-on-the-beach.jpg]
 banner: /images/common/shells-on-the-beach.jpg

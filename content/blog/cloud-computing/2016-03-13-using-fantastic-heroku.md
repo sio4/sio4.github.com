@@ -1,6 +1,6 @@
 ---
 title: 판타스틱 PaaS 서비스, Heroku 사용하기
-tags: ["Heroku", "PaaS", "cloud-computing", "Git", "version-control", "ruby-on-rails"]
+tags: ["Heroku", "PaaS", "cloud computing", "Git", "version control", "Ruby on Rails"]
 categories: ["cloud-computing"]
 images: [/logos/heroku-light.jpg]
 banner: /logos/heroku-light.jpg

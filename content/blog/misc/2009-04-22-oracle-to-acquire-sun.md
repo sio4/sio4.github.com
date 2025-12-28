@@ -1,6 +1,6 @@
 ---
 title: 혜성 충돌! 오라클, 썬마이크로시스템즈를 전격 인수!
-tags: ["Oracle", "sun-microsystems"]
+tags: ["Oracle", "Sun Microsystems"]
 categories: ["misc"]
 date: 2009-04-22T20:54:26+09:00
 lastmod: 2009-04-22T21:36:11+09:00
