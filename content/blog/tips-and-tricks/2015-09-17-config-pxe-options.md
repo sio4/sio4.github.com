@@ -2,7 +2,7 @@
 title: "Howto: PXE 부팅 설정 (HP DL Series)"
 images: [/attachments/20150917-pxe-6-e51.jpg]
 tags: ["howto", "PXE", "hardware"]
-categories: ["tips-and-tricks"]
+categories: ["tips and tricks"]
 date: 2015-09-17 11:23:00+09:00
 ---
 몇일 전에 [PXE Mater 구성하기]({{< relref "/blog/tips-and-tricks/2015-09-15-setup-pxe-master" >}})라는

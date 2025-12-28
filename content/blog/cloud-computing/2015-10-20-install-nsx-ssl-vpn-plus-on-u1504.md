@@ -1,7 +1,7 @@
 ---
 title: 우분투 15.04에 NSX SSL VPN-Plus 설치하기
 tags: ["VMware", "NSX", "VPN", "howto"]
-categories: ["cloud-computing"]
+categories: ["cloud computing"]
 date: 2015-10-20 16:35:17+09:00
 images: [/attachments/20151020-vmw-sslvpn-001.png]
 ---

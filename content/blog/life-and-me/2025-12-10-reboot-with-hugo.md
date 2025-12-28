@@ -2,7 +2,7 @@
 title: 'Reboot --with Hugo'
 subtitle: 망한 블로그, 한참 늦게나마 다시 살린 변명
 tags: [life, blogging, hugo]
-categories: [life-and-me]
+categories: [life and me]
 images: [/attachments/jekyll-hugo.png]
 date: '2025-12-10T00:00:06+09:00'
 ---

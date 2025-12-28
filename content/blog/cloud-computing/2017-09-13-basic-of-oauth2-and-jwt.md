@@ -1,7 +1,7 @@
 ---
 title:  OAuth2와 JWT, 웹기반 SSO 인증
 tags: ["cloud computing", "UART", "authentication", "OAuth2", "JWT", "single sign on", "API"]
-categories: ["cloud-computing"]
+categories: ["cloud computing"]
 images: [/attachments/20170913-oauth2/oauth2-generic.png]
 banner: /attachments/20170913-oauth2/oauth2-generic.png
 date: 2017-09-13 03:00:00 +0900

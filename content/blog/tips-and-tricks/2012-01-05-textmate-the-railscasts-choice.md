@@ -2,7 +2,7 @@
 redirect_from: /entry/textmate-choice-of-railscast/
 title: TextMate, RailsCast의 선택? :-)
 tags: ["open source", "utility"]
-categories: ["tips-and-tricks"]
+categories: ["tips and tricks"]
 date: 2012-01-05T19:20:19+09:00
 lastmod: 2012-01-05T19:21:56+09:00
 ---

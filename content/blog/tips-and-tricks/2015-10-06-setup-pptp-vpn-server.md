@@ -1,7 +1,7 @@
 ---
 title: "Howto: PPTP VPN 서버 구성하기"
 tags: ["howto", "PPTP", "VPN", "setup", "Ubuntu"]
-categories: ["tips-and-tricks"]
+categories: ["tips and tricks"]
 images: [/attachments/20151006-pptp-vpn-005.png]
 ---
 리눅스 서버를 이용하여 간단하게 VPN 환경을 구성할 수 있는 방법 중 하나가

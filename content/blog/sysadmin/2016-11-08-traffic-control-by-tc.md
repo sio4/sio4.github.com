@@ -1,7 +1,7 @@
 ---
 title: TC, 리눅스 Traffic Control
 tags: ["network", "QoS", "Linux"]
-categories: ["system-administration"]
+categories: ["system administration"]
 date: 2016-11-08T21:36:30+0900
 ---
 

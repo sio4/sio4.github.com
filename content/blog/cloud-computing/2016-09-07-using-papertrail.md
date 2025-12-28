@@ -2,7 +2,7 @@
 title: Cloud App에서 PaperTrail 사용하기
 series: CAOS
 tags: ["logging", "monitoring", "cloud computing"]
-categories: ["cloud-computing"]
+categories: ["cloud computing"]
 images: [/attachments/papertrail/ptrail-101-concept.jpg]
 banner: /attachments/papertrail/ptrail-101-concept.jpg
 date: 2016-09-07 15:00:00 +0900

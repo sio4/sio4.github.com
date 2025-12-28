@@ -2,7 +2,7 @@
 redirect_from: /entry/little-help-from-my-friends/
 title: 도움 구하기
 tags: ["rules of action", "Help", "Beatles", "video"]
-categories: ["rules-of-action"]
+categories: ["rules of action"]
 date: 2010-05-13T13:36:00+09:00
 lastmod: 2010-07-07T13:52:31+09:00
 ---

@@ -3,7 +3,7 @@ title: "'쓸만한' Docker Image 만들기 - Part 1"
 subtitle: Build an Usable Docker Image with Alpine Linux
 series: Docker 시작하기
 tags: ["Docker", "Container", "cloud computing", "Alpine"]
-categories: ["cloud-computing"]
+categories: ["cloud computing"]
 images: [/logos/alpinelinux.org.jpg]
 banner: /logos/alpinelinux.org.jpg
 date: 2018-02-19T21:00:00+0900

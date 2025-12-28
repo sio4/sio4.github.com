@@ -4,7 +4,7 @@ redirect_from:
 - /64/
 title: "인터넷 생활: 인터넷, 로컬 카피, 글로벌 카피"
 tags: ["platform", "internet"]
-categories: ["wind-of-change"]
+categories: ["wind of change"]
 date: 2007-05-23T14:33:48+09:00
 lastmod: 2011-03-04T13:25:15+09:00
 ---

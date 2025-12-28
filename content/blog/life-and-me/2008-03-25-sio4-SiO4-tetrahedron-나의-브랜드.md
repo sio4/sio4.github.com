@@ -4,7 +4,7 @@ redirect_from:
 - /151/
 title: sio4, SiO4 Tetrahedron, 나의 브랜드
 tags: ["brand", "geology"]
-categories: ["life-and-me"]
+categories: ["life and me"]
 date: 2008-03-25T00:55:07+09:00
 lastmod: 2010-07-02T15:07:01+09:00
 ---

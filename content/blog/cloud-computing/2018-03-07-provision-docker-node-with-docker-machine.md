@@ -3,7 +3,7 @@ title: "Docker Machine으로 Docker Node 뿌리기"
 subtitle: Docker is Not In My BackYard, But on the Cloud!
 series: Docker 시작하기
 tags: ["Docker", "Container", "SoftLayer", "cloud computing"]
-categories: ["cloud-computing"]
+categories: ["cloud computing"]
 images: [/attachments/docker/docker-machine.jpg]
 banner: /attachments/docker/docker-machine.jpg
 date: 2018-03-07T22:16:00+0900

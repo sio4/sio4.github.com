@@ -1,7 +1,7 @@
 ---
 title: "Howto: PXE Master 구성하기"
 tags: ["howto", "PXE", "automation", "cloud computing"]
-categories: ["tips-and-tricks"]
+categories: ["tips and tricks"]
 date: 2015-09-15 09:27:20+09:00
 ---
 PXE는 Preboot Execution Environment를 줄인 용어로, 서버 등의 IT 장비가

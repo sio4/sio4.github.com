@@ -4,7 +4,7 @@ redirect_from:
 - /255/
 title: Kpartx, Create device mappings for partitions
 tags: ["disk", "recovery"]
-categories: ["tips-and-tricks"]
+categories: ["tips and tricks"]
 date: 2011-12-27T12:36:17+09:00
 lastmod: 2011-12-27T12:36:17+09:00
 ---

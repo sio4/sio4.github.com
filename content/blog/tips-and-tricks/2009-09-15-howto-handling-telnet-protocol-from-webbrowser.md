@@ -4,7 +4,7 @@ redirect_from:
 - /200/
 title: 웹브라우져에서 telnet 프로토콜을 처리하려면
 tags: ["network", "Ongsung", "protocol", "Python"]
-categories: ["tips-and-tricks"]
+categories: ["tips and tricks"]
 date: 2009-09-15T03:51:57+09:00
 lastmod: 2009-09-28T08:50:38+09:00
 ---

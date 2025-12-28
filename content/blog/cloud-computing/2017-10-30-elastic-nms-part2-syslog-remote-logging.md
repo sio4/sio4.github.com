@@ -4,7 +4,7 @@ subtitle: Elastic Stack을 바탕으로 NMS 만들기
 series: Elastic NMS
 sisters: ["Calling All Logs"]
 tags: ["Elastic Stack", "logging", "monitoring", "cloud computing", "analytics"]
-categories: ["cloud-computing"]
+categories: ["cloud computing"]
 images: [/attachments/elastic-nms/elk-100-kibana.jpg]
 banner: /attachments/elastic-nms/elk-100-kibana.jpg
 date: 2017-10-30T12:40:00+0900

@@ -2,7 +2,7 @@
 title: 거울, Cloud Port Mirroring 프로젝트
 subtitle: Mirror Your Cloud Network Traffic over the Internet
 tags: ["Goul", "network", "cloud computing", "monitoring", "security", "golang"]
-categories: ["cloud-computing"]
+categories: ["cloud computing"]
 repository: https://github.com/hyeoncheon/goul
 images: [/attachments/goul/goul-flow-all-client.png]
 banner: /attachments/goul/goul-flow-all-client.png

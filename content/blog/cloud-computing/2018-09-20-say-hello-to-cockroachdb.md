@@ -3,7 +3,7 @@ title: CockroachDB 안녕?
 subtitle: 바퀴벌레, 글로벌 서비스를 위한 SQL 데이터베이스
 series: CockroachDB 맛보기
 tags: ["DBMS", "cloud computing", "open source"]
-categories: ["cloud-computing"]
+categories: ["cloud computing"]
 images: [/attachments/cockroachdb/cockroach-symbol.jpg]
 banner: /attachments/cockroachdb/cockroach-logo.jpg
 date: 2018-09-20T16:30:00+0900

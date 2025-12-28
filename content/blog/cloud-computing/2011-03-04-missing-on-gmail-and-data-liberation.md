@@ -2,7 +2,7 @@
 redirect_from: /entry/missing-on-gmail-and-data-liberation/
 title: GMail의 분실사고! 그리고 자료 해방!
 tags: ["data liberation", "google", "reliability", "cloud computing"]
-categories: ["cloud-computing"]
+categories: ["cloud computing"]
 date: 2011-03-04T14:07:26+09:00
 lastmod: 2011-03-04T14:09:00+09:00
 ---

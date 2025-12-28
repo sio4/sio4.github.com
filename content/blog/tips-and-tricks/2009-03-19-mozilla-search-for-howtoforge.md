@@ -2,7 +2,7 @@
 redirect_from: /entry/howtoforge-search-addon-for-firefox/
 title: HowtoForge에 대한 모질라 검색사이트
 tags: ["Firefox"]
-categories: ["tips-and-tricks"]
+categories: ["tips and tricks"]
 date: 2009-03-19T13:10:59+09:00
 lastmod: 2010-06-30T17:04:37+09:00
 ---

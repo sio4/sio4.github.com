@@ -2,7 +2,7 @@
 title: "Howto: Ubuntu 서버에 MRTG 설치하기"
 images: [/attachments/20151228-mrtg-000.png]
 tags: ["MRTG", "network", "monitoring"]
-categories: ["tips-and-tricks"]
+categories: ["tips and tricks"]
 date: Mon, 28 Dec 2015 12:34:51 +0900
 ---
 지난 10월에 진행하던 BMT 중에 네트워크 성능 측정, 또는 사용량 확인을 위해

@@ -2,7 +2,7 @@
 title: Apache Tomcat 조금 잘 설치하기
 subtitle: CATALINA_HOME 과 CATALINA_BASE
 tags: [Apache Tomcat, web application server, makefile, out of memory, error handling, proper way, CATALINA_HOME, CATALINA_BASE]
-categories: ["system-administration"]
+categories: ["system administration"]
 date: 2015-02-25T20:51:00+09:00
 ---
 

@@ -2,7 +2,7 @@
 title: 개인정보 보호법, 쿠팡 사태, 그리고 뜯는곳
 subtitle: 생각하는가 분노하는가
 tags: ["Coupang", "개인정보 보호법", "개인정보 유효기간제", "정보화 교육", "Personal Information Protection Act", "PIPA", "rules of action"]
-categories: ["rules-of-action"]
+categories: ["rules of action"]
 images: ["/attachments/tear-off-edge.jpg"]
 date: 2025-12-22T23:47:18+09:00
 ---

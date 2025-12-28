@@ -1,7 +1,7 @@
 ---
 title: 새세대 청춘송가
 tags: ["life", "memories", "democracy", "video", "music"]
-categories: ["life-and-me"]
+categories: ["life and me"]
 date: Tue, 12 Jan 2016 10:36:09 +0900
 ---
 "내가 철들어 간다는 것이 제한몸의 평안을 위해 세상을 적당히 길드는 거라면 내결코 철들지 않겠다" 쉽지는 않지만...
