@@ -3,7 +3,13 @@ title: Thread 골라 죽이기, WAS 부하 문제
 subtitle: 서비스를 살리기 위해 네가 죽어주면 안되겠니?
 tags: [JVM, web application server, java thread, kill, Honcheonui, system operation]
 categories: ["system administration"]
-banner: /attachments/kill-only-selected-thread/mia-cpu--005.png
+images:
+  - /attachments/kill-only-selected-thread/mia-cpu--005.png
+  - /attachments/kill-only-selected-thread/mia-cpu--004.png
+  - /attachments/kill-only-selected-thread/mia-cpu--020.png
+  - /attachments/kill-only-selected-thread/mia-cpu--010.png
+  - /attachments/kill-only-selected-thread/mia-cpu--903.png
+  - /attachments/kill-only-selected-thread/mia-000--001.png
 date: 2015-06-11T13:03:00+09:00
 ---
 

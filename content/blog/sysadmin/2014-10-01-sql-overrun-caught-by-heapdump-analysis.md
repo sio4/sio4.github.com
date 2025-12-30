@@ -3,7 +3,8 @@ title: Heapdump 분석 사례 - SQL 폭주
 subtitle: Eclipse MAT과 Heapdump를 이용한 OOM 분석
 tags: [JVM, heapdump, MAT, out of memory, Oracle, PreparedStatement]
 categories: [system administration]
-banner: /attachments/sql-overrun-caught-by-heapdump-analysis-culprit.jpg
+images:
+  - /attachments/sql-overrun-caught-by-heapdump-analysis-culprit.jpg
 date: 2014-10-01T02:28:00+09:00
 ---
 

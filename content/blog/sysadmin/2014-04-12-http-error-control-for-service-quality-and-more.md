@@ -4,6 +4,10 @@ subtitle: Error 처리를 자동화하여 품질 이상을 얻을 수 있다면.
 tags: [HTTP, error handling, monitoring, automation, Honcheonui, Oopsware, SOSM, system operation]
 categories: ["system administration"]
 banner: /attachments/http-error-control/web-error-catch.png
+images:
+  - /attachments/http-error-control/web-error-flow.png
+  - /attachments/http-error-control/web-error-catch.png
+  - /attachments/http-error-control/web-error-erd.png
 date: 2014-04-12T14:54:00+09:00
 ---
 
