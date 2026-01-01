@@ -43,11 +43,11 @@ languages:
     languageName: Korean
     weight: 1
     title: 소용환의 생각 저장소
-  en:
-    languageCode: en-US
-    languageName: English
-    weight: 2
-    title: Yonghwan's Garage
+  #en:
+  #languageCode: en-US
+  #languageName: English
+  #weight: 2
+  #title: Yonghwan's Garage
 
 services:
   disqus:
