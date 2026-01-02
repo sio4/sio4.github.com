@@ -29,6 +29,7 @@ params:
     - 잘못된 부분의 제보나 의견/요청 댓글 환영합니다!
   author:
     name: Yonghwan SO
+    nick: sio4
     url: https://sio4.github.io/about/
     github: sio4
     stackoverflow: users/1111002/sio4
